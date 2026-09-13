@@ -11,7 +11,11 @@ import type { ImageMetadata } from 'astro';
 interface Solucion {
   title: string;
   body?: string;
-  icon?: string | ImageMetadata;
+  // string = emoji; ImageMetadata = imagen real descargada; { svg } = icono
+  // vectorial inline (para cuando el original usa una fuente de iconos como
+  // Material Design Icons/IcoFont/Font Awesome en vez de una imagen o emoji
+  // real — se reproduce el SVG del icono concreto sin cargar la librería).
+  icon?: string | ImageMetadata | { svg: string };
 }
 interface Props {
   heading?: string;
@@ -29,7 +33,9 @@ const { heading, soluciones, variant = 'chip' } = Astro.props;
         {s.icon && (
           typeof s.icon === 'string'
             ? <span class="icon" aria-hidden="true">{s.icon}</span>
-            : <Image class="icon-img" src={s.icon} alt="" width={64} height={64} />
+            : 'svg' in s.icon
+              ? <span class="icon icon-svg" aria-hidden="true" set:html={s.icon.svg} />
+              : <Image class="icon-img" src={s.icon} alt="" width={64} height={64} />
         )}
         <h3>{s.title}</h3>
         {s.body && <p>{s.body}</p>}
@@ -57,6 +63,14 @@ const { heading, soluciones, variant = 'chip' } = Astro.props;
     height: 64px;
     object-fit: contain;
   }
+  .icon-svg {
+    display: inline-flex;
+    color: var(--color-accent, #c2185b);
+  }
+  .icon-svg svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 
   /* Variante "card": tarjetas blancas con sombra + icono, para grids de
      soluciones más elaborados (ej. Inflamación hormonal). */
@@ -71,8 +85,10 @@ const { heading, soluciones, variant = 'chip' } = Astro.props;
     text-align: center;
   }
   section[data-variant='card'] .icon-img,
-  section[data-variant='card'] .icon {
-    display: block;
+  section[data-variant='card'] .icon,
+  section[data-variant='card'] .icon-svg {
+    display: flex;
+    justify-content: center;
     margin: 0 auto 0.5rem;
   }
 </style>

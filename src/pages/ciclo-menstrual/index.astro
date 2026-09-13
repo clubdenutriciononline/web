@@ -10,6 +10,16 @@ import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
 import relacion1Img from './_images/relacion-1.jpg';
 import relacion2Img from './_images/relacion-2.jpg';
+import iconoDesordenesHormonales from './_images/icono-desordenes-hormonales.jpg';
+import iconoEstresAnsiedad from './_images/icono-estres-ansiedad.jpg';
+import iconoPesoYDieta from './_images/icono-peso-y-dieta.jpg';
+import iconoMedicamentosTratamientos from './_images/icono-medicamentos-tratamientos.jpg';
+import iconoEnfermedadesCronicas from './_images/icono-enfermedades-cronicas.jpg';
+import iconoEdadYCambios from './_images/icono-edad-y-cambios.jpg';
+import iconoSaludHormonal from './_images/icono-salud-hormonal.jpg';
+import iconoNutricion from './_images/icono-nutricion.jpg';
+import iconoActividadFisica from './_images/icono-actividad-fisica.jpg';
+import iconoSaludMental from './_images/icono-salud-mental.jpg';
 
 const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('ciclo-menstrual')).slice(0, 3);
 ---
@@ -25,10 +35,10 @@ const articulos = (await getCollection('blog')).filter((p) => p.data.category.in
   ctaHref="/lm-5-pasos-optin/"
   areasHeading="Explora cada área clave del Ciclo Menstrual"
   areas={[
-    { icon: '⚖️', title: 'Salud Hormonal', href: '/hormonas/', text: 'Cómo se relaciona el ciclo con tu equilibrio hormonal general.' },
-    { icon: '🥗', title: 'Nutrición', href: '/alimentacion/', text: 'Alimentación adaptada a cada fase del ciclo.' },
-    { icon: '🏃‍♀️', title: 'Actividad Física', href: '/metabolismo/', text: 'Cómo adaptar el ejercicio a cada fase hormonal.' },
-    { icon: '🧠', title: 'Salud Mental', href: '/mentalidad/', text: 'Cambios de ánimo asociados al ciclo menstrual.' },
+    { icon: iconoSaludHormonal, title: 'Salud Hormonal', href: '/hormonas/', text: 'Cómo se relaciona el ciclo con tu equilibrio hormonal general.' },
+    { icon: iconoNutricion, title: 'Nutrición', href: '/alimentacion/', text: 'Alimentación adaptada a cada fase del ciclo.' },
+    { icon: iconoActividadFisica, title: 'Actividad Física', href: '/metabolismo/', text: 'Cómo adaptar el ejercicio a cada fase hormonal.' },
+    { icon: iconoSaludMental, title: 'Salud Mental', href: '/mentalidad/', text: 'Cambios de ánimo asociados al ciclo menstrual.' },
   ]}
   articulosRelacionados={articulos}
 >
@@ -46,12 +56,12 @@ const articulos = (await getCollection('blog')).filter((p) => p.data.category.in
   <CausasGrid
     heading="Causas del Ciclo Menstrual Irregular"
     causas={[
-      { icon: '⚖️', title: 'Desórdenes Hormonales', text: 'Los desórdenes hormonales, como el síndrome de ovario poliquístico, pueden afectar el ciclo menstrual.' },
-      { icon: '😰', title: 'Estrés y Ansiedad', text: 'El estrés y la ansiedad pueden influir en el ciclo menstrual, causando irregularidades.' },
-      { icon: '🍽️', title: 'Peso y Dieta', text: 'Un peso bajo o un exceso de peso, así como una dieta deficiente, pueden afectar el ciclo menstrual.' },
-      { icon: '💊', title: 'Medicamentos y Tratamientos', text: 'Algunos medicamentos y tratamientos pueden afectar el ciclo menstrual.' },
-      { icon: '🩺', title: 'Enfermedades Crónicas', text: 'Enfermedades como la diabetes o la hipertensión pueden influir en el ciclo menstrual.' },
-      { icon: '🕰️', title: 'Edad y Cambios en el Cuerpo', text: 'Los cambios naturales del cuerpo con la edad pueden influir en el ciclo menstrual.' },
+      { icon: iconoDesordenesHormonales, title: 'Desórdenes Hormonales', text: 'Los desórdenes hormonales, como el síndrome de ovario poliquístico, pueden afectar el ciclo menstrual.' },
+      { icon: iconoEstresAnsiedad, title: 'Estrés y Ansiedad', text: 'El estrés y la ansiedad pueden influir en el ciclo menstrual, causando irregularidades.' },
+      { icon: iconoPesoYDieta, title: 'Peso y Dieta', text: 'Un peso bajo o un exceso de peso, así como una dieta deficiente, pueden afectar el ciclo menstrual.' },
+      { icon: iconoMedicamentosTratamientos, title: 'Medicamentos y Tratamientos', text: 'Algunos medicamentos y tratamientos pueden afectar el ciclo menstrual.' },
+      { icon: iconoEnfermedadesCronicas, title: 'Enfermedades Crónicas', text: 'Enfermedades como la diabetes o la hipertensión pueden influir en el ciclo menstrual.' },
+      { icon: iconoEdadYCambios, title: 'Edad y Cambios en el Cuerpo', text: 'Los cambios naturales del cuerpo con la edad pueden influir en el ciclo menstrual.' },
     ]}
   />
   <p>Ahora que conoces las causas, es tiempo de explorar los síntomas del ciclo menstrual.</p>

@@ -19,11 +19,15 @@ import iconResistenciaInsulina from './_images/Icon-resistencia-insulina-1536x83
 import iconEjercicio from './_images/Icon-mucho-poco-ejercicio-1536x838.png';
 import sistemaHormonalImg from './_images/sistema-hormonal-femenino.jpg';
 import hormonasEnergiaMetabolismoImg from './_images/hormonas-energia-metabolismo.jpg';
+import iconoMenopausia from './_images/tarjeta-menopausia-mujer-madura.jpg';
+import iconoPerimenopausia from './_images/tarjeta-perimenopausia-mujer-madura.jpg';
+import iconoCortisol from './_images/tarjeta-cortisol.jpg';
+import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
 // Nota: en el original, las 4 tarjetas de "Explora cada área clave" llevan
-// imagen de fondo (tarjeta-menopausia-mujer-madura.jpg, etc.) en vez de
-// emoji. TemasRelacionadosGrid.astro solo admite icon:string (emoji), así
-// que se mantiene el emoji ya definido — las imágenes quedan descargadas en
-// ./_images/ por si se amplía el componente para admitir imagen de fondo.
+// imagen real (tarjeta-menopausia-mujer-madura.jpg, etc., confirmado en el
+// HTML: elementor-widget-image-box). TemasRelacionadosGrid.astro ya admite
+// icon: string | ImageMetadata, así que se usan las imágenes reales en vez
+// de emoji.
 ---
 
 <HubTemplateA
@@ -37,10 +41,10 @@ import hormonasEnergiaMetabolismoImg from './_images/hormonas-energia-metabolism
   ctaHref="/lm-5-pasos-optin/"
   temasHeading="Explora cada área clave del equilibrio hormonal:"
   temas={[
-    { icon: '🌙', title: 'Menopausia', href: '/menopausia/', text: 'Cambios hormonales en la menopausia y su impacto en la energía, el metabolismo y el bienestar femenino.' },
-    { icon: '🔄', title: 'Perimenopausia', href: '/perimenopausia/', text: 'Cómo las fluctuaciones hormonales afectan al ciclo, la energía y el estado emocional antes de la menopausia.' },
-    { icon: '⚡', title: 'Cortisol / Estrés', href: '/cortisol/', text: 'El impacto del cortisol elevado en la grasa abdominal, el sueño, la fatiga y el metabolismo.' },
-    { icon: '🔥', title: 'Inflamación hormonal', href: '/inflamacion-hormonal/', text: 'Cómo la inflamación altera las hormonas, la digestión, la energía y la sensibilidad a la insulina.' },
+    { icon: iconoMenopausia, title: 'Menopausia', href: '/menopausia/', text: 'Cambios hormonales en la menopausia y su impacto en la energía, el metabolismo y el bienestar femenino.' },
+    { icon: iconoPerimenopausia, title: 'Perimenopausia', href: '/perimenopausia/', text: 'Cómo las fluctuaciones hormonales afectan al ciclo, la energía y el estado emocional antes de la menopausia.' },
+    { icon: iconoCortisol, title: 'Cortisol / Estrés', href: '/cortisol/', text: 'El impacto del cortisol elevado en la grasa abdominal, el sueño, la fatiga y el metabolismo.' },
+    { icon: iconoInflamacion, title: 'Inflamación hormonal', href: '/inflamacion-hormonal/', text: 'Cómo la inflamación altera las hormonas, la digestión, la energía y la sensibilidad a la insulina.' },
   ]}
 >
   <section class="intro">

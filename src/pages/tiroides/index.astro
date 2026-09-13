@@ -10,6 +10,16 @@ import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
 import relacion1Img from './_images/relacion-1.jpg';
 import relacion2Img from './_images/relacion-2.jpg';
+import iconoHipotiroidismo from './_images/icono-hipotiroidismo.jpg';
+import iconoHipertiroidismo from './_images/icono-hipertiroidismo.jpg';
+import iconoEnfermedadesAutoinmunes from './_images/icono-enfermedades-autoinmunes.jpg';
+import iconoDeficienciaYodo from './_images/icono-deficiencia-yodo.jpg';
+import iconoLesionesTiroides from './_images/icono-lesiones-tiroides.jpg';
+import iconoMedicamentos from './_images/icono-medicamentos.jpg';
+import iconoAreaEnfermedadesAutoinmunes from './_images/icono-area-enfermedades-autoinmunes.jpg';
+import iconoAreaDeficienciaYodo from './_images/icono-area-deficiencia-yodo.jpg';
+import iconoSistemaAdrenal from './_images/icono-sistema-adrenal.jpg';
+import iconoSaludHormonal from './_images/icono-salud-hormonal.jpg';
 
 const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('tiroides')).slice(0, 3);
 ---
@@ -25,10 +35,10 @@ const articulos = (await getCollection('blog')).filter((p) => p.data.category.in
   ctaHref="/lm-5-pasos-optin/"
   areasHeading="Áreas relacionadas con la disfunción tiroidea"
   areas={[
-    { icon: '🛡️', title: 'Enfermedades autoinmunes', href: '/hormonas/', text: 'Relación entre tiroides y enfermedades autoinmunes.' },
-    { icon: '🧂', title: 'Deficiencia de yodo', href: '/alimentacion/', text: 'El papel del yodo en la función tiroidea.' },
-    { icon: '⚡', title: 'Sistema adrenal', href: '/cortisol/', text: 'Cómo se relacionan tiroides y glándulas suprarrenales.' },
-    { icon: '⚖️', title: 'Salud hormonal', href: '/hormonas/', text: 'La tiroides dentro del equilibrio hormonal general.' },
+    { icon: iconoAreaEnfermedadesAutoinmunes, title: 'Enfermedades autoinmunes', href: '/hormonas/', text: 'Relación entre tiroides y enfermedades autoinmunes.' },
+    { icon: iconoAreaDeficienciaYodo, title: 'Deficiencia de yodo', href: '/alimentacion/', text: 'El papel del yodo en la función tiroidea.' },
+    { icon: iconoSistemaAdrenal, title: 'Sistema adrenal', href: '/cortisol/', text: 'Cómo se relacionan tiroides y glándulas suprarrenales.' },
+    { icon: iconoSaludHormonal, title: 'Salud hormonal', href: '/hormonas/', text: 'La tiroides dentro del equilibrio hormonal general.' },
   ]}
   articulosRelacionados={articulos}
 >
@@ -45,12 +55,12 @@ const articulos = (await getCollection('blog')).filter((p) => p.data.category.in
   <CausasGrid
     heading="Causas de la disfunción tiroidea"
     causas={[
-      { icon: '🐢', title: 'Hipotiroidismo', text: 'El hipotiroidismo es una condición en la que la tiroides no produce suficientes hormonas. Puede ser causado por una deficiencia de yodo, una inflamación de la tiroides o una lesión en la glándula.' },
-      { icon: '⚡', title: 'Hiperotiroidismo', text: 'El hiperotiroidismo es una condición en la que la tiroides produce demasiadas hormonas. Puede ser causado por una hiperactividad de la glándula, un tumor o una enfermedad autoinmune.' },
-      { icon: '🛡️', title: 'Enfermedades autoinmunes', text: 'Las enfermedades autoinmunes, como la enfermedad de Hashimoto o la enfermedad de Graves, pueden afectar la función de la tiroides y causar disfunción.' },
-      { icon: '🧂', title: 'Deficiencia de yodo', text: 'La deficiencia de yodo es una causa común de disfunción tiroidea, ya que el yodo es esencial para la producción de hormonas tiroideas.' },
-      { icon: '🩹', title: 'Lesiones en la tiroides', text: 'Las lesiones en la tiroides, como un golpe o una cirugía, pueden afectar la función de la glándula y causar disfunción.' },
-      { icon: '💊', title: 'Medicamentos', text: 'Algunos medicamentos, como los antidepresivos o los medicamentos para la hipertensión, pueden afectar la función de la tiroides y causar disfunción.' },
+      { icon: iconoHipotiroidismo, title: 'Hipotiroidismo', text: 'El hipotiroidismo es una condición en la que la tiroides no produce suficientes hormonas. Puede ser causado por una deficiencia de yodo, una inflamación de la tiroides o una lesión en la glándula.' },
+      { icon: iconoHipertiroidismo, title: 'Hiperotiroidismo', text: 'El hiperotiroidismo es una condición en la que la tiroides produce demasiadas hormonas. Puede ser causado por una hiperactividad de la glándula, un tumor o una enfermedad autoinmune.' },
+      { icon: iconoEnfermedadesAutoinmunes, title: 'Enfermedades autoinmunes', text: 'Las enfermedades autoinmunes, como la enfermedad de Hashimoto o la enfermedad de Graves, pueden afectar la función de la tiroides y causar disfunción.' },
+      { icon: iconoDeficienciaYodo, title: 'Deficiencia de yodo', text: 'La deficiencia de yodo es una causa común de disfunción tiroidea, ya que el yodo es esencial para la producción de hormonas tiroideas.' },
+      { icon: iconoLesionesTiroides, title: 'Lesiones en la tiroides', text: 'Las lesiones en la tiroides, como un golpe o una cirugía, pueden afectar la función de la glándula y causar disfunción.' },
+      { icon: iconoMedicamentos, title: 'Medicamentos', text: 'Algunos medicamentos, como los antidepresivos o los medicamentos para la hipertensión, pueden afectar la función de la tiroides y causar disfunción.' },
     ]}
   />
   <p>La disfunción tiroidea puede tener graves consecuencias en nuestra salud y bienestar, por lo que es importante reconocer los síntomas y buscar tratamiento médico si es necesario.</p>

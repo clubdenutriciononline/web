@@ -11,6 +11,16 @@ import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
 import relacion1Img from './_images/relacion-1.jpg';
 import relacion2Img from './_images/relacion-2.jpg';
+import iconoEnvejecimiento from './_images/icono-envejecimiento-ovarico.jpg';
+import iconoCirugia from './_images/icono-cirugia-ovarios.jpg';
+import iconoTratamientoCancer from './_images/icono-tratamiento-cancer.jpg';
+import iconoFaltaHormonas from './_images/icono-falta-hormonas.jpg';
+import iconoEnfermedadesAutoinmunes from './_images/icono-enfermedades-autoinmunes.jpg';
+import iconoFactorGenetico from './_images/icono-factor-genetico.jpg';
+import iconoOsteoporosis from './_images/icono-osteoporosis.jpg';
+import iconoEnfermedadesCorazon from './_images/icono-enfermedades-corazon.jpg';
+import iconoSaludMental from './_images/icono-salud-mental.jpg';
+import iconoRelacionesSexualidad from './_images/icono-relaciones-sexualidad.jpg';
 
 const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('menopausia')).slice(0, 3);
 ---
@@ -26,10 +36,10 @@ const articulos = (await getCollection('blog')).filter((p) => p.data.category.in
   ctaHref="/lm-5-pasos-optin/"
   areasHeading="Áreas clave relacionadas con la Menopausia"
   areas={[
-    { icon: '🦴', title: 'Osteoporosis', href: '/hormonas/', text: 'Cómo la menopausia afecta a la densidad ósea.' },
-    { icon: '❤️', title: 'Enfermedades del Corazón', href: '/hormonas/', text: 'Riesgo cardiovascular asociado a la menopausia.' },
-    { icon: '🧠', title: 'Salud Mental', href: '/mentalidad/', text: 'Cambios emocionales durante la menopausia.' },
-    { icon: '💞', title: 'Relaciones y Sexualidad', href: '/relacion-cuerpo-mujeres/', text: 'Impacto en la libido y las relaciones de pareja.' },
+    { icon: iconoOsteoporosis, title: 'Osteoporosis', href: '/hormonas/', text: 'Cómo la menopausia afecta a la densidad ósea.' },
+    { icon: iconoEnfermedadesCorazon, title: 'Enfermedades del Corazón', href: '/hormonas/', text: 'Riesgo cardiovascular asociado a la menopausia.' },
+    { icon: iconoSaludMental, title: 'Salud Mental', href: '/mentalidad/', text: 'Cambios emocionales durante la menopausia.' },
+    { icon: iconoRelacionesSexualidad, title: 'Relaciones y Sexualidad', href: '/relacion-cuerpo-mujeres/', text: 'Impacto en la libido y las relaciones de pareja.' },
   ]}
   articulosRelacionados={articulos}
 >
@@ -62,12 +72,12 @@ const articulos = (await getCollection('blog')).filter((p) => p.data.category.in
   <CausasGrid
     heading="Causas de la Menopausia"
     causas={[
-      { icon: '🧬', title: 'Envejecimiento Ovariano', text: 'El envejecimiento de los ovarios es la causa principal de la menopausia. Con el tiempo, los ovarios dejan de producir huevos y hormonas sexuales.' },
-      { icon: '🏥', title: 'Cirugía de Extirpación de los Ovarios', text: 'La extracción quirúrgica de los ovarios puede inducir la menopausia de manera inmediata.' },
-      { icon: '🎗️', title: 'Tratamiento contra el Cáncer', text: 'Algunos tratamientos contra el cáncer, como la quimioterapia y la radioterapia, pueden dañar los ovarios y causar la menopausia.' },
-      { icon: '⚗️', title: 'Falta de Hormonas', text: 'El déficit de hormonas puede llevar a la menopausia. Esto puede deberse a varias razones, incluyendo la enfermedad de Addison.' },
-      { icon: '🛡️', title: 'Enfermedades Autoinmunes', text: 'Enfermedades autoinmunes, como la enfermedad de Hashimoto, pueden afectar la función tiroidea y llevar a la menopausia.' },
-      { icon: '🧬', title: 'Factor Genético', text: 'Factores genéticos pueden influir en el momento en que una mujer entrará en la menopausia.' },
+      { icon: iconoEnvejecimiento, title: 'Envejecimiento Ovariano', text: 'El envejecimiento de los ovarios es la causa principal de la menopausia. Con el tiempo, los ovarios dejan de producir huevos y hormonas sexuales.' },
+      { icon: iconoCirugia, title: 'Cirugía de Extirpación de los Ovarios', text: 'La extracción quirúrgica de los ovarios puede inducir la menopausia de manera inmediata.' },
+      { icon: iconoTratamientoCancer, title: 'Tratamiento contra el Cáncer', text: 'Algunos tratamientos contra el cáncer, como la quimioterapia y la radioterapia, pueden dañar los ovarios y causar la menopausia.' },
+      { icon: iconoFaltaHormonas, title: 'Falta de Hormonas', text: 'El déficit de hormonas puede llevar a la menopausia. Esto puede deberse a varias razones, incluyendo la enfermedad de Addison.' },
+      { icon: iconoEnfermedadesAutoinmunes, title: 'Enfermedades Autoinmunes', text: 'Enfermedades autoinmunes, como la enfermedad de Hashimoto, pueden afectar la función tiroidea y llevar a la menopausia.' },
+      { icon: iconoFactorGenetico, title: 'Factor Genético', text: 'Factores genéticos pueden influir en el momento en que una mujer entrará en la menopausia.' },
     ]}
   />
   <p>Es importante entender que la menopausia es un proceso natural que puede ser manejado con las herramientas adecuadas.</p>

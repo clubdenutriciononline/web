@@ -3,12 +3,9 @@
 // https://clubdenutricion.es/microbiota/, ver .firecrawl/md/microbiota.md.
 // En el original los iconos de "Temas Relacionados" son imágenes de
 // tarjeta reales (no emoji). TemasRelacionadosGrid.astro ya admite imagen
-// real, así que se usan aquí para Digestión e Inflamación intestinal, que sí
-// tienen una imagen descargada específica; "Probióticos" se queda con emoji
-// porque no se localizó una imagen de tarjeta propia para ese tema (solo
-// existe una imagen genérica de la sección "Relación con sistemas
-// hormonales", que no es la misma pieza gráfica) — no se fuerza un asset
-// que no corresponde por fidelidad.
+// real, así que se usan aquí para Digestión, Inflamación intestinal y
+// Probióticos (Microbiota-sisthormonales-probioticos.jpg, confirmada en el
+// HTML real de la tarjeta "Probióticos" del grid de Temas Relacionados).
 import { getCollection } from 'astro:content';
 import HubTemplateB from '../../layouts/HubTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
@@ -28,6 +25,7 @@ import relacionImg1 from './_images/Microbiota-sisthormonales-infografia.jpg';
 import relacionImg2 from './_images/microbiota-sistemas-hormonales.jpg';
 import temaDigestion from './_images/microbiota-digestion.jpg';
 import temaInflamacion from './_images/microbiota-inflamacion-intestinal.jpg';
+import temaProbioticos from './_images/Microbiota-sisthormonales-probioticos.jpg';
 
 const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('microbiota')).slice(0, 3);
 ---
@@ -44,7 +42,7 @@ const articulos = (await getCollection('blog')).filter((p) => p.data.category.st
   temas={[
     { icon: temaDigestion, title: 'Digestión', href: '/digestion/', text: 'La microbiota intestinal es clave en el proceso digestivo, ya que ayuda a descomponer los alimentos, mejorar la absorción de nutrientes y mantener un tránsito intestinal saludable.' },
     { icon: temaInflamacion, title: 'Inflamación intestinal', href: '/inflamacion-intestinal/', text: 'Un desequilibrio en la microbiota puede favorecer procesos inflamatorios en el intestino, asociados a molestias digestivas, sensibilidad intestinal y alteraciones crónicas.' },
-    { icon: '🧫', title: 'Probióticos', href: '/probioticos-alimentacion/', text: 'Los probióticos son microorganismos beneficiosos que ayudan a restaurar y mantener el equilibrio de la microbiota, favoreciendo la salud digestiva, inmunitaria y metabólica.' },
+    { icon: temaProbioticos, title: 'Probióticos', href: '/probioticos-alimentacion/', text: 'Los probióticos son microorganismos beneficiosos que ayudan a restaurar y mantener el equilibrio de la microbiota, favoreciendo la salud digestiva, inmunitaria y metabólica.' },
   ]}
   articulosRelacionados={articulos}
 >

@@ -9,7 +9,7 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 interface Causa {
-  icon: string | ImageMetadata;
+  icon?: string | ImageMetadata;
   title: string;
   text: string;
 }
@@ -25,9 +25,11 @@ const { heading, causas } = Astro.props;
   <div class="grid">
     {causas.map((c) => (
       <div class="causa-card">
-        {typeof c.icon === 'string'
-          ? <span class="icon" aria-hidden="true">{c.icon}</span>
-          : <Image class="icon-img" src={c.icon} alt="" width={80} height={80} />}
+        {c.icon && (
+          typeof c.icon === 'string'
+            ? <span class="icon" aria-hidden="true">{c.icon}</span>
+            : <Image class="icon-img" src={c.icon} alt="" width={80} height={80} />
+        )}
         <h3>{c.title}</h3>
         <p>{c.text}</p>
       </div>
