@@ -48,5 +48,25 @@ const url = Astro.url.href;
     font-size: 0.75rem;
     color: var(--color-accent, #c2185b);
     margin-bottom: 0.5rem;
+    background: var(--color-accent-soft);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+  }
+  /* Aproximación al patrón real (cada sección — Qué ha pasado / Por qué
+     importa / Interpretación clínica / Conclusión rápida — va en su propia
+     caja lila redondeada en el original). El cuerpo viene de Markdown sin
+     wrappers por sección, así que de momento se trata como un único panel
+     continuo en vez de 4 cajas separadas — pendiente de un remark/rehype
+     plugin para la réplica exacta. */
+  .cuerpo {
+    background: var(--color-surface-alt);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+  }
+  .cuerpo :global(h3) {
+    color: var(--color-accent);
+  }
+  .cuerpo :global(h3:not(:first-child)) {
+    margin-top: 2rem;
   }
 </style>

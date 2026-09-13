@@ -39,7 +39,7 @@ const relacionados =
         .filter((p) => (p.data as any).category === (entry.data as any).category)
         .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
         .slice(0, 4)
-    : siblings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 4);
+    : siblings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 5);
 
 // Anterior/siguiente por fecha dentro de la misma collection — equivalente
 // a previous_post_link/next_post_link de WordPress (orden cronológico).
