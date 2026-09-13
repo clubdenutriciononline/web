@@ -25,7 +25,10 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout title="Alimentación — Club de Nutrición" description="Artículos sobre alimentación del Club de Nutrición.">
-  <h2>Alimentación</h2>
+  <!-- Corrección SEO (auditoría 2026-09-13): esta página no tenía ningún
+       H1 real (solo el H2 de abajo). Se añade un H1 semántico con el mismo
+       aspecto visual que tenía el H2, sin cambiar el diseño. -->
+  <h1 class="titulo-alimentacion">Alimentación</h1>
 
   <ul class="listado-simple">
     {page.data.map((post) => (
@@ -48,6 +51,14 @@ const { page } = Astro.props;
 </BaseLayout>
 
 <style>
+  /* Mismo aspecto que tenía el H2 anterior (estilo global de h2: mayúsculas,
+     centrado, color de marca) — solo cambia la etiqueta semántica a H1. */
+  .titulo-alimentacion {
+    font-size: clamp(1.4rem, 1.2rem + 1vw, 1.9rem);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-accent);
+  }
   .listado-simple {
     list-style: none;
     padding: 0;
