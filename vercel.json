@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/alimentacion-2",
+      "destination": "/alimentacion/",
+      "permanent": true
+    },
+    {
+      "source": "/alimentacion-2/",
+      "destination": "/alimentacion/",
+      "permanent": true
+    }
+  ]
+}
