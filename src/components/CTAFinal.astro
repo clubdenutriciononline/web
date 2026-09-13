@@ -15,9 +15,10 @@ const { heading, ctaLabel, ctaHref } = Astro.props;
 <style>
   .cta-final {
     text-align: center;
-    padding: 2.5rem 1rem;
+    padding: var(--space-section) 1.5rem;
     background: var(--color-accent-soft, #f7d9e6);
     border-radius: 1rem;
+    margin-block: var(--space-section) 0;
   }
   .cta-final a {
     display: inline-block;

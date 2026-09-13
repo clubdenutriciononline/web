@@ -44,6 +44,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <style is:global>
   :root {
     color-scheme: light;
+
+    /* Ancho de contenido — medido por análisis de píxeles sobre capturas
+       reales de clubdenutricion.es (hormonas y energía, ~394-399px de
+       margen simétrico sobre un viewport de 1920px en ambas), no una
+       estimación visual. La hipótesis inicial de 1240px quedaba por
+       encima del valor real medido. */
+    --container-width: 1140px;
+    --container-padding: 1.25rem;
+
+    /* Paleta y escala tipográfica — provisional hasta el loop visual
+       selectivo página a página (colores/tipos exactos por confirmar). */
+    --color-accent: #c2185b;
+    --color-accent-soft: #f7d9e6;
+    --color-surface: #ffffff;
+    --color-surface-alt: #fdf2f7;
+    --color-text: #2b2b2b;
+
+    --space-section: 3rem;
+    --space-section-mobile: 2rem;
   }
   * {
     box-sizing: border-box;
@@ -51,9 +70,58 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   body {
     margin: 0;
     font-family: system-ui, sans-serif;
-    color: #2b2b2b;
-    background: #fff;
+    color: var(--color-text);
+    /* El original tiene un fondo degradado suave y continuo (rosa muy
+       claro → blanco) a lo largo de toda la página, no bandas de color
+       por sección — confirmado visualmente en las capturas de Hormonas y
+       Energía. */
+    background: linear-gradient(180deg, var(--color-surface-alt) 0%, var(--color-surface) 45%);
+    background-attachment: fixed;
+    line-height: 1.6;
   }
+
+  /* Contenedor global: el fondo de <body>/secciones puede ocupar todo el
+     viewport, pero el contenido de página se limita a --container-width y
+     se centra — igual que en el original (fondos a ancho completo,
+     contenido interior acotado). */
+  main {
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+  }
+
+  /* Utilidad para que una sección con fondo de color/imagen rompa el
+     contenedor y ocupe todo el ancho del viewport, manteniendo su
+     contenido interno alineado al mismo --container-width. Envolver el
+     contenido real de la sección en un único hijo directo. */
+  .full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  .full-bleed > * {
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+  }
+
+  h1, h2, h3 {
+    line-height: 1.25;
+    color: var(--color-text);
+  }
+  h1 {
+    font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  }
+  h2 {
+    font-size: clamp(1.4rem, 1.2rem + 1vw, 1.9rem);
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+
   .skip-link {
     position: absolute;
     left: -9999px;
@@ -65,5 +133,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  @media (max-width: 720px) {
+    :root {
+      --container-padding: 1rem;
+      --space-section: var(--space-section-mobile);
+    }
   }
 </style>
