@@ -5,10 +5,11 @@
 // SVG de niveles hormonales por década dibujado a mano.
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import TableOfContents from '../../components/TableOfContents.astro';
 import Bibliografia from '../../components/Bibliografia.astro';
 import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
 import CTAFinal from '../../components/CTAFinal.astro';
+import Callout from '../../components/Callout.astro';
+import NumberedList from '../../components/NumberedList.astro';
 import { getCollection } from 'astro:content';
 import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
@@ -17,15 +18,6 @@ import sintomasImg from './_images/sintomas.jpg';
 import solucionImg from './_images/solucion.jpg';
 
 const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('perimenopausia')).slice(0, 3);
-
-const tocItems = [
-  { label: 'Definición', anchor: 'definicion' },
-  { label: 'Importancia', anchor: 'importancia' },
-  { label: 'Biología', anchor: 'biologia' },
-  { label: 'Síntomas de alerta', anchor: 'sintomas-de-alerta' },
-  { label: 'Metabolismo', anchor: 'metabolismo' },
-  { label: 'Solución natural', anchor: 'solucion-natural' },
-];
 ---
 
 <BaseLayout
@@ -38,21 +30,27 @@ const tocItems = [
     <Image src={heroImg} alt="Mujer reflexiva junto a la ventana" width={800} height={500} />
   </header>
 
-  <TableOfContents heading="Resumen clave" items={tocItems} />
-  <ul class="resumen-clave">
-    <li>La perimenopausia es una fase de transición hormonal previa a la menopausia en la que los niveles de estrógeno y progesterona comienzan a fluctuar.</li>
-    <li>Puede empezar entre los 35 y 45 años</li>
-    <li>Provoca cambios en energía, peso y estado emocional</li>
-    <li>No es una enfermedad, sino una adaptación del cuerpo</li>
-    <li>Se puede gestionar con hábitos adecuados</li>
-  </ul>
+  <!-- "Resumen clave" en el original es un resumen factual con viñetas
+       (no una navegación con enlaces, a diferencia de Cortisol). -->
+  <section class="resumen-clave-box">
+    <h2>Resumen clave</h2>
+    <ul class="resumen-clave">
+      <li>La perimenopausia es una fase de transición hormonal previa a la menopausia en la que los niveles de estrógeno y progesterona comienzan a fluctuar.</li>
+      <li>Puede empezar entre los 35 y 45 años</li>
+      <li>Provoca cambios en energía, peso y estado emocional</li>
+      <li>No es una enfermedad, sino una adaptación del cuerpo</li>
+      <li>Se puede gestionar con hábitos adecuados</li>
+    </ul>
+  </section>
 
   <section id="definicion">
     <span class="kicker">Definición</span>
     <h2>¿Qué es la perimenopausia?</h2>
     <p>La perimenopausia es el periodo de transición previo a la menopausia, en el que los ovarios comienzan a reducir progresivamente la producción de hormonas, especialmente estrógeno y progesterona.</p>
     <p>Esta fase puede durar entre 4 y 10 años, y se caracteriza por una gran variabilidad hormonal, más que por una simple disminución.</p>
-    <p>No es una caída lineal, sino un proceso de altibajos hormonales. Tu cuerpo suele empezar a enviar señales mucho antes de que desaparezca la menstruación.</p>
+    <Callout variant="lila">
+      <p>No es una caída lineal, sino un proceso de altibajos hormonales. Tu cuerpo suele empezar a enviar señales mucho antes de que desaparezca la menstruación.</p>
+    </Callout>
     <Image src={definicionImg} alt="Mujer reflexiva junto a la ventana" width={700} height={450} />
   </section>
 
@@ -63,7 +61,9 @@ const tocItems = [
     <h2>Por qué importa detectarla a tiempo</h2>
     <p>La perimenopausia no solo afecta al ciclo menstrual. También influye en el metabolismo, el descanso, la salud emocional y el equilibrio hormonal general.</p>
     <p>Muchas veces se confunde con estrés, ansiedad o simplemente "cansancio", lo que retrasa la comprensión del problema y dificulta tomar medidas adecuadas.</p>
-    <p>Aunque el origen es hormonal, los síntomas están muy influenciados por el estilo de vida. Factores como el estrés, la alimentación o el descanso pueden intensificar o aliviar significativamente esta etapa.</p>
+    <Callout variant="lila">
+      <p>Aunque el origen es hormonal, los síntomas están muy influenciados por el estilo de vida. Factores como el estrés, la alimentación o el descanso pueden intensificar o aliviar significativamente esta etapa.</p>
+    </Callout>
     <Image src={importanciaImg} alt="Mujer en casa reflexionando" width={700} height={450} />
   </section>
 
@@ -77,19 +77,44 @@ const tocItems = [
     <!-- Gráfico SVG de niveles hormonales por década — réplica del original:
          ejes Alto/Medio/Bajo, décadas 20s/30s/40s, curvas de Estrógeno y
          Progesterona marcando la fase de perimenopausia/menopausia. -->
-    <svg viewBox="0 0 400 200" role="img" aria-label="Niveles de estrógeno y progesterona por década de vida">
-      <line x1="40" y1="20" x2="40" y2="180" stroke="#ccc" />
-      <line x1="40" y1="180" x2="380" y2="180" stroke="#ccc" />
-      <text x="10" y="30" font-size="10">Alto</text>
-      <text x="10" y="100" font-size="10">Medio</text>
-      <text x="10" y="175" font-size="10">Bajo</text>
-      <text x="60" y="195" font-size="10">20s</text>
-      <text x="200" y="195" font-size="10">30s</text>
-      <text x="340" y="195" font-size="10">40s</text>
-      <polyline points="60,40 200,60 340,150" fill="none" stroke="#c2185b" stroke-width="2" />
-      <polyline points="60,50 200,90 340,170" fill="none" stroke="#7b1fa2" stroke-width="2" />
+    <svg viewBox="0 0 420 220" role="img" aria-label="Niveles de estrógeno y progesterona por década de vida" class="hormone-chart">
+      <defs>
+        <linearGradient id="estrogenoFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c2185b" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="#c2185b" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="progesteronaFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7b1fa2" stop-opacity="0.2" />
+          <stop offset="100%" stop-color="#7b1fa2" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <line x1="50" y1="20" x2="50" y2="180" stroke="#ddd" />
+      <line x1="50" y1="180" x2="390" y2="180" stroke="#ddd" />
+      <text x="14" y="30" font-size="11" fill="#888">Alto</text>
+      <text x="8" y="103" font-size="11" fill="#888">Medio</text>
+      <text x="14" y="176" font-size="11" fill="#888">Bajo</text>
+      <text x="80" y="200" font-size="11" fill="#888">20s</text>
+      <text x="210" y="200" font-size="11" fill="#888">30s</text>
+      <text x="340" y="200" font-size="11" fill="#888">40s</text>
+
+      <path d="M70,45 C130,50 160,55 210,70 C260,88 300,110 360,155 L360,180 L70,180 Z" fill="url(#estrogenoFill)" />
+      <path d="M70,45 C130,50 160,55 210,70 C260,88 300,110 360,155" fill="none" stroke="#c2185b" stroke-width="2.5" stroke-linecap="round" />
+
+      <path d="M70,55 C130,65 160,80 210,100 C260,120 300,140 360,170 L360,180 L70,180 Z" fill="url(#progesteronaFill)" />
+      <path d="M70,55 C130,65 160,80 210,100 C260,120 300,140 360,170" fill="none" stroke="#7b1fa2" stroke-width="2.5" stroke-linecap="round" />
+
+      <circle cx="70" cy="45" r="3.5" fill="#c2185b" />
+      <circle cx="210" cy="70" r="3.5" fill="#c2185b" />
+      <circle cx="360" cy="155" r="3.5" fill="#c2185b" />
+      <circle cx="70" cy="55" r="3.5" fill="#7b1fa2" />
+      <circle cx="210" cy="100" r="3.5" fill="#7b1fa2" />
+      <circle cx="360" cy="170" r="3.5" fill="#7b1fa2" />
     </svg>
-    <p class="leyenda">Estrógeno · Progesterona — Fase de perimenopausia / menopausia</p>
+    <p class="leyenda">
+      <span class="leyenda-item"><span class="dot" style="background:#c2185b"></span>Estrógeno</span>
+      <span class="leyenda-item"><span class="dot" style="background:#7b1fa2"></span>Progesterona</span>
+      — Fase de perimenopausia / menopausia
+    </p>
 
     <h4>Fluctuaciones de estrógeno</h4>
     <p>Los niveles no caen en línea recta, sino con picos y valles que explican los síntomas variables día a día.</p>
@@ -131,7 +156,9 @@ const tocItems = [
     <p>Aumenta la tendencia a acumular grasa, especialmente en la zona abdominal.</p>
     <h4>⚡ Mayor impacto del cortisol</h4>
     <p>El estrés tiene consecuencias más profundas sobre el peso y el bienestar.</p>
-    <p><strong>No es falta de disciplina.</strong> Es una adaptación fisiológica. El cuerpo responde a cambios hormonales reales que afectan directamente a cómo almacena y utiliza la energía.</p>
+    <Callout variant="lila">
+      <p><strong>No es falta de disciplina.</strong> Es una adaptación fisiológica. El cuerpo responde a cambios hormonales reales que afectan directamente a cómo almacena y utiliza la energía.</p>
+    </Callout>
   </section>
 
   <hr />
@@ -140,14 +167,18 @@ const tocItems = [
     <span class="kicker">Solución natural</span>
     <h2>Cómo abordarla de forma natural</h2>
     <p>Adoptar ciertos hábitos puede marcar una gran diferencia en cómo se vive esta etapa.</p>
-    <ol>
-      <li><strong>Entrenamiento de fuerza</strong> para mantener la masa muscular y activar el metabolismo</li>
-      <li><strong>Alimentación rica en proteínas</strong> y micronutrientes esenciales para el equilibrio hormonal</li>
-      <li><strong>Control del estrés</strong> mediante técnicas de respiración, meditación o mindfulness</li>
-      <li><strong>Mejora del descanso</strong> con rutinas nocturnas que favorezcan un sueño reparador</li>
-      <li><strong>Exposición a luz natural</strong> para regular el ritmo circadiano y el estado de ánimo</li>
-    </ol>
-    <p>El objetivo no es "volver atrás", sino ayudar al cuerpo a adaptarse mejor a esta nueva etapa.</p>
+    <NumberedList
+      items={[
+        { title: 'Entrenamiento de fuerza', text: 'para mantener la masa muscular y activar el metabolismo' },
+        { title: 'Alimentación rica en proteínas', text: 'y micronutrientes esenciales para el equilibrio hormonal' },
+        { title: 'Control del estrés', text: 'mediante técnicas de respiración, meditación o mindfulness' },
+        { title: 'Mejora del descanso', text: 'con rutinas nocturnas que favorezcan un sueño reparador' },
+        { title: 'Exposición a luz natural', text: 'para regular el ritmo circadiano y el estado de ánimo' },
+      ]}
+    />
+    <Callout variant="lila">
+      <p>El objetivo no es "volver atrás", sino ayudar al cuerpo a adaptarse mejor a esta nueva etapa.</p>
+    </Callout>
     <Image src={solucionImg} alt="Mujer meditando en la naturaleza a la luz de la luna" width={700} height={450} />
   </section>
 
@@ -172,11 +203,47 @@ const tocItems = [
     font-size: 0.75rem;
     color: var(--color-accent, #c2185b);
   }
+  .hormone-chart {
+    max-width: 480px;
+    margin: 0 auto;
+    display: block;
+  }
   .leyenda {
     font-size: 0.85rem;
     color: #666;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .leyenda-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 999px;
+    display: inline-block;
+  }
+  .resumen-clave-box {
+    background: var(--color-surface-alt);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-block: 1.5rem;
   }
   .resumen-clave {
-    margin: 1rem 0 2rem;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.5rem 1.5rem;
+  }
+  .resumen-clave li::before {
+    content: '✔ ';
+    color: var(--color-accent);
   }
 </style>

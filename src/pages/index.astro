@@ -21,7 +21,7 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf()
 >
   <section class="hero">
     <div class="hero-copy">
-      <h1>Entiende tu cuerpo, equilibra tus hormonas y recupera tu energía</h1>
+      <h1>Entiende tu cuerpo, <span class="highlight">equilibra tus hormonas</span> y recupera <span class="highlight">tu energía</span></h1>
       <p class="hero-subtitle">Nutrición y bienestar femenino <strong>+35</strong> sin dietas extremas. Aprende a nutrirte de forma inteligente para sentirte plena en cada etapa.</p>
       <a class="hero-cta" href="/lm-5-pasos-optin/">Descargar guía gratuita</a>
       <a class="hero-cta hero-cta-secundario" href="/blog/">Explorar artículos</a>
@@ -74,6 +74,9 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf()
   }
   .hero-copy {
     flex: 1 1 320px;
+  }
+  .hero-copy h1 .highlight {
+    color: var(--color-nav-text, #e08325);
   }
   .hero-image {
     flex: 1 1 320px;

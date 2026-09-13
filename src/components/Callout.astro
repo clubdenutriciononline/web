@@ -1,0 +1,60 @@
+---
+// Caja de color destacado ("callout"), confirmada visualmente en Perimenopausia
+// (lila), Cortisol (rosa + ámbar de aviso). Reutilizable en cualquier página
+// que necesite resaltar una frase clave dentro del cuerpo de texto.
+interface Props {
+  variant?: 'lila' | 'rosa' | 'ambar';
+  icon?: string;
+}
+const { variant = 'lila', icon } = Astro.props;
+---
+
+<div class:list={['callout', `callout-${variant}`]}>
+  {icon && <span class="callout-icon" aria-hidden="true">{icon}</span>}
+  <div class="callout-content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .callout {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    border-radius: 0.85rem;
+    padding: 1.1rem 1.4rem;
+    margin-block: 1.25rem;
+    font-size: 0.97rem;
+    line-height: 1.55;
+  }
+  .callout-icon {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    line-height: 1.55;
+  }
+  .callout-content {
+    min-width: 0;
+  }
+  .callout-content :global(p) {
+    margin: 0;
+  }
+  .callout-content :global(p + p) {
+    margin-top: 0.6rem;
+  }
+
+  .callout-lila {
+    background: #f2e9fa;
+    color: #4a2f66;
+    border: 1px solid #e2d0f2;
+  }
+  .callout-rosa {
+    background: var(--color-accent-soft, #f7d9e6);
+    color: #7a1f45;
+    border: 1px solid #f0bcd3;
+  }
+  .callout-ambar {
+    background: #fdf3d8;
+    color: #7a5b12;
+    border: 1px solid #f3ddaa;
+  }
+</style>

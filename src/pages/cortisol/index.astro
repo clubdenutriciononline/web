@@ -10,6 +10,8 @@ import TableOfContents from '../../components/TableOfContents.astro';
 import Bibliografia from '../../components/Bibliografia.astro';
 import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
 import CTAFinal from '../../components/CTAFinal.astro';
+import Callout from '../../components/Callout.astro';
+import NumberedList from '../../components/NumberedList.astro';
 import { getCollection } from 'astro:content';
 import heroImg from './_images/hero.jpg';
 import queEsImg from './_images/que-es.jpg';
@@ -47,7 +49,9 @@ const tocItems = [
     <span class="kicker">¿Qué es?</span>
     <h2>¿Qué es el cortisol y por qué es importante?</h2>
     <p>El cortisol es una hormona producida por las glándulas suprarrenales en respuesta al estrés. Su función principal es ayudarte a reaccionar ante situaciones que requieren energía inmediata.</p>
-    <p>En condiciones normales el cortisol sigue un ritmo diario: alto por la mañana para activarte, y bajo por la noche para facilitar el descanso. El problema aparece cuando este equilibrio se rompe.</p>
+    <Callout variant="rosa">
+      <p>En condiciones normales el cortisol sigue un ritmo diario: alto por la mañana para activarte, y bajo por la noche para facilitar el descanso. El problema aparece cuando este equilibrio se rompe.</p>
+    </Callout>
     <Image src={queEsImg} alt="Diagrama del eje hipotálamo-pituitaria-adrenal" width={700} height={450} />
 
     <!-- Diagrama de flujo del eje HPA (CSS puro) — réplica del original -->
@@ -75,7 +79,9 @@ const tocItems = [
   <section id="sintomas">
     <span class="kicker">Síntomas</span>
     <h2>Síntomas de cortisol alto en mujeres</h2>
-    <p>Tu cuerpo muestra señales de cortisol elevado mucho antes de que aparezcan problemas más serios. No suelen llegar de golpe, sino de forma progresiva.</p>
+    <Callout variant="rosa">
+      <p>Tu cuerpo muestra señales de cortisol elevado mucho antes de que aparezcan problemas más serios. No suelen llegar de golpe, sino de forma progresiva.</p>
+    </Callout>
     <Image src={sintomasImg} alt="Mujer con fatiga sentada en el sofá por la noche" width={700} height={450} />
     <ul>
       <li>Fatiga constante, incluso tras dormir</li>
@@ -93,14 +99,24 @@ const tocItems = [
     <span class="kicker">Metabolismo</span>
     <h2>Cómo afecta el cortisol al peso y al metabolismo</h2>
     <p>El cortisol no solo está relacionado con el estrés, también tiene un impacto directo en el metabolismo. Cuando está elevado:</p>
-    <h4>Glucosa en sangre</h4>
-    <p>Aumenta los niveles de glucosa y estimula la liberación de insulina</p>
-    <h4>Grasa abdominal</h4>
-    <p>Favorece el almacenamiento de grasa, especialmente en el abdomen</p>
-    <h4>Interferencia hormonal</h4>
-    <p>Altera otras hormonas clave dificultando la pérdida de peso</p>
-    <h4>Resistencia metabólica</h4>
-    <p>El metabolismo se vuelve menos eficiente incluso con dieta adecuada</p>
+    <div class="metabolismo-grid">
+      <div class="metabolismo-item">
+        <h4>Glucosa en sangre</h4>
+        <p>Aumenta los niveles de glucosa y estimula la liberación de insulina</p>
+      </div>
+      <div class="metabolismo-item">
+        <h4>Grasa abdominal</h4>
+        <p>Favorece el almacenamiento de grasa, especialmente en el abdomen</p>
+      </div>
+      <div class="metabolismo-item">
+        <h4>Interferencia hormonal</h4>
+        <p>Altera otras hormonas clave dificultando la pérdida de peso</p>
+      </div>
+      <div class="metabolismo-item">
+        <h4>Resistencia metabólica</h4>
+        <p>El metabolismo se vuelve menos eficiente incluso con dieta adecuada</p>
+      </div>
+    </div>
   </section>
 
   <hr />
@@ -108,26 +124,36 @@ const tocItems = [
   <section id="causas-y-soluciones">
     <span class="kicker">Causas y soluciones</span>
     <h2>Causas más comunes del cortisol alto</h2>
-    <p>El cortisol alto no siempre viene del estrés emocional, sino también de hábitos diarios que parecen inofensivos. No es un único factor, sino la suma de varios.</p>
-    <ol>
-      <li><strong>Estrés crónico</strong> — trabajo, preocupaciones y carga mental sostenida</li>
-      <li><strong>Falta de sueño</strong> o descanso de mala calidad</li>
-      <li><strong>Consumo excesivo de cafeína</strong> — café, bebidas energéticas, té negro</li>
-      <li><strong>Ejercicio muy intenso</strong> sin suficiente recuperación</li>
-      <li><strong>Dietas demasiado restrictivas</strong> que generan estrés metabólico</li>
-    </ol>
+    <Callout variant="rosa">
+      <p>El cortisol alto no siempre viene del estrés emocional, sino también de hábitos diarios que parecen inofensivos. No es un único factor, sino la suma de varios.</p>
+    </Callout>
+    <NumberedList
+      items={[
+        { title: 'Estrés crónico', text: 'trabajo, preocupaciones y carga mental sostenida' },
+        { title: 'Falta de sueño', text: 'o descanso de mala calidad' },
+        { title: 'Consumo excesivo de cafeína', text: 'café, bebidas energéticas, té negro' },
+        { title: 'Ejercicio muy intenso', text: 'sin suficiente recuperación' },
+        { title: 'Dietas demasiado restrictivas', text: 'que generan estrés metabólico' },
+      ]}
+    />
 
     <h2>Cómo bajar el cortisol de forma natural</h2>
-    <p>El cortisol no se elimina, pero sí puede volver a su equilibrio natural. No se trata de cambios radicales, sino de recuperar el equilibrio poco a poco.</p>
-    <ol>
-      <li>Prioriza el descanso y mantén horarios regulares de sueño</li>
-      <li>Exponte a la luz natural por la mañana para regular el ritmo circadiano</li>
-      <li>Reduce el consumo de estimulantes, especialmente por la tarde</li>
-      <li>Sigue una alimentación equilibrada — evita los extremos restrictivos</li>
-      <li>Incorpora respiración consciente, caminar y momentos de desconexión diaria</li>
-    </ol>
+    <Callout variant="rosa">
+      <p>El cortisol no se elimina, pero sí puede volver a su equilibrio natural. No se trata de cambios radicales, sino de recuperar el equilibrio poco a poco.</p>
+    </Callout>
+    <NumberedList
+      items={[
+        { text: 'Prioriza el descanso y mantén horarios regulares de sueño' },
+        { text: 'Exponte a la luz natural por la mañana para regular el ritmo circadiano' },
+        { text: 'Reduce el consumo de estimulantes, especialmente por la tarde' },
+        { text: 'Sigue una alimentación equilibrada — evita los extremos restrictivos' },
+        { text: 'Incorpora respiración consciente, caminar y momentos de desconexión diaria' },
+      ]}
+    />
     <Image src={solucionesImg} alt="Mujer caminando en naturaleza al amanecer" width={700} height={450} />
-    <p>Si los síntomas son persistentes o severos, consulta con tu médico o endocrinólogo. Esta guía es orientativa y no reemplaza el consejo médico profesional.</p>
+    <Callout variant="ambar" icon="⚠️">
+      <p>Si los síntomas son persistentes o severos, consulta con tu médico o endocrinólogo. Esta guía es orientativa y no reemplaza el consejo médico profesional.</p>
+    </Callout>
   </section>
 
   <Bibliografia
@@ -182,5 +208,22 @@ const tocItems = [
     text-align: center;
     font-size: 0.85rem;
     color: #666;
+  }
+  .metabolismo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .metabolismo-item {
+    background: var(--color-surface-alt);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+  }
+  .metabolismo-item h4 {
+    margin-top: 0;
+  }
+  .metabolismo-item p {
+    margin-bottom: 0;
   }
 </style>

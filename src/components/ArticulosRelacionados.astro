@@ -17,14 +17,21 @@ const { heading = 'Artículos relacionados', articulos } = Astro.props;
   <section class="articulos-relacionados">
     <h2>{heading}</h2>
     <div class="grid">
-      {articulos.map((post) => (
-        <a class="post-card" href={`/${post.data.slug ?? post.id}/`}>
-          <Image src={post.data.image} alt={post.data.imageAlt} width={320} height={200} />
-          <span class="categoria">{'category' in post.data ? post.data.category : 'Radar de Salud'}</span>
-          <h3>{post.data.title}</h3>
-          <span class="leer-mas">Leer artículo »</span>
-        </a>
-      ))}
+      {articulos.map((post) => {
+        const categoria = 'category' in post.data ? (post.data.category as string) : 'Radar de Salud';
+        const categoriaLabel = categoria.split('/').pop()?.replace(/-/g, ' ') ?? categoria;
+        return (
+          <a class="post-card" href={`/${post.data.slug ?? post.id}/`}>
+            <div class="post-image">
+              <Image src={post.data.image} alt={post.data.imageAlt} width={320} height={200} />
+              <span class="badge">{categoriaLabel}</span>
+            </div>
+            <img class="avatar" src="/images/site/logo.png" alt="" width="32" height="32" />
+            <h3>{post.data.title}</h3>
+            <span class="leer-mas">Leer artículo »</span>
+          </a>
+        );
+      })}
     </div>
   </section>
 )}
@@ -40,9 +47,34 @@ const { heading = 'Artículos relacionados', articulos } = Astro.props;
     text-decoration: none;
     color: inherit;
   }
-  .categoria {
-    font-size: 0.75rem;
+  .post-image {
+    position: relative;
+  }
+  .post-image :global(img) {
+    display: block;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  .badge {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background: var(--color-accent, #c2185b);
+    color: #fff;
     text-transform: uppercase;
-    color: var(--color-accent, #c2185b);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+  }
+  .avatar {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    object-fit: cover;
+    margin: 0.6rem 0 0.3rem;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
   }
 </style>

@@ -6,6 +6,8 @@
 // artículos relacionados (no 3).
 import { getCollection } from 'astro:content';
 import SubpageBlogPost from '../../layouts/SubpageBlogPost.astro';
+import Callout from '../../components/Callout.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
 import heroImg from './_images/hero.jpg';
 import comoAfectaImg from './_images/como-afecta.jpg';
 import infografiaImg from './_images/infografia.jpg';
@@ -46,9 +48,11 @@ const faqItems = [
     <p>En este artículo entenderás qué es la inflamación hormonal, cuáles son sus causas más habituales, cómo identificar sus síntomas y qué puedes hacer para reducirla de forma efectiva.</p>
 
     <h3>Qué vas a aprender</h3>
-    <p>En este artículo descubrirás qué es la inflamación hormonal y por qué puede afectar a tu bienestar más de lo que parece.</p>
-    <p>Verás cuáles son sus causas más frecuentes, cómo identificar sus síntomas y de qué manera influye en la salud general.</p>
-    <p>Además, encontrarás estrategias prácticas y naturales para ayudarte a reducirla y recuperar el equilibrio hormonal.</p>
+    <Callout variant="lila">
+      <p>En este artículo descubrirás qué es la inflamación hormonal y por qué puede afectar a tu bienestar más de lo que parece.</p>
+      <p>Verás cuáles son sus causas más frecuentes, cómo identificar sus síntomas y de qué manera influye en la salud general.</p>
+      <p>Además, encontrarás estrategias prácticas y naturales para ayudarte a reducirla y recuperar el equilibrio hormonal.</p>
+    </Callout>
   </section>
 
   <section id="que-es">
@@ -86,25 +90,20 @@ const faqItems = [
     <h2>Soluciones</h2>
     <p>Cómo reducir la inflamación hormonal de manera natural y efectiva</p>
 
-    <h3>Alimentación antiinflamatoria</h3>
-    <p>La dieta juega un papel clave. Aumentar el consumo de alimentos frescos como frutas, verduras, grasas saludables y proteínas de calidad puede ayudar a reducir los procesos inflamatorios. Al mismo tiempo, es recomendable limitar los ultraprocesados, el azúcar añadido y las harinas refinadas.</p>
-
-    <h3>Apoyo con suplementos</h3>
-    <p>En algunos casos, ciertos suplementos pueden ser un apoyo adicional, como los ácidos grasos omega-3, los probióticos o algunas vitaminas. Su uso debe adaptarse a las necesidades individuales.</p>
-
-    <h3>Gestión del estrés</h3>
-    <p>El estrés crónico es uno de los principales factores que favorecen la inflamación hormonal.</p>
-    <p>Técnicas como la meditación, la respiración consciente o el yoga pueden ayudar a regular la respuesta del sistema nervioso.</p>
-
-    <h3>Sueño reparador</h3>
-    <p>Dormir entre 7 y 9 horas de calidad es esencial para la regulación hormonal. Mantener horarios regulares y una buena higiene del sueño favorece la recuperación del organismo.</p>
-
-    <h3>Actividad física regular</h3>
-    <p>El ejercicio moderado contribuye a reducir la inflamación y mejorar la sensibilidad hormonal.</p>
-    <p>Caminar, entrenar fuerza o practicar actividades aeróbicas suaves pueden ser opciones efectivas.</p>
-
-    <h3>Evitar hábitos perjudiciales</h3>
-    <p>Reducir o evitar el consumo de alcohol y tabaco también es clave, ya que ambos pueden aumentar los procesos inflamatorios y afectar el equilibrio hormonal.</p>
+    <!-- TODO: sustituir los emoji por los iconos/ilustraciones reales del
+         original (pendiente de sourcing, igual que las 18 subpáginas). -->
+    <SolucionesList
+      heading=""
+      variant="card"
+      soluciones={[
+        { icon: '🥗', title: 'Alimentación antiinflamatoria', body: 'La dieta juega un papel clave. Aumentar el consumo de alimentos frescos como frutas, verduras, grasas saludables y proteínas de calidad puede ayudar a reducir los procesos inflamatorios. Al mismo tiempo, es recomendable limitar los ultraprocesados, el azúcar añadido y las harinas refinadas.' },
+        { icon: '💊', title: 'Apoyo con suplementos', body: 'En algunos casos, ciertos suplementos pueden ser un apoyo adicional, como los ácidos grasos omega-3, los probióticos o algunas vitaminas. Su uso debe adaptarse a las necesidades individuales.' },
+        { icon: '🧘‍♀️', title: 'Gestión del estrés', body: 'El estrés crónico es uno de los principales factores que favorecen la inflamación hormonal. Técnicas como la meditación, la respiración consciente o el yoga pueden ayudar a regular la respuesta del sistema nervioso.' },
+        { icon: '😴', title: 'Sueño reparador', body: 'Dormir entre 7 y 9 horas de calidad es esencial para la regulación hormonal. Mantener horarios regulares y una buena higiene del sueño favorece la recuperación del organismo.' },
+        { icon: '🏃‍♀️', title: 'Actividad física regular', body: 'El ejercicio moderado contribuye a reducir la inflamación y mejorar la sensibilidad hormonal. Caminar, entrenar fuerza o practicar actividades aeróbicas suaves pueden ser opciones efectivas.' },
+        { icon: '🚭', title: 'Evitar hábitos perjudiciales', body: 'Reducir o evitar el consumo de alcohol y tabaco también es clave, ya que ambos pueden aumentar los procesos inflamatorios y afectar el equilibrio hormonal.' },
+      ]}
+    />
   </section>
 
   <p slot="conclusion">

@@ -1,6 +1,8 @@
 ---
 // Botones de compartir — presentes en artículos de Radar de Salud,
 // ausentes en artículos de Blog normal (diferencia real confirmada).
+// El original los muestra como iconos circulares de color; se reproduce
+// aquí con SVG inline en vez de texto plano.
 interface Props {
   url: string;
   title: string;
@@ -8,17 +10,61 @@ interface Props {
 const { url, title } = Astro.props;
 const encodedUrl = encodeURIComponent(url);
 const encodedTitle = encodeURIComponent(title);
+
+const links = [
+  {
+    label: 'Facebook',
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+    color: '#3b5998',
+    path: 'M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z',
+  },
+  {
+    label: 'X',
+    href: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
+    color: '#000',
+    path: 'M18.9 3H22l-7.6 8.7L23 21h-6.6l-5.2-6.4L5.3 21H2.2l8.1-9.3L1.6 3h6.8l4.7 5.9L18.9 3Z',
+  },
+  {
+    label: 'WhatsApp',
+    href: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
+    color: '#25d366',
+    path: 'M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1 .1-1.1-.1-.2-.3-.2-.5-.3Z',
+  },
+  {
+    label: 'Email',
+    href: `mailto:?subject=${encodedTitle}&body=${encodedUrl}`,
+    color: '#6b7280',
+    path: 'M2 4h20v16H2V4Zm2 2.3V18h16V6.3l-8 6.2-8-6.2ZM4.4 5l7.6 5.9L19.6 5H4.4Z',
+  },
+];
 ---
 
 <div class="share-buttons">
-  <a href={`https://wa.me/?text=${encodedTitle}%20${encodedUrl}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-  <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noopener noreferrer">Facebook</a>
-  <a href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`} target="_blank" rel="noopener noreferrer">X</a>
+  {links.map((l) => (
+    <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`Compartir en ${l.label}`} style={`--share-color:${l.color}`}>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" aria-hidden="true"><path d={l.path} /></svg>
+    </a>
+  ))}
 </div>
 
 <style>
   .share-buttons {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.6rem;
+    margin-block: 1rem;
+  }
+  .share-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background: var(--share-color, var(--color-accent, #c2185b));
+    transition: transform 0.15s ease;
+  }
+  .share-buttons a:hover,
+  .share-buttons a:focus-visible {
+    transform: translateY(-2px);
   }
 </style>
