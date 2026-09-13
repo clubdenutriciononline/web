@@ -25,10 +25,6 @@ nutricion:
 sources: []
 draft: false
 ---
-## Receta: Salmón al Horno con Espárragos
-
-![Receta: Salmón al Horno con Espárragos](./cover.jpg)
-
 Te damos todas las claves para realizar esta receta de Salmón al Horno con Espárragos, ideal para una cena deliciosa o un almuerzo acompañado de hojas verdes en abundancia. ¿Te atreves? Atento a la siguiente información para elaborarla:
 
 ### Ingredientes:

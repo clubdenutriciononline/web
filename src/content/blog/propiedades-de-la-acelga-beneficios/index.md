@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# PROPIEDADES DE LA ACELGA
-
 ## Las propiedades de la acelga para el organismo
 
 ![](./imagen-1.jpg)La acelga es una hortaliza de hoja verde originaria en el Mediterráneo con multitud de propiedades. Esta hortaliza se cultiva durante todo el año, pero la mejor época es desde otoño a primavera. La acelga proviene de la misma familia que la remolacha, betarrada y el betabel, la diferencia es que en la acelga lo que se aprovecha es la hoja y no la raíz.

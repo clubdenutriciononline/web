@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-## QUÉ ES EL COACHING NUTRICIONAL
-
 El coaching nutricional es un enfoque de asesoramiento personalizado que se centra en ayudar a las personas a mejorar su alimentación y su estilo de vida a través de un proceso de coaching individualizado. El objetivo principal del coaching nutricional es mejorar la salud y el bienestar general de los clientes mediante la implementación de cambios sostenibles y a largo plazo en su alimentación y hábitos de vida.
 
 Se basa en la idea de que la alimentación y el estilo de vida son fundamentales para la salud y el bienestar, y que las personas pueden mejorar su salud y su calidad de vida al hacer cambios positivos en su alimentación y hábitos de vida. El coaching nutricional implica trabajar con un coach nutricional certificado que guía al cliente en el proceso de identificar sus objetivos de salud y bienestar, y luego trabaja con ellos para crear un plan personalizado que incluya cambios en la alimentación, la actividad física y otros aspectos del estilo de vida.

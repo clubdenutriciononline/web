@@ -25,10 +25,6 @@ nutricion:
 sources: []
 draft: false
 ---
-## Receta: Ensalada de Pollo y Aguacate
-
-![](./cover.jpg)
-
 Esta receta es ideal para almuerzos o cenas completas, recuerda que cada comida debe estar compuesta por una variedad equilibrada de nutrientes que cumplan con los requerimientos keto. Veamos cómo elaborar esta receta keto de Ensalada de Pollo y Aguacate:
 
 ### Ingredientes:

@@ -15,10 +15,6 @@ sources: []
 draft: false
 ---
 
-# ALIMENTOS RICOS EN HIERRO
-
-## Información y tabla de alimentos ricos en hierro
-
 Hoy vamos a hablar de cuáles son los alimentos ricos en hierro para mantener una óptima salud. Este elemento es básico para el correcto funcionamiento de nuestro organismo. Tiene especial incidencia en el transporte de oxígeno a diferentes partes del organismo ya que forma parte de la hemoglobina. Forma parte de la respiración celular y ayuda a un buen sistema inmunitario.
 
 ![](./imagen-1.jpg)

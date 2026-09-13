@@ -14,8 +14,6 @@ seo:
 sources: []
 draft: false
 ---
-## Dieta Keto: todo lo que necesitas saber para empezar
-
 ¡Bienvenido a nuestra completa guía sobre la dieta keto! También conocida como dieta baja en carbohidratos y alta en grasas, este plan de alimentación ha ganado popularidad en los últimos años por sus posibles beneficios para perder peso y otras ventajas para la salud. En este artículo, trataremos todo lo que necesitas saber para iniciarte en la dieta keto, incluyendo qué es, sus beneficios, los alimentos que debes comer y evitar, planes de comidas, consejos y riesgos potenciales. Así que, si estás interesado en adoptar una dieta ceto, ¡sigue leyendo para saber más!
 
 ## ¿Qué es la dieta keto?

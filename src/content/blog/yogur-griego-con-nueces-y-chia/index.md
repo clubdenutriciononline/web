@@ -25,8 +25,6 @@ nutricion:
 sources: []
 draft: false
 ---
-## Yogur Griego con Nueces y Chía
-
 ![](./imagen-1.jpg)
 
 Veamos cómo realizar esta sencilla y rápida receta para desayuno y cena ligera, con algunas recomendaciones adicionales.

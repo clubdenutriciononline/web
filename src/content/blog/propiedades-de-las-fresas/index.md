@@ -15,10 +15,6 @@ sources: []
 draft: false
 ---
 
-# PROPIEDADES DE LAS FRESAS
-
-## Beneficios y propiedades de las fresas
-
 **Propiedades de las fresas** o frutillas. La fresa es una fruta que pertenece a la familia de las rosas, y se encuentra en todo el mundo, gracias a la fuerza y resistencia de su planta. Hay distintas variedades, y aunque su momento ideal es el verano, algunas de ellas también dan frutos en invierno.
 
 Las fresas no solo son deliciosas, sino que también están repletas de nutrientes esenciales y ofrecen numerosos beneficios para la salud. En este artículo, exploraremos en detalle las propiedades de las fresas, su composición nutricional y cómo pueden mejorar tu bienestar. Acompáñanos a descubrir por qué deberías incluir este fruto rojo en tu dieta diaria.

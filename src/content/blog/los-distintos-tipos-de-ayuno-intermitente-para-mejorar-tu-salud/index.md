@@ -14,8 +14,6 @@ seo:
 sources: []
 draft: false
 ---
-# Los Distintos Tipos de Ayuno Intermitente para Mejorar tu Salud
-
 ## Introducción
 
 El ayuno intermitente se ha hecho cada vez más popular en los últimos años como forma de mejorar la salud y el bienestar general. Este tipo de dieta consiste en alternar períodos de comida con períodos de ayuno, y se ha demostrado que tiene numerosos beneficios para la salud. En este artículo, exploraremos los distintos tipos de ayuno intermitente y cómo pueden utilizarse para mejorar tu salud. Tanto si quieres perder peso, mejorar tu metabolismo o reducir la inflamación, existe un método de ayuno intermitente que puede funcionar para ti. ¡Sumerjámonos y descubramos los distintos tipos de ayuno intermitente y sus beneficios!

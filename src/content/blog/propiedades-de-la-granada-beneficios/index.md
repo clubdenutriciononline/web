@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# Propiedades de la Granada - Beneficios
-
 La granada es una fruta que ha sido valorada desde la antigüedad por sus numerosos beneficios para la salud. En este artículo, exploraremos las propiedades de la granada y cómo puede mejorar tu bienestar. Basado en los últimos estudios, entenderás por qué esta fruta debe ser una parte esencial de tu dieta.
 
 ![propiedades de la granada - beneficios](./imagen-1.jpg)

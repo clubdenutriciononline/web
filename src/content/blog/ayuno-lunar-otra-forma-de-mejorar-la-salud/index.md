@@ -14,8 +14,6 @@ seo:
 sources: []
 draft: false
 ---
-## Ayuno Lunar: Otra Forma De Mejorar La Salud
-
 El ayuno lunar es una práctica que se basa en los ciclos de la luna, una costumbre ancestral que muchas culturas han adoptado por sus múltiples beneficios para la salud. Este artículo explorará en qué consiste el ayuno lunar, sus beneficios y cómo puede integrarse en una rutina de bienestar.
 
 ![Ayuno Lunar: Otra Forma De Mejorar La Salud](./cover.jpg)

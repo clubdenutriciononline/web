@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-## RECETA PAN DE PROTEINAS
-
 ## Receta pan de proteínas con efecto quemagrasas.
 
 Hoy te traigo una sencilla receta pan de proteínas para que puedas hacer en casa, de manera muy fácil, este pan, sin casi nada de carbohidratos. Además, debido a su composición, tiene efecto quemagrasas. Una gran alternativa al pan industrial, muy bueno, sano y con grandes beneficios nutricionales. Además Apto para dieta Keto.

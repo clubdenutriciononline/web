@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# PROPIEDADES DE LAS MANZANAS
-
 ## Beneficios y propiedades de las manzanas
 
 Propiedades de las manzanas. La manzana es una fruta con muchas propiedades beneficiosas para el organismo. Además contiene muy pocas calorías y se puede tomar de diferentes formas. Las manzanas están disponibles en una amplia variedad de tipos, y es fácil encontrarlas a lo largo de todo el año.

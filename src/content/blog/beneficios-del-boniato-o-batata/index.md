@@ -14,8 +14,6 @@ seo:
 sources: []
 draft: false
 ---
-# BENEFICIOS DEL BONIATO
-
 Propiedades y beneficios del boniato o batata. Aunque muchos creen que la batata es de la misma familia que las papas, no tienen relación, la batata es una raíz de sabor dulce, mientras que las papas son tubérculos. Hay boniatos de diferentes formas y colores, lo que les da también diferente sabor y propiedades. Se puede encontrar boniato blanco, rojo o amarillo. La batata tiene gran densidad nutritiva, incluso más que la papa. Veremos su composición bajo la foto.
 
 ![](./imagen-1.jpg)

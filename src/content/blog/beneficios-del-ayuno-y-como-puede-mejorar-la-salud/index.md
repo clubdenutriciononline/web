@@ -14,8 +14,6 @@ seo:
 sources: []
 draft: false
 ---
-# Beneficios del Ayuno y Cómo Puede Mejorar la Salud
-
 El ayuno ha sido una práctica utilizada durante siglos por diversas culturas y religiones. Sin embargo, en los últimos años, ha ganado popularidad en el ámbito de la salud y el bienestar debido a los múltiples beneficios que puede ofrecer. En este artículo, exploraremos los beneficios del ayuno y cómo puede mejorar la salud, respaldados por los estudios más recientes.
 
 ![beneficios del ayuno y cómo puede mejorar la salud](./cover.jpg)

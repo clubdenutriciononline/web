@@ -25,8 +25,6 @@ nutricion:
 sources: []
 draft: false
 ---
-## Receta keto: Tacos de Carne Molida y Queso
-
 ![Receta keto Tacos de Carne molida y queso](./imagen-1.jpg)
 
 Veamos cómo elaborar esta receta keto Tacos de Carne Molida y Queso.  Una receta deliciosa ideal para tomar en el almuerzo o la cena. En este caso, vamos a sustituir las tortillas de trigo por hojas de lechuga. ¡Atrévete a probarlos quedan deliciosos y muy jugosos!

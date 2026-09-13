@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# PROPIEDADES DE LA MANDARINA
-
 ## Las propiedades de la mandarina para el organismo
 
 Propiedades de la mandarina. La mandarina es una fruta que podemos encontrar en otoño, es un cítrico con sabor generalmente dulce y son más fáciles de pelar que las naranjas. Las mandarinas tienen su procedencia en China.

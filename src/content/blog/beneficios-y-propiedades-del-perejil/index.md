@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# Beneficios y Propiedades del Perejil: ¡El Superhéroe de las Hierbas!
-
 ## ¿Qué es el Perejil?
 
 El perejil es una hierba verde que se usa mucho en la cocina para dar sabor y color a los platos. Es fácil de encontrar en el supermercado y tiene muchas propiedades que lo hacen muy especial. ¡Vamos a descubrir por qué el perejil es tan beneficioso!

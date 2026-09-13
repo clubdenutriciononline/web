@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# PROPIEDADES DE LA PIÑA
-
 ## Propiedades de la piña tropical
 
 Beneficios y propiedades de la piña tropical. Hoy les traigo información, además de un vídeo acerca de una fruta tropical muy consumida, la piña.

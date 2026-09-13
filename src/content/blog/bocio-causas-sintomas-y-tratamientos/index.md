@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# Bocio: Causas, Síntomas y Tratamientos para Prevenir Esta Enfermedad
-
 El bocio, una afección que afecta a la glándula tiroides, es una enfermedad frecuente que afecta a millones de personas en todo el mundo. Este artículo explorará las causas, los síntomas y los tratamientos para prevenir esta enfermedad.
 
 ![Bocio causas síntomas y tratamientos](imagen-1.jpg)

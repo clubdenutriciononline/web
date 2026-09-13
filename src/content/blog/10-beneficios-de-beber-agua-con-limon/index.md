@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-## Los 10 beneficios de beber agua con limón:
-
 A continuación los 10 beneficios de beber agua con limón, si es en ayunas, mejor:
 
 ![](./cover.jpg)

@@ -25,10 +25,6 @@ nutricion:
 sources: []
 draft: false
 ---
-## Receta keto: Tortilla Espinacas Champiñones y Queso
-
-![Tortilla Espinacas, Champiñones y Queso](./cover.jpg)
-
 Veamos cómo elaborar esta receta keto Tortilla de Espinacas, Champiñones y Queso. Una receta fácil, rápida y deliciosa, ideal para desayuno o cena.
 
 ### Ingredientes:

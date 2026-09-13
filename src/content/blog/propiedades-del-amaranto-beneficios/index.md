@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# PROPIEDADES DEL AMARANTO
-
 ## Las propiedades del amaranto en el organismo.
 
 El amaranto, un antiguo grano con una rica historia en la nutrición humana, ha resurgido en la alimentación moderna gracias a sus impresionantes propiedades y beneficios para la salud. En este artículo, exploraremos en profundidad qué hace al amaranto un superalimento, detallando su composición nutricional y los múltiples beneficios que aporta al organismo. También te daremos ideas de productos relacionados para mejorar tu dieta.

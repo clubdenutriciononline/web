@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# Hambre y los 5 Sentidos Corporales
-
 El hambre es una sensación compleja que no solo involucra al estómago, sino también a nuestros cinco sentidos. En este artículo, exploraremos cómo cada uno de los sentidos corporales juega un papel crucial en la percepción del hambre y la alimentación, respaldado por los últimos estudios. Descubre cómo estos sentidos afectan tus hábitos alimenticios y cómo puedes utilizar este conocimiento para mejorar tu salud.
 
 ## ¿Qué es el Hambre?

@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-# PROPIEDADES DE LA PAPAYA
-
 ## Beneficios y propiedades de la papaya
 
 _**Propiedades de la papaya.**_ La papaya es una fruta tropical que se da todo el año. Es una baya y suele pesar de media 1 kg y medir sobre los 30 centímetros.

@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-## ¿Qué son los macronutrientes y micronutrientes?
-
 Los macronutrientes y micronutrientes son esenciales para el funcionamiento del cuerpo humano. Los macronutrientes son nutrientes que el cuerpo necesita en grandes cantidades para obtener energía y mantener la estructura corporal. Los micronutrientes, por otro lado, son necesarios en menores cantidades pero son cruciales para el correcto funcionamiento de los procesos metabólicos y el mantenimiento de la salud general. Ambos tipos de nutrientes son vitales para el crecimiento, desarrollo y bienestar del organismo.
 
 ![](./imagen-1.jpg)
