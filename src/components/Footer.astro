@@ -14,32 +14,41 @@ const year = new Date().getFullYear();
     class="footer-banner"
   />
 
-  <div class="footer-inner">
-    <div class="footer-social">
-      {socialLinks.map((s) => (
-        <a href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer">
-          <SocialIcon name={s.icon} />
-        </a>
-      ))}
-    </div>
-
-    <nav class="footer-legal" aria-label="Enlaces legales">
-      <ul>
-        {legalLinks.map((l) => (
-          <li><a href={l.href}>{l.label}</a></li>
+  <div class="footer-black">
+    <div class="footer-inner">
+      <div class="footer-social">
+        {socialLinks.map((s) => (
+          <a href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer">
+            <SocialIcon name={s.icon} />
+          </a>
         ))}
-      </ul>
-    </nav>
+      </div>
 
-    <p class="footer-copy">Copyright © {year} Club de Nutrición</p>
+      <nav class="footer-legal" aria-label="Enlaces legales">
+        <ul>
+          {legalLinks.map((l) => (
+            <li><a href={l.href}>{l.label}</a></li>
+          ))}
+        </ul>
+      </nav>
 
-    <button class="back-to-top" type="button" aria-label="Volver arriba">↑</button>
+      <p class="footer-copy">Copyright © {year} Club de Nutrición</p>
+
+      <button class="back-to-top" type="button" aria-label="Volver arriba">↑</button>
+    </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
     text-align: center;
+  }
+  .footer-black {
+    /* Confirmado por captura real: banda negra a ancho completo del
+       viewport para redes/legales/copyright — la imagen decorativa
+       "banner-fondo-trans" queda fuera, sobre fondo blanco. */
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
   }
   .footer-inner {
     max-width: var(--container-width);
@@ -59,9 +68,13 @@ const year = new Date().getFullYear();
     margin: 0;
     padding: 0;
   }
+  .footer-legal a {
+    color: var(--color-footer-text);
+  }
   .footer-social {
     display: flex;
     gap: 0.75rem;
+    color: var(--color-footer-text);
   }
   .footer-banner {
     max-width: 100%;

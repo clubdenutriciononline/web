@@ -30,6 +30,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
 
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!--
+      Tipografías reales del original (confirmadas por los <link> a Google
+      Fonts cargados por Elementor en clubdenutricion.es: fredoka.css,
+      rubik.css, entre otras) — Fredoka para titulares, Rubik para cuerpo.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -61,6 +73,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     --color-surface-alt: #fdf2f7;
     --color-text: #2b2b2b;
 
+    /* Confirmado por captura real: header con degradado verde claro, nav
+       en naranja, footer negro — no es la paleta rosa que se asumió al
+       construir el contenido. Pendiente de muestreo exacto de color; son
+       aproximaciones visuales fieles al tono, a afinar en un pase de
+       diseño dedicado. */
+    --color-header-bg-from: #eaf3df;
+    --color-header-bg-to: #ffffff;
+    --color-nav-text: #e08325;
+    --color-footer-bg: #17181b;
+    --color-footer-text: #e8e8e8;
+
+    --font-heading: 'Fredoka', system-ui, sans-serif;
+    --font-body: 'Rubik', system-ui, sans-serif;
+
     --space-section: 3rem;
     --space-section-mobile: 2rem;
   }
@@ -69,7 +95,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
   body {
     margin: 0;
-    font-family: system-ui, sans-serif;
+    font-family: var(--font-body);
     color: var(--color-text);
     /* El original tiene un fondo degradado suave y continuo (rosa muy
        claro → blanco) a lo largo de toda la página, no bandas de color
@@ -109,6 +135,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
     line-height: 1.25;
     color: var(--color-text);
   }
@@ -117,6 +145,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
   h2 {
     font-size: clamp(1.4rem, 1.2rem + 1vw, 1.9rem);
+    /* Patrón confirmado en captura real: encabezados de sección en
+       mayúsculas, centrados y en el color de marca (rosa/magenta) — a
+       diferencia del h1, que se mantiene oscuro. */
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-accent);
   }
   h3 {
     font-size: 1.15rem;

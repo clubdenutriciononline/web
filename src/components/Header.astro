@@ -4,58 +4,68 @@ import SocialIcon from './SocialIcon.astro';
 ---
 
 <header class="site-header">
-  <div class="header-top">
-    <a href="/" class="logo">
-      <img src="/images/site/logo.png" width="166" height="69" alt="Club de Nutrición" />
-    </a>
-
-    <nav class="main-nav" aria-label="Menú principal">
-      <ul>
-        {mainNav.map((item) => (
-          <li class:list={['nav-item', { 'has-children': item.children }]}>
-            <a href={item.href}>{item.label}</a>
-            {item.children && (
-              <ul class="dropdown">
-                {item.children.map((child) => (
-                  <li><a href={child.href}>{child.label}</a></li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    </nav>
-
-    <button id="search-toggle" class="search-toggle" type="button" aria-label="Buscar" aria-expanded="false" aria-controls="header-search">
-      🔍
-    </button>
-  </div>
-
-  <div id="header-search" class="header-search" hidden>
-    <!--
-      Buscador: Pagefind (client-side, sin backend). Indexa Blog + Radar de
-      Salud conjuntamente porque ambas collections generan páginas HTML
-      estáticas normales bajo /{slug}/ — Pagefind rastrea el HTML construido,
-      no distingue entre collections, así que ambos tipos de contenido
-      aparecen juntos en los resultados de forma natural.
-      El índice solo existe tras `npm run build` (postbuild: pagefind --site
-      dist) — en `astro dev` esta caja se monta pero no encontrará
-      /pagefind/pagefind-ui.js hasta que exista un build.
-    -->
-    <div id="pagefind-search"></div>
-  </div>
-
-  <div class="header-social">
-    {socialLinks.map((s) => (
-      <a href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer">
-        <SocialIcon name={s.icon} />
+  <div class="site-header-inner">
+    <div class="header-top">
+      <a href="/" class="logo">
+        <img src="/images/site/logo.png" width="166" height="69" alt="Club de Nutrición" />
       </a>
-    ))}
+
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul>
+          {mainNav.map((item) => (
+            <li class:list={['nav-item', { 'has-children': item.children }]}>
+              <a href={item.href}>{item.label}</a>
+              {item.children && (
+                <ul class="dropdown">
+                  {item.children.map((child) => (
+                    <li><a href={child.href}>{child.label}</a></li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div class="header-search-inline">
+        <input type="search" class="search-input" placeholder="Buscar" aria-label="Buscar" readonly />
+        <button id="search-toggle" class="search-toggle" type="button" aria-label="Buscar" aria-expanded="false" aria-controls="header-search">
+          Buscar
+        </button>
+      </div>
+    </div>
+
+    <div id="header-search" class="header-search" hidden>
+      <!--
+        Buscador: Pagefind (client-side, sin backend). Indexa Blog + Radar de
+        Salud conjuntamente porque ambas collections generan páginas HTML
+        estáticas normales bajo /{slug}/ — Pagefind rastrea el HTML construido,
+        no distingue entre collections, así que ambos tipos de contenido
+        aparecen juntos en los resultados de forma natural.
+        El índice solo existe tras `npm run build` (postbuild: pagefind --site
+        dist) — en `astro dev` esta caja se monta pero no encontrará
+        /pagefind/pagefind-ui.js hasta que exista un build.
+      -->
+      <div id="pagefind-search"></div>
+    </div>
+
+    <div class="header-social">
+      {socialLinks.map((s) => (
+        <a href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer">
+          <SocialIcon name={s.icon} />
+        </a>
+      ))}
+    </div>
   </div>
 </header>
 
 <style>
   .site-header {
+    /* Confirmado por captura real: banda de cabecera con degradado verde
+       claro a ancho completo de viewport (no acotada al contenedor). */
+    background: linear-gradient(180deg, var(--color-header-bg-from) 0%, var(--color-header-bg-to) 100%);
+  }
+  .site-header-inner {
     max-width: var(--container-width);
     margin-inline: auto;
     padding-inline: var(--container-padding);
@@ -73,11 +83,18 @@ import SocialIcon from './SocialIcon.astro';
   }
   .main-nav ul {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     list-style: none;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+  }
+  .main-nav > ul > li > a {
+    color: var(--color-nav-text);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
   }
   .nav-item {
     position: relative;
@@ -102,11 +119,36 @@ import SocialIcon from './SocialIcon.astro';
     display: block;
     padding: 0.4rem 1rem;
     white-space: nowrap;
+    color: var(--color-text);
+    text-transform: none;
+    font-weight: 400;
+  }
+  .header-search-inline {
+    display: flex;
+    gap: 0;
+  }
+  .search-input {
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+    width: 160px;
+    cursor: pointer;
+  }
+  .search-toggle {
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 0.5rem 1rem;
+    background: var(--color-nav-text);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
   }
   .header-social {
     display: flex;
     gap: 0.75rem;
     font-size: 0.85rem;
+    color: var(--color-nav-text);
   }
   .header-search {
     padding: 0.5rem 0 1rem;
@@ -115,8 +157,11 @@ import SocialIcon from './SocialIcon.astro';
 
 <script>
   const toggle = document.getElementById('search-toggle');
+  const searchInput = document.querySelector('.search-input');
   const panel = document.getElementById('header-search');
   let pagefindMounted = false;
+
+  searchInput?.addEventListener('click', () => toggle?.dispatchEvent(new Event('click')));
 
   toggle?.addEventListener('click', async () => {
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
