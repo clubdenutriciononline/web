@@ -3,12 +3,12 @@
     {
       "source": "/alimentacion-2",
       "destination": "/alimentacion/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/alimentacion-2/",
       "destination": "/alimentacion/",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
