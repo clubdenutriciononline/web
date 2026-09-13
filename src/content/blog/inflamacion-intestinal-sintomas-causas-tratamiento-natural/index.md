@@ -17,50 +17,6 @@ draft: false
 
 Descubre la inflamación intestinal, síntomas y tratamiento natural, junto con sus principales causas y los mejores métodos para aliviarla y mejorar tu salud digestiva.
 
-#### Tabla de contenidos
-
-01. [Introducción](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es la inflamación intestinal?](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas de la inflamación intestinal](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta la inflamación intestinal al cuerpo](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-4)
-
-06. [Relación entre la inflamación intestinal y la microbiota](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones naturales para reducir la inflamación intestinal](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-6)
-
-    1. [Alimentación antiinflamatoria](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-7)
-
-    2. [Ejercicio moderado](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-8)
-
-    3. [Probióticos y microbiota intestinal](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-9)
-
-    4. [Sueño reparador](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-10)
-
-    5. [Gestión del estrés](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-11)
-
-    6. [Reducción de alimentos proinflamatorios](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/inflamacion-intestinal-sintomas-causas-tratamiento-natural/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 La inflamación intestinal es un problema digestivo cada vez más frecuente que puede afectar a personas de cualquier edad o sexo. Se manifiesta a través de síntomas como dolor abdominal, diarrea, hinchazón, fatiga y malestar general, que pueden llegar a interferir en la calidad de vida diaria.

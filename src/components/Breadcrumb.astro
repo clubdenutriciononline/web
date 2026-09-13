@@ -9,8 +9,23 @@ interface Props {
   items: Crumb[];
 }
 const { items } = Astro.props;
+
+// BreadcrumbList: misma lista de items ya recibida por el componente, usando
+// la URL absoluta del propio sitio para cada tramo con enlace (el último
+// crumb, la página actual, no lleva href).
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.label,
+    ...(item.href ? { item: new URL(item.href, Astro.site).href } : {}),
+  })),
+};
 ---
 
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} is:inline />
 <nav class="breadcrumb" aria-label="Miga de pan">
   <ol>
     {items.map((item, i) => (

@@ -17,50 +17,6 @@ draft: false
 
 Descubre qué es la perimenopausia, cuánto dura esta etapa de transición hormonal, sus síntomas más frecuentes y cómo puede afectar a tu salud física y emocional
 
-#### Tabla de contenidos
-
-01. [Introducción](/sintomas-perimenopausia/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/sintomas-perimenopausia/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es la perimenopausia?](/sintomas-perimenopausia/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas de la perimenopausia](/sintomas-perimenopausia/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta la perimenopausia a tu salud](/sintomas-perimenopausia/#elementor-toc__heading-anchor-4)
-
-06. [Relación con las hormonas y el metabolismo](/sintomas-perimenopausia/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones para la perimenopausia](/sintomas-perimenopausia/#elementor-toc__heading-anchor-6)
-
-    1. [Terapia de reemplazo hormonal](/sintomas-perimenopausia/#elementor-toc__heading-anchor-7)
-
-    2. [Técnicas de relajación](/sintomas-perimenopausia/#elementor-toc__heading-anchor-8)
-
-    3. [Hábitos de vida saludables](/sintomas-perimenopausia/#elementor-toc__heading-anchor-9)
-
-    4. [Apoyo emocional](/sintomas-perimenopausia/#elementor-toc__heading-anchor-10)
-
-    5. [Suplementos naturales](/sintomas-perimenopausia/#elementor-toc__heading-anchor-11)
-
-    6. [Consulta con un profesional](/sintomas-perimenopausia/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/sintomas-perimenopausia/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/sintomas-perimenopausia/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/sintomas-perimenopausia/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/sintomas-perimenopausia/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/sintomas-perimenopausia/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/sintomas-perimenopausia/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/sintomas-perimenopausia/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/sintomas-perimenopausia/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/sintomas-perimenopausia/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 La perimenopausia es una etapa de transición natural en la vida de la mujer que puede prolongarse durante varios años y que marca el inicio de importantes cambios hormonales en el organismo.

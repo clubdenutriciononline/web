@@ -76,10 +76,6 @@ Alimentos ricos en hierro
 
 ![alimentos ricos en hierro (6)](./imagen-11.jpg)
 
-![alimentos ricos en hierro (5)](./imagen-4.jpg)
-
-![alimentos ricos en hierro (24)](./imagen-5.jpg)
-
 #### Alimentos ricos en hierro de procedencia vegetal (hierro no hemo):
 
 ![alimentos ricos en hierro (10)](./imagen-12.jpg)
@@ -97,10 +93,6 @@ Alimentos ricos en hierro
 ![alimentos ricos en hierro (9)](./imagen-18.jpg)
 
 ![alimentos ricos en hierro (14)](./imagen-19.jpg)
-
-![alimentos ricos en hierro (10)](./imagen-12.jpg)
-
-![alimentos ricos en hierro (16)](./imagen-13.jpg)
 
 #### Consejos para mejorar la absorción del hierro
 

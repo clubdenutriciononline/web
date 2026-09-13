@@ -14,7 +14,7 @@ seo:
 sources: []
 draft: false
 ---
-# Alimentación durante el ayuno: opciones y recomendaciones saludables
+## Alimentación durante el ayuno: opciones y recomendaciones saludables
 
 El ayuno es una práctica cada vez más popular que puede tener beneficios para la salud, como mejorar la capacidad de pérdida de peso, reducir la inflamación y aumentar la claridad mental. Sin embargo, puede ser desafiante saber qué se puede consumir durante el ayuno, ya que la restricción de alimentos puede generar confusión y dudas.
 

@@ -14,7 +14,7 @@ seo:
 sources: []
 draft: false
 ---
-# Cambiar las creencias negativas sobre la alimentación saludable
+## Cambiar las creencias negativas sobre la alimentación saludable
 
 La alimentación saludable es un tema que puede generar opiniones y creencias encontradas en muchas personas. Algunas personas ven la alimentación saludable como una restricción o una privación, mientras que otras la ven como una forma de cuidarse y mejorar su salud. Sin embargo, las creencias negativas sobre la alimentación saludable pueden ser un obstáculo para aquellos que desean adoptar un estilo de vida más saludable. En este artículo, exploraremos cómo cambiar esas creencias negativas y adquirir una mentalidad más positiva hacia la alimentación saludable.
 

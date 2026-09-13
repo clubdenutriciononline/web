@@ -23,20 +23,29 @@ const rows = Object.entries(nutricion).filter(([, value]) => value);
 ---
 
 {rows.length > 0 && (
-  <table class="nutrition-table">
-    <caption>Composición nutricional (aprox. por porción)</caption>
-    <tbody>
-      {rows.map(([key, value]) => (
-        <tr>
-          <th scope="row">{labels[key] ?? key}</th>
-          <td>{value}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+  <div class="nutrition-table-scroll">
+    <table class="nutrition-table">
+      <caption>Composición nutricional (aprox. por porción)</caption>
+      <tbody>
+        {rows.map(([key, value]) => (
+          <tr>
+            <th scope="row">{labels[key] ?? key}</th>
+            <td>{value}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 )}
 
 <style>
+  /* Contenedor de scroll propio: si la tabla llegara a ser más ancha que la
+     pantalla (más columnas, valores largos, fuente aumentada por el
+     usuario), desborda con scroll horizontal aquí en vez de romper el
+     layout de la página. */
+  .nutrition-table-scroll {
+    overflow-x: auto;
+  }
   .nutrition-table {
     border-collapse: collapse;
     width: 100%;

@@ -17,56 +17,6 @@ draft: false
 
 Descubre cómo identificar la resistencia a la insulina, entender por qué aparece y qué estrategias naturales pueden ayudarte a mejorarla y recuperar tu equilibrio metabólico
 
-#### Tabla de contenidos
-
-01. [Introducción](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es la resistencia a la insulina?](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas de la resistencia a la insulina](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta la resistencia a la insulina al cuerpo](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-4)
-
-06. [Relación con el metabolismo](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-5)
-
-07. [🔹 Soluciones naturales para la resistencia a la insulina](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-6)
-
-    1. [Cambiar la dieta](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-7)
-
-    2. [Reducir el estrés](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-8)
-
-    3. [Reducir el sedentarismo](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-9)
-
-    4. [Incrementar la actividad física](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-10)
-
-    5. [Dormir lo suficiente](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-11)
-
-    6. [Aumentar la calidad de los alimentos antiinflamatorios](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-12)
-
-    7. [Perder peso de forma saludable](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-13)
-
-    8. [Limitar carbohidratos refinados](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-14)
-
-    9. [Mantener una buena hidratación](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-15)
-08. [Preguntas frecuentes](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-16)
-
-09. [conclusión](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-17)
-
-10. [Artículos relacionados](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-18)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-19)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-20)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-21)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-22)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-23)
-11. [¿Sientes que tu energía sube y baja constantemente?](/resistencia-a-la-insulina-sintomas-causas-soluciones-naturales/#elementor-toc__heading-anchor-24)
-
 ## Introducción
 
 La resistencia a la insulina es una alteración metabólica cada vez más frecuente que puede pasar desapercibida durante años, pero que está directamente relacionada con problemas como el aumento de grasa abdominal, la fatiga persistente, el síndrome metabólico y el desarrollo de diabetes tipo 2 si no se aborda a tiempo.

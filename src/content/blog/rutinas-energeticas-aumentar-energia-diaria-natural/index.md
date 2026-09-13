@@ -17,50 +17,6 @@ draft: false
 
 Descubre cómo mejorar tu energía diaria con hábitos saludables y rutinas sostenibles
 
-#### Tabla de contenidos
-
-01. [Introducción](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué son las rutinas energéticas?](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas de la fatiga](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta la fatiga a nuestro cuerpo](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-4)
-
-06. [La relación entre energía y hormonas](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones prácticas para aumentar tu energía](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-6)
-
-    1. [Establece una rutina matutina](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-7)
-
-    2. [Mantén hidratado](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-8)
-
-    3. [Haz ejercicio regularmente](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-9)
-
-    4. [Incorpora alimentos energéticos](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-10)
-
-    5. [Duerme lo suficiente](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-11)
-
-    6. [Practica técnicas de relajación](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/rutinas-energeticas-aumentar-energia-diaria-natural/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 Incorporar rutinas energéticas en tu día a día puede ayudarte a mejorar tu vitalidad, aumentar la productividad y sentirte mejor tanto física como mentalmente. A través de hábitos simples y sostenibles, es posible mantener niveles de energía más estables durante el día sin depender únicamente de estimulantes o soluciones temporales.

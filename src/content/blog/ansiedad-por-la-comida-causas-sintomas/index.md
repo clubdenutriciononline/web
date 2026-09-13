@@ -17,50 +17,6 @@ draft: false
 
 Aprende a identificar la ansiedad por la comida, entender sus causas emocionales y biológicas, y aplicar estrategias prácticas para recuperar una relación saludable con la alimentación
 
-#### Tabla de contenidos
-
-01. [Introducción](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es la ansiedad por la comida?](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas de la ansiedad por la comida](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta la ansiedad por la comida](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-4)
-
-06. [Relación entre la ansiedad por la comida y las hormonas](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones para la ansiedad por la comida](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-6)
-
-    1. [Buscar ayuda profesional](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-7)
-
-    2. [Desarrollar una relación saludable con la comida](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-8)
-
-    3. [Evitar la culpa y la vergüenza](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-9)
-
-    4. [Practicar técnicas de relajación](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-10)
-
-    5. [Crear un plan de comidas saludables](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-11)
-
-    6. [Buscar apoyo](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/ansiedad-por-la-comida-causas-sintomas/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 La ansiedad por la comida es un fenómeno cada vez más frecuente que afecta a personas de distintas edades y contextos. Se caracteriza por una relación difícil con la alimentación, en la que pueden aparecer pensamientos intrusivos, impulsos de comer sin hambre física o episodios de ingesta emocional.

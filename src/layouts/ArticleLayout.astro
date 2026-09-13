@@ -22,9 +22,24 @@ interface Props {
 
 const { entry, categoriaLabel, categoriaHref, relacionados, anterior, siguiente } = Astro.props;
 const { title, description, seo, image, imageAlt, date, updated, author, nutricion } = entry.data;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: new URL(image.src, Astro.site).href,
+  datePublished: date.toISOString(),
+  dateModified: (updated ?? date).toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: author,
+  },
+};
 ---
 
 <BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={image.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} is:inline />
   <article>
     <Breadcrumb
       items={[
@@ -64,7 +79,7 @@ const { title, description, seo, image, imageAlt, date, updated, author, nutrici
     padding: 1.5rem 1rem;
   }
   .meta {
-    color: #777;
+    color: #666;
     font-size: 0.9rem;
   }
 </style>

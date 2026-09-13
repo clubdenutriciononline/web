@@ -17,50 +17,6 @@ draft: false
 
 Aprende a desarrollar una relación más consciente, saludable y equilibrada con tu cuerpo para mejorar tu bienestar físico, mental y emocional
 
-#### Tabla de contenidos
-
-01. [Introducción](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es la relación con el cuerpo?](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas de una relación disfuncional con el cuerpo](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta la relación con el cuerpo a nuestra salud y bienestar](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-4)
-
-06. [Relación con las hormonas y el metabolismo](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones para mejorar la relación con el cuerpo](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-6)
-
-    1. [Práctica de la autocompasión](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-7)
-
-    2. [Alimentación consciente e intuitiva](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-8)
-
-    3. [Autoexploración y autoconocimiento corporal](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-9)
-
-    4. [Actividad física consciente y placentera](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-10)
-
-    5. [Técnicas de relajación y regulación del estrés](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-11)
-
-    6. [Búsqueda de apoyo y entorno saludable](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/relacion-con-el-cuerpo-conexion-emocional-fisica/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 La relación con el cuerpo es un pilar fundamental del bienestar integral, aunque a menudo se pasa por alto. No se trata únicamente de aceptación estética, sino de la forma en la que nos percibimos, nos hablamos y nos relacionamos con nosotros mismos en el día a día.

@@ -17,50 +17,6 @@ draft: false
 
 Descubre las fases del ciclo menstrual, cómo influyen las hormonas en tu cuerpo y qué cambios físicos y emocionales pueden producirse durante cada etapa
 
-#### Tabla de contenidos
-
-01. [Introducción](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es el ciclo menstrual?](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas del ciclo menstrual](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta el ciclo menstrual tu cuerpo](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-4)
-
-06. [Relación con hormonas y metabolismo](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones para mejorar tu salud hormonal](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-6)
-
-    1. [Mantén un peso saludable](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-7)
-
-    2. [Gestiona el estrés](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-8)
-
-    3. [Sigue una alimentación equilibrada](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-9)
-
-    4. [Prioriza el descanso](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-10)
-
-    5. [Realiza ejercicio de forma regular](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-11)
-
-    6. [Valora el apoyo de suplementos](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/ciclo-menstrual-fases/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 El ciclo menstrual es un proceso natural y complejo que forma parte esencial de la salud hormonal femenina. A lo largo de cada mes, el cuerpo experimenta una serie de cambios físicos y hormonales que influyen no solo en la fertilidad, sino también en la energía, el estado de ánimo, el metabolismo y el bienestar general.

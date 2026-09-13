@@ -14,7 +14,7 @@ seo:
 sources: []
 draft: false
 ---
-# La Importancia de la Exposición al Sol para el Organismo: Beneficios y Riesgos de la Falta de Luz Solar
+## La Importancia de la Exposición al Sol para el Organismo: Beneficios y Riesgos de la Falta de Luz Solar
 
 La exposición al sol es esencial para mantener un buen estado de salud. En este artículo, exploraremos los múltiples beneficios que la luz solar aporta a nuestro organismo y los problemas que pueden surgir por la falta de exposición. Además, proporcionaremos información valiosa sobre cómo optimizar tu exposición al sol para obtener los mejores resultados. ¡Vamos a sumergirnos en el tema!
 

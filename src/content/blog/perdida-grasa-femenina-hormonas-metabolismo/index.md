@@ -17,50 +17,6 @@ draft: false
 
 Aprende cómo las hormonas y el metabolismo afectan la pérdida de grasa femenina y qué hábitos pueden ayudarte a adelgazar de forma saludable
 
-#### Tabla de contenidos
-
-01. [Introducción](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es la pérdida de grasa femenina?](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas de la pérdida de grasa femenina](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta la pérdida de grasa femenina al cuerpo](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-4)
-
-06. [Relación con hormonas y metabolismo](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones para la pérdida de grasa femenina](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-6)
-
-    1. [Ejercicio regular](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-7)
-
-    2. [Suplementación natural](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-8)
-
-    3. [Dieta equilibrada](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-9)
-
-    4. [Sueño adecuado](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-10)
-
-    5. [Gestión del estrés](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-11)
-
-    6. [Monitoreo del progreso](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/perdida-grasa-femenina-hormonas-metabolismo/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 La pérdida de grasa femenina es un proceso complejo en el que intervienen múltiples factores físicos, hormonales y metabólicos. Aunque muchas veces se asocia únicamente con la alimentación o el ejercicio, la realidad es que el cuerpo de la mujer responde de forma diferente según la edad, el ciclo menstrual, el nivel de estrés, la calidad del descanso o incluso determinados cambios hormonales.

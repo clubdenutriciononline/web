@@ -48,18 +48,6 @@ Veamos cómo elaborar esta receta keto Tortilla de Espinacas, Champiñones y Que
 
 [![Tortilla Espinacas, Champiñones y Queso](./imagen-6.jpg)](https://amzn.to/4fvey5M)
 
-[![Queso Rallado](./imagen-1.jpg)](https://amzn.to/4fvey5M)
-
-[![Sal y Pimienta](./imagen-2.jpg)](https://amzn.to/4fvey5M)
-
-[![Mantequilla](./imagen-3.jpg)](https://amzn.to/4fvey5M)
-
-[![Tortilla Espinacas, Champiñones y Queso](./imagen-4.jpg)](https://amzn.to/4fvey5M)
-
-[![Tortilla Espinacas, Champiñones y Queso](./imagen-5.jpg)](https://amzn.to/4fvey5M)
-
-[![Tortilla Espinacas, Champiñones y Queso](./imagen-6.jpg)](https://amzn.to/4fvey5M)
-
 ## Receta keto: Tortilla Espinacas Champiñones y Queso
 
 ### Preparación:

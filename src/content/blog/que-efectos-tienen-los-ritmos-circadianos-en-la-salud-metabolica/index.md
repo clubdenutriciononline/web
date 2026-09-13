@@ -14,7 +14,7 @@ seo:
 sources: []
 draft: false
 ---
-# La importancia de los ritmos circadianos en la salud metabólica
+## La importancia de los ritmos circadianos en la salud metabólica
 
 Los ritmos circadianos son procesos biológicos que se repiten en un ciclo de 24 horas y se encuentran presentes en todos los seres vivos. Estos ritmos son regulados por un reloj biológico interno que se encuentra en el hipotálamo, una región del cerebro que controla las funciones autónomas del cuerpo. Los ritmos circadianos juegan un papel fundamental en la regulación de la salud metabólica, ya que influyen en la forma en que el cuerpo procesa los nutrientes, produce energía y almacena grasa.
 

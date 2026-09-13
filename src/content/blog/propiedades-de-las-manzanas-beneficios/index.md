@@ -23,7 +23,7 @@ A continuación podemos ver la información nutricional de las manzanas, por uni
 
 ### Las manzanas tienen una gran cantidad de propiedades y beneficios nutricionales:
 
-# ![](./imagen-1.jpg)
+![](./imagen-1.jpg)
 
 1. Son ricas en vitaminas y minerales.
 2. Ayudan a mejorar la digestión, por lo que son perfectas comerlas como postre.

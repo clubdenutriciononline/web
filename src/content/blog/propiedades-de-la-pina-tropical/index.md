@@ -15,8 +15,6 @@ sources: []
 draft: false
 ---
 
-## Propiedades de la piña tropical
-
 Beneficios y propiedades de la piña tropical. Hoy les traigo información, además de un vídeo acerca de una fruta tropical muy consumida, la piña.
 
 La **piña tropical**, originaria de Brasil y Paraguay, hoy en día, se consume en todo el mundo debido a sus _propiedades beneficiosas para el organismo_. Lo mejor es tomarla natural, recién cortada de la pieza de fruta. También la hay en formato de conserva, si nos decidimos por esta última, que sea en su propio jugo, nunca en almíbar, ya que le estaremos añadiendo azúcares que ningún bien van a hacer a nuestro organismo.

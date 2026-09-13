@@ -17,50 +17,6 @@ draft: false
 
 Aprende a identificar los síntomas de la fatiga crónica y descubre estrategias efectivas para recuperar tu energía y bienestar diario
 
-#### Tabla de contenidos
-
-01. [Introducción](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es la fatiga crónica?](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas de la fatiga crónica](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta la fatiga crónica al cuerpo](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-4)
-
-06. [Relación con las hormonas y el metabolismo](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones para la fatiga crónica](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-6)
-
-    1. [Mejorar la calidad del sueño](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-7)
-
-    2. [Reducir el estrés](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-8)
-
-    3. [Aumentar la actividad física](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-9)
-
-    4. [Buscar apoyo](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-10)
-
-    5. [Mejorar la alimentación](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-11)
-
-    6. [Buscar atención médica](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/fatiga-cronica-sintomas-causas/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 La fatiga crónica es un estado persistente de agotamiento físico y mental que no mejora fácilmente con el descanso y que puede afectar de forma significativa a la calidad de vida. Se trata de un problema cada vez más frecuente que puede aparecer en personas de cualquier edad y estilo de vida.

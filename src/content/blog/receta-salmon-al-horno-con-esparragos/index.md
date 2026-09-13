@@ -64,8 +64,6 @@ En segundo lugar, debemos cortar el limón en rodajas finas.
 
 Nota: también se puede realizar en freidora de aire (Air Fryer) siguiendo las mismas instrucciones, pero vigilando el tiempo, ya que al ser un electrodoméstico más pequeño, suele tardar menos en cocinar. Por lo tanto, si utilizas la freidora, ¡Estate atenta, no dejes que se te pase!
 
-## Receta: Salmón al Horno con Espárragos
-
 Nos vemos en el camino 🙂
 
 Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

@@ -17,50 +17,6 @@ draft: false
 
 Aprende a identificar los síntomas del hipotiroidismo, entender sus posibles causas y conocer qué cambios en la alimentación, el estilo de vida y el equilibrio hormonal pueden ayudarte a sentirte mejor de forma natural.
 
-#### Tabla de contenidos
-
-01. [Introducción](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-1)
-
-03. [Qué es el hipotiroidismo](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas del hipotiroidismo](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta el hipotiroidismo al cuerpo](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-4)
-
-06. [Relación con hormonas y metabolismo](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones naturales para el hipotiroidismo](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-6)
-
-    1. [Alimentación equilibrada](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-7)
-
-    2. [Terapia de reemplazo hormonal](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-8)
-
-    3. [Aporte adecuado de yodo](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-9)
-
-    4. [Suplementos y apoyo nutricional](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-10)
-
-    5. [Actividad física regular](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-11)
-
-    6. [Gestión del estrés](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-12)
-08. [Preguntas Frecuentes](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/sintomas-hipotiroidismo/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 El hipotiroidismo es una alteración de la glándula tiroides que afecta a millones de personas en todo el mundo y que, en muchos casos, puede pasar desapercibida durante años. Esta condición se produce cuando la tiroides no genera suficientes hormonas, afectando directamente a funciones esenciales como el metabolismo, los niveles de energía, la temperatura corporal o el estado de ánimo.

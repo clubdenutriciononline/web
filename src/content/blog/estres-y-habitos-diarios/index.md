@@ -17,50 +17,6 @@ draft: false
 
 Descubre cómo tus hábitos diarios influyen en el estrés y aprende a gestionarlo de forma eficaz
 
-#### Tabla de contenidos
-
-01. [Introducción](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es el estrés?](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas del estrés](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-3)
-
-05. [Cómo el estrés afecta el cuerpo](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-4)
-
-06. [La conexión entre el estrés y los hábitos diarios](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones para reducir el estrés a través de la mejora de los hábitos diarios](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-6)
-
-    1. [Establece una rutina matutina relajante](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-7)
-
-    2. [Prioriza el sueño de calidad](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-8)
-
-    3. [Incorpora ejercicio físico regular](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-9)
-
-    4. [Practica la gratitud](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-10)
-
-    5. [Mantén una dieta equilibrada](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-11)
-
-    6. [Conecta con la naturaleza](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-13)
-
-09. [conclusión](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-14)
-
-10. [Artículos relacionados](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-15)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-16)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-17)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-18)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-19)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-20)
-11. [¿Sientes que tu energía sube y baja constantemente?](/estres-y-habitos-diarios/#elementor-toc__heading-anchor-21)
-
 ## Introducción
 
 El estrés no aparece de la nada. Aunque muchas veces lo asociamos a situaciones puntuales, en realidad está profundamente relacionado con nuestros hábitos diarios. Desde cómo dormimos hasta lo que comemos o cómo gestionamos nuestro tiempo, cada pequeña rutina influye directamente en nuestro nivel de estrés.

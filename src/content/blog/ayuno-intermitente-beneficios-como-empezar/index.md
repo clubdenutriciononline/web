@@ -17,52 +17,6 @@ draft: false
 
 Descubre cómo funciona el ayuno intermitente, qué efectos tiene en tu metabolismo y cómo aplicarlo de forma segura en tu día a día
 
-#### Tabla de contenidos
-
-01. [Introducción](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-0)
-
-02. [Qué vas a aprender](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-1)
-
-03. [¿Qué es el ayuno intermitente?](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-2)
-
-04. [Síntomas del sobrepeso y la obesidad](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-3)
-
-05. [Cómo afecta el ayuno intermitente al cuerpo](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-4)
-
-06. [Relación entre el ayuno intermitente y el metabolismo](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-5)
-
-07. [Soluciones para empezar a aplicar el ayuno intermitente](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-6)
-
-    1. [Empieza con un método simple (16/8)](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-7)
-
-    2. [Mantén una hidratación adecuada](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-8)
-
-    3. [Mantén actividad física regular (adaptada a tu energía)](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-9)
-
-    4. [Escucha las señales de tu cuerpo](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-10)
-
-    5. [Prioriza una alimentación nutritiva en la ventana de comida](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-11)
-
-    6. [Haz un seguimiento de tus hábitos y sensaciones](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-12)
-08. [Preguntas frecuentes](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-13)
-
-09. [⚠️ Errores comunes al hacer ayuno intermitente](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-14)
-
-10. [conclusión](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-15)
-
-11. [Artículos relacionados](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-16)
-
-    1. [La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-17)
-
-    2. [Ultraprocesados y salud digestiva: nueva alerta](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-18)
-
-    3. [Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-19)
-
-    4. [El sueño profundo: la hormona natural que ayuda a regenerar músculo, metabolismo y cerebro](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-20)
-
-    5. [Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-21)
-12. [¿Sientes que tu energía sube y baja constantemente?](/ayuno-intermitente-beneficios-como-empezar/#elementor-toc__heading-anchor-22)
-
 ## Introducción
 
 El ayuno intermitente se ha convertido en una de las estrategias de alimentación más estudiadas y populares en los últimos años dentro del ámbito de la salud y el bienestar.
