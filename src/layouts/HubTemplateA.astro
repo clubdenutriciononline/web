@@ -1,0 +1,61 @@
+---
+// Variante A de hub: SOLO Hormonas. Grid final de 4 tarjetas (elección
+// editorial entre sus 6 subpáginas reales) y SIN sección de artículos
+// relacionados (a diferencia de los otros 4 hubs, ver HubTemplateB).
+// Ver 00-analisis/02-mapa-migracion.md sección 2 y 04-revision-estructural.md.
+import BaseLayout from './BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TemasRelacionadosGrid from '../components/TemasRelacionadosGrid.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import type { ImageMetadata } from 'astro';
+
+interface Tema {
+  icon: string | ImageMetadata;
+  title: string;
+  text: string;
+  href: string;
+}
+
+interface Props {
+  seoTitle: string;
+  seoDescription: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroImage?: ImageMetadata;
+  heroImageAlt?: string;
+  ctaLabel: string;
+  ctaHref: string;
+  temasHeading: string;
+  temas: Tema[]; // 4 tarjetas en Hormonas
+}
+
+const {
+  seoTitle,
+  seoDescription,
+  heroTitle,
+  heroSubtitle,
+  heroImage,
+  heroImageAlt,
+  ctaLabel,
+  ctaHref,
+  temasHeading,
+  temas,
+} = Astro.props;
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <Hero
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    ctaLabel={ctaLabel}
+    ctaHref={ctaHref}
+    image={heroImage}
+    imageAlt={heroImageAlt}
+  />
+
+  <slot />
+
+  <TemasRelacionadosGrid heading={temasHeading} temas={temas} />
+
+  <CTAFinal heading={heroSubtitle ?? heroTitle} ctaLabel={ctaLabel} ctaHref={ctaHref} />
+</BaseLayout>

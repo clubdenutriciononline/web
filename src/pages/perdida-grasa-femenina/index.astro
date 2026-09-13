@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('perdida-grasa-femenina')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Pérdida de grasa femenina: hormonas, metabolismo y claves"
+  seoDescription="Cómo influyen las hormonas y el metabolismo en la pérdida de grasa en mujeres, y estrategias sostenibles para lograrla."
+  heroTitle="Pérdida de grasa femenina: hormonas, metabolismo y claves para adelgazar"
+  heroSubtitle="Comprende las causas de la pérdida de grasa en mujeres y descubre estrategias efectivas para mejorar el metabolismo, equilibrar las hormonas y lograr resultados saludables y sostenibles."
+  heroImage={heroImg}
+  heroImageAlt="Pérdida de grasa femenina"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>La pérdida de grasa femenina es un proceso complejo influenciado por factores hormonales, metabólicos y de estilo de vida.</p>
+  <p>A diferencia de los hombres, las mujeres experimentan cambios hormonales cíclicos que pueden afectar el apetito, el almacenamiento de grasa, la energía y la capacidad para perder peso de forma efectiva.</p>
+  <p>Comprender las causas subyacentes que dificultan la pérdida de grasa es fundamental para aplicar estrategias sostenibles y saludables.</p>
+  <p>En este artículo descubrirás cómo influyen las hormonas, el metabolismo, la alimentación, el estrés y la actividad física en la pérdida de grasa femenina, además de soluciones prácticas respaldadas por la ciencia.</p>
+
+  <TextoConImagen heading="¿Qué es la Pérdida de Grasa Femenina?" image={definicionImg} imageAlt="Qué es la pérdida de grasa femenina">
+    <p>La pérdida de grasa femenina es el proceso mediante el cual las mujeres reducen su porcentaje de grasa corporal de forma progresiva y saludable.</p>
+    <p>Este proceso no depende únicamente del balance calórico, sino que está influenciado por factores hormonales, genéticos, metabólicos y del estilo de vida.</p>
+    <p>En el caso de las mujeres, este proceso puede verse afectado por fluctuaciones hormonales a lo largo del ciclo menstrual, así como por el estrés, la calidad del sueño y la composición corporal.</p>
+    <p>Es importante diferenciar entre una pérdida de grasa saludable y sostenible, que busca mejorar la composición corporal y la salud metabólica, y una pérdida de peso rápida o restrictiva, que puede generar efectos negativos como pérdida de masa muscular, alteraciones hormonales y efecto rebote.</p>
+  </TextoConImagen>
+
+  <p>La dificultad para perder grasa en mujeres no suele deberse a una única causa, sino a la interacción de diferentes factores hormonales, metabólicos y de estilo de vida.</p>
+  <p>Estos elementos pueden influir en la forma en la que el cuerpo almacena grasa, regula el apetito y utiliza la energía.</p>
+  <p>Comprender estas causas es fundamental para poder abordar la pérdida de grasa de forma efectiva, sostenible y adaptada a la fisiología femenina.</p>
+  <CausasGrid
+    heading="Causas de la Pérdida de Grasa Femenina"
+    causas={[
+      { icon: '⚖️', title: 'Desbalances Hormonales', text: 'Las fluctuaciones en hormonas como el estrógeno y la progesterona pueden influir directamente en la distribución de la grasa corporal y en la capacidad del organismo para movilizarla. Estos cambios también pueden afectar el apetito, la retención de líquidos y la sensibilidad a la insulina.' },
+      { icon: '🐢', title: 'Metabolismo Lento', text: 'Un metabolismo más lento implica un menor gasto energético en reposo, lo que puede dificultar el déficit calórico necesario para perder grasa. Este descenso metabólico puede estar relacionado con la masa muscular, la edad, la dieta o la adaptación prolongada a restricciones calóricas.' },
+      { icon: '🌙', title: 'Falta de Sueño', text: 'La falta de sueño afecta a la regulación hormonal del apetito, alterando la leptina y la grelina, lo que puede aumentar la sensación de hambre. Además, reduce la sensibilidad a la insulina y la eficiencia metabólica, dificultando la pérdida de grasa y favoreciendo el almacenamiento energético.' },
+      { icon: '😰', title: 'Estrés Crónico', text: 'El estrés prolongado puede elevar los niveles de cortisol, una hormona asociada con un mayor almacenamiento de grasa abdominal y una mayor dificultad para movilizar reservas energéticas.' },
+      { icon: '🍔', title: 'Alimentación inadecuada', text: 'Una dieta baja en nutrientes esenciales o basada en alimentos ultraprocesados puede afectar la regulación hormonal, la saciedad y el rendimiento metabólico, dificultando la pérdida de grasa.' },
+      { icon: '🛋️', title: 'Sedentarismo', text: 'La falta de actividad física reduce el gasto energético diario y puede disminuir la masa muscular, lo que a su vez reduce el metabolismo basal y la capacidad de oxidar grasa.' },
+    ]}
+  />
+  <p>Comprender estas causas permite identificar los principales bloqueos que pueden estar frenando la pérdida de grasa y establecer estrategias más efectivas y personalizadas para mejorar la composición corporal.</p>
+
+  <p>Durante un proceso de pérdida de grasa saludable, el cuerpo experimenta una serie de cambios positivos tanto a nivel físico como metabólico y emocional. Estas señales indican que el proceso está funcionando de forma adecuada y sostenible.</p>
+  <ListaSintomas
+    heading="Señales de una pérdida de grasa femenina saludable"
+    items={[
+      'Reducción progresiva de grasa corporal: se refleja en cambios en la composición corporal y en una mejora visible de la silueta.',
+      'Mejora de la salud cardiovascular: contribuye a reducir el riesgo de enfermedades cardiovasculares y mejora la salud general.',
+      'Mejora de la composición corporal: disminuye el porcentaje de grasa y se preserva o incrementa la masa muscular.',
+      'Aumento de la energía diaria: se experimenta mayor vitalidad y mejor rendimiento en las actividades cotidianas.',
+      'Mejora del estado de ánimo y la autoestima: el progreso físico suele acompañarse de una mayor confianza y bienestar emocional.',
+      'Reducción del estrés percibido: un estilo de vida más equilibrado favorece una mejor gestión del estrés y la ansiedad.',
+    ]}
+  />
+
+  <p>Cómo la regulación hormonal y el metabolismo influyen en la composición corporal en mujeres.</p>
+  <RelacionImagenes
+    heading="Relación entre la pérdida de grasa femenina y los sistemas hormonales y metabólicos"
+    images={[
+      { src: relacion1Img, alt: 'Infografía relación entre pérdida de grasa femenina y sistemas hormonales' },
+      { src: relacion2Img, alt: 'Relación entre pérdida de grasa femenina y metabolismo' },
+    ]}
+  >
+    <p>La pérdida de grasa femenina está estrechamente relacionada con el equilibrio del sistema hormonal y el funcionamiento del metabolismo.</p>
+    <p>Hormonas como el estrógeno y la progesterona influyen en la distribución de la grasa corporal, la sensibilidad a la insulina y la capacidad del organismo para utilizar la energía de forma eficiente.</p>
+    <p>Cuando existe un desequilibrio hormonal o metabólico, el proceso de pérdida de grasa puede volverse más lento o menos eficiente, afectando tanto la composición corporal como la salud general.</p>
+    <p>Comprender esta relación es clave para diseñar un enfoque de pérdida de grasa más estratégico, sostenible y adaptado a la fisiología femenina.</p>
+  </RelacionImagenes>
+
+  <p>Desarrollando un enfoque sostenible basado en hábitos, nutrición y equilibrio hormonal</p>
+  <SolucionesList
+    heading="Soluciones para la Pérdida de Grasa Femenina"
+    soluciones={[
+      { title: 'Establecer Metas Realistas', body: 'Definir objetivos alcanzables y progresivos es clave para mantener la motivación y evitar la frustración. Las metas realistas permiten adaptar el proceso de pérdida de grasa a cada persona, favoreciendo la adherencia y la sostenibilidad a largo plazo.' },
+      { title: 'Incorporar Actividad Física Regular', body: 'El ejercicio regular ayuda a aumentar el gasto energético, mejorar la composición corporal y preservar la masa muscular. Combinar entrenamiento de fuerza y actividad cardiovascular es una estrategia eficaz para optimizar la pérdida de grasa.' },
+      { title: 'Buscar Apoyo y Motivación', body: 'Contar con apoyo profesional, social o emocional puede mejorar significativamente la adherencia al proceso. La motivación externa e interna ayuda a mantener la constancia y superar momentos de estancamiento.' },
+      { title: 'Desarrollar un Plan de Alimentación Saludable', body: 'Una alimentación equilibrada, basada en alimentos reales y adaptada a las necesidades individuales, es fundamental para favorecer la pérdida de grasa. No se trata de restricciones extremas, sino de crear un déficit energético sostenible sin comprometer la salud.' },
+      { title: 'Gestionar el Estrés y Mejorar la Calidad del Sueño', body: 'Reducir el estrés y asegurar un descanso adecuado es esencial para el equilibrio hormonal. Dormir bien y controlar el estrés ayuda a regular el apetito, mejorar el metabolismo y favorecer un entorno hormonal más favorable para la pérdida de grasa.' },
+    ]}
+  />
+</SubpageTemplateB>

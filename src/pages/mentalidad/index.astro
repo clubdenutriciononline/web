@@ -1,0 +1,152 @@
+---
+// Hub Mentalidad — HubTemplateB. Contenido real migrado desde
+// https://clubdenutricion.es/mentalidad/, ver .firecrawl/md/mentalidad.md.
+// Corrección de fidelidad: el placeholder anterior tenía los emoji 🪞 y 🧠
+// intercambiados entre "Estrés y hábitos" y "Relación con el cuerpo"
+// respecto al original (🪞 = Relación con el cuerpo, 🧠 = Estrés y hábitos).
+import { getCollection } from 'astro:content';
+import HubTemplateB from '../../layouts/HubTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+
+import heroImg from './_images/Mentalidad-hero.jpg';
+import queEsImg from './_images/Mentalidad-que-es.jpg';
+import icono1 from './_images/Mentalidad-icon-1.png';
+import icono2 from './_images/Mentalidad-icon-2.png';
+import icono3 from './_images/Mentalidad-icon-3.png';
+import icono4 from './_images/Mentalidad-icon-4.png';
+import icono5 from './_images/Mentalidad-icon-5.png';
+import icono6 from './_images/Mentalidad-icon-6.png';
+import relacionImg1 from './_images/Mentalidad-relacion-infografia.jpg';
+import relacionImg2 from './_images/Mentalidad-relacion-realista.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('mentalidad')).slice(0, 3);
+---
+
+<HubTemplateB
+  seoTitle="Transforma tu mentalidad para mejorar tu bienestar físico, emocional y mental"
+  seoDescription="Descubre estrategias, hábitos y herramientas para desarrollar una mentalidad positiva, gestionar el estrés, mejorar tu autoestima y fortalecer tu bienestar integral."
+  heroTitle="Transforma tu mentalidad para mejorar tu bienestar físico, emocional y mental"
+  heroSubtitle="Descubre estrategias, hábitos y herramientas para desarrollar una mentalidad positiva, gestionar el estrés, mejorar tu autoestima y fortalecer tu bienestar integral. Aprende cómo tus pensamientos, emociones y hábitos diarios influyen en tu salud, tu energía y tu calidad de vida."
+  heroImage={heroImg}
+  heroImageAlt="Mentalidad"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  temasHeading="Subcategorías Relacionadas con la Mentalidad"
+  temas={[
+    { icon: '😰', title: 'Ansiedad por comer', href: '/ansiedad-comida/', text: 'La relación entre la mente y la alimentación puede generar episodios de ansiedad, impulsividad o culpa al comer. Entender estos patrones es clave para mejorar la relación con la comida y recuperar una sensación de control y equilibrio.' },
+    { icon: '🪞', title: 'Relación con el cuerpo', href: '/relacion-cuerpo-mujeres/', text: 'La forma en la que nos percibimos físicamente está muy ligada a nuestra mentalidad. Trabajar la autoimagen y la autocompasión ayuda a mejorar la autoestima y a desarrollar una relación más saludable con el propio cuerpo.' },
+    { icon: '🧠', title: 'Estrés y hábitos', href: '/estres-habitos/', text: 'El estrés influye directamente en nuestros hábitos diarios, afectando al sueño, la alimentación, la energía y la toma de decisiones. Aprender a gestionarlo es fundamental para construir rutinas más saludables y sostenibles.' },
+  ]}
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>La mentalidad influye directamente en nuestra salud física, emocional y mental.</p>
+    <p>Nuestros pensamientos, creencias y hábitos diarios pueden afectar al nivel de estrés, la motivación, la autoestima y la calidad de vida.</p>
+    <p>Desarrollar una mentalidad saludable ayuda a mejorar el bienestar integral, gestionar mejor las emociones y afrontar los desafíos del día a día con mayor equilibrio y resiliencia.</p>
+    <p>En esta sección descubrirás consejos, estrategias y contenidos prácticos para fortalecer tu mentalidad y potenciar tu bienestar.</p>
+
+    <ul class="sintomas-destacados">
+      <li>Pensamientos Negativos</li>
+      <li>Dificultad para Decidir</li>
+      <li>Falta de Motivación</li>
+      <li>Sentir Culpa o Vergüenza</li>
+      <li>Actitud Pesimista</li>
+    </ul>
+
+    <p>¿Sabías que tu mentalidad puede ser el obstáculo o el impulso que determine tu bienestar y tus objetivos?</p>
+    <ul>
+      <li>Aprenderás cómo la mentalidad influye en la salud mental, emocional y física.</li>
+      <li>Descubrirás las causas y señales de una mentalidad negativa y cómo empezar a transformarla.</li>
+      <li>Conocerás estrategias prácticas para desarrollar una mentalidad más positiva, resiliente y equilibrada.</li>
+      <li>Entenderás la relación entre la mentalidad, el estrés y el equilibrio hormonal y metabólico.</li>
+    </ul>
+  </section>
+
+  <TextoConImagen heading="¿Qué es la Mentalidad?" image={queEsImg} imageAlt="Qué es la mentalidad">
+    <p>La mentalidad es el conjunto de creencias, pensamientos, emociones y patrones de interpretación con los que una persona entiende el mundo y se relaciona con él.</p>
+    <p>No se trata solo de "cómo pensamos", sino también de cómo filtramos la realidad, cómo reaccionamos ante lo que nos ocurre y qué significado le damos a nuestras experiencias.</p>
+    <p>Se forma a lo largo de la vida y está influida por múltiples factores como la educación, la familia, la cultura, las experiencias personales y el entorno social.</p>
+    <p>Con el tiempo, estos elementos van construyendo "formas automáticas de pensar" que pueden ser más limitantes o más constructivas.</p>
+    <p>La mentalidad también determina cómo afrontamos los retos, cómo gestionamos el estrés, cómo tomamos decisiones y cómo nos percibimos a nosotros mismos.</p>
+    <p>Por eso, dos personas pueden vivir la misma situación y experimentarla de forma completamente distinta.</p>
+    <p>Además, la mentalidad no es algo fijo. Aunque tiene una base aprendida, puede trabajarse y transformarse mediante la toma de conciencia, el desarrollo personal y la adopción de nuevos hábitos mentales y emocionales.</p>
+    <p>Cambiar la mentalidad implica aprender a cuestionar creencias automáticas, desarrollar una visión más flexible y construir una forma de pensar más equilibrada y adaptativa.</p>
+    <p>En definitiva, la mentalidad es uno de los pilares que condiciona nuestro bienestar general, ya que influye tanto en nuestra salud mental como en nuestra salud física y en la calidad de nuestras decisiones diarias.</p>
+  </TextoConImagen>
+
+  <p class="parrafo-suelto">¿Qué factores pueden contribuir a desarrollar una mentalidad negativa?</p>
+
+  <CausasGrid
+    heading="Causas de una Mentalidad Negativa"
+    causas={[
+      { icon: icono1, title: 'Trauma o Experiencias Adversas', text: 'Los eventos difíciles o traumáticos pueden influir en la forma en la que interpretamos la realidad, generando patrones de pensamiento más negativos o defensivos.' },
+      { icon: icono2, title: 'Influencias Ambientales', text: 'El entorno en el que vivimos, así como las personas con las que nos relacionamos, pueden moldear nuestra mentalidad de forma positiva o negativa.' },
+      { icon: icono3, title: 'Pensamientos y Creencias Limitantes', text: 'Las ideas rígidas o autoimpuestas sobre lo que "podemos o no podemos hacer" pueden frenar el crecimiento personal y reforzar una visión negativa de uno mismo.' },
+      { icon: icono4, title: 'Falta de Autoestima', text: 'Una baja autoestima puede generar inseguridad, dudas constantes y una percepción negativa de las propias capacidades.' },
+      { icon: icono5, title: 'Estrés y Ansiedad', text: 'Los estados prolongados de estrés o ansiedad pueden distorsionar la percepción de la realidad, aumentando la tendencia a pensar en términos negativos o catastrofistas.' },
+      { icon: icono6, title: 'Falta de Propósito y Dirección', text: 'No tener claridad sobre objetivos o sentido personal puede generar sensación de vacío, desmotivación y una visión más pesimista del futuro.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Ahora que hemos explorado las principales causas de una mentalidad negativa, es momento de dar el siguiente paso: aprender cómo identificarlas, gestionarlas y transformarlas.</p>
+  <p class="parrafo-suelto">Desarrollar una mentalidad positiva no significa ignorar los problemas, sino aprender a interpretarlos de una forma más equilibrada, constructiva y consciente.</p>
+  <p class="parrafo-suelto">A través de pequeñas acciones diarias, cambios en los patrones de pensamiento y el desarrollo de nuevas habilidades emocionales, es posible fortalecer la resiliencia, mejorar la autoestima y fomentar una visión más saludable de la vida.</p>
+  <p class="parrafo-suelto">En esta sección descubrirás estrategias prácticas para entrenar tu mente y construir una mentalidad más positiva y estable a largo plazo.</p>
+
+  <section class="sintomas-detalle">
+    <h2>Síntomas de una Mentalidad Negativa</h2>
+    <p>¿Cómo se manifiesta una mentalidad negativa en nuestra vida diaria?</p>
+    <ul>
+      <li><strong>Pensamientos negativos:</strong> Los patrones de pensamiento negativos pueden distorsionar la percepción de la realidad y reforzar una visión pesimista de la vida.</li>
+      <li><strong>Actitud pesimista:</strong> Una forma de ver las situaciones desde el peor escenario posible puede generar sensación de bloqueo, desesperanza y falta de control.</li>
+      <li><strong>Falta de motivación:</strong> La ausencia de impulso o energía puede derivar en estancamiento, desinterés y pérdida de propósito en el día a día.</li>
+      <li><strong>Dificultad para tomar decisiones:</strong> La inseguridad constante puede generar dudas excesivas, ansiedad y estrés ante decisiones cotidianas.</li>
+      <li><strong>Sentimientos de culpa o vergüenza:</strong> Estas emociones pueden erosionar la autoestima y alimentar una percepción negativa de uno mismo.</li>
+      <li><strong>Aislamiento social:</strong> La tendencia a evitar el contacto social puede aumentar la sensación de soledad y desconexión emocional con los demás.</li>
+    </ul>
+  </section>
+
+  <RelacionImagenes
+    heading="Relación entre la Mentalidad y los Sistemas Hormonales y Metabólicos"
+    images={[
+      { src: relacionImg1, alt: 'Relación entre mentalidad y sistemas hormonales' },
+      { src: relacionImg2, alt: 'Mentalidad y bienestar' },
+    ]}
+  >
+    <p>¿Cómo se relaciona la mentalidad con nuestros sistemas hormonales y metabólicos?</p>
+    <p>La mentalidad no solo influye en cómo pensamos o sentimos, sino que también tiene un impacto directo en procesos biológicos del organismo.</p>
+    <p>El estrés, los pensamientos repetitivos y las emociones sostenidas pueden modular la producción de hormonas como el cortisol, la adrenalina o la serotonina, afectando al equilibrio general del cuerpo.</p>
+    <p>De la misma forma, estos cambios hormonales pueden influir en el metabolismo, el nivel de energía, el descanso y la capacidad de recuperación del organismo.</p>
+    <p>Por ello, una mentalidad más equilibrada y consciente puede contribuir a mejorar tanto la salud mental como el bienestar físico.</p>
+    <p>Ahora que comprendemos la conexión entre la mentalidad y los sistemas hormonales y metabólicos, podemos dar el siguiente paso: aprender estrategias prácticas para mejorarla y avanzar hacia un bienestar integral más estable y duradero.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Soluciones para Mejorar la Mentalidad"
+    soluciones={[
+      { title: 'Practicar la Gratitud', body: 'Entrenar la mente para reconocer lo positivo del día a día ayuda a reducir el enfoque en lo negativo y mejorar el bienestar emocional.' },
+      { title: 'Practicar la Mindfulness', body: 'La atención plena permite observar pensamientos y emociones sin juicio, reduciendo el estrés y mejorando la claridad mental.' },
+      { title: 'Establecer Metas y Objetivos', body: 'Definir objetivos claros aporta dirección, motivación y sensación de progreso en la vida diaria.' },
+      { title: 'Desarrollar una Mentalidad de Crecimiento', body: 'Aprender a ver los retos como oportunidades de aprendizaje favorece la resiliencia y el desarrollo personal continuo.' },
+      { title: 'Cultivar Relaciones Positivas', body: 'Rodearse de personas que aportan apoyo, motivación y equilibrio emocional influye directamente en la calidad de vida y la mentalidad.' },
+    ]}
+  />
+</HubTemplateB>
+
+<style>
+  .intro,
+  .parrafo-suelto,
+  .sintomas-detalle {
+    padding: 0 1rem;
+  }
+  .sintomas-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+// Grid de "causas" (u otro tema en grid de tarjetas icono+título+texto).
+// El conteo real varía por página (6 es lo más común, pero hay páginas con
+// 8) — se respeta el conteo real de cada página, no se fuerza a 6.
+// El icono admite emoji (string, se renderiza como texto) o una imagen real
+// importada vía astro:assets (ImageMetadata, se renderiza con <Image>) — en
+// el sitio original la mayoría de estas tarjetas usan imagen real, no emoji.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Causa {
+  icon: string | ImageMetadata;
+  title: string;
+  text: string;
+}
+interface Props {
+  heading: string;
+  causas: Causa[];
+}
+const { heading, causas } = Astro.props;
+---
+
+<section class="causas-grid">
+  <h2>{heading}</h2>
+  <div class="grid">
+    {causas.map((c) => (
+      <div class="causa-card">
+        {typeof c.icon === 'string'
+          ? <span class="icon" aria-hidden="true">{c.icon}</span>
+          : <Image class="icon-img" src={c.icon} alt="" width={80} height={80} />}
+        <h3>{c.title}</h3>
+        <p>{c.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .causa-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .icon {
+    font-size: 2rem;
+  }
+  .icon-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+</style>

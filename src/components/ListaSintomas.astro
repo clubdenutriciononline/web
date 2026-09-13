@@ -1,0 +1,34 @@
+---
+// Lista de bullets de síntomas (conteo real variable por página).
+interface Props {
+  heading: string;
+  items: string[];
+}
+const { heading, items } = Astro.props;
+---
+
+<section class="lista-sintomas">
+  <h2>{heading}</h2>
+  <ul>
+    {items.map((item) => (
+      <li>✔ {item}</li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .lista-sintomas ul {
+    columns: 2;
+    list-style: none;
+    padding: 0;
+  }
+  .lista-sintomas li {
+    break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+  @media (max-width: 640px) {
+    .lista-sintomas ul {
+      columns: 1;
+    }
+  }
+</style>

@@ -1,0 +1,155 @@
+---
+// Lead magnet activamente enlazado desde CTAs de toda la web (home, hubs,
+// subpáginas) — se mantiene igual, confirmado en el mapa de migración.
+//
+// Formulario de captura (opt-in): en el original, el formulario real es un
+// iframe embebido de un servicio externo de funnels/email marketing
+// (ipzmarketing.com), en concreto:
+//   https://clubdenutricion.ipzmarketing.com/f/5gCYfuS_XVI
+// No es posible reproducir ese iframe ni sus campos tal cual porque
+// pertenece a un servicio de terceros y su contenido no es accesible desde
+// fuera. En su lugar, siguiendo el mismo patrón que ContactForm.astro, se
+// construye aquí un formulario propio (nombre + email) SIN conexión de
+// envío real todavía — pendiente de decisión de la usuaria sobre qué
+// proveedor usar (mismo caso que el formulario de contacto).
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import mockupImg from './_images/mockup.jpg';
+---
+
+<BaseLayout
+  title="Recupera tu energía y equilibra tus hormonas en 5 pasos - Club de Nutrición"
+  description="Una guía práctica basada en ciencia para mujeres +35 que quieren dejar de sentirse cansadas, hinchadas y sin energía (sin dietas extremas)."
+>
+  <h1>Recupera tu energía y equilibra tus hormonas en 5 pasos</h1>
+
+  <p>Una guía práctica basada en ciencia para mujeres +35 que quieren dejar de sentirse cansadas, hinchadas y sin energía (sin dietas extremas).</p>
+
+  <div class="optin-columns">
+    <form id="optin-form" class="optin-form" novalidate>
+      <div class="field">
+        <label for="nombre">Nombre*</label>
+        <input id="nombre" name="nombre" type="text" required minlength="2" />
+      </div>
+
+      <div class="field">
+        <label for="email">Correo electrónico*</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <button type="submit">Quiero mi guía gratis</button>
+
+      <p class="form-status" role="status" aria-live="polite" hidden></p>
+
+      <!-- TODO: conectar envío real, pendiente de decisión de la usuaria -->
+    </form>
+
+    <Image src={mockupImg} alt="Mockup de la guía 5 pasos" />
+  </div>
+
+  <p><strong>En esta guía encontrarás:</strong></p>
+
+  <ul>
+    <li>Los 5 pasos clave para recuperar tu energía</li>
+    <li>Qué alimentos realmente ayudan a tu equilibrio hormonal</li>
+    <li>Cómo reducir inflamación sin complicarte</li>
+    <li>Qué está bloqueando tu energía sin que lo sepas</li>
+    <li>Acciones simples para empezar desde hoy</li>
+  </ul>
+
+  <!-- La imagen decorativa "banner-fondo-trans" aparece en el original justo
+       antes del pie de página en TODAS las páginas (incluida esta) — por
+       eso se ha migrado como elemento global en Footer.astro, no aquí, para
+       no duplicarla. -->
+</BaseLayout>
+
+<style>
+  .optin-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 640px) {
+    .optin-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+  .optin-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 480px;
+  }
+  .field {
+    display: grid;
+    gap: 0.35rem;
+  }
+  input {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font: inherit;
+  }
+  button {
+    justify-self: start;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--color-accent, #c2185b);
+    color: #fff;
+    cursor: pointer;
+  }
+  .form-status {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: #fff3cd;
+    color: #664d03;
+    font-size: 0.9rem;
+  }
+  .form-status.error {
+    background: #f8d7da;
+    color: #842029;
+  }
+</style>
+
+<script>
+  // TODO (integración definitiva pendiente): sustituir esta función por el
+  // envío real (mismo proveedor que se decida para ContactForm.astro)
+  // cuando esté decidido y configurado. Mientras tanto, deja claro al
+  // usuario que es un modo de pruebas y NO simula un envío exitoso.
+  async function submitOptinForm(data: Record<string, string>): Promise<void> {
+    // eslint-disable-next-line no-console
+    console.info('[optin-form] Envío en modo de pruebas (sin conectar aún):', data);
+    return Promise.resolve();
+  }
+
+  const form = document.getElementById('optin-form') as HTMLFormElement | null;
+  const status = form?.querySelector<HTMLParagraphElement>('.form-status');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+
+    try {
+      await submitOptinForm(data);
+      if (status) {
+        status.hidden = false;
+        status.classList.remove('error');
+        status.textContent =
+          'Modo de pruebas: el envío real todavía no está conectado. Tu solicitud NO se ha enviado — esta integración se completará antes del despliegue definitivo.';
+      }
+    } catch (err) {
+      if (status) {
+        status.hidden = false;
+        status.classList.add('error');
+        status.textContent = 'No se ha podido procesar el formulario (modo de pruebas).';
+      }
+    }
+  });
+</script>

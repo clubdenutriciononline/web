@@ -1,0 +1,37 @@
+---
+// Solo los artículos de Blog lo usan en el sitio original (ningún hub,
+// subpágina, ni artículo de Radar de Salud lo tiene).
+interface Crumb {
+  label: string;
+  href?: string;
+}
+interface Props {
+  items: Crumb[];
+}
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumb" aria-label="Miga de pan">
+  <ol>
+    {items.map((item, i) => (
+      <li>
+        {item.href && i < items.length - 1 ? <a href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb ol {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    font-size: 0.85rem;
+    color: #666;
+  }
+  .breadcrumb li:not(:last-child)::after {
+    content: '>';
+    margin-left: 0.5rem;
+  }
+</style>

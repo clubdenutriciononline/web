@@ -1,0 +1,156 @@
+---
+// Hub Hormonas — HubTemplateA (variante única, ver 00-analisis/02-mapa-migracion.md).
+// Contenido real migrado desde https://clubdenutricion.es/hormonas/ (fidelidad
+// sin resumir), ver .firecrawl/md/hormonas.md para el markdown original.
+import HubTemplateA from '../../layouts/HubTemplateA.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+
+import heroImg from './_images/Hero.jpg';
+import sistemaEndocrinoImg from './_images/Sistema-endocrino-femenino.jpg';
+import iconEstres from './_images/Icon-estres-removebg-preview.png';
+import iconMalaAlimentacion from './_images/Icon-mala-alimentacion-1536x838.png';
+import iconFaltaDescanso from './_images/Icon-falta-descanso-1536x838.png';
+import iconInflamacionIntestinal from './_images/Icon-inflamacion-intestinal-1536x838.png';
+import iconResistenciaInsulina from './_images/Icon-resistencia-insulina-1536x838.png';
+import iconEjercicio from './_images/Icon-mucho-poco-ejercicio-1536x838.png';
+import sistemaHormonalImg from './_images/sistema-hormonal-femenino.jpg';
+import hormonasEnergiaMetabolismoImg from './_images/hormonas-energia-metabolismo.jpg';
+// Nota: en el original, las 4 tarjetas de "Explora cada área clave" llevan
+// imagen de fondo (tarjeta-menopausia-mujer-madura.jpg, etc.) en vez de
+// emoji. TemasRelacionadosGrid.astro solo admite icon:string (emoji), así
+// que se mantiene el emoji ya definido — las imágenes quedan descargadas en
+// ./_images/ por si se amplía el componente para admitir imagen de fondo.
+---
+
+<HubTemplateA
+  seoTitle="Hormonas en mujeres: cómo equilibrarlas de forma natural"
+  seoDescription="Entiende cómo funcionan tus hormonas, por qué se desregulan y cómo recuperar energía, metabolismo y bienestar."
+  heroTitle="Hormonas en mujeres: cómo equilibrarlas de forma natural"
+  heroSubtitle="Entiende cómo funcionan tus hormonas, por qué se desregulan y cómo recuperar tu energía, metabolismo y bienestar."
+  heroImage={heroImg}
+  heroImageAlt="Hormonas en mujeres"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  temasHeading="Explora cada área clave del equilibrio hormonal:"
+  temas={[
+    { icon: '🌙', title: 'Menopausia', href: '/menopausia/', text: 'Cambios hormonales en la menopausia y su impacto en la energía, el metabolismo y el bienestar femenino.' },
+    { icon: '🔄', title: 'Perimenopausia', href: '/perimenopausia/', text: 'Cómo las fluctuaciones hormonales afectan al ciclo, la energía y el estado emocional antes de la menopausia.' },
+    { icon: '⚡', title: 'Cortisol / Estrés', href: '/cortisol/', text: 'El impacto del cortisol elevado en la grasa abdominal, el sueño, la fatiga y el metabolismo.' },
+    { icon: '🔥', title: 'Inflamación hormonal', href: '/inflamacion-hormonal/', text: 'Cómo la inflamación altera las hormonas, la digestión, la energía y la sensibilidad a la insulina.' },
+  ]}
+>
+  <section class="intro">
+    <p>Las hormonas regulan prácticamente todo en el cuerpo femenino. Desde la energía diaria hasta el metabolismo, el estado de ánimo, el sueño o el peso corporal. Cuando están en equilibrio, el cuerpo funciona de forma fluida. Pero cuando se desregulan, aparecen síntomas como:</p>
+
+    <ul class="sintomas-destacados">
+      <li>Fatiga constante</li>
+      <li>Cambios de peso</li>
+      <li>Ansiedad o antojos</li>
+      <li>Problemas de sueño</li>
+      <li>Hinchazón o inflamación</li>
+    </ul>
+
+    <p>👉 Muchas veces no es un problema aislado, sino un sistema desajustado. En esta guía vas a entender:</p>
+    <ul>
+      <li>Qué son realmente las hormonas</li>
+      <li>Por qué se desregulan</li>
+      <li>Cómo afectan a tu energía y metabolismo</li>
+      <li>Qué puedes hacer para equilibrarlas de forma natural</li>
+    </ul>
+  </section>
+
+  <TextoConImagen heading="¿Qué son las hormonas?" image={sistemaEndocrinoImg} imageAlt="Sistema endocrino femenino">
+    <p>Las hormonas son mensajeros químicos producidos por el sistema endocrino. Viajan a través del torrente sanguíneo y regulan funciones clave como:</p>
+    <ul>
+      <li>metabolismo</li>
+      <li>ciclo menstrual</li>
+      <li>respuesta al estrés</li>
+      <li>sueño</li>
+      <li>apetito</li>
+    </ul>
+    <p>Las principales glándulas implicadas incluyen:</p>
+    <ul>
+      <li>ovarios</li>
+      <li>tiroides</li>
+      <li>suprarrenales</li>
+      <li>hipófisis</li>
+    </ul>
+  </TextoConImagen>
+
+  <CausasGrid
+    heading="¿Por qué se desregulan las hormonas?"
+    causas={[
+      { icon: iconEstres, title: 'Estrés crónico', text: 'El estrés constante mantiene el cortisol elevado, lo que altera la regulación hormonal, afecta al metabolismo y puede favorecer la acumulación de grasa abdominal, la fatiga y los antojos constantes.' },
+      { icon: iconMalaAlimentacion, title: 'Mala alimentación', text: 'Una dieta rica en ultraprocesados, azúcares y grasas inflamatorias puede desestabilizar la insulina, aumentar la inflamación y alterar hormonas clave como los estrógenos y la progesterona.' },
+      { icon: iconFaltaDescanso, title: 'Falta de descanso', text: 'Dormir poco o mal afecta directamente a la producción hormonal, especialmente al cortisol, la leptina y la grelina, lo que impacta en el apetito, la energía y la regulación del peso.' },
+      { icon: iconInflamacionIntestinal, title: 'Inflamación intestinal', text: 'Un intestino inflamado altera la absorción de nutrientes así como la comunicación hormonal, todo esto afecta al metabolismo, al sistema inmune y al equilibrio de hormonas sexuales.' },
+      { icon: iconResistenciaInsulina, title: 'Resistencia a la insulina', text: 'Cuando las células no responden bien a la insulina, el cuerpo acumula más grasa, aumenta la inflamación y se produce un desequilibrio en hormonas relacionadas con el metabolismo y la energía.' },
+      { icon: iconEjercicio, title: 'Sedentarismo o exceso de ejercicio', text: 'La falta de movimiento ralentiza el metabolismo y empeora la sensibilidad hormonal, mientras que el exceso de ejercicio eleva el cortisol, generando el mismo efecto de desequilibrio hormonal.' },
+    ]}
+  />
+
+  <p class="frase-destacada">El cuerpo no falla. Se adapta.</p>
+
+  <ListaSintomas
+    heading="Síntomas de desequilibrio hormonal"
+    items={[
+      'Fatiga persistente',
+      'Ansiedad',
+      'Cambios de humor',
+      'Insomnio',
+      'Dificultad para perder grasa',
+      'Hinchazón',
+      'Antojos constantes',
+      'Reglas irregulares',
+    ]}
+  />
+
+  <RelacionImagenes
+    heading="Relación entre hormonas, energía y metabolismo"
+    images={[
+      { src: sistemaHormonalImg, alt: 'Sistema hormonal femenino' },
+      { src: hormonasEnergiaMetabolismoImg, alt: 'Hormonas, energía y metabolismo' },
+    ]}
+  >
+    <p>Las hormonas no funcionan de forma aislada. Están conectadas con:</p>
+    <p>Las hormonas no actúan de forma independiente ni aislada en el organismo, sino que forman parte de una red altamente interconectada que influye directamente en cómo te sientes, cómo gestionas la energía y cómo tu cuerpo regula el metabolismo.</p>
+    <p>Este sistema hormonal está íntimamente relacionado con tres grandes pilares del equilibrio femenino: el metabolismo energético, la microbiota intestinal y el sistema nervioso.</p>
+    <p>Cuando uno de estos elementos se altera, se produce un efecto en cadena que impacta en el resto, afectando a procesos clave como la quema de grasa, la digestión, el apetito, el estado de ánimo y la respuesta al estrés.</p>
+    <p>Por ejemplo, el equilibrio entre estas hormonas puede determinar si el cuerpo utiliza la energía de forma eficiente o si, por el contrario, entra en un estado de bloqueo metabólico.</p>
+    <p>A continuación, verás algunos ejemplos claros de cómo estas interacciones hormonales se traducen en cambios visibles en el cuerpo y la energía diaria.</p>
+    <p class="frase-destacada">No es falta de fuerza de voluntad. Es regulación interna.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Cómo equilibrar las hormonas de forma natural"
+    soluciones={[
+      { title: 'Alimentación equilibrada' },
+      { title: 'Control del estrés' },
+      { title: 'Descanso de calidad' },
+      { title: 'Movimiento adaptado' },
+      { title: 'Salud intestinal' },
+    ]}
+  />
+</HubTemplateA>
+
+<style>
+  .intro,
+  .frase-destacada {
+    padding: 0 1rem;
+  }
+  .sintomas-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  .frase-destacada {
+    font-style: italic;
+    text-align: center;
+  }
+</style>

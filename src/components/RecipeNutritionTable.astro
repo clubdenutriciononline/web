@@ -1,0 +1,51 @@
+---
+// Tabla de composición nutricional — solo en artículos tipo receta
+// (campo `nutricion` opcional en la collection `blog`).
+interface Props {
+  nutricion: Record<string, string | undefined>;
+}
+const { nutricion } = Astro.props;
+
+const labels: Record<string, string> = {
+  calorias: 'Calorías',
+  proteinas: 'Proteínas',
+  grasas: 'Grasas',
+  carbohidratos: 'Carbohidratos',
+  sodio: 'Sodio',
+  potasio: 'Potasio',
+  calcio: 'Calcio',
+  hierro: 'Hierro',
+  vitaminaA: 'Vitamina A',
+  vitaminaC: 'Vitamina C',
+};
+
+const rows = Object.entries(nutricion).filter(([, value]) => value);
+---
+
+{rows.length > 0 && (
+  <table class="nutrition-table">
+    <caption>Composición nutricional (aprox. por porción)</caption>
+    <tbody>
+      {rows.map(([key, value]) => (
+        <tr>
+          <th scope="row">{labels[key] ?? key}</th>
+          <td>{value}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)}
+
+<style>
+  .nutrition-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 420px;
+  }
+  .nutrition-table th,
+  .nutrition-table td {
+    border: 1px solid #eee;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+</style>

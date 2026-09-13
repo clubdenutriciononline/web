@@ -1,0 +1,24 @@
+---
+// Botones de compartir — presentes en artículos de Radar de Salud,
+// ausentes en artículos de Blog normal (diferencia real confirmada).
+interface Props {
+  url: string;
+  title: string;
+}
+const { url, title } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+---
+
+<div class="share-buttons">
+  <a href={`https://wa.me/?text=${encodedTitle}%20${encodedUrl}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`} target="_blank" rel="noopener noreferrer">X</a>
+</div>
+
+<style>
+  .share-buttons {
+    display: flex;
+    gap: 0.75rem;
+  }
+</style>

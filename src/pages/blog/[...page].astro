@@ -1,0 +1,64 @@
+---
+// /blog/ = página 1, /blog/2/ ... /blog/13/ = resto (patrón estándar de
+// paginación de Astro con [...page], igual URL que el original).
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { GetStaticPathsOptions } from 'astro';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = (await getCollection('blog'))
+    .filter((p) => !p.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return paginate(posts, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title="Blog — Club de Nutrición" description="Artículos de nutrición hormonal y bienestar para mujeres +35.">
+  <h1>Blog</h1>
+  <h2>Entradas de blog</h2>
+
+  <div class="grid">
+    {page.data.map((post) => (
+      <a class="post-card" href={`/${post.data.slug ?? post.id}/`}>
+        <Image src={post.data.image} alt={post.data.imageAlt} width={320} height={200} />
+        <span class="categoria">{post.data.category}</span>
+        <h3>{post.data.title}</h3>
+        <p>{post.data.description}</p>
+        <span class="leer-mas">Leer Artículo »</span>
+      </a>
+    ))}
+  </div>
+
+  <nav class="paginacion" aria-label="Paginación del blog">
+    {page.url.prev && <a href={page.url.prev}>« Anterior</a>}
+    <span>Página {page.currentPage} de {page.lastPage}</span>
+    {page.url.next && <a href={page.url.next}>Siguiente »</a>}
+  </nav>
+</BaseLayout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .post-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .categoria {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-accent, #c2185b);
+  }
+  .paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+</style>

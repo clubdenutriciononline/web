@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('fatiga-cronica')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Fatiga crónica: síntomas y causas"
+  seoDescription="Qué causa la fatiga crónica en mujeres y cómo abordarla de forma natural."
+  heroTitle="Fatiga crónica: causas, síntomas y soluciones para recuperar la energía"
+  heroSubtitle="Descubre las principales causas, síntomas y tratamientos de la fatiga crónica, un problema que puede afectar la energía, el bienestar y la calidad de vida de millones de personas en todo el mundo."
+  heroImage={heroImg}
+  heroImageAlt="Fatiga crónica"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>La fatiga crónica es un problema cada vez más frecuente que puede afectar a personas de cualquier edad y condición física.</p>
+  <p>Se caracteriza por una sensación persistente de cansancio extremo, falta de energía y agotamiento físico o mental que no mejora completamente con el descanso y que puede dificultar las actividades diarias, el rendimiento y la calidad de vida.</p>
+  <p>Las causas de la fatiga crónica pueden ser muy variadas e incluir factores como el estrés, la falta de sueño, una alimentación desequilibrada, problemas hormonales, deficiencias nutricionales o determinadas enfermedades.</p>
+  <p>Además, sus síntomas pueden manifestarse de diferentes formas, afectando tanto al cuerpo como al bienestar emocional y mental.</p>
+  <p>En esta guía descubrirás las principales causas, síntomas y tratamientos para la fatiga crónica, así como hábitos y estrategias que pueden ayudarte a recuperar la energía, mejorar el bienestar y combatir el cansancio de forma efectiva.</p>
+
+  <TextoConImagen heading="¿Qué es la Fatiga Crónica?" image={definicionImg} imageAlt="Qué es la fatiga crónica">
+    <p>La fatiga crónica es una sensación persistente de cansancio físico y mental que no mejora completamente con el descanso y que puede afectar de forma significativa a la calidad de vida.</p>
+    <p>Este agotamiento continuo puede dificultar actividades cotidianas como trabajar, estudiar, hacer ejercicio o mantener la concentración durante el día.</p>
+    <p>A diferencia del cansancio ocasional, la fatiga crónica suele mantenerse durante largos periodos de tiempo y puede estar relacionada con múltiples factores, como el estrés, la falta de sueño, problemas hormonales, deficiencias nutricionales, trastornos metabólicos, enfermedades crónicas o hábitos de vida poco saludables.</p>
+    <p>Además de la falta de energía, muchas personas pueden experimentar síntomas como debilidad, dificultad para concentrarse, somnolencia, irritabilidad o sensación de agotamiento constante.</p>
+    <p>Identificar las causas de la fatiga crónica es fundamental para encontrar soluciones efectivas y recuperar el bienestar físico y mental.</p>
+  </TextoConImagen>
+
+  <p>Descubre los factores físicos, hormonales y relacionados con el estilo de vida que pueden contribuir al cansancio persistente y la falta de energía diaria.</p>
+  <CausasGrid
+    heading="Causas de la Fatiga Crónica"
+    causas={[
+      { icon: '🩺', title: 'Problemas de Salud', text: 'Algunas enfermedades y trastornos, como la anemia, el hipotiroidismo o la diabetes, pueden provocar fatiga constante y agotamiento físico.' },
+      { icon: '🛋️', title: 'Estilo de Vida', text: 'El sedentarismo, una mala alimentación y los hábitos poco saludables pueden reducir los niveles de energía y favorecer la fatiga crónica.' },
+      { icon: '😰', title: 'Estrés y Ansiedad', text: 'El estrés prolongado y la ansiedad pueden agotar la energía física y mental, afectando al descanso y al bienestar diario.' },
+      { icon: '🌙', title: 'Falta de Sueño', text: 'Dormir poco o tener un sueño de mala calidad puede impedir una recuperación adecuada del cuerpo y aumentar el cansancio.' },
+      { icon: '💊', title: 'Medicamentos', text: 'Algunos medicamentos pueden causar somnolencia, debilidad o sensación de agotamiento como efecto secundario.' },
+      { icon: '🧬', title: 'Otros Factores', text: 'La edad, los cambios hormonales, la genética y otros factores individuales también pueden influir en la fatiga crónica.' },
+    ]}
+  />
+  <p>Ahora que conocemos las principales causas de la fatiga crónica, es fundamental comprender sus síntomas y cómo este problema puede afectar la energía, el rendimiento y la calidad de vida en el día a día.</p>
+
+  <p>Descubre cómo la fatiga crónica puede manifestarse a través de síntomas físicos, mentales y emocionales que afectan al bienestar diario.</p>
+  <ListaSintomas
+    heading="Síntomas de la Fatiga Crónica"
+    items={[
+      'El cansancio persistente puede dificultar las actividades diarias y reducir la energía física y mental.',
+      'El dolor muscular y articular puede aparecer junto a la fatiga, especialmente cuando existe estrés o falta de actividad física.',
+      'Los problemas de concentración y memoria pueden afectar el rendimiento, la productividad y la capacidad de mantener la atención.',
+      'La irritabilidad y los cambios de humor son frecuentes cuando el cuerpo y la mente permanecen en un estado constante de agotamiento.',
+      'Las alteraciones del apetito, tanto aumento como pérdida, pueden estar relacionadas con desequilibrios hormonales y fatiga prolongada.',
+      'La dificultad para dormir o el insomnio pueden empeorar el cansancio y afectar la recuperación del organismo.',
+    ]}
+  />
+
+  <p>Descubre cómo los desequilibrios hormonales y metabólicos pueden influir en la fatiga crónica, el cansancio persistente y los niveles de energía diarios.</p>
+  <RelacionImagenes
+    heading="Relación con los Sistemas Hormonales y Metabólicos"
+    images={[
+      { src: relacion1Img, alt: 'Relación de la fatiga crónica con sistemas hormonales y metabólicos' },
+      { src: relacion2Img, alt: 'Fatiga crónica y relación emotiva' },
+    ]}
+  >
+    <p>La fatiga crónica puede estar relacionada con alteraciones en el sistema hormonal y metabólico, ya que hormonas como el cortisol, la insulina o las hormonas tiroideas participan directamente en la producción de energía, el metabolismo y la respuesta al estrés.</p>
+    <p>Cuando estos sistemas no funcionan correctamente, es frecuente experimentar agotamiento físico, falta de concentración y sensación constante de cansancio.</p>
+    <p>Los problemas metabólicos y hormonales también pueden afectar el sueño, el estado de ánimo, el apetito y la capacidad de recuperación del organismo.</p>
+    <p>Factores como el estrés prolongado, una mala alimentación, la falta de descanso o determinados trastornos de salud pueden contribuir a estos desequilibrios y empeorar los síntomas de la fatiga crónica.</p>
+    <p>Comprender la relación entre la fatiga crónica y los sistemas hormonales y metabólicos es fundamental para identificar las posibles causas del cansancio persistente y aplicar estrategias que ayuden a recuperar la energía, mejorar el bienestar y mantener un estilo de vida más saludable.</p>
+  </RelacionImagenes>
+
+  <p>Descubre estrategias prácticas y efectivas para recuperar la energía, reducir el cansancio persistente y mejorar tu bienestar diario.</p>
+  <SolucionesList
+    heading="Soluciones para la Fatiga Crónica"
+    soluciones={[
+      { title: 'Realizar ejercicio regularmente', body: 'Mejora la circulación, aumenta la energía y ayuda a reducir la sensación de fatiga.' },
+      { title: 'Mantener un estilo de vida saludable', body: 'Adoptar una alimentación equilibrada y hábitos positivos favorece el equilibrio físico y mental.' },
+      { title: 'Dormir lo suficiente', body: 'Un descanso reparador es clave para recuperar energía y mejorar el rendimiento diario.' },
+      { title: 'Reducir el estrés y la ansiedad', body: 'Gestionar el estrés ayuda a evitar el desgaste físico y mental que agrava la fatiga.' },
+      { title: 'Buscar apoyo médico si es necesario', body: 'Un profesional puede ayudar a identificar causas subyacentes y proponer un tratamiento adecuado.' },
+    ]}
+  />
+</SubpageTemplateB>

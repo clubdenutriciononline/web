@@ -1,0 +1,36 @@
+---
+// Chips de síntomas destacados justo debajo del hero. El número de items
+// varía por página real (5 en la mayoría, 7 en Relación con el cuerpo) —
+// no se fuerza a un conteo fijo.
+interface Item {
+  label: string;
+}
+interface Props {
+  items: Item[];
+}
+const { items } = Astro.props;
+---
+
+<ul class="sintomas-destacados">
+  {items.map((item) => (
+    <li>{item.label}</li>
+  ))}
+</ul>
+
+<style>
+  .sintomas-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+  }
+  .sintomas-destacados li {
+    background: var(--color-surface-alt, #fdf2f7);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+</style>

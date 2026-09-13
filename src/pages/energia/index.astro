@@ -1,0 +1,145 @@
+---
+// Hub Energía — HubTemplateB (compartida con Metabolismo/Microbiota/Mentalidad).
+// Contenido real migrado desde https://clubdenutricion.es/energia/, ver
+// .firecrawl/md/energia.md para el markdown original.
+import { getCollection } from 'astro:content';
+import HubTemplateB from '../../layouts/HubTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+
+import heroImg from './_images/energia-hero-e1778319727162.jpg';
+import queEsImg from './_images/energia-energia-e1778320626244-572x1024.jpg';
+import iconoSueno from './_images/Energia-Icono-1.png';
+import iconoAlimentacion from './_images/Energia-Icono-2.png';
+import iconoEstres from './_images/Energia-Icono-3-e1778320969699.png';
+import iconoHormonas from './_images/Energia-Icono-4.png';
+import iconoSedentarismo from './_images/Energia-Icono-5.png';
+import iconoMedicamentos from './_images/Energia-Icono-6-e1778320740658.png';
+import relacionImg1 from './_images/energ-ia-infografia-relacion.jpg';
+import relacionImg2 from './_images/Energia-equilibrio-hormonal.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('energia')).slice(0, 3);
+---
+
+<HubTemplateB
+  seoTitle="Energía en mujeres: cómo mantener el equilibrio de forma natural"
+  seoDescription="Aprende a mejorar tus niveles de energía, reducir la fatiga y mantener un estilo de vida más activo, saludable y equilibrado."
+  heroTitle="Energía en mujeres: cómo mantener el equilibrio de forma natural"
+  heroSubtitle="Aprende a mejorar tus niveles de energía, reducir la fatiga y mantener un estilo de vida más activo, saludable y equilibrado."
+  heroImage={heroImg}
+  heroImageAlt="Energía en mujeres"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  temasHeading="Temas relacionados con la Energía y el Bienestar"
+  temas={[
+    { icon: '⚡', title: 'Fatiga crónica', href: '/fatiga-cronica/', text: 'Descubre las causas del cansancio persistente y cómo recuperar tu energía diaria de forma efectiva.' },
+    { icon: '😴', title: 'Sueño', href: '/sueno/', text: 'Aprende a mejorar la calidad del sueño y su impacto directo en tu energía, hormonas y rendimiento.' },
+    { icon: '🔋', title: 'Rutinas energéticas', href: '/rutinas-energeticas/', text: 'Crea hábitos diarios que te ayuden a mantener niveles de energía estables y sostenibles.' },
+  ]}
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>La energía es fundamental para mantener una vida activa, saludable y equilibrada. Sin embargo, muchas personas experimentan cansancio, fatiga física o falta de energía en su día a día, lo que puede afectar al bienestar, la concentración y la calidad de vida.</p>
+    <p>En esta sección aprenderás cómo mejorar tus niveles de energía de forma natural, comprendiendo las causas del agotamiento y los factores que influyen en el rendimiento físico y mental.</p>
+    <p>La alimentación, el descanso, el estrés, las hormonas, el metabolismo y los hábitos diarios desempeñan un papel clave en cómo nos sentimos cada día.</p>
+    <p>La energía no solo depende del cuerpo, sino también del equilibrio mental y emocional.</p>
+    <p>Por eso, aquí encontrarás información y recursos para ayudarte a recuperar vitalidad, reducir la fatiga y mejorar tu bienestar general de forma práctica y sostenible.</p>
+
+    <ul class="sintomas-destacados">
+      <li>Cansancio Persistente</li>
+      <li>Dificultades de Concentración</li>
+      <li>Dolores Musculares</li>
+      <li>Problemas de Sueño</li>
+      <li>Cambios de Humor</li>
+    </ul>
+
+    <p>¿Quieres mejorar tu energía y sentirte con más vitalidad cada día? Descubre cómo funciona la energía en el cuerpo y qué factores pueden influir en el cansancio, la fatiga y el bajo rendimiento físico y mental.</p>
+    <p>En esta sección aprenderás:</p>
+    <ul>
+      <li>Cómo funciona la energía en el organismo y cuál es su impacto en la salud y el bienestar.</li>
+      <li>Las causas más comunes de fatiga, agotamiento y falta de energía.</li>
+      <li>La relación entre energía, hormonas, metabolismo y estilo de vida.</li>
+      <li>Estrategias y hábitos prácticos para aumentar la energía de forma natural y sostenible.</li>
+      <li>Cómo mejorar el equilibrio físico y mental para sentirte con más vitalidad cada día.</li>
+    </ul>
+  </section>
+
+  <TextoConImagen heading="¿Qué es la Energía?" image={queEsImg} imageAlt="Qué es la energía">
+    <p>La energía es la capacidad que tiene el cuerpo para realizar funciones y mantener sus procesos vitales.</p>
+    <p>Gracias a ella podemos movernos, pensar, respirar, mantener la temperatura corporal y llevar a cabo todas las actividades del día a día.</p>
+    <p>El organismo obtiene energía principalmente a través de los alimentos, transformando nutrientes como carbohidratos, grasas y proteínas en combustible para las células mediante el metabolismo.</p>
+    <p>Cuando este proceso funciona correctamente, el cuerpo puede mantener un buen rendimiento físico y mental.</p>
+    <p>La energía es fundamental para la salud y el bienestar, ya que influye directamente en la vitalidad, la concentración, el estado de ánimo y el funcionamiento del organismo.</p>
+    <p>Un desequilibrio energético puede manifestarse en forma de fatiga, cansancio, falta de motivación o bajo rendimiento diario.</p>
+    <p>Existen diferentes formas de energía, como la energía cinética, relacionada con el movimiento; la energía potencial, que se almacena para ser utilizada posteriormente; y la energía térmica, que ayuda a regular la temperatura corporal.</p>
+    <p>Todas ellas participan en el correcto funcionamiento del cuerpo humano y en el mantenimiento de una vida activa y saludable.</p>
+  </TextoConImagen>
+
+  <p class="parrafo-suelto">La fatiga y el bajo rendimiento energético pueden tener múltiples causas relacionadas con el estilo de vida, la alimentación, el descanso, las hormonas o determinadas condiciones de salud. Identificar el origen del cansancio es fundamental para mejorar la energía y recuperar el bienestar físico y mental.</p>
+
+  <CausasGrid
+    heading="Causas de la fatiga y la falta de energía"
+    causas={[
+      { icon: iconoSueno, title: 'Falta de sueño', text: 'Dormir poco o descansar mal reduce la energía, afecta la concentración y aumenta la sensación de fatiga diaria.' },
+      { icon: iconoAlimentacion, title: 'Alimentación desequilibrada', text: 'Una dieta pobre en nutrientes y rica en ultraprocesados puede provocar cansancio y bajones de energía.' },
+      { icon: iconoEstres, title: 'Estrés y Ansiedad', text: 'El estrés constante agota la energía física y mental, afectando al bienestar y al rendimiento diario.' },
+      { icon: iconoHormonas, title: 'Desequilibrios hormonales', text: 'Problemas hormonales y metabólicos pueden influir directamente en la fatiga y la falta de vitalidad.' },
+      { icon: iconoSedentarismo, title: 'Sedentarismo', text: 'La falta de actividad física puede disminuir la energía y aumentar la sensación de cansancio.' },
+      { icon: iconoMedicamentos, title: 'Medicamentos y Sustancias', text: 'Algunos medicamentos o estimulantes pueden alterar el descanso y afectar a los niveles de energía.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Ahora que hemos revisado las causas más comunes de la fatiga y el bajo rendimiento energético, es importante comprender cómo estos factores influyen en el equilibrio hormonal y el metabolismo.</p>
+  <p class="parrafo-suelto">Estos sistemas regulan gran parte de nuestra energía diaria, por lo que cualquier alteración puede reflejarse en síntomas como cansancio persistente, falta de concentración o disminución del rendimiento físico y mental.</p>
+
+  <SolucionesList
+    heading="Síntomas de la Fatiga y Bajo Rendimiento Energético"
+    soluciones={[
+      { title: 'Cansancio persistente', body: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },
+      { title: 'Dificultad de concentración', body: 'Problemas para enfocarse o mantener la atención, que pueden afectar al rendimiento diario y estar relacionados con el estrés, la falta de sueño o la ansiedad.' },
+      { title: 'Dolores musculares', body: 'Molestias o rigidez muscular frecuentes que pueden aparecer por sedentarismo, sobrecarga física o ciertas condiciones como la fibromialgia.' },
+      { title: 'Problemas de sueño', body: 'Dificultad para conciliar el sueño o descanso de mala calidad, como insomnio o apnea del sueño, que afectan directamente a la energía diaria.' },
+      { title: 'Cambios de humor', body: 'Variaciones emocionales como irritabilidad, apatía o tristeza, que pueden estar asociadas a desequilibrios emocionales o de salud mental.' },
+      { title: 'Dificultad en actividades diarias', body: 'Sensación de falta de energía para realizar tareas cotidianas, que puede indicar fatiga crónica u otros problemas de salud subyacentes.' },
+    ]}
+  />
+
+  <RelacionImagenes
+    heading="Relación con Sistemas Hormonales y Metabólicos"
+    images={[
+      { src: relacionImg1, alt: 'Relación de la energía con los sistemas hormonales y metabólicos' },
+      { src: relacionImg2, alt: 'Equilibrio hormonal y energía' },
+    ]}
+  >
+    <p>Nuestra energía está directamente influida por el equilibrio entre el sistema hormonal y el metabolismo, dos sistemas que regulan funciones clave del organismo como el uso de la energía, el estado de ánimo y la respuesta al estrés.</p>
+    <p>El sistema endocrino, formado por estructuras como el hipotálamo y la hipófisis, coordina la liberación de hormonas que afectan a la energía diaria. Hormonas como el cortisol, la adrenalina y la insulina participan en la gestión del estrés, el control de la glucosa en sangre y el metabolismo de los nutrientes. Cuando este equilibrio se altera, pueden aparecer síntomas como fatiga, bajones de energía o dificultad para mantener el rendimiento físico y mental.</p>
+    <p>Además, la energía no depende únicamente de procesos internos. También está influida por el estilo de vida, el entorno y los hábitos diarios como la alimentación, el descanso, la actividad física y la gestión del estrés. Todo ello interactúa con el sistema hormonal y metabólico, determinando cómo nos sentimos a lo largo del día.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Soluciones Prácticas para Mejorar y Equilibrar tu Energía"
+    soluciones={[
+      { title: 'Sueño regular', body: 'Establece un horario de sueño estable y asegúrate de dormir las horas suficientes cada noche para favorecer la recuperación energética.' },
+      { title: 'Alimentación equilibrada', body: 'Prioriza una dieta rica en alimentos naturales y nutritivos, reduciendo al mínimo los ultraprocesados y azúcares refinados.' },
+      { title: 'Actividad física', body: 'Incorpora movimiento diario o ejercicio regular para mejorar el metabolismo, la circulación y la producción de energía.' },
+      { title: 'Gestión del estrés', body: 'Practica técnicas como meditación, respiración o yoga para reducir el estrés y mejorar el equilibrio mental y hormonal.' },
+      { title: 'Hidratación y hábitos', body: 'Mantén una buena hidratación y reduce el consumo excesivo de cafeína y alcohol para evitar alteraciones en la energía.' },
+    ]}
+  />
+</HubTemplateB>
+
+<style>
+  .intro,
+  .parrafo-suelto {
+    padding: 0 1rem;
+  }
+  .sintomas-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+  }
+</style>

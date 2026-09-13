@@ -1,0 +1,48 @@
+---
+// Bloque "Artículos relacionados". Corrección aplicada durante la migración
+// (decisión de la usuaria, 2026-09-12): si no hay artículos para mostrar
+// (caso real hoy en /resistencia-insulina/), el componente no renderiza
+// nada — nunca se muestra un bloque vacío.
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  heading?: string;
+  articulos: CollectionEntry<'blog' | 'radar'>[];
+}
+const { heading = 'Artículos relacionados', articulos } = Astro.props;
+---
+
+{articulos.length > 0 && (
+  <section class="articulos-relacionados">
+    <h2>{heading}</h2>
+    <div class="grid">
+      {articulos.map((post) => (
+        <a class="post-card" href={`/${post.data.slug ?? post.id}/`}>
+          <Image src={post.data.image} alt={post.data.imageAlt} width={320} height={200} />
+          <span class="categoria">{'category' in post.data ? post.data.category : 'Radar de Salud'}</span>
+          <h3>{post.data.title}</h3>
+          <span class="leer-mas">Leer artículo »</span>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .post-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .categoria {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-accent, #c2185b);
+  }
+</style>

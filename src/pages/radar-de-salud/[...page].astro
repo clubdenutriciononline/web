@@ -1,0 +1,59 @@
+---
+// /radar-de-salud/ = índice curado del Radar de Salud (collection `radar`,
+// independiente del Blog). /radar-de-salud/2/ = paginación.
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { GetStaticPathsOptions } from 'astro';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = (await getCollection('radar'))
+    .filter((p) => !p.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return paginate(posts, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout
+  title="Radar de Salud — Club de Nutrición"
+  description="Boletín científico sobre menopausia, hormonas, nutrición y salud femenina."
+>
+  <h1>Radar de Salud</h1>
+
+  <div class="grid">
+    {page.data.map((post) => (
+      <a class="post-card" href={`/${post.data.slug ?? post.id}/`}>
+        <span class="categoria">Radar de Salud</span>
+        <h3>{post.data.title}</h3>
+        <p>{post.data.description}</p>
+        <span class="leer-mas">Leer artículo »</span>
+      </a>
+    ))}
+  </div>
+
+  <nav class="paginacion" aria-label="Paginación del Radar de Salud">
+    {page.url.prev && <a href={page.url.prev}>« Anterior</a>}
+    <span>Página {page.currentPage} de {page.lastPage}</span>
+    {page.url.next && <a href={page.url.next}>Siguiente »</a>}
+  </nav>
+</BaseLayout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .categoria {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-accent, #c2185b);
+  }
+  .paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+</style>

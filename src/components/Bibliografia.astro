@@ -1,0 +1,16 @@
+---
+// "📚 Bibliografía" — Perimenopausia y Cortisol. En el original son
+// referencias en texto plano SIN hipervínculo (confirmado, cero enlaces
+// externos en esas páginas) — se replica igual, no se inventan links.
+interface Props {
+  referencias: string[];
+}
+const { referencias } = Astro.props;
+---
+
+<section class="bibliografia">
+  <h2>📚 Bibliografía</h2>
+  <ul>
+    {referencias.map((ref) => <li>{ref}</li>)}
+  </ul>
+</section>

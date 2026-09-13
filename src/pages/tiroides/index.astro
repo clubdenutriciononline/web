@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateA from '../../layouts/SubpageTemplateA.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('tiroides')).slice(0, 3);
+---
+
+<SubpageTemplateA
+  seoTitle="Tiroides: síntomas y causas de la disfunción tiroidea"
+  seoDescription="Cómo identificar y abordar de forma natural la disfunción tiroidea en mujeres."
+  heroTitle="Tiroides: función, hormonas y cómo afectan al metabolismo"
+  heroSubtitle="Descubre cómo la tiroides afecta tu salud y bienestar"
+  heroImage={heroImg}
+  heroImageAlt="Tiroides"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  areasHeading="Áreas relacionadas con la disfunción tiroidea"
+  areas={[
+    { icon: '/images/autoinmune.jpg', title: 'Enfermedades autoinmunes', href: '/hormonas/', text: 'Relación entre tiroides y enfermedades autoinmunes.' },
+    { icon: '/images/yodo.jpg', title: 'Deficiencia de yodo', href: '/alimentacion/', text: 'El papel del yodo en la función tiroidea.' },
+    { icon: '/images/adrenal.jpg', title: 'Sistema adrenal', href: '/cortisol/', text: 'Cómo se relacionan tiroides y glándulas suprarrenales.' },
+    { icon: '/images/hormonal.jpg', title: 'Salud hormonal', href: '/hormonas/', text: 'La tiroides dentro del equilibrio hormonal general.' },
+  ]}
+  articulosRelacionados={articulos}
+>
+  <p>La tiroides es una glándula pequeña pero crucial en nuestro cuerpo, responsable de producir hormonas que regulan nuestro metabolismo.</p>
+  <p>Sin embargo, muchos de nosotros no somos conscientes de la importancia de esta glándula y cómo su disfunción puede afectar nuestra salud.</p>
+  <p>En este artículo, exploraremos la función de la tiroides, sus hormonas y su impacto en nuestro metabolismo, así como las causas y síntomas de la disfunción tiroidea.</p>
+
+  <TextoConImagen heading="¿Qué es la tiroides?" image={definicionImg} imageAlt="La tiroides">
+    <p>La tiroides es una glándula pequeña ubicada en el cuello, por debajo de la laringe.</p>
+    <p>Produce dos hormonas principales, la tiroxina (T4) y la triyodotironina (T3), que regulan el metabolismo y el crecimiento del cuerpo.</p>
+  </TextoConImagen>
+
+  <p>La disfunción tiroidea puede ser causada por varios factores, incluyendo:</p>
+  <CausasGrid
+    heading="Causas de la disfunción tiroidea"
+    causas={[
+      { icon: '🐢', title: 'Hipotiroidismo', text: 'El hipotiroidismo es una condición en la que la tiroides no produce suficientes hormonas. Puede ser causado por una deficiencia de yodo, una inflamación de la tiroides o una lesión en la glándula.' },
+      { icon: '⚡', title: 'Hiperotiroidismo', text: 'El hiperotiroidismo es una condición en la que la tiroides produce demasiadas hormonas. Puede ser causado por una hiperactividad de la glándula, un tumor o una enfermedad autoinmune.' },
+      { icon: '🛡️', title: 'Enfermedades autoinmunes', text: 'Las enfermedades autoinmunes, como la enfermedad de Hashimoto o la enfermedad de Graves, pueden afectar la función de la tiroides y causar disfunción.' },
+      { icon: '🧂', title: 'Deficiencia de yodo', text: 'La deficiencia de yodo es una causa común de disfunción tiroidea, ya que el yodo es esencial para la producción de hormonas tiroideas.' },
+      { icon: '🩹', title: 'Lesiones en la tiroides', text: 'Las lesiones en la tiroides, como un golpe o una cirugía, pueden afectar la función de la glándula y causar disfunción.' },
+      { icon: '💊', title: 'Medicamentos', text: 'Algunos medicamentos, como los antidepresivos o los medicamentos para la hipertensión, pueden afectar la función de la tiroides y causar disfunción.' },
+    ]}
+  />
+  <p>La disfunción tiroidea puede tener graves consecuencias en nuestra salud y bienestar, por lo que es importante reconocer los síntomas y buscar tratamiento médico si es necesario.</p>
+
+  <p>Los síntomas de la disfunción tiroidea pueden variar dependiendo de la causa y la gravedad de la condición, pero algunos de los síntomas más comunes incluyen</p>
+  <ListaSintomas
+    heading="Síntomas de la disfunción tiroidea"
+    items={[
+      'La fatiga y el letargo pueden ser causados por una disminución en la producción de hormonas tiroideas, lo que puede afectar la energía y la motivación.',
+      'La pérdida de peso o el aumento de peso pueden ser causados por cambios en el metabolismo y la regulación de la energía en el cuerpo.',
+      'Los cambios en el apetito pueden ser causados por una disminución en la producción de hormonas tiroideas, lo que puede afectar la regulación del hambre y la saciedad.',
+      'El dolor de cabeza y las migrañas pueden ser causados por una disfunción tiroidea, lo que puede afectar la sensibilidad y la respuesta al dolor.',
+      'La depresión y la ansiedad pueden ser causadas por una disfunción tiroidea, lo que puede afectar la regulación del estado de ánimo y la respuesta al estrés.',
+      'Los problemas de piel y cabello pueden ser causados por una disfunción tiroidea, lo que puede afectar la regulación del crecimiento y la salud de la piel y el cabello.',
+    ]}
+  />
+
+  <p>La tiroides está estrechamente relacionada con otros sistemas hormonales en el cuerpo, incluyendo</p>
+  <RelacionImagenes
+    heading="Relación entre la tiroides y otros sistemas hormonales"
+    images={[
+      { src: relacion1Img, alt: 'Tiroides y sistema adrenal' },
+      { src: relacion2Img, alt: 'Disfunción tiroidea' },
+    ]}
+  >
+    <p>El sistema adrenal, que produce hormonas como la adrenalina y el cortisol, que ayudan a regular la respuesta al estrés y la energía en el cuerpo.</p>
+    <p>La tiroides es solo una parte de un sistema hormonal más grande, y su disfunción puede tener un impacto en todo el cuerpo.</p>
+  </RelacionImagenes>
+
+  <p>El tratamiento para la disfunción tiroidea depende de la causa y la gravedad de la condición, pero algunas de las soluciones más comunes incluyen</p>
+  <SolucionesList
+    heading="Soluciones para la disfunción tiroidea"
+    soluciones={[
+      { title: 'Cambiar dieta y estilo de vida mejor función tiroidea' },
+      { title: 'Suplementos de yodo y otros nutrientes para apoyar la función tiroidea' },
+      { title: 'Terapia de reemplazo hormonal para la disfunción tiroidea' },
+      { title: 'Medicamentos para reemplazar las hormonas tiroideas' },
+      { title: 'Cirugía para remover parte o toda la glándula tiroides' },
+    ]}
+  />
+</SubpageTemplateA>

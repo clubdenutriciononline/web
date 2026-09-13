@@ -1,0 +1,76 @@
+---
+// Ruta dinámica para artículos de Blog Y publicaciones de Radar de Salud —
+// ambos comparten hoy el mismo namespace de URL en la raíz (/{slug}/), así
+// que una sola ruta cubre las 82 páginas de contenido, resolviendo contra
+// las DOS collections (independientes entre sí en Astro, ver
+// src/content.config.ts) y eligiendo la plantilla según de cuál venga.
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import RadarLayout from '../../layouts/RadarLayout.astro';
+
+export async function getStaticPaths() {
+  const [blogPosts, radarPosts] = await Promise.all([getCollection('blog'), getCollection('radar')]);
+
+  const blogPaths = blogPosts
+    .filter((p) => !p.data.draft)
+    .map((entry) => ({ params: { slug: entry.data.slug ?? entry.id }, props: { entry, kind: 'blog' as const } }));
+
+  const radarPaths = radarPosts
+    .filter((p) => !p.data.draft)
+    .map((entry) => ({ params: { slug: entry.data.slug ?? entry.id }, props: { entry, kind: 'radar' as const } }));
+
+  return [...blogPaths, ...radarPaths];
+}
+
+const { entry, kind } = Astro.props;
+const { Content } = await render(entry as any);
+
+// Relacionados: misma collection, misma categoría (blog) o cualquier otra
+// publicación de Radar (radar), excluyendo la propia entrada, más recientes
+// primero — equivalente al widget "posts.cards" filtrado por categoría que
+// usa WordPress hoy.
+const siblings = (kind === 'blog' ? await getCollection('blog') : await getCollection('radar')).filter(
+  (p) => !p.data.draft && p.id !== entry.id,
+);
+
+const relacionados =
+  kind === 'blog'
+    ? siblings
+        .filter((p) => (p.data as any).category === (entry.data as any).category)
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+        .slice(0, 4)
+    : siblings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 4);
+
+// Anterior/siguiente por fecha dentro de la misma collection — equivalente
+// a previous_post_link/next_post_link de WordPress (orden cronológico).
+let anterior: { title: string; href: string } | undefined;
+let siguiente: { title: string; href: string } | undefined;
+
+if (kind === 'blog') {
+  const ordered = (await getCollection('blog'))
+    .filter((p) => !p.data.draft)
+    .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+  const idx = ordered.findIndex((p) => p.id === entry.id);
+  const prev = idx > 0 ? ordered[idx - 1] : undefined;
+  const next = idx >= 0 && idx < ordered.length - 1 ? ordered[idx + 1] : undefined;
+  anterior = prev ? { title: prev.data.title, href: `/${prev.data.slug ?? prev.id}/` } : undefined;
+  siguiente = next ? { title: next.data.title, href: `/${next.data.slug ?? next.id}/` } : undefined;
+}
+---
+
+{kind === 'blog' ? (
+  <ArticleLayout
+    entry={entry as any}
+    categoriaLabel={(entry.data as any).category}
+    categoriaHref="/blog/"
+    relacionados={relacionados}
+    anterior={anterior}
+    siguiente={siguiente}
+  >
+    <Content />
+  </ArticleLayout>
+) : (
+  <RadarLayout entry={entry as any} relacionados={relacionados}>
+    <Content />
+  </RadarLayout>
+)}

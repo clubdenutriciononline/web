@@ -1,0 +1,70 @@
+---
+// Plantilla de artículo de Blog "normal" (post type default de Astra en el
+// original): breadcrumb + imagen destacada embebida + cuerpo + tabla
+// nutricional opcional (recetas) + relacionados + navegación anterior/siguiente.
+// Radar de Salud usa RadarLayout.astro, una plantilla distinta (sin
+// breadcrumb, con share buttons, secciones fijas con emoji).
+import BaseLayout from './BaseLayout.astro';
+import { Image } from 'astro:assets';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import RecipeNutritionTable from '../components/RecipeNutritionTable.astro';
+import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  categoriaLabel: string;
+  categoriaHref: string;
+  relacionados: CollectionEntry<'blog' | 'radar'>[];
+  anterior?: { title: string; href: string };
+  siguiente?: { title: string; href: string };
+}
+
+const { entry, categoriaLabel, categoriaHref, relacionados, anterior, siguiente } = Astro.props;
+const { title, description, seo, image, imageAlt, date, updated, author, nutricion } = entry.data;
+---
+
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={image.src}>
+  <article>
+    <Breadcrumb
+      items={[
+        { label: 'Inicio', href: '/' },
+        { label: categoriaLabel, href: categoriaHref },
+        { label: title },
+      ]}
+    />
+
+    <h1>{title}</h1>
+    <p class="meta">
+      Por {author} · <time datetime={date.toISOString()}>{date.toLocaleDateString('es-ES')}</time>
+      {updated && <> · Actualizado {updated.toLocaleDateString('es-ES')}</>}
+    </p>
+
+    <Image src={image} alt={imageAlt} width={800} height={500} />
+
+    <div class="cuerpo">
+      <slot />
+    </div>
+
+    {nutricion && <RecipeNutritionTable nutricion={nutricion} />}
+  </article>
+
+  <ArticulosRelacionados articulos={relacionados} />
+
+  <nav class="prev-next" aria-label="Navegación entre entradas">
+    {anterior && <a href={anterior.href}>« {anterior.title}</a>}
+    {siguiente && <a href={siguiente.href}>{siguiente.title} »</a>}
+  </nav>
+</BaseLayout>
+
+<style>
+  .prev-next {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+  }
+  .meta {
+    color: #777;
+    font-size: 0.9rem;
+  }
+</style>

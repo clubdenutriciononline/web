@@ -1,0 +1,106 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('ayuno-intermitente')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Ayuno intermitente: beneficios y cómo aplicarlo"
+  seoDescription="Cómo el ayuno intermitente mejora el metabolismo, la energía y la pérdida de grasa de forma saludable y sostenible."
+  heroTitle="Ayuno intermitente: qué es, beneficios y cómo aplicarlo de forma segura"
+  heroSubtitle="Descubre cómo el ayuno intermitente puede ayudarte a mejorar tu metabolismo, optimizar tu energía y apoyar la pérdida de grasa de forma saludable y sostenible"
+  heroImage={heroImg}
+  heroImageAlt="Ayuno intermitente"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>El ayuno intermitente es una estrategia de alimentación que ha ganado popularidad en los últimos años por su impacto positivo en la salud metabólica, la energía y el control del peso.</p>
+  <p>Más que una dieta, se trata de un patrón de alimentación que alterna periodos de ingesta con periodos de ayuno, permitiendo al organismo utilizar mejor sus reservas energéticas y optimizar ciertos procesos fisiológicos.</p>
+  <p>En esta guía encontrarás una explicación clara sobre qué es el ayuno intermitente, cómo funciona en el cuerpo y qué beneficios puede aportar a tu bienestar diario.</p>
+  <p>Las hormonas regulan prácticamente todo en el cuerpo femenino. Desde la energía diaria hasta el metabolismo, el estado de ánimo, el sueño o el peso corporal. Cuando están en equilibrio, el cuerpo funciona de forma fluida. Pero cuando se desregulan, aparecen síntomas como:</p>
+
+  <TextoConImagen heading="¿Qué es el Ayuno Intermitente?" image={definicionImg} imageAlt="Qué es el ayuno intermitente">
+    <p>El ayuno intermitente es un patrón de alimentación que consiste en alternar periodos de ayuno con periodos de ingesta de alimentos. A diferencia de otras dietas, no se centra en qué comer, sino en <strong>cuándo comer</strong>.</p>
+    <p>Existen diferentes protocolos, siendo los más habituales el de 12 horas de ayuno y 12 de alimentación, o el de 16 horas de ayuno con una ventana de 8 horas para comer. Estos formatos pueden adaptarse según el nivel de experiencia y el estilo de vida de cada persona.</p>
+    <p>El objetivo principal del ayuno intermitente es permitir que el organismo descanse del proceso digestivo de forma prolongada, favoreciendo procesos naturales como la regulación energética y la optimización metabólica.</p>
+  </TextoConImagen>
+
+  <p>El ayuno intermitente no es solo una estrategia de control de peso, sino un proceso que activa distintos mecanismos biológicos en el organismo. Estos procesos explican por qué puede tener efectos positivos en la salud metabólica, celular y hormonal.</p>
+  <p>A continuación, te explicamos los principales mecanismos detrás de su funcionamiento.</p>
+  <CausasGrid
+    heading="¿Por Qué Funciona el Ayuno Intermitente?"
+    causas={[
+      { icon: '🧪', title: 'Reduce la inflamación', text: 'El ayuno intermitente puede contribuir a disminuir la inflamación sistémica del organismo, un factor clave relacionado con el desarrollo de enfermedades crónicas como la diabetes o las enfermedades cardiovasculares.' },
+      { icon: '🍬', title: 'Mejora la sensibilidad a la insulina', text: 'Este patrón de alimentación ayuda a mejorar la respuesta del cuerpo a la insulina, favoreciendo un mejor control de la glucosa y reduciendo el riesgo de desarrollar diabetes tipo 2.' },
+      { icon: '♻️', title: 'Activa la autofagia celular', text: 'El ayuno intermitente estimula la autofagia, un proceso natural de "limpieza celular" en el que el organismo elimina componentes dañados y recicla material celular.' },
+      { icon: '⚡', title: 'Reduce el estrés oxidativo', text: 'Puede ayudar a disminuir el estrés oxidativo, un desequilibrio que contribuye al envejecimiento celular y al desarrollo de enfermedades como el cáncer o los trastornos neurodegenerativos.' },
+      { icon: '🔋', title: 'Mejora la función mitocondrial', text: 'El ayuno intermitente favorece una mejor eficiencia de las mitocondrias, responsables de producir energía en las células, lo que se traduce en un mejor rendimiento metabólico.' },
+      { icon: '🧬', title: 'Optimiza la producción hormonal', text: 'Este patrón de alimentación puede influir positivamente en la regulación hormonal, incluyendo hormonas relacionadas con el crecimiento, la reparación y el equilibrio metabólico.' },
+    ]}
+  />
+  <p>Ahora que entiendes cómo actúa el ayuno intermitente a nivel biológico, el siguiente paso es aprender cómo integrarlo correctamente en tu rutina diaria de forma segura, progresiva y sostenible.</p>
+
+  <p>¿Qué puedes esperar durante la fase de adaptación?</p>
+  <p>Durante los primeros días o semanas de ayuno intermitente, el cuerpo atraviesa un proceso de ajuste metabólico. Es normal que aparezcan ciertas sensaciones mientras el organismo se adapta a un nuevo patrón de alimentación y uso de energía.</p>
+  <p>Estos síntomas suelen ser temporales y tienden a reducirse a medida que el cuerpo se adapta.</p>
+  <ListaSintomas
+    heading="Síntomas del Ayuno Intermitente"
+    items={[
+      'Fatiga o sensación de menor energía: durante los primeros días es habitual notar una bajada temporal de energía, ya que el cuerpo se está adaptando a nuevos niveles de disponibilidad energética.',
+      'Dolor de cabeza: algunas personas pueden experimentar molestias leves en la cabeza, especialmente durante las primeras fases de adaptación.',
+      'Náuseas o mareos leves: puede aparecer una sensación de malestar o ligera inestabilidad, normalmente transitoria y relacionada con el ajuste metabólico.',
+      'Aumento del apetito o "cravings": es frecuente sentir un incremento del deseo de comer, sobre todo en los horarios habituales de ingesta.',
+      'Irritabilidad o cambios de humor: el proceso de adaptación puede influir temporalmente en el estado de ánimo, generando mayor sensibilidad o irritabilidad.',
+      'Dificultad para dormir: algunas personas pueden notar alteraciones leves en el sueño durante los primeros días de ajuste.',
+    ]}
+  />
+
+  <p>Entendiendo cómo el ayuno intermitente influye en tu equilibrio interno</p>
+  <RelacionImagenes
+    heading="Relación con los Sistemas Hormonales y Metabólicos"
+    images={[
+      { src: relacion1Img, alt: 'Infografía sobre ayuno intermitente y sistemas hormonales' },
+      { src: relacion2Img, alt: 'Ayuno intermitente y equilibrio emocional' },
+    ]}
+  >
+    <p>El ayuno intermitente no solo actúa a nivel energético o digestivo, sino que también tiene un impacto directo en los principales sistemas hormonales y metabólicos del cuerpo.</p>
+    <p>Cuando se prolongan los periodos sin ingesta de alimentos, el organismo activa una serie de respuestas adaptativas que permiten optimizar el uso de la energía, mejorar la eficiencia metabólica y regular determinadas hormonas clave relacionadas con la salud y el rendimiento.</p>
+    <hr />
+    <p>El ayuno intermitente puede influir positivamente en la <strong>sensibilidad a la insulina</strong>, ayudando al cuerpo a gestionar de forma más eficiente los niveles de glucosa en sangre. Esto es especialmente relevante en la prevención de alteraciones metabólicas como la resistencia a la insulina.</p>
+    <p>Además, este patrón de alimentación puede contribuir a reducir los niveles de inflamación sistémica, un factor estrechamente relacionado con el envejecimiento celular y el desarrollo de enfermedades crónicas.</p>
+    <hr />
+    <p>Desde el punto de vista hormonal, el ayuno intermitente también se ha asociado con cambios en la regulación de hormonas como la hormona del crecimiento, que participa en procesos de reparación, mantenimiento muscular y regeneración tisular. Asimismo, puede influir en el equilibrio de otras hormonas relacionadas con el metabolismo energético y la composición corporal.</p>
+    <p>A nivel celular, estos cambios no ocurren de forma aislada, sino como parte de una respuesta global del organismo que busca optimizar recursos durante los periodos de baja disponibilidad energética.</p>
+    <p>Por otro lado, también es importante entender que estos efectos dependen de múltiples factores como el tipo de ayuno, la calidad de la alimentación en las ventanas de ingesta, el nivel de estrés y el estilo de vida general.</p>
+    <p>Por eso, el ayuno intermitente debe entenderse como una herramienta flexible y adaptable, no como una fórmula rígida.</p>
+  </RelacionImagenes>
+  <p>Ahora que entiendes cómo el ayuno intermitente interactúa con tus sistemas hormonales y metabólicos, el siguiente paso es aprender cómo aplicarlo correctamente en tu día a día para maximizar sus beneficios sin comprometer tu bienestar.</p>
+  <p>Porque no se trata solo de ayunar… sino de hacerlo de forma inteligente.</p>
+
+  <p>Cómo empezar con el ayuno intermitente de manera segura y efectiva</p>
+  <p>Iniciar el ayuno intermitente no requiere cambios extremos, sino una adaptación progresiva que permita al organismo ajustarse de forma natural. La clave está en avanzar paso a paso, respetar las señales del cuerpo y mantener hábitos saludables durante las ventanas de alimentación.</p>
+  <p>A continuación, encontrarás estrategias prácticas para comenzar de forma segura, sostenible y adaptada a tu estilo de vida.</p>
+  <SolucionesList
+    heading="Soluciones Prácticas para Incorporar el Ayuno Intermitente"
+    soluciones={[
+      { title: 'Empezar con 12 horas y aumentar progresivamente', body: 'Comienza con un ayuno de 12 horas y aumenta progresivamente según tu tolerancia. Este enfoque gradual facilita la adaptación metabólica y reduce la aparición de síntomas durante las primeras fases.' },
+      { title: 'Mantener una hidratación adecuada durante el ayuno', body: 'Beber suficiente agua durante el periodo de ayuno es fundamental para mantener la energía, favorecer la concentración y reducir molestias como fatiga o dolor de cabeza.' },
+      { title: 'Adaptar el ayuno a tus necesidades personales', body: 'No existe un único protocolo válido para todos. Ajustar la duración, frecuencia y tipo de ayuno según tu nivel de energía y bienestar es esencial para mantener una práctica sostenible a largo plazo.' },
+      { title: 'Priorizar una alimentación nutritiva en la ventana de comida', body: 'Durante las horas de alimentación, es clave priorizar alimentos ricos en nutrientes como proteínas, grasas saludables, fibra y alimentos naturales. Esto mejora la energía, la saciedad y la adaptación metabólica.' },
+      { title: 'Consultar con un profesional de la salud', body: 'Antes de iniciar el ayuno intermitente, especialmente si tienes condiciones médicas, estás en tratamiento o tienes dudas, es recomendable consultar con un profesional sanitario.' },
+    ]}
+  />
+  <p>Con estas pautas puedes comenzar a integrar el ayuno intermitente de forma progresiva, consciente y adaptada a tu estilo de vida.</p>
+  <p>La clave no está en la restricción, sino en la constancia y la sostenibilidad a largo plazo.</p>
+</SubpageTemplateB>

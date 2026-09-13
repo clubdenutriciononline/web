@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('digestion')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Digestión lenta: síntomas, causas y cómo mejorarla"
+  seoDescription="Cómo funciona la digestión, sus síntomas y qué hábitos mejoran la salud intestinal y la microbiota."
+  heroTitle="Digestión lenta: síntomas, causas y cómo mejorarla naturalmente"
+  heroSubtitle="Descubre cómo funciona la digestión, por qué es clave para tu salud y qué hábitos pueden ayudarte a mejorar problemas digestivos, la microbiota y el bienestar intestinal."
+  heroImage={heroImg}
+  heroImageAlt="Digestión"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>La digestión es un proceso esencial para transformar los alimentos en nutrientes y energía que el cuerpo necesita para funcionar correctamente.</p>
+  <p>Cuando el sistema digestivo no trabaja de forma adecuada, pueden aparecer molestias que afectan al bienestar, la energía y la calidad de vida.</p>
+  <p>En esta guía descubrirás cómo funciona la digestión, cuáles son los síntomas más comunes de los problemas digestivos y qué hábitos pueden ayudarte a mejorar tu salud intestinal y tu microbiota.</p>
+
+  <TextoConImagen heading="¿Qué es la Digestión?" image={definicionImg} imageAlt="Qué es la digestión">
+    <p>La digestión es el proceso mediante el cual el cuerpo transforma los alimentos en nutrientes esenciales que pueden ser absorbidos y utilizados para obtener energía, mantener las funciones vitales y reparar los tejidos.</p>
+    <p>Este proceso comienza en la boca y continúa a través de diferentes órganos del sistema digestivo, como el estómago, el intestino delgado y el intestino grueso.</p>
+    <p>Durante la digestión, los alimentos se descomponen gracias a la acción de enzimas digestivas, ácidos y movimientos musculares que permiten convertir proteínas, grasas y carbohidratos en moléculas más pequeñas y fáciles de absorber.</p>
+    <p>Una vez procesados, los nutrientes pasan al torrente sanguíneo para ser distribuidos a las células del organismo.</p>
+    <p>Además de intervenir en la absorción de nutrientes, la digestión también está estrechamente relacionada con la salud intestinal, el sistema inmunitario y el equilibrio de la microbiota.</p>
+    <p>De hecho, una digestión saludable puede influir positivamente en la energía, el estado de ánimo, la inflamación y el bienestar general.</p>
+    <p>Cuando el sistema digestivo no funciona correctamente, pueden aparecer síntomas como hinchazón, gases, dolor abdominal, estreñimiento, diarrea o fatiga.</p>
+    <p>Por ello, cuidar la digestión a través de hábitos saludables, una alimentación equilibrada y una buena salud intestinal es fundamental para mantener el organismo en buen estado.</p>
+  </TextoConImagen>
+
+  <p>Los problemas digestivos pueden tener múltiples orígenes y, en muchos casos, están relacionados entre sí.</p>
+  <p>Identificar la causa es clave para poder mejorar la salud intestinal y prevenir molestias a largo plazo.</p>
+  <CausasGrid
+    heading="Causas de Problemas Digestivos"
+    causas={[
+      { icon: '🥗', title: 'Dieta pobre', text: 'Una alimentación baja en nutrientes y rica en ultraprocesados, azúcares y grasas de baja calidad puede alterar el equilibrio digestivo, dificultar la digestión y afectar a la microbiota intestinal.' },
+      { icon: '😰', title: 'Estrés', text: 'El estrés crónico influye directamente en el eje intestino-cerebro, pudiendo provocar digestiones más lentas, inflamación, dolor abdominal y empeorar trastornos como la ansiedad o el síndrome de intestino irritable.' },
+      { icon: '🦠', title: 'Enfermedades digestivas', text: 'Patologías como la enfermedad de Crohn o la colitis ulcerosa pueden causar inflamación intestinal, dolor, diarrea persistente y malabsorción de nutrientes, afectando de forma importante a la calidad de vida.' },
+      { icon: '💊', title: 'Medicamentos', text: 'Algunos fármacos, como antibióticos, antiinflamatorios o inhibidores de la acidez, pueden alterar la microbiota intestinal y provocar efectos secundarios como diarrea, molestias o digestiones pesadas.' },
+      { icon: '💧', title: 'Falta de hidratación', text: 'Una ingesta insuficiente de agua puede dificultar el tránsito intestinal, favoreciendo el estreñimiento y la sensación de pesadez abdominal.' },
+      { icon: '😴', title: 'Falta de sueño', text: 'Dormir poco o mal puede afectar a la motilidad intestinal, alterar las hormonas digestivas y aumentar la sensibilidad gastrointestinal, empeorando los síntomas digestivos.' },
+    ]}
+  />
+  <p>Ahora que hemos explorado las causas de los problemas digestivos, es importante comprender los síntomas más comunes para poder identificarlos a tiempo y actuar de forma adecuada para mejorar la salud digestiva.</p>
+
+  <p>Los síntomas de los problemas digestivos pueden variar según la causa y la persona, pero en general suelen reflejar que el sistema digestivo no está funcionando de forma óptima o que existe algún tipo de desequilibrio intestinal.</p>
+  <ListaSintomas
+    heading="Síntomas de Problemas Digestivos"
+    items={[
+      'Dolor abdominal: es uno de los síntomas más frecuentes en los trastornos digestivos. Puede manifestarse como una molestia leve, sensación de presión, cólicos o dolor intenso, dependiendo del origen del problema, como inflamación, gases o intolerancias alimentarias.',
+      'Náuseas y vómitos: pueden aparecer como respuesta a una mala digestión, infecciones, intolerancias alimentarias o irritación del sistema digestivo. También pueden estar relacionados con alteraciones en la microbiota o el consumo de ciertos alimentos.',
+      'Diarrea o estreñimiento: las alteraciones del tránsito intestinal suelen indicar un desequilibrio en la motilidad intestinal o en la absorción de agua y nutrientes. También pueden estar asociadas a cambios en la dieta, estrés o disbiosis intestinal.',
+      'Fatiga y cansancio: es un síntoma muy común cuando la digestión no funciona correctamente. Puede deberse a una mala absorción de nutrientes esenciales o a una menor disponibilidad de energía para el organismo, afectando al rendimiento físico y mental.',
+      'Pérdida de apetito: puede aparecer cuando existe inflamación, malestar digestivo o dificultad para procesar los alimentos. También puede estar relacionada con alteraciones hormonales o emocionales que afectan al sistema digestivo.',
+      'Dolor de cabeza: puede estar vinculado a problemas digestivos a través del eje intestino-cerebro. Una mala digestión, intolerancias o déficits nutricionales pueden contribuir a la aparición de cefaleas en algunas personas.',
+    ]}
+  />
+
+  <p>El eje intestino–cerebro y el papel sistémico de la digestión</p>
+  <RelacionImagenes
+    heading="Relación entre la Digestión y la Salud General"
+    images={[
+      { src: relacion1Img, alt: 'Infografía sobre digestión y salud general' },
+      { src: relacion2Img, alt: 'Qué es la digestión' },
+    ]}
+  >
+    <p>La salud digestiva no funciona de forma aislada, sino que está profundamente interconectada con el resto del organismo a través de múltiples sistemas fisiológicos, como el sistema inmunitario, endocrino y nervioso.</p>
+    <p>Esta interacción se conoce especialmente como el eje intestino–cerebro, una red de comunicación bidireccional que permite que el intestino influya en procesos como el estado de ánimo, el estrés, la energía y la función cognitiva.</p>
+    <p>Uno de los elementos clave en esta relación es la microbiota intestinal, un conjunto de billones de microorganismos que viven en el intestino y desempeñan funciones esenciales en la digestión, la síntesis de vitaminas, la regulación del sistema inmunitario y la protección frente a patógenos.</p>
+    <p>Cuando este ecosistema se mantiene en equilibrio (eubiosis), favorece un estado de salud óptimo. Sin embargo, cuando se altera su composición (disbiosis), pueden aparecer no solo síntomas digestivos como hinchazón, gases, diarrea o estreñimiento, sino también efectos sistémicos como inflamación de bajo grado, fatiga, alteraciones del estado de ánimo e incluso mayor susceptibilidad a enfermedades metabólicas o inmunológicas.</p>
+    <p>Además, el intestino desempeña un papel crucial en la regulación de la respuesta inmune, ya que una gran parte de las células inmunitarias del cuerpo se localizan en el tejido intestinal.</p>
+    <p>Esto significa que cualquier alteración en la barrera intestinal o en la microbiota puede influir en la inflamación sistémica y en la capacidad del organismo para defenderse frente a infecciones o desequilibrios internos.</p>
+    <p>La digestión también está implicada en la correcta absorción de nutrientes esenciales como vitaminas, minerales, aminoácidos y ácidos grasos.</p>
+    <p>Cuando este proceso se ve comprometido, pueden aparecer déficits nutricionales que afectan directamente a la energía, la función hormonal, la salud muscular y el rendimiento cognitivo.</p>
+    <p>Por todo ello, mantener una buena salud digestiva no solo significa evitar molestias gastrointestinales, sino también favorecer el equilibrio global del organismo, desde el sistema nervioso hasta el inmunitario y metabólico.</p>
+  </RelacionImagenes>
+  <p>En definitiva, cuidar tu digestión es una de las bases fundamentales para sostener una salud integral y duradera.</p>
+
+  <!-- Nota de fidelidad: en el original hay dos H2 consecutivos en esta sección
+       ("Soluciones para Mejorar la Salud Digestiva" y "Hábitos clave para
+       favorecer una digestión eficiente y equilibrada") — es un duplicado
+       real de la página de origen (no es la anomalía de relacion-cuerpo-mujeres,
+       que sí se corrige); se conserva tal cual, sin normalizar. -->
+  <h2>Soluciones para Mejorar la Salud Digestiva</h2>
+  <p>Mejorar la salud digestiva no depende de una única acción, sino de un conjunto de hábitos sostenidos en el tiempo que ayudan a optimizar la función intestinal, reducir la inflamación y mantener una microbiota equilibrada.</p>
+  <SolucionesList
+    heading="Hábitos clave para favorecer una digestión eficiente y equilibrada"
+    soluciones={[
+      { title: 'Alimentación Saludable', body: 'Una dieta rica en alimentos frescos, fibra, frutas, verduras y grasas saludables favorece una digestión eficiente y el equilibrio de la microbiota intestinal. Reducir ultraprocesados, azúcares y grasas de baja calidad ayuda a disminuir la inflamación y mejorar el tránsito intestinal.' },
+      { title: 'Gestión del Estrés', body: 'El estrés influye directamente en el eje intestino–cerebro, pudiendo alterar la digestión y la microbiota. Técnicas como la respiración consciente, la meditación o el mindfulness ayudan a mejorar la función digestiva y reducir síntomas como dolor abdominal o digestiones pesadas.' },
+      { title: 'Ejercicio regular', body: 'La actividad física estimula la motilidad intestinal, favorece el tránsito digestivo y contribuye a reducir la hinchazón. Además, el ejercicio regular mejora el metabolismo y ayuda a modular la respuesta inflamatoria del organismo.' },
+      { title: 'Hidratación adecuada', body: 'Mantener una buena hidratación es esencial para el correcto funcionamiento del sistema digestivo. El agua facilita el tránsito intestinal, previene el estreñimiento y ayuda en los procesos de absorción y eliminación de desechos.' },
+      { title: 'Sueño adecuado', body: 'Dormir las horas suficientes y con buena calidad es clave para la regulación hormonal y el equilibrio del sistema digestivo. La falta de sueño puede alterar la motilidad intestinal y aumentar la sensibilidad digestiva.' },
+      { title: 'Masticación consciente', body: 'Masticar correctamente los alimentos facilita la digestión desde la boca, reduce la carga del sistema digestivo y mejora la absorción de nutrientes. Comer despacio también ayuda a regular el apetito y evitar molestias como hinchazón o gases.' },
+      { title: 'Reducción de ultraprocesados', body: 'Reducir el consumo de alimentos ultraprocesados ayuda a mejorar la microbiota intestinal, disminuir la inflamación y favorecer una digestión más ligera y eficiente a largo plazo.' },
+    ]}
+  />
+</SubpageTemplateB>

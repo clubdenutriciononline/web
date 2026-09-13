@@ -1,0 +1,42 @@
+---
+// Bloque genérico texto + imagen, reutilizado en secciones tipo
+// "¿Qué son las hormonas?", "Definición y contexto", etc.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  heading: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  reverse?: boolean;
+}
+const { heading, image, imageAlt, reverse = false } = Astro.props;
+---
+
+<section class:list={['texto-imagen', { reverse }]}>
+  <div class="texto-imagen-copy">
+    <h2>{heading}</h2>
+    <slot />
+  </div>
+  {image && <Image src={image} alt={imageAlt ?? ''} width={500} height={400} />}
+</section>
+
+<style>
+  .texto-imagen {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+  }
+  .texto-imagen.reverse {
+    flex-direction: row-reverse;
+  }
+  .texto-imagen-copy {
+    flex: 1 1 320px;
+  }
+  .texto-imagen img {
+    flex: 1 1 320px;
+    border-radius: 1rem;
+  }
+</style>

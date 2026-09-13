@@ -1,0 +1,32 @@
+---
+// Sección "relación con..." — texto + 2 imágenes en lightbox (enlace a la
+// propia imagen a tamaño completo, no a otra página; así es en el original).
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  heading: string;
+  images: { src: ImageMetadata; alt: string }[];
+}
+const { heading, images } = Astro.props;
+---
+
+<section class="relacion-imagenes">
+  <h2>{heading}</h2>
+  <slot />
+  <div class="lightbox-grid">
+    {images.map((img) => (
+      <a href={img.src.src} target="_blank" rel="noopener noreferrer">
+        <Image src={img.src} alt={img.alt} width={400} height={300} />
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .lightbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+</style>

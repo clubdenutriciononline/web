@@ -1,0 +1,131 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+// Nota: en el original, la sección "Artículos relacionados" existe pero está
+// vacía (sin tarjetas) — no se fuerza contenido, ArticulosRelacionados no
+// renderiza nada si el array resultante está vacío.
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('resistencia-insulina')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Resistencia a la insulina: síntomas, causas y soluciones naturales"
+  seoDescription="Qué es la resistencia a la insulina, sus síntomas, causas y cómo mejorarla de forma natural."
+  heroTitle="Resistencia a la insulina: síntomas, causas y cómo revertirla de forma natural"
+  heroSubtitle="Descubre qué es la resistencia a la insulina, sus síntomas, causas y cómo mejorarla de forma natural."
+  heroImage={heroImg}
+  heroImageAlt="Resistencia a la insulina"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>La resistencia a la insulina es una alteración metabólica cada vez más frecuente que puede afectar la energía, el peso, el apetito y la salud hormonal.</p>
+  <p>Ocurre cuando las células del cuerpo dejan de responder correctamente a la insulina, obligando al organismo a producir cantidades cada vez mayores para mantener estable el azúcar en sangre.</p>
+  <p>Con el tiempo, este desequilibrio puede favorecer el aumento de grasa abdominal, la inflamación, la fatiga constante y aumentar el riesgo de desarrollar prediabetes, diabetes tipo 2, síndrome metabólico y enfermedades cardiovasculares.</p>
+  <p>Detectar sus señales a tiempo y adoptar hábitos adecuados puede ayudar a mejorar la sensibilidad a la insulina y recuperar el equilibrio metabólico.</p>
+
+  <TextoConImagen heading="¿Qué es la Resistencia a la Insulina?" image={definicionImg} imageAlt="Qué es la resistencia a la insulina">
+    <p>La resistencia a la insulina es una alteración metabólica en la que las células del cuerpo dejan de responder correctamente a la acción de la insulina, una hormona producida por el páncreas cuya función principal es ayudar a que la glucosa entre en las células para ser utilizada como fuente de energía.</p>
+    <p>Cuando existe resistencia a la insulina, el organismo necesita producir cantidades cada vez mayores de insulina para mantener estables los niveles de azúcar en sangre. Como consecuencia, el páncreas trabaja en exceso y los niveles de insulina permanecen elevados durante largos periodos de tiempo.</p>
+    <p>Con el paso del tiempo, este desequilibrio puede afectar al metabolismo, favorecer la acumulación de grasa abdominal, aumentar la inflamación y alterar el funcionamiento hormonal. Además, la resistencia a la insulina se relaciona estrechamente con problemas como:</p>
+    <ul>
+      <li>Prediabetes y diabetes tipo 2</li>
+      <li>Sobrepeso y obesidad abdominal</li>
+      <li>Fatiga y falta de energía</li>
+      <li>Hambre frecuente y antojos de azúcar</li>
+      <li>Síndrome metabólico</li>
+      <li>Colesterol y triglicéridos elevados</li>
+      <li>Hipertensión arterial</li>
+      <li>Síndrome de ovario poliquístico (SOP)</li>
+    </ul>
+    <p>Aunque muchas personas pueden tener resistencia a la insulina durante años sin saberlo, el cuerpo suele enviar señales tempranas que indican que el metabolismo no está funcionando correctamente.</p>
+    <p><strong>¿Cómo funciona la insulina en el cuerpo?</strong></p>
+    <p>Después de comer, los alimentos se transforman en glucosa, que pasa al torrente sanguíneo. En respuesta, el páncreas libera insulina para ayudar a transportar esa glucosa hacia las células, donde será utilizada como energía.</p>
+    <p>En una persona con buena sensibilidad a la insulina, este proceso ocurre de manera eficiente. Sin embargo, cuando las células se vuelven resistentes, la glucosa tiene más dificultad para entrar y el cuerpo responde produciendo todavía más insulina.</p>
+    <p>Este exceso constante puede provocar un círculo vicioso que favorece:</p>
+    <ul>
+      <li>Mayor almacenamiento de grasa</li>
+      <li>Más inflamación</li>
+      <li>Desequilibrios hormonales</li>
+      <li>Alteraciones del apetito</li>
+      <li>Mayor riesgo metabólico</li>
+    </ul>
+    <p><strong>¿Se puede revertir la resistencia a la insulina?</strong></p>
+    <p>En muchos casos, sí. La resistencia a la insulina puede mejorar significativamente mediante cambios en la alimentación, el ejercicio físico, el descanso, el manejo del estrés y otros hábitos de vida que ayuden a recuperar la sensibilidad a la insulina y el equilibrio metabólico.</p>
+    <p>Detectarla a tiempo y actuar de forma temprana puede ayudar a prevenir complicaciones y mejorar la salud a largo plazo.</p>
+  </TextoConImagen>
+
+  <p>Factores que influyen en el desarrollo de la resistencia a la insulina y que pueden alterar el equilibrio metabólico a lo largo del tiempo</p>
+  <CausasGrid
+    heading="Causas de la Resistencia a la Insulina"
+    causas={[
+      { icon: '🍔', title: 'Obesidad abdominal', text: 'El exceso de grasa corporal, especialmente en la zona del abdomen, está estrechamente relacionado con una menor sensibilidad a la insulina. Este tipo de grasa activa procesos inflamatorios que dificultan el correcto uso de la glucosa por parte de las células.' },
+      { icon: '🏃‍♀️', title: 'Falta de actividad física', text: 'Un estilo de vida sedentario reduce la capacidad del cuerpo para utilizar la glucosa como energía. La actividad física regular mejora la sensibilidad a la insulina y ayuda a mantener estables los niveles de azúcar en sangre.' },
+      { icon: '🍞', title: 'Alimentación rica en ultraprocesados', text: 'Una dieta basada en azúcares añadidos, harinas refinadas y grasas de baja calidad favorece los picos de glucosa e insulina, lo que con el tiempo puede contribuir al desarrollo de resistencia a la insulina.' },
+      { icon: '😰', title: 'Estrés crónico', text: 'El estrés mantenido en el tiempo eleva los niveles de cortisol, una hormona que puede interferir con la acción de la insulina y favorecer el aumento de grasa abdominal y la desregulación metabólica.' },
+      { icon: '😴', title: 'Falta de sueño', text: 'Dormir poco o mal altera la regulación del apetito y del azúcar en sangre. La privación del sueño reduce la sensibilidad a la insulina y aumenta el riesgo de desequilibrios metabólicos.' },
+      { icon: '🧬', title: 'Genética y predisposición familiar', text: 'La herencia genética puede influir en la aparición de resistencia a la insulina, especialmente en personas con antecedentes familiares de diabetes tipo 2 u otros trastornos metabólicos.' },
+    ]}
+  />
+  <p>Ahora que conoces las principales causas de la resistencia a la insulina, es fundamental aprender a identificar sus síntomas y actuar a tiempo para prevenir complicaciones y mejorar la salud metabólica.</p>
+
+  <p>Señales y cambios en el cuerpo que pueden indicar una menor sensibilidad a la insulina y un desequilibrio metabólico</p>
+  <ListaSintomas
+    heading="Síntomas de la Resistencia a la Insulina"
+    items={[
+      'Aumento de peso y grasa abdominal: uno de los signos más frecuentes es la dificultad para perder peso, especialmente en la zona abdominal. Esto ocurre porque el cuerpo no utiliza la glucosa de forma eficiente y tiende a almacenarla en forma de grasa.',
+      'Fatiga constante: la falta de energía y el cansancio persistente, incluso después de descansar, es común en la resistencia a la insulina. Las células no aprovechan bien la glucosa, lo que reduce la producción eficiente de energía.',
+      'Dolores de cabeza frecuentes: los cambios en los niveles de glucosa e insulina pueden provocar fluctuaciones energéticas y vasculares que se manifiestan como dolores de cabeza recurrentes o sensación de presión.',
+      'Dificultad de concentración y "niebla mental": muchas personas experimentan problemas de memoria, falta de claridad mental o dificultad para concentrarse, debido a una menor disponibilidad de energía estable para el cerebro.',
+      'Hinchazón y retención de líquidos: la resistencia a la insulina puede influir en la regulación de líquidos y sodio, lo que puede generar sensación de inflamación, pesadez o hinchazón abdominal.',
+      'Azúcar en sangre elevada: un signo más avanzado es el aumento de los niveles de glucosa en sangre. Esto ocurre cuando el cuerpo ya no responde adecuadamente a la insulina y no consigue regular el azúcar de forma eficiente.',
+    ]}
+  />
+
+  <p>Cómo la resistencia a la insulina influye en el equilibrio global del organismo</p>
+  <RelacionImagenes
+    heading="Relación con Sistemas Hormonales y Metabólicos"
+    images={[
+      { src: relacion1Img, alt: 'Infografía relación resistencia a la insulina con sistemas hormonales' },
+      { src: relacion2Img, alt: 'Relación entre resistencia a la insulina y metabolismo' },
+    ]}
+  >
+    <p>La resistencia a la insulina no es únicamente un problema relacionado con el azúcar en sangre. En realidad, es una alteración metabólica que puede afectar a múltiples sistemas del cuerpo de forma interconectada, especialmente cuando se mantiene en el tiempo.</p>
+    <p>Cuando las células dejan de responder correctamente a la insulina, el cuerpo entra en un estado de desregulación metabólica que no solo afecta a la glucosa, sino también a otras hormonas clave implicadas en la energía, el peso, el apetito y el estado de ánimo.</p>
+    <p><strong>Metabolismo de los carbohidratos y las grasas</strong></p>
+    <p>La insulina no solo regula la glucosa, también influye directamente en cómo el cuerpo almacena y utiliza la grasa. Cuando hay resistencia a la insulina, el organismo tiende a almacenar más energía en forma de grasa, especialmente en la zona abdominal, y tiene más dificultad para utilizarla como fuente de energía.</p>
+    <p>Esto contribuye a un círculo vicioso en el que el exceso de grasa corporal empeora aún más la sensibilidad a la insulina.</p>
+    <p><strong>Sistema hormonal del estrés (eje adrenal)</strong></p>
+    <p>El estrés crónico y la resistencia a la insulina están estrechamente relacionados. El aumento sostenido de cortisol, la hormona del estrés, puede empeorar la sensibilidad a la insulina y favorecer la acumulación de grasa abdominal.</p>
+    <p>A su vez, una mala regulación de la glucosa puede aumentar la sensación de estrés en el organismo, generando un efecto de retroalimentación que afecta a la energía, el sueño y el bienestar general.</p>
+    <p><strong>Relación con la función tiroidea</strong></p>
+    <p>La resistencia a la insulina puede interferir indirectamente en el funcionamiento de la glándula tiroides, que regula el metabolismo basal. Cuando el equilibrio metabólico se altera, algunas personas pueden experimentar síntomas como fatiga, dificultad para perder peso o sensación de metabolismo lento.</p>
+    <p>Aunque no siempre existe una causa directa, ambos sistemas suelen influirse mutuamente en contextos de inflamación crónica y desregulación hormonal.</p>
+    <p><strong>Inflamación y salud metabólica global</strong></p>
+    <p>La resistencia a la insulina suele estar asociada a un estado de inflamación de bajo grado en el organismo. Esta inflamación puede afectar al funcionamiento general del sistema hormonal y metabólico, contribuyendo al desarrollo de otros desequilibrios como el síndrome metabólico.</p>
+    <p>Comprender la conexión entre la resistencia a la insulina y el resto de sistemas hormonales y metabólicos es fundamental para abordar el problema desde una perspectiva integral y mejorar la salud de forma sostenible.</p>
+  </RelacionImagenes>
+
+  <p>Cambios en el estilo de vida y estrategias efectivas para mejorar la sensibilidad a la insulina y recuperar el equilibrio metabólico</p>
+  <p>La resistencia a la insulina puede mejorar significativamente mediante la combinación de alimentación adecuada, actividad física, regulación del estrés y mejora del descanso. El objetivo no es solo reducir síntomas, sino restaurar la capacidad del cuerpo para utilizar la glucosa de forma eficiente.</p>
+  <SolucionesList
+    heading="Soluciones para la Resistencia a la Insulina"
+    soluciones={[
+      { title: 'Dieta equilibrada y baja en picos de glucosa', body: 'Una alimentación basada en alimentos naturales, ricos en fibra, proteínas y grasas saludables ayuda a estabilizar los niveles de azúcar en sangre. Reducir ultraprocesados, azúcares añadidos y harinas refinadas es clave para disminuir la demanda constante de insulina.' },
+      { title: 'Control de picos de glucosa', body: 'Regular la respuesta glucémica después de las comidas es clave para mejorar la sensibilidad a la insulina. Estrategias como combinar carbohidratos con proteínas, aumentar la fibra o realizar actividad ligera después de comer pueden marcar una gran diferencia.' },
+      { title: 'Ejercicio físico regular', body: 'El ejercicio mejora directamente la sensibilidad a la insulina, ya que los músculos utilizan la glucosa como fuente de energía. Tanto el entrenamiento de fuerza como el ejercicio aeróbico son altamente efectivos para mejorar el metabolismo.' },
+      { title: 'Reducción del estrés crónico', body: 'El estrés prolongado eleva el cortisol, una hormona que puede empeorar la resistencia a la insulina. Técnicas como la respiración consciente, el yoga o la meditación ayudan a equilibrar el sistema nervioso y mejorar la regulación hormonal.' },
+      { title: 'Suplementación nutricional', body: 'Algunos suplementos como magnesio, omega-3, berberina o vitamina D pueden apoyar la función metabólica. Siempre deben utilizarse como complemento de un estilo de vida saludable, no como sustituto.' },
+      { title: 'Mejora de la calidad del sueño', body: 'Dormir entre 7 y 9 horas de calidad es esencial para mantener una buena sensibilidad a la insulina. La falta de sueño altera las hormonas del apetito, aumenta la glucosa en sangre y empeora el control metabólico.' },
+    ]}
+  />
+</SubpageTemplateB>

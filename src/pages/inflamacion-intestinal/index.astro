@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('inflamacion-intestinal')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Inflamación intestinal: síntomas, causas y tratamiento natural"
+  seoDescription="Cómo la inflamación intestinal afecta a la digestión y la salud general, y cómo reducirla de forma natural."
+  heroTitle="Inflamación intestinal: síntomas, causas y cómo reducirla de forma natural"
+  heroSubtitle="Entienda cómo la inflamación intestinal afecta a su salud y cómo puede mejorarla."
+  heroImage={heroImg}
+  heroImageAlt="Inflamación intestinal"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>La inflamación intestinal es una alteración que se produce cuando el sistema inmunitario activa una respuesta inflamatoria persistente en el intestino. Puede afectar tanto al intestino delgado como al grueso y estar relacionada con factores como una alimentación desequilibrada, el estrés crónico, infecciones, alteraciones de la microbiota intestinal o sensibilidad a determinados alimentos.</p>
+  <p>Cuando esta inflamación se mantiene en el tiempo, puede influir en la digestión, la absorción de nutrientes y el bienestar general. Además, muchas personas experimentan síntomas digestivos frecuentes sin identificar que el origen puede estar en un intestino inflamado.</p>
+  <p>Conocer las causas, los síntomas y los hábitos que ayudan a cuidar la salud intestinal es clave para reducir molestias, mejorar la microbiota y favorecer el equilibrio digestivo de forma natural.</p>
+
+  <TextoConImagen heading="¿Qué es la inflamación intestinal?" image={definicionImg} imageAlt="Qué es la inflamación intestinal">
+    <p>La inflamación intestinal es una respuesta anormal del sistema inmunitario que se produce en el revestimiento del intestino delgado, del intestino grueso o de ambos.</p>
+    <p>Aunque la inflamación es un mecanismo natural de defensa del organismo, cuando se vuelve persistente o desregulada puede afectar negativamente al funcionamiento del sistema digestivo.</p>
+    <p>Esta condición puede estar relacionada con múltiples factores, como infecciones intestinales, una alimentación rica en ultraprocesados, intolerancias o sensibilidades alimentarias, estrés crónico, alteraciones de la microbiota intestinal o el uso prolongado de ciertos medicamentos.</p>
+    <p>Cuando la inflamación intestinal se mantiene en el tiempo, puede provocar síntomas digestivos recurrentes como dolor abdominal, hinchazón, gases, diarrea o estreñimiento.</p>
+    <p>Además, también puede influir en la absorción de nutrientes, la energía diaria e incluso en el sistema inmunitario.</p>
+    <p>En los casos en los que no se aborda adecuadamente, esta inflamación puede contribuir al desarrollo o empeoramiento de trastornos intestinales más complejos, afectando de forma significativa a la calidad de vida.</p>
+    <p>Por ello, entender sus causas, identificar sus síntomas y actuar sobre los hábitos diarios es clave para restaurar el equilibrio intestinal y mejorar la salud digestiva a largo plazo.</p>
+  </TextoConImagen>
+
+  <p>La inflamación intestinal puede tener múltiples orígenes y, en la mayoría de los casos, no se debe a un único factor. Identificar la causa o combinación de factores es clave para poder abordarla de forma efectiva y mejorar la salud digestiva a largo plazo.</p>
+  <p>A continuación, se presentan las causas más comunes que pueden contribuir al desarrollo de la inflamación intestinal.</p>
+  <CausasGrid
+    heading="Causas de la inflamación intestinal"
+    causas={[
+      { icon: '🦠', title: 'Infecciones intestinales', text: 'Las infecciones provocadas por bacterias, virus o parásitos pueden desencadenar una respuesta inflamatoria en el intestino. Suelen adquirirse a través de alimentos o agua contaminados, o por contacto con personas infectadas.' },
+      { icon: '🌾', title: 'Sensibilidades e intolerancias alimentarias', text: 'Algunas personas presentan sensibilidad a alimentos como el gluten, la lactosa o ciertos aditivos y ultraprocesados, lo que puede provocar inflamación intestinal y síntomas digestivos recurrentes.' },
+      { icon: '🧠', title: 'Estrés crónico y factores emocionales', text: 'El estrés mantenido en el tiempo altera el eje intestino-cerebro, afecta a la microbiota intestinal y puede favorecer la inflamación y el empeoramiento de los síntomas digestivos.' },
+      { icon: '💊', title: 'Uso de medicamentos', text: 'Fármacos como antibióticos o antiinflamatorios no esteroideos (AINEs) pueden alterar la microbiota intestinal y debilitar la barrera intestinal, favoreciendo procesos inflamatorios.' },
+      { icon: '🧬', title: 'Enfermedades intestinales crónicas', text: 'Patologías como la enfermedad de Crohn o la colitis ulcerosa se caracterizan por una inflamación intestinal persistente que requiere seguimiento médico especializado.' },
+      { icon: '🌫️', title: 'Estilo de vida y factores ambientales', text: 'La falta de sueño, el sedentarismo, el tabaquismo y la exposición a toxinas ambientales pueden contribuir al desequilibrio de la microbiota intestinal y favorecer la inflamación.' },
+    ]}
+  />
+  <p>En conjunto, estas causas muestran que la inflamación intestinal no es un problema aislado, sino el reflejo de un desequilibrio más profundo en la salud digestiva, la microbiota y el estilo de vida.</p>
+
+  <p>La inflamación intestinal puede manifestarse de diferentes formas y afectar tanto al sistema digestivo como al nivel de energía y bienestar general. La intensidad de los síntomas puede variar en función de la causa y del tiempo de evolución.</p>
+  <p>A continuación, se detallan los síntomas más frecuentes:</p>
+  <ListaSintomas
+    heading="Síntomas de la inflamación intestinal"
+    items={[
+      'Dolor abdominal: puede variar desde molestias leves hasta dolor más intenso. En muchos casos se acompaña de sensibilidad o sensación de presión en la zona digestiva.',
+      'Diarrea o estreñimiento: las alteraciones del tránsito intestinal son frecuentes. Puede presentarse diarrea, estreñimiento o incluso alternancia entre ambos, especialmente cuando existe desequilibrio en la microbiota intestinal.',
+      'Náuseas y vómitos: pueden aparecer tras la ingesta de ciertos alimentos o durante episodios de inflamación activa, afectando la tolerancia digestiva.',
+      'Pérdida de apetito: la disminución del apetito es común cuando existen molestias digestivas asociadas como hinchazón, náuseas o dolor abdominal.',
+      'Fatiga crónica: la inflamación intestinal puede estar relacionada con una sensación persistente de cansancio o falta de energía, incluso sin un esfuerzo físico elevado.',
+      'Sangre en las heces: la presencia de sangre en las heces es un síntoma de alerta que puede indicar una inflamación más severa y requiere valoración médica inmediata.',
+    ]}
+  />
+
+  <p>Cómo el intestino influye en las hormonas y el metabolismo</p>
+  <RelacionImagenes
+    heading="Relación entre la inflamación intestinal y el sistema hormonal y metabólico"
+    images={[
+      { src: relacion1Img, alt: 'Relación emocional de la inflamación intestinal' },
+      { src: relacion2Img, alt: 'Infografía relación inflamación intestinal' },
+    ]}
+  >
+    <p>La inflamación intestinal no solo afecta al sistema digestivo, sino que también puede tener un impacto directo en el equilibrio hormonal y en el metabolismo general del organismo.</p>
+    <p>Esto se debe a la estrecha conexión entre el intestino, el sistema endocrino y el sistema metabólico, a través del llamado eje intestino-cerebro-hormonas.</p>
+    <p>Cuando existe inflamación intestinal persistente, la barrera intestinal puede alterarse, favoreciendo una mayor permeabilidad intestinal y una respuesta inflamatoria sistémica.</p>
+    <p>Este proceso puede interferir en la regulación de hormonas clave como la insulina y el cortisol.</p>
+    <p>En el caso de la insulina, la inflamación crónica puede contribuir a una peor sensibilidad celular, lo que dificulta el control de la glucosa en sangre y puede favorecer desequilibrios metabólicos.</p>
+    <p>Por otro lado, el cortisol —la hormona relacionada con el estrés— también puede verse alterado, generando un círculo de retroalimentación que agrava tanto el estrés como la inflamación intestinal.</p>
+    <p>Además, este estado inflamatorio sostenido puede influir en el metabolismo energético, la gestión de grasas y la sensación de fatiga, afectando al bienestar general.</p>
+    <p>Comprender esta relación es fundamental, ya que permite abordar la inflamación intestinal no solo como un problema digestivo, sino como un factor clave en la salud hormonal y metabólica global.</p>
+    <p>Esto facilita estrategias más completas de prevención y manejo basadas en la alimentación, el control del estrés y el equilibrio de la microbiota intestinal.</p>
+  </RelacionImagenes>
+
+  <p>Cómo reducir la inflamación intestinal y mejorar la salud digestiva</p>
+  <p>Afortunadamente, la inflamación intestinal puede mejorar de forma significativa mediante cambios en la alimentación, el estilo de vida y el equilibrio de la microbiota intestinal. En la mayoría de los casos, un enfoque integral es clave para reducir los síntomas y favorecer la recuperación del sistema digestivo.</p>
+  <p>A continuación, se presentan algunas de las estrategias más efectivas para ayudar a disminuir la inflamación intestinal y mejorar el bienestar general.</p>
+  <SolucionesList
+    heading="Soluciones para la inflamación intestinal"
+    soluciones={[
+      { title: 'Cambios en la alimentación', body: 'Adoptar una alimentación basada en alimentos naturales puede ayudar a reducir la inflamación intestinal. Se recomienda disminuir el consumo de ultraprocesados y aumentar la ingesta de frutas, verduras, legumbres y alimentos ricos en fibra. Una dieta equilibrada favorece el equilibrio de la microbiota intestinal y mejora la digestión de forma progresiva.' },
+      { title: 'Apoyo a la microbiota intestinal', body: 'Los probióticos pueden ayudar a restaurar el equilibrio de la flora intestinal, mientras que los omega-3 contribuyen a modular la respuesta inflamatoria del organismo. Este apoyo nutricional puede ser útil como complemento dentro de una estrategia global para mejorar la salud intestinal.' },
+      { title: 'Mantenimiento de un peso saludable', body: 'El exceso de grasa corporal se asocia a un mayor estado inflamatorio en el organismo, incluyendo el intestino. Mantener un peso saludable ayuda a reducir esta carga inflamatoria. El equilibrio corporal contribuye directamente al bienestar digestivo y metabólico.' },
+      { title: 'Gestión del estrés', body: 'El estrés crónico puede agravar la inflamación intestinal, por lo que es fundamental incorporar técnicas de relajación como la meditación, el yoga o la respiración consciente. Reducir el estrés ayuda a equilibrar el eje intestino-cerebro y a mejorar la función digestiva.' },
+      { title: 'Reducción de alcohol y tabaco', body: 'El consumo de alcohol y tabaco puede irritar la mucosa intestinal y favorecer procesos inflamatorios. Reducir o evitar estos hábitos contribuye a proteger la barrera intestinal. Pequeños cambios en estos hábitos pueden tener un impacto significativo en la salud digestiva.' },
+      { title: 'Hidratación y estilo de vida', body: 'Mantener una buena hidratación y un estilo de vida activo favorece el tránsito intestinal y el correcto funcionamiento del sistema digestivo. Los hábitos diarios sostenidos son clave para mantener la inflamación bajo control a largo plazo.' },
+    ]}
+  />
+</SubpageTemplateB>

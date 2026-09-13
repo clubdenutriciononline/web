@@ -1,0 +1,65 @@
+---
+// Tercera variante de subpágina: SOLO /inflamacion-hormonal/ (slug interno
+// real de WP: sintomas-inflamacion-hormonal). Tabla de contenidos en vez de
+// grid de causas, acordeón de FAQ, sección de conclusión, y 5 tarjetas de
+// artículos relacionados (no 3). No se fuerza a SubpageTemplateA/B.
+import BaseLayout from './BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import type { ImageMetadata } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface TocItem {
+  label: string;
+  anchor: string;
+}
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  seoTitle: string;
+  seoDescription: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroImage?: ImageMetadata;
+  heroImageAlt?: string;
+  tocItems: TocItem[];
+  faqItems: FAQ[];
+  articulosRelacionados: CollectionEntry<'blog' | 'radar'>[]; // 5 tarjetas en esta página
+}
+
+const {
+  seoTitle,
+  seoDescription,
+  heroTitle,
+  heroSubtitle,
+  heroImage,
+  heroImageAlt,
+  tocItems,
+  faqItems,
+  articulosRelacionados,
+} = Astro.props;
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <Hero title={heroTitle} subtitle={heroSubtitle} image={heroImage} imageAlt={heroImageAlt} />
+
+  <TableOfContents heading="Tabla de contenidos" items={tocItems} />
+
+  <slot />
+
+  <FAQAccordion items={faqItems} />
+
+  <section class="conclusion">
+    <slot name="conclusion" />
+  </section>
+
+  <ArticulosRelacionados articulos={articulosRelacionados} />
+
+  <CTAFinal heading={heroSubtitle ?? heroTitle} ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import portadaImg from './_images/portada.jpg';
+---
+
+<BaseLayout title="Tu guía ya está lista — Club de Nutrición" description="Página de descarga de la guía gratuita.">
+  <h1>Ya puedes descargar tu guía 📘</h1>
+
+  <p>Esto no va de hacerlo perfecto.<br />Va de empezar a entender tu cuerpo.</p>
+
+  <div class="descarga-columns">
+    <div class="descarga-texto">
+      <p>Tu acceso está listo.</p>
+      <p>Pulsa el botón de abajo para empezar a descargar tu guía:</p>
+      <p>👉 "5 pasos para recuperar tu energía y equilibrar tus hormonas"</p>
+
+      <a
+        class="descarga-boton"
+        href="https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fLZESyNe6rVJvgtZs6Rf"
+      >
+        DESCARGAR LA GUÍA
+      </a>
+    </div>
+
+    <Image src={portadaImg} alt="Portada de la guía 5 pasos" />
+  </div>
+
+  <p>
+    💡 <strong>RECUERDA:</strong><br />
+    Empieza por un solo paso.<br />
+    No necesitas hacerlo todo perfecto.
+  </p>
+</BaseLayout>
+
+<style>
+  .descarga-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 640px) {
+    .descarga-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+  .descarga-boton {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background: var(--color-accent, #c2185b);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>

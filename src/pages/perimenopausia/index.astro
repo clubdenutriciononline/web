@@ -1,0 +1,182 @@
+---
+// Página a medida (PerimenopausiaCustom) — NO usa SubpageTemplateA/B.
+// En el original es un único bloque HTML/CSS a medida: índice de salto
+// ("Resumen clave"), listas numeradas, bibliografía en texto plano, y un
+// SVG de niveles hormonales por década dibujado a mano.
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import Bibliografia from '../../components/Bibliografia.astro';
+import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
+import CTAFinal from '../../components/CTAFinal.astro';
+import { getCollection } from 'astro:content';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import importanciaImg from './_images/importancia.jpg';
+import sintomasImg from './_images/sintomas.jpg';
+import solucionImg from './_images/solucion.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('perimenopausia')).slice(0, 3);
+
+const tocItems = [
+  { label: 'Definición', anchor: 'definicion' },
+  { label: 'Importancia', anchor: 'importancia' },
+  { label: 'Biología', anchor: 'biologia' },
+  { label: 'Síntomas de alerta', anchor: 'sintomas-de-alerta' },
+  { label: 'Metabolismo', anchor: 'metabolismo' },
+  { label: 'Solución natural', anchor: 'solucion-natural' },
+];
+---
+
+<BaseLayout
+  title="Perimenopausia: primeras señales y cómo afrontarla"
+  description="Cómo las fluctuaciones hormonales de la perimenopausia afectan al ciclo y al estado emocional."
+>
+  <header class="hero-kicker">
+    <span class="kicker">Salud hormonal</span>
+    <h1>Perimenopausia: qué es, síntomas y cómo gestionar los cambios hormonales</h1>
+    <Image src={heroImg} alt="Mujer reflexiva junto a la ventana" width={800} height={500} />
+  </header>
+
+  <TableOfContents heading="Resumen clave" items={tocItems} />
+  <ul class="resumen-clave">
+    <li>La perimenopausia es una fase de transición hormonal previa a la menopausia en la que los niveles de estrógeno y progesterona comienzan a fluctuar.</li>
+    <li>Puede empezar entre los 35 y 45 años</li>
+    <li>Provoca cambios en energía, peso y estado emocional</li>
+    <li>No es una enfermedad, sino una adaptación del cuerpo</li>
+    <li>Se puede gestionar con hábitos adecuados</li>
+  </ul>
+
+  <section id="definicion">
+    <span class="kicker">Definición</span>
+    <h2>¿Qué es la perimenopausia?</h2>
+    <p>La perimenopausia es el periodo de transición previo a la menopausia, en el que los ovarios comienzan a reducir progresivamente la producción de hormonas, especialmente estrógeno y progesterona.</p>
+    <p>Esta fase puede durar entre 4 y 10 años, y se caracteriza por una gran variabilidad hormonal, más que por una simple disminución.</p>
+    <p>No es una caída lineal, sino un proceso de altibajos hormonales. Tu cuerpo suele empezar a enviar señales mucho antes de que desaparezca la menstruación.</p>
+    <Image src={definicionImg} alt="Mujer reflexiva junto a la ventana" width={700} height={450} />
+  </section>
+
+  <hr />
+
+  <section id="importancia">
+    <span class="kicker">Importancia</span>
+    <h2>Por qué importa detectarla a tiempo</h2>
+    <p>La perimenopausia no solo afecta al ciclo menstrual. También influye en el metabolismo, el descanso, la salud emocional y el equilibrio hormonal general.</p>
+    <p>Muchas veces se confunde con estrés, ansiedad o simplemente "cansancio", lo que retrasa la comprensión del problema y dificulta tomar medidas adecuadas.</p>
+    <p>Aunque el origen es hormonal, los síntomas están muy influenciados por el estilo de vida. Factores como el estrés, la alimentación o el descanso pueden intensificar o aliviar significativamente esta etapa.</p>
+    <Image src={importanciaImg} alt="Mujer en casa reflexionando" width={700} height={450} />
+  </section>
+
+  <hr />
+
+  <section id="biologia">
+    <span class="kicker">Biología</span>
+    <h2>Qué ocurre a nivel hormonal</h2>
+    <p>Durante esta etapa, el cuerpo deja de funcionar de forma predecible a nivel hormonal.</p>
+
+    <!-- Gráfico SVG de niveles hormonales por década — réplica del original:
+         ejes Alto/Medio/Bajo, décadas 20s/30s/40s, curvas de Estrógeno y
+         Progesterona marcando la fase de perimenopausia/menopausia. -->
+    <svg viewBox="0 0 400 200" role="img" aria-label="Niveles de estrógeno y progesterona por década de vida">
+      <line x1="40" y1="20" x2="40" y2="180" stroke="#ccc" />
+      <line x1="40" y1="180" x2="380" y2="180" stroke="#ccc" />
+      <text x="10" y="30" font-size="10">Alto</text>
+      <text x="10" y="100" font-size="10">Medio</text>
+      <text x="10" y="175" font-size="10">Bajo</text>
+      <text x="60" y="195" font-size="10">20s</text>
+      <text x="200" y="195" font-size="10">30s</text>
+      <text x="340" y="195" font-size="10">40s</text>
+      <polyline points="60,40 200,60 340,150" fill="none" stroke="#c2185b" stroke-width="2" />
+      <polyline points="60,50 200,90 340,170" fill="none" stroke="#7b1fa2" stroke-width="2" />
+    </svg>
+    <p class="leyenda">Estrógeno · Progesterona — Fase de perimenopausia / menopausia</p>
+
+    <h4>Fluctuaciones de estrógeno</h4>
+    <p>Los niveles no caen en línea recta, sino con picos y valles que explican los síntomas variables día a día.</p>
+    <h4>Disminución de progesterona</h4>
+    <p>La progesterona desciende de forma progresiva, afectando al sueño, el ánimo y la retención de líquidos.</p>
+    <h4>Mayor sensibilidad al cortisol</h4>
+    <p>El cuerpo se vuelve más reactivo al estrés, con mayor impacto del cortisol sobre el metabolismo y el descanso.</p>
+  </section>
+
+  <hr />
+
+  <section id="sintomas-de-alerta">
+    <span class="kicker">Síntomas de alerta</span>
+    <h2>Primeras señales</h2>
+    <p>Los síntomas pueden variar mucho entre mujeres, pero estos son los más frecuentes.</p>
+    <ul>
+      <li><strong>Ciclos menstruales irregulares.</strong> Cambios en la duración, frecuencia o intensidad del ciclo.</li>
+      <li><strong>Sofocos y sensación de calor.</strong> Episodios repentinos de calor intenso, especialmente de noche.</li>
+      <li><strong>Problemas de sueño.</strong> Dificultad para conciliar o mantener el sueño durante la noche.</li>
+      <li><strong>Fatiga constante.</strong> Sensación de cansancio persistente que no mejora con el descanso.</li>
+      <li><strong>Cambios de humor e irritabilidad.</strong> Mayor sensibilidad emocional, ansiedad o episodios de tristeza.</li>
+      <li><strong>Dificultad para concentrarse.</strong> Niebla mental, olvidos frecuentes y pérdida de foco.</li>
+      <li><strong>Aumento de peso abdominal.</strong> Acumulación de grasa en la zona central, difícil de revertir.</li>
+    </ul>
+    <Image src={sintomasImg} alt="Mujer experimentando fatiga en casa" width={700} height={450} />
+  </section>
+
+  <hr />
+
+  <section id="metabolismo">
+    <span class="kicker">Metabolismo</span>
+    <h2>Impacto en el metabolismo</h2>
+    <p>Uno de los cambios más frustrantes durante la perimenopausia es la facilidad para ganar peso.</p>
+    <h4>💪 Masa muscular</h4>
+    <p>Disminuye de forma progresiva, reduciendo el gasto energético basal.</p>
+    <h4>🔄 Metabolismo lento</h4>
+    <p>El cuerpo procesa los nutrientes de forma más lenta que en etapas anteriores.</p>
+    <h4>📊 Resistencia a la insulina</h4>
+    <p>Aumenta la tendencia a acumular grasa, especialmente en la zona abdominal.</p>
+    <h4>⚡ Mayor impacto del cortisol</h4>
+    <p>El estrés tiene consecuencias más profundas sobre el peso y el bienestar.</p>
+    <p><strong>No es falta de disciplina.</strong> Es una adaptación fisiológica. El cuerpo responde a cambios hormonales reales que afectan directamente a cómo almacena y utiliza la energía.</p>
+  </section>
+
+  <hr />
+
+  <section id="solucion-natural">
+    <span class="kicker">Solución natural</span>
+    <h2>Cómo abordarla de forma natural</h2>
+    <p>Adoptar ciertos hábitos puede marcar una gran diferencia en cómo se vive esta etapa.</p>
+    <ol>
+      <li><strong>Entrenamiento de fuerza</strong> para mantener la masa muscular y activar el metabolismo</li>
+      <li><strong>Alimentación rica en proteínas</strong> y micronutrientes esenciales para el equilibrio hormonal</li>
+      <li><strong>Control del estrés</strong> mediante técnicas de respiración, meditación o mindfulness</li>
+      <li><strong>Mejora del descanso</strong> con rutinas nocturnas que favorezcan un sueño reparador</li>
+      <li><strong>Exposición a luz natural</strong> para regular el ritmo circadiano y el estado de ánimo</li>
+    </ol>
+    <p>El objetivo no es "volver atrás", sino ayudar al cuerpo a adaptarse mejor a esta nueva etapa.</p>
+    <Image src={solucionImg} alt="Mujer meditando en la naturaleza a la luz de la luna" width={700} height={450} />
+  </section>
+
+  <Bibliografia
+    referencias={[
+      'Santoro N. Perimenopause: From Research to Practice. Journal of Women’s Health.',
+      'Freeman EW. Hormonal changes in the menopausal transition.',
+      'Burger HG et al. Hormonal changes in the menopause transition. Endocrine Reviews.',
+      'Davis SR et al. Global Consensus Position Statement on Menopause.',
+      'Lovejoy JC. The menopause and obesity.',
+    ]}
+  />
+
+  <ArticulosRelacionados articulos={articulos} />
+
+  <CTAFinal heading="Perimenopausia" ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
+</BaseLayout>
+
+<style>
+  .kicker {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--color-accent, #c2185b);
+  }
+  .leyenda {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  .resumen-clave {
+    margin: 1rem 0 2rem;
+  }
+</style>

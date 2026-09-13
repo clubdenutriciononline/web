@@ -1,0 +1,123 @@
+---
+// Formulario de contacto — componente independiente y reutilizable, SIN
+// dependencia de WPForms ni de WordPress. Migración visual del formulario
+// original (Nombre*, Apellidos, Email*, Mensaje, botón Enviar).
+//
+// IMPORTANTE (decisión de la usuaria, 2026-09-12): el envío real todavía
+// NO está conectado a ningún servicio. La integración definitiva (probable
+// Mailrelay, en evaluación junto a MailerLite/Brevo) se hará en una sesión
+// posterior, antes del despliegue definitivo. Hasta entonces, el formulario
+// muestra un aviso claro de "modo de pruebas" al enviarse, para que nadie
+// crea que su mensaje se ha enviado de verdad.
+//
+// Cuando se conecte el servicio definitivo: sustituir el `TODO` del script
+// (la función `submitContactForm`) por la llamada real (fetch a un
+// endpoint serverless, a la API de Mailrelay, etc.) sin tocar el marcado
+// ni los estilos del formulario.
+---
+
+<form id="contact-form" class="contact-form" novalidate>
+  <div class="field">
+    <label for="nombre">Nombre*</label>
+    <input id="nombre" name="nombre" type="text" required minlength="2" />
+  </div>
+
+  <div class="field">
+    <label for="apellidos">Apellidos</label>
+    <input id="apellidos" name="apellidos" type="text" />
+  </div>
+
+  <div class="field">
+    <label for="email">Correo electrónico*</label>
+    <input id="email" name="email" type="email" required />
+  </div>
+
+  <div class="field">
+    <label for="mensaje">Comentario o mensaje</label>
+    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+  </div>
+
+  <button type="submit">Enviar</button>
+
+  <p class="form-status" role="status" aria-live="polite" hidden></p>
+</form>
+
+<style>
+  .contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 480px;
+  }
+  .field {
+    display: grid;
+    gap: 0.35rem;
+  }
+  input,
+  textarea {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font: inherit;
+  }
+  button {
+    justify-self: start;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--color-accent, #c2185b);
+    color: #fff;
+    cursor: pointer;
+  }
+  .form-status {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: #fff3cd;
+    color: #664d03;
+    font-size: 0.9rem;
+  }
+  .form-status.error {
+    background: #f8d7da;
+    color: #842029;
+  }
+</style>
+
+<script>
+  // TODO (integración definitiva pendiente): sustituir esta función por el
+  // envío real (Mailrelay u otro servicio) cuando esté decidido y
+  // configurado. Mientras tanto, deja claro al usuario que es un modo de
+  // pruebas y NO simula un envío exitoso.
+  async function submitContactForm(data: Record<string, string>): Promise<void> {
+    // eslint-disable-next-line no-console
+    console.info('[contact-form] Envío en modo de pruebas (sin conectar aún):', data);
+    return Promise.resolve();
+  }
+
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = form?.querySelector<HTMLParagraphElement>('.form-status');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+
+    try {
+      await submitContactForm(data);
+      if (status) {
+        status.hidden = false;
+        status.classList.remove('error');
+        status.textContent =
+          'Modo de pruebas: el envío real todavía no está conectado. Tu mensaje NO se ha enviado — esta integración se completará antes del despliegue definitivo.';
+      }
+    } catch (err) {
+      if (status) {
+        status.hidden = false;
+        status.classList.add('error');
+        status.textContent = 'No se ha podido procesar el formulario (modo de pruebas).';
+      }
+    }
+  });
+</script>

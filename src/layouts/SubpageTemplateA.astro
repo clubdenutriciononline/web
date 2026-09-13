@@ -1,0 +1,66 @@
+---
+// Variante A de subpágina: Ciclo Menstrual, Tiroides, Menopausia (referencia).
+// Conserva el grid final "Áreas clave relacionadas" — a diferencia de
+// SubpageTemplateB, que no lo tiene.
+import BaseLayout from './BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TemasRelacionadosGrid from '../components/TemasRelacionadosGrid.astro';
+import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import type { ImageMetadata } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Tema {
+  icon: string | ImageMetadata;
+  title: string;
+  text: string;
+  href: string;
+}
+
+interface Props {
+  seoTitle: string;
+  seoDescription: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroImage?: ImageMetadata;
+  heroImageAlt?: string;
+  ctaLabel: string;
+  ctaHref: string;
+  areasHeading: string;
+  areas: Tema[];
+  articulosRelacionados: CollectionEntry<'blog' | 'radar'>[];
+}
+
+const {
+  seoTitle,
+  seoDescription,
+  heroTitle,
+  heroSubtitle,
+  heroImage,
+  heroImageAlt,
+  ctaLabel,
+  ctaHref,
+  areasHeading,
+  areas,
+  articulosRelacionados,
+} = Astro.props;
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <Hero
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    ctaLabel={ctaLabel}
+    ctaHref={ctaHref}
+    image={heroImage}
+    imageAlt={heroImageAlt}
+  />
+
+  <slot />
+
+  <TemasRelacionadosGrid heading={areasHeading} temas={areas} />
+
+  <ArticulosRelacionados articulos={articulosRelacionados} />
+
+  <CTAFinal heading={heroSubtitle ?? heroTitle} ctaLabel={ctaLabel} ctaHref={ctaHref} />
+</BaseLayout>

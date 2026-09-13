@@ -1,0 +1,72 @@
+---
+// Grid final "Explora cada área clave" / "Temas relacionados" / "Áreas
+// clave relacionadas". En la web original estas tarjetas NO llevan enlace
+// (comprobado con captura de pantalla real) pero usan el mismo formato que
+// tarjetas sí navegables del sitio, y cada una nombra una página existente.
+// Corrección aplicada durante la migración (decisión de la usuaria,
+// 2026-09-12, ver 00-analisis/02-mapa-migracion.md sección 9): ahora SÍ
+// llevan <a href> real hacia la página correspondiente, que ya existe en
+// la arquitectura actual (no se crean páginas nuevas).
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Tema {
+  icon: string | ImageMetadata; // emoji (string) o imagen real importada vía astro:assets
+  title: string;
+  text: string;
+  href: string; // URL ya existente en la arquitectura (hub o subpágina)
+}
+interface Props {
+  heading: string;
+  temas: Tema[];
+}
+const { heading, temas } = Astro.props;
+---
+
+<section class="temas-relacionados">
+  <h2>{heading}</h2>
+  <div class="grid">
+    {temas.map((t) => (
+      <a class="tema-card" href={t.href}>
+        {typeof t.icon === 'string'
+          ? <span class="icon" aria-hidden="true">{t.icon}</span>
+          : <Image class="icon-img" src={t.icon} alt="" width={80} height={80} />}
+        <h3>{t.title}</h3>
+        <p>{t.text}</p>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .tema-card {
+    display: block;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .tema-card:hover,
+  .tema-card:focus-visible {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+  .icon {
+    font-size: 2rem;
+  }
+  .icon-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+</style>

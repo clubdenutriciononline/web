@@ -1,0 +1,114 @@
+---
+// Home — contenido real migrado desde https://clubdenutricion.es/, ver
+// .firecrawl/md/home.md. Nota de fidelidad: las 4 tarjetas de "Un enfoque
+// diferente" usan iconos FontAwesome en el original (fa-brain, fa-weight,
+// fa-heart) salvo la tercera, que lleva el emoji ⚖️ literal en el propio
+// texto (confirmado en el HTML fuente) — se mantiene tal cual, y se usa un
+// emoji equivalente para las otras tres por consistencia visual.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import { Image } from 'astro:assets';
+import heroImg from './_images/mujer-optin.jpg';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 8);
+---
+
+<BaseLayout
+  title="Club de Nutrición — Entiende tu cuerpo, equilibra tus hormonas y recupera tu energía"
+  description="Nutrición y bienestar femenino +35 sin dietas extremas. Aprende a nutrirte de forma inteligente para sentirte plena en cada etapa."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Entiende tu cuerpo, equilibra tus hormonas y recupera tu energía</h1>
+      <p class="hero-subtitle">Nutrición y bienestar femenino <strong>+35</strong> sin dietas extremas. Aprende a nutrirte de forma inteligente para sentirte plena en cada etapa.</p>
+      <a class="hero-cta" href="/lm-5-pasos-optin/">Descargar guía gratuita</a>
+      <a class="hero-cta hero-cta-secundario" href="/blog/">Explorar artículos</a>
+    </div>
+    <Image class="hero-image" src={heroImg} alt="Club de Nutrición" width={600} height={450} />
+  </section>
+
+  <section class="enfoque">
+    <h2>Un enfoque diferente para entender tu cuerpo</h2>
+    <div class="grid">
+      <div class="enfoque-item">
+        <span class="icon" aria-hidden="true">🧠</span>
+        <h3>Basado en evidencia</h3>
+        <p>No se trata de modas ni soluciones rápidas, sino de entender cómo funciona tu cuerpo realmente.</p>
+      </div>
+      <div class="enfoque-item">
+        <span class="icon" aria-hidden="true">⚖️</span>
+        <h3>Sin dietas extremas</h3>
+        <p>Aquí no encontrarás restricciones imposibles, sino un enfoque sostenible y adaptado a tu día a día.</p>
+      </div>
+      <div class="enfoque-item">
+        <h3>⚖️ Equilibrio hormonal real</h3>
+        <p>Trabajamos desde la raíz: hormonas, metabolismo, inflamación y estilo de vida.</p>
+      </div>
+      <div class="enfoque-item">
+        <span class="icon" aria-hidden="true">❤️</span>
+        <h3>Para mujeres +35</h3>
+        <p>Porque tu cuerpo cambia con los años, y necesitas una forma diferente de cuidarte.</p>
+      </div>
+    </div>
+    <p class="enfoque-cierre">Cada vez más mujeres están empezando a entender su cuerpo y a recuperar su energía de forma natural.</p>
+  </section>
+
+  <ArticulosRelacionados heading="Últimas entradas" articulos={posts} />
+
+  <CTAFinal
+    heading="¿Sientes que tu energía sube y baja constantemente?"
+    ctaLabel="Descargar la guía ahora"
+    ctaHref="/lm-5-pasos-optin/"
+  />
+</BaseLayout>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+  }
+  .hero-copy {
+    flex: 1 1 320px;
+  }
+  .hero-image {
+    flex: 1 1 320px;
+    border-radius: 1rem;
+  }
+  .hero-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-right: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background: var(--color-accent, #c2185b);
+    color: #fff;
+    text-decoration: none;
+  }
+  .hero-cta-secundario {
+    background: transparent;
+    color: var(--color-accent, #c2185b);
+    border: 1px solid var(--color-accent, #c2185b);
+  }
+  .enfoque {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .enfoque .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .enfoque-item .icon {
+    font-size: 2rem;
+  }
+  .enfoque-cierre {
+    margin-top: 1.5rem;
+    font-style: italic;
+  }
+</style>

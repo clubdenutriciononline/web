@@ -1,0 +1,156 @@
+---
+// Hub Microbiota — HubTemplateB. Contenido real migrado desde
+// https://clubdenutricion.es/microbiota/, ver .firecrawl/md/microbiota.md.
+// En el original los iconos de "Temas Relacionados" son imágenes de
+// tarjeta reales (no emoji). TemasRelacionadosGrid.astro ya admite imagen
+// real, así que se usan aquí para Digestión e Inflamación intestinal, que sí
+// tienen una imagen descargada específica; "Probióticos" se queda con emoji
+// porque no se localizó una imagen de tarjeta propia para ese tema (solo
+// existe una imagen genérica de la sección "Relación con sistemas
+// hormonales", que no es la misma pieza gráfica) — no se fuerza un asset
+// que no corresponde por fidelidad.
+import { getCollection } from 'astro:content';
+import HubTemplateB from '../../layouts/HubTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+
+import heroImg from './_images/microbiota-herro.jpg';
+import queEsImg from './_images/microbiota-infografia.jpg';
+import iconoFibra from './_images/microbiota-icono-pobre-en-fibra-e1778781285808.png';
+import iconoEstres from './_images/Metabolismo-icono-estres-cronico.png';
+import iconoAntibioticos from './_images/microbiota-icono-antibioticos.png';
+import iconoSueno from './_images/Metabolismo-icono-falta-de-sueno.png';
+import iconoContaminacion from './_images/microbiota-icono-contaminacion-ambiental.png';
+import iconoEnfermedades from './_images/microbiota-icono-enfermedades-cronicas-e1778781384110.png';
+import relacionImg1 from './_images/Microbiota-sisthormonales-infografia.jpg';
+import relacionImg2 from './_images/microbiota-sistemas-hormonales.jpg';
+import temaDigestion from './_images/microbiota-digestion.jpg';
+import temaInflamacion from './_images/microbiota-inflamacion-intestinal.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('microbiota')).slice(0, 3);
+---
+
+<HubTemplateB
+  seoTitle="Microbiota: cómo influye en la digestión, el sistema inmune y tu bienestar"
+  seoDescription="La microbiota es el conjunto de microorganismos que habitan en nuestro cuerpo y que influyen de forma directa en la digestión, el sistema inmune, el metabolismo y el bienestar general."
+  heroTitle="Descubre cómo la microbiota influye en la digestión, el sistema inmune y tu bienestar general"
+  heroImage={heroImg}
+  heroImageAlt="Microbiota"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  temasHeading="Temas Relacionados con la Microbiota"
+  temas={[
+    { icon: temaDigestion, title: 'Digestión', href: '/digestion/', text: 'La microbiota intestinal es clave en el proceso digestivo, ya que ayuda a descomponer los alimentos, mejorar la absorción de nutrientes y mantener un tránsito intestinal saludable.' },
+    { icon: temaInflamacion, title: 'Inflamación intestinal', href: '/inflamacion-intestinal/', text: 'Un desequilibrio en la microbiota puede favorecer procesos inflamatorios en el intestino, asociados a molestias digestivas, sensibilidad intestinal y alteraciones crónicas.' },
+    { icon: '🧫', title: 'Probióticos', href: '/probioticos-alimentacion/', text: 'Los probióticos son microorganismos beneficiosos que ayudan a restaurar y mantener el equilibrio de la microbiota, favoreciendo la salud digestiva, inmunitaria y metabólica.' },
+  ]}
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>La microbiota es el conjunto de microorganismos que habitan en nuestro cuerpo y que influyen de forma directa en la digestión, el sistema inmune, el metabolismo y el bienestar general. En este artículo exploramos qué es, cómo funciona y cómo mantener su equilibrio.</p>
+
+    <ul class="sintomas-destacados">
+      <li>Problemas Digestivos</li>
+      <li>Sistema Inmunológico Debilitado</li>
+      <li>Fatiga y Cansancio</li>
+      <li>Cambios en el Estado de Ánimo</li>
+      <li>Problemas de Piel</li>
+    </ul>
+
+    <p>¿Sabías que la microbiota puede influir directamente en tu sistema inmunológico e incluso en tu estado de ánimo?</p>
+    <ul>
+      <li>Comprender qué es la microbiota y cuál es su función en el organismo</li>
+      <li>Identificar los factores que alteran el equilibrio de la microbiota</li>
+      <li>Reconocer los síntomas asociados a un desequilibrio de la microbiota</li>
+      <li>Aprender estrategias para mantener y restaurar su equilibrio natural</li>
+    </ul>
+  </section>
+
+  <TextoConImagen heading="¿Qué es la Microbiota?" image={queEsImg} imageAlt="Qué es la microbiota">
+    <p>La microbiota es el conjunto de microorganismos, principalmente bacterias, pero también virus, hongos y otros microbios, que habitan de forma natural en diferentes partes del cuerpo humano, especialmente en el intestino.</p>
+    <p>Este ecosistema microbiano convive con nosotros en una relación de simbiosis, es decir, ambos se benefician: los microorganismos obtienen un entorno donde vivir y alimentarse, mientras que el organismo humano recibe funciones esenciales para su salud.</p>
+    <p>La microbiota intestinal es la más estudiada y relevante, ya que participa directamente en procesos clave como la digestión de los alimentos, la absorción de nutrientes, la producción de ciertas vitaminas (como la vitamina K y algunas del grupo B) y la regulación del metabolismo energético.</p>
+    <p>Además, actúa como una barrera protectora frente a microorganismos patógenos, ayudando a prevenir infecciones y a mantener el equilibrio del sistema inmunológico.</p>
+    <p>En los últimos años, también se ha descubierto su influencia en la comunicación entre el intestino y el cerebro, conocida como el eje intestino-cerebro.</p>
+    <p>A través de este sistema, la microbiota puede influir en funciones como el estado de ánimo, el estrés y la salud mental, lo que amplía su importancia más allá del sistema digestivo.</p>
+    <p>Mantener una microbiota equilibrada es fundamental para la salud general, ya que su alteración (disbiosis) se ha relacionado con problemas digestivos, inflamatorios, metabólicos e incluso emocionales.</p>
+  </TextoConImagen>
+
+  <p class="parrafo-suelto">Factores que contribuyen a alterar el equilibrio de la microbiota intestinal y afectar la salud digestiva, inmunitaria y metabólica</p>
+
+  <CausasGrid
+    heading="Causas del Desequilibrio de la Microbiota"
+    causas={[
+      { icon: iconoFibra, title: 'Dieta Pobre en Fibra', text: 'Una alimentación baja en fibra reduce la diversidad de la microbiota intestinal y debilita su función protectora, favoreciendo alteraciones digestivas y metabólicas.' },
+      { icon: iconoEstres, title: 'Estrés Crónico', text: 'El estrés mantenido en el tiempo altera la comunicación entre el sistema nervioso y el intestino, modificando la composición de la microbiota y afectando la salud digestiva e inmunitaria.' },
+      { icon: iconoAntibioticos, title: 'Uso Excesivo de Antibióticos', text: 'El uso frecuente o inadecuado de antibióticos puede eliminar bacterias beneficiosas junto con las patógenas, provocando un desequilibrio significativo en la microbiota.' },
+      { icon: iconoSueno, title: 'Falta de Sueño', text: 'La privación o mala calidad del sueño impacta negativamente en el equilibrio microbiano intestinal, interfiriendo en procesos metabólicos y de regulación inflamatoria.' },
+      { icon: iconoContaminacion, title: 'Contaminación Ambiental', text: 'La exposición continuada a toxinas, contaminantes y sustancias químicas puede afectar la diversidad de la microbiota y favorecer estados de disbiosis.' },
+      { icon: iconoEnfermedades, title: 'Enfermedades Crónicas', text: 'Patologías como enfermedades metabólicas o inflamatorias pueden alterar la microbiota intestinal, generando un círculo de empeoramiento de síntomas y desequilibrio general.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Ahora que hemos visto los principales factores que pueden desequilibrar la microbiota, es fundamental reconocer los síntomas asociados a este desequilibrio.</p>
+
+  <section class="sintomas-detalle">
+    <h2>Síntomas de un Desequilibrio en la Microbiota</h2>
+    <p>Reconociendo los signos más comunes de una alteración en la microbiota intestinal y su impacto en la salud digestiva, inmunitaria, metabólica y mental</p>
+    <ul>
+      <li><strong>Problemas digestivos (diarrea o estreñimiento):</strong> Las alteraciones en la microbiota intestinal pueden afectar directamente el tránsito intestinal y la digestión, provocando diarrea, estreñimiento, hinchazón o molestias abdominales.</li>
+      <li><strong>Fatiga y cansancio persistente:</strong> Un desequilibrio de la microbiota puede interferir en la producción de energía y en el metabolismo de los nutrientes, lo que se traduce en cansancio continuo y baja vitalidad.</li>
+      <li><strong>Problemas de piel (acné o psoriasis):</strong> La disbiosis intestinal puede reflejarse en la piel a través de procesos inflamatorios, favoreciendo la aparición de acné, eccemas, rosácea o psoriasis.</li>
+      <li><strong>Cambios en el estado de ánimo (ansiedad o depresión):</strong> La microbiota influye en el eje intestino-cerebro, por lo que su desequilibrio puede afectar neurotransmisores clave y contribuir a cambios emocionales como ansiedad o depresión.</li>
+      <li><strong>Sistema inmunológico debilitado:</strong> Una microbiota alterada reduce la capacidad del organismo para defenderse frente a patógenos, aumentando la susceptibilidad a infecciones y enfermedades.</li>
+      <li><strong>Dolor crónico o inflamación persistente:</strong> El desequilibrio de la microbiota puede favorecer estados inflamatorios de bajo grado, asociados a dolor crónico y a la progresión de enfermedades inflamatorias.</li>
+    </ul>
+  </section>
+
+  <RelacionImagenes
+    heading="Relación con Sistemas Hormonales/Metabólicos"
+    images={[
+      { src: relacionImg1, alt: 'Relación de la microbiota con los sistemas hormonales' },
+      { src: relacionImg2, alt: 'Microbiota y sistemas hormonales' },
+    ]}
+  >
+    <p>Entendiendo cómo la microbiota interactúa con el equilibrio hormonal, el metabolismo y la regulación energética del organismo</p>
+    <p>La microbiota intestinal desempeña un papel fundamental en la regulación de múltiples procesos hormonales y metabólicos.</p>
+    <p>No actúa de forma aislada, sino como un sistema biológico activo que influye en la forma en que el cuerpo procesa la energía, regula el apetito y mantiene el equilibrio interno.</p>
+    <p>Uno de los aspectos más relevantes es su relación con la sensibilidad a la insulina y el metabolismo de la glucosa.</p>
+    <p>Una microbiota equilibrada favorece una mejor respuesta del organismo a la insulina, ayudando a mantener estables los niveles de azúcar en sangre.</p>
+    <p>En cambio, una disbiosis puede contribuir a la resistencia a la insulina, un factor clave en el desarrollo de alteraciones metabólicas.</p>
+    <p>Además, la microbiota también influye en la función tiroidea y en la producción y regulación de distintas hormonas relacionadas con el metabolismo energético.</p>
+    <p>Estos procesos afectan directamente a cómo el cuerpo utiliza los carbohidratos, las grasas y las proteínas, impactando en el peso corporal, la energía diaria y la composición corporal.</p>
+    <p>Por otro lado, la microbiota participa en la regulación de la inflamación sistémica.</p>
+    <p>Un desequilibrio puede favorecer un estado inflamatorio de bajo grado, que interfiere con la correcta comunicación hormonal y contribuye a alteraciones metabólicas a largo plazo.</p>
+    <p>Comprender esta conexión entre microbiota, hormonas y metabolismo es clave para abordar la salud desde una perspectiva integral.</p>
+    <p>¿Qué podemos hacer para restaurar el equilibrio de nuestra microbiota y mejorar nuestra salud en general?</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Soluciones para Restaurar el Equilibrio de la Microbiota"
+    soluciones={[
+      { title: 'Consumir una Dieta Rica en Fibra', body: 'Una alimentación rica en frutas, verduras, legumbres y cereales integrales favorece la diversidad de la microbiota y mejora la salud digestiva.' },
+      { title: 'Limitar el Uso de Antibióticos', body: 'Utilizar antibióticos solo cuando sea necesario ayuda a proteger las bacterias beneficiosas del intestino y a mantener su equilibrio natural.' },
+      { title: 'Practicar Técnicas de Reducción del Estrés', body: 'Técnicas como la meditación, la respiración consciente o el yoga ayudan a reducir el impacto del estrés en la microbiota intestinal.' },
+      { title: 'Mantener un Sueño Saludable', body: 'Dormir bien de forma regular favorece la regeneración del organismo y contribuye al equilibrio de la microbiota y del sistema metabólico.' },
+      { title: 'Reducir la Exposición a Toxinas', body: 'Minimizar el contacto con contaminantes ambientales y químicos ayuda a proteger la microbiota y a mantener su diversidad saludable.' },
+    ]}
+  />
+</HubTemplateB>
+
+<style>
+  .intro,
+  .parrafo-suelto,
+  .sintomas-detalle {
+    padding: 0 1rem;
+  }
+  .sintomas-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+  }
+</style>

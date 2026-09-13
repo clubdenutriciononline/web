@@ -1,0 +1,61 @@
+---
+// Variante B de subpágina (12 de 18): Fatiga Crónica, Sueño, Rutinas
+// Energéticas, Pérdida de Grasa Femenina, Resistencia a la Insulina, Ayuno
+// Intermitente, Digestión, Inflamación Intestinal, Probióticos y
+// Alimentación, Ansiedad por la Comida, Estrés y Hábitos, Relación con el
+// Cuerpo. Mismo esqueleto que SubpageTemplateA pero SIN el grid final de
+// áreas relacionadas (no existe en el original para estas 12 páginas).
+import BaseLayout from './BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import type { ImageMetadata } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  seoTitle: string;
+  seoDescription: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroImage?: ImageMetadata;
+  heroImageAlt?: string;
+  ctaLabel: string;
+  ctaHref: string;
+  articulosRelacionados: CollectionEntry<'blog' | 'radar'>[];
+}
+
+const {
+  seoTitle,
+  seoDescription,
+  heroTitle,
+  heroSubtitle,
+  heroImage,
+  heroImageAlt,
+  ctaLabel,
+  ctaHref,
+  articulosRelacionados,
+} = Astro.props;
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <Hero
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    ctaLabel={ctaLabel}
+    ctaHref={ctaHref}
+    image={heroImage}
+    imageAlt={heroImageAlt}
+  />
+
+  <slot />
+
+  <!--
+    Corrección de contenido (decisión de la usuaria, 2026-09-12): si esta
+    página no tiene artículos relacionados disponibles (caso real hoy en
+    /resistencia-insulina/), ArticulosRelacionados no renderiza nada — nunca
+    se muestra un bloque vacío.
+  -->
+  <ArticulosRelacionados articulos={articulosRelacionados} />
+
+  <CTAFinal heading={heroSubtitle ?? heroTitle} ctaLabel={ctaLabel} ctaHref={ctaHref} />
+</BaseLayout>

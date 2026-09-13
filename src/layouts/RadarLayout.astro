@@ -1,0 +1,52 @@
+---
+// Plantilla de publicación de Radar de Salud — distinta del Blog: sin
+// breadcrumb, sin imagen en el cuerpo, secciones fijas con emoji, nivel de
+// evidencia, fuente en texto plano, y botones de compartir (ausentes en el
+// Blog normal). Radar de Salud es un tipo de contenido independiente del
+// Blog, con su propia collection (`radar`) y su propia plantilla.
+import BaseLayout from './BaseLayout.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'radar'>;
+  relacionados: CollectionEntry<'blog' | 'radar'>[];
+}
+
+const { entry, relacionados } = Astro.props;
+const { title, description, seo, date, nivelEvidencia, fuente } = entry.data;
+const url = Astro.url.href;
+---
+
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description}>
+  <article class="radar-post">
+    <span class="etiqueta">Radar de Salud</span>
+    <h1>{title}</h1>
+
+    <div class="cuerpo">
+      <!-- El cuerpo markdown contiene las secciones fijas:
+           🔬 Qué ha pasado / 🧠 Por qué importa / 🩺 Interpretación clínica /
+           ⚡ Conclusión rápida — se replican tal cual, en ese orden. -->
+      <slot />
+    </div>
+
+    <p class="nivel-evidencia">🔎 Nivel de evidencia: {nivelEvidencia}</p>
+    <p class="fuente">Fuente: {fuente}</p>
+    <p class="fecha">Fecha: {date.toLocaleDateString('es-ES')}</p>
+
+    <ShareButtons url={url} title={title} />
+  </article>
+
+  <ArticulosRelacionados articulos={relacionados} />
+</BaseLayout>
+
+<style>
+  .etiqueta {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--color-accent, #c2185b);
+    margin-bottom: 0.5rem;
+  }
+</style>

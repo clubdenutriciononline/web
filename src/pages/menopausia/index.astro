@@ -1,0 +1,115 @@
+---
+// Subpágina de referencia — SubpageTemplateA (con grid final de áreas).
+import { getCollection } from 'astro:content';
+import SubpageTemplateA from '../../layouts/SubpageTemplateA.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('menopausia')).slice(0, 3);
+---
+
+<SubpageTemplateA
+  seoTitle="Menopausia: síntomas, causas y soluciones naturales"
+  seoDescription="Todo sobre la menopausia: definición, causas, síntomas y soluciones prácticas para mujeres."
+  heroTitle="Menopausia: síntomas, cambios hormonales y aliviar sus efectos"
+  heroSubtitle="Entiende cómo funcionan tus hormonas, por qué se desregulan y cómo recuperar tu energía, metabolismo y bienestar."
+  heroImage={heroImg}
+  heroImageAlt="Mujer en la etapa de la menopausia"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  areasHeading="Áreas clave relacionadas con la Menopausia"
+  areas={[
+    { icon: '/images/osteoporosis.jpg', title: 'Osteoporosis', href: '/hormonas/', text: 'Cómo la menopausia afecta a la densidad ósea.' },
+    { icon: '/images/corazon.jpg', title: 'Enfermedades del Corazón', href: '/hormonas/', text: 'Riesgo cardiovascular asociado a la menopausia.' },
+    { icon: '/images/salud-mental.jpg', title: 'Salud Mental', href: '/mentalidad/', text: 'Cambios emocionales durante la menopausia.' },
+    { icon: '/images/relaciones.jpg', title: 'Relaciones y Sexualidad', href: '/relacion-cuerpo-mujeres/', text: 'Impacto en la libido y las relaciones de pareja.' },
+  ]}
+  articulosRelacionados={articulos}
+>
+  <p>
+    La menopausia es un tema relevante en la salud de la mujer, marcando el final del ciclo menstrual y señalando una nueva etapa en la vida.
+  </p>
+  <p>
+    Este cambio natural puede llevar consigo una serie de síntomas y desafíos que varían de mujer a mujer.
+  </p>
+  <p>
+    En esta página, exploraremos la menopausia desde su definición hasta las soluciones prácticas para manejar sus efectos, abarcando el contexto hormonal y metabólico que la rodea.
+  </p>
+
+  <TextoConImagen heading="Definición y Contexto de la Menopausia" image={definicionImg} imageAlt="Definición y contexto de la menopausia">
+    <p>
+      La menopausia es una etapa natural en la vida de la mujer que marca el final de los ciclos menstruales y de la fertilidad.
+    </p>
+    <p>
+      Se produce cuando los ovarios reducen progresivamente la producción de hormonas sexuales, como el estrógeno y la progesterona, dando lugar a una nueva fase llena de cambios físicos y emocionales.
+    </p>
+    <p>
+      Aunque suele aparecer entre los 45 y 55 años, cada mujer la experimenta de forma única.
+    </p>
+    <p>
+      Más que un final, la menopausia representa una transición hacia una etapa diferente, en la que comprender tu cuerpo se vuelve clave para mantener el equilibrio, la energía y el bienestar.
+    </p>
+  </TextoConImagen>
+
+  <p>Factores que contribuyen al inicio de la menopausia</p>
+  <CausasGrid
+    heading="Causas de la Menopausia"
+    causas={[
+      { icon: '🧬', title: 'Envejecimiento Ovariano', text: 'El envejecimiento de los ovarios es la causa principal de la menopausia. Con el tiempo, los ovarios dejan de producir huevos y hormonas sexuales.' },
+      { icon: '🏥', title: 'Cirugía de Extirpación de los Ovarios', text: 'La extracción quirúrgica de los ovarios puede inducir la menopausia de manera inmediata.' },
+      { icon: '🎗️', title: 'Tratamiento contra el Cáncer', text: 'Algunos tratamientos contra el cáncer, como la quimioterapia y la radioterapia, pueden dañar los ovarios y causar la menopausia.' },
+      { icon: '⚗️', title: 'Falta de Hormonas', text: 'El déficit de hormonas puede llevar a la menopausia. Esto puede deberse a varias razones, incluyendo la enfermedad de Addison.' },
+      { icon: '🛡️', title: 'Enfermedades Autoinmunes', text: 'Enfermedades autoinmunes, como la enfermedad de Hashimoto, pueden afectar la función tiroidea y llevar a la menopausia.' },
+      { icon: '🧬', title: 'Factor Genético', text: 'Factores genéticos pueden influir en el momento en que una mujer entrará en la menopausia.' },
+    ]}
+  />
+  <p>Es importante entender que la menopausia es un proceso natural que puede ser manejado con las herramientas adecuadas.</p>
+
+  <p>Reconociendo los signos de la menopausia</p>
+  <ListaSintomas
+    heading="Síntomas de la Menopausia"
+    items={[
+      'Los sofocos son sensaciones repentinas de calor que pueden ocurrir en cualquier momento del día o la noche, acompañados de un aumento en la frecuencia cardíaca.',
+      'Los sudores nocturnos ocurren mientras se duerme, causando despertares y afectando el patrón de sueño.',
+      'Los cambios de humor pueden ir desde irritabilidad hasta depresión, afectando la calidad de vida.',
+      'La sequedad vaginal puede causar dolor durante las relaciones sexuales y una mayor susceptibilidad a las infecciones.',
+      'La pérdida de la libido puede afectar las relaciones íntimas y la autoestima.',
+      'La pérdida de densidad ósea aumenta el riesgo de osteoporosis y fracturas.',
+    ]}
+  />
+
+  <p>Cómo la menopausia afecta otros sistemas del cuerpo</p>
+  <RelacionImagenes
+    heading="Relación con Sistemas Hormonales y Metabólicos"
+    images={[
+      { src: relacion1Img, alt: 'Relación de la menopausia con sistemas hormonales y metabólicos' },
+      { src: relacion2Img, alt: 'Menopausia y salud metabólica' },
+    ]}
+  >
+    <p>
+      La menopausia tiene un impacto significativo en el sistema hormonal y metabólico de la mujer. La disminución del estrógeno puede afectar el metabolismo de las grasas y los carbohidratos, aumentando el riesgo de enfermedades cardiovasculares.
+    </p>
+    <p>
+      La menopausia no es solo un cambio en la vida de la mujer, sino una transición que puede ser manejada de manera saludable y positiva.
+    </p>
+  </RelacionImagenes>
+
+  <p>Mejorando la calidad de vida durante y después de la menopausia</p>
+  <SolucionesList
+    heading="Soluciones Prácticas para la Menopausia"
+    soluciones={[
+      { title: 'Terapia Hormonal de Reemplazo (THS)' },
+      { title: 'Ejercicio Regular' },
+      { title: 'Terapias Alternativas como Acupuntura y Meditación' },
+      { title: 'Dieta Equilibrada' },
+      { title: 'Apoyo Psicológico y Grupos de Apoyo' },
+    ]}
+  />
+</SubpageTemplateA>

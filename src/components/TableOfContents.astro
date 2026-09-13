@@ -1,0 +1,37 @@
+---
+// Índice de salto. Usado como "Resumen clave" en Perimenopausia/Cortisol
+// (PerimenopausiaCustom / CortisolCustom) y como tabla de contenidos en
+// Inflamación hormonal (SubpageBlogPost). Mismo componente, dos usos.
+interface Item {
+  label: string;
+  anchor: string;
+}
+interface Props {
+  heading?: string;
+  items: Item[];
+}
+const { heading = 'Resumen clave', items } = Astro.props;
+---
+
+<nav class="toc" aria-label={heading}>
+  <h2>{heading}</h2>
+  <ul>
+    {items.map((item) => (
+      <li><a href={`#${item.anchor}`}>{item.label}</a></li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .toc {
+    background: var(--color-surface-alt, #fdf2f7);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+  .toc ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+</style>

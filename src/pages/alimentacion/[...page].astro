@@ -1,0 +1,70 @@
+---
+// Migrado desde /alimentacion-2/ (decisión de la usuaria, 2026-09-12): el
+// sufijo "-2" era un artefacto de WordPress (slug duplicado histórico).
+// URL definitiva /alimentacion/, con redirect 301 desde /alimentacion-2/
+// configurado en astro.config.mjs. Contenido y funcionamiento actuales se
+// mantienen sin rediseñar (listado simple, NO hub — esa conversión futura
+// queda fuera de esta fase).
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { GetStaticPathsOptions } from 'astro';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  // Confirmado por scrape de /alimentacion-2/ (2026-09-12, ver
+  // .firecrawl/md/alimentacion-2.md): la cabecera real es solo "ALIMENTACIÓN"
+  // (sin texto de introducción) y el listado es "todos los posts" sin
+  // filtro de categoría aparente (mismos posts que aparecen en Blog/Home),
+  // paginado de 15 en 15 en el original (5 páginas para ~73 posts).
+  const posts = (await getCollection('blog'))
+    .filter((p) => !p.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return paginate(posts, { pageSize: 15 });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title="Alimentación — Club de Nutrición" description="Artículos sobre alimentación del Club de Nutrición.">
+  <h2>Alimentación</h2>
+
+  <ul class="listado-simple">
+    {page.data.map((post) => (
+      <li>
+        <a href={`/${post.data.slug ?? post.id}/`}>
+          <h3>{post.data.title}</h3>
+          <span class="categoria">{post.data.category} / Club de Nutrición</span>
+          <p>{post.data.description}</p>
+          <span class="leer-mas">Leer más »</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <nav class="paginacion" aria-label="Paginación de Alimentación">
+    {page.url.prev && <a href={page.url.prev}>« Anterior</a>}
+    <span>Página {page.currentPage} de {page.lastPage}</span>
+    {page.url.next && <a href={page.url.next}>Siguiente »</a>}
+  </nav>
+</BaseLayout>
+
+<style>
+  .listado-simple {
+    list-style: none;
+    padding: 0;
+  }
+  .listado-simple li {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+  }
+  .categoria {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-accent, #c2185b);
+  }
+  .paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+</style>

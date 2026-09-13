@@ -1,0 +1,139 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import SintomasDestacados from '../../components/SintomasDestacados.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('relacion-cuerpo-mujeres')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Relación con el cuerpo: conexión emocional y física"
+  seoDescription="Cómo mejorar tu relación con el cuerpo y qué hábitos ayudan a desarrollar una percepción más positiva y saludable."
+  heroTitle="Relación con el cuerpo: cómo mejorar tu conexión emocional y física contigo misma"
+  heroSubtitle="Mejora tu relación con el cuerpo y aprende cómo influye en tu bienestar físico, emocional y mental para desarrollar una vida más equilibrada, saludable y consciente."
+  heroImage={heroImg}
+  heroImageAlt="Relación con el cuerpo"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>La relación con el cuerpo influye directamente en la autoestima, el bienestar emocional y la calidad de vida. Cuando existe una conexión saludable con nuestro cuerpo, resulta más fácil desarrollar hábitos positivos, gestionar el estrés y sentirnos en equilibrio. Sin embargo, muchas personas viven atrapadas en la crítica constante, la comparación y la desconexión corporal, lo que puede afectar tanto a la salud mental como al bienestar físico.</p>
+  <p>Además, una mala relación con el cuerpo no solo impacta en la imagen personal, sino también en la forma de relacionarnos con los demás, en la seguridad emocional y en la capacidad para establecer límites saludables. Por eso, aprender a escuchar, respetar y cuidar el cuerpo es un paso fundamental para construir una mentalidad más sana y consciente.</p>
+  <p>En esta guía descubrirás cómo mejorar tu relación con el cuerpo, qué señales pueden indicar un conflicto corporal y qué hábitos pueden ayudarte a desarrollar una percepción más positiva, equilibrada y saludable de ti mismo.</p>
+
+  <!-- 7 síntomas destacados en el hero (no 5) — conteo real de esta página -->
+  <SintomasDestacados
+    items={[
+      { label: 'Baja autoestima' },
+      { label: 'Ansiedad y malestar emocional' },
+      { label: 'Evitación y desconexión corporal' },
+      { label: 'Dificultad para aceptar el cuerpo' },
+      { label: 'Límites personales poco saludables' },
+      { label: 'Comparación constante con los demás' },
+      { label: 'Desconexión de las necesidades del cuerpo' },
+    ]}
+  />
+
+  <h2>Empieza a construir una relación saludable con tu cuerpo</h2>
+  <p>Dejar de luchar contra tu cuerpo es el primer paso para mejorar tu bienestar físico, emocional y mental. Cuando aprendes a escuchar tu cuerpo, respetar sus necesidades y cambiar la forma en la que te hablas a ti mismo, es más fácil desarrollar una autoestima sólida y una mentalidad más equilibrada.</p>
+  <p>En esta sección descubrirás herramientas y hábitos que te ayudarán a fortalecer la conexión contigo mismo y a construir una relación con el cuerpo más consciente, positiva y saludable.</p>
+  <p><strong>Lo que aprenderás:</strong></p>
+  <ul>
+    <li>Comprenderás por qué la relación con el cuerpo influye directamente en la salud emocional, la autoestima y el bienestar general.</li>
+    <li>Aprenderás a identificar pensamientos negativos, autoexigencias y patrones de comportamiento que afectan a tu imagen corporal.</li>
+    <li>Descubrirás cómo mejorar la autoestima, desarrollar mayor confianza personal y reducir la comparación constante.</li>
+    <li>Obtendrás consejos prácticos para cuidar tu cuerpo desde el respeto, la consciencia y el autocuidado.</li>
+    <li>Entenderás cómo crear hábitos saludables sin caer en la culpa, la obsesión o la presión estética.</li>
+    <li>Aprenderás a conectar con las necesidades reales de tu cuerpo, escuchando señales como el descanso, el estrés y las emociones.</li>
+  </ul>
+
+  <TextoConImagen heading="¿Qué es la relación con el cuerpo?" image={definicionImg} imageAlt="Qué es la relación con el cuerpo">
+    <p>La relación con el cuerpo es la forma en la que pensamos, sentimos y actuamos respecto a nuestro propio cuerpo. No se trata únicamente de la apariencia física, sino también de la conexión emocional y mental que desarrollamos con nosotros mismos a lo largo de la vida.</p>
+    <p>Esta relación influye directamente en la autoestima, la confianza personal, los hábitos diarios y el bienestar general. Por ejemplo, la manera en la que interpretamos nuestra imagen corporal puede afectar al estado de ánimo, a la alimentación, al descanso, a las relaciones personales e incluso a la salud mental.</p>
+    <p>Además, la relación con el cuerpo está condicionada por múltiples factores, como las experiencias personales, la educación, el entorno social, la presión estética y los mensajes que recibimos constantemente a través de redes sociales y medios de comunicación.</p>
+    <p>Cuando existe una relación saludable con el cuerpo, resulta más fácil practicar el autocuidado, establecer límites sanos y desarrollar hábitos equilibrados desde el respeto y la consciencia. En cambio, una relación negativa puede generar inseguridad, comparación constante, ansiedad y desconexión emocional.</p>
+    <p>Por eso, aprender a construir una percepción corporal más amable y realista es fundamental para mejorar tanto la salud física como el bienestar emocional a largo plazo.</p>
+  </TextoConImagen>
+
+  <p>¿Por qué podemos desarrollar una relación negativa con nuestro cuerpo?</p>
+  <p>La relación con el cuerpo no surge de forma aislada, sino que se construye a lo largo del tiempo a partir de experiencias personales, influencias externas y patrones de pensamiento. Comprender el origen de esta relación es clave para poder transformarla.</p>
+  <p>A continuación, exploramos algunas de las causas más comunes que pueden afectar negativamente la forma en la que percibimos y tratamos nuestro cuerpo.</p>
+  <!--
+    Corrección de contenido aplicada (decisión de la usuaria, 2026-09-12): en
+    el original, la tarjeta de causa "⚡ Estrés y presión emocional" aparece
+    duplicada literalmente dos veces en el grid. Aquí se deja UNA sola
+    aparición (8 causas únicas en vez de 9 con el duplicado).
+  -->
+  <CausasGrid
+    heading="Causas de una mala relación con el cuerpo"
+    causas={[
+      { icon: '🌍', title: 'Sociedad y cultura', text: 'La sociedad actual promueve estándares de belleza poco realistas que influyen directamente en la percepción del cuerpo. La exposición constante a imágenes idealizadas, filtros y mensajes estéticos genera comparación, insatisfacción y presión por encajar en un ideal físico concreto. Con el tiempo, esto puede distorsionar lo que consideramos un cuerpo "normal" o saludable.' },
+      { icon: '🧬', title: 'Factores biológicos y sensibilidad emocional', text: 'Existen factores biológicos y predisposiciones individuales que pueden influir en la sensibilidad emocional o en la percepción corporal. Sin embargo, estos factores no determinan la relación con el cuerpo, sino que interactúan con el entorno y las experiencias personales.' },
+      { icon: '👨‍👩‍👧', title: 'Influencias familiares y educación temprana', text: 'La forma en la que nos hablaron del cuerpo durante la infancia y adolescencia tiene un impacto profundo. Comentarios, críticas, comparaciones o una excesiva importancia del físico dentro del entorno familiar pueden condicionar la autoestima y la relación con el cuerpo desde edades muy tempranas.' },
+      { icon: '💔', title: 'Experiencias traumáticas', text: 'Situaciones como el bullying, la discriminación, el abuso o comentarios negativos repetidos sobre el cuerpo pueden dejar una huella emocional duradera. Estas experiencias pueden afectar la seguridad personal y la forma en la que nos percibimos durante años.' },
+      { icon: '🧠', title: 'Diálogo interno crítico y creencias limitantes', text: 'La manera en la que nos hablamos a nosotros mismos influye directamente en la relación con el cuerpo. Un diálogo interno duro, exigente o centrado únicamente en defectos puede alimentar la insatisfacción corporal y debilitar la autoestima con el tiempo.' },
+      { icon: '⚡', title: 'Estrés y presión emocional', text: 'El estrés sostenido y la presión constante pueden llevar a una desconexión del cuerpo. Cuando vivimos en estado de tensión permanente, es más difícil escuchar las señales físicas y emocionales, lo que afecta al bienestar general.' },
+      { icon: '🧘', title: 'Falta de autocuidado', text: 'No atender las necesidades básicas del cuerpo, como el descanso, la alimentación consciente o el movimiento saludable, puede deteriorar la conexión corporal. El autocuidado no es un lujo, sino una base esencial para construir una relación sana con uno mismo.' },
+      { icon: '📱', title: 'Redes sociales y comparación constante', text: 'Las redes sociales intensifican la comparación diaria con otros cuerpos, estilos de vida y apariencias. Esta exposición continua puede generar inseguridad, frustración y una sensación de no estar "a la altura", incluso cuando esas imágenes no reflejan la realidad.' },
+    ]}
+  />
+  <p>Reconocer estas causas es el primer paso para empezar a cambiar la forma en la que te relacionas con tu cuerpo. A partir de aquí, comienza el verdadero trabajo: reconstruir una conexión más consciente, respetuosa y saludable contigo mismo.</p>
+
+  <p>¿Cómo se manifiesta una mala relación con el cuerpo?</p>
+  <p>Una mala relación con el cuerpo no siempre es evidente a simple vista. En muchas ocasiones se manifiesta a través de pensamientos, emociones y comportamientos cotidianos que afectan tanto al bienestar mental como físico. Identificar estas señales es clave para poder empezar a transformarlas.</p>
+  <ListaSintomas
+    heading="Síntomas de una mala relación con el cuerpo"
+    items={[
+      'Baja autoestima: se manifiesta como una falta de confianza en uno mismo, una autopercepción negativa del cuerpo y una tendencia constante a la comparación. La persona suele centrarse en defectos percibidos y minimizar sus cualidades, lo que afecta directamente a la seguridad personal.',
+      'Ansiedad y malestar emocional: puede aparecer una sensación constante de inquietud, preocupación o insatisfacción con el propio cuerpo, especialmente cuando no se cumplen ciertos estándares estéticos. En algunos casos, esto puede derivar en síntomas de ansiedad o estado de ánimo bajo.',
+      'Dificultad para aceptar el cuerpo: se experimenta rechazo o incomodidad hacia la propia imagen corporal. Esto puede generar frustración, autocrítica constante y dificultad para desarrollar una relación más amable y compasiva con uno mismo.',
+      'Comportamientos de evitación: evitar espejos, fotografías o situaciones en las que el cuerpo esté expuesto es una señal frecuente. Este tipo de conductas refuerzan la desconexión corporal y pueden limitar la vida social o emocional de la persona.',
+      'Dificultad para establecer límites saludables: cuando existe una mala relación con el cuerpo, puede ser difícil respetar las propias necesidades físicas y emocionales. Esto se traduce en sobreexigencia, falta de descanso o desconexión de señales corporales importantes.',
+      'Síntomas físicos relacionados con el estrés: el malestar emocional sostenido puede manifestarse en el cuerpo a través de dolores de cabeza, tensión muscular, problemas digestivos o fatiga. Estos síntomas reflejan la conexión directa entre mente y cuerpo.',
+      'Comparación constante con otras personas: la persona se compara de forma habitual con cuerpos que ve en redes sociales o en su entorno, lo que genera insatisfacción, frustración y una percepción distorsionada de su propio cuerpo. Esta comparación suele ser automática y difícil de controlar.',
+      'Desconexión de las señales del cuerpo: se ignoran o se minimizan señales físicas importantes como el hambre, el cansancio, el estrés o la necesidad de descanso. Esto puede llevar a una relación más "mentalizada" con el cuerpo, perdiendo la capacidad de escucharlo y atenderlo de forma adecuada.',
+      'Relación basada en la culpa o el castigo corporal: se manifiesta cuando el cuidado del cuerpo se vive desde la culpa, la autoexigencia o el castigo. Es común que la persona intente "compensar" lo que percibe como fallos a través de restricciones, sobreesfuerzos o conductas rígidas. En lugar de un autocuidado amable, el cuerpo se convierte en un espacio de exigencia constante, lo que refuerza el malestar y dificulta construir una relación equilibrada y respetuosa.',
+    ]}
+  />
+  <p>Estos síntomas no son un punto final, sino una señal de que algo necesita atención. Reconocerlos es el primer paso para reconstruir una relación más sana, respetuosa y consciente con tu cuerpo.</p>
+
+  <p>¿Cómo influye la relación con el cuerpo en tu equilibrio hormonal y metabólico?</p>
+  <RelacionImagenes
+    heading="Relación con el cuerpo y sistemas hormonales/metabólicos"
+    images={[
+      { src: relacion1Img, alt: 'Infografía relación con el cuerpo y sistemas hormonales' },
+      { src: relacion2Img, alt: 'Relación con el cuerpo y equilibrio emocional' },
+    ]}
+  >
+    <p>La relación que mantenemos con nuestro cuerpo no solo afecta a nivel emocional o psicológico, sino que también tiene un impacto directo en procesos biológicos fundamentales como la regulación hormonal, el metabolismo y el equilibrio energético. El cuerpo no funciona de forma aislada: mente y fisiología están profundamente conectadas.</p>
+    <p>Cuando existe una relación saludable con el cuerpo, es más fácil mantener hábitos estables de alimentación, descanso y movimiento, lo que favorece un equilibrio hormonal adecuado y un metabolismo más eficiente. En cambio, una relación basada en el estrés, la culpa o la desconexión puede alterar estas funciones y generar desequilibrios que afectan tanto al bienestar físico como emocional.</p>
+    <p>Desde el punto de vista fisiológico, el estrés crónico derivado de una mala relación con el cuerpo puede influir en la producción de hormonas como el cortisol, lo que a su vez impacta en la regulación del apetito, los niveles de energía y la capacidad del organismo para recuperarse. Además, este estado de alerta constante puede interferir en procesos metabólicos básicos, afectando la forma en la que el cuerpo utiliza y almacena la energía.</p>
+    <p>Por otro lado, la desconexión corporal puede hacer que ignoremos señales internas importantes como el hambre, la saciedad o la fatiga, lo que altera la regulación natural del organismo. Con el tiempo, esto puede contribuir a patrones poco saludables que no solo afectan al bienestar físico, sino también a la relación emocional con la comida y el propio cuerpo.</p>
+    <p>Comprender esta conexión es clave para cambiar el enfoque: no se trata solo de "controlar el cuerpo", sino de aprender a escucharlo y trabajar con él, no contra él.</p>
+    <p>Cuando empiezas a cuidar tu relación con el cuerpo, también empiezas a cuidar tu equilibrio interno. Ahora es el momento de dar el siguiente paso y reconectar contigo desde una perspectiva más consciente y respetuosa.</p>
+  </RelacionImagenes>
+
+  <p>¿Qué puedes hacer para mejorar tu relación con el cuerpo?</p>
+  <p>Mejorar la relación con el cuerpo no es un cambio inmediato, sino un proceso progresivo de reconexión, consciencia y práctica diaria. No se trata de alcanzar un cuerpo "perfecto", sino de aprender a habitarlo con más respeto, amabilidad y equilibrio.</p>
+  <p>A través de pequeños cambios en la forma en la que piensas, te hablas y te cuidas, es posible transformar profundamente tu bienestar físico y emocional. El objetivo no es el control, sino la conexión.</p>
+  <SolucionesList
+    heading="Soluciones para mejorar la relación con el cuerpo"
+    soluciones={[
+      { title: 'Practica la autocompasión', body: 'La autocompasión consiste en tratarte con la misma amabilidad con la que tratarías a alguien que quieres. Implica reducir la autocrítica, aceptar la imperfección y entender que tu valor no depende de tu apariencia física. Este cambio en el diálogo interno es clave para sanar la relación con el cuerpo.' },
+      { title: 'Establece límites saludables y escucha tus necesidades', body: 'Aprender a escuchar tu cuerpo implica respetar señales como el descanso, el hambre, el estrés o el cansancio emocional. Establecer límites también significa reducir la autoexigencia excesiva y aprender a decir "no" cuando algo afecta a tu bienestar físico o mental.' },
+      { title: 'Cuida tu cuerpo desde el respeto, no desde la exigencia', body: 'El autocuidado no debe ser una forma de castigo ni una obligación estética, sino un acto de respeto hacia tu bienestar. Alimentarte bien, descansar y moverte de forma consciente son formas de reconectar con tu cuerpo sin presión ni culpa.' },
+      { title: 'Desarrolla una imagen corporal realista y positiva', body: 'Construir una imagen corporal saludable implica cuestionar estándares irreales, reducir la comparación y aprender a valorar tu cuerpo por su funcionalidad más que por su apariencia. Es un proceso de reeducación mental y emocional.' },
+      { title: 'Busca apoyo y conexión con otros', body: 'Hablar con personas de confianza, profesionales o comunidades que promuevan una relación saludable con el cuerpo puede ser clave en el proceso de cambio. El apoyo externo ayuda a romper patrones de aislamiento y refuerza nuevas formas de pensamiento más sanas.' },
+    ]}
+  />
+  <p>Sanar la relación con el cuerpo no es un destino, sino un proceso continuo. Cada pequeño cambio que haces en cómo te hablas, te cuidas y te escuchas es un paso hacia una vida más equilibrada, consciente y libre.</p>
+</SubpageTemplateB>

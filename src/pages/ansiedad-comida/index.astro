@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('ansiedad-comida')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Ansiedad por la comida: causas y síntomas"
+  seoDescription="Comprende y gestiona la ansiedad por la comida desde su raíz emocional y hormonal."
+  heroTitle="Ansiedad por la comida: causas, síntomas y cómo gestionarla de forma efectiva"
+  heroSubtitle="Un enfoque científico y práctico para entender, gestionar y reducir la ansiedad por la comida, mejorando tu relación con la alimentación sin recurrir a dietas restrictivas"
+  heroImage={heroImg}
+  heroImageAlt="Ansiedad por la comida"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>La ansiedad por la comida afecta cada vez a más personas y puede influir tanto en la salud física como en el bienestar emocional. Suele aparecer como una necesidad intensa de comer en respuesta al estrés, las emociones o determinados hábitos alimentarios, dificultando mantener una relación equilibrada con la comida.</p>
+  <p>Comprender sus causas y aprender a gestionarla es fundamental para mejorar la alimentación, reducir la culpa asociada a la comida y recuperar el control de los hábitos alimentarios.</p>
+
+  <TextoConImagen heading="¿Qué es la Ansiedad por la Comida?" image={definicionImg} imageAlt="Qué es la ansiedad por la comida">
+    <p>La ansiedad por la comida es una relación desequilibrada con la alimentación caracterizada por pensamientos constantes sobre la comida, dificultad para controlar el apetito y una necesidad de comer impulsada por las emociones más que por el hambre física.</p>
+    <p>Este problema puede aparecer como respuesta al estrés, la ansiedad, la tristeza, el cansancio o incluso a restricciones alimentarias excesivas.</p>
+    <p>Muchas personas experimentan ansiedad alimentaria sin ser plenamente conscientes de ello. Puede manifestarse a través de antojos intensos, episodios de comida compulsiva, sensación de pérdida de control al comer o sentimientos de culpa después de las comidas.</p>
+    <p>Con el tiempo, este patrón puede afectar tanto al bienestar emocional como a la salud física y la autoestima.</p>
+    <p>La ansiedad por la comida no suele estar relacionada únicamente con la falta de fuerza de voluntad. En muchos casos intervienen factores psicológicos, emocionales, hormonales y ambientales, como el estrés crónico, la presión estética, las dietas restrictivas o una mala relación con la imagen corporal.</p>
+    <p>Además, determinados hábitos y emociones pueden reforzar el ciclo de ansiedad y alimentación emocional.</p>
+    <p>Comprender las causas de la ansiedad por la comida es fundamental para aprender a gestionarla de forma saludable.</p>
+    <p>A través de estrategias adecuadas, cambios de hábitos y un enfoque más consciente de la alimentación, es posible mejorar la relación con la comida, reducir la ansiedad alimentaria y recuperar el equilibrio físico y emocional.</p>
+  </TextoConImagen>
+
+  <p>Un enfoque científico para comprender los factores que influyen en la ansiedad alimentaria</p>
+  <p>La ansiedad por la comida puede desarrollarse por múltiples factores físicos, emocionales y psicológicos.</p>
+  <p>En la mayoría de los casos no existe una única causa, sino una combinación de hábitos, emociones, creencias y estímulos externos que afectan la relación con la alimentación.</p>
+  <p>Identificar estos factores es clave para comprender el origen del problema y aprender a gestionarlo de forma saludable y sostenible.</p>
+  <CausasGrid
+    heading="Causas de la Ansiedad por la Comida"
+    causas={[
+      { icon: '👥', title: 'Presión Social', text: 'La presión social relacionada con la imagen corporal, el peso y las dietas puede generar una relación poco saludable con la comida. Los estándares de belleza irreales y la constante exposición a mensajes sobre "alimentación perfecta" pueden aumentar la culpa, el miedo a comer y la ansiedad alimentaria.' },
+      { icon: '🩺', title: 'Problemas de Salud', text: 'Algunas condiciones de salud, como la obesidad, la resistencia a la insulina, la diabetes o los desequilibrios hormonales, pueden influir en el apetito y aumentar la preocupación constante por la alimentación. Esto puede generar estrés, restricción alimentaria y episodios de ansiedad por la comida.' },
+      { icon: '💭', title: 'Relación Emocional con la Comida', text: 'Muchas personas utilizan la comida como una forma de aliviar emociones como el estrés, la tristeza, la ansiedad o el aburrimiento. Este patrón de alimentación emocional puede crear un ciclo de dependencia emocional hacia determinados alimentos y dificultar el control del apetito.' },
+      { icon: '📚', title: 'Escaso Conocimiento Nutricional', text: 'La desinformación sobre nutrición y alimentación saludable puede provocar miedo a ciertos alimentos, restricciones innecesarias y hábitos poco equilibrados. Comprender cómo funciona el cuerpo y qué necesita realmente ayuda a reducir la ansiedad relacionada con la comida.' },
+      { icon: '⏰', title: 'Estilo de Vida y Estrés', text: 'El ritmo de vida acelerado, la falta de descanso, el estrés crónico y la ausencia de planificación alimentaria pueden favorecer decisiones impulsivas y aumentar los antojos. Dormir mal, comer deprisa o saltarse comidas también puede afectar el equilibrio del apetito y las señales de hambre y saciedad.' },
+      { icon: '🧬', title: 'Factores Genéticos y Biológicos', text: 'La genética y algunos factores biológicos también pueden influir en la ansiedad por la comida. Existen personas con mayor predisposición a desarrollar conductas alimentarias impulsivas o trastornos relacionados con la alimentación debido a diferencias hormonales, neurológicas o metabólicas.' },
+    ]}
+  />
+  <p>Comprender las causas de la ansiedad por la comida es el primer paso para mejorar la relación con la alimentación. Una vez identificados los factores que la desencadenan, resulta más sencillo aplicar estrategias efectivas para recuperar el equilibrio físico y emocional.</p>
+
+  <p>Un enfoque científico para identificar las señales de la ansiedad alimentaria</p>
+  <p>La ansiedad por la comida puede manifestarse de diferentes formas, afectando tanto al bienestar físico como emocional. Identificar estos síntomas es fundamental para comprender cómo influye la alimentación emocional en la salud, los hábitos alimentarios y la relación con la comida.</p>
+  <ListaSintomas
+    heading="Síntomas de la Ansiedad por la Comida"
+    items={[
+      'Preocupación Constante por la Comida: pensar continuamente en la comida, las calorías o el peso puede generar estrés, ansiedad y una disminución de la calidad de vida.',
+      'Evitación de Ciertos Alimentos: eliminar alimentos por miedo a engordar o por culpa puede provocar restricciones excesivas y deficiencias nutricionales.',
+      'Comida Compulsiva: los episodios de ingesta impulsiva o descontrolada pueden dificultar el control del apetito y favorecer problemas de salud física y emocional.',
+      'Sentimientos de Culpa o Vergüenza: experimentar culpa, frustración o vergüenza después de comer puede afectar negativamente la autoestima y la relación con la alimentación.',
+      'Dificultad para Controlar el Apetito: la sensación de pérdida de control al comer puede generar un ciclo de restricción, ansiedad y atracones emocionales.',
+      'Problemas Digestivos: la ansiedad alimentaria también puede manifestarse mediante molestias digestivas como hinchazón, pesadez, malestar estomacal o cambios en el apetito.',
+    ]}
+  />
+
+  <p>Un enfoque científico para comprender cómo la ansiedad por la comida afecta al organismo</p>
+  <RelacionImagenes
+    heading="Relación con los Sistemas Hormonales y Metabólicos"
+    images={[
+      { src: relacion1Img, alt: 'Infografía relación ansiedad por la comida y sistemas hormonales' },
+      { src: relacion2Img, alt: 'Relación entre ansiedad por la comida y metabolismo' },
+    ]}
+  >
+    <p>La ansiedad por la comida no solo influye en los hábitos alimentarios y el bienestar emocional, sino que también puede alterar el funcionamiento de diferentes sistemas hormonales y metabólicos del cuerpo.</p>
+    <p>El estrés crónico, la alimentación emocional y los ciclos de restricción y atracones pueden afectar hormonas relacionadas con el apetito, la saciedad y el metabolismo, dificultando mantener un equilibrio físico y mental saludable.</p>
+    <p>La ansiedad alimentaria puede influir en hormonas como el cortisol, la insulina, la leptina y la grelina, que participan en la regulación del hambre, el estrés y el almacenamiento de energía.</p>
+    <p>Cuando estos sistemas se desequilibran, pueden aparecer síntomas como aumento del apetito, antojos intensos, fatiga, dificultad para controlar el peso y alteraciones en la relación con la comida.</p>
+    <p>Por este motivo, es importante abordar la ansiedad por la comida desde un enfoque integral que tenga en cuenta tanto los factores físicos como emocionales. Comprender la conexión entre mente, alimentación y metabolismo permite desarrollar hábitos más saludables, mejorar el bienestar general y recuperar una relación equilibrada con la comida.</p>
+  </RelacionImagenes>
+
+  <p>Un enfoque práctico para mejorar la relación con la alimentación y reducir la ansiedad alimentaria</p>
+  <SolucionesList
+    heading="Soluciones para la Ansiedad por la Comida"
+    soluciones={[
+      { title: 'Buscar ayuda profesional', body: 'Contar con el apoyo de profesionales de la salud puede ayudar a identificar las causas de la ansiedad por la comida y desarrollar estrategias personalizadas.' },
+      { title: 'Practicar la mindful eating', body: 'La alimentación consciente ayuda a comer con mayor atención, disfrutar más de la comida y disminuir los episodios de ansiedad alimentaria.' },
+      { title: 'Conectar con la comida de manera emocional', body: 'Aprender a gestionar las emociones sin recurrir a la comida puede favorecer una relación más saludable, flexible y equilibrada con la alimentación.' },
+      { title: 'Aprender a escuchar al cuerpo', body: 'Reconocer las señales reales de hambre y saciedad permite mejorar la conexión con el cuerpo y reducir la alimentación impulsiva.' },
+      { title: 'Desarrollar un estilo de vida saludable', body: 'Mantener hábitos equilibrados, descansar correctamente y reducir el estrés puede ayudar a regular el apetito y mejorar el bienestar emocional.' },
+    ]}
+  />
+</SubpageTemplateB>

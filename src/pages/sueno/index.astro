@@ -1,0 +1,108 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('sueno')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Sueño: síntomas del insomnio y cómo mejorar el descanso"
+  seoDescription="Causas del insomnio, síntomas de un sueño de baja calidad y estrategias naturales para dormir mejor."
+  heroTitle="Insomnio: síntomas, causas y cómo dormir mejor de forma natural"
+  heroSubtitle="Descubre cómo mejorar la calidad de tu sueño para despertar cada día con más energía, vitalidad y un descanso realmente reparador."
+  heroImage={heroImg}
+  heroImageAlt="Sueño y descanso"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>El sueño es una función esencial para el equilibrio del organismo, ya que durante la noche el cuerpo y la mente realizan procesos clave de recuperación, regulación y reparación.</p>
+  <p>Sin embargo, en la actualidad es frecuente experimentar dificultades para dormir correctamente, lo que puede afectar tanto al rendimiento diario como al bienestar general.</p>
+  <p>A continuación, te mostramos algunos de los síntomas más habituales asociados a un descanso de baja calidad. Identificarlos es el primer paso para mejorar tu sueño y recuperar tu energía.</p>
+
+  <TextoConImagen heading="¿Qué es el Sueño?" image={definicionImg} imageAlt="Qué es el sueño">
+    <p>El sueño es un estado biológico natural y esencial en el que el organismo reduce su actividad para permitir procesos fundamentales de recuperación física y mental.</p>
+    <p>Durante este periodo, el cuerpo no solo descansa, sino que activa mecanismos clave de reparación y equilibrio interno.</p>
+    <p>A lo largo del sueño, se produce la regeneración de tejidos, la síntesis de estructuras como huesos y músculos, y el refuerzo del sistema inmunológico.</p>
+    <p>De este modo, el organismo se prepara para afrontar las demandas del día siguiente con mayor eficiencia.</p>
+    <p>Además, el sueño desempeña un papel crucial en funciones cognitivas esenciales, como la consolidación de la memoria, el aprendizaje y la regulación emocional, lo que lo convierte en un pilar fundamental de la salud global.</p>
+  </TextoConImagen>
+
+  <h3>¿Por qué no puedo dormir?</h3>
+  <p>Existen múltiples factores que pueden interferir en la calidad del sueño.</p>
+  <p>En muchos casos, el insomnio no tiene una única causa, sino una combinación de hábitos, estado emocional y condiciones del entorno.</p>
+  <p>Identificar estos factores es fundamental para poder corregirlos y recuperar un descanso reparador.</p>
+  <p>Causas más frecuentes del insomnio</p>
+  <CausasGrid
+    heading="Causas del Insomnio"
+    causas={[
+      { icon: '😰', title: 'Estrés y ansiedad', text: 'El estrés y la ansiedad mantienen el sistema nervioso en estado de alerta, lo que dificulta la relajación necesaria para conciliar el sueño. Además, los pensamientos recurrentes pueden prolongar el tiempo de latencia del sueño.' },
+      { icon: '🏃‍♂️', title: 'Falta de actividad física', text: 'Un estilo de vida sedentario puede reducir la presión natural de sueño que el cuerpo necesita para descansar profundamente. La actividad física contribuye a regular el ritmo circadiano y a mejorar la calidad global del descanso.' },
+      { icon: '🩺', title: 'Problemas de salud', text: 'Trastornos como la apnea del sueño, el dolor crónico o algunas alteraciones hormonales pueden interferir directamente en la calidad del descanso nocturno.' },
+      { icon: '🌙', title: 'Entorno inadecuado', text: 'Un ambiente con exceso de luz, ruido, temperatura inadecuada o un colchón poco confortable puede afectar tanto la conciliación como la profundidad del sueño.' },
+      { icon: '🧠', title: 'Sobrecarga mental', text: 'El exceso de información, preocupaciones o trabajo mental intenso antes de dormir mantiene el cerebro activo y dificulta la transición hacia el sueño.' },
+      { icon: '⏰', title: 'Falta de rutina de sueño', text: 'La ausencia de horarios regulares para acostarse y levantarse altera el ritmo circadiano, desajustando los ciclos naturales de sueño-vigilia.' },
+      { icon: '📱', title: 'Uso excesivo de pantallas', text: 'La exposición a dispositivos electrónicos antes de dormir reduce la producción de melatonina, retrasando el inicio del sueño y afectando su calidad.' },
+      { icon: '🍽️', title: 'Alimentación inadecuada', text: 'El consumo de cafeína, alcohol o comidas copiosas antes de dormir puede interferir en los ciclos del sueño y provocar despertares nocturnos.' },
+    ]}
+  />
+  <p>Ahora que hemos explorado las principales causas del insomnio, es momento de dar un paso más y descubrir qué cambios y estrategias pueden ayudarte a mejorar la calidad de tu sueño y recuperar un descanso realmente reparador.</p>
+
+  <h3>¿Por qué no puedo dormir?</h3>
+  <p>El insomnio no solo se traduce en dificultad para dormir, sino que también puede reflejarse en distintos síntomas físicos, cognitivos y emocionales que afectan al bienestar diario. Identificarlos correctamente es clave para abordar el problema de forma adecuada.</p>
+  <p>Principales síntomas del insomnio</p>
+  <ListaSintomas
+    heading="Síntomas del Insomnio"
+    items={[
+      'Dificultad para conciliar el sueño: el estado de hiperactivación mental o el estrés acumulado pueden dificultar el inicio del sueño, incluso cuando existe sensación de cansancio físico.',
+      'Despertares nocturnos frecuentes: interrupciones del sueño durante la noche que impiden mantener un descanso continuo, reduciendo la calidad global del sueño.',
+      'Cansancio y dolor de cabeza al despertar: un descanso no reparador puede provocar sensación de fatiga persistente, pesadez o cefaleas al iniciar el día.',
+      'Problemas de concentración y memoria: la falta de sueño adecuado afecta directamente a las funciones cognitivas, reduciendo la atención, la memoria y el rendimiento mental.',
+      'Irritabilidad y ansiedad: el insomnio puede alterar el equilibrio emocional, aumentando la sensibilidad al estrés y provocando cambios de humor más frecuentes.',
+      'Tensión y molestias musculares: un descanso insuficiente o de baja calidad puede favorecer la aparición de rigidez muscular y sensación de tensión corporal al despertar.',
+    ]}
+  />
+
+  <p>¿Cómo afecta el sueño a nuestra salud?</p>
+  <RelacionImagenes
+    heading="Relación entre el Sueño y la Salud"
+    images={[
+      { src: relacion1Img, alt: 'Infografía sobre el sueño y la salud' },
+      { src: relacion2Img, alt: 'Sueño y salud' },
+    ]}
+  >
+    <p>El sueño desempeña un papel fundamental en el mantenimiento de la salud física, mental y emocional.</p>
+    <p>No se trata únicamente de descansar, sino de un proceso biológico activo en el que el organismo regula funciones esenciales como el equilibrio hormonal, la reparación celular y la respuesta inmunitaria.</p>
+    <p>Cuando la calidad del sueño es insuficiente o se mantiene alterada en el tiempo, el cuerpo entra en un estado de desequilibrio progresivo.</p>
+    <p>Esto puede aumentar el riesgo de desarrollar problemas metabólicos, como la diabetes tipo 2, así como enfermedades cardiovasculares, entre ellas la hipertensión o la enfermedad coronaria.</p>
+    <p>Además, la falta de un descanso adecuado también impacta en el sistema nervioso, afectando al estado de ánimo, la capacidad de concentración y la estabilidad emocional.</p>
+    <p>Por este motivo, el sueño no debe entenderse como un lujo, sino como un pilar esencial de la salud global.</p>
+  </RelacionImagenes>
+  <p>Ahora que hemos comprendido la estrecha relación entre el sueño y la salud, es momento de avanzar hacia estrategias concretas que te ayuden a mejorar la calidad de tu descanso y tu bienestar diario.</p>
+
+  <h3>¿Cómo podemos mejorar la calidad de nuestro sueño?</h3>
+  <p>Mejorar la calidad del sueño no depende de una única acción, sino de la combinación de hábitos saludables, un entorno adecuado y una buena higiene del sueño.</p>
+  <p>A través de pequeños cambios constantes en la rutina diaria, es posible favorecer un descanso más profundo, continuo y reparador.</p>
+  <p>Estrategias para dormir mejor</p>
+  <SolucionesList
+    heading="Soluciones para Mejorar la Calidad del Sueño"
+    soluciones={[
+      { title: 'Establecer una rutina de sueño regular', body: 'Mantener horarios estables para acostarse y levantarse ayuda a regular el ritmo circadiano. De este modo, el cuerpo se acostumbra a ciclos de sueño más predecibles, facilitando tanto la conciliación como la calidad del descanso.' },
+      { title: 'Crear un entorno adecuado para dormir', body: 'Un dormitorio oscuro, silencioso y con una temperatura agradable favorece la producción natural de melatonina. Además, un colchón y almohada adecuados pueden mejorar significativamente la calidad del sueño.' },
+      { title: 'Practicar técnicas de relajación', body: 'Técnicas como la respiración profunda, la meditación o el mindfulness ayudan a reducir la activación del sistema nervioso, facilitando la transición hacia un estado de descanso.' },
+      { title: 'Cuidar la alimentación y el horario de las cenas', body: 'Las cenas ligeras y realizadas al menos 2–3 horas antes de acostarse facilitan la digestión y evitan interrupciones del sueño durante la noche.' },
+      { title: 'Reducir estimulantes como cafeína o alcohol', body: 'El consumo de cafeína o alcohol, especialmente en horas tardías, puede alterar los ciclos del sueño y reducir su calidad global.' },
+      { title: 'Reducir el uso de pantallas antes de dormir', body: 'La exposición a luz azul en las horas previas al sueño puede inhibir la producción de melatonina, retrasando el inicio del descanso y afectando su profundidad.' },
+      { title: 'Realizar actividad física de forma regular', body: 'El ejercicio físico contribuye a regular el ciclo sueño-vigilia y mejora la calidad del descanso. Sin embargo, es recomendable evitarlo en las horas inmediatamente previas a dormir.' },
+    ]}
+  />
+</SubpageTemplateB>

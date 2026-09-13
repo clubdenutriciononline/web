@@ -1,0 +1,39 @@
+---
+// Mini-headings de "soluciones"/"pilares". En el sitio original a veces son
+// solo el título (sin cuerpo) y a veces llevan texto — el prop `body` es
+// opcional para respetar ambos casos reales.
+interface Solucion {
+  title: string;
+  body?: string;
+}
+interface Props {
+  heading: string;
+  soluciones: Solucion[];
+}
+const { heading, soluciones } = Astro.props;
+---
+
+<section class="soluciones">
+  <h2>{heading}</h2>
+  <div class="grid">
+    {soluciones.map((s) => (
+      <div class="solucion-item">
+        <h3>{s.title}</h3>
+        {s.body && <p>{s.body}</p>}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .solucion-item {
+    background: var(--color-surface-alt, #fdf2f7);
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+</style>

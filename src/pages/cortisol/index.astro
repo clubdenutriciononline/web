@@ -1,0 +1,186 @@
+---
+// Página a medida (CortisolCustom) — misma familia que Perimenopausia:
+// bloque HTML/CSS a medida con índice de salto, listas numeradas y
+// bibliografía. Elemento único: diagrama de flujo del eje HPA
+// (Hipotálamo → Hipófisis → Suprarrenal) en CSS puro, con las etiquetas
+// reales del original (CRH, ACTH, cortisol).
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import Bibliografia from '../../components/Bibliografia.astro';
+import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
+import CTAFinal from '../../components/CTAFinal.astro';
+import { getCollection } from 'astro:content';
+import heroImg from './_images/hero.jpg';
+import queEsImg from './_images/que-es.jpg';
+import sintomasImg from './_images/sintomas.jpg';
+import solucionesImg from './_images/soluciones.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('cortisol')).slice(0, 3);
+
+const tocItems = [
+  { label: '¿Qué es?', anchor: 'que-es' },
+  { label: 'Síntomas', anchor: 'sintomas' },
+  { label: 'Metabolismo', anchor: 'metabolismo' },
+  { label: 'Causas y soluciones', anchor: 'causas-y-soluciones' },
+];
+---
+
+<BaseLayout
+  title="Cortisol alto: síntomas, causas y cómo equilibrarlo de forma natural"
+  description="El impacto del cortisol elevado en la grasa abdominal, el sueño, la fatiga y el metabolismo."
+>
+  <header class="hero-kicker">
+    <span class="kicker">Hormonas · Salud femenina</span>
+    <h1>Cortisol alto en mujeres: síntomas, causas y cómo bajarlo de forma natural</h1>
+    <p class="subtitulo">Una guía completa para entender el cortisol y recuperar tu equilibrio hormonal</p>
+    <Image src={heroImg} alt="Mujer pensativa frente a la ventana con café" width={800} height={500} />
+  </header>
+
+  <TableOfContents heading="Resumen clave" items={tocItems} />
+
+  <p>El cortisol es una hormona esencial para la vida, pero cuando se mantiene elevado de forma constante puede convertirse en uno de los principales factores detrás del cansancio crónico, el aumento de peso y los desequilibrios hormonales en mujeres. En esta guía entenderás qué es, cómo afecta a tu cuerpo y qué puedes hacer para regularlo.</p>
+
+  <hr />
+
+  <section id="que-es">
+    <span class="kicker">¿Qué es?</span>
+    <h2>¿Qué es el cortisol y por qué es importante?</h2>
+    <p>El cortisol es una hormona producida por las glándulas suprarrenales en respuesta al estrés. Su función principal es ayudarte a reaccionar ante situaciones que requieren energía inmediata.</p>
+    <p>En condiciones normales el cortisol sigue un ritmo diario: alto por la mañana para activarte, y bajo por la noche para facilitar el descanso. El problema aparece cuando este equilibrio se rompe.</p>
+    <Image src={queEsImg} alt="Diagrama del eje hipotálamo-pituitaria-adrenal" width={700} height={450} />
+
+    <!-- Diagrama de flujo del eje HPA (CSS puro) — réplica del original -->
+    <div class="hpa-diagram">
+      <div class="node">
+        <strong>Hipotálamo</strong>
+        <span>Detecta el estrés y libera CRH</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <strong>Hipófisis</strong>
+        <span>Recibe CRH y libera ACTH</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <strong>Suprarrenal</strong>
+        <span>Producen y liberan cortisol</span>
+      </div>
+    </div>
+    <p class="leyenda">Eje HPA</p>
+  </section>
+
+  <hr />
+
+  <section id="sintomas">
+    <span class="kicker">Síntomas</span>
+    <h2>Síntomas de cortisol alto en mujeres</h2>
+    <p>Tu cuerpo muestra señales de cortisol elevado mucho antes de que aparezcan problemas más serios. No suelen llegar de golpe, sino de forma progresiva.</p>
+    <Image src={sintomasImg} alt="Mujer con fatiga sentada en el sofá por la noche" width={700} height={450} />
+    <ul>
+      <li>Fatiga constante, incluso tras dormir</li>
+      <li>Dificultad para dormir o despertarse a media noche</li>
+      <li>Aumento de grasa abdominal</li>
+      <li>Ansiedad, irritabilidad o sensación de alerta constante</li>
+      <li>Antojos de azúcar o alimentos calóricos</li>
+      <li>Dificultad para perder peso</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <section id="metabolismo">
+    <span class="kicker">Metabolismo</span>
+    <h2>Cómo afecta el cortisol al peso y al metabolismo</h2>
+    <p>El cortisol no solo está relacionado con el estrés, también tiene un impacto directo en el metabolismo. Cuando está elevado:</p>
+    <h4>Glucosa en sangre</h4>
+    <p>Aumenta los niveles de glucosa y estimula la liberación de insulina</p>
+    <h4>Grasa abdominal</h4>
+    <p>Favorece el almacenamiento de grasa, especialmente en el abdomen</p>
+    <h4>Interferencia hormonal</h4>
+    <p>Altera otras hormonas clave dificultando la pérdida de peso</p>
+    <h4>Resistencia metabólica</h4>
+    <p>El metabolismo se vuelve menos eficiente incluso con dieta adecuada</p>
+  </section>
+
+  <hr />
+
+  <section id="causas-y-soluciones">
+    <span class="kicker">Causas y soluciones</span>
+    <h2>Causas más comunes del cortisol alto</h2>
+    <p>El cortisol alto no siempre viene del estrés emocional, sino también de hábitos diarios que parecen inofensivos. No es un único factor, sino la suma de varios.</p>
+    <ol>
+      <li><strong>Estrés crónico</strong> — trabajo, preocupaciones y carga mental sostenida</li>
+      <li><strong>Falta de sueño</strong> o descanso de mala calidad</li>
+      <li><strong>Consumo excesivo de cafeína</strong> — café, bebidas energéticas, té negro</li>
+      <li><strong>Ejercicio muy intenso</strong> sin suficiente recuperación</li>
+      <li><strong>Dietas demasiado restrictivas</strong> que generan estrés metabólico</li>
+    </ol>
+
+    <h2>Cómo bajar el cortisol de forma natural</h2>
+    <p>El cortisol no se elimina, pero sí puede volver a su equilibrio natural. No se trata de cambios radicales, sino de recuperar el equilibrio poco a poco.</p>
+    <ol>
+      <li>Prioriza el descanso y mantén horarios regulares de sueño</li>
+      <li>Exponte a la luz natural por la mañana para regular el ritmo circadiano</li>
+      <li>Reduce el consumo de estimulantes, especialmente por la tarde</li>
+      <li>Sigue una alimentación equilibrada — evita los extremos restrictivos</li>
+      <li>Incorpora respiración consciente, caminar y momentos de desconexión diaria</li>
+    </ol>
+    <Image src={solucionesImg} alt="Mujer caminando en naturaleza al amanecer" width={700} height={450} />
+    <p>Si los síntomas son persistentes o severos, consulta con tu médico o endocrinólogo. Esta guía es orientativa y no reemplaza el consejo médico profesional.</p>
+  </section>
+
+  <Bibliografia
+    referencias={[
+      'Tsigos C, Chrousos GP. Hypothalamic–pituitary–adrenal axis, neuroendocrine factors and stress. Endocrine Reviews (2002)',
+      'McEwen BS. Protective and damaging effects of stress mediators. NEJM (1998)',
+      'Adam TC, Epel ES. Stress, eating and the reward system. Physiology & Behavior (2007)',
+      'Sapolsky RM. Why Zebras Don’t Get Ulcers',
+    ]}
+  />
+
+  <ArticulosRelacionados articulos={articulos} />
+
+  <CTAFinal heading="Cortisol" ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
+</BaseLayout>
+
+<style>
+  .kicker {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--color-accent, #c2185b);
+  }
+  .subtitulo {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  .hpa-diagram {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+  }
+  .hpa-diagram .node {
+    background: var(--color-surface-alt, #fdf2f7);
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-align: center;
+    max-width: 200px;
+  }
+  .hpa-diagram .node span {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  .leyenda {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+  }
+</style>

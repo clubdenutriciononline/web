@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import ListaSintomas from '../../components/ListaSintomas.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('probioticos-alimentacion')).slice(0, 3);
+---
+
+<SubpageTemplateB
+  seoTitle="Probióticos y alimentación: microbiota y salud digestiva"
+  seoDescription="Cómo los probióticos y la alimentación equilibrada influyen en la microbiota intestinal, la digestión y el bienestar general."
+  heroTitle="Probióticos y microbiota: cómo la alimentación mejora tu salud intestinal"
+  heroSubtitle="Descubre cómo los probióticos y una alimentación equilibrada influyen en la microbiota intestinal, la digestión y el bienestar general"
+  heroImage={heroImg}
+  heroImageAlt="Probióticos y alimentación"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <p>La microbiota intestinal es un ecosistema complejo de microorganismos que desempeña un papel esencial en la digestión, el sistema inmunológico y el equilibrio general del organismo. Dentro de este ecosistema, los <strong>probióticos</strong> —microorganismos vivos presentes en ciertos alimentos y suplementos— pueden ayudar a mantener o restaurar el equilibrio intestinal.</p>
+  <p>Una alimentación adecuada es clave para favorecer su acción y potenciar sus beneficios. En esta página exploramos la relación entre los <strong>probióticos, la alimentación y la microbiota intestinal</strong>, y cómo su equilibrio puede influir directamente en tu salud, tu energía y tu bienestar diario.</p>
+
+  <TextoConImagen heading="¿Qué son los Probióticos?" image={definicionImg} imageAlt="Qué son los probióticos">
+    <p>Los <strong>probióticos</strong> son microorganismos vivos, principalmente bacterias beneficiosas, que aportan efectos positivos a la salud cuando se consumen en cantidades adecuadas.</p>
+    <p>Su principal función es ayudar a mantener el equilibrio de la <strong>microbiota intestinal</strong>, favoreciendo una digestión saludable y un mejor funcionamiento del sistema inmunológico.</p>
+    <p>Estos microorganismos se encuentran de forma natural en algunos alimentos fermentados como el yogur, el kéfir, el kimchi o el chucrut (<em>sauerkraut</em>), aunque también pueden consumirse en forma de suplementos específicos.</p>
+    <p>Incluir probióticos en la alimentación diaria puede contribuir a mejorar la salud digestiva, reforzar la barrera intestinal y apoyar el bienestar general del organismo.</p>
+  </TextoConImagen>
+
+  <p>La <strong>disbiosis intestinal</strong> es un desequilibrio en la microbiota intestinal que puede afectar a la digestión, el sistema inmunológico y el bienestar general. Este desequilibrio puede estar provocado por múltiples factores relacionados con la alimentación, el estilo de vida y el estado de salud.</p>
+  <p>A continuación, te mostramos las principales causas que pueden alterar el equilibrio de tu microbiota intestinal:</p>
+  <CausasGrid
+    heading="Causas de la Disbiosis Intestinal"
+    causas={[
+      { icon: '🥦', title: 'Dieta baja en fibra', text: 'Una alimentación pobre en fibra reduce el alimento disponible para las bacterias beneficiosas del intestino. Esto puede debilitar la microbiota intestinal y favorecer el crecimiento de microorganismos menos saludables.' },
+      { icon: '💊', title: 'Uso excesivo de antibióticos', text: 'Los antibióticos pueden eliminar tanto bacterias perjudiciales como beneficiosas. Su uso frecuente o inadecuado puede alterar significativamente el equilibrio de la microbiota intestinal.' },
+      { icon: '😰', title: 'Estrés crónico', text: 'El estrés prolongado afecta al eje intestino-cerebro, alterando la composición de la microbiota y pudiendo provocar síntomas digestivos como hinchazón, dolor abdominal o tránsito irregular.' },
+      { icon: '😴', title: 'Falta de sueño', text: 'Dormir poco o tener un sueño de mala calidad puede influir negativamente en la microbiota intestinal, afectando tanto la digestión como la regulación inmunológica.' },
+      { icon: '🩺', title: 'Enfermedades crónicas', text: 'Patologías como la diabetes, enfermedades inflamatorias intestinales (como Crohn o colitis ulcerosa) o trastornos metabólicos pueden alterar el equilibrio de la microbiota.' },
+      { icon: '🌍', title: 'Estilo de vida y otros factores', text: 'El sedentarismo, el consumo de alcohol, el tabaco o una alimentación ultraprocesada también pueden contribuir al desequilibrio intestinal. La genética puede influir, pero no es el único factor determinante.' },
+    ]}
+  />
+  <p>Restaurar el equilibrio de la microbiota intestinal no depende de un solo factor, sino de la suma de hábitos diarios que pueden marcar una gran diferencia en tu salud digestiva y general.</p>
+
+  <p>La <strong>disbiosis intestinal</strong> puede manifestarse a través de diferentes síntomas digestivos, físicos e incluso emocionales. Cuando la microbiota intestinal pierde su equilibrio, el organismo puede verse afectado en múltiples funciones relacionadas con la digestión, la inflamación y el sistema inmunológico.</p>
+  <p>Reconocer estos síntomas puede ser el primer paso para mejorar la salud intestinal y recuperar el equilibrio de la microbiota.</p>
+  <ListaSintomas
+    heading="Síntomas de la Disbiosis Intestinal"
+    items={[
+      'Dolor abdominal: el dolor o las molestias abdominales son uno de los síntomas más frecuentes de la disbiosis intestinal. El desequilibrio bacteriano puede favorecer la inflamación intestinal y alterar la sensibilidad digestiva.',
+      'Diarrea o estreñimiento: una microbiota intestinal desequilibrada puede afectar el tránsito intestinal, provocando episodios de diarrea, estreñimiento o incluso una alternancia entre ambos.',
+      'Gases e hinchazón abdominal: el exceso de gases, la sensación de abdomen inflamado o la distensión abdominal pueden aparecer cuando ciertas bacterias fermentan los alimentos de forma inadecuada.',
+      'Náuseas y malestar digestivo: las náuseas, la sensación de digestión pesada o el malestar después de comer también pueden estar relacionados con alteraciones en la microbiota intestinal.',
+      'Fatiga y cansancio persistente: la salud intestinal está estrechamente relacionada con la energía y el bienestar general. La inflamación intestinal y una mala absorción de nutrientes pueden favorecer la sensación de cansancio constante.',
+      'Problemas de piel: alteraciones como acné, eccema, rosácea o irritaciones cutáneas pueden estar relacionadas con desequilibrios en la microbiota intestinal y procesos inflamatorios.',
+      'Cambios en el estado de ánimo: la microbiota intestinal influye en el eje intestino-cerebro. Por ello, la disbiosis puede asociarse a síntomas como irritabilidad, ansiedad o cambios en el estado de ánimo.',
+      'Defensas bajas o infecciones frecuentes: un intestino desequilibrado puede afectar al sistema inmunológico, aumentando la susceptibilidad a infecciones o reduciendo la capacidad de defensa del organismo.',
+    ]}
+  />
+  <p>Escuchar las señales del intestino es fundamental: muchos síntomas cotidianos pueden estar relacionados con el equilibrio de la microbiota intestinal y mejorar al cuidar la alimentación y los hábitos diarios.</p>
+
+  <RelacionImagenes
+    heading="Relación entre la Microbiota Intestinal y los Sistemas Hormonal y Metabólico"
+    images={[
+      { src: relacion1Img, alt: 'Infografía relación entre probióticos, alimentación y sistemas hormonales' },
+      { src: relacion2Img, alt: 'Probióticos y alimentación y equilibrio emocional' },
+    ]}
+  >
+    <p>La microbiota intestinal no solo participa en la digestión, sino que también desempeña un papel clave en el equilibrio hormonal y en el funcionamiento del metabolismo. En los últimos años, diferentes investigaciones han demostrado que el intestino actúa como un auténtico centro de comunicación entre múltiples sistemas del organismo.</p>
+    <p>Las bacterias beneficiosas que forman parte de la microbiota intestinal intervienen en procesos relacionados con la absorción de nutrientes, la regulación de la inflamación y la producción de compuestos que pueden influir directamente en las hormonas y en el gasto energético.</p>
+    <p>Por ejemplo, la microbiota intestinal puede afectar la producción y sensibilidad de hormonas como la insulina, relacionada con el control de la glucosa, o la leptina, implicada en la regulación del apetito y la saciedad. Cuando existe un desequilibrio intestinal, estos mecanismos pueden verse alterados y favorecer problemas relacionados con el metabolismo, el aumento de peso o la resistencia a la insulina.</p>
+    <p>Además, la relación entre la microbiota intestinal y los sistemas hormonal y metabólico es bidireccional. Esto significa que no solo la microbiota puede influir en las hormonas y el metabolismo, sino que factores hormonales, el estrés, el descanso o la alimentación también pueden modificar el equilibrio de las bacterias intestinales.</p>
+    <p>Mantener una microbiota intestinal saludable a través de una alimentación equilibrada, rica en fibra y alimentos fermentados, puede ayudar a favorecer un mejor equilibrio metabólico y hormonal, contribuyendo al bienestar general del organismo.</p>
+    <p>Cuidar la microbiota intestinal no solo beneficia la digestión: también puede influir en el equilibrio hormonal, el metabolismo y la forma en la que el cuerpo obtiene y utiliza la energía cada día.</p>
+  </RelacionImagenes>
+
+  <p>La disbiosis intestinal puede mejorar significativamente cuando se adoptan hábitos que favorecen el equilibrio de la microbiota intestinal. La alimentación, el descanso, la gestión del estrés y el estilo de vida tienen un impacto directo sobre las bacterias beneficiosas que habitan en el intestino.</p>
+  <p>Aunque cada persona puede necesitar un enfoque diferente, existen varias estrategias que pueden ayudar a restaurar el equilibrio intestinal y mejorar la salud digestiva y general.</p>
+  <SolucionesList
+    heading="Soluciones para la Disbiosis Intestinal"
+    soluciones={[
+      { title: 'Incorporar probióticos en la alimentación', body: 'Consumir alimentos ricos en probióticos, como yogur natural, kéfir, kimchi o chucrut, puede ayudar a aumentar la presencia de bacterias beneficiosas en el intestino. En algunos casos, los suplementos probióticos también pueden ser útiles para apoyar el equilibrio de la microbiota intestinal.' },
+      { title: 'Aumentar el consumo de fibra', body: 'La fibra alimentaria actúa como alimento para las bacterias beneficiosas del intestino. Consumir frutas, verduras, legumbres, semillas y cereales integrales puede favorecer una microbiota más diversa y saludable.' },
+      { title: 'Reducir el estrés crónico', body: 'El estrés prolongado puede alterar el equilibrio de la microbiota intestinal y afectar al sistema digestivo. Técnicas como la meditación, la respiración consciente, el ejercicio físico o el descanso adecuado pueden ayudar a reducir su impacto.' },
+      { title: 'Mejorar la calidad del sueño', body: 'Dormir bien es fundamental para la salud intestinal y hormonal. Mantener horarios regulares, reducir el uso de pantallas antes de dormir y crear una rutina nocturna saludable puede favorecer el equilibrio de la microbiota.' },
+      { title: 'Tratar las enfermedades subyacentes', body: 'Algunas enfermedades crónicas o trastornos digestivos pueden contribuir a la disbiosis intestinal. Identificar y tratar estas condiciones con ayuda profesional puede ser clave para mejorar la salud intestinal a largo plazo.' },
+    ]}
+  />
+</SubpageTemplateB>

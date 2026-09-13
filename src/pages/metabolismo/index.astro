@@ -1,0 +1,182 @@
+---
+// Hub Metabolismo — HubTemplateB. Contenido real migrado desde
+// https://clubdenutricion.es/metabolismo/, ver .firecrawl/md/metabolismo.md.
+// En el original los iconos de "Subcategorías relacionadas" son imágenes de
+// tarjeta reales (no emoji) — TemasRelacionadosGrid.astro ya admite imagen
+// real (ImageMetadata) además de emoji, así que se usan las imágenes reales
+// ya descargadas.
+import { getCollection } from 'astro:content';
+import HubTemplateB from '../../layouts/HubTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+
+import heroImg from './_images/Metabolismo-hero-e1778605108391.jpg';
+import queEsImg from './_images/Metabolismo-que-es-infografia.jpg';
+import iconoGenetica from './_images/Metabolismo-icono-genetica.png';
+import iconoAlimentacion from './_images/Metabolismo-icono-alimentacion.png';
+import iconoEjercicio from './_images/Metabolismo-icono-falta-ejercicio.png';
+import iconoEstres from './_images/Metabolismo-icono-estres-cronico.png';
+import iconoSueno from './_images/Metabolismo-icono-falta-de-sueno.png';
+import iconoHormonal from './_images/Metabolismo-icono-cambios-hormonales.png';
+import relacionImg1 from './_images/infografia.jpg';
+import relacionImg2 from './_images/Metabolismo-hero-e1778605108391.jpg';
+import temaPerdidaGrasa from './_images/Metabolismo-perdida-de-grasa.jpg';
+import temaResistencia from './_images/Metabolismo-resistencis.jpg';
+import temaAyuno from './_images/Metabolismo-ayuno.jpg';
+
+const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('metabolismo')).slice(0, 3);
+---
+
+<HubTemplateB
+  seoTitle="Metabolismo femenino: cómo funciona y cómo optimizarlo de forma natural"
+  seoDescription="El metabolismo es el conjunto de procesos que utiliza el cuerpo para transformar los alimentos en energía y mantener funciones vitales como la respiración, la digestión, la circulación y la regulación hormonal."
+  heroTitle="Descubre cómo funciona el metabolismo, qué factores lo afectan y cómo optimizarlo de forma natural para mejorar tu energía, salud y bienestar diario."
+  heroImage={heroImg}
+  heroImageAlt="Metabolismo"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  temasHeading="Subcategorías relacionadas con el Metabolismo"
+  temas={[
+    { icon: temaPerdidaGrasa, title: 'Pérdida de grasa femenina', href: '/perdida-grasa-femenina/', text: 'Descubre cómo influyen las hormonas, el metabolismo y los hábitos diarios en la pérdida de grasa femenina y aprende estrategias efectivas para mejorar la composición corporal de forma saludable.' },
+    { icon: temaResistencia, title: 'Resistencia a la insulina', href: '/resistencia-insulina/', text: 'Aprende qué es la resistencia a la insulina, cuáles son sus síntomas y cómo la alimentación y el estilo de vida pueden ayudar a mejorar la sensibilidad a la insulina y la salud metabólica.' },
+    { icon: temaAyuno, title: 'Ayuno intermitente', href: '/ayuno-intermitente-2/', text: 'Explora cómo funciona el ayuno intermitente, sus posibles beneficios para el metabolismo y las claves para aplicarlo de forma segura y adaptada a tus necesidades.' },
+  ]}
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>El metabolismo es el conjunto de procesos que utiliza el cuerpo para transformar los alimentos en energía y mantener funciones vitales como la respiración, la digestión, la circulación y la regulación hormonal.</p>
+    <p>Un metabolismo equilibrado es clave para mantener un peso saludable, tener energía durante el día y favorecer el bienestar físico y mental.</p>
+    <p>Sin embargo, factores como el estrés, la falta de sueño, una alimentación poco equilibrada, el sedentarismo o los cambios hormonales pueden alterar el funcionamiento metabólico y afectar a la salud de forma progresiva.</p>
+    <p>Comprender cómo funciona el metabolismo permite identificar desequilibrios y aplicar estrategias efectivas para mejorarlo de forma natural.</p>
+    <p>Entre los síntomas más frecuentes de un metabolismo alterado se encuentran:</p>
+
+    <ul class="sintomas-destacados">
+      <li>Aumento de peso</li>
+      <li>Fatiga constante</li>
+      <li>Dolores de cabeza</li>
+      <li>Digestión lenta</li>
+      <li>Lentitud mental y física</li>
+      <li>Antojos frecuentes</li>
+      <li>Problemas de sueño</li>
+    </ul>
+
+    <p>En esta sección descubrirás qué es el metabolismo, qué factores pueden afectarlo y qué hábitos pueden ayudarte a optimizarlo para mejorar tu salud y bienestar diario.</p>
+    <p>¿Sabías que tu metabolismo influye en tu energía, peso y bienestar diario?</p>
+    <ul>
+      <li>Cómo funciona el metabolismo y por qué es esencial para la salud</li>
+      <li>Factores que pueden ralentizar el metabolismo</li>
+      <li>Señales de un metabolismo desequilibrado</li>
+      <li>Hábitos y estrategias para activar el metabolismo de forma natural</li>
+      <li>Consejos para mejorar la energía y el bienestar general</li>
+    </ul>
+  </section>
+
+  <TextoConImagen heading="¿Qué es el Metabolismo?" image={queEsImg} imageAlt="Qué es el metabolismo">
+    <p>El metabolismo es el conjunto de procesos químicos y biológicos que realiza el cuerpo para transformar los alimentos y nutrientes en energía.</p>
+    <p>Esta energía es necesaria para mantener todas las funciones vitales del organismo, desde respirar y digerir alimentos hasta regular la temperatura corporal, producir hormonas, reparar tejidos y mantener activo el cerebro y los músculos.</p>
+    <p>Aunque muchas veces se relaciona únicamente con la pérdida o ganancia de peso, el metabolismo influye en prácticamente todos los aspectos de la salud.</p>
+    <p>Un metabolismo equilibrado ayuda a mantener niveles estables de energía, favorece un correcto funcionamiento hormonal y contribuye al bienestar físico y mental.</p>
+    <p>Por el contrario, cuando el metabolismo se ralentiza o se altera, pueden aparecer síntomas como cansancio constante, dificultad para adelgazar, digestiones pesadas, inflamación o cambios en el apetito.</p>
+    <p>El metabolismo funciona gracias a millones de reacciones químicas que ocurren continuamente dentro de nuestras células.</p>
+    <p>Estas reacciones permiten convertir carbohidratos, grasas y proteínas en energía utilizable por el cuerpo.</p>
+    <p>Parte de esa energía se utiliza de forma inmediata y otra se almacena para cubrir las necesidades futuras del organismo.</p>
+    <p>Existen dos procesos principales dentro del metabolismo:</p>
+    <p><strong>Catabolismo</strong>: proceso mediante el cual el cuerpo descompone los nutrientes para obtener energía.</p>
+    <p><strong>Anabolismo</strong>: proceso encargado de utilizar esa energía para construir y reparar tejidos, músculos, células y hormonas.</p>
+    <p>La velocidad a la que funciona el metabolismo puede variar de una persona a otra y depende de múltiples factores, como la edad, el sexo, la genética, la masa muscular, la alimentación, la actividad física, el descanso y el estado hormonal.</p>
+    <p>Por eso, no todas las personas queman energía al mismo ritmo ni responden igual a la dieta y al ejercicio.</p>
+    <p>Además, el metabolismo no es algo fijo. Los hábitos diarios tienen un impacto directo en su funcionamiento.</p>
+    <p>Dormir mal, el estrés crónico, el sedentarismo o una alimentación desequilibrada pueden ralentizarlo con el tiempo.</p>
+    <p>En cambio, mantener una buena alimentación, hacer ejercicio regularmente, dormir lo suficiente y cuidar la salud hormonal puede ayudar a optimizar el metabolismo y mejorar la salud general.</p>
+    <p>Comprender cómo funciona el metabolismo es fundamental para adoptar hábitos más saludables y dejar atrás muchos mitos relacionados con el peso y la energía.</p>
+    <p>Más allá de "quemar calorías", el metabolismo representa el equilibrio interno que permite al cuerpo funcionar correctamente cada día.</p>
+  </TextoConImagen>
+
+  <p class="parrafo-suelto"><strong>¿Por qué el metabolismo puede ralentizarse?</strong></p>
+  <p class="parrafo-suelto">El metabolismo está influenciado por múltiples factores relacionados con el estilo de vida, las hormonas, la genética y la salud general. Cuando alguno de estos factores se desequilibra, el cuerpo puede gastar energía de forma menos eficiente, afectando al peso, la energía y el bienestar diario.</p>
+
+  <CausasGrid
+    heading="Causas de un Metabolismo Lento"
+    causas={[
+      { icon: iconoGenetica, title: 'Genética', text: 'La genética influye en la velocidad metabólica de cada persona. Algunas personas tienen una mayor facilidad para quemar energía, mientras que otras pueden tener tendencia a almacenar grasa o presentar un metabolismo más lento de forma natural.' },
+      { icon: iconoAlimentacion, title: 'Alimentación', text: 'Una dieta desequilibrada, rica en ultraprocesados, azúcares y grasas de baja calidad, puede afectar negativamente al metabolismo. Además, comer muy poco durante largos periodos también puede hacer que el cuerpo reduzca el gasto energético como mecanismo de defensa.' },
+      { icon: iconoEjercicio, title: 'Falta de ejercicio', text: 'La actividad física ayuda a mantener activo el metabolismo y favorece el desarrollo muscular. El sedentarismo, en cambio, reduce el gasto calórico diario y puede contribuir a la pérdida de masa muscular y energía.' },
+      { icon: iconoEstres, title: 'Estrés crónico', text: 'El estrés mantenido eleva los niveles de cortisol, una hormona relacionada con la respuesta al estrés. Cuando el cortisol permanece alto durante mucho tiempo, puede alterar el apetito, favorecer la acumulación de grasa y afectar al funcionamiento metabólico.' },
+      { icon: iconoSueno, title: 'Falta de sueño', text: 'Dormir poco o tener un descanso de mala calidad puede alterar las hormonas que regulan el hambre, la energía y el metabolismo. La falta de sueño también puede aumentar el cansancio y reducir la capacidad del cuerpo para recuperarse correctamente.' },
+      { icon: iconoHormonal, title: 'Cambios hormonales y enfermedades', text: 'Problemas hormonales como el hipotiroidismo, la resistencia a la insulina o ciertas alteraciones metabólicas pueden ralentizar el metabolismo. Algunas enfermedades y medicamentos también pueden influir en cómo el cuerpo utiliza la energía.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Comprender las causas de un metabolismo lento es el primer paso para identificar posibles desequilibrios y aplicar hábitos que ayuden a recuperar la energía y mejorar la salud metabólica.</p>
+
+  <SolucionesList
+    heading="Síntomas de un Metabolismo Desequilibrado"
+    soluciones={[
+      { title: 'Aumento de peso', body: 'La dificultad para perder peso o el aumento de grasa corporal pueden estar relacionados con un metabolismo más lento y un menor gasto energético diario.' },
+      { title: 'Fatiga constante', body: 'Sentirse cansado incluso después de descansar puede indicar que el cuerpo no está produciendo o utilizando la energía de forma eficiente.' },
+      { title: 'Problemas de sueño', body: 'La dificultad para conciliar el sueño o un descanso poco reparador puede estar asociada a desequilibrios hormonales y metabólicos.' },
+      { title: 'Digestiones pesadas', body: 'La hinchazón, la sensación de pesadez o las digestiones lentas pueden aparecer cuando el organismo no procesa correctamente los alimentos.' },
+      { title: 'Dolores de cabeza', body: 'Las alteraciones metabólicas y hormonales pueden favorecer la aparición de dolores de cabeza frecuentes o sensación de agotamiento mental.' },
+      { title: 'Falta de concentración', body: 'La dificultad para concentrarse, la niebla mental o la baja productividad pueden estar relacionadas con bajos niveles de energía y un metabolismo alterado.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Identificar estos síntomas a tiempo puede ayudar a mejorar los hábitos diarios y prevenir desequilibrios metabólicos que afecten a la salud a largo plazo.</p>
+
+  <RelacionImagenes
+    heading="La Relación entre el Metabolismo y los Sistemas Hormonales"
+    images={[
+      { src: relacionImg1, alt: 'Relación entre metabolismo y sistemas hormonales' },
+      { src: relacionImg2, alt: 'Metabolismo y hormonas' },
+    ]}
+  >
+    <p>¿Cómo se relacionan el metabolismo y las hormonas?</p>
+    <p>El metabolismo y el sistema hormonal mantienen una conexión constante y compleja que influye directamente en la energía, el peso corporal, el apetito, el estado de ánimo y la salud general.</p>
+    <p>Las hormonas actúan como mensajeros químicos que ayudan a regular cómo el cuerpo utiliza, almacena y produce energía.</p>
+    <p>Cuando existe un desequilibrio hormonal, el metabolismo también puede verse afectado.</p>
+    <p>El cuerpo necesita un equilibrio hormonal adecuado para mantener un metabolismo eficiente.</p>
+    <p>Hormonas como la insulina, el cortisol, las hormonas tiroideas, la leptina y la grelina participan diariamente en procesos relacionados con el hambre, la quema de calorías, el almacenamiento de grasa y la regulación de la energía.</p>
+    <p>Por ejemplo, la <strong>insulina</strong> ayuda a controlar los niveles de glucosa en sangre y permite que las células utilicen esa glucosa como fuente de energía.</p>
+    <p>Cuando existe resistencia a la insulina, el cuerpo tiene más dificultad para gestionar el azúcar correctamente, lo que puede favorecer el aumento de peso, la fatiga y los antojos constantes.</p>
+    <p>El <strong>cortisol</strong>, conocido como la hormona del estrés, también tiene un impacto importante sobre el metabolismo. El estrés crónico puede elevar los niveles de cortisol durante largos periodos, favoreciendo la acumulación de grasa abdominal, alterando el apetito y afectando negativamente al descanso y la energía diaria.</p>
+    <p>Las <strong>hormonas tiroideas</strong> son otro de los principales reguladores metabólicos. La tiroides controla la velocidad a la que el cuerpo utiliza la energía.</p>
+    <p>Cuando existe un problema como el hipotiroidismo, el metabolismo puede ralentizarse, provocando cansancio, aumento de peso, sensibilidad al frío y dificultad para mantener la energía.</p>
+    <p>Además, las hormonas relacionadas con el hambre y la saciedad, como la leptina y la grelina, ayudan a regular el apetito y la sensación de saciedad.</p>
+    <p>La falta de sueño, el estrés y una alimentación desequilibrada pueden alterar estas señales hormonales y favorecer el hambre emocional o el exceso de ingesta.</p>
+    <p>El metabolismo también influye en el sistema hormonal. Cuando el cuerpo recibe muy pocas calorías durante mucho tiempo, percibe una situación de escasez y puede reducir el gasto energético como mecanismo de supervivencia.</p>
+    <p>Esto puede alterar la producción hormonal, afectar al ciclo menstrual, disminuir la energía y aumentar la sensación de fatiga.</p>
+    <p>Por eso, el metabolismo no depende únicamente de "comer menos" o "hacer más ejercicio".</p>
+    <p>La salud metabólica está profundamente conectada con el equilibrio hormonal, el descanso, el estrés, la alimentación y el estilo de vida.</p>
+    <p>Cuidar estos factores de forma conjunta es fundamental para mantener un metabolismo saludable y favorecer el bienestar físico y mental a largo plazo.</p>
+    <p>Comprender la relación entre el metabolismo y las hormonas permite entender mejor muchos síntomas cotidianos y adoptar hábitos más efectivos para mejorar la energía, el peso y la salud general.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Soluciones para Mejorar tu Metabolismo"
+    soluciones={[
+      { title: 'Alimentación equilibrada', body: 'Mantener una dieta rica en proteínas, fibra, grasas saludables y alimentos frescos ayuda al cuerpo a obtener la energía y nutrientes que necesita para funcionar correctamente.' },
+      { title: 'Ejercicio regular', body: 'La actividad física, especialmente el entrenamiento de fuerza y el movimiento diario, puede ayudar a aumentar el gasto energético y mantener la masa muscular.' },
+      { title: 'Descanso de calidad', body: 'Dormir lo suficiente favorece la regulación hormonal, la recuperación del cuerpo y el equilibrio del metabolismo.' },
+      { title: 'Gestión del estrés', body: 'Reducir el estrés mediante hábitos saludables como la meditación, la respiración consciente o el descanso puede ayudar a disminuir el impacto del cortisol sobre el metabolismo.' },
+      { title: 'Nutrientes esenciales', body: 'Algunos nutrientes como la vitamina D, el magnesio, el hierro y los omega-3 participan en procesos relacionados con la energía y el funcionamiento metabólico.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Mejorar el metabolismo no consiste en buscar soluciones rápidas, sino en construir hábitos sostenibles que ayuden al cuerpo a funcionar de forma más eficiente y saludable a largo plazo.</p>
+</HubTemplateB>
+
+<style>
+  .intro,
+  .parrafo-suelto {
+    padding: 0 1rem;
+  }
+  .sintomas-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+  }
+</style>

@@ -1,0 +1,15 @@
+---
+// Formulario migrado como componente independiente (ContactForm.astro),
+// sin dependencia de WPForms/WordPress. Envío real pendiente de conectar
+// (decisión de la usuaria, 2026-09-12: integración definitiva —
+// probablemente Mailrelay— en una sesión posterior).
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout title="Formulario de contacto - Club de Nutrición" description="Formulario de contacto de Club de Nutrición.">
+  <h1>Contacto</h1>
+  <p>Formulario de contacto</p>
+
+  <ContactForm />
+</BaseLayout>
