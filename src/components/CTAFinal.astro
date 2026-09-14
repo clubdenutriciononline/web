@@ -1,31 +1,49 @@
 ---
+// Bloque CTA final. Revisión visual 2026-09-14: comprobado contra el
+// original en varias páginas (Home, Hormonas, Metabolismo) — el texto,
+// la descripción y el estilo (caja con degradado lila, botón ciruela
+// oscuro) son SIEMPRE los mismos en todo el sitio, no varían por página
+// (es un bloque global de WordPress, no contenido específico). Antes se
+// derivaba el titular del propio hero de cada página (texto distinto e
+// incorrecto) y faltaba el párrafo de descripción. Se fijan aquí los
+// valores reales por defecto; solo ctaHref varía si hiciera falta.
 interface Props {
-  heading: string;
+  heading?: string;
+  description?: string;
   ctaLabel: string;
   ctaHref: string;
 }
-const { heading, ctaLabel, ctaHref } = Astro.props;
+const {
+  heading = '¿Sientes que tu energía sube y baja constantemente?',
+  description = 'Descubre cómo estabilizarla con snacks diseñados para tu metabolismo femenino.',
+  ctaLabel,
+  ctaHref,
+} = Astro.props;
 ---
 
 <section class="cta-final">
   <h2>{heading}</h2>
+  {description && <p>{description}</p>}
   <a href={ctaHref}>{ctaLabel}</a>
 </section>
 
 <style>
   .cta-final {
     text-align: center;
-    padding: var(--space-section) 1.5rem;
-    background: var(--color-accent-soft, #f7d9e6);
+    padding: var(--space-section) 2rem;
+    background: linear-gradient(135deg, #f1e6f5, #c092d0);
     border-radius: 1rem;
     margin-block: var(--space-section) 0;
+  }
+  .cta-final h2 {
+    color: #6c2f50;
   }
   .cta-final a {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
     border-radius: 999px;
-    background: var(--color-accent, #c2185b);
+    background: #6c2f50;
     color: #fff;
     text-decoration: none;
   }

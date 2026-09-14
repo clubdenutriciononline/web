@@ -86,11 +86,7 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf()
     pageSize={6}
   />
 
-  <CTAFinal
-    heading="¿Sientes que tu energía sube y baja constantemente?"
-    ctaLabel="Descargar la guía ahora"
-    ctaHref="/lm-5-pasos-optin/"
-  />
+  <CTAFinal ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
 </BaseLayout>
 
 <style>

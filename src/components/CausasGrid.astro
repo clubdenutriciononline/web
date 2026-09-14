@@ -39,9 +39,22 @@ const { heading, causas } = Astro.props;
 
 <style>
   .grid {
+    /* 3 columnas fijas, como en el original (revisión visual 2026-09-14):
+       con auto-fit a 220px mínimo cabían 4 en el ancho del contenedor
+       (1140px), un valor que el original nunca usa para este patrón. */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 560px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
   .causa-card {
     background: #fff;

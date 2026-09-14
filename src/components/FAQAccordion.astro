@@ -8,11 +8,12 @@ interface FAQ {
 interface Props {
   heading?: string;
   items: FAQ[];
+  id?: string;
 }
-const { heading = 'Preguntas Frecuentes', items } = Astro.props;
+const { heading = 'Preguntas Frecuentes', items, id } = Astro.props;
 ---
 
-<section class="faq-accordion">
+<section class="faq-accordion" id={id}>
   <h2>{heading}</h2>
   {items.map((item) => (
     <details>

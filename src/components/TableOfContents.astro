@@ -23,15 +23,55 @@ const { heading = 'Resumen clave', items } = Astro.props;
 </nav>
 
 <style>
+  /* Estilo real del original (revisión visual 2026-09-14, muestreado de
+     captura real de Cortisol): caja blanca con borde superior de color,
+     título centrado y subrayado, elementos en 2 columnas con un punto de
+     color en vez de enlaces azules subrayados. */
   .toc {
-    background: var(--color-surface-alt, #fdf2f7);
-    border-radius: 1rem;
-    padding: 1.5rem;
+    background: #fff;
+    border-top: 4px solid #6c2f50;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 2rem;
+  }
+  .toc h2 {
+    text-align: center;
+    color: #6c2f50;
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
   .toc ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: grid;
-    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1.5rem;
+  }
+  @media (max-width: 560px) {
+    .toc ul {
+      grid-template-columns: 1fr;
+    }
+  }
+  .toc li {
+    position: relative;
+    padding-left: 1rem;
+  }
+  .toc li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #6c2f50;
+  }
+  .toc a {
+    color: var(--color-text, #2b2b2b);
+    text-decoration: none;
+  }
+  .toc a:hover {
+    text-decoration: underline;
   }
 </style>

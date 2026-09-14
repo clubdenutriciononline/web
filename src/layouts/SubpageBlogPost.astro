@@ -53,14 +53,14 @@ const {
 
   <slot />
 
-  <FAQAccordion items={faqItems} />
+  <FAQAccordion id="preguntas-frecuentes" items={faqItems} />
 
-  <section class="conclusion">
+  <section id="conclusion" class="conclusion">
     <h2>Conclusión</h2>
     <slot name="conclusion" />
   </section>
 
   <ArticulosRelacionados articulos={articulosRelacionados} />
 
-  <CTAFinal heading={heroSubtitle ?? heroTitle} ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
+  <CTAFinal ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
 </BaseLayout>
