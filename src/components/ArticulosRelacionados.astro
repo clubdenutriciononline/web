@@ -9,8 +9,10 @@ import type { CollectionEntry } from 'astro:content';
 interface Props {
   heading?: string;
   articulos: CollectionEntry<'blog' | 'radar'>[];
+  verMasHref?: string;
+  verMasLabel?: string;
 }
-const { heading = 'Artículos relacionados', articulos } = Astro.props;
+const { heading = 'Artículos relacionados', articulos, verMasHref, verMasLabel = 'Ver todas las entradas »' } = Astro.props;
 ---
 
 {articulos.length > 0 && (
@@ -26,21 +28,38 @@ const { heading = 'Artículos relacionados', articulos } = Astro.props;
               <Image src={post.data.image} alt={post.data.imageAlt} width={320} height={200} />
               <span class="badge">{categoriaLabel}</span>
             </div>
-            <img class="avatar" src="/images/site/logo.png" alt="" width="32" height="32" />
+            <img class="avatar" src="/images/site/logo-icono.png" alt="" width="32" height="32" />
             <h3>{post.data.title}</h3>
             <span class="leer-mas">Leer artículo »</span>
           </a>
         );
       })}
     </div>
+    {verMasHref && (
+      <a class="ver-mas" href={verMasHref}>{verMasLabel}</a>
+    )}
   </section>
 )}
 
 <style>
+  /* Grid a 3 columnas en escritorio / 2 en tablet / 1 en móvil (revisión
+     visual 2026-09-14): el original usa siempre 3 tarjetas de ancho
+     completo, nunca 4 — con auto-fit a 4 columnas se desorganizaba el
+     grid al reducir el ancho (quedaba 3+3+2 en vez de 2+2+2). */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 560px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
   .post-card {
     display: block;
@@ -56,10 +75,14 @@ const { heading = 'Artículos relacionados', articulos } = Astro.props;
     border-radius: 0.5rem;
   }
   .badge {
+    /* Posición pedida por la usuaria (revisión visual 2026-09-14): en el
+       original la etiqueta va arriba a la derecha, pero ahí suele quedar
+       encima de la cabeza de las personas en muchas fotos — se mueve
+       abajo a la derecha a propósito, como excepción a la réplica 1:1. */
     position: absolute;
-    top: 0.6rem;
+    bottom: 0.6rem;
     right: 0.6rem;
-    background: var(--color-accent, #c2185b);
+    background: #f964c0;
     color: #fff;
     text-transform: uppercase;
     font-size: 0.7rem;
@@ -76,5 +99,23 @@ const { heading = 'Artículos relacionados', articulos } = Astro.props;
     margin: 0.6rem 0 0.3rem;
     background: #fff;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+  }
+  .post-card h3 {
+    /* Color y tono reales del original (muestreo de captura real,
+       revisión visual 2026-09-14). */
+    color: #6c2f50;
+  }
+  .leer-mas {
+    display: inline-block;
+    color: #f964c0;
+    font-weight: 600;
+  }
+  .ver-mas {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--color-accent, #c2185b);
+    font-weight: 600;
+    text-decoration: none;
   }
 </style>

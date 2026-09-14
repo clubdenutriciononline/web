@@ -24,6 +24,8 @@ const year = new Date().getFullYear();
         ))}
       </div>
 
+      <hr class="footer-separador" />
+
       <nav class="footer-legal" aria-label="Enlaces legales">
         <ul>
           {legalLinks.map((l) => (
@@ -32,9 +34,9 @@ const year = new Date().getFullYear();
         </ul>
       </nav>
 
-      <p class="footer-copy">Copyright © {year} Club de Nutrición</p>
+      <hr class="footer-separador" />
 
-      <button class="back-to-top" type="button" aria-label="Volver arriba">↑</button>
+      <p class="footer-copy">Copyright © {year} Club de Nutrición</p>
     </div>
   </div>
 </footer>
@@ -69,15 +71,34 @@ const year = new Date().getFullYear();
     padding: 0;
   }
   .footer-legal a {
-    color: var(--color-footer-text);
+    /* Color real del original (confirmado por captura y CSS del tema:
+       enlaces legales del footer en naranja, no en el gris del resto del
+       texto del footer). */
+    color: #fc7504;
   }
   .footer-social {
     display: flex;
-    gap: 0.75rem;
-    color: var(--color-footer-text);
+    gap: 1rem;
+    color: #808080;
+  }
+  .footer-social a {
+    /* Sin esto, el <a> hereda el azul de enlace por defecto del navegador
+       en vez del gris de .footer-social, porque un <a> sin color propio
+       usa el color de enlace del user-agent antes que el heredado. */
+    color: inherit;
+    display: inline-flex;
+  }
+  .footer-separador {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 0;
   }
   .footer-banner {
-    max-width: 100%;
+    /* Tamaño real del original (confirmado por captura): la imagen se
+       sirve grande (988px) pero se muestra reducida, no a ancho completo. */
+    max-width: 420px;
+    width: 100%;
     height: auto;
   }
 </style>

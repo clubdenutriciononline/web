@@ -1,6 +1,11 @@
 ---
-import { mainNav, socialLinks } from '../data/navigation';
-import SocialIcon from './SocialIcon.astro';
+// Nota (revisión visual 2026-09-14): se retiran los iconos de redes
+// sociales del encabezado por decisión de la usuaria — el original los
+// tiene, pero en Astro se decide no mostrarlos aquí (ya están en el
+// footer). El header nunca ha sido sticky en este código (sin
+// position: sticky/fixed en ningún CSS), así que su comportamiento de
+// scroll normal ya era el pedido.
+import { mainNav } from '../data/navigation';
 ---
 
 <header class="site-header">
@@ -47,14 +52,6 @@ import SocialIcon from './SocialIcon.astro';
         /pagefind/pagefind-ui.js hasta que exista un build.
       -->
       <div id="pagefind-search"></div>
-    </div>
-
-    <div class="header-social">
-      {socialLinks.map((s) => (
-        <a href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer">
-          <SocialIcon name={s.icon} />
-        </a>
-      ))}
     </div>
   </div>
 </header>
@@ -143,12 +140,6 @@ import SocialIcon from './SocialIcon.astro';
     color: #fff;
     font-weight: 600;
     cursor: pointer;
-  }
-  .header-social {
-    display: flex;
-    gap: 0.75rem;
-    font-size: 0.85rem;
-    color: var(--color-nav-text);
   }
   .header-search {
     padding: 0.5rem 0 1rem;
