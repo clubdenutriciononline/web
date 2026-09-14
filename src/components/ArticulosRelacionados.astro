@@ -88,6 +88,13 @@ const totalPaginas = pageSize ? Math.max(1, Math.ceil(articulos.length / pageSiz
     text-decoration: none;
     color: inherit;
   }
+  .post-card[hidden] {
+    /* Sin esto, `display: block` de arriba gana al `display: none` del
+       atributo `hidden` del navegador (misma especificidad, pero el
+       estilo del autor pisa al del user-agent) y la paginación cliente no
+       oculta nada — todas las tarjetas quedaban visibles. */
+    display: none;
+  }
   .post-image {
     position: relative;
   }
