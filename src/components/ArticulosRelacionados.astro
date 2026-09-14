@@ -7,23 +7,38 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  heading?: string;
+  heading?: string | false;
   articulos: CollectionEntry<'blog' | 'radar'>[];
   verMasHref?: string;
   verMasLabel?: string;
+  // Paginación cliente (revisión visual 2026-09-14, pedida para la Home):
+  // en vez de mostrar todos los artículos o un enlace "ver más", se
+  // muestran de `pageSize` en `pageSize` con controles « Anterior /
+  // Página X de Y / Siguiente » — mismo patrón visual que la paginación
+  // real de /blog/, pero sin generar URLs nuevas (todo ocurre en la misma
+  // página, con JS). Si no se indica, se muestran todos los artículos.
+  pageSize?: number;
 }
-const { heading = 'Artículos relacionados', articulos, verMasHref, verMasLabel = 'Ver todas las entradas »' } = Astro.props;
+const {
+  heading = 'Artículos relacionados',
+  articulos,
+  verMasHref,
+  verMasLabel = 'Ver todas las entradas »',
+  pageSize,
+} = Astro.props;
+const totalPaginas = pageSize ? Math.max(1, Math.ceil(articulos.length / pageSize)) : 1;
 ---
 
 {articulos.length > 0 && (
-  <section class="articulos-relacionados">
-    <h2>{heading}</h2>
+  <section class="articulos-relacionados" data-paginated={pageSize ? 'true' : undefined} data-page-size={pageSize}>
+    {heading !== false && <h2>{heading}</h2>}
     <div class="grid">
-      {articulos.map((post) => {
+      {articulos.map((post, i) => {
         const categoria = 'category' in post.data ? (post.data.category as string) : 'Radar de Salud';
         const categoriaLabel = categoria.split('/').pop()?.replace(/-/g, ' ') ?? categoria;
+        const oculto = pageSize ? i >= pageSize : false;
         return (
-          <a class="post-card" href={`/${post.data.slug ?? post.id}/`}>
+          <a class="post-card" href={`/${post.data.slug ?? post.id}/`} hidden={oculto}>
             <div class="post-image">
               <Image src={post.data.image} alt={post.data.imageAlt} width={320} height={200} />
               <span class="badge">{categoriaLabel}</span>
@@ -37,6 +52,13 @@ const { heading = 'Artículos relacionados', articulos, verMasHref, verMasLabel 
     </div>
     {verMasHref && (
       <a class="ver-mas" href={verMasHref}>{verMasLabel}</a>
+    )}
+    {pageSize && totalPaginas > 1 && (
+      <nav class="paginacion-cliente" aria-label="Paginación de artículos">
+        <button type="button" class="pag-prev" disabled>« Anterior</button>
+        <span class="pag-info">Página <span class="pag-actual">1</span> de {totalPaginas}</span>
+        <button type="button" class="pag-next">Siguiente »</button>
+      </nav>
     )}
   </section>
 )}
@@ -118,4 +140,67 @@ const { heading = 'Artículos relacionados', articulos, verMasHref, verMasLabel 
     font-weight: 600;
     text-decoration: none;
   }
+  .paginacion-cliente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0 0;
+  }
+  .paginacion-cliente button {
+    border: none;
+    background: none;
+    font: inherit;
+    color: var(--color-accent, #c2185b);
+    cursor: pointer;
+    padding: 0;
+  }
+  .paginacion-cliente button:disabled {
+    color: #bbb;
+    cursor: default;
+  }
 </style>
+
+<script>
+  // Paginación cliente del bloque de artículos (ver prop `pageSize`) — sin
+  // recargar página ni generar URLs nuevas. Cada instancia se inicializa
+  // de forma independiente por si el componente se usa varias veces.
+  document.querySelectorAll<HTMLElement>('.articulos-relacionados[data-paginated="true"]').forEach((section) => {
+    const pageSize = Number(section.dataset.pageSize);
+    if (!pageSize) return;
+    const cards = [...section.querySelectorAll<HTMLElement>('.post-card')];
+    const totalPaginas = Math.max(1, Math.ceil(cards.length / pageSize));
+    const nav = section.querySelector('.paginacion-cliente');
+    const prevBtn = nav?.querySelector<HTMLButtonElement>('.pag-prev');
+    const nextBtn = nav?.querySelector<HTMLButtonElement>('.pag-next');
+    const pagActual = nav?.querySelector('.pag-actual');
+    let actual = 1;
+
+    function render() {
+      cards.forEach((card, i) => {
+        const pagina = Math.floor(i / pageSize) + 1;
+        card.hidden = pagina !== actual;
+      });
+      if (pagActual) pagActual.textContent = String(actual);
+      if (prevBtn) prevBtn.disabled = actual === 1;
+      if (nextBtn) nextBtn.disabled = actual === totalPaginas;
+    }
+
+    prevBtn?.addEventListener('click', () => {
+      if (actual > 1) {
+        actual -= 1;
+        render();
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+    nextBtn?.addEventListener('click', () => {
+      if (actual < totalPaginas) {
+        actual += 1;
+        render();
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    render();
+  });
+</script>

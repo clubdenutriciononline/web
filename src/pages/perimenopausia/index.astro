@@ -11,13 +11,14 @@ import CTAFinal from '../../components/CTAFinal.astro';
 import Callout from '../../components/Callout.astro';
 import NumberedList from '../../components/NumberedList.astro';
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
 import importanciaImg from './_images/importancia.jpg';
 import sintomasImg from './_images/sintomas.jpg';
 import solucionImg from './_images/solucion.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('perimenopausia')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('perimenopausia'));
 ---
 
 <BaseLayout

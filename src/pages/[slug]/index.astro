@@ -7,6 +7,7 @@
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import RadarLayout from '../../layouts/RadarLayout.astro';
+import { pickRelacionados } from '../../lib/relacionados';
 
 export async function getStaticPaths() {
   const [blogPosts, radarPosts] = await Promise.all([getCollection('blog'), getCollection('radar')]);
@@ -35,10 +36,7 @@ const siblings = (kind === 'blog' ? await getCollection('blog') : await getColle
 
 const relacionados =
   kind === 'blog'
-    ? siblings
-        .filter((p) => (p.data as any).category === (entry.data as any).category)
-        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-        .slice(0, 4)
+    ? pickRelacionados(siblings as any, (p) => (p.data as any).category === (entry.data as any).category, 3)
     : siblings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 5);
 
 // Anterior/siguiente por fecha dentro de la misma collection — equivalente

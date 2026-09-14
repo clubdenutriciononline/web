@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateA from '../../layouts/SubpageTemplateA.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -21,7 +22,7 @@ import iconoAreaDeficienciaYodo from './_images/icono-area-deficiencia-yodo.jpg'
 import iconoSistemaAdrenal from './_images/icono-sistema-adrenal.jpg';
 import iconoSaludHormonal from './_images/icono-salud-hormonal.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('tiroides')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('tiroides'));
 ---
 
 <SubpageTemplateA

@@ -7,6 +7,7 @@
 // Probióticos (Microbiota-sisthormonales-probioticos.jpg, confirmada en el
 // HTML real de la tarjeta "Probióticos" del grid de Temas Relacionados).
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import HubTemplateB from '../../layouts/HubTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -27,7 +28,7 @@ import temaDigestion from './_images/microbiota-digestion.jpg';
 import temaInflamacion from './_images/microbiota-inflamacion-intestinal.jpg';
 import temaProbioticos from './_images/Microbiota-sisthormonales-probioticos.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('microbiota')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('microbiota'));
 ---
 
 <HubTemplateB

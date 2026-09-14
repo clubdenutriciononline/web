@@ -6,6 +6,7 @@
 // real (ImageMetadata) además de emoji, así que se usan las imágenes reales
 // ya descargadas.
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import HubTemplateB from '../../layouts/HubTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -26,7 +27,7 @@ import temaPerdidaGrasa from './_images/Metabolismo-perdida-de-grasa.jpg';
 import temaResistencia from './_images/Metabolismo-resistencis.jpg';
 import temaAyuno from './_images/Metabolismo-ayuno.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('metabolismo')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('metabolismo'));
 ---
 
 <HubTemplateB

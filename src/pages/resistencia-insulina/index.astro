@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -14,7 +15,7 @@ import relacion2Img from './_images/relacion-2.jpg';
 // Nota: en el original, la sección "Artículos relacionados" existe pero está
 // vacía (sin tarjetas) — no se fuerza contenido, ArticulosRelacionados no
 // renderiza nada si el array resultante está vacío.
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('resistencia-insulina')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('resistencia-insulina'));
 ---
 
 <SubpageTemplateB

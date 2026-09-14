@@ -1,9 +1,13 @@
 ---
-// /blog/ = página 1, /blog/2/ ... /blog/13/ = resto (patrón estándar de
+// /blog/ = página 1, /blog/2/ ... /blog/8/ = resto (patrón estándar de
 // paginación de Astro con [...page], igual URL que el original).
+// Revisión visual 2026-09-14: unificado con el mismo componente/formato de
+// tarjeta que el resto del sitio (ArticulosRelacionados: 3 columnas,
+// insignia abajo-derecha, colores e icono reales) — antes tenía su propia
+// tarjeta distinta, sin insignia ni avatar y con otros colores.
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
+import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
 import type { GetStaticPathsOptions } from 'astro';
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
@@ -20,17 +24,7 @@ const { page } = Astro.props;
   <h1>Blog</h1>
   <h2>Entradas de blog</h2>
 
-  <div class="grid">
-    {page.data.map((post) => (
-      <a class="post-card" href={`/${post.data.slug ?? post.id}/`}>
-        <Image src={post.data.image} alt={post.data.imageAlt} width={320} height={200} />
-        <span class="categoria">{post.data.category}</span>
-        <h3>{post.data.title}</h3>
-        <p>{post.data.description}</p>
-        <span class="leer-mas">Leer Artículo »</span>
-      </a>
-    ))}
-  </div>
+  <ArticulosRelacionados heading={false} articulos={page.data} />
 
   <nav class="paginacion" aria-label="Paginación del blog">
     {page.url.prev && <a href={page.url.prev}>« Anterior</a>}
@@ -40,21 +34,6 @@ const { page } = Astro.props;
 </BaseLayout>
 
 <style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
-  .post-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-  .categoria {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--color-accent, #c2185b);
-  }
   .paginacion {
     display: flex;
     justify-content: center;

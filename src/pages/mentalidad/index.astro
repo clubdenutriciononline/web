@@ -5,6 +5,7 @@
 // intercambiados entre "Estrés y hábitos" y "Relación con el cuerpo"
 // respecto al original (🪞 = Relación con el cuerpo, 🧠 = Estrés y hábitos).
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import HubTemplateB from '../../layouts/HubTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -22,7 +23,7 @@ import icono6 from './_images/Mentalidad-icon-6.png';
 import relacionImg1 from './_images/Mentalidad-relacion-infografia.jpg';
 import relacionImg2 from './_images/Mentalidad-relacion-realista.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('mentalidad')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('mentalidad'));
 ---
 
 <HubTemplateB

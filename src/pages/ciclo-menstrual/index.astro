@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateA from '../../layouts/SubpageTemplateA.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -21,7 +22,7 @@ import iconoNutricion from './_images/icono-nutricion.jpg';
 import iconoActividadFisica from './_images/icono-actividad-fisica.jpg';
 import iconoSaludMental from './_images/icono-salud-mental.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('ciclo-menstrual')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('ciclo-menstrual'));
 ---
 
 <SubpageTemplateA

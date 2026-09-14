@@ -1,6 +1,7 @@
 ---
 // Subpágina de referencia — SubpageTemplateA (con grid final de áreas).
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateA from '../../layouts/SubpageTemplateA.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -22,7 +23,7 @@ import iconoEnfermedadesCorazon from './_images/icono-enfermedades-corazon.jpg';
 import iconoSaludMental from './_images/icono-salud-mental.jpg';
 import iconoRelacionesSexualidad from './_images/icono-relaciones-sexualidad.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('menopausia')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('menopausia'));
 ---
 
 <SubpageTemplateA

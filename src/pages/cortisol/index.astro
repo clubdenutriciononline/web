@@ -13,12 +13,13 @@ import CTAFinal from '../../components/CTAFinal.astro';
 import Callout from '../../components/Callout.astro';
 import NumberedList from '../../components/NumberedList.astro';
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import heroImg from './_images/hero.jpg';
 import queEsImg from './_images/que-es.jpg';
 import sintomasImg from './_images/sintomas.jpg';
 import solucionesImg from './_images/soluciones.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('cortisol')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('cortisol'));
 
 const tocItems = [
   { label: '¿Qué es?', anchor: 'que-es' },

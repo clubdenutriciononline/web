@@ -3,6 +3,7 @@
 // Contenido real migrado desde https://clubdenutricion.es/energia/, ver
 // .firecrawl/md/energia.md para el markdown original.
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import HubTemplateB from '../../layouts/HubTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -20,7 +21,7 @@ import iconoMedicamentos from './_images/Energia-Icono-6-e1778320740658.png';
 import relacionImg1 from './_images/energ-ia-infografia-relacion.jpg';
 import relacionImg2 from './_images/Energia-equilibrio-hormonal.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.startsWith('energia')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('energia'));
 ---
 
 <HubTemplateB

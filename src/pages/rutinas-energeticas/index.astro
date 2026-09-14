@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -11,7 +12,7 @@ import definicionImg from './_images/definicion.jpg';
 import relacion1Img from './_images/relacion-1.jpg';
 import relacion2Img from './_images/relacion-2.jpg';
 
-const articulos = (await getCollection('blog')).filter((p) => p.data.category.includes('rutinas-energeticas')).slice(0, 3);
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('rutinas-energeticas'));
 ---
 
 <SubpageTemplateB
