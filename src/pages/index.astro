@@ -14,7 +14,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
-import CTAFinal from '../components/CTAFinal.astro';
 import { Image } from 'astro:assets';
 import heroImg from './_images/mujer-optin.jpg';
 
@@ -86,7 +85,6 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf()
     pageSize={6}
   />
 
-  <CTAFinal ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
 </BaseLayout>
 
 <style>
