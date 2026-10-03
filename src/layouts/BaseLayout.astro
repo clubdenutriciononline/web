@@ -96,10 +96,11 @@ const organizationJsonLd = {
     /* Paleta y escala tipográfica — provisional hasta el loop visual
        selectivo página a página (colores/tipos exactos por confirmar). */
     --color-accent: #c2185b;
+    --color-title: #6c2f50;
     --color-accent-soft: #f7d9e6;
     --color-surface: #ffffff;
     --color-surface-alt: #fdf2f7;
-    --color-text: #2b2b2b;
+    --color-text: #212121;
 
     /* Confirmado por captura real: header con degradado verde claro, nav
        en naranja, footer negro — no es la paleta rosa que se asumió al
@@ -112,8 +113,8 @@ const organizationJsonLd = {
     --color-footer-bg: #17181b;
     --color-footer-text: #e8e8e8;
 
-    --font-heading: 'Fredoka', system-ui, sans-serif;
-    --font-body: 'Rubik', system-ui, sans-serif;
+    --font-heading: 'Rubik', system-ui, sans-serif;
+    --font-body: 'Fredoka', system-ui, sans-serif;
 
     --space-section: 3rem;
     --space-section-mobile: 2rem;
@@ -170,15 +171,15 @@ const organizationJsonLd = {
   }
   h1 {
     font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+    font-weight: 700;
+    color: #131313;
   }
   h2 {
-    font-size: clamp(1.4rem, 1.2rem + 1vw, 1.9rem);
-    /* Patrón confirmado en captura real: encabezados de sección en
-       mayúsculas, centrados y en el color de marca (rosa/magenta) — a
-       diferencia del h1, que se mantiene oscuro. */
+    /* Original (Elementor, Rubik 600 22px #6C2F50, centrado). */
+    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.4rem);
     text-transform: uppercase;
     text-align: center;
-    color: var(--color-accent);
+    color: var(--color-title);
   }
   h3 {
     font-size: 1.15rem;
