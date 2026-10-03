@@ -36,7 +36,9 @@ const year = new Date().getFullYear();
 
       <hr class="footer-separador" />
 
-      <p class="footer-copy">Copyright © {year} Club de Nutrición</p>
+      <p class="footer-copy">
+        Copyright © {year} Club de Nutrición | Diseñado por <a href="https://machangafactory.com" target="_blank" rel="noopener noreferrer">Machanga Factory</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -87,6 +89,9 @@ const year = new Date().getFullYear();
        usa el color de enlace del user-agent antes que el heredado. */
     color: inherit;
     display: inline-flex;
+  }
+  .footer-copy a {
+    color: #fc7504;
   }
   .footer-separador {
     width: 100%;
