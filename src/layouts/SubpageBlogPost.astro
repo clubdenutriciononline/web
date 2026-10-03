@@ -8,7 +8,6 @@ import Hero from '../components/Hero.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
-import CTAFinal from '../components/CTAFinal.astro';
 import type { ImageMetadata } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 
@@ -62,5 +61,4 @@ const {
 
   <ArticulosRelacionados articulos={articulosRelacionados} />
 
-  <CTAFinal ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
 </BaseLayout>

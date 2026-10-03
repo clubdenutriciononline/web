@@ -9,7 +9,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import Bibliografia from '../../components/Bibliografia.astro';
 import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
-import CTAFinal from '../../components/CTAFinal.astro';
 import Callout from '../../components/Callout.astro';
 import NumberedList from '../../components/NumberedList.astro';
 import { getCollection } from 'astro:content';
@@ -168,7 +167,6 @@ const tocItems = [
 
   <ArticulosRelacionados articulos={articulos} />
 
-  <CTAFinal ctaLabel="Descargar la guía ahora" ctaHref="/lm-5-pasos-optin/" />
 </BaseLayout>
 
 <style>

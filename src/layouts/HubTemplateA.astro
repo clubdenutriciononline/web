@@ -6,7 +6,6 @@
 import BaseLayout from './BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import TemasRelacionadosGrid from '../components/TemasRelacionadosGrid.astro';
-import CTAFinal from '../components/CTAFinal.astro';
 import type { ImageMetadata } from 'astro';
 
 interface Tema {
@@ -57,5 +56,4 @@ const {
 
   <TemasRelacionadosGrid heading={temasHeading} temas={temas} />
 
-  <CTAFinal ctaLabel={ctaLabel} ctaHref={ctaHref} />
 </BaseLayout>
