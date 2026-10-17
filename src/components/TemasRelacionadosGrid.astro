@@ -44,14 +44,14 @@ const { heading, temas } = Astro.props;
 
 <style>
   /* El original NO es una rejilla de 2 columnas a partes iguales: cada fila
-     son 5 columnas del 20% (vacía, tarjeta, vacía, tarjeta, vacía), así que
-     cada tarjeta ocupa solo una quinta parte del contenedor (~228px sobre
-     1140px), con grandes márgenes a los lados — confirmado en el HTML del
-     original (elementor-col-20 x5, columnas 1/3/5 vacías). Se reproduce
-     con grid-column fijo en vez de replicar las 5 columnas literalmente. */
+     son 5 columnas (vacía, tarjeta, vacía, tarjeta, vacía) con anchos
+     específicos, no el 20% por defecto de Elementor — confirmado con el
+     ancho inline real de cada columna en el HTML del original:
+     14.999% / 31.965% / 7.214% / 31.874% / resto. Cada tarjeta ocupa
+     ~32% del contenedor (no ~50% ni ~20%). */
   .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 15% 32% 7.2% 32% 1fr;
     row-gap: 2.5rem;
   }
   .tema-card:nth-child(odd) {
@@ -111,15 +111,15 @@ const { heading, temas } = Astro.props;
     transform: scale(1.1);
   }
   .tema-card h3 {
-    margin-top: 10px;
-    font-size: 1.125rem;
+    margin-top: 12px;
+    font-size: 1.25rem;
     color: #6c2f50;
     transition: color 0.3s;
   }
   .tema-card p {
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
     font-family: var(--font-body);
-    font-size: 0.9375rem;
-    line-height: 1.4;
+    font-size: 1rem;
+    line-height: 1.45;
   }
 </style>
