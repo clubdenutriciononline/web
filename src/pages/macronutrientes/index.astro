@@ -1,0 +1,162 @@
+---
+// Macronutrientes — página hija de Alimentación (subcategoría NUTRICIÓN >
+// Macronutrientes del WordPress), nueva el 2026-10-17. Plantilla de hijas
+// validada en Fatiga crónica (00-analisis/Plantilla - Páginas hijas.md), con
+// titular en el hero. El original no tenía esta página: textos nuevos
+// investigados (registro neutro, sin consejo médico concreto) e imágenes
+// generadas con IA; causas en el estilo de Ciclo menstrual. Iconos de las
+// colecciones del original (src/lib/iconos.ts).
+import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+import causaProteina from './_images/causa-proteina.jpg';
+import causaRefinados from './_images/causa-refinados.jpg';
+import causaGrasas from './_images/causa-grasas.jpg';
+import causaEliminar from './_images/causa-eliminar.jpg';
+import causaDesayuno from './_images/causa-desayuno.jpg';
+import causaEtapa from './_images/causa-etapa.jpg';
+
+// En el blog migrado estos artículos conservan la categoría "nutricion"; en
+// el WordPress son los de NUTRICIÓN > Macronutrientes, así que se enlazan por
+// su dirección.
+const propios = ['macronutrientes-y-micronutrientes', 'porque-tomar-fibra-a-diario', 'azucar-en-los-alimentos-i'];
+const articulos = pickRelacionados(
+  await getCollection('blog'),
+  (p) => propios.includes(p.data.slug ?? p.id),
+  3,
+  (p) => p.data.category.startsWith('nutricion'),
+);
+---
+
+<SubpageTemplateB
+  seoTitle="Macronutrientes: proteínas, hidratos de carbono y grasas"
+  seoDescription="Qué son los macronutrientes, qué función cumplen las proteínas, los hidratos de carbono y las grasas, y cómo combinarlos para cuidar tu energía y tu equilibrio hormonal."
+  heroTitle="Macronutrientes: proteínas, hidratos y grasas"
+  heroSubtitle="Descubre qué función cumple cada macronutriente, cómo influyen en tu energía, tus hormonas y tu metabolismo, y cómo combinarlos en cada comida de forma equilibrada."
+  heroImage={heroImg}
+  heroImageAlt="Mujer a punto de comer un plato equilibrado con salmón, huevo, quinoa, boniato y aguacate"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>Los macronutrientes son los nutrientes que el cuerpo necesita en mayor cantidad: las proteínas, los hidratos de carbono y las grasas.</p>
+    <p>Son la principal fuente de energía del organismo y aportan los materiales necesarios para construir y reparar tejidos, producir hormonas y mantener el funcionamiento del sistema nervioso y del sistema inmunitario.</p>
+    <p>Cada uno cumple funciones distintas y ninguno es "bueno" o "malo" por sí mismo: lo que marca la diferencia es la calidad de los alimentos de los que proceden y el equilibrio entre ellos.</p>
+    <p>En las mujeres, el reparto de macronutrientes influye en la energía, la saciedad, el control de la glucosa y el mantenimiento de la masa muscular, aspectos que cobran todavía más importancia a partir de los 35 años y durante la perimenopausia.</p>
+    <p>En esta guía descubrirás qué son los macronutrientes, los errores más frecuentes al combinarlos y cómo equilibrarlos en tu día a día de forma sencilla.</p>
+  </section>
+
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Bajones de energía', icon: iconos.bateriaBaja },
+      { title: 'Antojos de dulce', icon: iconos.piruleta },
+      { title: 'Hambre entre horas', icon: iconos.reloj },
+      { title: 'Pérdida de masa muscular', icon: iconos.ejercicio },
+      { title: 'Digestiones pesadas', icon: iconos.estomago },
+    ]}
+  />
+
+  <p class="pregunta">¿Sabes cuánta proteína, hidratos de carbono y grasas lleva realmente tu plato?</p>
+  <section class="intro lista">
+    <p class="texto">No hace falta pesar los alimentos ni contar gramos para comer de forma equilibrada. Entender qué aporta cada macronutriente y en qué alimentos se encuentra permite construir platos más saciantes y nutritivos con muy poco esfuerzo.</p>
+    <ChecklistCard
+      columns={1}
+      items={[
+        'Comprender qué son las proteínas, los hidratos de carbono y las grasas y qué función cumple cada uno',
+        'Identificar los errores más frecuentes al combinar los macronutrientes',
+        'Conocer cómo influyen los macronutrientes en las hormonas, la glucosa y la saciedad',
+        'Aprender a equilibrar los macronutrientes en cada comida de forma práctica',
+      ]}
+    />
+  </section>
+
+  <TextoConImagen heading="¿Qué son los Macronutrientes?" image={definicionImg} imageAlt="Alimentos ricos en proteínas, hidratos de carbono y grasas saludables organizados en tres grupos">
+    <p>Los macronutrientes son los nutrientes que el organismo necesita en grandes cantidades para obtener energía y mantener sus funciones. Son tres: proteínas, hidratos de carbono y grasas.</p>
+    <p><strong>Proteínas</strong>: están formadas por aminoácidos y son esenciales para construir y reparar músculos, huesos, piel y órganos, además de participar en la producción de enzimas, hormonas y defensas. Se encuentran en el pescado, los huevos, la carne, los lácteos, las legumbres, el tofu y los frutos secos.</p>
+    <p><strong>Hidratos de carbono</strong>: son la principal fuente de energía para el cerebro y los músculos. Los complejos y ricos en fibra, como las legumbres, los cereales integrales, las verduras o la fruta, liberan la energía de forma gradual, mientras que los refinados y los azúcares lo hacen de forma rápida.</p>
+    <p><strong>Grasas</strong>: aportan energía, forman parte de las membranas de las células, ayudan a absorber las vitaminas A, D, E y K y son necesarias para producir algunas hormonas. Las más saludables están en el aceite de oliva virgen extra, el aguacate, los frutos secos, las semillas y el pescado azul.</p>
+    <p>Las necesidades de cada macronutriente varían según la edad, el nivel de actividad física, el estado de salud y la etapa de la vida, por lo que no existe un reparto único válido para todas las personas.</p>
+    <p>En general, una alimentación equilibrada combina los tres macronutrientes en cada comida, priorizando fuentes de calidad y poco procesadas.</p>
+  </TextoConImagen>
+
+  <CausasGrid
+    heading="Errores Frecuentes con los Macronutrientes"
+    subheading="¿Qué hábitos alteran el equilibrio entre proteínas, hidratos de carbono y grasas en la alimentación diaria?"
+    causas={[
+      { icon: causaProteina, title: 'Poca Proteína', text: 'Muchas comidas se basan en pan, pasta o ensaladas sin una fuente de proteína, lo que reduce la saciedad y dificulta mantener la masa muscular.' },
+      { icon: causaRefinados, title: 'Exceso de Hidratos Refinados', text: 'El pan blanco, la bollería, los cereales azucarados y los dulces elevan rápidamente la glucosa y suelen ir seguidos de bajones de energía y hambre.' },
+      { icon: causaGrasas, title: 'Miedo a las Grasas', text: 'Evitar todas las grasas puede reducir el aporte de grasas saludables necesarias para absorber vitaminas y producir algunas hormonas.' },
+      { icon: causaEliminar, title: 'Eliminar Grupos Enteros', text: 'Las dietas que eliminan por completo un macronutriente sin supervisión pueden provocar déficits de nutrientes y ser difíciles de mantener.' },
+      { icon: causaDesayuno, title: 'Desayunos Solo de Hidratos', text: 'Las tostadas con mermelada, el zumo o la bollería por la mañana, sin proteína ni grasa, suelen saciar poco y favorecer los antojos a media mañana.' },
+      { icon: causaEtapa, title: 'No Adaptarse a cada Etapa', text: 'Con la edad y en la menopausia aumenta la tendencia a perder masa muscular, por lo que mantener la misma alimentación de siempre puede no ser suficiente.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Ahora que conocemos los errores más frecuentes con los macronutrientes, es importante aprender a reconocer las señales que da el cuerpo cuando su equilibrio no es el adecuado.</p>
+
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Señales de un Desequilibrio de Macronutrientes</h2>
+      <p class="subheading">Estas señales pueden indicar que el reparto de proteínas, hidratos de carbono y grasas no es el adecuado. Pueden tener otras causas, por lo que, si son persistentes, conviene consultarlas con un profesional sanitario.</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Hambre poco después de comer', text: 'Las comidas con poca proteína y fibra suelen saciar menos y hacen que el hambre aparezca de nuevo al poco tiempo.' },
+          { title: 'Bajones de energía tras las comidas', text: 'Una comida muy rica en hidratos refinados puede provocar una subida rápida de la glucosa seguida de cansancio y somnolencia.' },
+          { title: 'Antojos de azúcar', text: 'Los picos y bajadas de glucosa y las comidas poco saciantes pueden favorecer la necesidad frecuente de comer dulce.' },
+          { title: 'Pérdida de fuerza o de masa muscular', text: 'Un aporte de proteína insuficiente, especialmente sin actividad física, puede contribuir a la pérdida de músculo con la edad.' },
+          { title: 'Piel seca y cabello apagado', text: 'Una alimentación muy baja en grasas puede reducir la absorción de vitaminas liposolubles y reflejarse en la piel y el cabello.' },
+          { title: 'Digestiones pesadas', text: 'Las comidas muy grasas o con exceso de productos procesados pueden hacer la digestión más lenta y pesada.' },
+        ]}
+      />
+    </section>
+  </div>
+
+  <RelacionImagenes heading="Relación con los Sistemas Hormonales y Metabólicos">
+    <p>Descubre cómo las proteínas, los hidratos de carbono y las grasas influyen en tus hormonas, tu glucosa y tu energía.</p>
+    <Image src={relacion1Img} alt="Infografía: relación entre macronutrientes y hormonas" />
+    <p>Los hidratos de carbono son los macronutrientes que más influyen en la glucosa en sangre y en la insulina. Cuando proceden de alimentos integrales y ricos en fibra, la subida es más gradual; cuando son refinados, es más rápida y más intensa.</p>
+    <p>Las proteínas ayudan a regular el apetito, ya que favorecen la liberación de hormonas relacionadas con la saciedad, y son imprescindibles para mantener la masa muscular, que a su vez influye en cómo el cuerpo utiliza la glucosa.</p>
+    <p>Las grasas son necesarias para fabricar algunas hormonas, como las hormonas sexuales, que se producen a partir del colesterol, y los ácidos grasos omega-3 del pescado azul y algunas semillas participan en la regulación de la inflamación.</p>
+    <p>Durante la perimenopausia y la menopausia, la bajada de estrógenos se asocia con una menor sensibilidad a la insulina y una mayor tendencia a perder masa muscular, por lo que combinar bien los macronutrientes en cada comida resulta todavía más importante.</p>
+    <Image src={relacion2Img} alt="Mujer preparando un desayuno con yogur, avena, frutos rojos, huevos y aguacate" />
+    <p>Comprender la relación entre los macronutrientes y los sistemas hormonales y metabólicos ayuda a construir comidas que mantengan la energía estable, favorezcan la saciedad y cuiden la salud a largo plazo.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Cómo Equilibrar los Macronutrientes"
+    subheading="Descubre pautas sencillas para combinar proteínas, hidratos de carbono y grasas en cada comida."
+    subheadingVariant="destacado"
+    subheadingAlign="center"
+    variant="card"
+    band="b"
+    soluciones={[
+      { title: 'Proteína en cada comida', icon: iconos.muslo, body: 'Incluye una fuente de proteína en desayuno, comida y cena: huevos, pescado, legumbres, yogur natural, tofu o carne de calidad.' },
+      { title: 'Hidratos integrales', icon: iconos.espiga, body: 'Elige legumbres, cereales integrales, tubérculos y fruta entera en lugar de harinas refinadas y productos azucarados.' },
+      { title: 'Grasas saludables', icon: iconos.pescado, body: 'Usa aceite de oliva virgen extra y añade frutos secos, aguacate o pescado azul de forma habitual.' },
+      { title: 'El método del plato', icon: iconos.cubiertos, body: 'Una forma sencilla de equilibrar: la mitad del plato verduras, un cuarto proteína y un cuarto hidratos de calidad, con un poco de grasa saludable.' },
+      { title: 'Adapta a tu etapa', icon: iconos.ejercicio, body: 'Las necesidades cambian con la edad y la actividad física. Un profesional de la nutrición puede ayudarte a ajustarlas a tu caso.' },
+    ]}
+  />
+</SubpageTemplateB>
+
+<style>
+  .intro .texto {
+    font-size: 20px;
+    text-align: justify;
+  }
+</style>
