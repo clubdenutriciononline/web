@@ -33,9 +33,13 @@ const { page } = Astro.props;
   </div>
 
   <nav class="paginacion" aria-label="Paginación del Radar de Salud">
-    {page.url.prev && <a href={page.url.prev}>« Anterior</a>}
-    <span>Página {page.currentPage} de {page.lastPage}</span>
-    {page.url.next && <a href={page.url.next}>Siguiente »</a>}
+    {page.url.prev
+      ? <a href={page.url.prev}>« Anterior</a>
+      : <span class="pag-disabled">« Anterior</span>}
+    <span class="pag-info">Página {page.currentPage} de {page.lastPage}</span>
+    {page.url.next
+      ? <a href={page.url.next}>Siguiente »</a>
+      : <span class="pag-disabled">Siguiente »</span>}
   </nav>
 </BaseLayout>
 
@@ -48,12 +52,28 @@ const { page } = Astro.props;
   .categoria {
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: var(--color-accent, #c2185b);
+    color: #f964c0;
   }
+  /* Mismo formato que la paginación cliente de ArticulosRelacionados
+     (colores corporativos), unificado 2026-10-17. */
   .paginacion {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1.5rem;
     padding: 2rem 0;
+    font-family: var(--font-body);
+  }
+  .paginacion a {
+    color: #f964c0;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .paginacion .pag-info {
+    color: #6c2f50;
+    font-weight: 500;
+  }
+  .paginacion .pag-disabled {
+    color: #bbb;
   }
 </style>
