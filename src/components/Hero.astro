@@ -36,7 +36,9 @@ interface Props {
   // 22px #212121 (Mentalidad: el titular es un H2 de Elementor).
   // 'frase': hijas sin titular visible (Fatiga crónica): la frase del hero
   // en Fredoka 500 26px/50px, gris al 79%. Sigue siendo el <h1>.
-  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase';
+  // 'frase-rubik': Rubik 500 32px/48px gris 79% (Sueño).
+  // 'frase-media': Fredoka 500 22px/33px gris 79% (Rutinas energéticas).
+  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase' | 'frase-rubik' | 'frase-media';
 }
 
 // 'overlay' es el patrón real en 4 de las 5 páginas madre (Energía,
@@ -202,6 +204,24 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     color: rgba(33, 33, 33, 0.79);
     margin-bottom: 45px;
   }
+  h1[data-size='frase-rubik'] {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: normal;
+    color: rgba(33, 33, 33, 0.79);
+    margin-bottom: 56px;
+  }
+  h1[data-size='frase-media'] {
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: normal;
+    color: rgba(33, 33, 33, 0.79);
+    margin-bottom: 38px;
+  }
   .hero[data-layout='lateral'] {
     display: grid;
     grid-template-columns: minmax(0, 662px) 418px;
@@ -275,6 +295,8 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
       height: auto;
       aspect-ratio: 1;
     }
+    h1[data-size='frase-rubik'],
+    h1[data-size='frase-media'],
     h1[data-size='frase'] {
       font-size: 1.25rem;
       line-height: 1.6;

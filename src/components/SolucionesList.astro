@@ -22,7 +22,10 @@ interface Props {
   // Pregunta en negrita antes del subheading (Metabolismo: "¿Qué puedes
   // hacer para apoyar un metabolismo saludable?").
   lead?: string;
-  subheading?: string;
+  subheading?: string | string[];
+  // H3 antes del subheading y antes de la rejilla (Sueño).
+  subtitulo?: string;
+  subtituloLista?: string;
   soluciones: Solucion[];
   // Solo con 5 items en variant="card": '3-2' (por defecto, Energía) o
   // '2-3' (2 arriba más anchas y 3 abajo, Metabolismo).
@@ -30,7 +33,7 @@ interface Props {
   // 'texto': Fredoka 22px/33px (síntomas). 'destacado': 24px/39px con
   // 1.3px de espaciado (bloque de soluciones de Energía y Metabolismo).
   subheadingVariant?: 'texto' | 'destacado';
-  subheadingAlign?: 'justify' | 'center';
+  subheadingAlign?: 'justify' | 'center' | 'left';
   // Texto de las tarjetas "card": centrado (soluciones) o a la izquierda
   // (síntomas de Energía en el original).
   cardAlign?: 'center' | 'left';
@@ -40,14 +43,16 @@ interface Props {
   // cada página decide si esta fila concreta cae dentro de una banda o no.
   band?: 'a' | 'b' | false;
 }
-const { heading, lead, subheading, soluciones, variant = 'chip', band = false, layout5 = '3-2', subheadingVariant = 'texto', subheadingAlign = 'justify', cardAlign = 'center' } = Astro.props;
+const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, variant = 'chip', band = false, layout5 = '3-2', subheadingVariant = 'texto', subheadingAlign = 'justify', cardAlign = 'center' } = Astro.props;
 ---
 
 <section data-variant={variant} data-sub={subheadingVariant} data-align={subheadingAlign} data-card-align={cardAlign} class:list={['soluciones', band && 'full-bleed', band === 'a' && 'band-a', band === 'b' && 'band-b']}>
   <div class="soluciones-inner">
     {heading && <h2>{heading}</h2>}
     {lead && <p class="subheading lead"><strong>{lead}</strong></p>}
-    {subheading && <p class="subheading">{subheading}</p>}
+    {subtitulo && <h3 class="subtitulo">{subtitulo}</h3>}
+    {(subheading ? (Array.isArray(subheading) ? subheading : [subheading]) : []).map((t) => <p class="subheading">{t}</p>)}
+    {subtituloLista && <h3 class="subtitulo">{subtituloLista}</h3>}
     <div class="grid" data-count={soluciones.length} data-layout5={layout5}>
       {soluciones.map((s) => (
         <div class="solucion-item">
@@ -210,6 +215,53 @@ const { heading, lead, subheading, soluciones, variant = 'chip', band = false, l
   }
   section[data-align='center'] .subheading {
     text-align: center;
+  }
+  section[data-align='left'] .subheading {
+    text-align: left;
+  }
+  /* Subtítulos H3 dentro de la sección (Sueño: "¿Por qué no puedo
+     dormir?", "Causas más frecuentes…"): Rubik 500 26px #212121, izquierda. */
+  .soluciones .subtitulo {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #212121;
+    text-align: left;
+    margin: 1.5rem 0 1rem;
+  }
+  /* 7 soluciones (Sueño): 2 anchas + 3 + 2 anchas. */
+  section[data-variant='card'] .grid[data-count='7'] {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  section[data-variant='card'] .grid[data-count='7'] .solucion-item {
+    grid-column: span 2;
+  }
+  section[data-variant='card'] .grid[data-count='7'] .solucion-item:nth-child(-n + 2),
+  section[data-variant='card'] .grid[data-count='7'] .solucion-item:nth-child(n + 6) {
+    grid-column: span 3;
+  }
+  /* 5 píldoras en 2 + 3 (Rutinas energéticas). */
+  section[data-variant='pill'] .grid[data-count='5'][data-layout5='2-3'] {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  section[data-variant='pill'] .grid[data-count='5'][data-layout5='2-3'] .solucion-item {
+    grid-column: span 2;
+    max-width: none;
+  }
+  section[data-variant='pill'] .grid[data-count='5'][data-layout5='2-3'] .solucion-item:nth-child(-n + 2) {
+    grid-column: span 3;
+  }
+  @media (max-width: 900px) {
+    section[data-variant='card'] .grid[data-count='7'],
+    section[data-variant='pill'] .grid[data-count='5'][data-layout5='2-3'] {
+      grid-template-columns: 1fr 1fr;
+    }
+    section[data-variant='card'] .grid[data-count='7'] .solucion-item,
+    section[data-variant='pill'] .grid[data-count='5'][data-layout5='2-3'] .solucion-item {
+      grid-column: auto !important;
+    }
   }
   .subheading.lead {
     margin-bottom: 0;

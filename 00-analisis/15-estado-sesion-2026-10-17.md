@@ -2,14 +2,15 @@
 
 Resumen de lo hecho hoy y lo que queda pendiente, para retomar sin perder contexto. Todo lo de abajo está subido a GitHub y desplegado en el preview de Vercel.
 
-## ⚠️ Recordatorio urgente
+## Cloudflare
 
-- **Volver a activar Cloudflare** en clubdenutricion.es (dash.cloudflare.com → dominio → Overview → "Enable Cloudflare on Site", o poner las nubes en naranja en DNS). Se pausó a mano el 17 oct por el bloqueo de Movistar durante los partidos de LaLiga; el plugin que debía desactivarlo solo no detectó el bloqueo. Comprobar: si la web responde desde 62.210.212.90 sigue pausado; si responde desde 188.114.x.x está activo.
+- Pausado a mano el 17 oct por el bloqueo de Movistar durante LaLiga y **reactivado por la usuaria el mismo día**. El plugin que debía desactivarlo solo no detectó el bloqueo: revisarlo si vuelve a pasar.
 
 ## Siguiente sesión — por este orden
 
-1. **Adaptar las páginas hijas** a la plantilla validada en Fatiga crónica (`Plantilla - Páginas hijas.md`): Sueño, Rutinas energéticas, Pérdida de grasa femenina, Resistencia a la insulina, Ayuno intermitente, Digestión, Inflamación intestinal, Probióticos y alimentación, Ansiedad por la comida, Estrés y hábitos, Relación con el cuerpo; y las de Hormonas (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol, Inflamación hormonal), que usan otra plantilla (SubpageTemplateA) y tienen variantes propias (título en el hero, listas en 2 columnas, soluciones en píldoras, "Explora cada área"). En cada una: medir el original, iconos del original (`src/lib/iconos.ts`), causas con ilustración estilo Ciclo menstrual y relacionados con respaldo de la madre.
-2. **Revisar el formato de las entradas de blog** (plantilla de artículo `ArticleLayout`): tipografía, imágenes, tabla de contenidos, etc., igual que se ha hecho con madres, hijas y recetas.
+1. **Ilustraciones de las 8 causas de Sueño** (estilo Ciclo menstrual, a 1K): no se pudieron generar porque saltó el límite de gasto mensual de Gemini (subirlo en AI Studio → Billing / Spend cap). La página ya está adaptada; las tarjetas van de momento sin imagen. Prompts preparados: estrés nocturno, sedentarismo, salud (apnea/dolor), entorno (luz/ruido/calor), sobrecarga mental, falta de rutina (sol/luna/relojes), pantallas, cenas copiosas/cafeína/alcohol.
+2. **Adaptar el resto de páginas hijas** a la plantilla validada en Fatiga crónica (`Plantilla - Páginas hijas.md`). Hechas: Fatiga crónica, Sueño, Rutinas energéticas (Energía completa). Faltan: Pérdida de grasa femenina, Resistencia a la insulina, Ayuno intermitente, Digestión, Inflamación intestinal, Probióticos y alimentación, Ansiedad por la comida, Estrés y hábitos, Relación con el cuerpo; y las de Hormonas (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol, Inflamación hormonal), que usan otra plantilla (SubpageTemplateA) y tienen variantes propias (título en el hero, listas en 2 columnas, soluciones en píldoras, "Explora cada área"). En cada una: medir el original, iconos del original (`src/lib/iconos.ts`), causas con ilustración estilo Ciclo menstrual y relacionados con respaldo de la madre.
+3. **Revisar el formato de las entradas de blog** (plantilla de artículo `ArticleLayout`): tipografía, imágenes, tabla de contenidos, etc., igual que se ha hecho con madres, hijas y recetas.
 
 ## Ideas pendientes de definir — tarjetas de entradas
 

@@ -31,3 +31,11 @@ La banda final "¿Sientes que tu energía sube y baja?" se elimina por decisión
 - Causas: ilustraciones de línea magenta (`#C8407A`), sin relleno, fondo blanco, mujer + objetos del tema (referencia: `ciclo-menstrual/_images/icono-*.jpg`). 700×700.
 - Relación: infografía horizontal + foto realista (1400×781).
 - Generadas con el MCP de imágenes (perfil Proyecto) cuando no existen en el original.
+
+## Variantes añadidas (Sueño y Rutinas energéticas, 2026-10-17)
+
+- Hero: `heroTitleSize="frase-rubik"` (Rubik 500 32px/48px, Sueño) y `"frase-media"` (Fredoka 500 22px/33px, Rutinas), además de `"frase"` (Fatiga) y el titular normal.
+- `CausasGrid` y `SolucionesList`: `subtitulo` / `subtituloLista` (H3 Rubik 500 26px #212121 a la izquierda) y `subheading` con varios párrafos (array).
+- 8 causas → 2 + 3 + 3; 7 soluciones → 2 + 3 + 2; píldoras `layout5="2-3"`.
+- Iconos raros del original (Open Iconic, Themify, Iconic, IcoMoon Brands…): se extraen los glifos de las fuentes que carga el WordPress (ver `src/lib/iconos.ts`).
+- Las tarjetas de causas no llevan emoji en el título: lo sustituye la ilustración.
