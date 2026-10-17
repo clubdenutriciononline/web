@@ -20,6 +20,7 @@ interface Props {
   seoDescription: string;
   heroTitle: string;
   heroSubtitle?: string;
+  heroCtaIntro?: string;
   heroImage?: ImageMetadata;
   heroImageAlt?: string;
   ctaLabel: string;
@@ -33,6 +34,7 @@ const {
   seoDescription,
   heroTitle,
   heroSubtitle,
+  heroCtaIntro,
   heroImage,
   heroImageAlt,
   ctaLabel,
@@ -46,6 +48,7 @@ const {
   <Hero
     title={heroTitle}
     subtitle={heroSubtitle}
+    ctaIntro={heroCtaIntro}
     ctaLabel={ctaLabel}
     ctaHref={ctaHref}
     image={heroImage}

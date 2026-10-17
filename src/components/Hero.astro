@@ -8,13 +8,17 @@ import type { ImageMetadata } from 'astro';
 interface Props {
   title: string;
   subtitle?: string;
+  // Línea corta justo encima del botón (p. ej. "Descubre cómo estabilizar
+  // tu energía, descarga la guía ahora:"), confirmada por el CSS compilado
+  // del original como un segundo text-editor independiente del subtítulo.
+  ctaIntro?: string;
   ctaLabel?: string;
   ctaHref?: string;
   image?: ImageMetadata;
   imageAlt?: string;
 }
 
-const { title, subtitle, ctaLabel, ctaHref, image, imageAlt } = Astro.props;
+const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt } = Astro.props;
 ---
 
 <div class="full-bleed band-a">
@@ -22,6 +26,7 @@ const { title, subtitle, ctaLabel, ctaHref, image, imageAlt } = Astro.props;
     <div class="hero-copy">
       <h1>{title}</h1>
       {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+      {ctaIntro && <p class="hero-cta-intro">{ctaIntro}</p>}
       {ctaLabel && ctaHref && (
         <a class="hero-cta" href={ctaHref}>{ctaLabel}</a>
       )}
@@ -64,6 +69,11 @@ const { title, subtitle, ctaLabel, ctaHref, image, imageAlt } = Astro.props;
     font-size: 1.25rem;
     font-weight: 500;
     color: rgba(33, 33, 33, 0.79);
+  }
+  .hero-cta-intro {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text);
   }
   .hero-cta {
     display: inline-block;
