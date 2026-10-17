@@ -2,6 +2,8 @@
 // Hub Hormonas — HubTemplateA (variante única, ver 00-analisis/02-mapa-migracion.md).
 // Contenido real migrado desde https://clubdenutricion.es/hormonas/ (fidelidad
 // sin resumir), ver .firecrawl/md/hormonas.md para el markdown original.
+import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
 import HubTemplateA from '../../layouts/HubTemplateA.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
@@ -34,6 +36,8 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
 // HTML: elementor-widget-image-box). TemasRelacionadosGrid.astro ya admite
 // icon: string | ImageMetadata, así que se usan las imágenes reales en vez
 // de emoji.
+
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('hormonas'));
 ---
 
 <HubTemplateA
@@ -53,6 +57,7 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
     { icon: iconoCortisol, title: 'Cortisol / Estrés', href: '/cortisol/', text: 'El impacto del cortisol elevado en la grasa abdominal, el sueño, la fatiga y el metabolismo.' },
     { icon: iconoInflamacion, title: 'Inflamación hormonal', href: '/inflamacion-hormonal/', text: 'Cómo la inflamación altera las hormonas, la digestión, la energía y la sensibilidad a la insulina.' },
   ]}
+  articulosRelacionados={articulos}
 >
   <div class="full-bleed band-a">
     <section class="intro">
