@@ -1,0 +1,184 @@
+---
+// Hub Alimentación — HubTemplateB (2026-10-17). Sustituye al listado simple
+// de todos los artículos que había aquí (migrado desde /alimentacion-2/, con
+// redirect 301 en vercel.json): por decisión de la usuaria pasa a ser una
+// página madre como Energía, con las 4 subcategorías de NUTRICIÓN del
+// WordPress (Alimentos, Macronutrientes, Micronutrientes, Patrones
+// alimentarios) como páginas hija. El listado completo de artículos sigue en
+// /blog/.
+// El original no tenía contenido propio: los textos son nuevos (investigados,
+// registro neutro de las demás madres, sin consejo médico concreto), las
+// imágenes están generadas con IA en el estilo de Energía/Mentalidad y los
+// iconos salen de las mismas colecciones que el original (src/lib/iconos.ts).
+import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
+import HubTemplateB from '../../layouts/HubTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
+
+import heroImg from './_images/alimentacion-hero.jpg';
+import queEsImg from './_images/alimentacion-que-es.jpg';
+import iconoUltraprocesados from './_images/alimentacion-icono-ultraprocesados.jpg';
+import iconoHorarios from './_images/alimentacion-icono-horarios.jpg';
+import iconoDietas from './_images/alimentacion-icono-dietas.jpg';
+import iconoProteinaFibra from './_images/alimentacion-icono-proteina-fibra.jpg';
+import iconoEmocional from './_images/alimentacion-icono-emocional.jpg';
+import iconoAzucarAlcohol from './_images/alimentacion-icono-azucar-alcohol.jpg';
+import relacionImg1 from './_images/alimentacion-relacion-infografia.jpg';
+import relacionImg2 from './_images/alimentacion-relacion-realista.jpg';
+import temaAlimentos from './_images/alimentacion-subcat-alimentos.jpg';
+import temaMacronutrientes from './_images/alimentacion-subcat-macronutrientes.jpg';
+import temaMicronutrientes from './_images/alimentacion-subcat-micronutrientes.jpg';
+import temaPatrones from './_images/alimentacion-subcat-patrones.jpg';
+
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('nutricion'), 9);
+---
+
+<HubTemplateB
+  seoTitle="Alimentación en mujeres: cómo nutrir tu cuerpo y tu equilibrio hormonal"
+  seoDescription="Descubre cómo la alimentación influye en tus hormonas, tu energía y tu metabolismo, y aprende a construir una forma de comer equilibrada, sostenible y adaptada a cada etapa."
+  heroTitle="Alimentación en mujeres: cómo nutrir tu cuerpo y tu equilibrio hormonal"
+  heroSubtitle="Descubre cómo lo que comes influye en tus hormonas, tu energía y tu metabolismo, y aprende a construir una alimentación equilibrada, sostenible y adaptada a cada etapa de tu vida."
+  heroCtaIntro="Descubre cómo estabilizar tu energía, descarga la guía ahora:"
+  heroImage={heroImg}
+  heroImageAlt="Mujer comiendo un plato equilibrado con salmón, verduras y cereales integrales"
+  heroLayout="overlay"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  temasHeading="Subcategorías relacionadas con la Alimentación"
+  temas={[
+    { icon: temaAlimentos, title: 'Alimentos', href: '/alimentos/', text: 'Conoce las propiedades de los alimentos más habituales y cómo influyen en tu energía, tu digestión y tu equilibrio hormonal.' },
+    { icon: temaMacronutrientes, title: 'Macronutrientes', href: '/macronutrientes/', text: 'Proteínas, hidratos de carbono y grasas: qué función cumple cada uno y cómo combinarlos para una alimentación equilibrada.' },
+    { icon: temaMicronutrientes, title: 'Micronutrientes', href: '/micronutrientes/', text: 'Vitaminas y minerales clave para la salud femenina, como el hierro, el calcio, el magnesio o la vitamina D, y dónde encontrarlos.' },
+    { icon: temaPatrones, title: 'Patrones alimentarios', href: '/patrones-alimentarios/', text: 'Dieta mediterránea, ayuno intermitente, dieta keto y otros enfoques: qué dice la evidencia y cómo valorar cuál encaja contigo.' },
+  ]}
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>La alimentación es uno de los pilares más importantes de la salud. Lo que comemos cada día aporta la energía y los nutrientes que el cuerpo necesita para funcionar, repararse y mantener el equilibrio de sus sistemas.</p>
+    <p>En las mujeres, la alimentación influye de forma directa en el equilibrio hormonal, el ciclo menstrual, la energía, el estado de ánimo, la salud digestiva y el metabolismo.</p>
+    <p>A partir de los 35 años, y especialmente durante la perimenopausia y la menopausia, las necesidades nutricionales cambian, y algunos hábitos que antes funcionaban pueden dejar de hacerlo.</p>
+    <p>No se trata de seguir dietas estrictas ni de eliminar grupos de alimentos, sino de entender qué necesita el cuerpo y cómo cubrirlo de forma equilibrada y sostenible.</p>
+    <p>En esta sección encontrarás información práctica sobre alimentos, nutrientes y patrones alimentarios para cuidar tu salud y tu bienestar desde la alimentación.</p>
+  </section>
+
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Antojos de Azúcar', icon: iconos.piruleta },
+      { title: 'Hinchazón Digestiva', icon: iconos.estomago },
+      { title: 'Bajones de Energía', icon: iconos.bateriaBaja },
+      { title: 'Cambios de Peso', icon: iconos.peso },
+      { title: 'Cambios de Humor', icon: iconos.caraTriste },
+    ]}
+  />
+
+  <section class="intro lista">
+    <p>¿Quieres mejorar tu alimentación y sentirte con más energía cada día? Descubre cómo influye lo que comes en tu cuerpo y qué cambios sencillos pueden marcar la diferencia.</p>
+    <p>En esta sección aprenderás:</p>
+    <ChecklistCard
+      items={[
+        'Qué es una alimentación equilibrada y por qué es clave para la salud femenina.',
+        'Los hábitos alimentarios que más alteran la energía, la digestión y las hormonas.',
+        'Cómo se relacionan la alimentación, las hormonas y el metabolismo.',
+        'Qué papel tienen los macronutrientes y los micronutrientes en tu bienestar.',
+        'Estrategias prácticas para comer mejor de forma realista y sostenible.',
+      ]}
+    />
+  </section>
+
+  <TextoConImagen heading="¿Qué es la Alimentación?" image={queEsImg} imageAlt="Infografía: qué es la alimentación y cómo se compone un plato equilibrado">
+    <p>La alimentación es el proceso mediante el cual el cuerpo obtiene, a través de los alimentos, la energía y los nutrientes que necesita para vivir y mantenerse sano.</p>
+    <p>Cada comida aporta macronutrientes (proteínas, hidratos de carbono y grasas), que proporcionan energía y materiales para construir y reparar tejidos, y micronutrientes (vitaminas y minerales), que participan en miles de procesos del organismo.</p>
+    <p>Una alimentación equilibrada es aquella que cubre estas necesidades en las cantidades adecuadas, combinando alimentos variados y poco procesados: verduras, frutas, legumbres, cereales integrales, proteínas de calidad, grasas saludables y agua.</p>
+    <p>La alimentación no solo influye en el peso corporal. También condiciona la energía diaria, la calidad del sueño, la concentración, la salud digestiva, la microbiota intestinal y la respuesta del cuerpo al estrés.</p>
+    <p>En el caso de las mujeres, tiene además un papel importante en el equilibrio hormonal, ya que muchos nutrientes intervienen en la producción y regulación de hormonas como la insulina, el cortisol, los estrógenos o las hormonas tiroideas.</p>
+    <p>Las necesidades no son iguales en todas las etapas de la vida. Durante la perimenopausia y la menopausia, por ejemplo, cobran especial importancia nutrientes como las proteínas, la fibra, el calcio y la vitamina D, relacionados con el mantenimiento de la masa muscular y ósea.</p>
+    <p>Comer bien no consiste en hacerlo de forma perfecta, sino en construir hábitos que se puedan mantener en el tiempo y que se adapten a la vida, los gustos y las necesidades de cada persona.</p>
+  </TextoConImagen>
+
+  <CausasGrid
+    heading="Causas de una Alimentación Desequilibrada"
+    subheading="Una alimentación desequilibrada no suele deberse a una sola causa, sino a la combinación de hábitos, ritmos de vida y factores emocionales. Identificar qué está influyendo en la forma de comer es el primer paso para mejorarla."
+    causas={[
+      { icon: iconoUltraprocesados, title: 'Exceso de Ultraprocesados', text: 'Los productos ultraprocesados suelen aportar azúcares, harinas refinadas y grasas de baja calidad, y desplazan a los alimentos frescos, más ricos en fibra, vitaminas y minerales.' },
+      { icon: iconoHorarios, title: 'Comer con Prisas y sin Horarios', text: 'Saltarse comidas, comer deprisa o picar a lo largo del día dificulta la regulación del apetito y puede favorecer bajones de energía y antojos.' },
+      { icon: iconoDietas, title: 'Dietas muy Restrictivas', text: 'Reducir en exceso la cantidad de comida o eliminar grupos de alimentos puede provocar déficits de nutrientes, pérdida de masa muscular y una relación más difícil con la comida.' },
+      { icon: iconoProteinaFibra, title: 'Poca Proteína y Fibra', text: 'Una alimentación basada en harinas refinadas y pobre en proteínas, verduras y legumbres se asocia con menos saciedad, picos de glucosa y una microbiota menos diversa.' },
+      { icon: iconoEmocional, title: 'Estrés y Hambre Emocional', text: 'El estrés y las emociones influyen en lo que comemos: es habitual buscar alimentos dulces o muy calóricos como forma de calma, lo que puede convertirse en un hábito.' },
+      { icon: iconoAzucarAlcohol, title: 'Exceso de Azúcar y Alcohol', text: 'El consumo frecuente de azúcares añadidos y alcohol puede alterar el control de la glucosa, el descanso y el equilibrio hormonal, además de aportar energía sin nutrientes.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Ahora que hemos revisado las causas más comunes de una alimentación desequilibrada, es importante comprender cómo se manifiestan en el día a día.</p>
+  <p class="parrafo-suelto">El cuerpo suele dar señales cuando la alimentación no cubre bien sus necesidades, y aprender a reconocerlas ayuda a hacer cambios a tiempo.</p>
+
+  <SolucionesList
+    heading="Señales de una Alimentación Desequilibrada"
+    subheading="Estas son algunas de las señales más frecuentes de que la alimentación no está cubriendo bien las necesidades del cuerpo. Pueden tener otras causas, por lo que, si son persistentes, conviene consultarlas con un profesional sanitario:"
+    variant="card"
+    cardAlign="left"
+    band="b"
+    soluciones={[
+      { title: 'Cansancio y bajones de energía', body: 'Sensación de falta de energía a media mañana o media tarde, a menudo relacionada con comidas poco equilibradas o con picos y bajadas de glucosa.' },
+      { title: 'Antojos frecuentes', body: 'Necesidad repetida de comer dulce o picar entre horas, que puede estar relacionada con comidas poco saciantes, falta de descanso o estrés.' },
+      { title: 'Molestias digestivas', body: 'Hinchazón, gases, estreñimiento o digestiones pesadas, que pueden aparecer con una alimentación pobre en fibra o con exceso de ultraprocesados.' },
+      { title: 'Cambios de peso', body: 'Aumento o dificultad para mantener el peso, especialmente con acumulación de grasa abdominal, sin cambios aparentes en la forma de comer.' },
+      { title: 'Cambios en el estado de ánimo', body: 'Irritabilidad, apatía o sensación de ánimo más bajo, que pueden verse influidos por la regularidad de las comidas y la calidad de la alimentación.' },
+      { title: 'Uñas, piel y cabello debilitados', body: 'Uñas frágiles, piel apagada o caída del cabello pueden reflejar un aporte insuficiente de algunos nutrientes, como el hierro o las proteínas.' },
+    ]}
+  />
+
+  <RelacionImagenes heading="Relación entre la Alimentación y los Sistemas Hormonales y Metabólicos">
+    <p>Lo que comemos influye directamente en el funcionamiento del sistema hormonal y del metabolismo, dos sistemas que regulan la energía, el apetito, el peso y el estado de ánimo.</p>
+    <p>Cada comida provoca una respuesta hormonal. Los hidratos de carbono elevan la glucosa en sangre y estimulan la liberación de insulina, la hormona encargada de que las células puedan utilizarla como energía.</p>
+    <p>Cuando la alimentación se basa en azúcares y harinas refinadas, estas subidas y bajadas son más bruscas, lo que puede favorecer el cansancio, el hambre frecuente y, con el tiempo, una menor sensibilidad a la insulina.</p>
+    <p>Las proteínas, la fibra y las grasas saludables, en cambio, ayudan a que la glucosa se libere de forma más gradual y aumentan la saciedad.</p>
+    <Image src={relacionImg1} alt="Infografía: relación entre alimentación, hormonas y metabolismo" />
+    <p>La alimentación también influye en otras hormonas clave. Algunos nutrientes, como el yodo, el selenio o el hierro, son necesarios para el funcionamiento de la tiroides, que regula la velocidad del metabolismo.</p>
+    <p>La fibra y la microbiota intestinal participan en el metabolismo de los estrógenos, y el estrés mantenido y los horarios irregulares pueden alterar el cortisol y las señales de hambre y saciedad, como la leptina y la grelina.</p>
+    <p>Durante la perimenopausia y la menopausia, la bajada de estrógenos modifica la forma en que el cuerpo gestiona la glucosa y distribuye la grasa, por lo que la calidad de la alimentación cobra todavía más importancia.</p>
+    <Image src={relacionImg2} alt="Mujer preparando una comida saludable en la cocina" />
+    <p>Por eso, cuidar la alimentación no consiste solo en controlar las calorías, sino en ofrecer al cuerpo los nutrientes que necesita para mantener un equilibrio hormonal y metabólico estable.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Soluciones Prácticas para Mejorar tu Alimentación"
+    subheading="A continuación, se presentan algunas pautas prácticas para construir una alimentación más equilibrada y sostenible:"
+    subheadingVariant="destacado"
+    subheadingAlign="center"
+    variant="card"
+    soluciones={[
+      { title: 'Base de alimentos frescos', icon: iconos.manzanaComida, body: 'Prioriza verduras, frutas, legumbres, cereales integrales, frutos secos y aceite de oliva, y reduce el consumo de ultraprocesados.' },
+      { title: 'Proteína en cada comida', icon: iconos.muslo, body: 'Incluir huevos, pescado, legumbres, yogur o carne de calidad en cada comida ayuda a mantener la masa muscular y aumenta la saciedad.' },
+      { title: 'Más fibra cada día', icon: iconos.zanahoria, body: 'Las verduras, las legumbres y los cereales integrales aportan la fibra que necesita la microbiota y ayudan a regular la glucosa y el tránsito intestinal.' },
+      { title: 'Horarios regulares', icon: iconos.reloj, body: 'Comer a horas parecidas y sin prisas ayuda a regular el apetito, la energía y las señales de hambre y saciedad.' },
+      { title: 'Hidratación y bebidas', icon: iconos.vasoAgua, body: 'El agua debe ser la bebida principal. Limitar los refrescos azucarados y el alcohol favorece el descanso y el equilibrio metabólico.' },
+    ]}
+  />
+</HubTemplateB>
+
+<style>
+  /* Mismos valores que Energía (medidos en el original, 2026-10-17). */
+  .intro {
+    padding-block: 1rem;
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 33px;
+    text-align: justify;
+  }
+  .intro.lista {
+    text-align: left;
+  }
+  .parrafo-suelto {
+    margin-top: 1.5rem;
+    font-size: 26px;
+    line-height: 33px;
+    text-align: justify;
+  }
+</style>

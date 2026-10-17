@@ -60,7 +60,16 @@ export const mainNav: NavItem[] = [
     ],
   },
   { label: 'Radar de Salud', href: '/radar-de-salud/' },
-  { label: 'Alimentación', href: '/alimentacion/' },
+  {
+    label: 'Alimentación',
+    href: '/alimentacion/',
+    children: [
+      { label: 'Alimentos', href: '/alimentos/' },
+      { label: 'Macronutrientes', href: '/macronutrientes/' },
+      { label: 'Micronutrientes', href: '/micronutrientes/' },
+      { label: 'Patrones alimentarios', href: '/patrones-alimentarios/' },
+    ],
+  },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contacto', href: '/contacto/' },
 ];
