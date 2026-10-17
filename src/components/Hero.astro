@@ -29,7 +29,9 @@ interface Props {
   // tablet/móvil, widget b60edae del CSS post-3580) — a 48px desbordaba la
   // imagen y tapaba el menú. Se mantiene el <h1> por SEO.
   // 'medio': frase larga a Rubik 400 38px/55px, gris al 79% (Microbiota).
-  titleSize?: 'display' | 'lead' | 'medio';
+  // 'seccion': titular a Rubik 500 32px #000 con subtítulo Fredoka 500
+  // 22px #212121 (Mentalidad: el titular es un H2 de Elementor).
+  titleSize?: 'display' | 'lead' | 'medio' | 'seccion';
 }
 
 // 'overlay' es el patrón real en 4 de las 5 páginas madre (Energía,
@@ -40,7 +42,7 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
 ---
 
 <div class="full-bleed band-a">
-  <section class="hero" data-layout={layout}>
+  <section class="hero" data-layout={layout} data-title-size={titleSize}>
     {image && (
       <div class="hero-image-wrap">
         <Image class="hero-image" src={image} alt={imageAlt ?? ''} />
@@ -162,6 +164,18 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     letter-spacing: normal;
     color: #212121;
   }
+  h1[data-size='seccion'] {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 41.6px;
+    letter-spacing: normal;
+    color: #000;
+  }
+  .hero[data-title-size='seccion'] .hero-subtitle {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 33px;
+  }
   h1[data-size='medio'] {
     font-size: 38px;
     font-weight: 400;
@@ -194,6 +208,10 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     }
     h1[data-size='lead'] {
       font-size: 1.25rem;
+    }
+    h1[data-size='seccion'] {
+      font-size: 1.5rem;
+      line-height: 1.3;
     }
     h1[data-size='medio'] {
       font-size: 1.5rem;
