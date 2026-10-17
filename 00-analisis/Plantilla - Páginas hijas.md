@@ -20,7 +20,7 @@ Layout: `SubpageTemplateB` (envuelve en `.hub`, la misma tipografía que las mad
 | 10 | Relación con los sistemas hormonales y metabólicos | — | `RelacionImagenes` | 1er párrafo 24px/35px +1.3px; imagen; párrafos 20px; imagen; cierre 22px. |
 | 11 | Soluciones | degradado B | `SolucionesList variant="card" band="b"` (`subheadingVariant="destacado" subheadingAlign="center"`) | 5 tarjetas 3 + 2 con icono 50px, título Rubik 500 24px, texto 20px. **Variante Ciclo**: 5 píldoras solo con título (`variant="pill"`). |
 | 12 | Explora cada área (opcional) | — | `TemasRelacionadosGrid` (`SubpageTemplateA`) | Solo en algunas hijas (Ciclo menstrual: 4 tarjetas con foto 2×2). |
-| 13 | Artículos relacionados | — | lo pone la plantilla | Fredoka 400 32px a la izquierda; títulos Rubik 600 21px. |
+| 13 | Artículos relacionados | — | lo pone la plantilla | Fredoka 400 32px a la izquierda; títulos Rubik 600 21px. Siempre 3: primero los de la subcategoría y, si faltan, de su página madre (`pickRelacionados(..., 3, respaldo)`), como el original. |
 
 La banda final "¿Sientes que tu energía sube y baja?" se elimina por decisión de la usuaria (igual que en las madres).
 

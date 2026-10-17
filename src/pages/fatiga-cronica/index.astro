@@ -28,7 +28,7 @@ import causaSueno from './_images/causa-sueno.jpg';
 import causaMedicamentos from './_images/causa-medicamentos.jpg';
 import causaOtros from './_images/causa-otros.jpg';
 
-const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('fatiga-cronica'));
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('fatiga-cronica'), 3, (p) => p.data.category.startsWith('energia'));
 ---
 
 <SubpageTemplateB

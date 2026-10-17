@@ -10,12 +10,17 @@ export function pickRelacionados(
   todos: CollectionEntry<'blog'>[],
   match: (post: CollectionEntry<'blog'>) => boolean,
   count = 3,
+  // Hijas (2026-10-17, decisión de la usuaria): si la subcategoría no llega
+  // a `count`, se rellena primero con artículos de su página madre (como el
+  // original) y solo después con los más recientes del blog.
+  respaldo?: (post: CollectionEntry<'blog'>) => boolean,
 ): CollectionEntry<'blog'>[] {
   const ordenados = [...todos]
     .filter((p) => !p.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   const propios = ordenados.filter(match);
   if (propios.length >= count) return propios.slice(0, count);
-  const resto = ordenados.filter((p) => !propios.includes(p));
-  return [...propios, ...resto].slice(0, count);
+  const deLaMadre = respaldo ? ordenados.filter((p) => !propios.includes(p) && respaldo(p)) : [];
+  const resto = ordenados.filter((p) => !propios.includes(p) && !deLaMadre.includes(p));
+  return [...propios, ...deLaMadre, ...resto].slice(0, count);
 }

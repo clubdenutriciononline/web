@@ -1,0 +1,160 @@
+---
+// Alimentos — página hija de Alimentación (subcategoría NUTRICIÓN > Alimentos
+// del WordPress), nueva el 2026-10-17. Sigue la plantilla de hijas validada
+// en Fatiga crónica (00-analisis/Plantilla - Páginas hijas.md), con la
+// variante de hero con titular (como Ciclo menstrual). El original no tenía
+// esta página: textos nuevos investigados (registro neutro, sin consejo
+// médico concreto) e imágenes generadas con IA; causas con ilustraciones en el
+// estilo de Ciclo menstrual. Iconos de las colecciones del original
+// (src/lib/iconos.ts).
+import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+import causaUltraprocesados from './_images/causa-ultraprocesados.jpg';
+import causaTiempo from './_images/causa-tiempo.jpg';
+import causaVariedad from './_images/causa-variedad.jpg';
+import causaModas from './_images/causa-modas.jpg';
+import causaComerFuera from './_images/causa-comer-fuera.jpg';
+import causaEtiquetas from './_images/causa-etiquetas.jpg';
+
+const articulos = pickRelacionados(
+  await getCollection('blog'),
+  (p) => p.data.category === 'nutricion/alimentos',
+  3,
+  (p) => p.data.category.startsWith('nutricion'),
+);
+---
+
+<SubpageTemplateB
+  seoTitle="Alimentos: propiedades, beneficios y cómo elegirlos"
+  seoDescription="Descubre las propiedades de los alimentos y cómo influyen en tu energía, tus hormonas y tu metabolismo, y aprende a elegirlos para una alimentación equilibrada."
+  heroTitle="Alimentos: propiedades, beneficios y cómo elegirlos"
+  heroSubtitle="Descubre las propiedades de los alimentos y cómo influyen en tu energía, tus hormonas y tu metabolismo. Aprende a reconocer los alimentos reales y a integrarlos en una alimentación equilibrada."
+  heroImage={heroImg}
+  heroImageAlt="Mujer colocando alimentos frescos en la encimera de la cocina"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>Los alimentos son la base de la alimentación y la principal fuente de energía y nutrientes del organismo.</p>
+    <p>Cada alimento aporta una combinación distinta de proteínas, hidratos de carbono, grasas, vitaminas, minerales, fibra y otros compuestos que influyen en la salud de formas muy diferentes.</p>
+    <p>No todos los alimentos tienen el mismo efecto en el cuerpo: dos productos con las mismas calorías pueden influir de manera muy distinta en la saciedad, la glucosa en sangre, la digestión o el equilibrio hormonal.</p>
+    <p>Por eso, más allá de contar calorías, es importante conocer qué aporta cada alimento y cómo combinarlos para cubrir las necesidades del organismo en cada etapa de la vida.</p>
+    <p>En esta guía descubrirás qué son los alimentos reales, qué factores empeoran la calidad de lo que comemos y cómo elegir mejor para cuidar tu energía, tus hormonas y tu metabolismo.</p>
+  </section>
+
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Antojos de azúcar', icon: iconos.piruleta },
+      { title: 'Digestiones pesadas', icon: iconos.estomago },
+      { title: 'Falta de energía', icon: iconos.bateriaBaja },
+      { title: 'Hinchazón', icon: iconos.caraSonrojada },
+      { title: 'Cambios de humor', icon: iconos.caraTriste },
+    ]}
+  />
+
+  <p class="pregunta">¿Sabes realmente qué aporta cada alimento que pones en tu plato?</p>
+  <section class="intro lista">
+    <p class="texto">Conocer los alimentos y sus propiedades permite elegir mejor, sin necesidad de seguir dietas estrictas ni eliminar grupos de alimentos. Pequeños cambios en la compra y en el plato pueden marcar una gran diferencia en la energía y el bienestar diario.</p>
+    <ChecklistCard
+      columns={1}
+      items={[
+        'Entender qué son los alimentos reales y en qué se diferencian de los ultraprocesados',
+        'Conocer los factores que empeoran la calidad de los alimentos que elegimos',
+        'Descubrir cómo influyen los alimentos en las hormonas, la energía y el metabolismo',
+        'Aprender estrategias prácticas para elegir, comprar y combinar mejor los alimentos',
+      ]}
+    />
+  </section>
+
+  <TextoConImagen heading="¿Qué son los Alimentos?" image={definicionImg} imageAlt="Alimentos frescos organizados por grupos: verduras, frutas, legumbres, cereales integrales, pescado, huevos y frutos secos">
+    <p>Los alimentos son todos aquellos productos, de origen vegetal o animal, que aportan al organismo la energía y los nutrientes que necesita para vivir, crecer, repararse y mantener sus funciones.</p>
+    <p>Se suelen agrupar según su composición: verduras y hortalizas, frutas, legumbres, cereales, alimentos proteicos como el pescado, los huevos o la carne, lácteos, frutos secos y semillas, y grasas como el aceite de oliva.</p>
+    <p>Cada grupo aporta nutrientes distintos, por lo que la variedad es una de las claves de una alimentación equilibrada.</p>
+    <p>Además de su composición, importa mucho su grado de procesamiento. Los alimentos reales o mínimamente procesados, como las verduras, la fruta, las legumbres, el pescado o los huevos, conservan la mayor parte de sus nutrientes y su fibra.</p>
+    <p>Los productos ultraprocesados, en cambio, se elaboran a partir de ingredientes refinados, azúcares, grasas de baja calidad y aditivos, y su consumo frecuente se asocia con una peor calidad de la dieta.</p>
+    <p>Un concepto útil es el de densidad nutricional: los alimentos con más densidad nutricional aportan muchas vitaminas, minerales, fibra o proteína en relación con su energía, mientras que otros aportan energía con muy pocos nutrientes.</p>
+    <p>Elegir mayoritariamente alimentos reales y variados es una de las formas más sencillas de mejorar la alimentación y cuidar la salud a largo plazo.</p>
+  </TextoConImagen>
+
+  <CausasGrid
+    heading="Factores que Empeoran la Calidad de los Alimentos que Elegimos"
+    subheading="¿Qué hace que, sin darnos cuenta, acabemos eligiendo alimentos menos nutritivos?"
+    causas={[
+      { icon: causaUltraprocesados, title: 'Ultraprocesados "Saludables"', text: 'Muchos productos se presentan como saludables (integrales, sin azúcar, light) y, sin embargo, siguen siendo ultraprocesados con azúcares, harinas refinadas o aditivos.' },
+      { icon: causaTiempo, title: 'Falta de Tiempo', text: 'El ritmo de vida hace que se recurra con frecuencia a platos preparados y comida rápida, más pobres en fibra, vitaminas y minerales.' },
+      { icon: causaVariedad, title: 'Poca Variedad', text: 'Comer siempre los mismos alimentos limita el aporte de nutrientes y reduce la diversidad de la microbiota intestinal.' },
+      { icon: causaModas, title: 'Publicidad y Modas', text: 'La publicidad y las tendencias promueven "superalimentos" y productos milagro que desplazan a alimentos sencillos, más asequibles e igual de nutritivos.' },
+      { icon: causaComerFuera, title: 'Comer Fuera con Frecuencia', text: 'Las comidas fuera de casa suelen incluir raciones más grandes, más frituras, más sal y menos verduras que las elaboradas en casa.' },
+      { icon: causaEtiquetas, title: 'No Leer las Etiquetas', text: 'Sin revisar la lista de ingredientes es difícil detectar azúcares añadidos, grasas de baja calidad o el exceso de sal en muchos productos envasados.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Ahora que conocemos los factores que empeoran la calidad de los alimentos que elegimos, es importante aprender a reconocer las señales que da el cuerpo cuando la alimentación necesita un cambio.</p>
+
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Señales de que tu Alimentación Necesita más Alimentos Reales</h2>
+      <p class="subheading">Estas señales pueden indicar que la alimentación se basa demasiado en productos procesados. Pueden tener otras causas, por lo que, si son persistentes, conviene consultarlas con un profesional sanitario.</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Hambre poco después de comer', text: 'Las comidas pobres en proteína y fibra sacian menos, por lo que el hambre vuelve al poco tiempo.' },
+          { title: 'Antojos frecuentes de dulce', text: 'Las subidas y bajadas rápidas de glucosa que provocan los productos refinados pueden favorecer la necesidad de comer azúcar.' },
+          { title: 'Bajones de energía', text: 'La falta de nutrientes y los picos de glucosa pueden traducirse en cansancio a media mañana o media tarde.' },
+          { title: 'Molestias digestivas', text: 'Una alimentación con poca fibra y muchos ultraprocesados puede favorecer el estreñimiento, la hinchazón o las digestiones pesadas.' },
+          { title: 'Piel, uñas y cabello apagados', text: 'Un aporte insuficiente de algunas vitaminas, minerales y proteínas puede reflejarse en el aspecto de la piel, las uñas y el cabello.' },
+          { title: 'Dificultad para mantener el peso', text: 'Los productos muy calóricos y poco saciantes facilitan comer más de lo que el cuerpo necesita sin darse cuenta.' },
+        ]}
+      />
+    </section>
+  </div>
+
+  <RelacionImagenes heading="Relación con los Sistemas Hormonales y Metabólicos">
+    <p>Descubre cómo los alimentos que eliges influyen en tus hormonas, tu energía y tu metabolismo cada día.</p>
+    <Image src={relacion1Img} alt="Infografía: relación entre alimentos, hormonas y metabolismo" />
+    <p>Los alimentos no solo aportan energía: también envían señales al sistema hormonal. Los hidratos de carbono refinados y los azúcares elevan rápidamente la glucosa y la insulina, mientras que las legumbres, los cereales integrales y las verduras lo hacen de forma más gradual.</p>
+    <p>Las proteínas y la fibra aumentan la saciedad y ayudan a regular las hormonas del apetito, como la leptina y la grelina, lo que facilita comer de forma más equilibrada.</p>
+    <p>Algunos alimentos aportan nutrientes necesarios para el funcionamiento de la tiroides, como el yodo del pescado y el marisco o el selenio de los frutos secos, mientras que la fibra participa en el metabolismo y la eliminación de los estrógenos a través del intestino.</p>
+    <p>Las grasas saludables, como el aceite de oliva virgen extra, los frutos secos o el pescado azul, forman parte de patrones de alimentación asociados a menos inflamación, mientras que el consumo frecuente de ultraprocesados se ha relacionado con un peor perfil metabólico.</p>
+    <Image src={relacion2Img} alt="Mujer comprando verduras de temporada en un mercado" />
+    <p>Comprender cómo influyen los alimentos en el sistema hormonal y metabólico ayuda a elegir mejor y a construir una alimentación que favorezca la energía, el equilibrio hormonal y la salud a largo plazo.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Cómo Elegir Mejor tus Alimentos"
+    subheading="Descubre pautas prácticas para llenar tu cesta y tu plato de alimentos que te ayuden a sentirte mejor cada día."
+    subheadingVariant="destacado"
+    subheadingAlign="center"
+    variant="card"
+    band="b"
+    soluciones={[
+      { title: 'Prioriza alimentos frescos', icon: iconos.manzanaComida, body: 'Basa la compra en verduras, frutas, legumbres, huevos, pescado y cereales integrales, y deja los ultraprocesados para ocasiones puntuales.' },
+      { title: 'Aprende a leer etiquetas', icon: iconos.etiqueta, body: 'Revisa la lista de ingredientes: cuanto más corta y reconocible, mejor. Fíjate en los azúcares añadidos y en el tipo de grasa.' },
+      { title: 'Varía los colores del plato', icon: iconos.zanahoria, body: 'Combinar verduras y frutas de distintos colores aporta una mayor variedad de vitaminas, minerales y antioxidantes.' },
+      { title: 'Incluye proteína de calidad', icon: iconos.muslo, body: 'Huevos, pescado, legumbres, yogur natural o carne de calidad ayudan a mantener la masa muscular y aumentan la saciedad.' },
+      { title: 'Cocina más en casa', icon: iconos.olla, body: 'Cocinar en casa, aunque sea de forma sencilla, permite controlar los ingredientes, las raciones y la forma de preparación.' },
+    ]}
+  />
+</SubpageTemplateB>
+
+<style>
+  .intro .texto {
+    font-size: 20px;
+    text-align: justify;
+  }
+</style>
