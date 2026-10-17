@@ -2,9 +2,11 @@
 // Nota (revisión visual 2026-09-14): se retiran los iconos de redes
 // sociales del encabezado por decisión de la usuaria — el original los
 // tiene, pero en Astro se decide no mostrarlos aquí (ya están en el
-// footer). El header nunca ha sido sticky en este código (sin
-// position: sticky/fixed en ningún CSS), así que su comportamiento de
-// scroll normal ya era el pedido.
+// footer).
+// Cabecera fija al hacer scroll (2026-10-17): el original la mantiene
+// visible al bajar (comprobado en /metabolismo/), en una sola fila con
+// logo, buscador y menú. En móvil no se fija: sin menú hamburguesa, el
+// menú ocupa varias líneas y taparía media pantalla.
 import { mainNav } from '../data/navigation';
 ---
 
@@ -66,7 +68,7 @@ import { mainNav } from '../data/navigation';
     max-width: var(--container-width);
     margin-inline: auto;
     padding-inline: var(--container-padding);
-    padding-block: 1rem;
+    padding-block: 0.75rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -143,6 +145,35 @@ import { mainNav } from '../data/navigation';
   }
   .header-search {
     padding: 0.5rem 0 1rem;
+  }
+
+  /* Al final para que pise a las reglas base de .header-top/.main-nav. */
+  @media (min-width: 768px) {
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+    .header-top {
+      flex-wrap: nowrap;
+    }
+    .header-top .logo {
+      order: 1;
+      flex: 0 0 auto;
+    }
+    .header-search-inline {
+      order: 2;
+      flex: 0 0 auto;
+    }
+    .main-nav {
+      order: 3;
+      flex: 1 1 auto;
+    }
+    .main-nav > ul {
+      row-gap: 0.25rem;
+      justify-content: flex-end;
+    }
   }
 </style>
 
