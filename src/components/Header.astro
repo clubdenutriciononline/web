@@ -9,7 +9,13 @@
 // el buscador (más pequeño) debajo, pegado a la derecha y a la altura de
 // la base del logo. En móvil no se fija: sin menú hamburguesa, el
 // menú ocupa varias líneas y taparía media pantalla.
+// Contacto (2026-10-17, pedido de la usuaria): sale de la fila del menú y
+// va en la segunda fila, a la derecha del buscador, para que el menú siga
+// cabiendo en una línea al añadir Recetas.
 import { mainNav } from '../data/navigation';
+
+const contacto = mainNav.find((item) => item.href === '/contacto/');
+const menu = mainNav.filter((item) => item !== contacto);
 ---
 
 <header class="site-header">
@@ -21,7 +27,7 @@ import { mainNav } from '../data/navigation';
 
       <nav class="main-nav" aria-label="Menú principal">
         <ul>
-          {mainNav.map((item) => (
+          {menu.map((item) => (
             <li class:list={['nav-item', { 'has-children': item.children }]}>
               <a href={item.href}>
                 {item.label}
@@ -46,6 +52,7 @@ import { mainNav } from '../data/navigation';
         <button id="search-toggle" class="search-toggle" type="button" aria-label="Buscar" aria-expanded="false" aria-controls="header-search">
           Buscar
         </button>
+        {contacto && <a class="nav-contacto" href={contacto.href}>{contacto.label}</a>}
       </div>
     </div>
 
@@ -155,7 +162,17 @@ import { mainNav } from '../data/navigation';
   }
   .header-search-inline {
     display: flex;
+    align-items: center;
     gap: 0;
+  }
+  /* Mismo aspecto que las opciones del menú principal. */
+  .nav-contacto {
+    margin-left: 1.1rem;
+    color: var(--color-nav-text);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
   }
   .search-input {
     border: 1px solid #ddd;
