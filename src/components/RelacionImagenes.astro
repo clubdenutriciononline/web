@@ -14,11 +14,13 @@ interface Props {
   // se añaden al final en una rejilla. Las páginas ya revisadas (Hormonas)
   // intercalan sus imágenes directamente en el slot, en el orden real.
   images?: { src: ImageMetadata; alt: string }[];
+  // Justificado (Energía, Metabolismo) o a la izquierda (Hormonas).
+  textAlign?: 'justify' | 'left';
 }
-const { heading, images } = Astro.props;
+const { heading, images, textAlign = 'justify' } = Astro.props;
 ---
 
-<section class="relacion-imagenes">
+<section class="relacion-imagenes" data-align={textAlign}>
   <h2>{heading}</h2>
   <slot />
   {images && images.length > 0 && (
@@ -29,14 +31,32 @@ const { heading, images } = Astro.props;
 </section>
 
 <style>
+  /* Original: texto Fredoka 20px justificado; el primer párrafo va a
+     24px/35px con 1.3px de espaciado y el de cierre a 22px (igual en
+     Energía y Metabolismo). */
   .relacion-imagenes {
     padding-block: var(--space-section);
     font-family: var(--font-body);
-    font-size: 1.125rem;
+    font-size: 20px;
+    line-height: 33px;
+    text-align: justify;
+  }
+  .relacion-imagenes > :global(p:first-of-type) {
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: 1.3px;
+    margin-bottom: 11px;
+  }
+  .relacion-imagenes > :global(p:last-of-type) {
+    font-size: 22px;
+  }
+  .relacion-imagenes[data-align='left'] {
+    text-align: left;
   }
   .relacion-imagenes :global(p.lead) {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 24px;
+    letter-spacing: 1.3px;
     margin-block: 0.25rem;
   }
   .relacion-imagenes :global(img) {

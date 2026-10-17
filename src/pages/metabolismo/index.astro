@@ -87,9 +87,9 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     ]}
   />
 
-  <section class="intro">
+  <section class="intro lista">
     <p>En esta sección descubrirás qué es el metabolismo, qué factores pueden afectarlo y qué hábitos pueden ayudarte a optimizarlo para mejorar tu salud y bienestar diario.</p>
-    <p>¿Sabías que tu metabolismo influye en tu energía, peso y bienestar diario?</p>
+    <p class="sabias">¿Sabías que tu metabolismo influye en tu energía, peso y bienestar diario?</p>
     <ChecklistCard
       columns={1}
       items={[
@@ -147,6 +147,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
       <p class="subheading">Cuando el metabolismo se ralentiza o se desequilibra, el cuerpo puede mostrar distintas señales relacionadas con la energía, el peso, el descanso y el bienestar general. Estos síntomas pueden aparecer de forma progresiva y afectar tanto a la salud física como mental.</p>
       <ChecklistCard
         columns={1}
+        icon="check-circle"
         items={[
           { title: 'Aumento de peso', text: 'La dificultad para perder peso o el aumento de grasa corporal pueden estar relacionados con un metabolismo más lento y un menor gasto energético diario.' },
           { title: 'Fatiga constante', text: 'Sentirse cansado incluso después de descansar puede indicar que el cuerpo no está produciendo o utilizando la energía de forma eficiente.' },
@@ -188,6 +189,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     heading="Soluciones para Mejorar tu Metabolismo"
     lead="¿Qué puedes hacer para apoyar un metabolismo saludable?"
     subheading="Aunque el metabolismo está influenciado por factores como la genética y las hormonas, los hábitos diarios tienen un papel fundamental en su funcionamiento. Pequeños cambios sostenidos en el tiempo pueden ayudar a mejorar la energía, favorecer el equilibrio hormonal y optimizar la salud metabólica."
+    subheadingVariant="destacado"
     variant="card"
     band="b"
     layout5="2-3"
@@ -204,29 +206,50 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
 </HubTemplateB>
 
 <style>
-  .intro,
-  .parrafo-suelto {
-    padding: 0 1rem;
-  }
+  /* Medido en el original (getComputedStyle, 2026-10-17): intro Fredoka
+     22px/33px justificada, el bloque que abre la checklist alineado a la
+     izquierda y el párrafo suelto tras las causas a 26px justificado. */
   .intro {
     padding-block: 1rem;
     font-family: var(--font-body);
-    font-size: 1.375rem;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: justify;
+  }
+  .intro.lista {
+    text-align: left;
+  }
+  .parrafo-suelto {
+    margin-top: 1.5rem;
+    font-size: 26px;
+    line-height: 33px;
+    text-align: justify;
+  }
+  /* "¿Sabías que...?": Fredoka 500 24px centrada, separada del párrafo
+     anterior (39px de margen en el original). */
+  .intro .sabias {
+    margin-top: 39px;
+    margin-bottom: 1rem;
+    font-size: 24px;
+    font-weight: 500;
     text-align: center;
   }
   .sintomas {
     padding-block: var(--space-section);
   }
   .sintomas .subheading {
-    max-width: 48rem;
-    margin-inline: auto;
-    text-align: center;
+    text-align: justify;
     font-family: var(--font-body);
-    font-size: 1.125rem;
+    font-size: 22px;
+    line-height: 33px;
+  }
+  .sintomas .subheading:first-of-type {
+    margin-bottom: 0;
   }
   .cierre {
     font-family: var(--font-body);
-    font-size: 1.125rem;
+    font-size: 20px;
+    line-height: 33px;
     margin-top: 1.5rem;
   }
 </style>

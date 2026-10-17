@@ -6,17 +6,33 @@ Páginas madre (mismo esquema): **Hormonas, Energía, Metabolismo, Microbiota, M
 
 ---
 
-## 1. Tipografía (global)
+## 1. Tipografía (global) — medida con getComputedStyle, 2026-10-17
 
-| Elemento | Fuente | Tamaño | Peso | Color |
+Valores reales del navegador sobre Hormonas, Energía y Metabolismo del original (sustituye a la tabla anterior, que daba H2 a 22px y forzaba mayúsculas: era incorrecta). Implementado en `.hub` (BaseLayout) + cada componente.
+
+| Elemento | Fuente | Tamaño / interlineado | Peso | Notas |
 |---|---|---|---|---|
-| H1 (hero) | Rubik | 48px | 700 | `#131313` |
-| H2 de sección | Rubik | 22px | 600 | `#6C2F50` (ciruela), centrado |
-| H3 / títulos de tarjeta | Rubik | — | 600 | `#6C2F50` |
-| Texto de cuerpo | **Fredoka** | 20px | 500 | `#212121` al 79% de opacidad |
-| Botones | Fredoka | 18px | 500 | blanco sobre `#6C2F50` |
+| H1 hero "display" | Rubik | 48px / 57px, -0.7px | 500 overlay (Energía), 700 side (Hormonas) | `#000` en overlay |
+| H1 hero "lead" (Metabolismo) | Rubik | 26px / 33px | 500 | `#212121` |
+| Subtítulo hero | Fredoka | 20px | 400 overlay, 500 side | |
+| Línea antes del botón | Fredoka | 16px | 500 | `#212121C9` |
+| Botón | Fredoka | 18px | 500 | |
+| H2 de sección | Rubik | 32px / 1.3 | 600 | `#6C2F50`, centrado; **"¿Qué es…?" a la izquierda**; sin mayúsculas forzadas (Hormonas las tiene escritas en el texto). Solo "Temas/Subcategorías relacionadas" lleva `text-transform: uppercase` |
+| H2 "Artículos relacionados" | Fredoka | 32px | 400 | a la izquierda |
+| Texto base | Fredoka | 20px / 33px | 400 | 1.75em entre párrafos |
+| Intro tras el hero | Fredoka | 22px / 33px | 400 | justificado (Hormonas: izquierda) |
+| "¿Sabías que…?" (Metabolismo) | Fredoka | 24px | 500 | centrado, 39px por encima |
+| Checklist | Fredoka | 20px / 33px | 400 | `#6C2F50`, a la izquierda, 30px de margen, 20px entre items, check rosa 29px (fa-check / fa-check-circle) |
+| Subheading de causas / síntomas | Fredoka | 22px / 33px | 400 | justificado (Hormonas centrado) |
+| Subheading de soluciones | Fredoka | 24px / 39px, 1.3px | 400 | `subheadingVariant="destacado"` |
+| Párrafo tras las causas | Fredoka | 26px / 33px | 400 | justificado |
+| Relación: 1er párrafo / resto / cierre | Fredoka | 24px (1.3px) / 20px / 22px | 400 | justificado (Hormonas: izquierda) |
+| Píldoras (título) | Rubik | 24px | 500 | icono 29px |
+| Tarjeta causa / tema (título) | Rubik | 26px | 600 | texto 20px/33px |
+| Tarjeta solución (título) | Rubik | 24px | 500 | icono 50px, texto 20px/33px |
+| Tarjeta artículo (título) | Rubik | 21px | 600 | |
 
-Nota: en el original, **los titulares van en Rubik y el cuerpo en Fredoka** (al revés que en la primera versión de Astro). Algunos H2 van en mayúsculas (p. ej. "¿QUÉ SON LAS HORMONAS?"), otros en tipo oración.
+**Fuentes:** hay que cargar Fredoka 400 y Rubik 600. Sin ellos el navegador sustituye 400→500 y 600→700 y todo se ve más grueso (era el motivo de que la letra "pareciera más negrita").
 
 ## 2. Colores de marca
 

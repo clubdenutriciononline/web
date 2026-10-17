@@ -99,8 +99,9 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     position: absolute;
     left: 0;
     bottom: 8%;
-    width: 55%;
-    max-width: 620px;
+    /* 681px de ancho medidos en el original (Energía, Metabolismo). */
+    width: 61%;
+    max-width: 681px;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 0 20px 20px 0;
     padding: 2rem;
@@ -110,14 +111,20 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
   }
   .hero-subtitle {
     font-family: var(--font-body);
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 500;
     color: rgba(33, 33, 33, 0.79);
   }
+  /* Overlay (Energía): subtítulo 400 #212121 — Hormonas (side) lo lleva a 500. */
+  .hero[data-layout='overlay'] .hero-subtitle {
+    font-weight: 400;
+    color: #212121;
+  }
   .hero-cta-intro {
     font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(33, 33, 33, 0.79);
   }
   .hero-cta {
     display: inline-block;
@@ -127,18 +134,30 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     background: #6c2f50;
     color: #fff;
     font-family: var(--font-body);
+    font-size: 18px;
     font-weight: 500;
+    line-height: 1;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     text-decoration: none;
   }
   h1 {
     font-size: 3rem;
+    line-height: 1.4;
     letter-spacing: -0.5px;
+    margin: 0 0 16px;
+  }
+  /* Titular del hero overlay (Energía): Rubik 500 48px/57px #000, -0.7px. */
+  .hero[data-layout='overlay'] h1[data-size='display'] {
+    font-weight: 500;
+    line-height: 57px;
+    letter-spacing: -0.7px;
+    color: #000;
   }
   h1[data-size='lead'] {
     font-size: 26px;
     font-weight: 500;
-    line-height: 1.35;
+    line-height: 33px;
+    margin-bottom: 26px;
     letter-spacing: normal;
     color: #212121;
   }

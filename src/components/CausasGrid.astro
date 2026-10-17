@@ -19,12 +19,14 @@ interface Props {
   // el metabolismo puede ralentizarse?").
   lead?: string;
   subheading?: string;
+  // Justificado por defecto (Energía, Metabolismo); Hormonas lo centra.
+  subheadingAlign?: 'justify' | 'center';
   causas: Causa[];
 }
-const { heading, lead, subheading, causas } = Astro.props;
+const { heading, lead, subheading, subheadingAlign = 'justify', causas } = Astro.props;
 ---
 
-<section class="causas-grid">
+<section class="causas-grid" data-align={subheadingAlign}>
   <h2>{heading}</h2>
   {lead && <p class="subheading lead"><strong>{lead}</strong></p>}
   {subheading && <p class="subheading">{subheading}</p>}
@@ -63,13 +65,13 @@ const { heading, lead, subheading, causas } = Astro.props;
     }
   }
   .subheading {
-    max-width: 48rem;
-    margin-inline: auto;
-    text-align: center;
+    text-align: justify;
     font-family: var(--font-body);
-    font-size: 1.125rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 22px;
+    line-height: 33px;
+  }
+  [data-align='center'] .subheading {
+    text-align: center;
   }
   .subheading.lead {
     margin-bottom: 0;
@@ -78,7 +80,7 @@ const { heading, lead, subheading, causas } = Astro.props;
     background: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    padding: 0 1rem 1rem;
+    padding: 0 20px 20px;
     text-align: center;
     transition: box-shadow 0.3s;
   }
@@ -98,11 +100,16 @@ const { heading, lead, subheading, causas } = Astro.props;
     margin: 0 auto 0.5rem;
   }
   .causa-card h3 {
-    font-size: 1.25rem;
+    font-size: 26px;
+    font-weight: 600;
+    color: #6c2f50;
+    margin: 0 0 10px;
+    transition: color 0.3s;
   }
   .causa-card p {
     font-family: var(--font-body);
-    font-size: 1.0625rem;
-    line-height: 1.5;
+    font-size: 20px;
+    line-height: 33px;
+    margin: 0;
   }
 </style>

@@ -92,7 +92,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     </section>
   </div>
 
-  <TextoConImagen heading="¿Qué son las hormonas?" image={sistemaEndocrinoImg} imageAlt="Sistema endocrino femenino">
+  <TextoConImagen textAlign="left" heading="¿QUÉ SON LAS HORMONAS?" image={sistemaEndocrinoImg} imageAlt="Sistema endocrino femenino">
     <p>Las hormonas son mensajeros químicos producidos por el sistema endocrino. Viajan a través del torrente sanguíneo y regulan funciones clave como:</p>
     <ul>
       <li>metabolismo</li>
@@ -111,8 +111,9 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   </TextoConImagen>
 
   <CausasGrid
-    heading="¿Por qué se desregulan las hormonas?"
+    heading="¿POR QUÉ SE DESREGULAN LAS HORMONAS?"
     subheading="Principales causas:"
+    subheadingAlign="center"
     causas={[
       { icon: iconEstres, title: 'Estrés crónico', text: 'El estrés constante mantiene el cortisol elevado, lo que altera la regulación hormonal, afecta al metabolismo y puede favorecer la acumulación de grasa abdominal, la fatiga y los antojos constantes.' },
       { icon: iconMalaAlimentacion, title: 'Mala alimentación', text: 'Una dieta rica en ultraprocesados, azúcares y grasas inflamatorias puede desestabilizar la insulina, aumentar la inflamación y alterar hormonas clave como los estrógenos y la progesterona.' },
@@ -126,7 +127,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   <p class="frase-destacada">El cuerpo no falla. Se adapta.</p>
 
   <ListaSintomas
-    heading="Síntomas de desequilibrio hormonal"
+    heading="SÍNTOMAS DE DESEQUILIBRIO HORMONAL"
     subheading="Los síntomas más comunes en mujeres incluyen:"
     items={[
       'Fatiga persistente',
@@ -140,7 +141,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     ]}
   />
 
-  <RelacionImagenes heading="Relación entre hormonas, energía y metabolismo">
+  <RelacionImagenes textAlign="left" heading="RELACIÓN ENTRE HORMONAS, ENERGÍA Y METABOLISMO">
     <p class="lead">Las hormonas no funcionan de forma aislada.</p>
     <p class="lead">Están conectadas con:</p>
     <Image src={sistemaHormonalImg} alt="Sistema hormonal femenino" />
@@ -154,8 +155,10 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   </RelacionImagenes>
 
   <SolucionesList
-    heading="Cómo equilibrar las hormonas de forma natural"
+    heading="CÓMO EQUILIBRAR LAS HORMONAS DE FORMA NATURAL"
     subheading="Pilares clave:"
+    subheadingVariant="destacado"
+    subheadingAlign="center"
     variant="pill"
     band="b"
     soluciones={[
@@ -176,11 +179,13 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   .intro {
     padding-block: 1rem;
     font-family: var(--font-body);
-    font-size: 1.375rem;
-    text-align: center;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: left;
   }
   .frase-destacada {
     font-style: italic;
+    font-size: 26px;
     text-align: center;
   }
 </style>

@@ -127,16 +127,23 @@ const { heading, temas } = Astro.props;
   .tema-card:hover .icon-img {
     transform: scale(1.1);
   }
+  /* Original (image-box): título Rubik 600 26px, texto Fredoka 20px/33px;
+     el H2 de esta sección sí va en mayúsculas (text-transform). */
+  .temas-relacionados h2 {
+    text-transform: uppercase;
+    text-align: center;
+  }
   .tema-card h3 {
-    margin-top: 10px;
-    font-size: 1.375rem;
+    margin: 10px 0;
+    font-size: 26px;
+    font-weight: 600;
     color: #6c2f50;
     transition: color 0.3s;
   }
   .tema-card p {
-    margin-top: 0.5rem;
+    margin: 0;
     font-family: var(--font-body);
-    font-size: 1.0625rem;
-    line-height: 1.5;
+    font-size: 20px;
+    line-height: 33px;
   }
 </style>
