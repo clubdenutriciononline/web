@@ -14,9 +14,12 @@ interface Props {
   heroSubtitle?: string;
   heroImage: ImageMetadata;
   heroImageAlt: string;
+  // 'overlay' en la madre /recetas/ (igual que el resto de madres);
+  // 'lateral' en las 3 subpáginas (como las hijas).
+  heroLayout?: 'overlay' | 'lateral';
 }
 
-const { seoTitle, seoDescription, heroTitle, heroSubtitle, heroImage, heroImageAlt } = Astro.props;
+const { seoTitle, seoDescription, heroTitle, heroSubtitle, heroImage, heroImageAlt, heroLayout = 'lateral' } = Astro.props;
 ---
 
 <BaseLayout title={seoTitle} description={seoDescription}>
@@ -29,7 +32,7 @@ const { seoTitle, seoDescription, heroTitle, heroSubtitle, heroImage, heroImageA
     ctaHref="/lm-5-pasos-optin/"
     image={heroImage}
     imageAlt={heroImageAlt}
-    layout="lateral"
+    layout={heroLayout}
   />
 
   <slot />

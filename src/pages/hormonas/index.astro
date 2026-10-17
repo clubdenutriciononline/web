@@ -1,20 +1,23 @@
 ---
-// Hub Hormonas — HubTemplateA (variante única, ver 00-analisis/02-mapa-migracion.md).
+// Hub Hormonas — HubTemplateB desde 2026-10-17 (antes HubTemplateA, la
+// única con hero lateral): unificada con la plantilla de Energía por
+// decisión de la usuaria, para que todas las madres sean iguales (hero
+// overlay, títulos sin mayúsculas forzadas, textos justificados, síntomas
+// en viñetas). Se conservan todos los textos e imágenes.
 // Contenido real migrado desde https://clubdenutricion.es/hormonas/ (fidelidad
 // sin resumir), ver .firecrawl/md/hormonas.md para el markdown original.
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
-import HubTemplateA from '../../layouts/HubTemplateA.astro';
+import HubTemplateB from '../../layouts/HubTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
-import ListaSintomas from '../../components/ListaSintomas.astro';
 import RelacionImagenes from '../../components/RelacionImagenes.astro';
 import SolucionesList from '../../components/SolucionesList.astro';
 import ChecklistCard from '../../components/ChecklistCard.astro';
 import { Image } from 'astro:assets';
 import * as iconos from '../../lib/iconos';
 
-import heroImg from './_images/Hero.jpg';
+import heroImg from './_images/hero-ancho.jpg';
 import sistemaEndocrinoImg from './_images/Sistema-endocrino-femenino.jpg';
 import iconEstres from './_images/Icon-estres-removebg-preview.png';
 // Iconos en alta resolución (2816x1536), master real entregado por la
@@ -41,7 +44,7 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('hormonas'), 9);
 ---
 
-<HubTemplateA
+<HubTemplateB
   seoTitle="Hormonas en mujeres: cómo equilibrarlas de forma natural"
   seoDescription="Entiende cómo funcionan tus hormonas, por qué se desregulan y cómo recuperar energía, metabolismo y bienestar."
   heroTitle="Hormonas en mujeres: cómo equilibrarlas de forma natural"
@@ -49,9 +52,10 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroCtaIntro="Descubre cómo estabilizar tu energía, descarga la guía ahora:"
   heroImage={heroImg}
   heroImageAlt="Hormonas en mujeres"
+  heroLayout="overlay"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
-  temasHeading="Explora cada área clave del equilibrio hormonal:"
+  temasHeading="Explora cada área clave del equilibrio hormonal"
   temas={[
     { icon: iconoMenopausia, title: 'Menopausia', href: '/menopausia/', text: 'Cambios hormonales en la menopausia y su impacto en la energía, el metabolismo y el bienestar femenino.' },
     { icon: iconoPerimenopausia, title: 'Perimenopausia', href: '/perimenopausia/', text: 'Cómo las fluctuaciones hormonales afectan al ciclo, la energía y el estado emocional antes de la menopausia.' },
@@ -60,40 +64,34 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   ]}
   articulosRelacionados={articulos}
 >
-  <div class="full-bleed band-a">
-    <section class="intro">
-      <p>Las hormonas regulan prácticamente todo en el cuerpo femenino. Desde la energía diaria hasta el metabolismo, el estado de ánimo, el sueño o el peso corporal. Cuando están en equilibrio, el cuerpo funciona de forma fluida. Pero cuando se desregulan, aparecen síntomas como:</p>
-    </section>
-  </div>
+  <section class="intro">
+    <p>Las hormonas regulan prácticamente todo en el cuerpo femenino. Desde la energía diaria hasta el metabolismo, el estado de ánimo, el sueño o el peso corporal. Cuando están en equilibrio, el cuerpo funciona de forma fluida. Pero cuando se desregulan, aparecen síntomas como:</p>
+  </section>
 
-  <div class="full-bleed band-a">
-    <SolucionesList
-      variant="pill"
-      soluciones={[
-        { title: 'Fatiga constante', icon: iconos.caraTriste },
-        { title: 'Cambios de peso', icon: iconos.peso },
-        { title: 'Ansiedad o antojos', icon: iconos.caraSudor },
-        { title: 'Problemas de sueño', icon: iconos.sueno },
-        { title: 'Hinchazón o inflamación', icon: iconos.caraSonrojada },
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Fatiga constante', icon: iconos.caraTriste },
+      { title: 'Cambios de peso', icon: iconos.peso },
+      { title: 'Ansiedad o antojos', icon: iconos.caraSudor },
+      { title: 'Problemas de sueño', icon: iconos.sueno },
+      { title: 'Hinchazón o inflamación', icon: iconos.caraSonrojada },
+    ]}
+  />
+
+  <section class="intro lista">
+    <p>👉 Muchas veces no es un problema aislado, sino un sistema desajustado. En esta guía vas a entender:</p>
+    <ChecklistCard
+      items={[
+        'Qué son realmente las hormonas',
+        'Por qué se desregulan',
+        'Cómo afectan a tu energía y metabolismo',
+        'Qué puedes hacer para equilibrarlas de forma natural',
       ]}
     />
-  </div>
+  </section>
 
-  <div class="full-bleed band-a">
-    <section class="intro">
-      <p>👉 Muchas veces no es un problema aislado, sino un sistema desajustado. En esta guía vas a entender:</p>
-      <ChecklistCard
-        items={[
-          'Qué son realmente las hormonas',
-          'Por qué se desregulan',
-          'Cómo afectan a tu energía y metabolismo',
-          'Qué puedes hacer para equilibrarlas de forma natural',
-        ]}
-      />
-    </section>
-  </div>
-
-  <TextoConImagen textAlign="left" heading="¿QUÉ SON LAS HORMONAS?" image={sistemaEndocrinoImg} imageAlt="Sistema endocrino femenino">
+  <TextoConImagen heading="¿Qué son las Hormonas?" image={sistemaEndocrinoImg} imageAlt="Sistema endocrino femenino">
     <p>Las hormonas son mensajeros químicos producidos por el sistema endocrino. Viajan a través del torrente sanguíneo y regulan funciones clave como:</p>
     <ul>
       <li>metabolismo</li>
@@ -112,9 +110,8 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   </TextoConImagen>
 
   <CausasGrid
-    heading="¿POR QUÉ SE DESREGULAN LAS HORMONAS?"
+    heading="¿Por qué se Desregulan las Hormonas?"
     subheading="Principales causas:"
-    subheadingAlign="center"
     causas={[
       { icon: iconEstres, title: 'Estrés crónico', text: 'El estrés constante mantiene el cortisol elevado, lo que altera la regulación hormonal, afecta al metabolismo y puede favorecer la acumulación de grasa abdominal, la fatiga y los antojos constantes.' },
       { icon: iconMalaAlimentacion, title: 'Mala alimentación', text: 'Una dieta rica en ultraprocesados, azúcares y grasas inflamatorias puede desestabilizar la insulina, aumentar la inflamación y alterar hormonas clave como los estrógenos y la progesterona.' },
@@ -125,24 +122,29 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     ]}
   />
 
-  <p class="frase-destacada">El cuerpo no falla. Se adapta.</p>
+  <p class="parrafo-suelto frase">El cuerpo no falla. Se adapta.</p>
 
-  <ListaSintomas
-    heading="SÍNTOMAS DE DESEQUILIBRIO HORMONAL"
-    subheading="Los síntomas más comunes en mujeres incluyen:"
-    items={[
-      'Fatiga persistente',
-      'Ansiedad',
-      'Cambios de humor',
-      'Insomnio',
-      'Dificultad para perder grasa',
-      'Hinchazón',
-      'Antojos constantes',
-      'Reglas irregulares',
-    ]}
-  />
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Síntomas de Desequilibrio Hormonal</h2>
+      <p class="subheading">Los síntomas más comunes en mujeres incluyen:</p>
+      <ChecklistCard
+        icon="check-circle"
+        items={[
+          'Fatiga persistente',
+          'Ansiedad',
+          'Cambios de humor',
+          'Insomnio',
+          'Dificultad para perder grasa',
+          'Hinchazón',
+          'Antojos constantes',
+          'Reglas irregulares',
+        ]}
+      />
+    </section>
+  </div>
 
-  <RelacionImagenes textAlign="left" heading="RELACIÓN ENTRE HORMONAS, ENERGÍA Y METABOLISMO">
+  <RelacionImagenes heading="Relación entre Hormonas, Energía y Metabolismo">
     <p class="lead">Las hormonas no funcionan de forma aislada.</p>
     <p class="lead">Están conectadas con:</p>
     <Image src={sistemaHormonalImg} alt="Sistema hormonal femenino" />
@@ -156,7 +158,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   </RelacionImagenes>
 
   <SolucionesList
-    heading="CÓMO EQUILIBRAR LAS HORMONAS DE FORMA NATURAL"
+    heading="Cómo Equilibrar las Hormonas de Forma Natural"
     subheading="Pilares clave:"
     subheadingVariant="destacado"
     subheadingAlign="center"
@@ -170,21 +172,14 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
       { title: 'Salud intestinal', icon: iconos.corazon },
     ]}
   />
-</HubTemplateA>
+</HubTemplateB>
 
 <style>
-  .intro,
-  .frase-destacada {
-    padding: 0 1rem;
+  .frase {
+    font-style: italic;
+    text-align: center;
   }
-  .intro {
-    padding-block: 1rem;
-    font-family: var(--font-body);
-    font-size: 22px;
-    line-height: 33px;
-    text-align: left;
-  }
-  .frase-destacada {
+  .relacion-imagenes :global(.frase-destacada) {
     font-style: italic;
     font-size: 26px;
     text-align: center;

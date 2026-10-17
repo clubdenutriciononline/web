@@ -3,8 +3,8 @@
 // https://clubdenutricion.es/metabolismo/, ver
 // .firecrawl/clubdenutricion.es-metabolismo.md y .firecrawl/raw/metabolismo-*.
 // Adaptada a la plantilla validada en Energía (2026-10-17). Diferencias reales
-// del original: el hero no tiene titular sino una frase larga (Rubik 26px,
-// heroTitleSize="lead"), 7 píldoras de síntomas, checklist y síntomas en una
+// del original: el hero no tenía titular sino una frase larga (ahora
+// título + subtítulo como el resto de madres desde 2026-10-17), 7 píldoras de síntomas, checklist y síntomas en una
 // sola columna, infografía intercalada en "¿Qué es...?" y soluciones en 2
 // arriba + 3 abajo. Iconos reales del original desde src/lib/iconos.ts.
 import { getCollection } from 'astro:content';
@@ -39,8 +39,8 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
 <HubTemplateB
   seoTitle="Metabolismo femenino: cómo funciona y cómo optimizarlo de forma natural"
   seoDescription="El metabolismo es el conjunto de procesos que utiliza el cuerpo para transformar los alimentos en energía y mantener funciones vitales como la respiración, la digestión, la circulación y la regulación hormonal."
-  heroTitle="Descubre cómo funciona el metabolismo, qué factores lo afectan y cómo optimizarlo de forma natural para mejorar tu energía, salud y bienestar diario."
-  heroTitleSize="lead"
+  heroTitle="Metabolismo femenino: cómo funciona y cómo optimizarlo"
+  heroSubtitle="Descubre qué factores afectan a tu metabolismo y cómo optimizarlo de forma natural para mejorar tu energía, tu salud y tu bienestar diario."
   heroCtaIntro="Descubre cómo estabilizar tu energía, descarga la guía ahora:"
   heroImage={heroImg}
   heroImageAlt="Metabolismo"

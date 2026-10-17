@@ -3,7 +3,7 @@
 // https://clubdenutricion.es/microbiota/, ver
 // .firecrawl/clubdenutricion.es-microbiota.md. Adaptada a la plantilla de
 // Energía/Metabolismo (2026-10-17) con lo propio del original: hero con una
-// frase a Rubik 38px (heroTitleSize="medio") y su propia línea antes del
+// hero unificado con las demás madres (2026-10-17) y su propia línea antes del
 // botón, checklist y síntomas en una columna, el párrafo de causas debajo
 // del H2, imágenes intercaladas en la relación y soluciones en 2 + 3. Iconos
 // reales del original desde src/lib/iconos.ts. En el original los iconos de
@@ -40,9 +40,9 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
 <HubTemplateB
   seoTitle="Microbiota: cómo influye en la digestión, el sistema inmune y tu bienestar"
   seoDescription="La microbiota es el conjunto de microorganismos que habitan en nuestro cuerpo y que influyen de forma directa en la digestión, el sistema inmune, el metabolismo y el bienestar general."
-  heroTitle="Descubre cómo la microbiota influye en la digestión, el sistema inmune y tu bienestar general"
-  heroTitleSize="medio"
-  heroCtaIntro="Aprende a estabilizar tu energía, descarga la guía ahora:"
+  heroTitle="Microbiota: la base de tu digestión y tu bienestar"
+  heroSubtitle="Descubre cómo la microbiota influye en la digestión, el sistema inmune y tu bienestar general, y cómo cuidarla de forma natural."
+  heroCtaIntro="Descubre cómo estabilizar tu energía, descarga la guía ahora:"
   heroImage={heroImg}
   heroImageAlt="Microbiota"
   heroLayout="overlay"

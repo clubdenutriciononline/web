@@ -107,3 +107,7 @@ Las píldoras, pilares y tarjetas de soluciones del original usan **fuentes de i
 
 - Checklists: `fa-check`; listas de síntomas: `fa-check-circle` (ChecklistCard `icon`).
 - **Síntomas de Energía**: se mantienen en tarjetas (decisión de la usuaria). En el original no llevan icono, así que las tarjetas van sin icono (antes tenían emojis).
+
+## 10. Hero unificado de las madres (2026-10-17)
+
+Todas las madres (Hormonas, Energía, Metabolismo, Microbiota, Mentalidad, Alimentación y Recetas) usan el mismo hero "overlay": imagen horizontal 1400×781 a todo el ancho y tarjeta blanca al 70% **dentro** de la imagen, pegada a sus bordes izquierdo e inferior, con las 4 esquinas redondeadas (20px), 61% de ancho (máx. 681px). Contenido igual en todas: título Rubik 500 48px/57px negro (unas 3 líneas), subtítulo Fredoka 20px de unas 2 líneas, línea "Descubre cómo estabilizar tu energía…" a 16px y botón. La persona de la foto va en el tercio derecho. Hormonas pasa a `HubTemplateB` (misma plantilla que Energía); `HubTemplateA` queda sin uso.

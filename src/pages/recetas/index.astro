@@ -7,7 +7,7 @@ import RecetasTemplate from '../../layouts/RecetasTemplate.astro';
 import TemasRelacionadosGrid from '../../components/TemasRelacionadosGrid.astro';
 import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
 import { recetas } from '../../lib/recetas';
-import heroImg from './_images/hero.jpg';
+import heroImg from './_images/hero-ancho.jpg';
 import antiinflamatoriasImg from './_images/antiinflamatorias.jpg';
 import energiaHormonalImg from './_images/energia-hormonal.jpg';
 import ketoImg from './_images/keto-low-carb.jpg';
@@ -22,6 +22,7 @@ const ultimas = recetas(await getCollection('blog')).slice(0, 6);
   heroSubtitle="Recetas sencillas, ricas y nutritivas, pensadas para cuidar tus hormonas, tu energía y tu metabolismo en el día a día."
   heroImage={heroImg}
   heroImageAlt="Mujer cocinando un salteado de verduras en la cocina"
+  heroLayout="overlay"
 >
   <section class="intro">
     <p>Comer bien no tiene por qué ser complicado. En esta sección encontrarás recetas fáciles de preparar, con ingredientes reales y pensadas para acompañarte en cada etapa, especialmente a partir de los 35 años.</p>

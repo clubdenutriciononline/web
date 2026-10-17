@@ -51,8 +51,17 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     {image && (
       <div class="hero-image-wrap">
         <Image class="hero-image" src={image} alt={imageAlt ?? ''} />
+        {layout === 'overlay' && (
+          <div class="hero-copy">
+            <h1 data-size={titleSize}>{title}</h1>
+            {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+            {ctaIntro && <p class="hero-cta-intro">{ctaIntro}</p>}
+            {ctaLabel && ctaHref && <a class="hero-cta" href={ctaHref}>{ctaLabel}</a>}
+          </div>
+        )}
       </div>
     )}
+    {!(layout === 'overlay' && image) && (
     <div class="hero-copy">
       <h1 data-size={titleSize}>{title}</h1>
       {subtitle && <p class="hero-subtitle">{subtitle}</p>}
@@ -61,6 +70,7 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
         <a class="hero-cta" href={ctaHref}>{ctaLabel}</a>
       )}
     </div>
+    )}
   </section>
 </div>
 
@@ -93,26 +103,40 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
      de texto semitransparente superpuesta en la esquina inferior
      izquierda, fiel al margin-top negativo + background-color:#FFFFFF70
      del original. */
+  /* Patrón "overlay" (madres; revisión 2026-10-17, pedido de la usuaria):
+     imagen a ancho completo y tarjeta de texto semitransparente DENTRO de
+     ella, pegada exactamente a sus bordes izquierdo e inferior y con las
+     cuatro esquinas redondeadas. Misma tipografía en todas las madres (la
+     de Energía, medida en el original). */
   .hero[data-layout='overlay'] {
     display: block;
-    position: relative;
   }
   .hero[data-layout='overlay'] .hero-image-wrap {
+    position: relative;
     display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   }
   .hero[data-layout='overlay'] .hero-image {
+    display: block;
     width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .hero[data-layout='overlay'] .hero-image:hover {
+    transform: none;
   }
   .hero[data-layout='overlay'] .hero-copy {
     position: absolute;
     left: 0;
-    bottom: 8%;
-    /* 681px de ancho medidos en el original (Energía, Metabolismo). */
+    bottom: 0;
     width: 61%;
     max-width: 681px;
     background: rgba(255, 255, 255, 0.7);
-    border-radius: 0 20px 20px 0;
-    padding: 2rem;
+    border-radius: 20px;
+    padding: 28px 32px 32px;
+    text-align: left;
   }
   .hero-image:hover {
     transform: scale(1.1);
@@ -262,6 +286,21 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     h1[data-size='medio'] {
       font-size: 1.5rem;
       line-height: 1.4;
+    }
+    .hero[data-layout='overlay'] h1[data-size='display'] {
+      line-height: 1.25;
+      letter-spacing: normal;
+    }
+    .hero[data-layout='overlay'] .hero-copy {
+      padding: 1.25rem;
+    }
+    .hero[data-layout='overlay'] .hero-image-wrap {
+      overflow: visible;
+      box-shadow: none;
+    }
+    .hero[data-layout='overlay'] .hero-image {
+      border-radius: 20px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     }
     .hero[data-layout='overlay'] .hero-copy {
       position: static;
