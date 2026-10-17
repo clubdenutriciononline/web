@@ -46,6 +46,15 @@ const { heading, lead, subheading, subheadingAlign = 'justify', causas } = Astro
 </section>
 
 <style>
+  /* Espaciado medido en el original (Fatiga crónica): 57px entre la
+     sección anterior y el H2, y ~100px entre la frase y las tarjetas
+     (38.5px del párrafo + 60px). */
+  .causas-grid {
+    padding-top: 57px;
+  }
+  .causas-grid .grid {
+    margin-top: 60px;
+  }
   .grid {
     /* 3 columnas fijas, como en el original (revisión visual 2026-09-14):
        con auto-fit a 220px mínimo cabían 4 en el ancho del contenedor
