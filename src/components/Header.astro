@@ -4,8 +4,9 @@
 // tiene, pero en Astro se decide no mostrarlos aquí (ya están en el
 // footer).
 // Cabecera fija al hacer scroll (2026-10-17): el original la mantiene
-// visible al bajar (comprobado en /metabolismo/), en una sola fila con
-// logo, buscador y menú. En móvil no se fija: sin menú hamburguesa, el
+// visible al bajar (comprobado en /metabolismo/). Distribución pedida por
+// la usuaria: logo a la izquierda y, a su derecha, menú en una línea con
+// el buscador (más pequeño) debajo, a la altura de la base del logo. En móvil no se fija: sin menú hamburguesa, el
 // menú ocupa varias líneas y taparía media pantalla.
 import { mainNav } from '../data/navigation';
 ---
@@ -21,7 +22,12 @@ import { mainNav } from '../data/navigation';
         <ul>
           {mainNav.map((item) => (
             <li class:list={['nav-item', { 'has-children': item.children }]}>
-              <a href={item.href}>{item.label}</a>
+              <a href={item.href}>
+                {item.label}
+                {item.children && (
+                  <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                )}
+              </a>
               {item.children && (
                 <ul class="dropdown">
                   {item.children.map((child) => (
@@ -98,17 +104,32 @@ import { mainNav } from '../data/navigation';
   .nav-item {
     position: relative;
   }
+  /* Desplegable medido en el original (Astra): 250px, fondo blanco, línea
+     naranja de 2px arriba, sombra suave; cada opción Rubik 16px naranja
+     con 14.4px/16px de relleno y una línea gris debajo; verde al pasar el
+     ratón, sin subrayado. */
   .nav-item .dropdown {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
+    z-index: 10;
     list-style: none;
     margin: 0;
-    padding: 0.5rem 0;
-    min-width: 220px;
-    background: var(--color-surface, #fff);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 0;
+    width: 250px;
+    background: #fff;
+    border-top: 2px solid var(--color-nav-text);
+    box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1);
+  }
+  .nav-item.has-children > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .chevron {
+    width: 12px;
+    height: 12px;
   }
   .nav-item.has-children:hover .dropdown,
   .nav-item.has-children:focus-within .dropdown {
@@ -116,11 +137,20 @@ import { mainNav } from '../data/navigation';
   }
   .nav-item .dropdown a {
     display: block;
-    padding: 0.4rem 1rem;
-    white-space: nowrap;
-    color: var(--color-text);
-    text-transform: none;
+    padding: 14.4px 16px;
+    border-bottom: 1px solid #eaeaea;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
     font-weight: 400;
+    line-height: 23.2px;
+    color: var(--color-nav-text);
+    text-transform: none;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-item .dropdown a:hover,
+  .nav-item .dropdown a:focus-visible {
+    color: #6cb70c;
   }
   .header-search-inline {
     display: flex;
@@ -129,15 +159,17 @@ import { mainNav } from '../data/navigation';
   .search-input {
     border: 1px solid #ddd;
     border-radius: 4px 0 0 4px;
-    padding: 0.5rem 0.75rem;
+    padding: 0.3rem 0.6rem;
     font: inherit;
-    width: 160px;
+    font-size: 0.85rem;
+    width: 150px;
     cursor: pointer;
   }
   .search-toggle {
     border: none;
     border-radius: 0 4px 4px 0;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
     background: var(--color-nav-text);
     color: #fff;
     font-weight: 600;
@@ -155,24 +187,54 @@ import { mainNav } from '../data/navigation';
       z-index: 100;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     }
+    /* Algo más ancha que el contenido (1140px) para que el menú quepa en
+       una línea; el original ocupa todo el ancho de la ventana. */
+    .site-header-inner {
+      max-width: 1280px;
+    }
     .header-top {
-      flex-wrap: nowrap;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 2rem;
+      row-gap: 0.4rem;
     }
     .header-top .logo {
-      order: 1;
-      flex: 0 0 auto;
-    }
-    .header-search-inline {
-      order: 2;
-      flex: 0 0 auto;
+      grid-column: 1;
+      grid-row: 1 / 3;
+      align-self: center;
     }
     .main-nav {
-      order: 3;
-      flex: 1 1 auto;
+      grid-column: 2;
+      grid-row: 1;
+      align-self: start;
+      padding-top: 0.4rem;
+    }
+    .header-top .logo img {
+      display: block;
+      width: 166px;
+      max-width: none;
+      height: auto;
     }
     .main-nav > ul {
-      row-gap: 0.25rem;
-      justify-content: flex-end;
+      gap: 0.4rem 1.1rem;
+    }
+    .main-nav > ul > li > a {
+      white-space: nowrap;
+    }
+    .header-search-inline {
+      grid-column: 2;
+      grid-row: 2;
+      justify-self: start;
+      align-self: end;
+      padding-bottom: 0.3rem;
+    }
+  }
+  /* El menú solo cabe en una línea a partir de ~1200px; por debajo pasa a
+     dos líneas en vez de desbordar o aplastar el logo. */
+  @media (min-width: 1200px) {
+    .main-nav > ul {
+      flex-wrap: nowrap;
     }
   }
 </style>
