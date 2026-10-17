@@ -5,8 +5,7 @@
 // hero en Rubik 32px (heroTitleSize="frase-rubik"), subtítulos H3 dentro de
 // causas, síntomas y soluciones, 8 causas (2 + 3 + 3) y 7 soluciones
 // (2 + 3 + 2). Iconos del original extraídos de sus fuentes (src/lib/iconos.ts).
-// Pendiente: ilustraciones de las causas en el estilo de Ciclo menstrual (no se
-// pudieron generar por el límite de gasto de la API de imágenes).
+// Causas con ilustraciones en el estilo de Ciclo menstrual (generadas a 1K).
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
@@ -21,6 +20,14 @@ import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
 import relacion1Img from './_images/relacion-1.jpg';
 import relacion2Img from './_images/relacion-2.jpg';
+import causaEstres from './_images/causa-estres.jpg';
+import causaSedentarismo from './_images/causa-sedentarismo.jpg';
+import causaSalud from './_images/causa-salud.jpg';
+import causaEntorno from './_images/causa-entorno.jpg';
+import causaMental from './_images/causa-mental.jpg';
+import causaRutina from './_images/causa-rutina.jpg';
+import causaPantallas from './_images/causa-pantallas.jpg';
+import causaAlimentacion from './_images/causa-alimentacion.jpg';
 
 const articulos = pickRelacionados(
   await getCollection('blog'),
@@ -90,14 +97,14 @@ const articulos = pickRelacionados(
     ]}
     subtituloLista="Causas más frecuentes del insomnio"
     causas={[
-      { title: 'Estrés y ansiedad', text: 'El estrés y la ansiedad mantienen el sistema nervioso en estado de alerta, lo que dificulta la relajación necesaria para conciliar el sueño. Además, los pensamientos recurrentes pueden prolongar el tiempo de latencia del sueño.' },
-      { title: 'Falta de actividad física', text: 'Un estilo de vida sedentario puede reducir la presión natural de sueño que el cuerpo necesita para descansar profundamente. La actividad física contribuye a regular el ritmo circadiano y a mejorar la calidad global del descanso.' },
-      { title: 'Problemas de salud', text: 'Trastornos como la apnea del sueño, el dolor crónico o algunas alteraciones hormonales pueden interferir directamente en la calidad del descanso nocturno.' },
-      { title: 'Entorno inadecuado', text: 'Un ambiente con exceso de luz, ruido, temperatura inadecuada o un colchón poco confortable puede afectar tanto la conciliación como la profundidad del sueño.' },
-      { title: 'Sobrecarga mental', text: 'El exceso de información, preocupaciones o trabajo mental intenso antes de dormir mantiene el cerebro activo y dificulta la transición hacia el sueño.' },
-      { title: 'Falta de rutina de sueño', text: 'La ausencia de horarios regulares para acostarse y levantarse altera el ritmo circadiano, desajustando los ciclos naturales de sueño-vigilia.' },
-      { title: 'Uso excesivo de pantallas', text: 'La exposición a dispositivos electrónicos antes de dormir reduce la producción de melatonina, retrasando el inicio del sueño y afectando su calidad.' },
-      { title: 'Alimentación inadecuada', text: 'El consumo de cafeína, alcohol o comidas copiosas antes de dormir puede interferir en los ciclos del sueño y provocar despertares nocturnos.' },
+      { icon: causaEstres, title: 'Estrés y ansiedad', text: 'El estrés y la ansiedad mantienen el sistema nervioso en estado de alerta, lo que dificulta la relajación necesaria para conciliar el sueño. Además, los pensamientos recurrentes pueden prolongar el tiempo de latencia del sueño.' },
+      { icon: causaSedentarismo, title: 'Falta de actividad física', text: 'Un estilo de vida sedentario puede reducir la presión natural de sueño que el cuerpo necesita para descansar profundamente. La actividad física contribuye a regular el ritmo circadiano y a mejorar la calidad global del descanso.' },
+      { icon: causaSalud, title: 'Problemas de salud', text: 'Trastornos como la apnea del sueño, el dolor crónico o algunas alteraciones hormonales pueden interferir directamente en la calidad del descanso nocturno.' },
+      { icon: causaEntorno, title: 'Entorno inadecuado', text: 'Un ambiente con exceso de luz, ruido, temperatura inadecuada o un colchón poco confortable puede afectar tanto la conciliación como la profundidad del sueño.' },
+      { icon: causaMental, title: 'Sobrecarga mental', text: 'El exceso de información, preocupaciones o trabajo mental intenso antes de dormir mantiene el cerebro activo y dificulta la transición hacia el sueño.' },
+      { icon: causaRutina, title: 'Falta de rutina de sueño', text: 'La ausencia de horarios regulares para acostarse y levantarse altera el ritmo circadiano, desajustando los ciclos naturales de sueño-vigilia.' },
+      { icon: causaPantallas, title: 'Uso excesivo de pantallas', text: 'La exposición a dispositivos electrónicos antes de dormir reduce la producción de melatonina, retrasando el inicio del sueño y afectando su calidad.' },
+      { icon: causaAlimentacion, title: 'Alimentación inadecuada', text: 'El consumo de cafeína, alcohol o comidas copiosas antes de dormir puede interferir en los ciclos del sueño y provocar despertares nocturnos.' },
     ]}
   />
 
