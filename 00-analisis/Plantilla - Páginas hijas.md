@@ -13,7 +13,7 @@ Layout: `SubpageTemplateB` (envuelve en `.hub`, la misma tipografía que las mad
 | 3 | Píldoras | — | `SolucionesList variant="pill"` | 5 píldoras, título Rubik 500 24px, icono 29px **del original** (`src/lib/iconos.ts`). |
 | 4 | Pregunta destacada | — | `<p class="pregunta">` | Fredoka 400 27px `#6C2F50` centrada. |
 | 5 | Texto + checklist | — | `<section class="intro lista">` + `ChecklistCard` | Texto Fredoka 20px justificado. Checklist `fa-check`: **1 columna** (Fatiga) o **2 columnas** (Ciclo). |
-| 6 | ¿Qué es…? | degradado B | `TextoConImagen` | H2 a la izquierda; texto 20px justificado; imagen a la derecha. |
+| 6 | ¿Qué es…? | degradado B | `TextoConImagen` | H2 a la izquierda y a todo el ancho; imagen flotando a la derecha bajo el H2 (50%) y el texto rodeándola: al acabar la imagen, el texto sigue a todo el ancho (pedido de la usuaria, 2026-10-17; igual en las madres). Texto 20px justificado. |
 | 7 | Causas | — | `CausasGrid` | H2 centrado, frase (`subheading`) **debajo** del H2 a 22px justificada, 6 tarjetas: **ilustración de línea magenta estilo Ciclo menstrual** (241px), título Rubik 600 26px, texto 20px. |
 | 8 | Párrafo de cierre | — | `<p class="parrafo-suelto">` | Fredoka 26px justificado. |
 | 9 | Síntomas | degradado B | `<div class="full-bleed band-b"><section class="sintomas">` + `ChecklistCard icon="check-circle"` | Frase 22px justificada; viñetas en **1 columna** (Fatiga) o **2** (Ciclo). Frases simples o "Título: texto". |

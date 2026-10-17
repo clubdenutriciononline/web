@@ -17,40 +17,36 @@ const { heading, image, imageAlt, reverse = false, textAlign = 'justify' } = Ast
 
 <div class="full-bleed band-b">
   <section class:list={['texto-imagen', { reverse }]} data-align={textAlign}>
+    <!-- Revisión 2026-10-17 (pedido de la usuaria): el H2 ocupa todo el ancho
+         y la imagen "flota" a la derecha bajo él; el texto la rodea y, al
+         acabarse su altura, continúa a todo el ancho por debajo, en vez de
+         dejar una columna de texto mucho más larga que la imagen. -->
+    <h2>{heading}</h2>
     <div class="texto-imagen-copy">
-      <h2>{heading}</h2>
+      {image && (
+        <div class="texto-imagen-image-wrap">
+          <Image src={image} alt={imageAlt ?? ''} />
+        </div>
+      )}
       <slot />
     </div>
-    {image && (
-      <div class="texto-imagen-image-wrap">
-        <Image src={image} alt={imageAlt ?? ''} />
-      </div>
-    )}
   </section>
 </div>
 
 <style>
   .texto-imagen {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
     padding-block: var(--space-section);
   }
-  .texto-imagen.reverse {
-    flex-direction: row-reverse;
+  .texto-imagen h2 {
+    text-align: left;
   }
-  /* "¿Qué es...?": el H2 va alineado a la izquierda (el único así en
-     las madres) y el texto Fredoka 20px justificado. */
+  /* Texto Fredoka 20px justificado (Hormonas: a la izquierda). */
   .texto-imagen-copy {
-    flex: 1 1 320px;
+    display: flow-root;
     font-family: var(--font-body);
     font-size: 20px;
     line-height: 33px;
     text-align: justify;
-  }
-  .texto-imagen-copy h2 {
-    text-align: left;
   }
   [data-align='left'] .texto-imagen-copy {
     text-align: left;
@@ -66,12 +62,23 @@ const { heading, image, imageAlt, reverse = false, textAlign = 'justify' } = Ast
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   }
   .texto-imagen-image-wrap {
-    flex: 1 1 320px;
+    float: right;
+    width: calc(50% - 1rem);
+    margin: 0 0 1.5rem 2rem;
+  }
+  .texto-imagen.reverse .texto-imagen-image-wrap {
+    float: left;
+    margin: 0 2rem 1.5rem 0;
   }
   .texto-imagen-image-wrap :global(img) {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+  }
+  @media (max-width: 767px) {
+    .texto-imagen-image-wrap,
+    .texto-imagen.reverse .texto-imagen-image-wrap {
+      float: none;
+      width: 100%;
+      margin: 0 0 1.5rem;
+    }
   }
 </style>
