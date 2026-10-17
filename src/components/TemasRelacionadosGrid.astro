@@ -7,6 +7,16 @@
 // 2026-09-12, ver 00-analisis/02-mapa-migracion.md sección 9): ahora SÍ
 // llevan <a href> real hacia la página correspondiente, que ya existe en
 // la arquitectura actual (no se crean páginas nuevas).
+//
+// Dos patrones reales confirmados en el CSS compilado del original, según
+// el número de tarjetas (varía por página, no todas tienen las mismas):
+// - 3 tarjetas (Energía, Metabolismo, Microbiota, Mentalidad — hubs B):
+//   3 columnas iguales en una sola fila, sin huecos (elementor-col-33 x3).
+// - 4 tarjetas (Hormonas — hub A): 2 filas de 2, cada tarjeta ocupa solo
+//   ~32% del contenedor con huecos a los lados (columnas 15%/32%/7.2%/32%).
+// No se fuerza el recorte de las fotos: el original deja que la imagen
+// se escale a su proporción natural (no hay crop/object-fit en el CSS
+// real), así que aquí tampoco se impone un aspect-ratio inventado.
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
@@ -25,16 +35,12 @@ const { heading, temas } = Astro.props;
 
 <section class="temas-relacionados">
   <h2>{heading}</h2>
-  <div class="grid">
+  <div class="grid" data-count={temas.length}>
     {temas.map((t) => (
       <a class="tema-card" href={t.href}>
         {typeof t.icon === 'string'
           ? <span class="icon" aria-hidden="true">{t.icon}</span>
-          : (
-            <span class="icon-img-wrap">
-              <Image class="icon-img" src={t.icon} alt="" width={400} height={400} />
-            </span>
-          )}
+          : <Image class="icon-img" src={t.icon} alt="" width={600} />}
         <h3>{t.title}</h3>
         <p>{t.text}</p>
       </a>
@@ -43,43 +49,60 @@ const { heading, temas } = Astro.props;
 </section>
 
 <style>
-  /* El original NO es una rejilla de 2 columnas a partes iguales: cada fila
-     son 5 columnas (vacía, tarjeta, vacía, tarjeta, vacía) con anchos
-     específicos, no el 20% por defecto de Elementor — confirmado con el
-     ancho inline real de cada columna en el HTML del original:
-     14.999% / 31.965% / 7.214% / 31.874% / resto. Cada tarjeta ocupa
-     ~32% del contenedor (no ~50% ni ~20%). */
+  /* Patrón por defecto: 3 columnas iguales (el caso más común en los hubs
+     tipo B). */
   .grid {
     display: grid;
-    grid-template-columns: 15% 32% 7.2% 32% 1fr;
-    row-gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
-  .tema-card:nth-child(odd) {
-    grid-column: 2;
-  }
-  .tema-card:nth-child(even) {
-    grid-column: 4;
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   @media (max-width: 640px) {
     .grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  /* Patrón de 4 tarjetas (Hormonas): 2 filas de 2, tarjetas estrechas con
+     huecos a los lados — ancho real medido en el HTML del original. */
+  .grid[data-count='4'] {
+    grid-template-columns: 15% 32% 7.2% 32% 1fr;
+    row-gap: 2.5rem;
+  }
+  .grid[data-count='4'] .tema-card:nth-child(odd) {
+    grid-column: 2;
+  }
+  .grid[data-count='4'] .tema-card:nth-child(even) {
+    grid-column: 4;
+  }
+  @media (max-width: 640px) {
+    .grid[data-count='4'] {
+      grid-template-columns: 1fr;
       row-gap: 1.5rem;
     }
-    .tema-card:nth-child(odd),
-    .tema-card:nth-child(even) {
+    .grid[data-count='4'] .tema-card:nth-child(odd),
+    .grid[data-count='4'] .tema-card:nth-child(even) {
       grid-column: auto;
     }
   }
+
   .tema-card {
     display: block;
     background: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    padding: 20px 5px;
+    padding: 20px;
     text-align: center;
     text-decoration: none;
     color: inherit;
     transition: box-shadow 0.3s ease;
+  }
+  .grid[data-count='4'] .tema-card {
+    padding: 20px 5px;
   }
   .tema-card:hover,
   .tema-card:focus-visible {
@@ -92,26 +115,20 @@ const { heading, temas } = Astro.props;
   .icon {
     font-size: 2rem;
   }
-  .icon-img-wrap {
+  .icon-img {
     display: block;
-    overflow: hidden;
     width: 77%;
-    aspect-ratio: 6 / 7;
-    margin: 0 auto;
+    height: auto;
+    margin: 0 auto 0.75rem;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  .icon-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     transition: transform 0.3s;
   }
   .tema-card:hover .icon-img {
     transform: scale(1.1);
   }
   .tema-card h3 {
-    margin-top: 12px;
+    margin-top: 10px;
     font-size: 1.25rem;
     color: #6c2f50;
     transition: color 0.3s;

@@ -9,6 +9,8 @@ import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
 import SolucionesList from '../../components/SolucionesList.astro';
 import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
 
 import heroImg from './_images/energia-hero-e1778319727162.jpg';
 import queEsImg from './_images/energia-energia-e1778320626244-572x1024.jpg';
@@ -20,6 +22,9 @@ import iconoSedentarismo from './_images/Energia-Icono-5.png';
 import iconoMedicamentos from './_images/Energia-Icono-6-e1778320740658.png';
 import relacionImg1 from './_images/energ-ia-infografia-relacion.jpg';
 import relacionImg2 from './_images/Energia-equilibrio-hormonal.jpg';
+import temaFatiga from './_images/Energia-Fatiga-cronica.jpg';
+import temaSueno from './_images/Energia-sueno.jpg';
+import temaRutinas from './_images/energia-rutinas-energeticas.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('energia'));
 ---
@@ -29,15 +34,16 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   seoDescription="Aprende a mejorar tus niveles de energía, reducir la fatiga y mantener un estilo de vida más activo, saludable y equilibrado."
   heroTitle="Energía en mujeres: cómo mantener el equilibrio de forma natural"
   heroSubtitle="Aprende a mejorar tus niveles de energía, reducir la fatiga y mantener un estilo de vida más activo, saludable y equilibrado."
+  heroCtaIntro="Descubre cómo estabilizar tu energía, descarga la guía ahora:"
   heroImage={heroImg}
   heroImageAlt="Energía en mujeres"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
-  temasHeading="Temas relacionados con la Energía y el Bienestar"
+  temasHeading="Temas Relacionados con la Energía y el Bienestar"
   temas={[
-    { icon: '⚡', title: 'Fatiga crónica', href: '/fatiga-cronica/', text: 'Descubre las causas del cansancio persistente y cómo recuperar tu energía diaria de forma efectiva.' },
-    { icon: '😴', title: 'Sueño', href: '/sueno/', text: 'Aprende a mejorar la calidad del sueño y su impacto directo en tu energía, hormonas y rendimiento.' },
-    { icon: '🔋', title: 'Rutinas energéticas', href: '/rutinas-energeticas/', text: 'Crea hábitos diarios que te ayuden a mantener niveles de energía estables y sostenibles.' },
+    { icon: temaFatiga, title: '⚡ Fatiga crónica', href: '/fatiga-cronica/', text: 'Descubre las causas del cansancio persistente y cómo recuperar tu energía diaria de forma efectiva.' },
+    { icon: temaSueno, title: '😴 Sueño', href: '/sueno/', text: 'Aprende a mejorar la calidad del sueño y su impacto directo en tu energía, hormonas y rendimiento.' },
+    { icon: temaRutinas, title: '🔋 Rutinas energéticas', href: '/rutinas-energeticas/', text: 'Crea hábitos diarios que te ayuden a mantener niveles de energía estables y sostenibles.' },
   ]}
   articulosRelacionados={articulos}
 >
@@ -47,24 +53,31 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     <p>La alimentación, el descanso, el estrés, las hormonas, el metabolismo y los hábitos diarios desempeñan un papel clave en cómo nos sentimos cada día.</p>
     <p>La energía no solo depende del cuerpo, sino también del equilibrio mental y emocional.</p>
     <p>Por eso, aquí encontrarás información y recursos para ayudarte a recuperar vitalidad, reducir la fatiga y mejorar tu bienestar general de forma práctica y sostenible.</p>
+  </section>
 
-    <ul class="sintomas-destacados">
-      <li>Cansancio Persistente</li>
-      <li>Dificultades de Concentración</li>
-      <li>Dolores Musculares</li>
-      <li>Problemas de Sueño</li>
-      <li>Cambios de Humor</li>
-    </ul>
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Cansancio Persistente', icon: '😓' },
+      { title: 'Dificultades de Concentración', icon: '😶' },
+      { title: 'Dolores Musculares', icon: '😣' },
+      { title: 'Problemas de Sueño', icon: '😴' },
+      { title: 'Cambios de Humor', icon: '😳' },
+    ]}
+  />
 
+  <section class="intro">
     <p>¿Quieres mejorar tu energía y sentirte con más vitalidad cada día? Descubre cómo funciona la energía en el cuerpo y qué factores pueden influir en el cansancio, la fatiga y el bajo rendimiento físico y mental.</p>
     <p>En esta sección aprenderás:</p>
-    <ul>
-      <li>Cómo funciona la energía en el organismo y cuál es su impacto en la salud y el bienestar.</li>
-      <li>Las causas más comunes de fatiga, agotamiento y falta de energía.</li>
-      <li>La relación entre energía, hormonas, metabolismo y estilo de vida.</li>
-      <li>Estrategias y hábitos prácticos para aumentar la energía de forma natural y sostenible.</li>
-      <li>Cómo mejorar el equilibrio físico y mental para sentirte con más vitalidad cada día.</li>
-    </ul>
+    <ChecklistCard
+      items={[
+        'Cómo funciona la energía en el organismo y cuál es su impacto en la salud y el bienestar.',
+        'Las causas más comunes de fatiga, agotamiento y falta de energía.',
+        'La relación entre energía, hormonas, metabolismo y estilo de vida.',
+        'Estrategias y hábitos prácticos para aumentar la energía de forma natural y sostenible.',
+        'Cómo mejorar el equilibrio físico y mental para sentirte con más vitalidad cada día.',
+      ]}
+    />
   </section>
 
   <TextoConImagen heading="¿Qué es la Energía?" image={queEsImg} imageAlt="Qué es la energía">
@@ -97,6 +110,9 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
 
   <SolucionesList
     heading="Síntomas de la Fatiga y Bajo Rendimiento Energético"
+    subheading="Es importante reconocer los síntomas para poder tomar medidas adecuadas. A continuación, se presentan algunos de los síntomas más comunes:"
+    variant="card"
+    band="b"
     soluciones={[
       { title: 'Cansancio persistente', body: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },
       { title: 'Dificultad de concentración', body: 'Problemas para enfocarse o mantener la atención, que pueden afectar al rendimiento diario y estar relacionados con el estrés, la falta de sueño o la ansiedad.' },
@@ -107,26 +123,24 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     ]}
   />
 
-  <RelacionImagenes
-    heading="Relación con Sistemas Hormonales y Metabólicos"
-    images={[
-      { src: relacionImg1, alt: 'Relación de la energía con los sistemas hormonales y metabólicos' },
-      { src: relacionImg2, alt: 'Equilibrio hormonal y energía' },
-    ]}
-  >
+  <RelacionImagenes heading="Relación con Sistemas Hormonales y Metabólicos">
     <p>Nuestra energía está directamente influida por el equilibrio entre el sistema hormonal y el metabolismo, dos sistemas que regulan funciones clave del organismo como el uso de la energía, el estado de ánimo y la respuesta al estrés.</p>
+    <Image src={relacionImg1} alt="Relación de la energía con los sistemas hormonales y metabólicos" />
     <p>El sistema endocrino, formado por estructuras como el hipotálamo y la hipófisis, coordina la liberación de hormonas que afectan a la energía diaria. Hormonas como el cortisol, la adrenalina y la insulina participan en la gestión del estrés, el control de la glucosa en sangre y el metabolismo de los nutrientes. Cuando este equilibrio se altera, pueden aparecer síntomas como fatiga, bajones de energía o dificultad para mantener el rendimiento físico y mental.</p>
+    <Image src={relacionImg2} alt="Equilibrio hormonal y energía" />
     <p>Además, la energía no depende únicamente de procesos internos. También está influida por el estilo de vida, el entorno y los hábitos diarios como la alimentación, el descanso, la actividad física y la gestión del estrés. Todo ello interactúa con el sistema hormonal y metabólico, determinando cómo nos sentimos a lo largo del día.</p>
   </RelacionImagenes>
 
   <SolucionesList
     heading="Soluciones Prácticas para Mejorar y Equilibrar tu Energía"
+    subheading="A continuación, se presentan algunas soluciones prácticas y efectivas para mejorar tu energía y vivir una vida más plena:"
+    variant="card"
     soluciones={[
-      { title: 'Sueño regular', body: 'Establece un horario de sueño estable y asegúrate de dormir las horas suficientes cada noche para favorecer la recuperación energética.' },
-      { title: 'Alimentación equilibrada', body: 'Prioriza una dieta rica en alimentos naturales y nutritivos, reduciendo al mínimo los ultraprocesados y azúcares refinados.' },
-      { title: 'Actividad física', body: 'Incorpora movimiento diario o ejercicio regular para mejorar el metabolismo, la circulación y la producción de energía.' },
-      { title: 'Gestión del estrés', body: 'Practica técnicas como meditación, respiración o yoga para reducir el estrés y mejorar el equilibrio mental y hormonal.' },
-      { title: 'Hidratación y hábitos', body: 'Mantén una buena hidratación y reduce el consumo excesivo de cafeína y alcohol para evitar alteraciones en la energía.' },
+      { title: 'Sueño regular', icon: '😴', body: 'Establece un horario de sueño estable y asegúrate de dormir las horas suficientes cada noche para favorecer la recuperación energética.' },
+      { title: 'Alimentación equilibrada', icon: '🍎', body: 'Prioriza una dieta rica en alimentos naturales y nutritivos, reduciendo al mínimo los ultraprocesados y azúcares refinados.' },
+      { title: 'Actividad física', icon: '🏃', body: 'Incorpora movimiento diario o ejercicio regular para mejorar el metabolismo, la circulación y la producción de energía.' },
+      { title: 'Gestión del estrés', icon: '🧘', body: 'Practica técnicas como meditación, respiración o yoga para reducir el estrés y mejorar el equilibrio mental y hormonal.' },
+      { title: 'Hidratación y hábitos', icon: '💧', body: 'Mantén una buena hidratación y reduce el consumo excesivo de cafeína y alcohol para evitar alteraciones en la energía.' },
     ]}
   />
 </HubTemplateB>
@@ -136,11 +150,10 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   .parrafo-suelto {
     padding: 0 1rem;
   }
-  .sintomas-destacados {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
+  .intro {
+    padding-block: 1rem;
+    font-family: var(--font-body);
+    font-size: 1.375rem;
+    text-align: center;
   }
 </style>

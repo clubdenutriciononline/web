@@ -8,6 +8,7 @@ import CausasGrid from '../../components/CausasGrid.astro';
 import ListaSintomas from '../../components/ListaSintomas.astro';
 import RelacionImagenes from '../../components/RelacionImagenes.astro';
 import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
 import { Image } from 'astro:assets';
 
 import heroImg from './_images/Hero.jpg';
@@ -75,16 +76,14 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
   <div class="full-bleed band-a">
     <section class="intro">
       <p>👉 Muchas veces no es un problema aislado, sino un sistema desajustado. En esta guía vas a entender:</p>
-      <div class="que-vas-a-entender">
-        <ul>
-          <li>Qué son realmente las hormonas</li>
-          <li>Por qué se desregulan</li>
-        </ul>
-        <ul>
-          <li>Cómo afectan a tu energía y metabolismo</li>
-          <li>Qué puedes hacer para equilibrarlas de forma natural</li>
-        </ul>
-      </div>
+      <ChecklistCard
+        items={[
+          'Qué son realmente las hormonas',
+          'Por qué se desregulan',
+          'Cómo afectan a tu energía y metabolismo',
+          'Qué puedes hacer para equilibrarlas de forma natural',
+        ]}
+      />
     </section>
   </div>
 
@@ -178,44 +177,5 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
   .frase-destacada {
     font-style: italic;
     text-align: center;
-  }
-
-  /* Tarjeta "¿qué vas a entender?": radio20 + sombra difusa que se
-     intensifica al pasar el ratón, fiel al icon-list widget original
-     (sección ceaa99c, ver investigación CSS de este cambio). */
-  .que-vas-a-entender {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem 2rem;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 1.5rem 2rem;
-    margin-top: 1rem;
-    transition: box-shadow 0.3s;
-  }
-  .que-vas-a-entender:hover {
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  }
-  .que-vas-a-entender ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .que-vas-a-entender li {
-    font-family: var(--font-body);
-    color: #6c2f50;
-    margin-bottom: 0.5rem;
-  }
-  .que-vas-a-entender li::before {
-    content: '✔';
-    color: #f964c0;
-    font-weight: 600;
-    margin-right: 0.5rem;
-  }
-  @media (max-width: 640px) {
-    .que-vas-a-entender {
-      grid-template-columns: 1fr;
-    }
   }
 </style>

@@ -1,0 +1,58 @@
+---
+// Tarjeta interactiva de viñetas con check, en dos columnas — patrón real
+// del original (icon-list widget fa-check dentro de una sección con
+// radio20 y sombra que se intensifica al pasar el ratón). Se repite en
+// varias páginas madre con textos distintos ("¿qué vas a entender?", "en
+// esta sección aprenderás", etc.), de ahí que sea un componente aparte en
+// vez de repetir el CSS en cada página.
+interface Props {
+  items: string[];
+}
+const { items } = Astro.props;
+---
+
+<div class="checklist-card">
+  <ul>
+    {items.map((item) => (
+      <li><span class="check" aria-hidden="true">✔</span> {item}</li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .checklist-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+    transition: box-shadow 0.3s;
+  }
+  .checklist-card:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+  .checklist-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .checklist-card li {
+    font-family: var(--font-body);
+    color: #6c2f50;
+    margin-bottom: 0.5rem;
+  }
+  .check {
+    display: inline-block;
+    width: 1.3rem;
+    color: #f964c0;
+    font-weight: 600;
+  }
+  @media (max-width: 640px) {
+    .checklist-card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
