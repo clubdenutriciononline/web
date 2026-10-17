@@ -8,9 +8,8 @@ Resumen de lo hecho hoy y lo que queda pendiente, para retomar sin perder contex
 
 ## Siguiente sesión — por este orden
 
-1. **Generar una receta antiinflamatoria** (la subpágina `/recetas-antiinflamatorias/` está vacía, con el aviso de "Muy pronto"). Copiar la carpeta de `receta-bol-quinoa-garbanzos-boniato-huevo` y cambiar `category: "recetas/antiinflamatorias"`, textos, ingredientes, pasos, nutrición por ración e imágenes (ver `Pendiente - Recetas.md`).
-2. **Adaptar las páginas hijas** a la plantilla validada en Fatiga crónica (`Plantilla - Páginas hijas.md`): Sueño, Rutinas energéticas, Pérdida de grasa femenina, Resistencia a la insulina, Ayuno intermitente, Digestión, Inflamación intestinal, Probióticos y alimentación, Ansiedad por la comida, Estrés y hábitos, Relación con el cuerpo; y las de Hormonas (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol, Inflamación hormonal), que usan otra plantilla (SubpageTemplateA) y tienen variantes propias (título en el hero, listas en 2 columnas, soluciones en píldoras, "Explora cada área"). En cada una: medir el original, iconos del original (`src/lib/iconos.ts`), causas con ilustración estilo Ciclo menstrual y relacionados con respaldo de la madre.
-3. **Revisar el formato de las entradas de blog** (plantilla de artículo `ArticleLayout`): tipografía, imágenes, tabla de contenidos, etc., igual que se ha hecho con madres, hijas y recetas.
+1. **Adaptar las páginas hijas** a la plantilla validada en Fatiga crónica (`Plantilla - Páginas hijas.md`): Sueño, Rutinas energéticas, Pérdida de grasa femenina, Resistencia a la insulina, Ayuno intermitente, Digestión, Inflamación intestinal, Probióticos y alimentación, Ansiedad por la comida, Estrés y hábitos, Relación con el cuerpo; y las de Hormonas (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol, Inflamación hormonal), que usan otra plantilla (SubpageTemplateA) y tienen variantes propias (título en el hero, listas en 2 columnas, soluciones en píldoras, "Explora cada área"). En cada una: medir el original, iconos del original (`src/lib/iconos.ts`), causas con ilustración estilo Ciclo menstrual y relacionados con respaldo de la madre.
+2. **Revisar el formato de las entradas de blog** (plantilla de artículo `ArticleLayout`): tipografía, imágenes, tabla de contenidos, etc., igual que se ha hecho con madres, hijas y recetas.
 
 ## Ideas pendientes de definir — tarjetas de entradas
 
@@ -26,7 +25,7 @@ En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay 
 
 - **Responsive (móvil y tablet):** blog a 9 entradas por página, tarjetas compactas en móvil, menú hamburguesa y cabecera fija en móvil (ver `Pendiente - Responsive (móvil y tablet).md`).
 - **Publicaciones programadas del blog** y la idea de convertir cada tarjeta de soluciones en un artículo enlazado (ver `Pendiente - Publicaciones programadas de blog.md`).
-- **Recetas de Energía hormonal y Antiinflamatorias** siguientes, con el calendario de publicaciones.
+- **Más recetas** de Antiinflamatorias y Energía hormonal (tienen 1 cada una), con el calendario de publicaciones.
 - **4 decisiones abiertas** (ver `13-pendientes-decision.md`): slug `/ayuno-intermitente-2/`, `/suscripcion-lista-comunidad/`, páginas huérfanas y URLs automáticas de WordPress.
 - **Token de GitHub expuesto** (aviso de sesiones anteriores) — revocarlo si no se ha hecho.
 - **Google Drive y git:** Drive crea archivos `desktop.ini` dentro de `.git` y rompe el mantenimiento de git (se limpiaron 248 el 17 oct). Si vuelve a pasar, valorar sacar la carpeta del proyecto de Drive (el código ya está en GitHub).
@@ -48,7 +47,7 @@ En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay 
 ### Recetas (sección nueva)
 - `/recetas/` (madre) y sus 3 subpáginas, en el menú detrás de Alimentación.
 - Plantilla de receta (`RecipeLayout`): datos rápidos, ingredientes con ilustración, pasos con fotos, resultado, información nutricional por ración y datos schema.org/Recipe.
-- Las 6 recetas keto existentes migradas (textos reescritos, nutrición recalculada, imágenes nuevas) y 1 receta nueva de Energía hormonal (bol de quinoa, garbanzos, boniato y huevo).
+- Las 6 recetas keto existentes migradas (textos reescritos, nutrición recalculada, imágenes nuevas) 1 receta nueva de Energía hormonal (bol de quinoa, garbanzos, boniato y huevo) y 1 antiinflamatoria (crema de calabaza con cúrcuma, jengibre y garbanzos crujientes): las 3 subpáginas ya tienen contenido.
 
 ### Cabecera y navegación
 - Cabecera fija al bajar (escritorio), en dos filas: arriba las páginas de tema (Inicio … Alimentación, Recetas); abajo el buscador bajo "Inicio" y Blog · Radar de Salud · Contacto a la derecha. Desplegable con el formato del original.
