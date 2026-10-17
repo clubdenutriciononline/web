@@ -14,7 +14,7 @@ const lista = recetas(await getCollection('blog'), tipo.category);
 ---
 
 {lista.length > 0 ? (
-  <ArticulosRelacionados heading={tipo.titulo} articulos={lista} pageSize={6} />
+  <ArticulosRelacionados heading={tipo.titulo} articulos={lista} />
 ) : (
   <section class="proximamente">
     <h2>{tipo.titulo}</h2>

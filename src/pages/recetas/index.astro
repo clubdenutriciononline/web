@@ -1,7 +1,7 @@
 ---
 // Página madre de Recetas (2026-10-17). Sencilla por decisión de la usuaria:
 // hero, introducción breve, los 3 tipos de receta explicados (tarjetas con
-// imagen que enlazan a su página) y las 6 últimas recetas de los 3 tipos.
+// imagen que enlazan a su página) y todas las recetas, de 3 en 3 con paginación.
 import { getCollection } from 'astro:content';
 import RecetasTemplate from '../../layouts/RecetasTemplate.astro';
 import TemasRelacionadosGrid from '../../components/TemasRelacionadosGrid.astro';
@@ -12,7 +12,7 @@ import antiinflamatoriasImg from './_images/antiinflamatorias.jpg';
 import energiaHormonalImg from './_images/energia-hormonal.jpg';
 import ketoImg from './_images/keto-low-carb.jpg';
 
-const ultimas = recetas(await getCollection('blog')).slice(0, 6);
+const ultimas = recetas(await getCollection('blog'));
 ---
 
 <RecetasTemplate
@@ -38,5 +38,5 @@ const ultimas = recetas(await getCollection('blog')).slice(0, 6);
     ]}
   />
 
-  <ArticulosRelacionados heading="Últimas recetas" articulos={ultimas} pageSize={6} />
+  <ArticulosRelacionados heading="Últimas recetas" articulos={ultimas} />
 </RecetasTemplate>

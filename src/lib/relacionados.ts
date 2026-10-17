@@ -19,7 +19,11 @@ export function pickRelacionados(
     .filter((p) => !p.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   const propios = ordenados.filter(match);
-  if (propios.length >= count) return propios.slice(0, count);
+  // Regla fija (2026-10-17, decisión de la usuaria): se devuelven TODAS las
+  // entradas propias; ArticulosRelacionados muestra 3 y, si hay más, la
+  // paginación « Anterior / Página X de Y / Siguiente ». `count` es solo
+  // el mínimo a rellenar cuando la categoría tiene pocas.
+  if (propios.length >= count) return propios;
   const deLaMadre = respaldo ? ordenados.filter((p) => !propios.includes(p) && respaldo(p)) : [];
   const resto = ordenados.filter((p) => !propios.includes(p) && !deLaMadre.includes(p));
   return [...propios, ...deLaMadre, ...resto].slice(0, count);
