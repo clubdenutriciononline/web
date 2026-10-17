@@ -1,0 +1,41 @@
+---
+// Página madre de Recetas (2026-10-17). Sencilla por decisión de la usuaria:
+// hero, introducción breve, los 3 tipos de receta explicados (tarjetas con
+// imagen que enlazan a su página) y las 6 últimas recetas de los 3 tipos.
+import { getCollection } from 'astro:content';
+import RecetasTemplate from '../../layouts/RecetasTemplate.astro';
+import TemasRelacionadosGrid from '../../components/TemasRelacionadosGrid.astro';
+import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
+import { recetas } from '../../lib/recetas';
+import heroImg from './_images/hero.jpg';
+import antiinflamatoriasImg from './_images/antiinflamatorias.jpg';
+import energiaHormonalImg from './_images/energia-hormonal.jpg';
+import ketoImg from './_images/keto-low-carb.jpg';
+
+const ultimas = recetas(await getCollection('blog')).slice(0, 6);
+---
+
+<RecetasTemplate
+  seoTitle="Recetas saludables para mujeres: antiinflamatorias, energía hormonal y keto"
+  seoDescription="Recetas sencillas y saludables pensadas para el equilibrio hormonal femenino: antiinflamatorias, para la energía hormonal y keto o low carb, con ingredientes, pasos e información nutricional."
+  heroTitle="Recetas saludables para tu equilibrio hormonal"
+  heroSubtitle="Recetas sencillas, ricas y nutritivas, pensadas para cuidar tus hormonas, tu energía y tu metabolismo en el día a día."
+  heroImage={heroImg}
+  heroImageAlt="Mujer cocinando un salteado de verduras en la cocina"
+>
+  <section class="intro">
+    <p>Comer bien no tiene por qué ser complicado. En esta sección encontrarás recetas fáciles de preparar, con ingredientes reales y pensadas para acompañarte en cada etapa, especialmente a partir de los 35 años.</p>
+    <p>Cada receta incluye la lista de ingredientes, los pasos explicados con fotos y la información nutricional aproximada por ración, para que sepas exactamente qué estás comiendo.</p>
+  </section>
+
+  <TemasRelacionadosGrid
+    heading="Tipos de recetas"
+    temas={[
+      { icon: antiinflamatoriasImg, title: 'Recetas antiinflamatorias', href: '/recetas-antiinflamatorias/', text: 'Platos ricos en verduras, legumbres, pescado azul, especias y grasas saludables, que forman parte de una alimentación asociada a menos inflamación.' },
+      { icon: energiaHormonalImg, title: 'Energía hormonal', href: '/recetas-energia-hormonal/', text: 'Recetas que combinan proteína, fibra y grasas saludables para mantener la glucosa estable y la energía a lo largo del día.' },
+      { icon: ketoImg, title: 'Keto / low carb', href: '/recetas-keto-low-carb/', text: 'Recetas bajas en hidratos de carbono y saciantes, para quienes siguen una alimentación keto o quieren reducir los hidratos.' },
+    ]}
+  />
+
+  <ArticulosRelacionados heading="Últimas recetas" articulos={ultimas} pageSize={6} />
+</RecetasTemplate>

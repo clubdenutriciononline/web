@@ -1,0 +1,392 @@
+---
+// Plantilla de receta (2026-10-17, ver 00-analisis/Pendiente - Recetas.md).
+// Se usa para cualquier entrada del blog con el campo `receta`. Orden pedido
+// por la usuaria: título e introducción, ingredientes (con ilustración),
+// pasos numerados (con 2-3 fotos), resultado final (foto) e información
+// nutricional por ración. Incluye datos estructurados schema.org/Recipe para
+// que Google pueda mostrar foto, tiempo y calorías.
+import BaseLayout from './BaseLayout.astro';
+import { Image } from 'astro:assets';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import RecipeNutritionTable from '../components/RecipeNutritionTable.astro';
+import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import { tipoDeReceta } from '../lib/recetas';
+import * as iconos from '../lib/iconos';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  relacionados: CollectionEntry<'blog' | 'radar'>[];
+}
+
+const { entry, relacionados } = Astro.props;
+const { title, description, seo, image, date, updated, author, nutricion, category } = entry.data;
+const receta = entry.data.receta!;
+const tipo = tipoDeReceta(category);
+
+// "10 min" / "1 h 15 min" -> PT10M / PT1H15M (formato ISO 8601 de schema.org)
+const iso = (t?: string) => {
+  if (!t) return undefined;
+  const h = /(\d+)\s*h/.exec(t)?.[1];
+  const m = /(\d+)\s*min/.exec(t)?.[1];
+  return `PT${h ? `${h}H` : ''}${m ? `${m}M` : ''}`;
+};
+const minutos = (t?: string) => (t ? Number(/(\d+)\s*h/.exec(t)?.[1] ?? 0) * 60 + Number(/(\d+)\s*min/.exec(t)?.[1] ?? 0) : 0);
+const total = minutos(receta.preparacion) + minutos(receta.coccion);
+
+const recipeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: title,
+  description,
+  image: [new URL(receta.resultado.src, Astro.site).href, new URL(image.src, Astro.site).href],
+  author: { '@type': 'Organization', name: author },
+  datePublished: date.toISOString(),
+  dateModified: (updated ?? date).toISOString(),
+  recipeCategory: tipo?.titulo ?? 'Recetas',
+  recipeCuisine: 'Mediterránea',
+  recipeYield: `${receta.raciones} raciones`,
+  prepTime: iso(receta.preparacion),
+  cookTime: iso(receta.coccion),
+  totalTime: total ? `PT${total}M` : undefined,
+  recipeIngredient: receta.ingredientes,
+  recipeInstructions: receta.pasos.map((p, i) => ({ '@type': 'HowToStep', position: i + 1, text: p.texto })),
+  nutrition: nutricion && {
+    '@type': 'NutritionInformation',
+    servingSize: '1 ración',
+    calories: nutricion.calorias,
+    proteinContent: nutricion.proteinas,
+    fatContent: nutricion.grasas,
+    saturatedFatContent: nutricion.grasasSaturadas,
+    carbohydrateContent: nutricion.carbohidratos,
+    sugarContent: nutricion.azucares,
+    fiberContent: nutricion.fibra,
+    sodiumContent: nutricion.sodio,
+  },
+};
+
+const datos = [
+  { label: 'Raciones', valor: String(receta.raciones), icon: iconos.cubiertos },
+  { label: 'Preparación', valor: receta.preparacion, icon: iconos.reloj },
+  ...(receta.coccion ? [{ label: 'Cocción', valor: receta.coccion, icon: iconos.olla }] : []),
+  { label: 'Dificultad', valor: receta.dificultad, icon: iconos.caraFeliz },
+];
+
+const destacados = [
+  { label: 'Calorías', valor: nutricion?.calorias },
+  { label: 'Proteínas', valor: nutricion?.proteinas },
+  { label: 'Grasas', valor: nutricion?.grasas },
+  { label: 'Hidratos', valor: nutricion?.carbohidratos },
+].filter((d) => d.valor);
+---
+
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={receta.resultado.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(recipeJsonLd)} is:inline />
+  <div class="hub receta">
+    <Breadcrumb
+      items={[
+        { label: 'Inicio', href: '/' },
+        { label: 'Recetas', href: '/recetas/' },
+        ...(tipo ? [{ label: tipo.label, href: tipo.href }] : []),
+        { label: title },
+      ]}
+    />
+
+    <div class="full-bleed band-a">
+      <section class="cabecera">
+        <h1>{title}</h1>
+        <div class="intro">
+          <slot />
+        </div>
+        <ul class="datos">
+          {datos.map((d) => (
+            <li>
+              <span class="dato-icono" aria-hidden="true" set:html={d.icon.svg} />
+              <span class="dato-label">{d.label}</span>
+              <span class="dato-valor">{d.valor}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+
+    <section class="ingredientes">
+      <h2>Ingredientes</h2>
+      <div class="ingredientes-cuerpo">
+        {receta.imagenIngredientes && (
+          <div class="ingredientes-imagen">
+            <Image src={receta.imagenIngredientes} alt={receta.imagenIngredientesAlt ?? ''} width={600} />
+          </div>
+        )}
+        <p class="para">Para {receta.raciones} {receta.raciones === 1 ? 'ración' : 'raciones'}:</p>
+        <ul class="lista-ingredientes">
+          {receta.ingredientes.map((i) => (
+            <li><span class="check" aria-hidden="true" set:html={iconos.check.svg} />{i}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <div class="full-bleed band-b">
+      <section class="pasos">
+        <h2>Preparación paso a paso</h2>
+        <ol>
+          {receta.pasos.map((p, i) => (
+            <li class:list={['paso', { 'con-imagen': p.imagen }]}>
+              <span class="numero" aria-hidden="true">{i + 1}</span>
+              <div class="paso-cuerpo">
+                <p>{p.texto}</p>
+                {p.imagen && <Image src={p.imagen} alt={p.imagenAlt ?? ''} width={700} />}
+              </div>
+            </li>
+          ))}
+        </ol>
+        {receta.consejo && <p class="consejo"><strong>Consejo:</strong> {receta.consejo}</p>}
+      </section>
+    </div>
+
+    <section class="resultado">
+      <h2>Resultado final</h2>
+      <Image src={receta.resultado} alt={receta.resultadoAlt} width={1100} />
+    </section>
+
+    {nutricion && (
+      <div class="full-bleed band-b">
+        <section class="nutricional">
+          <h2>Información nutricional</h2>
+          <p class="nota">Valores aproximados por ración (la receta da para {receta.raciones} {receta.raciones === 1 ? 'ración' : 'raciones'}), calculados a partir de los ingredientes con tablas de composición de alimentos.</p>
+          {destacados.length > 0 && (
+            <ul class="destacados">
+              {destacados.map((d) => (
+                <li><span class="d-valor">{d.valor}</span><span class="d-label">{d.label}</span></li>
+              ))}
+            </ul>
+          )}
+          <RecipeNutritionTable nutricion={nutricion} />
+        </section>
+      </div>
+    )}
+
+    <ArticulosRelacionados heading={tipo ? `Más ${tipo.titulo.toLowerCase()}` : 'Más recetas'} articulos={relacionados} />
+  </div>
+</BaseLayout>
+
+<style>
+  .cabecera {
+    padding-block: var(--space-section);
+  }
+  .cabecera h1 {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #000;
+    margin: 0 0 24px;
+  }
+  .datos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+  .datos li {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 0.6rem;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 18px;
+  }
+  .dato-icono {
+    grid-row: 1 / 3;
+    display: inline-flex;
+    color: #f964c0;
+  }
+  .dato-icono :global(svg) {
+    width: 29px;
+    height: 29px;
+  }
+  .dato-label {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.2;
+    color: rgba(33, 33, 33, 0.79);
+  }
+  .dato-valor {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #6c2f50;
+  }
+
+  .ingredientes,
+  .pasos,
+  .resultado,
+  .nutricional {
+    padding-block: var(--space-section);
+  }
+  .ingredientes h2,
+  .pasos h2 {
+    text-align: left;
+  }
+  .ingredientes-cuerpo {
+    display: flow-root;
+  }
+  .ingredientes-imagen {
+    float: right;
+    width: calc(45% - 1rem);
+    margin: 0 0 1.5rem 2rem;
+  }
+  .ingredientes-imagen :global(img),
+  .paso-cuerpo :global(img),
+  .resultado :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  .para {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .lista-ingredientes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .lista-ingredientes li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    padding-block: 8px;
+    color: #6c2f50;
+  }
+  .check {
+    flex: 0 0 22px;
+    display: inline-flex;
+    height: 33px;
+    align-items: center;
+    color: #f964c0;
+  }
+  .check :global(svg) {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pasos ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: none;
+  }
+  .paso {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    margin-bottom: 1.5rem;
+  }
+  .numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #6c2f50;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 600;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  .paso-cuerpo p {
+    margin: 0.6rem 0 1rem;
+    text-align: justify;
+  }
+  .paso-cuerpo :global(img) {
+    max-width: 560px;
+  }
+  .consejo {
+    margin-top: 1rem;
+    background: #fff;
+    border-left: 5px solid #f964c0;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .resultado h2 {
+    text-align: center;
+  }
+
+  .nota {
+    text-align: center;
+    font-size: 18px;
+    color: rgba(33, 33, 33, 0.79);
+  }
+  .destacados {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+  }
+  .destacados li {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;
+  }
+  .d-valor {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 600;
+    color: #6c2f50;
+    line-height: 1.2;
+  }
+  .d-label {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: rgba(33, 33, 33, 0.79);
+  }
+  .nutricional :global(.nutrition-table) {
+    max-width: 560px;
+    margin-inline: auto;
+    background: #fff;
+  }
+  .nutricional :global(caption) {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .cabecera h1 {
+      font-size: 30px;
+    }
+    .ingredientes-imagen {
+      float: none;
+      width: 100%;
+      margin: 0 0 1.5rem;
+    }
+    .paso {
+      grid-template-columns: 40px 1fr;
+      gap: 0.75rem;
+    }
+    .numero {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+    .destacados {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

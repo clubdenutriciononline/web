@@ -1,0 +1,38 @@
+---
+// Tarjetas de las recetas de un tipo, en las subpáginas de Recetas: sin
+// texto fijo (decisión de la usuaria), el título es el del tipo. Si aún no
+// hay recetas publicadas, un aviso breve en lugar de un bloque vacío.
+import { getCollection } from 'astro:content';
+import ArticulosRelacionados from './ArticulosRelacionados.astro';
+import { recetas, type TipoReceta } from '../lib/recetas';
+
+interface Props {
+  tipo: TipoReceta;
+}
+const { tipo } = Astro.props;
+const lista = recetas(await getCollection('blog'), tipo.category);
+---
+
+{lista.length > 0 ? (
+  <ArticulosRelacionados heading={tipo.titulo} articulos={lista} pageSize={6} />
+) : (
+  <section class="proximamente">
+    <h2>{tipo.titulo}</h2>
+    <p>Muy pronto publicaremos aquí las primeras recetas. Mientras tanto, puedes ver <a href="/recetas/">todas las recetas</a>.</p>
+  </section>
+)}
+
+<style>
+  .proximamente {
+    padding-block: var(--space-section);
+    text-align: center;
+  }
+  .proximamente h2 {
+    font-family: var(--font-body);
+    font-weight: 400;
+  }
+  .proximamente a {
+    color: #f964c0;
+    font-weight: 600;
+  }
+</style>

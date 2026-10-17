@@ -7,6 +7,7 @@
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import RadarLayout from '../../layouts/RadarLayout.astro';
+import RecipeLayout from '../../layouts/RecipeLayout.astro';
 import { pickRelacionados } from '../../lib/relacionados';
 
 export async function getStaticPaths() {
@@ -56,7 +57,11 @@ if (kind === 'blog') {
 }
 ---
 
-{kind === 'blog' ? (
+{kind === 'blog' && (entry.data as any).receta ? (
+  <RecipeLayout entry={entry as any} relacionados={relacionados}>
+    <Content />
+  </RecipeLayout>
+) : kind === 'blog' ? (
   <ArticleLayout
     entry={entry as any}
     categoriaLabel={(entry.data as any).category}

@@ -1,0 +1,22 @@
+---
+// Subpágina de Recetas (2026-10-17): hero sencillo y, debajo, solo las
+// tarjetas de las recetas de este tipo (sin texto fijo, decisión de la
+// usuaria). Aparecen solas al publicar recetas con category "recetas/antiinflamatorias".
+import RecetasTemplate from '../../layouts/RecetasTemplate.astro';
+import ListadoRecetas from '../../components/ListadoRecetas.astro';
+import { tiposReceta } from '../../lib/recetas';
+import heroImg from '../recetas/_images/antiinflamatorias.jpg';
+
+const tipo = tiposReceta.find((t) => t.category === 'recetas/antiinflamatorias')!;
+---
+
+<RecetasTemplate
+  seoTitle="Recetas antiinflamatorias: fáciles, saludables y llenas de color"
+  seoDescription="Recetas antiinflamatorias sencillas, con verduras, legumbres, pescado azul, especias y grasas saludables, con ingredientes, pasos e información nutricional."
+  heroTitle="Recetas antiinflamatorias"
+  heroSubtitle="Platos llenos de color con verduras, legumbres, pescado azul, especias y grasas saludables, pensados para una alimentación que ayude a reducir la inflamación."
+  heroImage={heroImg}
+  heroImageAlt="Bol antiinflamatorio con salmón, coliflor con cúrcuma, espinacas, aguacate y arándanos"
+>
+  <ListadoRecetas tipo={tipo} />
+</RecetasTemplate>

@@ -17,6 +17,10 @@ const nutricionSchema = z
     hierro: z.string().optional(),
     vitaminaA: z.string().optional(),
     vitaminaC: z.string().optional(),
+    // Añadidos para la plantilla de receta (2026-10-17).
+    fibra: z.string().optional(),
+    azucares: z.string().optional(),
+    grasasSaturadas: z.string().optional(),
   })
   .optional();
 
@@ -46,8 +50,33 @@ const blog = defineCollection({
       description: z.string(),
       seo: seoSchema,
       author: z.string().default('Club de Nutrición'),
-      // Solo presente en artículos tipo receta.
+      // Solo presente en artículos tipo receta (valores por ración).
       nutricion: nutricionSchema,
+      // Plantilla de receta (2026-10-17, ver 00-analisis/Pendiente -
+      // Recetas.md): si existe, la entrada se muestra con RecipeLayout
+      // (ingredientes, pasos con fotos, resultado final y tabla nutricional
+      // por ración) en lugar de la plantilla de artículo.
+      receta: z
+        .object({
+          raciones: z.number(),
+          preparacion: z.string(),
+          coccion: z.string().optional(),
+          dificultad: z.enum(['Fácil', 'Media', 'Difícil']),
+          ingredientes: z.array(z.string()),
+          imagenIngredientes: image().optional(),
+          imagenIngredientesAlt: z.string().optional(),
+          pasos: z.array(
+            z.object({
+              texto: z.string(),
+              imagen: image().optional(),
+              imagenAlt: z.string().optional(),
+            }),
+          ),
+          resultado: image(),
+          resultadoAlt: z.string(),
+          consejo: z.string().optional(),
+        })
+        .optional(),
       // Fuentes/referencias, cuando corresponda (no todos los artículos lo tienen).
       sources: z.array(z.string()).default([]),
       draft: z.boolean().default(false),

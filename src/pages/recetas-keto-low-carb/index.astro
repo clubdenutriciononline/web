@@ -1,0 +1,22 @@
+---
+// Subpágina de Recetas (2026-10-17): hero sencillo y, debajo, solo las
+// tarjetas de las recetas de este tipo (sin texto fijo, decisión de la
+// usuaria). Aparecen solas al publicar recetas con category "recetas/keto-low-carb".
+import RecetasTemplate from '../../layouts/RecetasTemplate.astro';
+import ListadoRecetas from '../../components/ListadoRecetas.astro';
+import { tiposReceta } from '../../lib/recetas';
+import heroImg from '../recetas/_images/keto-low-carb.jpg';
+
+const tipo = tiposReceta.find((t) => t.category === 'recetas/keto-low-carb')!;
+---
+
+<RecetasTemplate
+  seoTitle="Recetas keto y low carb: fáciles, saciantes y bajas en hidratos"
+  seoDescription="Recetas keto y low carb sencillas y saciantes, con ingredientes, pasos con fotos e información nutricional por ración."
+  heroTitle="Recetas keto y low carb"
+  heroSubtitle="Recetas bajas en hidratos de carbono, saciantes y fáciles de preparar, para quienes siguen una alimentación keto o quieren reducir los hidratos."
+  heroImage={heroImg}
+  heroImageAlt="Plato keto con tortilla de espinacas, champiñones y queso, aguacate y tomates cherry"
+>
+  <ListadoRecetas tipo={tipo} />
+</RecetasTemplate>

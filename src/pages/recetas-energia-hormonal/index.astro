@@ -1,0 +1,22 @@
+---
+// Subpágina de Recetas (2026-10-17): hero sencillo y, debajo, solo las
+// tarjetas de las recetas de este tipo (sin texto fijo, decisión de la
+// usuaria). Aparecen solas al publicar recetas con category "recetas/energia-hormonal".
+import RecetasTemplate from '../../layouts/RecetasTemplate.astro';
+import ListadoRecetas from '../../components/ListadoRecetas.astro';
+import { tiposReceta } from '../../lib/recetas';
+import heroImg from '../recetas/_images/energia-hormonal.jpg';
+
+const tipo = tiposReceta.find((t) => t.category === 'recetas/energia-hormonal')!;
+---
+
+<RecetasTemplate
+  seoTitle="Recetas para la energía hormonal: desayunos, comidas y cenas equilibradas"
+  seoDescription="Recetas que combinan proteína, fibra y grasas saludables para mantener la glucosa estable y la energía a lo largo del día, con información nutricional por ración."
+  heroTitle="Recetas para la energía hormonal"
+  heroSubtitle="Recetas que combinan proteína, fibra y grasas saludables para mantener estable la glucosa y sentirte con energía durante todo el día."
+  heroImage={heroImg}
+  heroImageAlt="Desayuno con bol de yogur, avena, semillas y frutos rojos, huevos y tostada de aguacate"
+>
+  <ListadoRecetas tipo={tipo} />
+</RecetasTemplate>

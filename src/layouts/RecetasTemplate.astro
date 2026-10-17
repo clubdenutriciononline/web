@@ -1,0 +1,37 @@
+---
+// Plantilla sencilla de la sección Recetas (2026-10-17, ver 00-analisis/
+// Pendiente - Recetas.md): hero lateral de las hijas y debajo el contenido
+// de cada página (la madre añade la explicación de los 3 tipos; las
+// subpáginas solo muestran las tarjetas de sus recetas).
+import BaseLayout from './BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  seoTitle: string;
+  seoDescription: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroImage: ImageMetadata;
+  heroImageAlt: string;
+}
+
+const { seoTitle, seoDescription, heroTitle, heroSubtitle, heroImage, heroImageAlt } = Astro.props;
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+<div class="hub">
+  <Hero
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    ctaIntro="Descubre cómo estabilizar tu energía, descarga la guía ahora:"
+    ctaLabel="Descargar la guía ahora"
+    ctaHref="/lm-5-pasos-optin/"
+    image={heroImage}
+    imageAlt={heroImageAlt}
+    layout="lateral"
+  />
+
+  <slot />
+</div>
+</BaseLayout>

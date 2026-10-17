@@ -1,6 +1,10 @@
 # Pendiente — Sección Recetas
 
-Estado: **PLANIFICADO (2026-10-17)**. Se hace después de terminar Alimentación (falta Patrones alimentarios).
+Estado: **EN CURSO (2026-10-17).** Hecho: página madre `/recetas/`, las 3 subpáginas, Recetas en el menú, plantilla de receta (`RecipeLayout`, campo `receta` en la collection `blog`) y la primera receta migrada (Salmón al horno con espárragos) como modelo. Pendiente: pasar las otras 5 recetas existentes a la plantilla.
+
+### Cómo crear una receta nueva
+
+Copiar `src/content/blog/receta-salmon-al-horno-con-esparragos/` y cambiar: `category` (`recetas/antiinflamatorias`, `recetas/energia-hormonal` o `recetas/keto-low-carb`), `nutricion` (por ración), el bloque `receta` (raciones, tiempos, dificultad, ingredientes, `imagenIngredientes`, `pasos` con 2-3 imágenes, `resultado`, `consejo` opcional) y la introducción del cuerpo. Imágenes: ilustración de ingredientes en acuarela, fotos de pasos y foto final, generadas con el MCP. La página se monta sola y aparece en su subpágina y en `/recetas/`.
 
 En el WordPress existen la categoría RECETAS y sus 3 subcategorías (Antiinflamatorias, Energía hormonal, Keto / low carb). En la web nueva todavía no hay ninguna página de recetas; solo las 6 recetas keto del blog (`category: "recetas/keto-low-carb"` y una `"recetas"`).
 

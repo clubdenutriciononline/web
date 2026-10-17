@@ -69,6 +69,15 @@ export const mainNav: NavItem[] = [
       { label: 'Patrones alimentarios', href: '/patrones-alimentarios/' },
     ],
   },
+  {
+    label: 'Recetas',
+    href: '/recetas/',
+    children: [
+      { label: 'Antiinflamatorias', href: '/recetas-antiinflamatorias/' },
+      { label: 'Energía hormonal', href: '/recetas-energia-hormonal/' },
+      { label: 'Keto / low carb', href: '/recetas-keto-low-carb/' },
+    ],
+  },
   { label: 'Blog', href: '/blog/' },
   { label: 'Radar de Salud', href: '/radar-de-salud/' },
   { label: 'Contacto', href: '/contacto/' },
