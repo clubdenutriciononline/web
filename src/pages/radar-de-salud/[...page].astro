@@ -3,6 +3,7 @@
 // independiente del Blog). /radar-de-salud/2/ = paginación.
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
 import type { GetStaticPathsOptions } from 'astro';
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
@@ -21,16 +22,7 @@ const { page } = Astro.props;
 >
   <h1>Radar de Salud</h1>
 
-  <div class="grid">
-    {page.data.map((post) => (
-      <a class="post-card" href={`/${post.data.slug ?? post.id}/`}>
-        <span class="categoria">Radar de Salud</span>
-        <h3>{post.data.title}</h3>
-        <p>{post.data.description}</p>
-        <span class="leer-mas">Leer artículo »</span>
-      </a>
-    ))}
-  </div>
+  <ArticulosRelacionados heading={false} articulos={page.data} pageSize={false} />
 
   <nav class="paginacion" aria-label="Paginación del Radar de Salud">
     {page.url.prev
@@ -44,16 +36,6 @@ const { page } = Astro.props;
 </BaseLayout>
 
 <style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
-  .categoria {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: #f964c0;
-  }
   /* Mismo formato que la paginación cliente de ArticulosRelacionados
      (colores corporativos), unificado 2026-10-17. */
   .paginacion {
