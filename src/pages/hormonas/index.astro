@@ -8,6 +8,7 @@ import CausasGrid from '../../components/CausasGrid.astro';
 import ListaSintomas from '../../components/ListaSintomas.astro';
 import RelacionImagenes from '../../components/RelacionImagenes.astro';
 import SolucionesList from '../../components/SolucionesList.astro';
+import { Image } from 'astro:assets';
 
 import heroImg from './_images/Hero.jpg';
 import sistemaEndocrinoImg from './_images/Sistema-endocrino-femenino.jpg';
@@ -47,25 +48,40 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
     { icon: iconoInflamacion, title: 'Inflamación hormonal', href: '/inflamacion-hormonal/', text: 'Cómo la inflamación altera las hormonas, la digestión, la energía y la sensibilidad a la insulina.' },
   ]}
 >
-  <section class="intro">
-    <p>Las hormonas regulan prácticamente todo en el cuerpo femenino. Desde la energía diaria hasta el metabolismo, el estado de ánimo, el sueño o el peso corporal. Cuando están en equilibrio, el cuerpo funciona de forma fluida. Pero cuando se desregulan, aparecen síntomas como:</p>
+  <div class="full-bleed band-a">
+    <section class="intro">
+      <p>Las hormonas regulan prácticamente todo en el cuerpo femenino. Desde la energía diaria hasta el metabolismo, el estado de ánimo, el sueño o el peso corporal. Cuando están en equilibrio, el cuerpo funciona de forma fluida. Pero cuando se desregulan, aparecen síntomas como:</p>
+    </section>
+  </div>
 
-    <ul class="sintomas-destacados">
-      <li>Fatiga constante</li>
-      <li>Cambios de peso</li>
-      <li>Ansiedad o antojos</li>
-      <li>Problemas de sueño</li>
-      <li>Hinchazón o inflamación</li>
-    </ul>
+  <div class="full-bleed band-a">
+    <SolucionesList
+      variant="pill"
+      soluciones={[
+        { title: 'Fatiga constante', icon: '😓' },
+        { title: 'Cambios de peso', icon: '⚖️' },
+        { title: 'Ansiedad o antojos', icon: '😅' },
+        { title: 'Problemas de sueño', icon: '😴' },
+        { title: 'Hinchazón o inflamación', icon: '😳' },
+      ]}
+    />
+  </div>
 
-    <p>👉 Muchas veces no es un problema aislado, sino un sistema desajustado. En esta guía vas a entender:</p>
-    <ul>
-      <li>Qué son realmente las hormonas</li>
-      <li>Por qué se desregulan</li>
-      <li>Cómo afectan a tu energía y metabolismo</li>
-      <li>Qué puedes hacer para equilibrarlas de forma natural</li>
-    </ul>
-  </section>
+  <div class="full-bleed band-a">
+    <section class="intro">
+      <p>👉 Muchas veces no es un problema aislado, sino un sistema desajustado. En esta guía vas a entender:</p>
+      <div class="que-vas-a-entender">
+        <ul>
+          <li>Qué son realmente las hormonas</li>
+          <li>Por qué se desregulan</li>
+        </ul>
+        <ul>
+          <li>Cómo afectan a tu energía y metabolismo</li>
+          <li>Qué puedes hacer para equilibrarlas de forma natural</li>
+        </ul>
+      </div>
+    </section>
+  </div>
 
   <TextoConImagen heading="¿Qué son las hormonas?" image={sistemaEndocrinoImg} imageAlt="Sistema endocrino femenino">
     <p>Las hormonas son mensajeros químicos producidos por el sistema endocrino. Viajan a través del torrente sanguíneo y regulan funciones clave como:</p>
@@ -87,6 +103,7 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
 
   <CausasGrid
     heading="¿Por qué se desregulan las hormonas?"
+    subheading="Principales causas:"
     causas={[
       { icon: iconEstres, title: 'Estrés crónico', text: 'El estrés constante mantiene el cortisol elevado, lo que altera la regulación hormonal, afecta al metabolismo y puede favorecer la acumulación de grasa abdominal, la fatiga y los antojos constantes.' },
       { icon: iconMalaAlimentacion, title: 'Mala alimentación', text: 'Una dieta rica en ultraprocesados, azúcares y grasas inflamatorias puede desestabilizar la insulina, aumentar la inflamación y alterar hormonas clave como los estrógenos y la progesterona.' },
@@ -113,30 +130,29 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
     ]}
   />
 
-  <RelacionImagenes
-    heading="Relación entre hormonas, energía y metabolismo"
-    images={[
-      { src: sistemaHormonalImg, alt: 'Sistema hormonal femenino' },
-      { src: hormonasEnergiaMetabolismoImg, alt: 'Hormonas, energía y metabolismo' },
-    ]}
-  >
+  <RelacionImagenes heading="Relación entre hormonas, energía y metabolismo">
     <p>Las hormonas no funcionan de forma aislada. Están conectadas con:</p>
+    <Image src={sistemaHormonalImg} alt="Sistema hormonal femenino" />
     <p>Las hormonas no actúan de forma independiente ni aislada en el organismo, sino que forman parte de una red altamente interconectada que influye directamente en cómo te sientes, cómo gestionas la energía y cómo tu cuerpo regula el metabolismo.</p>
     <p>Este sistema hormonal está íntimamente relacionado con tres grandes pilares del equilibrio femenino: el metabolismo energético, la microbiota intestinal y el sistema nervioso.</p>
     <p>Cuando uno de estos elementos se altera, se produce un efecto en cadena que impacta en el resto, afectando a procesos clave como la quema de grasa, la digestión, el apetito, el estado de ánimo y la respuesta al estrés.</p>
     <p>Por ejemplo, el equilibrio entre estas hormonas puede determinar si el cuerpo utiliza la energía de forma eficiente o si, por el contrario, entra en un estado de bloqueo metabólico.</p>
     <p>A continuación, verás algunos ejemplos claros de cómo estas interacciones hormonales se traducen en cambios visibles en el cuerpo y la energía diaria.</p>
+    <Image src={hormonasEnergiaMetabolismoImg} alt="Hormonas, energía y metabolismo" />
     <p class="frase-destacada">No es falta de fuerza de voluntad. Es regulación interna.</p>
   </RelacionImagenes>
 
   <SolucionesList
     heading="Cómo equilibrar las hormonas de forma natural"
+    subheading="Pilares clave:"
+    variant="pill"
+    band="b"
     soluciones={[
-      { title: 'Alimentación equilibrada' },
-      { title: 'Control del estrés' },
-      { title: 'Descanso de calidad' },
-      { title: 'Movimiento adaptado' },
-      { title: 'Salud intestinal' },
+      { title: 'Alimentación equilibrada', icon: '🍎' },
+      { title: 'Control del estrés', icon: '😊' },
+      { title: 'Descanso de calidad', icon: '😴' },
+      { title: 'Movimiento adaptado', icon: '🏃' },
+      { title: 'Salud intestinal', icon: '❤️' },
     ]}
   />
 </HubTemplateA>
@@ -146,15 +162,53 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
   .frase-destacada {
     padding: 0 1rem;
   }
-  .sintomas-destacados {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
+  .intro {
+    padding-block: 1rem;
+    font-family: var(--font-body);
+    font-size: 1.375rem;
+    text-align: center;
   }
   .frase-destacada {
     font-style: italic;
     text-align: center;
+  }
+
+  /* Tarjeta "¿qué vas a entender?": radio20 + sombra difusa que se
+     intensifica al pasar el ratón, fiel al icon-list widget original
+     (sección ceaa99c, ver investigación CSS de este cambio). */
+  .que-vas-a-entender {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+    transition: box-shadow 0.3s;
+  }
+  .que-vas-a-entender:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+  .que-vas-a-entender ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .que-vas-a-entender li {
+    font-family: var(--font-body);
+    color: #6c2f50;
+    margin-bottom: 0.5rem;
+  }
+  .que-vas-a-entender li::before {
+    content: '✔';
+    color: #f964c0;
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+  @media (max-width: 640px) {
+    .que-vas-a-entender {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

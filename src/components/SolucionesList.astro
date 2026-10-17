@@ -19,28 +19,36 @@ interface Solucion {
 }
 interface Props {
   heading?: string;
+  subheading?: string;
   soluciones: Solucion[];
-  variant?: 'chip' | 'card';
+  variant?: 'chip' | 'card' | 'pill';
+  // Banda de fondo con degradado (ver BaseLayout .band-a / .band-b),
+  // confirmada por sección en el CSS compilado del original. Opcional:
+  // cada página decide si esta fila concreta cae dentro de una banda o no.
+  band?: 'a' | 'b' | false;
 }
-const { heading, soluciones, variant = 'chip' } = Astro.props;
+const { heading, subheading, soluciones, variant = 'chip', band = false } = Astro.props;
 ---
 
-<section class="soluciones" data-variant={variant}>
-  {heading && <h2>{heading}</h2>}
-  <div class="grid">
-    {soluciones.map((s) => (
-      <div class="solucion-item">
-        {s.icon && (
-          typeof s.icon === 'string'
-            ? <span class="icon" aria-hidden="true">{s.icon}</span>
-            : 'svg' in s.icon
-              ? <span class="icon icon-svg" aria-hidden="true" set:html={s.icon.svg} />
-              : <Image class="icon-img" src={s.icon} alt="" width={64} height={64} />
-        )}
-        <h3>{s.title}</h3>
-        {s.body && <p>{s.body}</p>}
-      </div>
-    ))}
+<section data-variant={variant} class:list={['soluciones', band && 'full-bleed', band === 'a' && 'band-a', band === 'b' && 'band-b']}>
+  <div class="soluciones-inner">
+    {heading && <h2>{heading}</h2>}
+    {subheading && <p class="subheading">{subheading}</p>}
+    <div class="grid">
+      {soluciones.map((s) => (
+        <div class="solucion-item">
+          {s.icon && (
+            typeof s.icon === 'string'
+              ? <span class="icon" aria-hidden="true">{s.icon}</span>
+              : 'svg' in s.icon
+                ? <span class="icon icon-svg" aria-hidden="true" set:html={s.icon.svg} />
+                : <Image class="icon-img" src={s.icon} alt="" width={64} height={64} />
+          )}
+          <h3>{s.title}</h3>
+          {s.body && <p>{s.body}</p>}
+        </div>
+      ))}
+    </div>
   </div>
 </section>
 
@@ -90,5 +98,58 @@ const { heading, soluciones, variant = 'chip' } = Astro.props;
     display: flex;
     justify-content: center;
     margin: 0 auto 0.5rem;
+  }
+
+  .soluciones-inner {
+    padding-block: var(--space-section);
+  }
+  .subheading {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    margin-top: -0.5rem;
+  }
+
+  /* Variante "pill": fila de píldoras con icono (confirmada por el CSS
+     compilado del original, widget icon-box — mismo patrón para las
+     "píldoras de síntomas" del hero y los "pilares clave" de más abajo). */
+  section[data-variant='pill'] .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  section[data-variant='pill'] .solucion-item {
+    flex: 1 1 160px;
+    max-width: 220px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    transition: border-radius 0.3s, box-shadow 0.3s;
+  }
+  section[data-variant='pill'] .solucion-item:hover {
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  section[data-variant='pill'] .icon {
+    font-size: 29px;
+    display: block;
+  }
+  section[data-variant='pill'] h3 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #6c2f50;
+    text-transform: none;
+    margin: 0.5rem 0 0;
+  }
+  section[data-variant='pill'] .solucion-item:hover h3 {
+    color: #6c2f50;
+  }
+  section[data-variant='pill'] p {
+    font-family: var(--font-body);
+    color: #212121;
   }
 </style>

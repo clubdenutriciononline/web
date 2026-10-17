@@ -163,6 +163,17 @@ const organizationJsonLd = {
     padding-inline: var(--container-padding);
   }
 
+  /* Bandas de fondo con degradado, confirmadas por el CSS compilado del
+     original (Elementor, página Hormonas): la A cubre el hero, la B las
+     bandas intermedias ("¿qué son...", "síntomas", "cómo equilibrar...").
+     Se combinan con .full-bleed en el contenido de cada página. */
+  .band-a {
+    background: linear-gradient(180deg, #ffe3fe69 0%, #ecdbf1 100%);
+  }
+  .band-b {
+    background: linear-gradient(180deg, #e89eff08 0%, #ecdbf1 100%);
+  }
+
   h1, h2, h3 {
     font-family: var(--font-heading);
     font-weight: 600;

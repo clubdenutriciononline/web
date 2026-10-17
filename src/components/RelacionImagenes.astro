@@ -1,12 +1,19 @@
 ---
-// Sección "relación con..." — texto + 2 imágenes en lightbox (enlace a la
-// propia imagen a tamaño completo, no a otra página; así es en el original).
+// Sección "relación con..." — en el original el texto y las imágenes van
+// intercalados (párrafo, imagen a ancho completo, más párrafos, segunda
+// imagen, frase de cierre), no texto seguido de una rejilla de miniaturas.
+// Por eso el contenido se pasa entero por el slot, en el orden real de la
+// página, y el componente solo aporta la sección + el estilo de las
+// imágenes sueltas que haya dentro (tarjeta con sombra, sin recorte).
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 interface Props {
   heading: string;
-  images: { src: ImageMetadata; alt: string }[];
+  // Compatibilidad con páginas aún no revisadas una a una: si se pasan,
+  // se añaden al final en una rejilla. Las páginas ya revisadas (Hormonas)
+  // intercalan sus imágenes directamente en el slot, en el orden real.
+  images?: { src: ImageMetadata; alt: string }[];
 }
 const { heading, images } = Astro.props;
 ---
@@ -14,19 +21,29 @@ const { heading, images } = Astro.props;
 <section class="relacion-imagenes">
   <h2>{heading}</h2>
   <slot />
-  <div class="lightbox-grid">
-    {images.map((img) => (
-      <a href={img.src.src} target="_blank" rel="noopener noreferrer">
-        <Image src={img.src} alt={img.alt} width={400} height={300} />
-      </a>
-    ))}
-  </div>
+  {images && images.length > 0 && (
+    <div class="legacy-grid">
+      {images.map((img) => <Image src={img.src} alt={img.alt} />)}
+    </div>
+  )}
 </section>
 
 <style>
-  .lightbox-grid {
+  .relacion-imagenes {
+    padding-block: var(--space-section);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+  }
+  .relacion-imagenes :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-block: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  .legacy-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
   }
 </style>

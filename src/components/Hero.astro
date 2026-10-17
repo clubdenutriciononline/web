@@ -17,39 +17,85 @@ interface Props {
 const { title, subtitle, ctaLabel, ctaHref, image, imageAlt } = Astro.props;
 ---
 
-<section class="hero">
-  <div class="hero-copy">
-    <h1>{title}</h1>
-    {subtitle && <p class="hero-subtitle">{subtitle}</p>}
-    {ctaLabel && ctaHref && (
-      <a class="hero-cta" href={ctaHref}>{ctaLabel}</a>
+<div class="full-bleed band-a">
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>{title}</h1>
+      {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+      {ctaLabel && ctaHref && (
+        <a class="hero-cta" href={ctaHref}>{ctaLabel}</a>
+      )}
+    </div>
+    {image && (
+      <div class="hero-image-wrap">
+        <Image class="hero-image" src={image} alt={imageAlt ?? ''} />
+      </div>
     )}
-  </div>
-  {image && <Image class="hero-image" src={image} alt={imageAlt ?? ''} width={600} height={450} />}
-</section>
+  </section>
+</div>
 
 <style>
   .hero {
     display: flex;
     align-items: center;
     gap: 2rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-block: var(--space-section);
   }
   .hero-copy {
-    flex: 1 1 320px;
+    flex: 0 1 60%;
+  }
+  .hero-image-wrap {
+    flex: 0 1 40%;
+    text-align: right;
   }
   .hero-image {
-    flex: 1 1 320px;
-    border-radius: 1rem;
+    width: 73%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+  }
+  .hero-image:hover {
+    transform: scale(1.1);
+  }
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgba(33, 33, 33, 0.79);
   }
   .hero-cta {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
-    border-radius: 999px;
-    background: var(--color-accent, #c2185b);
+    border-radius: 20px;
+    background: #6c2f50;
     color: #fff;
+    font-family: var(--font-body);
+    font-weight: 500;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     text-decoration: none;
+  }
+  h1 {
+    font-size: 3rem;
+    letter-spacing: -0.5px;
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      flex-wrap: wrap;
+    }
+    .hero-copy,
+    .hero-image-wrap {
+      flex: 1 1 100%;
+      text-align: left;
+    }
+    .hero-image {
+      width: 100%;
+    }
+    h1 {
+      font-size: 1.75rem;
+    }
   }
 </style>

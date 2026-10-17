@@ -11,3 +11,7 @@ Fecha: 2026-09-13. Estas son las únicas 4 cosas que quedan abiertas y que neces
 4. **URLs automáticas históricas de WordPress** (`/category/*/`, `/tag/*/`, `/author/*/`) — decidir si se recrean con redirect, se dejan morir (404), o se ignoran porque nunca estuvieron indexadas de forma relevante.
 
 Nada de esto se ha tocado. En cuanto decidas, retomamos.
+
+## A futuro (después de arreglar los formatos)
+
+- **Publicaciones programadas de blog** — ver [Pendiente - Publicaciones programadas de blog.md](Pendiente%20-%20Publicaciones%20programadas%20de%20blog.md). Filtro por fecha, rebuild diario con Deploy Hook y validación de fechas, antes de crear las 20 entradas.

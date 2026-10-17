@@ -13,13 +13,19 @@ interface Props {
 const { heading, image, imageAlt, reverse = false } = Astro.props;
 ---
 
-<section class:list={['texto-imagen', { reverse }]}>
-  <div class="texto-imagen-copy">
-    <h2>{heading}</h2>
-    <slot />
-  </div>
-  {image && <Image src={image} alt={imageAlt ?? ''} width={500} height={400} />}
-</section>
+<div class="full-bleed band-b">
+  <section class:list={['texto-imagen', { reverse }]}>
+    <div class="texto-imagen-copy">
+      <h2>{heading}</h2>
+      <slot />
+    </div>
+    {image && (
+      <div class="texto-imagen-image-wrap">
+        <Image src={image} alt={imageAlt ?? ''} />
+      </div>
+    )}
+  </section>
+</div>
 
 <style>
   .texto-imagen {
@@ -34,9 +40,16 @@ const { heading, image, imageAlt, reverse = false } = Astro.props;
   }
   .texto-imagen-copy {
     flex: 1 1 320px;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
   }
-  .texto-imagen img {
+  .texto-imagen-image-wrap {
     flex: 1 1 320px;
-    border-radius: 1rem;
+  }
+  .texto-imagen-image-wrap :global(img) {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   }
 </style>
