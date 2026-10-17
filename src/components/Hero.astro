@@ -17,11 +17,12 @@ interface Props {
   image?: ImageMetadata;
   imageAlt?: string;
   // 'side' (por defecto): imagen a la derecha, texto a la izquierda
-  // (Hormonas). 'stacked': imagen a ancho completo arriba y el texto
-  // debajo en media columna — confirmado como el patrón real de Energía
-  // en el HTML del original (hero = imagen suelta a ancho completo +
-  // sección aparte debajo con el texto). No todos los hubs usan el mismo.
-  layout?: 'side' | 'stacked';
+  // (Hormonas). 'overlay': imagen a ancho completo con una tarjeta de
+  // texto semitransparente superpuesta en la esquina inferior izquierda
+  // — confirmado como el patrón real de Energía en el CSS del original
+  // (columna de texto con background-color:#FFFFFF70 y margin-top
+  // negativo que la monta sobre la imagen). No todos los hubs son iguales.
+  layout?: 'side' | 'overlay';
 }
 
 const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'side' } = Astro.props;
@@ -70,24 +71,29 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     transition: transform 0.3s;
   }
 
-  /* Patrón "stacked" (Energía): imagen suelta a ancho completo arriba,
-     texto debajo en media columna. */
-  .hero[data-layout='stacked'] {
-    flex-direction: column;
-    align-items: stretch;
+  /* Patrón "overlay" (Energía): imagen a ancho completo con una tarjeta
+     de texto semitransparente superpuesta en la esquina inferior
+     izquierda, fiel al margin-top negativo + background-color:#FFFFFF70
+     del original. */
+  .hero[data-layout='overlay'] {
+    display: block;
+    position: relative;
   }
-  .hero[data-layout='stacked'] .hero-image-wrap {
-    flex: 1 1 100%;
-    text-align: center;
-    order: 1;
+  .hero[data-layout='overlay'] .hero-image-wrap {
+    display: block;
   }
-  .hero[data-layout='stacked'] .hero-image {
+  .hero[data-layout='overlay'] .hero-image {
     width: 100%;
   }
-  .hero[data-layout='stacked'] .hero-copy {
-    flex: 1 1 100%;
-    max-width: 50%;
-    order: 2;
+  .hero[data-layout='overlay'] .hero-copy {
+    position: absolute;
+    left: 0;
+    bottom: 8%;
+    width: 55%;
+    max-width: 620px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0 20px 20px 0;
+    padding: 2rem;
   }
   .hero-image:hover {
     transform: scale(1.1);
@@ -135,6 +141,14 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     }
     h1 {
       font-size: 1.75rem;
+    }
+    .hero[data-layout='overlay'] .hero-copy {
+      position: static;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 1rem;
+      border-radius: 20px;
+      background: #fff;
     }
   }
 </style>
