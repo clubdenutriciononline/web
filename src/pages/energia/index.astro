@@ -112,7 +112,8 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   <SolucionesList
     heading="Síntomas de la Fatiga y Bajo Rendimiento Energético"
     subheading="Es importante reconocer los síntomas para poder tomar medidas adecuadas. A continuación, se presentan algunos de los síntomas más comunes:"
-    variant="plain"
+    variant="card"
+    cardAlign="left"
     band="b"
     soluciones={[
       { title: 'Cansancio persistente', body: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },

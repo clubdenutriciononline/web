@@ -106,4 +106,4 @@ Esta es la secuencia real de componentes compartidos tal como quedó tras la rev
 Las píldoras, pilares y tarjetas de soluciones del original usan **fuentes de iconos** (Font Awesome 5, Material Design Icons, IcoFont, Ionicons), nunca emojis. Están todos como SVG en `src/lib/iconos.ts`, cada uno con la clase que lleva en WordPress; se usan con `icon: iconos.sueno`. Antes de adaptar una página, sacar la lista real de iconos del original (selector `.elementor-icon-box-wrapper i`) y añadir a `iconos.ts` los que falten (SVG de `@fortawesome/fontawesome-free@5.15.4`, `@mdi/svg`, `@icon/icofont`, `ionicons@4.6.3`).
 
 - Checklists: `fa-check`; listas de síntomas: `fa-check-circle` (ChecklistCard `icon`).
-- **Síntomas de Energía**: en el original no son tarjetas ni llevan icono — lista simple de título (Fredoka 500 27px `#6C2F50`) + texto → `SolucionesList variant="plain"`.
+- **Síntomas de Energía**: se mantienen en tarjetas (decisión de la usuaria). En el original no llevan icono, así que las tarjetas van sin icono (antes tenían emojis).
