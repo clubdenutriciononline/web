@@ -9,13 +9,15 @@
 // el buscador (más pequeño) debajo, pegado a la derecha y a la altura de
 // la base del logo. En móvil no se fija: sin menú hamburguesa, el
 // menú ocupa varias líneas y taparía media pantalla.
-// Contacto (2026-10-17, pedido de la usuaria): sale de la fila del menú y
-// va en la segunda fila, a la derecha del buscador, para que el menú siga
-// cabiendo en una línea al añadir Recetas.
+// Dos filas (2026-10-17, pedido de la usuaria): arriba solo las páginas de
+// tema (Inicio … Alimentación, y Recetas cuando exista); abajo el buscador a
+// la izquierda, justo bajo "Inicio", y Blog · Radar de Salud · Contacto a la
+// derecha, terminando en el mismo borde que el menú.
 import { mainNav } from '../data/navigation';
 
-const contacto = mainNav.find((item) => item.href === '/contacto/');
-const menu = mainNav.filter((item) => item !== contacto);
+const secundarias = ['/blog/', '/radar-de-salud/', '/contacto/'];
+const menu = mainNav.filter((item) => !secundarias.includes(item.href));
+const menuSecundario = mainNav.filter((item) => secundarias.includes(item.href));
 ---
 
 <header class="site-header">
@@ -25,6 +27,7 @@ const menu = mainNav.filter((item) => item !== contacto);
         <img src="/images/site/logo.png" width="166" height="69" alt="Club de Nutrición" />
       </a>
 
+      <div class="header-menus">
       <nav class="main-nav" aria-label="Menú principal">
         <ul>
           {menu.map((item) => (
@@ -52,7 +55,14 @@ const menu = mainNav.filter((item) => item !== contacto);
         <button id="search-toggle" class="search-toggle" type="button" aria-label="Buscar" aria-expanded="false" aria-controls="header-search">
           Buscar
         </button>
-        {contacto && <a class="nav-contacto" href={contacto.href}>{contacto.label}</a>}
+      </div>
+      <nav class="nav-secundario" aria-label="Blog, Radar de Salud y Contacto">
+        <ul>
+          {menuSecundario.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
       </div>
     </div>
 
@@ -162,17 +172,29 @@ const menu = mainNav.filter((item) => item !== contacto);
   }
   .header-search-inline {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 0;
   }
   /* Mismo aspecto que las opciones del menú principal. */
-  .nav-contacto {
-    margin-left: 1.1rem;
+  .nav-secundario ul {
+    display: flex;
+    gap: 1.1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-secundario a {
     color: var(--color-nav-text);
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
+    white-space: nowrap;
+  }
+  .header-menus {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .search-input {
     border: 1px solid #ddd;
@@ -222,10 +244,24 @@ const menu = mainNav.filter((item) => item !== contacto);
       grid-row: 1 / 3;
       align-self: center;
     }
-    .main-nav {
+    /* Bloque de menús ajustado al ancho de la fila del menú y pegado a la
+       derecha: así el buscador empieza justo bajo "Inicio" y Contacto
+       termina en el mismo borde que la última opción del menú. */
+    .header-menus {
       grid-column: 2;
+      grid-row: 1 / 3;
+      justify-self: end;
+      align-self: stretch;
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      justify-content: space-between;
+      align-content: space-between;
+      row-gap: 0.4rem;
+    }
+    .main-nav {
+      grid-column: 1 / 3;
       grid-row: 1;
-      align-self: start;
       padding-top: 0.4rem;
     }
     .header-top .logo img {
@@ -242,10 +278,17 @@ const menu = mainNav.filter((item) => item !== contacto);
       white-space: nowrap;
     }
     .header-search-inline {
+      grid-column: 1;
+      grid-row: 2;
+      justify-self: start;
+      align-self: end;
+      padding-bottom: 0.3rem;
+    }
+    .nav-secundario {
       grid-column: 2;
       grid-row: 2;
       justify-self: end;
-      align-self: end;
+      align-self: center;
       padding-bottom: 0.3rem;
     }
   }
