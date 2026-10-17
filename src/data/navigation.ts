@@ -59,7 +59,6 @@ export const mainNav: NavItem[] = [
       { label: 'Relación con el cuerpo', href: '/relacion-cuerpo-mujeres/' },
     ],
   },
-  { label: 'Radar de Salud', href: '/radar-de-salud/' },
   {
     label: 'Alimentación',
     href: '/alimentacion/',
@@ -71,6 +70,7 @@ export const mainNav: NavItem[] = [
     ],
   },
   { label: 'Blog', href: '/blog/' },
+  { label: 'Radar de Salud', href: '/radar-de-salud/' },
   { label: 'Contacto', href: '/contacto/' },
 ];
 

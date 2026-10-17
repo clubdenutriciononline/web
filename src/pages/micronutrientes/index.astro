@@ -1,0 +1,163 @@
+---
+// Micronutrientes — página hija de Alimentación (subcategoría NUTRICIÓN >
+// Micronutrientes del WordPress), nueva el 2026-10-17. Plantilla de hijas
+// validada en Fatiga crónica (00-analisis/Plantilla - Páginas hijas.md), con
+// titular en el hero. El original no tenía esta página: textos nuevos
+// investigados (registro neutro, sin consejo médico concreto; los
+// suplementos siempre con valoración profesional) e imágenes generadas con
+// IA; causas en el estilo de Ciclo menstrual. Iconos de las colecciones del
+// original (src/lib/iconos.ts).
+import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+import causaVariedad from './_images/causa-variedad.jpg';
+import causaMenstruacion from './_images/causa-menstruacion.jpg';
+import causaSol from './_images/causa-sol.jpg';
+import causaAbsorcion from './_images/causa-absorcion.jpg';
+import causaDietas from './_images/causa-dietas.jpg';
+import causaEtapas from './_images/causa-etapas.jpg';
+
+// En el blog migrado estos artículos conservan la categoría "nutricion"; en
+// el WordPress son los de NUTRICIÓN > Micronutrientes, así que se enlazan por
+// su dirección.
+const propios = ['macronutrientes-y-micronutrientes', 'cuando-tomar-agua-mejores-momentos', '10-beneficios-de-beber-agua-con-limon'];
+const articulos = pickRelacionados(
+  await getCollection('blog'),
+  (p) => propios.includes(p.data.slug ?? p.id),
+  3,
+  (p) => p.data.category.startsWith('nutricion'),
+);
+---
+
+<SubpageTemplateB
+  seoTitle="Micronutrientes: vitaminas y minerales clave para la mujer"
+  seoDescription="Qué son los micronutrientes, qué vitaminas y minerales son clave para la salud femenina, como el hierro, el calcio, el magnesio o la vitamina D, y cómo obtenerlos de la alimentación."
+  heroTitle="Micronutrientes: vitaminas y minerales clave"
+  heroSubtitle="Descubre qué vitaminas y minerales son especialmente importantes para la salud femenina, cómo influyen en tu energía y tus hormonas, y en qué alimentos encontrarlos."
+  heroImage={heroImg}
+  heroImageAlt="Mujer sentada a la mesa con una ensalada de espinacas, naranja y semillas y una tostada de sardinas"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>Los micronutrientes son las vitaminas y los minerales que el cuerpo necesita en pequeñas cantidades, pero que resultan imprescindibles para su funcionamiento.</p>
+    <p>Aunque no aportan energía por sí mismos, participan en procesos clave como la producción de energía en las células, la formación de los huesos, el transporte de oxígeno, la defensa frente a infecciones o la producción de hormonas.</p>
+    <p>El organismo no puede fabricar la mayoría de ellos, por lo que deben obtenerse a través de la alimentación, y en el caso de la vitamina D, también de la exposición al sol.</p>
+    <p>En las mujeres, algunos micronutrientes como el hierro, el calcio, la vitamina D, el magnesio, el yodo o las vitaminas del grupo B tienen un papel especialmente importante en las distintas etapas de la vida.</p>
+    <p>En esta guía descubrirás qué son los micronutrientes, qué factores pueden provocar un déficit, qué señales conviene vigilar y cómo cubrir las necesidades a través de la alimentación.</p>
+  </section>
+
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Cansancio', icon: iconos.bateriaBaja },
+      { title: 'Calambres musculares', icon: iconos.ejercicio },
+      { title: 'Descanso de mala calidad', icon: iconos.sueno },
+      { title: 'Defensas bajas', icon: iconos.escudoRoto },
+      { title: 'Cambios de humor', icon: iconos.caraTriste },
+    ]}
+  />
+
+  <p class="pregunta">¿Sabías que el cansancio puede ser una señal de que te faltan algunas vitaminas o minerales?</p>
+  <section class="intro lista">
+    <p class="texto">Los micronutrientes se necesitan en cantidades muy pequeñas, pero su falta puede notarse en la energía, el estado de ánimo, la piel o las defensas. Conocerlos ayuda a elegir mejor los alimentos y a saber cuándo conviene consultar a un profesional.</p>
+    <ChecklistCard
+      columns={1}
+      items={[
+        'Comprender qué son las vitaminas y los minerales y por qué son esenciales para la salud',
+        'Conocer los micronutrientes clave para la mujer y en qué alimentos se encuentran',
+        'Identificar los factores y las señales que pueden indicar un déficit',
+        'Aprender pautas prácticas para cubrir las necesidades a través de la alimentación',
+      ]}
+    />
+  </section>
+
+  <TextoConImagen heading="¿Qué son los Micronutrientes?" image={definicionImg} imageAlt="Alimentos ricos en vitaminas y minerales: verduras de hoja verde, cítricos, pimientos, legumbres, pescado, lácteos y frutos secos">
+    <p>Los micronutrientes son las vitaminas y los minerales, nutrientes que el organismo necesita en cantidades pequeñas, medidas en miligramos o microgramos, pero que son indispensables para la vida.</p>
+    <p><strong>Vitaminas</strong>: se dividen en liposolubles (A, D, E y K), que se absorben junto con las grasas, e hidrosolubles (las del grupo B y la vitamina C), que no se almacenan en grandes cantidades y deben aportarse con regularidad.</p>
+    <p><strong>Minerales</strong>: como el hierro, el calcio, el magnesio, el zinc, el yodo o el selenio, forman parte de los huesos, la sangre y numerosas enzimas, e intervienen en la contracción muscular, la transmisión nerviosa y el equilibrio hormonal.</p>
+    <p>Algunos de los más relevantes para las mujeres son el hierro, necesario para transportar el oxígeno; el calcio y la vitamina D, clave para la salud ósea; el magnesio, relacionado con la función muscular y el descanso; el yodo y el selenio, necesarios para la tiroides; y el ácido fólico y la vitamina B12, implicados en la formación de las células de la sangre.</p>
+    <p>La mejor forma de obtenerlos es una alimentación variada y rica en alimentos frescos: verduras de hoja verde, frutas, legumbres, frutos secos, semillas, pescado, huevos y lácteos.</p>
+    <p>Los suplementos pueden ser útiles en algunos casos concretos, pero conviene tomarlos siempre con la valoración de un profesional sanitario, ya que un exceso de algunos micronutrientes también puede ser perjudicial.</p>
+  </TextoConImagen>
+
+  <CausasGrid
+    heading="Causas de un Déficit de Micronutrientes"
+    subheading="¿Qué factores pueden hacer que el cuerpo no reciba o no aproveche las vitaminas y minerales que necesita?"
+    causas={[
+      { icon: causaVariedad, title: 'Alimentación Poco Variada', text: 'Comer siempre los mismos alimentos o basar la dieta en productos procesados limita el aporte de vitaminas y minerales.' },
+      { icon: causaMenstruacion, title: 'Menstruaciones Abundantes', text: 'Las reglas abundantes aumentan las pérdidas de hierro y son una de las causas más frecuentes de déficit de hierro en mujeres.' },
+      { icon: causaSol, title: 'Poca Exposición al Sol', text: 'La mayor parte de la vitamina D se forma en la piel con la luz solar, por lo que pasar mucho tiempo en interiores puede reducir sus niveles.' },
+      { icon: causaAbsorcion, title: 'Problemas de Absorción', text: 'Algunas alteraciones digestivas o intestinales pueden dificultar que el organismo absorba correctamente ciertos nutrientes.' },
+      { icon: causaDietas, title: 'Dietas muy Restrictivas', text: 'Reducir mucho la cantidad de comida o eliminar grupos de alimentos sin planificación aumenta el riesgo de déficits nutricionales.' },
+      { icon: causaEtapas, title: 'Etapas de Mayor Necesidad', text: 'El embarazo, la lactancia, la perimenopausia y la menopausia modifican las necesidades de algunos micronutrientes, como el hierro, el calcio o la vitamina D.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Ahora que conocemos las causas más frecuentes de un déficit de micronutrientes, es importante aprender a reconocer las señales que pueden indicarlo.</p>
+
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Señales de un Déficit de Micronutrientes</h2>
+      <p class="subheading">Estas señales pueden relacionarse con la falta de algunas vitaminas o minerales, pero también tienen muchas otras causas. Solo un profesional sanitario puede confirmarlo, normalmente con un análisis de sangre.</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Cansancio y debilidad', text: 'La falta de hierro, vitamina B12 o ácido fólico puede reducir la capacidad de la sangre para transportar oxígeno y provocar fatiga.' },
+          { title: 'Uñas frágiles y caída del cabello', text: 'Un aporte insuficiente de hierro, zinc o algunas vitaminas puede reflejarse en uñas quebradizas y un cabello más débil.' },
+          { title: 'Calambres y tensión muscular', text: 'El magnesio, el calcio y el potasio participan en la contracción muscular, y su déficit puede asociarse a calambres.' },
+          { title: 'Defensas bajas', text: 'Las vitaminas C y D, el zinc y el selenio intervienen en el sistema inmunitario, y su falta puede favorecer infecciones más frecuentes.' },
+          { title: 'Dificultad para concentrarse', text: 'La falta de hierro y de vitaminas del grupo B puede afectar a la concentración, la memoria y la sensación de claridad mental.' },
+          { title: 'Hormigueos o piel pálida', text: 'La palidez puede relacionarse con el déficit de hierro, y los hormigueos en manos y pies, con la falta de vitamina B12.' },
+        ]}
+      />
+    </section>
+  </div>
+
+  <RelacionImagenes heading="Relación con los Sistemas Hormonales y Metabólicos">
+    <p>Descubre cómo las vitaminas y los minerales participan en el funcionamiento de tus hormonas y tu metabolismo.</p>
+    <Image src={relacion1Img} alt="Infografía: relación entre micronutrientes y hormonas" />
+    <p>Muchos micronutrientes son imprescindibles para el sistema hormonal. La tiroides, que regula la velocidad del metabolismo, necesita yodo para fabricar sus hormonas y selenio y hierro para activarlas correctamente.</p>
+    <p>El magnesio interviene en cientos de reacciones del organismo, entre ellas las relacionadas con la acción de la insulina y el control de la glucosa, y también participa en la relajación muscular y el descanso.</p>
+    <p>La vitamina D actúa en el cuerpo de forma parecida a una hormona: favorece la absorción del calcio, contribuye a la salud de los huesos y los músculos y participa en el sistema inmunitario.</p>
+    <p>Durante la perimenopausia y la menopausia, la bajada de estrógenos acelera la pérdida de masa ósea, por lo que el calcio y la vitamina D cobran todavía más importancia, junto con la actividad física.</p>
+    <Image src={relacion2Img} alt="Mujer paseando por un parque soleado por la mañana" />
+    <p>Comprender la relación entre los micronutrientes y los sistemas hormonales y metabólicos ayuda a valorar la importancia de una alimentación variada y a detectar a tiempo posibles déficits con la ayuda de un profesional.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Cómo Cubrir tus Necesidades de Micronutrientes"
+    subheading="Descubre pautas prácticas para asegurar un buen aporte de vitaminas y minerales a través de la alimentación."
+    subheadingVariant="destacado"
+    subheadingAlign="center"
+    variant="card"
+    band="b"
+    soluciones={[
+      { title: 'Come de todos los colores', icon: iconos.zanahoria, body: 'Las verduras y frutas de distintos colores aportan vitaminas y minerales diferentes: cuanta más variedad, más completo es el aporte.' },
+      { title: 'Hierro con vitamina C', icon: iconos.hojaVerde, body: 'Combina legumbres y verduras de hoja verde con alimentos ricos en vitamina C, como pimiento, naranja o kiwi, para mejorar la absorción del hierro.' },
+      { title: 'Calcio cada día', icon: iconos.queso, body: 'Lácteos, sardinas, almendras, sésamo y algunas verduras de hoja verde ayudan a cubrir las necesidades de calcio para los huesos.' },
+      { title: 'Sol con moderación', icon: iconos.sol, body: 'Exponerse a la luz del sol unos minutos al día, con precaución, favorece la producción de vitamina D en la piel.' },
+      { title: 'Revisa tus niveles', icon: iconos.tuboEnsayo, body: 'Si notas señales persistentes, un análisis de sangre puede ayudar a detectar déficits. Consulta con un profesional antes de tomar suplementos.' },
+    ]}
+  />
+</SubpageTemplateB>
+
+<style>
+  .intro .texto {
+    font-size: 20px;
+    text-align: justify;
+  }
+</style>
