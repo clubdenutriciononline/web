@@ -6,7 +6,8 @@
 // Cabecera fija al hacer scroll (2026-10-17): el original la mantiene
 // visible al bajar (comprobado en /metabolismo/). Distribución pedida por
 // la usuaria: logo a la izquierda y, a su derecha, menú en una línea con
-// el buscador (más pequeño) debajo, a la altura de la base del logo. En móvil no se fija: sin menú hamburguesa, el
+// el buscador (más pequeño) debajo, pegado a la derecha y a la altura de
+// la base del logo. En móvil no se fija: sin menú hamburguesa, el
 // menú ocupa varias líneas y taparía media pantalla.
 import { mainNav } from '../data/navigation';
 ---
@@ -218,6 +219,7 @@ import { mainNav } from '../data/navigation';
     }
     .main-nav > ul {
       gap: 0.4rem 1.1rem;
+      justify-content: flex-end;
     }
     .main-nav > ul > li > a {
       white-space: nowrap;
@@ -225,7 +227,7 @@ import { mainNav } from '../data/navigation';
     .header-search-inline {
       grid-column: 2;
       grid-row: 2;
-      justify-self: start;
+      justify-self: end;
       align-self: end;
       padding-bottom: 0.3rem;
     }
