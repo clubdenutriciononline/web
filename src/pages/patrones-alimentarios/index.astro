@@ -1,0 +1,158 @@
+---
+// Patrones alimentarios — página hija de Alimentación (subcategoría
+// NUTRICIÓN > Patrones alimentarios del WordPress), nueva el 2026-10-17.
+// Plantilla de hijas validada en Fatiga crónica (00-analisis/Plantilla -
+// Páginas hijas.md), con titular en el hero. El original no tenía esta
+// página: textos nuevos investigados (registro neutro, sin consejo médico
+// concreto) e imágenes generadas con IA; causas en el estilo de Ciclo
+// menstrual. Iconos de las colecciones del original (src/lib/iconos.ts).
+import { getCollection } from 'astro:content';
+import { pickRelacionados } from '../../lib/relacionados';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
+import heroImg from './_images/hero.jpg';
+import definicionImg from './_images/definicion.jpg';
+import relacion1Img from './_images/relacion-1.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
+import causaModas from './_images/causa-modas.jpg';
+import causaCopiar from './_images/causa-copiar.jpg';
+import causaRestriccion from './_images/causa-restriccion.jpg';
+import causaYoyo from './_images/causa-yoyo.jpg';
+import causaEtapa from './_images/causa-etapa.jpg';
+import causaAyuno from './_images/causa-ayuno.jpg';
+
+const articulos = pickRelacionados(
+  await getCollection('blog'),
+  (p) => p.data.category === 'nutricion/patrones-alimentarios',
+  3,
+  (p) => p.data.category.startsWith('nutricion'),
+);
+---
+
+<SubpageTemplateB
+  seoTitle="Patrones alimentarios: dieta mediterránea, ayuno, keto y más"
+  seoDescription="Qué son los patrones alimentarios, qué dice la evidencia sobre la dieta mediterránea, el ayuno intermitente o la dieta keto, y cómo valorar cuál encaja con tu salud hormonal."
+  heroTitle="Patrones alimentarios: cómo elegir el tuyo"
+  heroSubtitle="Descubre qué son los patrones alimentarios, cómo influyen en tus hormonas, tu metabolismo y tu energía, y qué tener en cuenta para elegir el que mejor encaja contigo."
+  heroImage={heroImg}
+  heroImageAlt="Mujer sentada a la mesa con una comida de estilo mediterráneo: pescado a la plancha, ensalada, garbanzos, pan integral y aceitunas"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
+>
+  <section class="intro">
+    <p>Un patrón alimentario es la forma habitual de comer de una persona: qué alimentos elige, en qué proporción, cuántas veces come al día y cómo organiza sus comidas a lo largo del tiempo.</p>
+    <p>Más que un alimento concreto, lo que más influye en la salud es el conjunto de la alimentación mantenido en el tiempo.</p>
+    <p>Existen muchos patrones distintos, como la dieta mediterránea, la alimentación flexitariana o vegetariana, el ayuno intermitente o las dietas bajas en hidratos de carbono, y cada uno tiene un nivel de evidencia y unas características diferentes.</p>
+    <p>No hay un patrón perfecto para todo el mundo: el más adecuado es el que cubre las necesidades del cuerpo, se adapta a la etapa de la vida y se puede mantener de forma realista.</p>
+    <p>En esta guía descubrirás qué son los patrones alimentarios, los errores más frecuentes al elegirlos y cómo valorar cuál encaja mejor contigo y con tu salud hormonal.</p>
+  </section>
+
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Hambre constante', icon: iconos.reloj },
+      { title: 'Cansancio', icon: iconos.bateriaBaja },
+      { title: 'Antojos', icon: iconos.piruleta },
+      { title: 'Efecto rebote', icon: iconos.peso },
+      { title: 'Ansiedad por comer', icon: iconos.caraSudor },
+    ]}
+  />
+
+  <p class="pregunta">¿Sabías que la forma en que organizas tus comidas puede influir tanto como lo que comes?</p>
+  <section class="intro lista">
+    <p class="texto">Elegir un patrón alimentario no consiste en seguir la dieta de moda, sino en encontrar una forma de comer que cuide la salud, respete las necesidades de cada etapa y se pueda mantener a largo plazo sin sensación de sacrificio constante.</p>
+    <ChecklistCard
+      columns={1}
+      items={[
+        'Comprender qué es un patrón alimentario y por qué importa más que un alimento aislado',
+        'Conocer los patrones más estudiados y lo que dice la evidencia sobre ellos',
+        'Identificar los errores más frecuentes al elegir una dieta',
+        'Aprender a valorar qué patrón encaja mejor con tu salud, tu etapa y tu estilo de vida',
+      ]}
+    />
+  </section>
+
+  <TextoConImagen heading="¿Qué son los Patrones Alimentarios?" image={definicionImg} imageAlt="Mesa mediterránea al aire libre con ensalada, guiso de garbanzos, pescado a la plancha, pan integral y aceite de oliva">
+    <p>Los patrones alimentarios describen el conjunto de hábitos de alimentación de una persona: los alimentos que predominan, cómo se combinan, los horarios de las comidas y la relación con la comida en el día a día.</p>
+    <p><strong>Dieta mediterránea</strong>: basada en verduras, frutas, legumbres, cereales integrales, frutos secos, pescado y aceite de oliva virgen extra. Es uno de los patrones con más evidencia científica y se asocia con un menor riesgo cardiovascular y metabólico.</p>
+    <p><strong>Alimentación flexitariana y vegetariana</strong>: dan protagonismo a los alimentos de origen vegetal y reducen o eliminan la carne. Bien planificadas pueden ser muy saludables, aunque requieren atención a nutrientes como la vitamina B12, el hierro o las proteínas.</p>
+    <p><strong>Ayuno intermitente</strong>: organiza las comidas en una franja horaria concreta del día. Puede ayudar a algunas personas a ordenar su alimentación, pero la evidencia en mujeres es todavía limitada y no es adecuado en todos los casos.</p>
+    <p><strong>Dietas bajas en hidratos (keto y low carb)</strong>: reducen de forma importante los hidratos de carbono. Pueden resultar útiles en situaciones concretas, pero son más difíciles de mantener y conviene seguirlas con supervisión profesional.</p>
+    <p>Más allá del nombre de cada dieta, los patrones con mejores resultados comparten varias características: priorizan alimentos poco procesados, son ricos en vegetales y fibra, incluyen proteína de calidad y grasas saludables y se pueden mantener en el tiempo.</p>
+  </TextoConImagen>
+
+  <CausasGrid
+    heading="Errores Frecuentes al Elegir un Patrón Alimentario"
+    subheading="¿Qué hace que muchas dietas no funcionen o resulten difíciles de mantener?"
+    causas={[
+      { icon: causaModas, title: 'Seguir Modas sin Evidencia', text: 'Muchas dietas se popularizan en redes sociales con promesas rápidas, sin estudios que respalden sus beneficios ni su seguridad a largo plazo.' },
+      { icon: causaCopiar, title: 'Copiar la Dieta de Otra Persona', text: 'Lo que funciona a otra persona puede no encajar contigo: la edad, la actividad, la salud y los gustos de cada una son distintos.' },
+      { icon: causaRestriccion, title: 'Restricción Extrema', text: 'Reducir mucho la comida o prohibir alimentos aumenta el hambre, la ansiedad por comer y el riesgo de déficits nutricionales.' },
+      { icon: causaYoyo, title: 'Cambiar de Dieta Constantemente', text: 'Pasar de una dieta a otra sin consolidar hábitos favorece el efecto rebote y una relación más difícil con la comida.' },
+      { icon: causaEtapa, title: 'No Tener en Cuenta la Etapa', text: 'Las necesidades cambian a lo largo de la vida. En la perimenopausia y la menopausia, por ejemplo, importa más cuidar la proteína, el calcio y la masa muscular.' },
+      { icon: causaAyuno, title: 'Ayunar sin Planificación', text: 'Hacer ayunos largos sin planificar las comidas puede aumentar el hambre, el estrés y los atracones, y no es recomendable en todas las situaciones.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto">Ahora que conocemos los errores más frecuentes al elegir un patrón alimentario, es importante aprender a reconocer las señales que indican que una forma de comer no nos está sentando bien.</p>
+
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Señales de que tu Patrón Alimentario no te Está Funcionando</h2>
+      <p class="subheading">Estas señales pueden indicar que tu forma de comer no se adapta a tus necesidades. Pueden tener otras causas, por lo que, si son persistentes, conviene consultarlas con un profesional sanitario.</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Hambre y ansiedad constantes', text: 'Pensar en la comida todo el tiempo o tener hambre intensa entre comidas suele indicar que la alimentación no está siendo suficiente o saciante.' },
+          { title: 'Cansancio y falta de energía', text: 'Un patrón demasiado restrictivo o poco equilibrado puede traducirse en fatiga, falta de concentración y bajo rendimiento.' },
+          { title: 'Efecto rebote', text: 'Perder peso rápidamente para recuperarlo después es una señal habitual de que la dieta no se puede mantener en el tiempo.' },
+          { title: 'Alteraciones del ciclo o del descanso', text: 'Las restricciones intensas pueden influir en el ciclo menstrual, el sueño y el estado de ánimo.' },
+          { title: 'Molestias digestivas', text: 'Los cambios bruscos de alimentación o la falta de fibra pueden provocar estreñimiento, hinchazón o digestiones pesadas.' },
+          { title: 'Sensación de sacrificio permanente', text: 'Si comer se vive como una obligación o un castigo, es difícil que ese patrón resulte saludable a largo plazo.' },
+        ]}
+      />
+    </section>
+  </div>
+
+  <RelacionImagenes heading="Relación con los Sistemas Hormonales y Metabólicos">
+    <p>Descubre cómo los distintos patrones alimentarios influyen en tus hormonas, tu metabolismo y tu energía.</p>
+    <Image src={relacion1Img} alt="Infografía: relación entre patrones alimentarios y hormonas" />
+    <p>La forma de comer influye en el sistema hormonal tanto por los alimentos que se eligen como por el momento en que se comen. Los patrones ricos en fibra, legumbres, verduras y grasas saludables, como la dieta mediterránea, se asocian con una mejor sensibilidad a la insulina y con menos inflamación.</p>
+    <p>Los horarios también importan: comer de forma regular ayuda a sincronizar los ritmos circadianos, que regulan hormonas como el cortisol, la melatonina y las relacionadas con el hambre y la saciedad.</p>
+    <p>El ayuno intermitente y las dietas muy bajas en hidratos pueden modificar la glucosa y la insulina, pero en algunas mujeres también pueden aumentar la sensación de estrés, alterar el descanso o influir en el ciclo menstrual, por lo que conviene valorarlos de forma individual.</p>
+    <p>Durante la perimenopausia y la menopausia, los cambios hormonales hacen más importante elegir patrones que protejan la masa muscular y ósea y ayuden a mantener estable la glucosa, más que dietas muy restrictivas.</p>
+    <Image src={relacion2Img} alt="Mujer compartiendo una comida mediterránea al aire libre" />
+    <p>Comprender la relación entre los patrones alimentarios y los sistemas hormonales y metabólicos ayuda a elegir una forma de comer que favorezca el equilibrio, la energía y la salud a largo plazo.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Cómo Elegir tu Patrón Alimentario"
+    subheading="Descubre pautas prácticas para encontrar una forma de comer saludable, flexible y sostenible."
+    subheadingVariant="destacado"
+    subheadingAlign="center"
+    variant="card"
+    band="b"
+    soluciones={[
+      { title: 'Base mediterránea', icon: iconos.pescado, body: 'Toma como punto de partida la dieta mediterránea: verduras, legumbres, pescado, cereales integrales, frutos secos y aceite de oliva.' },
+      { title: 'Horarios regulares', icon: iconos.reloj, body: 'Comer a horas parecidas ayuda a regular el apetito, la energía y los ritmos del cuerpo.' },
+      { title: 'Escucha a tu cuerpo', icon: iconos.caraFeliz, body: 'Fíjate en cómo te sientes con cada forma de comer: tu energía, tu digestión, tu descanso y tu estado de ánimo dan pistas valiosas.' },
+      { title: 'Flexibilidad, no perfección', icon: iconos.calendarioCheck, body: 'Un patrón saludable deja espacio para comidas especiales y para adaptarse a la vida diaria, sin culpa ni prohibiciones.' },
+      { title: 'Asesoramiento profesional', icon: iconos.corazon, body: 'Antes de iniciar un ayuno o una dieta muy baja en hidratos, consulta con un profesional, sobre todo si tienes alguna condición de salud.' },
+    ]}
+  />
+</SubpageTemplateB>
+
+<style>
+  .intro .texto {
+    font-size: 20px;
+    text-align: justify;
+  }
+</style>
