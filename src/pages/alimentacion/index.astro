@@ -118,21 +118,24 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   <p class="parrafo-suelto">Ahora que hemos revisado las causas más comunes de una alimentación desequilibrada, es importante comprender cómo se manifiestan en el día a día.</p>
   <p class="parrafo-suelto">El cuerpo suele dar señales cuando la alimentación no cubre bien sus necesidades, y aprender a reconocerlas ayuda a hacer cambios a tiempo.</p>
 
-  <SolucionesList
-    heading="Señales de una Alimentación Desequilibrada"
-    subheading="Estas son algunas de las señales más frecuentes de que la alimentación no está cubriendo bien las necesidades del cuerpo. Pueden tener otras causas, por lo que, si son persistentes, conviene consultarlas con un profesional sanitario:"
-    variant="card"
-    cardAlign="left"
-    band="b"
-    soluciones={[
-      { title: 'Cansancio y bajones de energía', body: 'Sensación de falta de energía a media mañana o media tarde, a menudo relacionada con comidas poco equilibradas o con picos y bajadas de glucosa.' },
-      { title: 'Antojos frecuentes', body: 'Necesidad repetida de comer dulce o picar entre horas, que puede estar relacionada con comidas poco saciantes, falta de descanso o estrés.' },
-      { title: 'Molestias digestivas', body: 'Hinchazón, gases, estreñimiento o digestiones pesadas, que pueden aparecer con una alimentación pobre en fibra o con exceso de ultraprocesados.' },
-      { title: 'Cambios de peso', body: 'Aumento o dificultad para mantener el peso, especialmente con acumulación de grasa abdominal, sin cambios aparentes en la forma de comer.' },
-      { title: 'Cambios en el estado de ánimo', body: 'Irritabilidad, apatía o sensación de ánimo más bajo, que pueden verse influidos por la regularidad de las comidas y la calidad de la alimentación.' },
-      { title: 'Uñas, piel y cabello debilitados', body: 'Uñas frágiles, piel apagada o caída del cabello pueden reflejar un aporte insuficiente de algunos nutrientes, como el hierro o las proteínas.' },
-    ]}
-  />
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Señales de una Alimentación Desequilibrada</h2>
+      <p class="subheading">Estas son algunas de las señales más frecuentes de que la alimentación no está cubriendo bien las necesidades del cuerpo. Pueden tener otras causas, por lo que, si son persistentes, conviene consultarlas con un profesional sanitario:</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Cansancio y bajones de energía', text: 'Sensación de falta de energía a media mañana o media tarde, a menudo relacionada con comidas poco equilibradas o con picos y bajadas de glucosa.' },
+          { title: 'Antojos frecuentes', text: 'Necesidad repetida de comer dulce o picar entre horas, que puede estar relacionada con comidas poco saciantes, falta de descanso o estrés.' },
+          { title: 'Molestias digestivas', text: 'Hinchazón, gases, estreñimiento o digestiones pesadas, que pueden aparecer con una alimentación pobre en fibra o con exceso de ultraprocesados.' },
+          { title: 'Cambios de peso', text: 'Aumento o dificultad para mantener el peso, especialmente con acumulación de grasa abdominal, sin cambios aparentes en la forma de comer.' },
+          { title: 'Cambios en el estado de ánimo', text: 'Irritabilidad, apatía o sensación de ánimo más bajo, que pueden verse influidos por la regularidad de las comidas y la calidad de la alimentación.' },
+          { title: 'Uñas, piel y cabello debilitados', text: 'Uñas frágiles, piel apagada o caída del cabello pueden reflejar un aporte insuficiente de algunos nutrientes, como el hierro o las proteínas.' },
+        ]}
+      />
+    </section>
+  </div>
 
   <RelacionImagenes heading="Relación entre la Alimentación y los Sistemas Hormonales y Metabólicos">
     <p>Lo que comemos influye directamente en el funcionamiento del sistema hormonal y del metabolismo, dos sistemas que regulan la energía, el apetito, el peso y el estado de ánimo.</p>
@@ -180,5 +183,14 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     font-size: 26px;
     line-height: 33px;
     text-align: justify;
+  }
+  .sintomas {
+    padding-block: var(--space-section);
+  }
+  .sintomas .subheading {
+    text-align: justify;
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 33px;
   }
 </style>
