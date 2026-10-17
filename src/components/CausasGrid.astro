@@ -30,7 +30,7 @@ const { heading, subheading, causas } = Astro.props;
         {c.icon && (
           typeof c.icon === 'string'
             ? <span class="icon" aria-hidden="true">{c.icon}</span>
-            : <Image class="icon-img" src={c.icon} alt="" width={80} height={80} />
+            : <Image class="icon-img" src={c.icon} alt="" width={600} />
         )}
         <h3>{c.title}</h3>
         <p>{c.text}</p>
