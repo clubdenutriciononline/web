@@ -25,7 +25,8 @@ En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay 
 
 - **Responsive (móvil y tablet):** blog a 9 entradas por página, tarjetas compactas en móvil, menú hamburguesa y cabecera fija en móvil (ver `Pendiente - Responsive (móvil y tablet).md`).
 - **Publicaciones programadas del blog** y la idea de convertir cada tarjeta de soluciones en un artículo enlazado (ver `Pendiente - Publicaciones programadas de blog.md`).
-- **Más recetas** de Antiinflamatorias y Energía hormonal (tienen 1 cada una), con el calendario de publicaciones.
+- **Más recetas** de los 3 tipos con el calendario de publicaciones.
+- **Imágenes IA:** generar siempre con `imageSize: "1K"` (el tamaño más pequeño, suficiente para la web) sin bajar la calidad. Si sale el error 402 de saldo agotado, recargar en Google AI Studio.
 - **4 decisiones abiertas** (ver `13-pendientes-decision.md`): slug `/ayuno-intermitente-2/`, `/suscripcion-lista-comunidad/`, páginas huérfanas y URLs automáticas de WordPress.
 - **Token de GitHub expuesto** (aviso de sesiones anteriores) — revocarlo si no se ha hecho.
 - **Google Drive y git:** Drive crea archivos `desktop.ini` dentro de `.git` y rompe el mantenimiento de git (se limpiaron 248 el 17 oct). Si vuelve a pasar, valorar sacar la carpeta del proyecto de Drive (el código ya está en GitHub).
@@ -47,7 +48,7 @@ En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay 
 ### Recetas (sección nueva)
 - `/recetas/` (madre) y sus 3 subpáginas, en el menú detrás de Alimentación.
 - Plantilla de receta (`RecipeLayout`): datos rápidos, ingredientes con ilustración, pasos con fotos, resultado, información nutricional por ración y datos schema.org/Recipe.
-- Las 6 recetas keto existentes migradas (textos reescritos, nutrición recalculada, imágenes nuevas) 1 receta nueva de Energía hormonal (bol de quinoa, garbanzos, boniato y huevo) y 1 antiinflamatoria (crema de calabaza con cúrcuma, jengibre y garbanzos crujientes): las 3 subpáginas ya tienen contenido.
+- Las 6 recetas keto existentes migradas (textos reescritos, nutrición recalculada, imágenes nuevas) 3 recetas nuevas de Energía hormonal (bol de quinoa, garbanzos, boniato y huevo; salteado de pollo con brócoli y arroz integral; tostada de aguacate con huevo poché) y 3 antiinflamatorias (crema de calabaza con cúrcuma y jengibre; sardinas al horno con tomate y pimiento; dahl de lentejas rojas con espinacas): cada subpágina tiene al menos 3 recetas (12 en total).
 
 ### Cabecera y navegación
 - Cabecera fija al bajar (escritorio), en dos filas: arriba las páginas de tema (Inicio … Alimentación, Recetas); abajo el buscador bajo "Inicio" y Blog · Radar de Salud · Contacto a la derecha. Desplegable con el formato del original.
