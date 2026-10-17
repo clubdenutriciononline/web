@@ -100,3 +100,10 @@ Esta es la secuencia real de componentes compartidos tal como quedó tras la rev
 - `TextoConImagen` sin prop `image`: la infografía va intercalada en el slot, a ancho completo.
 - `CausasGrid lead` / `SolucionesList lead`: pregunta en negrita entre el H2 y el subheading. `SolucionesList` admite un slot para el párrafo de cierre dentro de la banda.
 - **5 soluciones en 2 arriba + 3 abajo** (`layout5="2-3"`), al revés que Energía (3+2).
+
+## 9. Iconos — siempre los del original (2026-10-17)
+
+Las píldoras, pilares y tarjetas de soluciones del original usan **fuentes de iconos** (Font Awesome 5, Material Design Icons, IcoFont, Ionicons), nunca emojis. Están todos como SVG en `src/lib/iconos.ts`, cada uno con la clase que lleva en WordPress; se usan con `icon: iconos.sueno`. Antes de adaptar una página, sacar la lista real de iconos del original (selector `.elementor-icon-box-wrapper i`) y añadir a `iconos.ts` los que falten (SVG de `@fortawesome/fontawesome-free@5.15.4`, `@mdi/svg`, `@icon/icofont`, `ionicons@4.6.3`).
+
+- Checklists: `fa-check`; listas de síntomas: `fa-check-circle` (ChecklistCard `icon`).
+- **Síntomas de Energía**: en el original no son tarjetas ni llevan icono — lista simple de título (Fredoka 500 27px `#6C2F50`) + texto → `SolucionesList variant="plain"`.

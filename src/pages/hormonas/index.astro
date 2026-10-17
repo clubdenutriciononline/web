@@ -12,6 +12,7 @@ import RelacionImagenes from '../../components/RelacionImagenes.astro';
 import SolucionesList from '../../components/SolucionesList.astro';
 import ChecklistCard from '../../components/ChecklistCard.astro';
 import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
 
 import heroImg from './_images/Hero.jpg';
 import sistemaEndocrinoImg from './_images/Sistema-endocrino-femenino.jpg';
@@ -69,11 +70,11 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     <SolucionesList
       variant="pill"
       soluciones={[
-        { title: 'Fatiga constante', icon: '😓' },
-        { title: 'Cambios de peso', icon: '⚖️' },
-        { title: 'Ansiedad o antojos', icon: '😅' },
-        { title: 'Problemas de sueño', icon: '😴' },
-        { title: 'Hinchazón o inflamación', icon: '😳' },
+        { title: 'Fatiga constante', icon: iconos.caraTriste },
+        { title: 'Cambios de peso', icon: iconos.peso },
+        { title: 'Ansiedad o antojos', icon: iconos.caraSudor },
+        { title: 'Problemas de sueño', icon: iconos.sueno },
+        { title: 'Hinchazón o inflamación', icon: iconos.caraSonrojada },
       ]}
     />
   </div>
@@ -162,11 +163,11 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     variant="pill"
     band="b"
     soluciones={[
-      { title: 'Alimentación equilibrada', icon: '🍎' },
-      { title: 'Control del estrés', icon: '😊' },
-      { title: 'Descanso de calidad', icon: '😴' },
-      { title: 'Movimiento adaptado', icon: '🏃' },
-      { title: 'Salud intestinal', icon: '❤️' },
+      { title: 'Alimentación equilibrada', icon: iconos.manzanaComida },
+      { title: 'Control del estrés', icon: iconos.caraFeliz },
+      { title: 'Descanso de calidad', icon: iconos.sueno },
+      { title: 'Movimiento adaptado', icon: iconos.ejercicio },
+      { title: 'Salud intestinal', icon: iconos.corazon },
     ]}
   />
 </HubTemplateA>

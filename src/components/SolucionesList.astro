@@ -34,7 +34,9 @@ interface Props {
   // Texto de las tarjetas "card": centrado (soluciones) o a la izquierda
   // (síntomas de Energía en el original).
   cardAlign?: 'center' | 'left';
-  variant?: 'chip' | 'card' | 'pill';
+  // 'plain': lista simple de título + texto, sin tarjeta ni icono
+  // (síntomas de Energía en el original: h4 Fredoka 500 27px #6C2F50).
+  variant?: 'chip' | 'card' | 'pill' | 'plain';
   // Banda de fondo con degradado (ver BaseLayout .band-a / .band-b),
   // confirmada por sección en el CSS compilado del original. Opcional:
   // cada página decide si esta fila concreta cae dentro de una banda o no.
@@ -221,6 +223,31 @@ const { heading, lead, subheading, soluciones, variant = 'chip', band = false, l
       line-height: 1.7;
       letter-spacing: 0.4px;
     }
+  }
+
+  /* Variante "plain" (síntomas de Energía): lista a ancho completo. */
+  section[data-variant='plain'] .grid {
+    display: block;
+  }
+  section[data-variant='plain'] .solucion-item {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 2.5rem;
+  }
+  section[data-variant='plain'] h3 {
+    font-family: var(--font-body);
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #6c2f50;
+    margin: 0 0 20px;
+  }
+  section[data-variant='plain'] .solucion-item p {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+    margin: 0;
   }
 
   /* Variante "pill": fila de píldoras con icono (confirmada por el CSS

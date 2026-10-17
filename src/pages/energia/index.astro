@@ -11,6 +11,7 @@ import SolucionesList from '../../components/SolucionesList.astro';
 import RelacionImagenes from '../../components/RelacionImagenes.astro';
 import ChecklistCard from '../../components/ChecklistCard.astro';
 import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
 
 import heroImg from './_images/energia-hero-e1778319727162.jpg';
 import queEsImg from './_images/energia-energia-e1778320626244-572x1024.jpg';
@@ -59,11 +60,11 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   <SolucionesList
     variant="pill"
     soluciones={[
-      { title: 'Cansancio Persistente', icon: '😓' },
-      { title: 'Dificultades de Concentración', icon: '😶' },
-      { title: 'Dolores Musculares', icon: '😣' },
-      { title: 'Problemas de Sueño', icon: '😴' },
-      { title: 'Cambios de Humor', icon: '😳' },
+      { title: 'Cansancio Persistente', icon: iconos.caraTriste },
+      { title: 'Dificultades de Concentración', icon: iconos.caraInexpresiva },
+      { title: 'Dolores Musculares', icon: iconos.caraAsustada },
+      { title: 'Problemas de Sueño', icon: iconos.sueno },
+      { title: 'Cambios de Humor', icon: iconos.caraSonrojada },
     ]}
   />
 
@@ -111,16 +112,15 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   <SolucionesList
     heading="Síntomas de la Fatiga y Bajo Rendimiento Energético"
     subheading="Es importante reconocer los síntomas para poder tomar medidas adecuadas. A continuación, se presentan algunos de los síntomas más comunes:"
-    variant="card"
-    cardAlign="left"
+    variant="plain"
     band="b"
     soluciones={[
-      { title: 'Cansancio persistente', icon: '😓', body: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },
-      { title: 'Dificultad de concentración', icon: '😶', body: 'Problemas para enfocarse o mantener la atención, que pueden afectar al rendimiento diario y estar relacionados con el estrés, la falta de sueño o la ansiedad.' },
-      { title: 'Dolores musculares', icon: '😣', body: 'Molestias o rigidez muscular frecuentes que pueden aparecer por sedentarismo, sobrecarga física o ciertas condiciones como la fibromialgia.' },
-      { title: 'Problemas de sueño', icon: '😴', body: 'Dificultad para conciliar el sueño o descanso de mala calidad, como insomnio o apnea del sueño, que afectan directamente a la energía diaria.' },
-      { title: 'Cambios de humor', icon: '😳', body: 'Variaciones emocionales como irritabilidad, apatía o tristeza, que pueden estar asociadas a desequilibrios emocionales o de salud mental.' },
-      { title: 'Dificultad en actividades diarias', icon: '🥱', body: 'Sensación de falta de energía para realizar tareas cotidianas, que puede indicar fatiga crónica u otros problemas de salud subyacentes.' },
+      { title: 'Cansancio persistente', body: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },
+      { title: 'Dificultad de concentración', body: 'Problemas para enfocarse o mantener la atención, que pueden afectar al rendimiento diario y estar relacionados con el estrés, la falta de sueño o la ansiedad.' },
+      { title: 'Dolores musculares', body: 'Molestias o rigidez muscular frecuentes que pueden aparecer por sedentarismo, sobrecarga física o ciertas condiciones como la fibromialgia.' },
+      { title: 'Problemas de sueño', body: 'Dificultad para conciliar el sueño o descanso de mala calidad, como insomnio o apnea del sueño, que afectan directamente a la energía diaria.' },
+      { title: 'Cambios de humor', body: 'Variaciones emocionales como irritabilidad, apatía o tristeza, que pueden estar asociadas a desequilibrios emocionales o de salud mental.' },
+      { title: 'Dificultad en actividades diarias', body: 'Sensación de falta de energía para realizar tareas cotidianas, que puede indicar fatiga crónica u otros problemas de salud subyacentes.' },
     ]}
   />
 
@@ -139,11 +139,11 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     subheadingAlign="center"
     variant="card"
     soluciones={[
-      { title: 'Sueño regular', icon: '😴', body: 'Establece un horario de sueño estable y asegúrate de dormir las horas suficientes cada noche para favorecer la recuperación energética.' },
-      { title: 'Alimentación equilibrada', icon: '🍎', body: 'Prioriza una dieta rica en alimentos naturales y nutritivos, reduciendo al mínimo los ultraprocesados y azúcares refinados.' },
-      { title: 'Actividad física', icon: '🏃', body: 'Incorpora movimiento diario o ejercicio regular para mejorar el metabolismo, la circulación y la producción de energía.' },
-      { title: 'Gestión del estrés', icon: '🧘', body: 'Practica técnicas como meditación, respiración o yoga para reducir el estrés y mejorar el equilibrio mental y hormonal.' },
-      { title: 'Hidratación y hábitos', icon: '💧', body: 'Mantén una buena hidratación y reduce el consumo excesivo de cafeína y alcohol para evitar alteraciones en la energía.' },
+      { title: 'Sueño regular', icon: iconos.sueno, body: 'Establece un horario de sueño estable y asegúrate de dormir las horas suficientes cada noche para favorecer la recuperación energética.' },
+      { title: 'Alimentación equilibrada', icon: iconos.manzana, body: 'Prioriza una dieta rica en alimentos naturales y nutritivos, reduciendo al mínimo los ultraprocesados y azúcares refinados.' },
+      { title: 'Actividad física', icon: iconos.ejercicio, body: 'Incorpora movimiento diario o ejercicio regular para mejorar el metabolismo, la circulación y la producción de energía.' },
+      { title: 'Gestión del estrés', icon: iconos.meditacion, body: 'Practica técnicas como meditación, respiración o yoga para reducir el estrés y mejorar el equilibrio mental y hormonal.' },
+      { title: 'Hidratación y hábitos', icon: iconos.vasoAgua, body: 'Mantén una buena hidratación y reduce el consumo excesivo de cafeína y alcohol para evitar alteraciones en la energía.' },
     ]}
   />
 </HubTemplateB>
