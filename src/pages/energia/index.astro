@@ -37,6 +37,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroCtaIntro="Descubre cómo estabilizar tu energía, descarga la guía ahora:"
   heroImage={heroImg}
   heroImageAlt="Energía en mujeres"
+  heroLayout="stacked"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
   temasHeading="Temas Relacionados con la Energía y el Bienestar"
@@ -91,10 +92,9 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     <p>Todas ellas participan en el correcto funcionamiento del cuerpo humano y en el mantenimiento de una vida activa y saludable.</p>
   </TextoConImagen>
 
-  <p class="parrafo-suelto">La fatiga y el bajo rendimiento energético pueden tener múltiples causas relacionadas con el estilo de vida, la alimentación, el descanso, las hormonas o determinadas condiciones de salud. Identificar el origen del cansancio es fundamental para mejorar la energía y recuperar el bienestar físico y mental.</p>
-
   <CausasGrid
     heading="Causas de la fatiga y la falta de energía"
+    subheading="La fatiga y el bajo rendimiento energético pueden tener múltiples causas relacionadas con el estilo de vida, la alimentación, el descanso, las hormonas o determinadas condiciones de salud. Identificar el origen del cansancio es fundamental para mejorar la energía y recuperar el bienestar físico y mental."
     causas={[
       { icon: iconoSueno, title: 'Falta de sueño', text: 'Dormir poco o descansar mal reduce la energía, afecta la concentración y aumenta la sensación de fatiga diaria.' },
       { icon: iconoAlimentacion, title: 'Alimentación desequilibrada', text: 'Una dieta pobre en nutrientes y rica en ultraprocesados puede provocar cansancio y bajones de energía.' },
@@ -114,12 +114,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     variant="card"
     band="b"
     soluciones={[
-      { title: 'Cansancio persistente', body: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },
-      { title: 'Dificultad de concentración', body: 'Problemas para enfocarse o mantener la atención, que pueden afectar al rendimiento diario y estar relacionados con el estrés, la falta de sueño o la ansiedad.' },
-      { title: 'Dolores musculares', body: 'Molestias o rigidez muscular frecuentes que pueden aparecer por sedentarismo, sobrecarga física o ciertas condiciones como la fibromialgia.' },
-      { title: 'Problemas de sueño', body: 'Dificultad para conciliar el sueño o descanso de mala calidad, como insomnio o apnea del sueño, que afectan directamente a la energía diaria.' },
-      { title: 'Cambios de humor', body: 'Variaciones emocionales como irritabilidad, apatía o tristeza, que pueden estar asociadas a desequilibrios emocionales o de salud mental.' },
-      { title: 'Dificultad en actividades diarias', body: 'Sensación de falta de energía para realizar tareas cotidianas, que puede indicar fatiga crónica u otros problemas de salud subyacentes.' },
+      { title: 'Cansancio persistente', icon: '😓', body: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },
+      { title: 'Dificultad de concentración', icon: '😶', body: 'Problemas para enfocarse o mantener la atención, que pueden afectar al rendimiento diario y estar relacionados con el estrés, la falta de sueño o la ansiedad.' },
+      { title: 'Dolores musculares', icon: '😣', body: 'Molestias o rigidez muscular frecuentes que pueden aparecer por sedentarismo, sobrecarga física o ciertas condiciones como la fibromialgia.' },
+      { title: 'Problemas de sueño', icon: '😴', body: 'Dificultad para conciliar el sueño o descanso de mala calidad, como insomnio o apnea del sueño, que afectan directamente a la energía diaria.' },
+      { title: 'Cambios de humor', icon: '😳', body: 'Variaciones emocionales como irritabilidad, apatía o tristeza, que pueden estar asociadas a desequilibrios emocionales o de salud mental.' },
+      { title: 'Dificultad en actividades diarias', icon: '🥱', body: 'Sensación de falta de energía para realizar tareas cotidianas, que puede indicar fatiga crónica u otros problemas de salud subyacentes.' },
     ]}
   />
 

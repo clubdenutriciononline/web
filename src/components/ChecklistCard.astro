@@ -20,10 +20,13 @@ const { items } = Astro.props;
 </div>
 
 <style>
+  /* Dos columnas que se rellenan de arriba abajo (3 arriba y 2 abajo si
+     hay 5 items, 2 y 2 si hay 4, etc.), como en el original — por eso se
+     usa columnas CSS en vez de una rejilla, que repartiría los items en
+     zigzag entre ambas columnas. */
   .checklist-card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem 2rem;
+    columns: 2;
+    column-gap: 2rem;
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -41,8 +44,10 @@ const { items } = Astro.props;
   }
   .checklist-card li {
     font-family: var(--font-body);
+    font-size: 1.0625rem;
     color: #6c2f50;
     margin-bottom: 0.5rem;
+    break-inside: avoid;
   }
   .check {
     display: inline-block;
@@ -52,7 +57,7 @@ const { items } = Astro.props;
   }
   @media (max-width: 640px) {
     .checklist-card {
-      grid-template-columns: 1fr;
+      columns: 1;
     }
   }
 </style>

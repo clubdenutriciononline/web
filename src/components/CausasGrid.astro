@@ -59,10 +59,12 @@ const { heading, subheading, causas } = Astro.props;
     }
   }
   .subheading {
+    max-width: 48rem;
+    margin-inline: auto;
     text-align: center;
     font-family: var(--font-body);
-    font-size: 1.375rem;
-    margin-top: -0.5rem;
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
     margin-bottom: 1.5rem;
   }
   .causa-card {
@@ -87,5 +89,13 @@ const { heading, subheading, causas } = Astro.props;
     height: auto;
     object-fit: contain;
     margin: 0 auto 0.5rem;
+  }
+  .causa-card h3 {
+    font-size: 1.25rem;
+  }
+  .causa-card p {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.5;
   }
 </style>

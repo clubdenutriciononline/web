@@ -24,6 +24,7 @@ interface Props {
   heroCtaIntro?: string;
   heroImage?: ImageMetadata;
   heroImageAlt?: string;
+  heroLayout?: 'side' | 'stacked';
   ctaLabel: string;
   ctaHref: string;
   temasHeading: string;
@@ -39,6 +40,7 @@ const {
   heroCtaIntro,
   heroImage,
   heroImageAlt,
+  heroLayout,
   ctaLabel,
   ctaHref,
   temasHeading,
@@ -56,6 +58,7 @@ const {
     ctaHref={ctaHref}
     image={heroImage}
     imageAlt={heroImageAlt}
+    layout={heroLayout}
   />
 
   <slot />
