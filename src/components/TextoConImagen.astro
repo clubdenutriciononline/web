@@ -43,6 +43,16 @@ const { heading, image, imageAlt, reverse = false } = Astro.props;
     font-family: var(--font-body);
     font-size: 1.125rem;
   }
+  /* Imagen intercalada en el texto (sin prop `image`), a ancho completo
+     — Metabolismo coloca la infografía en mitad del bloque "¿Qué es...?". */
+  .texto-imagen-copy :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-block: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
   .texto-imagen-image-wrap {
     flex: 1 1 320px;
   }

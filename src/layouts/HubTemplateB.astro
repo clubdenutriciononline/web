@@ -25,6 +25,7 @@ interface Props {
   heroImage?: ImageMetadata;
   heroImageAlt?: string;
   heroLayout?: 'side' | 'overlay';
+  heroTitleSize?: 'display' | 'lead';
   ctaLabel: string;
   ctaHref: string;
   temasHeading: string;
@@ -41,6 +42,7 @@ const {
   heroImage,
   heroImageAlt,
   heroLayout,
+  heroTitleSize,
   ctaLabel,
   ctaHref,
   temasHeading,
@@ -59,6 +61,7 @@ const {
     image={heroImage}
     imageAlt={heroImageAlt}
     layout={heroLayout}
+    titleSize={heroTitleSize}
   />
 
   <slot />

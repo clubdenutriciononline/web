@@ -5,16 +5,24 @@
 // varias páginas madre con textos distintos ("¿qué vas a entender?", "en
 // esta sección aprenderás", etc.), de ahí que sea un componente aparte en
 // vez de repetir el CSS en cada página.
+// Un item puede llevar título en negrita ("Aumento de peso: ...", como el
+// bloque de síntomas de Metabolismo). `columns={1}` para las listas que en
+// el original van en una sola columna (Metabolismo).
+type Item = string | { title: string; text: string };
 interface Props {
-  items: string[];
+  items: Item[];
+  columns?: 1 | 2;
 }
-const { items } = Astro.props;
+const { items, columns = 2 } = Astro.props;
 ---
 
-<div class="checklist-card">
+<div class="checklist-card" data-columns={columns}>
   <ul>
     {items.map((item) => (
-      <li><span class="check" aria-hidden="true">✔</span> {item}</li>
+      <li>
+        <span class="check" aria-hidden="true">✔</span>{' '}
+        {typeof item === 'string' ? item : <><strong>{item.title}:</strong> {item.text}</>}
+      </li>
     ))}
   </ul>
 </div>
@@ -33,6 +41,9 @@ const { items } = Astro.props;
     padding: 1.5rem 2rem;
     margin-top: 1rem;
     transition: box-shadow 0.3s;
+  }
+  .checklist-card[data-columns='1'] {
+    columns: 1;
   }
   .checklist-card:hover {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);

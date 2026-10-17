@@ -23,13 +23,19 @@ interface Props {
   // (columna de texto con background-color:#FFFFFF70 y margin-top
   // negativo que la monta sobre la imagen). No todos los hubs son iguales.
   layout?: 'side' | 'overlay';
+  // 'display' (por defecto): titular grande de 48px (Hormonas, Energía).
+  // 'lead': cuando el original no tiene titular en el hero sino una frase
+  // larga en un text-editor (Metabolismo: Rubik 26px/500 #212121, 24px en
+  // tablet/móvil, widget b60edae del CSS post-3580) — a 48px desbordaba la
+  // imagen y tapaba el menú. Se mantiene el <h1> por SEO.
+  titleSize?: 'display' | 'lead';
 }
 
 // 'overlay' es el patrón real en 4 de las 5 páginas madre (Energía,
 // Metabolismo, Microbiota, Mentalidad); Hormonas es la única excepción
 // con el hero "side" — por eso es el valor por defecto aquí, y
 // HubTemplateA (solo Hormonas) pasa layout="side" explícitamente.
-const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'overlay' } = Astro.props;
+const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'overlay', titleSize = 'display' } = Astro.props;
 ---
 
 <div class="full-bleed band-a">
@@ -40,7 +46,7 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
       </div>
     )}
     <div class="hero-copy">
-      <h1>{title}</h1>
+      <h1 data-size={titleSize}>{title}</h1>
       {subtitle && <p class="hero-subtitle">{subtitle}</p>}
       {ctaIntro && <p class="hero-cta-intro">{ctaIntro}</p>}
       {ctaLabel && ctaHref && (
@@ -129,6 +135,18 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     font-size: 3rem;
     letter-spacing: -0.5px;
   }
+  h1[data-size='lead'] {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: normal;
+    color: #212121;
+  }
+  @media (max-width: 1024px) {
+    h1[data-size='lead'] {
+      font-size: 24px;
+    }
+  }
 
   @media (max-width: 767px) {
     .hero {
@@ -145,6 +163,9 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     }
     h1 {
       font-size: 1.75rem;
+    }
+    h1[data-size='lead'] {
+      font-size: 1.25rem;
     }
     .hero[data-layout='overlay'] .hero-copy {
       position: static;

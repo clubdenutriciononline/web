@@ -74,3 +74,13 @@ Esta es la secuencia real de componentes compartidos tal como quedó tras la rev
 - Conteo real de causas/síntomas/pilares/temas (puede no ser 6/8/5/3-4).
 - Si el bloque de síntomas usa `ListaSintomas` (check simple) o `SolucionesList variant="card"` (icono + título + texto) — ambos patrones existen.
 - Tamaños exactos de los iconos ilustrados de cada tarjeta (aproximados).
+
+## 8. Metabolismo — adaptada 2026-10-17 (variantes nuevas de la plantilla)
+
+- **Hero sin titular**: el original no lleva H1 sino una frase larga en un text-editor (Rubik 26px/500 `#212121`, 24px en tablet — widget `b60edae`, CSS post-3580). A 48px desbordaba la imagen y tapaba el menú. Solución: `heroTitleSize="lead"` en `HubTemplateB` → `Hero titleSize="lead"` (sigue siendo `<h1>`). Usar en cualquier madre cuyo hero sea una frase y no un titular.
+- **7 píldoras** de síntomas → 4 arriba + 3 abajo (`SolucionesList variant="pill"`, `data-count='7'`).
+- **Iconos de fuente** (Font Awesome, MDI, IcoFont, Ionicons) → SVG inline del icono concreto (`icon: { svg }`). Corregido además que el tamaño del SVG no se aplicaba (faltaba `:global`, afectaba también a Inflamación hormonal).
+- `ChecklistCard columns={1}` y items `{ title, text }` (título en negrita) para listas de una sola columna — checklist "¿Sabías que...?" y bloque de síntomas.
+- `TextoConImagen` sin prop `image`: la infografía va intercalada en el slot, a ancho completo.
+- `CausasGrid lead` / `SolucionesList lead`: pregunta en negrita entre el H2 y el subheading. `SolucionesList` admite un slot para el párrafo de cierre dentro de la banda.
+- **5 soluciones en 2 arriba + 3 abajo** (`layout5="2-3"`), al revés que Energía (3+2).
