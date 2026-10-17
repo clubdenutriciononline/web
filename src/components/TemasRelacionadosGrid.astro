@@ -46,7 +46,7 @@ const { heading, temas } = Astro.props;
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
   @media (max-width: 640px) {
     .grid {
@@ -58,7 +58,7 @@ const { heading, temas } = Astro.props;
     background: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    padding: 20px 5px;
+    padding: 20px 12px;
     text-align: center;
     text-decoration: none;
     color: inherit;
@@ -78,7 +78,7 @@ const { heading, temas } = Astro.props;
   .icon-img-wrap {
     display: block;
     overflow: hidden;
-    width: 85%;
+    width: 77%;
     aspect-ratio: 6 / 7;
     margin: 0 auto;
     border-radius: 20px;
@@ -94,8 +94,15 @@ const { heading, temas } = Astro.props;
     transform: scale(1.1);
   }
   .tema-card h3 {
-    margin-top: 10px;
+    margin-top: 14px;
+    font-size: 1.375rem;
     color: #6c2f50;
     transition: color 0.3s;
+  }
+  .tema-card p {
+    margin-top: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.5;
   }
 </style>
