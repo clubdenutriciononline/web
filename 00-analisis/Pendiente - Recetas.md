@@ -1,6 +1,6 @@
 # Pendiente — Sección Recetas
 
-Estado: **EN CURSO (2026-10-17).** Hecho: página madre `/recetas/`, las 3 subpáginas, Recetas en el menú, plantilla de receta (`RecipeLayout`, campo `receta` en la collection `blog`) y la primera receta migrada (Salmón al horno con espárragos) como modelo. Pendiente: pasar las otras 5 recetas existentes a la plantilla.
+Estado: **EN CURSO (2026-10-17).** Hecho: página madre `/recetas/`, las 3 subpáginas, Recetas en el menú, plantilla de receta (`RecipeLayout`, campo `receta` en la collection `blog`) y las 6 recetas existentes migradas a la plantilla (salmón, ensalada de pollo y aguacate, tacos keto, tortilla de espinacas, pan de proteínas —ahora keto/low carb, sin la afirmación "efecto quemagrasas"— y yogur griego), con textos reescritos, valores nutricionales recalculados por ración e imágenes nuevas. Pendiente: recetas de Antiinflamatorias y Energía hormonal (con el calendario de publicaciones).
 
 ### Cómo crear una receta nueva
 

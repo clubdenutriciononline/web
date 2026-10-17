@@ -45,7 +45,7 @@ const recipeJsonLd = {
   dateModified: (updated ?? date).toISOString(),
   recipeCategory: tipo?.titulo ?? 'Recetas',
   recipeCuisine: 'Mediterránea',
-  recipeYield: `${receta.raciones} raciones`,
+  recipeYield: `${receta.raciones} ${receta.raciones === 1 ? 'ración' : 'raciones'}`,
   prepTime: iso(receta.preparacion),
   cookTime: iso(receta.coccion),
   totalTime: total ? `PT${total}M` : undefined,
