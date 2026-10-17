@@ -40,27 +40,37 @@ Nota: en el original, **los titulares van en Rubik y el cuerpo en Fredoka** (al 
 - **Listas con check (icon-list):** icono de 29px, margen izquierdo de 30px.
 - **Botón:** fondo `#6C2F50`, texto blanco Fredoka 18px, radio 20px, sombra `5px 5px 10px rgba(0,0,0,.5)`.
 
-## 5. Estructura de la página Hormonas (de arriba abajo)
+## 5. Hero: dos patrones reales (importante, confirmado 2026-10-17)
 
-1. **Hero** — degradado A. Columna izquierda: H1 de 2-3 líneas (Rubik 700, 48px, `#131313`), subtítulo, botón "Descargar guía gratuita". Columna derecha: foto con radio 20px y sombra.
-2. **Intro** — párrafo centrado de 20px (Fredoka).
-3. **Pildoras de síntomas** — 5 icon-box en fila (icono rosa + texto corto), con sombra suave.
-4. **Caja "¿Qué vas a entender?"** — texto de intro y 4 viñetas con check en dos columnas.
-5. **"¿Qué son las hormonas?"** — H2 centrado (ciruela). Texto a la izquierda, diagrama del sistema endocrino a la derecha.
-6. **"¿Por qué se desregulan las hormonas?"** — H2 + subtítulo + 6 image-box en 3 columnas (ilustración, título, texto).
-7. **"Síntomas de desequilibrio hormonal"** — H2 en mayúsculas + 2 listas con check en dos columnas.
-8. **"Relación entre hormonas, energía y metabolismo"** — H2 en mayúsculas, párrafos, infografía grande a ancho completo y texto debajo.
-9. **Frase de cierre** — "No es falta de fuerza de voluntad. Es regulación interna." (centrada).
-10. **"Cómo equilibrar las hormonas de forma natural"** — H2 en mayúsculas + 5 pilares (icon-box) en fila.
-11. **"Explora cada área clave"** — H2 + 4 tarjetas con foto redonda/cuadrada, título y texto, en 2 columnas.
-12. **Banda CTA** — H2 + texto + botón. *Eliminada por decisión de la usuaria.*
-13. **Banner Energía Femenina** — footer.
+Hay **dos** layouts de hero distintos, no uno solo — comprobado al adaptar Energía:
 
-## 6. Qué hay que replicar en las madres
+- **"overlay" (4 de las 5 madres: Energía, Metabolismo, Microbiota, Mentalidad):** imagen a ancho completo, con una tarjeta de texto semitransparente (`background-color:#FFFFFF70`, radio 20px) superpuesta en la esquina inferior izquierda, lograda en el original con un `margin-top` negativo. **Es el valor por defecto de `Hero.astro`** (`layout="overlay"`).
+- **"side" (solo Hormonas, la excepción):** columna de texto a la izquierda (H1, subtítulo, botón), foto a la derecha con radio 20px y sombra, sin superposición. `HubTemplateA` (exclusiva de Hormonas) pasa `layout="side"` explícitamente a `Hero`.
 
-Todas las madres comparten el mismo esquema: hero con H1 + foto → intro → pildoras → bloque "qué es" con imagen → 6 tarjetas de causas (3 columnas) → síntomas con checks → relación con infografía → pilares/soluciones (fila de icon-box) → "explora" (4 tarjetas, 2 columnas) → relacionados (3 artículos, 3 columnas).
+Al adaptar una madre nueva, **asumir "overlay" por defecto** y solo revisar si de verdad se parece más al hero de Hormonas (muy improbable, es la única así).
 
-## 7. Pendiente de confirmar
+Resto del hero (igual en ambos patrones): H1 Rubio 700 48px `#131313`, subtítulo Fredoka 20px `#212121C9`, línea corta antes del botón ("Descubre cómo estabilizar tu energía, descarga la guía ahora:" — confirmado igual en Hormonas y Energía, probablemente igual en el resto), botón `#6C2F50` radio 20px sombra `5px 5px 10px rgba(0,0,0,.5)`, todo sobre el degradado A.
 
-- Tamaños exactos de los iconos ilustrados de cada tarjeta.
-- Paddings internos exactos de cada tarjeta (aproximados con los valores de las cajas).
+## 6. Receta de componentes validada (Hormonas + Energía)
+
+Esta es la secuencia real de componentes compartidos tal como quedó tras la revisión visual de ambas páginas — usar `hormonas/index.astro` y `energia/index.astro` como plantilla viva para copiar y adaptar, no reinventar la estructura:
+
+1. `Hero` (layout por defecto "overlay", ver arriba) — banda A incluida.
+2. Intro: 1-5 párrafos sueltos centrados, 20-22px Fredoka. **Confirmar banda**: en Hormonas va sobre banda A (dentro del hero), en Energía no lleva banda — no asumir, hay que mirar el CSS del original o pedir confirmación visual.
+3. `SolucionesList variant="pill"` — píldoras de síntomas (icono emoji + título corto, sin body). 5 items en ambas páginas vistas hasta ahora.
+4. `ChecklistCard` — tarjeta blanca interactiva con viñetas check (columnas CSS, se reparten de arriba a abajo: 3+2 si hay 5 items, 2+2 si hay 4).
+5. `TextoConImagen` — bloque "¿Qué es/son...?", banda B incluida en el propio componente.
+6. `CausasGrid` — 6 tarjetas en 3 columnas. El párrafo introductorio va como prop `subheading` (aparece DESPUÉS del H2, no antes — error cometido una vez, confirmar siempre el orden real en el HTML).
+7. `SolucionesList variant="card" band="b"` o `ListaSintomas` — síntomas. Qué componente exacto usa cada página varía; en Energía es `SolucionesList variant="card"` con emoji por item y banda B.
+8. `RelacionImagenes` — imágenes intercaladas directamente en el slot (texto, imagen, texto, imagen, texto), nunca agrupadas en una rejilla al final. Sin banda.
+9. `SolucionesList variant="card"` o `variant="pill"` — soluciones/pilares finales. **Si hay exactamente 5 items, comprobar si el original usa el patrón 3 arriba + 2 abajo** (`data-count='5'`, ya soportado en el componente) en vez de una rejilla pareja — confirmado en Energía, con degradado suave de fondo en las tarjetas.
+10. `TemasRelacionadosGrid` — "Explora cada área" / "Temas relacionados". **Dos patrones reales, usar `temas.length` para distinguir** (ya soportado vía `data-count`): 3 tarjetas en una fila igual (la mayoría de los hubs tipo B), o 4 tarjetas en 2 filas con huecos a los lados, cada una ~32% del contenedor, no ~50% (solo Hormonas, caso confirmado).
+11. `ArticulosRelacionados` — solo en los hubs tipo B (HubTemplateB), Hormonas no lo lleva.
+12. Banda CTA final — *eliminada por decisión de la usuaria en todas las páginas.*
+
+## 7. Pendiente de confirmar (por página, al adaptar cada una)
+
+- Qué secciones llevan banda A/B y cuáles no — varía por página, siempre comprobar en el CSS compilado del original, no copiar de Hormonas a ciegas.
+- Conteo real de causas/síntomas/pilares/temas (puede no ser 6/8/5/3-4).
+- Si el bloque de síntomas usa `ListaSintomas` (check simple) o `SolucionesList variant="card"` (icono + título + texto) — ambos patrones existen.
+- Tamaños exactos de los iconos ilustrados de cada tarjeta (aproximados).

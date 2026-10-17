@@ -25,7 +25,11 @@ interface Props {
   layout?: 'side' | 'overlay';
 }
 
-const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'side' } = Astro.props;
+// 'overlay' es el patrón real en 4 de las 5 páginas madre (Energía,
+// Metabolismo, Microbiota, Mentalidad); Hormonas es la única excepción
+// con el hero "side" — por eso es el valor por defecto aquí, y
+// HubTemplateA (solo Hormonas) pasa layout="side" explícitamente.
+const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'overlay' } = Astro.props;
 ---
 
 <div class="full-bleed band-a">

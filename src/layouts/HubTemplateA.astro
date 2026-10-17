@@ -2,6 +2,10 @@
 // Variante A de hub: SOLO Hormonas. Grid final de 4 tarjetas (elección
 // editorial entre sus 6 subpáginas reales) y SIN sección de artículos
 // relacionados (a diferencia de los otros 4 hubs, ver HubTemplateB).
+// Hormonas es también la única página madre con el hero "side" (imagen a
+// la derecha, texto a la izquierda) — las otras 4 usan "overlay" (imagen
+// a ancho completo con tarjeta de texto superpuesta), que es el valor
+// por defecto de Hero.astro.
 // Ver 00-analisis/02-mapa-migracion.md sección 2 y 04-revision-estructural.md.
 import BaseLayout from './BaseLayout.astro';
 import Hero from '../components/Hero.astro';
@@ -53,6 +57,7 @@ const {
     ctaHref={ctaHref}
     image={heroImage}
     imageAlt={heroImageAlt}
+    layout="side"
   />
 
   <slot />
