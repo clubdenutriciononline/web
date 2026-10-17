@@ -11,20 +11,23 @@ interface Props {
   articulos: CollectionEntry<'blog' | 'radar'>[];
   verMasHref?: string;
   verMasLabel?: string;
-  // Paginación cliente (revisión visual 2026-09-14, pedida para la Home):
+  // Paginación cliente (revisión visual 2026-09-14, pedida para la Home;
+  // 2026-10-17: se convierte en el comportamiento por defecto para que
+  // cualquier página que use este componente la lleve sin configurarla):
   // en vez de mostrar todos los artículos o un enlace "ver más", se
   // muestran de `pageSize` en `pageSize` con controles « Anterior /
   // Página X de Y / Siguiente » — mismo patrón visual que la paginación
   // real de /blog/, pero sin generar URLs nuevas (todo ocurre en la misma
-  // página, con JS). Si no se indica, se muestran todos los artículos.
-  pageSize?: number;
+  // página, con JS). Pasar `pageSize={false}` para desactivarla y mostrar
+  // todos los artículos sin paginar.
+  pageSize?: number | false;
 }
 const {
   heading = 'Artículos relacionados',
   articulos,
   verMasHref,
   verMasLabel = 'Ver todas las entradas »',
-  pageSize,
+  pageSize = 3,
 } = Astro.props;
 const totalPaginas = pageSize ? Math.max(1, Math.ceil(articulos.length / pageSize)) : 1;
 ---
@@ -143,7 +146,7 @@ const totalPaginas = pageSize ? Math.max(1, Math.ceil(articulos.length / pageSiz
     display: block;
     text-align: center;
     margin-top: 2rem;
-    color: var(--color-accent, #c2185b);
+    color: #6c2f50;
     font-weight: 600;
     text-decoration: none;
   }
@@ -153,14 +156,20 @@ const totalPaginas = pageSize ? Math.max(1, Math.ceil(articulos.length / pageSiz
     align-items: center;
     gap: 1.5rem;
     padding: 2rem 0 0;
+    font-family: var(--font-body);
   }
   .paginacion-cliente button {
     border: none;
     background: none;
     font: inherit;
-    color: var(--color-accent, #c2185b);
+    font-weight: 600;
+    color: #f964c0;
     cursor: pointer;
     padding: 0;
+  }
+  .paginacion-cliente .pag-info {
+    color: #6c2f50;
+    font-weight: 500;
   }
   .paginacion-cliente button:disabled {
     color: #bbb;

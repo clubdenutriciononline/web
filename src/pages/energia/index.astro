@@ -26,7 +26,7 @@ import temaFatiga from './_images/Energia-Fatiga-cronica.jpg';
 import temaSueno from './_images/Energia-sueno.jpg';
 import temaRutinas from './_images/energia-rutinas-energeticas.jpg';
 
-const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('energia'));
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('energia'), 9);
 ---
 
 <HubTemplateB

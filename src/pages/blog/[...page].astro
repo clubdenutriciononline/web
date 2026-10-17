@@ -24,7 +24,7 @@ const { page } = Astro.props;
   <h1>Blog</h1>
   <h2>Entradas de blog</h2>
 
-  <ArticulosRelacionados heading={false} articulos={page.data} />
+  <ArticulosRelacionados heading={false} articulos={page.data} pageSize={false} />
 
   <nav class="paginacion" aria-label="Paginación del blog">
     {page.url.prev && <a href={page.url.prev}>« Anterior</a>}

@@ -37,7 +37,7 @@ import iconoInflamacion from './_images/tarjeta-inflamacion.jpg';
 // icon: string | ImageMetadata, así que se usan las imágenes reales en vez
 // de emoji.
 
-const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('hormonas'));
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.startsWith('hormonas'), 9);
 ---
 
 <HubTemplateA
