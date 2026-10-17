@@ -28,7 +28,8 @@ interface Props {
   // larga en un text-editor (Metabolismo: Rubik 26px/500 #212121, 24px en
   // tablet/móvil, widget b60edae del CSS post-3580) — a 48px desbordaba la
   // imagen y tapaba el menú. Se mantiene el <h1> por SEO.
-  titleSize?: 'display' | 'lead';
+  // 'medio': frase larga a Rubik 400 38px/55px, gris al 79% (Microbiota).
+  titleSize?: 'display' | 'lead' | 'medio';
 }
 
 // 'overlay' es el patrón real en 4 de las 5 páginas madre (Energía,
@@ -161,6 +162,14 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     letter-spacing: normal;
     color: #212121;
   }
+  h1[data-size='medio'] {
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 55px;
+    letter-spacing: normal;
+    color: rgba(33, 33, 33, 0.79);
+    margin-bottom: 40px;
+  }
   @media (max-width: 1024px) {
     h1[data-size='lead'] {
       font-size: 24px;
@@ -185,6 +194,10 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     }
     h1[data-size='lead'] {
       font-size: 1.25rem;
+    }
+    h1[data-size='medio'] {
+      font-size: 1.5rem;
+      line-height: 1.4;
     }
     .hero[data-layout='overlay'] .hero-copy {
       position: static;
