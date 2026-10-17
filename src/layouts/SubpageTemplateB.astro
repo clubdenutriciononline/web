@@ -16,6 +16,8 @@ interface Props {
   seoDescription: string;
   heroTitle: string;
   heroSubtitle?: string;
+  heroTitleSize?: 'display' | 'frase';
+  heroCtaIntro?: string;
   heroImage?: ImageMetadata;
   heroImageAlt?: string;
   ctaLabel: string;
@@ -28,6 +30,8 @@ const {
   seoDescription,
   heroTitle,
   heroSubtitle,
+  heroTitleSize,
+  heroCtaIntro = 'Descubre cómo estabilizar tu energía, descarga la guía ahora:',
   heroImage,
   heroImageAlt,
   ctaLabel,
@@ -37,6 +41,7 @@ const {
 ---
 
 <BaseLayout title={seoTitle} description={seoDescription}>
+<div class="hub">
   <Hero
     title={heroTitle}
     subtitle={heroSubtitle}
@@ -44,6 +49,9 @@ const {
     ctaHref={ctaHref}
     image={heroImage}
     imageAlt={heroImageAlt}
+    layout="lateral"
+    titleSize={heroTitleSize}
+    ctaIntro={heroCtaIntro}
   />
 
   <slot />
@@ -56,4 +64,5 @@ const {
   -->
   <ArticulosRelacionados articulos={articulosRelacionados} />
 
+</div>
 </BaseLayout>

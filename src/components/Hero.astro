@@ -22,7 +22,10 @@ interface Props {
   // — confirmado como el patrón real de Energía en el CSS del original
   // (columna de texto con background-color:#FFFFFF70 y margin-top
   // negativo que la monta sobre la imagen). No todos los hubs son iguales.
-  layout?: 'side' | 'overlay';
+  // 'lateral': hero de las páginas hija (medido en Fatiga crónica y Ciclo
+  // menstrual): texto a la izquierda (662px) y foto cuadrada de 418px a la
+  // derecha, con radio 20px y sombra.
+  layout?: 'side' | 'overlay' | 'lateral';
   // 'display' (por defecto): titular grande de 48px (Hormonas, Energía).
   // 'lead': cuando el original no tiene titular en el hero sino una frase
   // larga en un text-editor (Metabolismo: Rubik 26px/500 #212121, 24px en
@@ -31,7 +34,9 @@ interface Props {
   // 'medio': frase larga a Rubik 400 38px/55px, gris al 79% (Microbiota).
   // 'seccion': titular a Rubik 500 32px #000 con subtítulo Fredoka 500
   // 22px #212121 (Mentalidad: el titular es un H2 de Elementor).
-  titleSize?: 'display' | 'lead' | 'medio' | 'seccion';
+  // 'frase': hijas sin titular visible (Fatiga crónica): la frase del hero
+  // en Fredoka 500 26px/50px, gris al 79%. Sigue siendo el <h1>.
+  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase';
 }
 
 // 'overlay' es el patrón real en 4 de las 5 páginas madre (Energía,
@@ -164,6 +169,35 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     letter-spacing: normal;
     color: #212121;
   }
+  h1[data-size='frase'] {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 50px;
+    letter-spacing: normal;
+    color: rgba(33, 33, 33, 0.79);
+    margin-bottom: 45px;
+  }
+  .hero[data-layout='lateral'] {
+    display: grid;
+    grid-template-columns: minmax(0, 662px) 418px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-block: 12px;
+  }
+  .hero[data-layout='lateral'] .hero-copy {
+    order: 1;
+  }
+  .hero[data-layout='lateral'] .hero-image-wrap {
+    order: 2;
+  }
+  .hero[data-layout='lateral'] .hero-image {
+    display: block;
+    width: 418px;
+    height: 418px;
+    object-fit: cover;
+  }
   h1[data-size='seccion'] {
     font-size: 32px;
     font-weight: 500;
@@ -208,6 +242,18 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     }
     h1[data-size='lead'] {
       font-size: 1.25rem;
+    }
+    .hero[data-layout='lateral'] {
+      display: block;
+    }
+    .hero[data-layout='lateral'] .hero-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+    h1[data-size='frase'] {
+      font-size: 1.25rem;
+      line-height: 1.6;
     }
     h1[data-size='seccion'] {
       font-size: 1.5rem;

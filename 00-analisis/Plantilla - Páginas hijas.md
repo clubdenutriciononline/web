@@ -1,0 +1,33 @@
+# Plantilla — Páginas hijas (subcategorías)
+
+Validada el 2026-10-17 sobre **Fatiga crónica** (`src/pages/fatiga-cronica/index.astro`, página de referencia viva: copiarla para hacer una hija nueva). Medida con `getComputedStyle` contra https://clubdenutricion.es/fatiga-cronica/ y comparada con Ciclo menstrual: las dos hijas originales comparten el mismo esqueleto.
+
+Layout: `SubpageTemplateB` (envuelve en `.hub`, la misma tipografía que las madres; ver `Páginas madre.md`, sección 1).
+
+## Estructura (en este orden)
+
+| # | Sección | Fondo | Componente | Detalles medidos |
+|---|---|---|---|---|
+| 1 | Hero lateral | degradado A | `Hero layout="lateral"` (lo pone la plantilla) | Texto a la izquierda (662px), foto cuadrada 418×418 a la derecha, radio 20px y sombra. **Con o sin titular**: Fatiga no tiene titular visible, la frase va como `<h1>` en Fredoka 500 26px/50px gris 79% (`heroTitleSize="frase"`); Ciclo menstrual sí tiene H1 Rubik 48px + subtítulo (valor por defecto). Línea antes del botón Fredoka 500 16px; botón Fredoka 500 18px. |
+| 2 | Introducción | — | `<section class="intro">` | 5 párrafos Fredoka 22px/33px justificados. |
+| 3 | Píldoras | — | `SolucionesList variant="pill"` | 5 píldoras, título Rubik 500 24px, icono 29px **del original** (`src/lib/iconos.ts`). |
+| 4 | Pregunta destacada | — | `<p class="pregunta">` | Fredoka 400 27px `#6C2F50` centrada. |
+| 5 | Texto + checklist | — | `<section class="intro lista">` + `ChecklistCard` | Texto Fredoka 20px justificado. Checklist `fa-check`: **1 columna** (Fatiga) o **2 columnas** (Ciclo). |
+| 6 | ¿Qué es…? | degradado B | `TextoConImagen` | H2 a la izquierda; texto 20px justificado; imagen a la derecha. |
+| 7 | Causas | — | `CausasGrid` | H2 centrado, frase (`subheading`) **debajo** del H2 a 22px justificada, 6 tarjetas: **ilustración de línea magenta estilo Ciclo menstrual** (241px), título Rubik 600 26px, texto 20px. |
+| 8 | Párrafo de cierre | — | `<p class="parrafo-suelto">` | Fredoka 26px justificado. |
+| 9 | Síntomas | degradado B | `<div class="full-bleed band-b"><section class="sintomas">` + `ChecklistCard icon="check-circle"` | Frase 22px justificada; viñetas en **1 columna** (Fatiga) o **2** (Ciclo). Frases simples o "Título: texto". |
+| 10 | Relación con los sistemas hormonales y metabólicos | — | `RelacionImagenes` | 1er párrafo 24px/35px +1.3px; imagen; párrafos 20px; imagen; cierre 22px. |
+| 11 | Soluciones | degradado B | `SolucionesList variant="card" band="b"` (`subheadingVariant="destacado" subheadingAlign="center"`) | 5 tarjetas 3 + 2 con icono 50px, título Rubik 500 24px, texto 20px. **Variante Ciclo**: 5 píldoras solo con título (`variant="pill"`). |
+| 12 | Explora cada área (opcional) | — | `TemasRelacionadosGrid` (`SubpageTemplateA`) | Solo en algunas hijas (Ciclo menstrual: 4 tarjetas con foto 2×2). |
+| 13 | Artículos relacionados | — | lo pone la plantilla | Fredoka 400 32px a la izquierda; títulos Rubik 600 21px. |
+
+La banda final "¿Sientes que tu energía sube y baja?" se elimina por decisión de la usuaria (igual que en las madres).
+
+## Imágenes
+
+- Hero: foto realista cuadrada (800×800).
+- ¿Qué es…?: foto o infografía vertical.
+- Causas: ilustraciones de línea magenta (`#C8407A`), sin relleno, fondo blanco, mujer + objetos del tema (referencia: `ciclo-menstrual/_images/icono-*.jpg`). 700×700.
+- Relación: infografía horizontal + foto realista (1400×781).
+- Generadas con el MCP de imágenes (perfil Proyecto) cuando no existen en el original.
