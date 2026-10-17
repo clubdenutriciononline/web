@@ -1,29 +1,61 @@
 # Estado — sesión 2026-10-17
 
-Resumen de lo hecho hoy y lo que queda pendiente, para retomar sin perder contexto.
+Resumen de lo hecho hoy y lo que queda pendiente, para retomar sin perder contexto. Todo lo de abajo está subido a GitHub y desplegado en el preview de Vercel.
 
-## Inmediato (lo que estaba a medias al cerrar la sesión)
+## ⚠️ Recordatorio urgente
 
-1. **MCP de generación de imágenes** — la usuaria pidió crear una imagen para la portada de la entrada de Radar de Salud "La perimenopausia puede empezar antes de lo esperado..." (es la única sin foto real, lleva un fallback de marca desde antes). Eligió el perfil **Proyecto**.
-   - Ya se actualizó `GEMINI_API_KEY` e `IMAGE_OUTPUT_DIR` en `C:\Users\BeaMar\.claude.json` al perfil Proyecto (antes estaba en Trabajo). Copia de seguridad guardada como `.claude.json.bak_<fecha>` en `C:\Users\BeaMar\`.
-   - **Falta: la usuaria tiene que reiniciar Claude Code** para que el MCP cargue la nueva config. Después de reiniciar:
-     - Generar una imagen sencilla con el texto "Perimenopausia", mirando el formato (tamaño/proporción, ~1.6:1, estilo) del resto de portadas de Radar en `src/content/radar/*/cover.jpg` (ver `ayuno-intermitente-cerebro-efectos-ciencia`, `kefir-microbiota-bacterias-yogur-salud-intestinal`, etc. como referencia).
-     - Guardarla como `src/content/radar/la-perimenopausia-puede-empezar-antes-de-lo-esperado-estas-son-sus-primeras-senales/cover.jpg`, sustituyendo el fallback.
-     - Revisar `imageAlt` en el `index.md` de esa entrada (hoy dice "Club de Nutrición", genérico del fallback — cambiarlo a algo descriptivo de la nueva imagen).
-     - Build + check + commit + push + comprobar en el preview.
+- **Volver a activar Cloudflare** en clubdenutricion.es (dash.cloudflare.com → dominio → Overview → "Enable Cloudflare on Site", o poner las nubes en naranja en DNS). Se pausó a mano el 17 oct por el bloqueo de Movistar durante los partidos de LaLiga; el plugin que debía desactivarlo solo no detectó el bloqueo. Comprobar: si la web responde desde 62.210.212.90 sigue pausado; si responde desde 188.114.x.x está activo.
 
-## Hecho en esta sesión (ya desplegado)
+## Siguiente sesión — por este orden
 
-- **Hormonas**: pase completo de fidelidad visual frente al original (degradados por sección, imagen del hero sin recortar con zoom, píldoras de síntomas con emoji, iconos de causas en alta resolución de verdad —el bug real era que `CausasGrid` forzaba el `<Image>` a 80×80px—, tarjetas "explora área" con el ancho real medido en el HTML (~32%, no 20% ni 50%), artículos relacionados añadidos (antes era el único hub sin esa sección).
-- **Energía**: adaptada a la misma plantilla validada en Hormonas, con sus propias diferencias reales (hero tipo "overlay", 3 temas relacionados en vez de 4, síntomas con tarjetas en vez de lista de check, patrón 3 arriba + 2 abajo en "Soluciones Prácticas").
-- **Hallazgo clave de plantilla**: el hero **"overlay"** (imagen a ancho completo con tarjeta de texto semitransparente superpuesta) es el patrón real en 4 de las 5 páginas madre — **Hormonas es la única excepción** (hero "side a side"). `Hero.astro` ya tiene `overlay` como valor por defecto; `HubTemplateA` (solo Hormonas) fuerza `layout="side"`. Documentado en `Páginas madre.md`.
-- **ArticulosRelacionados**: paginación "« Anterior / Página X de Y / Siguiente »" en colores de marca, ahora **por defecto** (3 por página) en cualquier página que use el componente, salvo que se pase `pageSize={false}`.
-- **`/blog/` y `/radar-de-salud/`**: paginación unificada en los mismos colores; `/radar-de-salud/` además pasó a usar el mismo componente de tarjeta que `/blog/` (antes tenía una tarjeta propia sin imagen ni insignia).
+1. **Generar una receta antiinflamatoria** (la subpágina `/recetas-antiinflamatorias/` está vacía, con el aviso de "Muy pronto"). Copiar la carpeta de `receta-bol-quinoa-garbanzos-boniato-huevo` y cambiar `category: "recetas/antiinflamatorias"`, textos, ingredientes, pasos, nutrición por ración e imágenes (ver `Pendiente - Recetas.md`).
+2. **Adaptar las páginas hijas** a la plantilla validada en Fatiga crónica (`Plantilla - Páginas hijas.md`): Sueño, Rutinas energéticas, Pérdida de grasa femenina, Resistencia a la insulina, Ayuno intermitente, Digestión, Inflamación intestinal, Probióticos y alimentación, Ansiedad por la comida, Estrés y hábitos, Relación con el cuerpo; y las de Hormonas (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol, Inflamación hormonal), que usan otra plantilla (SubpageTemplateA) y tienen variantes propias (título en el hero, listas en 2 columnas, soluciones en píldoras, "Explora cada área"). En cada una: medir el original, iconos del original (`src/lib/iconos.ts`), causas con ilustración estilo Ciclo menstrual y relacionados con respaldo de la madre.
+3. **Revisar el formato de las entradas de blog** (plantilla de artículo `ArticleLayout`): tipografía, imágenes, tabla de contenidos, etc., igual que se ha hecho con madres, hijas y recetas.
 
-## Pendiente — a medio plazo
+## Ideas pendientes de definir — tarjetas de entradas
 
-1. **Adaptar Metabolismo, Microbiota y Mentalidad** a la plantilla validada (ver `Páginas madre.md`, sección "Receta de componentes validada"). Para cada una: copiar la estructura de `energia/index.astro` como punto de partida (ya usa `HubTemplateB`, hero "overlay" por defecto), comprobar banda A/B por sección en el CSS del original (no copiar a ciegas), contar causas/síntomas/pilares/temas reales, y pasar por una revisión visual de la usuaria igual que se hizo con Hormonas y Energía.
-2. **Páginas hijas de Hormonas** (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol, Inflamación hormonal) — documentadas en `Páginas hijas - Hormonas (Menopausia).md`, pero aún sin pasar por la revisión de fidelidad visual que sí tuvieron Hormonas y Energía.
-3. **Publicaciones programadas de blog** — en pausa a propósito hasta terminar los formatos (ver `Pendiente - Publicaciones programadas de blog.md`).
-4. **4 decisiones abiertas sin tocar** (ver `13-pendientes-decision.md`): slug `/ayuno-intermitente-2/`, vigencia de `/suscripcion-lista-comunidad/`, qué hacer con las páginas huérfanas, y las URLs automáticas históricas de WordPress (`/category/*/`, `/tag/*/`, `/author/*/`).
-5. **Token de GitHub expuesto** (aviso de sesiones anteriores) — revocarlo si no se ha hecho ya.
+En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay una etiqueta rosa con la subcategoría. Ideas de la usuaria, **por definir cuál se aplica**:
+
+- **Distinguir las recetas:** un icono en la esquina superior izquierda de la miniatura (p. ej. cuchara y tenedor) o una etiqueta "Receta", para saber de un vistazo que la entrada es una receta. Ejemplo: en `/blog/` la primera entrada ahora es la receta de energía hormonal y no se distingue de un artículo.
+- **Etiqueta de la categoría madre:** una segunda píldora igual que la de la subcategoría pero con el nombre de la categoría madre (Recetas, Energía, Hormonas…), en **morado oscuro** (`#6C2F50`, el color de los títulos de las entradas). Dos posibles ubicaciones:
+  - en la esquina superior izquierda de la imagen, o
+  - fuera de la imagen, al lado del logo pequeño que hay justo debajo, para no saturar la imagen (opción que también le gusta a la usuaria).
+  Ejemplo: la entrada de Sueño llevaría "Energía" (madre) además de "Sueño" (subcategoría).
+
+## Otros pendientes
+
+- **Responsive (móvil y tablet):** blog a 9 entradas por página, tarjetas compactas en móvil, menú hamburguesa y cabecera fija en móvil (ver `Pendiente - Responsive (móvil y tablet).md`).
+- **Publicaciones programadas del blog** y la idea de convertir cada tarjeta de soluciones en un artículo enlazado (ver `Pendiente - Publicaciones programadas de blog.md`).
+- **Recetas de Energía hormonal y Antiinflamatorias** siguientes, con el calendario de publicaciones.
+- **4 decisiones abiertas** (ver `13-pendientes-decision.md`): slug `/ayuno-intermitente-2/`, `/suscripcion-lista-comunidad/`, páginas huérfanas y URLs automáticas de WordPress.
+- **Token de GitHub expuesto** (aviso de sesiones anteriores) — revocarlo si no se ha hecho.
+- **Google Drive y git:** Drive crea archivos `desktop.ini` dentro de `.git` y rompe el mantenimiento de git (se limpiaron 248 el 17 oct). Si vuelve a pasar, valorar sacar la carpeta del proyecto de Drive (el código ya está en GitHub).
+
+## Hecho en esta sesión
+
+### Páginas madre (todas unificadas)
+- **Hero unificado** en Hormonas, Energía, Metabolismo, Microbiota, Mentalidad, Alimentación y Recetas: imagen horizontal y tarjeta blanca dentro de la imagen, pegada a sus bordes izquierdo e inferior, 4 esquinas redondeadas, tipografía de Energía (título + subtítulo de ~2 líneas + línea + botón).
+- **Tipografía real medida en el original** aplicada a todos los componentes (H2 Rubik 32px sin mayúsculas forzadas, texto Fredoka 20/22px, carga de Fredoka 400 y Rubik 600). Ver `Páginas madre.md` §1.
+- **Iconos siempre los del original** (Font Awesome, MDI, IcoFont, Ionicons, IcoMoon) en `src/lib/iconos.ts`; nunca emojis.
+- **"¿Qué es…?":** título a todo el ancho e imagen flotante con el texto alrededor.
+- Metabolismo, Microbiota y Mentalidad adaptadas a la plantilla; **Hormonas pasa a la plantilla de Energía** (HubTemplateB).
+- **Alimentación** pasa de listado a página madre con textos e imágenes nuevos, y sus 4 hijas nuevas: Alimentos, Macronutrientes, Micronutrientes, Patrones alimentarios.
+
+### Páginas hijas
+- **Plantilla de hijas** validada sobre Fatiga crónica (hero lateral, causas con ilustración estilo Ciclo menstrual, síntomas en viñetas…). Ver `Plantilla - Páginas hijas.md`.
+- Relacionados de las hijas: primero los de la subcategoría y, si faltan, de la madre.
+
+### Recetas (sección nueva)
+- `/recetas/` (madre) y sus 3 subpáginas, en el menú detrás de Alimentación.
+- Plantilla de receta (`RecipeLayout`): datos rápidos, ingredientes con ilustración, pasos con fotos, resultado, información nutricional por ración y datos schema.org/Recipe.
+- Las 6 recetas keto existentes migradas (textos reescritos, nutrición recalculada, imágenes nuevas) y 1 receta nueva de Energía hormonal (bol de quinoa, garbanzos, boniato y huevo).
+
+### Cabecera y navegación
+- Cabecera fija al bajar (escritorio), en dos filas: arriba las páginas de tema (Inicio … Alimentación, Recetas); abajo el buscador bajo "Inicio" y Blog · Radar de Salud · Contacto a la derecha. Desplegable con el formato del original.
+
+### Regla fija de entradas
+- Siempre que se muestren entradas del blog (relacionados, recetas, Radar…), se ven 3 y, si hay más, paginación "« Anterior · Página X de Y · Siguiente »" con el formato del blog.
+
+### Otros
+- Portada nueva para la entrada de Radar sobre perimenopausia.
+- Fotos generadas con IA: misma mujer en todas las páginas, pero con ropa distinta en cada foto.
