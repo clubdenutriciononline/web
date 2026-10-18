@@ -43,7 +43,9 @@ const totalPaginas = pageSize ? Math.max(1, Math.ceil(articulos.length / pageSiz
         const categoria = 'category' in post.data ? (post.data.category as string) : 'Radar de Salud';
         const subSlug = categoria.split('/').pop() ?? categoria;
         const categoriaLabel = SUBS[subSlug] ?? subSlug.replace(/-/g, ' ');
-        const madre = 'category' in post.data ? (MADRES[categoria.split('/')[0]] ?? null) : 'Radar de Salud';
+        // Radar de Salud no tiene categorías: solo lleva la etiqueta de la
+        // imagen, sin píldora junto al logo (repetiría lo mismo).
+        const madre = 'category' in post.data ? (MADRES[categoria.split('/')[0]] ?? null) : null;
         // Si la entrada no tiene subcategoría, la etiqueta de la imagen
         // repetiría la madre: solo se muestra la píldora junto al logo.
         const sinSub = 'category' in post.data && !categoria.includes('/');
