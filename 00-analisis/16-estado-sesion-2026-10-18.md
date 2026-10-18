@@ -24,6 +24,16 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 3. **4 decisiones abiertas** de `13-pendientes-decision.md`: slug `/ayuno-intermitente-2/`, `/suscripcion-lista-comunidad/`, páginas huérfanas y URLs automáticas de WordPress.
 4. **Paginación antigua `/alimentacion/2/…`:** ya no existe; valorar redirigir a `/blog/`.
 
+## Revisión previa a la migración (18 oct, final)
+
+- **Buscador:** en Vercel no se generaba el índice (solo corría `astro build`). Corregido: Pagefind se ejecuta dentro de `astro build` (`astro.config.mjs`). En local con `npm run dev` el buscador **no funciona nunca** (mensaje "solo disponible en la versión publicada"): es normal.
+- **El preview de Vercel ya no existe** (`DEPLOYMENT_NOT_FOUND`): eran despliegues temporales anónimos que caducan, **no se despliega solo desde GitHub**. Para ver la web: desplegar de nuevo un preview, o crear ya el proyecto definitivo de Vercel conectado al repo (checklist §2).
+- **Falta una página 404** propia (hoy saldría la genérica del hosting).
+- **Aviso de cookies:** el WordPress tenía el plugin CookieYes (cookie-law-info); la web nueva no tiene aviso. Sin analítica no es obligatorio, pero el formulario de Mailrelay (iframe) y cualquier analítica futura sí pueden requerirlo. Revisar con la Política de cookies.
+- **Páginas legales:** revisar que Privacidad y Cookies reflejen las herramientas reales (Mailrelay, Vercel; sin WordPress ni WPForms).
+- **Analítica:** el original no tenía Google Analytics ni Meta Pixel. Decidir si se añade algo (p. ej. Vercel Analytics o Plausible, sin cookies).
+- Resto de la checklist: `14-checklist-produccion.md`.
+
 ## Después: publicar la web nueva
 
 Cuando estén resueltos el embudo y el email marketing, **siguiente paso: retirar el WordPress actual y subir la web nueva al hosting real** (dominio clubdenutricion.es). Antes de hacerlo:
