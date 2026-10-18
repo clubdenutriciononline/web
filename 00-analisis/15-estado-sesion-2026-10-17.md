@@ -58,7 +58,7 @@ En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay 
 
 - **Iconos:** siempre los del original (Font Awesome, MDI, IcoFont, Ionicons, IcoMoon, Open Iconic, Themify…), nunca emojis. Todos en `src/lib/iconos.ts`.
 - **Cambiar solo lo que se pide:** si hay otra diferencia con el original, comentarla, no cambiarla.
-- **Entradas del blog:** siempre de 3 en 3 y, si hay más, paginación "« Anterior · Página X de Y · Siguiente »".
+- **Entradas del blog:** siempre de 3 en 3 y, si hay más, paginación "« Anterior · Página X de Y · Siguiente »". **Excepción (18 oct):** los listados de `/blog/` y `/radar-de-salud/` van de **9 en 9** (3 filas completas).
 - **Fotos IA:** no hace falta que sea siempre la misma mujer (decisión 18 oct): mujer de unos 35-50 años en una escena que cuadre con la página. Generar a `imageSize: "1K"` sin bajar la calidad. Si sale un error de saldo (402) o de límite (429), parar y avisar.
 - **Textos nuevos:** registro neutro de la marca, sin consejo médico concreto; suplementos y dietas restrictivas siempre "con un profesional".
 
