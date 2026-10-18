@@ -1,11 +1,11 @@
 ---
-// Rutinas energéticas — página hija de Energía. Plantilla de hijas validada
-// en Fatiga crónica (00-analisis/Plantilla - Páginas hijas.md), medida contra
-// https://clubdenutricion.es/rutinas-energeticas/ (2026-10-17). Variantes
-// propias: frase del hero en Fredoka 22px (original; desde el 18 oct el hero usa el estilo único de hijas),
-// píldoras en 2 + 3. Causas con ilustraciones en el estilo de Ciclo menstrual
-// (reutilizadas de Fatiga crónica y Alimentos, mismo estilo y tema). Iconos
-// del original extraídos de sus fuentes (src/lib/iconos.ts).
+// Rutinas energéticas — página hija de Energía, reenfocada el 18 oct en las
+// rutinas (antes repetía el enfoque de fatiga del original y se parecía
+// demasiado a Fatiga crónica). Textos aprobados por la usuaria en
+// 00-analisis/Textos - Hormonas/08 - Rutinas energéticas (reenfoque).md.
+// Plantilla de hijas (00-analisis/Plantilla - Páginas hijas.md). "Hábitos que
+// te roban energía" con 6 ilustraciones nuevas generadas en lote (estilo
+// Ciclo menstrual). Iconos extraídos de las fuentes del original.
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
@@ -20,12 +20,12 @@ import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
 import relacion1Img from './_images/relacion-1.jpg';
 import relacion2Img from './_images/relacion-2.jpg';
-import causaSueno from './_images/causa-sueno.jpg';
-import causaAlimentacion from './_images/causa-alimentacion.jpg';
-import causaSalud from './_images/causa-salud.jpg';
-import causaSedentarismo from './_images/causa-sedentarismo.jpg';
-import causaEstres from './_images/causa-estres.jpg';
-import causaMedicacion from './_images/causa-medicacion.jpg';
+import causaHorarios from './_images/causa-horarios.jpg';
+import causaComidas from './_images/causa-comidas.jpg';
+import causaSentada from './_images/causa-sentada.jpg';
+import causaPantallas from './_images/causa-pantallas.jpg';
+import causaCafeAzucar from './_images/causa-cafe-azucar.jpg';
+import causaPrisa from './_images/causa-prisa.jpg';
 import area1RutinaDeManana from './_images/area-1-rutina-de-manana.jpg';
 import area2PausasActivas from './_images/area-2-pausas-activas.jpg';
 import area3DesayunosQueDanEnergia from './_images/area-3-desayunos-que-dan-energia.jpg';
@@ -41,9 +41,9 @@ const articulos = pickRelacionados(
 
 <SubpageTemplateB
   seoTitle="Rutinas energéticas para mujeres: cómo aumentar tu energía diaria"
-  seoDescription="Aprende rutinas energéticas para mujeres que te ayudarán a aumentar tu energía diaria, reducir cansancio y mejorar vitalidad de forma natural"
+  seoDescription="Descubre cómo crear rutinas energéticas de mañana, tarde y noche que te ayuden a tener más energía, evitar los bajones y sentirte mejor cada día."
   heroTitle="Rutinas energéticas para mujeres: cómo aumentar tu energía diaria"
-  heroSubtitle="Aprende cómo crear rutinas energéticas efectivas para aumentar tu vitalidad, mejorar tu rendimiento diario y mantener niveles de energía estables a lo largo del día. Descubre hábitos simples pero poderosos que te ayudarán a sentirte más activo, saludable y equilibrado tanto física como mentalmente."
+  heroSubtitle="Aprende a organizar tu mañana, tu tarde y tu noche con hábitos sencillos que te ayudan a mantener la energía estable durante todo el día."
   heroImage={heroImg}
   heroImageAlt="Mujer activa y con energía por la mañana"
   ctaLabel="Descargar la guía ahora"
@@ -57,29 +57,29 @@ const articulos = pickRelacionados(
   articulosRelacionados={articulos}
 >
   <section class="intro">
-    <p>La falta de energía es un problema cada vez más común que puede afectar de forma directa a la calidad de vida, el rendimiento diario y el bienestar físico y mental. No se trata solo de "estar cansado", sino de un desequilibrio en los hábitos, el descanso y la gestión del estrés que impacta en todo el organismo.</p>
-    <p>Afortunadamente, la ciencia del comportamiento y la salud ha demostrado que es posible recuperar y optimizar los niveles de energía mediante rutinas energéticas adecuadas. Estas rutinas combinan hábitos físicos, mentales y emocionales que ayudan a mejorar la vitalidad, la concentración y la estabilidad durante el día.</p>
-    <p>En esta guía descubrirás las principales señales de baja energía y cómo identificarlas a tiempo para poder actuar sobre ellas de forma efectiva.</p>
+    <p>La energía que tienes cada día no depende solo de cuánto duermes: depende también de a qué hora te levantas, cuándo comes, cuánto te mueves y cómo gestionas las pausas y el estrés.</p>
+    <p>Las rutinas energéticas son la forma de ordenar esos hábitos para que trabajen a tu favor. Pequeños gestos repetidos cada día (salir a la luz por la mañana, comer a horas regulares, moverte entre tareas o desconectar antes de dormir) marcan una gran diferencia en cómo te sientes.</p>
+    <p>En esta guía descubrirás qué hábitos te roban energía sin que te des cuenta, qué señales indican que tu rutina no te está ayudando y cómo construir una rutina de mañana, tarde y noche adaptada a tu vida.</p>
   </section>
 
   <SolucionesList
     variant="pill"
     layout5="2-3"
     soluciones={[
-      { title: 'Cansancio extremo o fatiga persistente', icon: iconos.bateriaVacia },
-      { title: 'Dolores musculares y tensión corporal', icon: iconos.musculo },
-      { title: 'Dificultad para Concentrarse', icon: iconos.cerebroMdi },
-      { title: 'Irritabilidad y cambios de humor', icon: iconos.caraEnfado },
-      { title: 'Problemas de sueño o descanso no reparador', icon: iconos.caraSonrojada },
+      { title: 'Te cuesta arrancar por la mañana', icon: iconos.despertador },
+      { title: 'Bajón de energía a media tarde', icon: iconos.bateriaVacia },
+      { title: 'Necesitas café para funcionar', icon: iconos.taza },
+      { title: 'Descanso poco reparador', icon: iconos.luna },
+      { title: 'Dificultad para concentrarte', icon: iconos.cerebroMdi },
     ]}
   />
 
   <section class="intro lista">
-    <p class="sabias">¿Estás listo para despertar con energía y mantenerla estable durante todo el día de forma natural y sostenible?</p>
+    <p class="sabias">¿Estás lista para despertar con energía y mantenerla estable durante todo el día de forma natural y sostenible?</p>
     <ChecklistCard
       columns={1}
       items={[
-        'Comprenderás las causas principales de la fatiga y cómo identificarlas para poder abordarlas de forma efectiva.',
+        'Descubrirás qué hábitos de tu día a día te están robando energía sin que te des cuenta.',
         'Aprenderás a diseñar un plan de rutinas energéticas personalizado, adaptado a tu estilo de vida y tus necesidades.',
         'Descubrirás cómo la nutrición, el ejercicio y el descanso influyen directamente en tus niveles de energía diaria.',
         'Conocerás estrategias prácticas para mantener la energía de forma constante a lo largo del día, evitando los altibajos de cansancio.',
@@ -89,75 +89,83 @@ const articulos = pickRelacionados(
 
   <TextoConImagen heading="¿Qué Son las Rutinas Energéticas?" image={definicionImg} imageAlt="Qué son las rutinas energéticas">
     <p>Las rutinas energéticas son un conjunto de hábitos, prácticas y estrategias diarias diseñadas para optimizar los niveles de energía del cuerpo y la mente de forma sostenible.</p>
-    <p>No se trata de soluciones puntuales, sino de un sistema de acciones constantes que ayudan a mantener la vitalidad, mejorar el rendimiento diario y reducir la sensación de fatiga a lo largo del día.</p>
+    <p>No se trata de soluciones puntuales, sino de un sistema de acciones constantes que ayudan a mantener la vitalidad, mejorar el rendimiento diario y evitar los bajones de energía a lo largo del día.</p>
     <p>Estas rutinas combinan distintos pilares del bienestar, como el movimiento físico, la calidad del descanso, la nutrición, la gestión del estrés y la regulación mental.</p>
     <p>Por ejemplo, pueden incluir desde ejercicio físico adaptado al nivel de cada persona, hasta técnicas de respiración, mindfulness o pausas activas durante la jornada.</p>
     <p>El objetivo principal de las rutinas energéticas es favorecer un equilibrio estable en el organismo, evitando los altibajos de energía que suelen aparecer por malos hábitos, estrés acumulado o falta de descanso.</p>
     <p>Cuando se aplican de forma constante, ayudan a mejorar la concentración, el estado de ánimo, la productividad y la sensación general de bienestar.</p>
     <p>En definitiva, las rutinas energéticas no buscan "forzar" la energía, sino crear las condiciones adecuadas para que el cuerpo funcione de manera más eficiente y natural en el día a día.</p>
+    <p class="subtitulo-ejemplo">Un ejemplo de rutina energética:</p>
+    <ul class="rutina">
+      <li><strong>Mañana:</strong> levántate a una hora parecida cada día, bebe un vaso de agua, sal a la luz natural unos minutos y desayuna con proteína (huevos, yogur, frutos secos).</li>
+      <li><strong>Mediodía y tarde:</strong> come a una hora regular, da un paseo corto después de comer y haz una pausa activa cada hora u hora y media. Deja el café para antes de las 15:00.</li>
+      <li><strong>Noche:</strong> cena ligero y al menos dos horas antes de dormir, baja la intensidad de la luz y deja las pantallas un rato antes de acostarte.</li>
+    </ul>
+    <p>No hace falta aplicarlo todo a la vez: empezar por uno o dos hábitos y mantenerlos es lo que de verdad cambia la energía.</p>
   </TextoConImagen>
 
   <CausasGrid
-    heading="Causas de la Fatiga"
+    heading="Hábitos que te roban energía"
     subheading={[
-      'Entendiendo las raíces de la falta de energía para poder identificar qué factores están afectando a tu vitalidad y cómo empezar a corregirlos de forma efectiva.',
-      'La fatiga no suele tener una única causa, sino que es el resultado de la combinación de varios factores relacionados con el estilo de vida, la salud física y el equilibrio emocional. Comprender su origen es el primer paso para recuperar la energía de forma sostenible.',
+      'Los pequeños hábitos que, sumados, vacían tu batería',
+      'La falta de energía rara vez se debe a una sola cosa. Casi siempre es la suma de hábitos cotidianos que parecen inofensivos y que, repetidos cada día, desordenan el ritmo natural del cuerpo:',
     ]}
     causas={[
-      { icon: causaSueno, title: 'Falta de sueño o descanso insuficiente', text: 'La falta de sueño de calidad es una de las principales causas de fatiga. Durante el descanso, el cuerpo realiza procesos esenciales de recuperación física y mental. Cuando este proceso se ve interrumpido o es insuficiente, los niveles de energía disminuyen notablemente.' },
-      { icon: causaAlimentacion, title: 'Alimentación desequilibrada', text: 'Una dieta pobre en nutrientes esenciales puede provocar falta de energía, cansancio y dificultad para concentrarse. El organismo necesita un aporte constante de vitaminas, minerales y energía estable para funcionar correctamente.' },
-      { icon: causaSalud, title: 'Problemas de salud subyacentes', text: 'Algunas condiciones médicas pueden tener la fatiga como síntoma principal. Alteraciones hormonales, deficiencias nutricionales o enfermedades crónicas pueden afectar directamente los niveles de energía.' },
-      { icon: causaSedentarismo, title: 'Sedentarismo o falta de actividad física', text: 'La inactividad reduce la circulación, el nivel de oxigenación y la activación del metabolismo. Aunque pueda parecer contradictorio, la falta de movimiento genera más sensación de cansancio y baja energía.' },
-      { icon: causaEstres, title: 'Estrés y ansiedad', text: 'El estrés crónico y la ansiedad consumen grandes cantidades de energía mental y física. Cuando el sistema nervioso se mantiene en estado de alerta constante, aparece el agotamiento, la fatiga y la dificultad para recuperarse.' },
-      { icon: causaMedicacion, title: 'Medicación y sustancias', text: 'Ciertos medicamentos o el consumo de sustancias como alcohol o estimulantes pueden influir en el nivel de energía, generando somnolencia, bajones de vitalidad o alteraciones del sueño.' },
+      { icon: causaHorarios, title: 'Horarios de sueño irregulares', text: 'Acostarte y levantarte a horas muy distintas cada día, sobre todo el fin de semana, desajusta el reloj interno y hace que cueste más arrancar y concentrarse.' },
+      { icon: causaComidas, title: 'Saltarte comidas o comer a deshoras', text: 'Pasar muchas horas sin comer, o picar sin orden, provoca subidas y bajadas de glucosa que se notan en forma de bajones y antojos.' },
+      { icon: causaSentada, title: 'Pasar horas sentada', text: 'Estar quieta durante toda la jornada reduce la circulación y la activación del cuerpo. Paradójicamente, moverse poco cansa más.' },
+      { icon: causaPantallas, title: 'Pantallas hasta tarde', text: 'La luz de móviles y ordenadores por la noche retrasa la melatonina, la hormona que prepara el sueño, y hace que el descanso sea menos reparador.' },
+      { icon: causaCafeAzucar, title: 'Abusar del café y del azúcar', text: 'Dan un empujón rápido, pero después llega el bajón. Usarlos para "aguantar" el día acaba creando más altibajos de energía.' },
+      { icon: causaPrisa, title: 'Ir siempre con prisa, sin pausas', text: 'Encadenar tareas sin descansos mantiene el sistema nervioso en alerta y agota la energía mental mucho antes de que acabe el día.' },
     ]}
   />
 
-  <p class="parrafo-suelto">Ahora que conocemos las principales causas de la fatiga, es momento de descubrir cómo las rutinas energéticas pueden ayudarte a recuperar tu vitalidad y mejorar tu rendimiento diario de forma sostenible.</p>
+  <p class="parrafo-suelto">Ahora que conoces los hábitos que te roban energía, es momento de aprender a reconocer cuándo tu rutina no te está ayudando.</p>
 
   <div class="full-bleed band-b">
     <section class="sintomas">
-      <h2>Síntomas de la Fatiga</h2>
-      <p class="subheading">Reconociendo los signos de la falta de energía para poder identificarla a tiempo y actuar antes de que afecte de forma más profunda al bienestar físico, mental y emocional.</p>
-      <p class="subheading">La fatiga no siempre se manifiesta como simple cansancio. En muchos casos aparece de forma progresiva y se expresa a través de cambios en el cuerpo, la mente y el comportamiento diario.</p>
+      <h2>Señales de que tu rutina no te está dando energía</h2>
+      <p class="subheading">Tu cuerpo te avisa cuando tus hábitos no están funcionando.</p>
+      <p class="subheading">Estas señales no indican una enfermedad, sino que tu día a día necesita algunos ajustes:</p>
       <ChecklistCard
         columns={1}
         icon="check-circle"
         items={[
-          { title: 'Cansancio extremo o fatiga persistente', text: 'El cansancio extremo se caracteriza por una sensación de agotamiento continuo que no mejora incluso después de descansar. Puede ir acompañado de falta de energía física, lentitud mental y sensación de "no recuperación".' },
-          { title: 'Dificultad para concentrarse', text: 'La falta de energía afecta directamente a la capacidad cognitiva. Esto puede traducirse en problemas de atención, olvidos frecuentes, dificultad para mantener el foco y menor rendimiento en tareas cotidianas o laborales.' },
-          { title: 'Irritabilidad y cambios de humor', text: 'La fatiga puede influir en la regulación emocional, generando mayor sensibilidad al estrés, irritabilidad o cambios de humor. Esto puede afectar tanto a las relaciones personales como al entorno laboral.' },
-          { title: 'Dolores musculares y tensión corporal', text: 'El cansancio prolongado puede manifestarse también a nivel físico, provocando tensión muscular, sensación de rigidez, pesadez corporal o molestias generalizadas sin causa aparente.' },
-          { title: 'Problemas de sueño o descanso no reparador', text: 'La fatiga y el sueño están estrechamente relacionados. Dormir mal puede aumentar el cansancio, pero a su vez la fatiga puede dificultar un descanso profundo, generando un círculo difícil de romper.' },
-          { title: 'Pérdida de motivación y apatía', text: 'Uno de los síntomas más importantes de la fatiga es la disminución de la motivación. Puede aparecer falta de interés por actividades habituales, sensación de desánimo o menor capacidad para disfrutar del día a día.' },
+          { title: 'Te cuesta arrancar por la mañana', text: 'Aunque hayas dormido, necesitas mucho tiempo para sentirte despierta y activa.' },
+          { title: 'Bajón de energía a media tarde', text: 'Después de comer o a media tarde llega un cansancio que te cuesta superar.' },
+          { title: 'Necesitas café o algo dulce para seguir', text: 'Recurres a estimulantes varias veces al día para mantener el ritmo.' },
+          { title: 'Llegas agotada a la noche, pero duermes mal', text: 'El cansancio no se traduce en un sueño profundo y te despiertas sin haber descansado.' },
+          { title: 'Te cuesta concentrarte', text: 'Pierdes el foco con facilidad y las tareas te llevan más tiempo del habitual.' },
+          { title: 'No recuperas en el fin de semana', text: 'Descansar dos días no basta para empezar la semana con energía.' },
         ]}
       />
+      <p class="aviso-sintomas">Si a pesar de mejorar tus hábitos el cansancio se mantiene durante semanas, conviene consultarlo con un profesional: puede haber otras causas, como las que se explican en la página de <a href="/fatiga-cronica/">Fatiga crónica</a>.</p>
     </section>
   </div>
 
   <RelacionImagenes heading="Relación con los Sistemas Hormonales y Metabólicos">
-    <p>Entendiendo cómo la fatiga influye en el organismo y cómo los sistemas hormonales y metabólicos están directamente implicados en los niveles de energía diaria.</p>
-    <p>La fatiga no es únicamente una sensación de cansancio, sino que también puede estar relacionada con el funcionamiento interno del cuerpo, especialmente con el sistema hormonal y el metabolismo. Cuando estos sistemas se ven alterados, la producción, regulación y utilización de la energía pueden verse afectadas de forma significativa.</p>
-    <p>Uno de los factores más relevantes es el estrés crónico, que puede provocar una alteración en los niveles de cortisol, la hormona principal relacionada con la respuesta al estrés. Cuando el cortisol se mantiene elevado durante largos periodos, puede generar desajustes en el sueño, el estado de ánimo y la capacidad del organismo para recuperarse correctamente.</p>
-    <p>Además, estos desequilibrios hormonales pueden influir en el metabolismo energético, afectando la forma en la que el cuerpo transforma los alimentos en energía utilizable. Esto puede traducirse en sensación de cansancio constante, falta de vitalidad, dificultad para mantener la concentración o menor rendimiento físico y mental.</p>
+    <p>Cómo tus horarios influyen en tus hormonas y tu metabolismo</p>
+    <p>El cuerpo funciona con un reloj interno, el ritmo circadiano, que organiza la producción de hormonas a lo largo de las 24 horas. Las rutinas energéticas funcionan precisamente porque ayudan a que ese reloj vaya en hora.</p>
     <Image src={relacion1Img} alt="Infografía de rutinas energéticas" />
-    <p>Por otro lado, cuando el sistema metabólico no funciona de manera eficiente, el organismo puede entrar en un estado de "baja energía sostenida", donde incluso actividades cotidianas pueden resultar más exigentes de lo habitual.</p>
-    <p>Comprender esta conexión entre la fatiga, las hormonas y el metabolismo es fundamental para abordar el problema desde una perspectiva más global. No se trata solo de descansar más, sino de entender cómo los sistemas del cuerpo influyen en los niveles de energía.</p>
+    <p><strong>Cortisol por la mañana.</strong> El cortisol sube de forma natural al despertar para darte energía. La luz natural, el movimiento y un horario regular ayudan a que ese pico llegue a su hora y no se alargue durante el día.</p>
+    <p><strong>Melatonina por la noche.</strong> Al caer la luz, el cuerpo produce melatonina para preparar el sueño. La luz de las pantallas y las cenas tardías la retrasan, y por eso cuesta más dormir y descansar.</p>
+    <p><strong>Insulina y horarios de comida.</strong> Comer a horas regulares, con proteína y fibra, mantiene la glucosa estable. Saltarse comidas o picar a deshoras genera los picos y bajones que se notan en la energía.</p>
+    <p><strong>Hormonas femeninas.</strong> La energía también cambia a lo largo del ciclo menstrual y en etapas como la perimenopausia. Adaptar la intensidad del ejercicio y del descanso a cada momento hace que la rutina sea más fácil de mantener.</p>
     <Image src={relacion2Img} alt="Rutinas energéticas y equilibrio emocional" />
     <p>Es el momento de tomar el control de tu energía, mejorar tus hábitos y recuperar el equilibrio necesario para sentirte con más vitalidad en tu día a día.</p>
   </RelacionImagenes>
 
   <SolucionesList
-    heading="Soluciones Prácticas para Mejorar la Energía"
-    subheading="Estrategias científicas, accesibles y basadas en hábitos reales para aumentar tu vitalidad, reducir la fatiga y mantener niveles de energía estables a lo largo del día. El objetivo no es depender de estímulos externos, sino construir una base sólida de bienestar físico, mental y metabólico."
+    heading="Pilares de una rutina energética"
+    subheading="Cinco hábitos que sostienen tu energía de la mañana a la noche. El objetivo no es depender de estímulos externos, sino construir una base sólida de bienestar físico, mental y metabólico."
     subheadingVariant="destacado"
     variant="card"
     band="b"
     soluciones={[
       { title: 'Establecer un Horario de Sueño Regular', icon: iconos.lunaIon, body: 'Un descanso adecuado es la base principal de la energía diaria. Mantener horarios de sueño consistentes ayuda a regular el ritmo circadiano, mejorar la recuperación del sistema nervioso y optimizar la producción hormonal relacionada con el descanso. Dormir y despertarse a la misma hora cada día favorece un sueño más profundo y reparador, lo que se traduce en mayor claridad mental, mejor estado de ánimo y más vitalidad durante el día.' },
-      { title: 'Practicar Ejercicio Físico Regular', icon: iconos.mancuerna, body: 'El movimiento es una de las herramientas más eficaces para combatir la fatiga. El ejercicio mejora la circulación, aumenta la oxigenación y estimula la liberación de endorfinas, lo que contribuye a una mayor sensación de energía y bienestar. No es necesario realizar entrenamientos intensos; la actividad moderada y constante es suficiente para notar mejoras significativas en la vitalidad diaria.' },
-      { title: 'Realizar Chequeos Médicos Regulares', icon: iconos.estetoscopio, body: 'La fatiga persistente puede estar relacionada con causas médicas subyacentes como déficits nutricionales, alteraciones hormonales o problemas metabólicos. Por ello, los chequeos médicos son fundamentales para descartar posibles causas orgánicas. Detectar a tiempo cualquier desequilibrio permite intervenir de forma adecuada y recuperar los niveles de energía de manera más efectiva.' },
-      { title: 'Mantener una Dieta Equilibrada', icon: iconos.cestaComida, body: 'La alimentación influye directamente en los niveles de energía. Una dieta rica en alimentos naturales, proteínas de calidad, grasas saludables y carbohidratos complejos ayuda a mantener una energía estable durante el día. Evitar picos de azúcar y el exceso de ultraprocesados contribuye a prevenir los bajones de energía y mejora el rendimiento físico y mental.' },
+      { title: 'Moverte cada día', icon: iconos.mancuerna, body: 'No hace falta entrenar a diario: caminar, subir escaleras, estirar entre tareas o hacer una sesión corta de fuerza activan la circulación y el metabolismo, y dan más energía que el reposo.' },
+      { title: 'Comer a horas regulares', icon: iconos.cestaComida, body: 'Desayunar con proteína, no pasar muchas horas sin comer y cenar pronto ayuda a mantener la glucosa estable y evita los bajones de media mañana y media tarde.' },
+      { title: 'Luz natural y pausas activas', icon: iconos.sol, body: 'Salir a la luz por la mañana pone en hora el reloj interno, y levantarte unos minutos cada hora corta el sedentarismo y despeja la mente.' },
       { title: 'Practicar Técnicas de Relajación', icon: iconos.meditacion, body: 'El estrés es uno de los principales consumidores de energía del organismo. Técnicas como la respiración consciente, la meditación o el mindfulness ayudan a reducir la activación del sistema nervioso y mejorar la recuperación mental. Incorporar pequeños momentos de calma durante el día puede marcar una gran diferencia en los niveles de energía y concentración.' },
     ]}
   />
@@ -168,5 +176,24 @@ const articulos = pickRelacionados(
     margin-top: 39px;
     margin-bottom: 1rem;
     text-align: center;
+  }
+  .subtitulo-ejemplo {
+    font-weight: 500;
+    font-size: 22px;
+    margin-top: 1.5rem;
+  }
+  .rutina li {
+    margin-bottom: 0.5rem;
+  }
+  .aviso-sintomas {
+    margin-top: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+    text-align: left;
+  }
+  .aviso-sintomas a {
+    color: #6c2f50;
+    text-decoration: underline;
   }
 </style>

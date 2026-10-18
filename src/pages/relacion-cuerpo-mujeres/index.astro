@@ -9,7 +9,8 @@
 // síntomas en viñetas, relación con imágenes intercaladas y soluciones
 // 2 + 3 con cierre. Iconos reales del original desde src/lib/iconos.ts.
 // En el original la tarjeta "Estrés y presión emocional" aparece dos veces
-// (6.ª y 9.ª); aquí se muestra una sola vez (8 causas, 2 + 3 + 3).
+// (6.ª y 9.ª); aquí se muestra una sola vez y, desde el 18 oct, se añade
+// "Dietas y cultura de la dieta" para tener 9 causas (3 + 3 + 3).
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
@@ -32,6 +33,7 @@ import causaDialogo from './_images/causa-dialogo.jpg';
 import causaEstres from './_images/causa-estres.jpg';
 import causaAutocuidado from './_images/causa-autocuidado.jpg';
 import causaRedes from './_images/causa-redes.jpg';
+import causaDietas from './_images/causa-dietas.jpg';
 import area1Autocompasion from './_images/area-1-autocompasion.jpg';
 import area2RedesSocialesEImagenCorp from './_images/area-2-redes-sociales-e-imagen-corp.jpg';
 import area3MoversePorPlacer from './_images/area-3-moverse-por-placer.jpg';
@@ -118,6 +120,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
       { icon: causaEstres, title: 'Estrés y presión emocional', text: 'El estrés sostenido y la presión constante pueden llevar a una desconexión del cuerpo. Cuando vivimos en estado de tensión permanente, es más difícil escuchar las señales físicas y emocionales, lo que afecta al bienestar general.' },
       { icon: causaAutocuidado, title: 'Falta de autocuidado', text: 'No atender las necesidades básicas del cuerpo, como el descanso, la alimentación consciente o el movimiento saludable, puede deteriorar la conexión corporal. El autocuidado no es un lujo, sino una base esencial para construir una relación sana con uno mismo.' },
       { icon: causaRedes, title: 'Redes sociales y comparación constante', text: 'Las redes sociales intensifican la comparación diaria con otros cuerpos, estilos de vida y apariencias. Esta exposición continua puede generar inseguridad, frustración y una sensación de no estar “a la altura”, incluso cuando esas imágenes no reflejan la realidad.' },
+      { icon: causaDietas, title: 'Dietas y cultura de la dieta', text: 'Las dietas repetidas y el mensaje constante de que el cuerpo siempre debe cambiar convierten la alimentación en una fuente de control y culpa. Con el tiempo, este ciclo de restricción y frustración alimenta la insatisfacción corporal y aleja de una relación sana con el cuerpo.' },
     ]}
   />
 

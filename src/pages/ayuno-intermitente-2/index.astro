@@ -10,6 +10,8 @@
 // Iconos reales del original desde src/lib/iconos.ts.
 // En la intro del original hay un fragmento pegado de otra página ("…ulan
 // prácticamente todo en el cuerpo femenino…") que no se reproduce.
+// Ampliado el 18 oct con los textos aprobados en 00-analisis/Textos -
+// Hormonas/09 - Ayuno intermitente (ampliación).md.
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
@@ -59,6 +61,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     <p>El ayuno intermitente es una estrategia de alimentación que ha ganado popularidad en los últimos años por su impacto positivo en la salud metabólica, la energía y el control del peso.</p>
     <p>Más que una dieta, se trata de un patrón de alimentación que alterna periodos de ingesta con periodos de ayuno, permitiendo al organismo utilizar mejor sus reservas energéticas y optimizar ciertos procesos fisiológicos.</p>
     <p>En esta guía encontrarás una explicación clara sobre qué es el ayuno intermitente, cómo funciona en el cuerpo y qué beneficios puede aportar a tu bienestar diario.</p>
+    <p>En el caso de las mujeres, el ayuno tiene matices propios: las hormonas femeninas son especialmente sensibles a la falta de energía y al estrés, por lo que la forma de aplicarlo puede ser diferente a la que se recomienda de forma general. Por eso, en esta guía verás también cómo adaptarlo a tu cuerpo y en qué casos no conviene hacerlo.</p>
   </section>
 
   <SolucionesList
@@ -90,6 +93,14 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   <TextoConImagen heading="¿Qué es el Ayuno Intermitente?" image={definicionImg} imageAlt="Qué es el ayuno intermitente">
     <p>El ayuno intermitente es un patrón de alimentación que consiste en alternar periodos de ayuno con periodos de ingesta de alimentos. A diferencia de otras dietas, no se centra en qué comer, sino en cuándo comer.</p>
     <p>Existen diferentes protocolos, siendo los más habituales el de 12 horas de ayuno y 12 de alimentación, o el de 16 horas de ayuno con una ventana de 8 horas para comer. Estos formatos pueden adaptarse según el nivel de experiencia y el estilo de vida de cada persona.</p>
+    <p>Los protocolos más habituales son:</p>
+    <ul class="protocolos">
+      <li><strong>12/12:</strong> 12 horas de ayuno y 12 de alimentación. Por ejemplo, cenar a las 20:00 y desayunar a las 8:00. Es el punto de partida más sencillo.</li>
+      <li><strong>14/10:</strong> 14 horas de ayuno y una ventana de 10 horas para comer. Es un paso intermedio que muchas mujeres toleran bien.</li>
+      <li><strong>16/8:</strong> 16 horas de ayuno y una ventana de 8 horas, por ejemplo de 12:00 a 20:00. Es el más conocido, pero no es el más adecuado para todas.</li>
+      <li><strong>5:2:</strong> cinco días de alimentación habitual y dos días no consecutivos con una ingesta muy reducida. Es más exigente y conviene hacerlo con supervisión.</li>
+    </ul>
+    <p>Durante las horas de ayuno se puede tomar agua, infusiones y café o té sin azúcar ni leche. Lo importante no es solo cuántas horas se ayuna, sino qué se come en la ventana de alimentación.</p>
     <p>El objetivo principal del ayuno intermitente es permitir que el organismo descanse del proceso digestivo de forma prolongada, favoreciendo procesos naturales como la regulación energética y la optimización metabólica.</p>
   </TextoConImagen>
 
@@ -98,14 +109,15 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     subheading={[
       'El ayuno intermitente no es solo una estrategia de control de peso, sino un proceso que activa distintos mecanismos biológicos en el organismo. Estos procesos explican por qué puede tener efectos positivos en la salud metabólica, celular y hormonal.',
       'A continuación, te explicamos los principales mecanismos detrás de su funcionamiento.',
+      'Muchos de estos beneficios se han estudiado sobre todo en animales y en estudios cortos en personas, por lo que conviene verlos como efectos posibles y no como garantías.',
     ]}
     causas={[
-      { icon: causaInflamacion, title: 'Reduce la inflamación', text: 'El ayuno intermitente puede contribuir a disminuir la inflamación sistémica del organismo, un factor clave relacionado con el desarrollo de enfermedades crónicas como la diabetes o las enfermedades cardiovasculares.' },
-      { icon: causaInsulina, title: 'Mejora la sensibilidad a la insulina', text: 'Este patrón de alimentación ayuda a mejorar la respuesta del cuerpo a la insulina, favoreciendo un mejor control de la glucosa y reduciendo el riesgo de desarrollar diabetes tipo 2.' },
-      { icon: causaAutofagia, title: 'Activa la autofagia celular', text: 'El ayuno intermitente estimula la autofagia, un proceso natural de “limpieza celular” en el que el organismo elimina componentes dañados y recicla material celular.' },
-      { icon: causaOxidativo, title: 'Reduce el estrés oxidativo', text: 'Puede ayudar a disminuir el estrés oxidativo, un desequilibrio que contribuye al envejecimiento celular y al desarrollo de enfermedades como el cáncer o los trastornos neurodegenerativos.' },
-      { icon: causaMitocondrial, title: 'Mejora la función mitocondrial', text: 'El ayuno intermitente favorece una mejor eficiencia de las mitocondrias, responsables de producir energía en las células, lo que se traduce en un mejor rendimiento metabólico.' },
-      { icon: causaHormonal, title: 'Optimiza la producción hormonal', text: 'Este patrón de alimentación puede influir positivamente en la regulación hormonal, incluyendo hormonas relacionadas con el crecimiento, la reparación y el equilibrio metabólico.' },
+      { icon: causaInflamacion, title: 'Reduce la inflamación', text: 'El ayuno intermitente puede contribuir a disminuir la inflamación sistémica del organismo, un factor clave relacionado con el desarrollo de enfermedades crónicas como la diabetes o las enfermedades cardiovasculares. Los periodos sin comer reducen algunos marcadores inflamatorios, sobre todo cuando el ayuno se combina con una alimentación de calidad.' },
+      { icon: causaInsulina, title: 'Mejora la sensibilidad a la insulina', text: 'Este patrón de alimentación ayuda a mejorar la respuesta del cuerpo a la insulina, favoreciendo un mejor control de la glucosa y reduciendo el riesgo de desarrollar diabetes tipo 2. Al pasar más horas sin picos de glucosa, las células responden mejor a la insulina y el cuerpo gestiona la energía de forma más estable.' },
+      { icon: causaAutofagia, title: 'Activa la autofagia celular', text: 'El ayuno intermitente estimula la autofagia, un proceso natural de “limpieza celular” en el que el organismo elimina componentes dañados y recicla material celular. Es uno de los mecanismos más estudiados, aunque en personas todavía se investiga cuántas horas de ayuno hacen falta para que tenga un efecto relevante.' },
+      { icon: causaOxidativo, title: 'Reduce el estrés oxidativo', text: 'Puede ayudar a disminuir el estrés oxidativo, un desequilibrio que contribuye al envejecimiento celular y al desarrollo de enfermedades como el cáncer o los trastornos neurodegenerativos. Al disminuir la carga digestiva y metabólica, el organismo produce menos radicales libres y refuerza sus defensas antioxidantes.' },
+      { icon: causaMitocondrial, title: 'Mejora la función mitocondrial', text: 'El ayuno intermitente favorece una mejor eficiencia de las mitocondrias, responsables de producir energía en las células, lo que se traduce en un mejor rendimiento metabólico. Las mitocondrias aprenden a usar mejor tanto la glucosa como la grasa como fuente de energía, lo que se traduce en una energía más estable.' },
+      { icon: causaHormonal, title: 'Optimiza la producción hormonal', text: 'Este patrón de alimentación puede influir positivamente en la regulación hormonal, incluyendo hormonas relacionadas con el crecimiento, la reparación y el equilibrio metabólico. En mujeres, este efecto depende mucho de no llevar el ayuno al extremo: un déficit de energía excesivo puede tener el efecto contrario sobre el ciclo.' },
     ]}
   />
 
@@ -129,6 +141,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
           { title: 'Dificultad para dormir', text: 'Algunas personas pueden notar alteraciones leves en el sueño durante los primeros días de ajuste.' },
         ]}
       />
+      <p class="texto-sintomas cierre">Si estos síntomas no mejoran tras dos o tres semanas, o aparecen mareos intensos, alteraciones del ciclo o ansiedad con la comida, lo más recomendable es suavizar el protocolo o dejarlo y consultarlo con un profesional.</p>
     </section>
   </div>
 
@@ -139,6 +152,8 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     <p>El ayuno intermitente puede influir positivamente en la sensibilidad a la insulina, ayudando al cuerpo a gestionar de forma más eficiente los niveles de glucosa en sangre. Esto es especialmente relevante en la prevención de alteraciones metabólicas como la resistencia a la insulina.</p>
     <p>Además, este patrón de alimentación puede contribuir a reducir los niveles de inflamación sistémica, un factor estrechamente relacionado con el envejecimiento celular y el desarrollo de enfermedades crónicas.</p>
     <p>Desde el punto de vista hormonal, el ayuno intermitente también se ha asociado con cambios en la regulación de hormonas como la hormona del crecimiento, que participa en procesos de reparación, mantenimiento muscular y regeneración tisular. Asimismo, puede influir en el equilibrio de otras hormonas relacionadas con el metabolismo energético y la composición corporal.</p>
+    <p><strong>Ayuno y hormonas femeninas.</strong> El cuerpo de la mujer interpreta la falta prolongada de energía como una señal de alerta. Si el ayuno es demasiado largo o se combina con dietas muy bajas en calorías o con mucho ejercicio, puede alterar la ovulación y el ciclo menstrual. Por eso muchas mujeres se sienten mejor con ventanas de ayuno más cortas, como 12 o 14 horas.</p>
+    <p><strong>Ayuno y cortisol.</strong> Ayunar es un pequeño estrés para el organismo. En una persona descansada puede ser beneficioso, pero si ya hay estrés crónico, falta de sueño o mucha carga mental, sumar ayunos largos puede elevar el cortisol y empeorar la energía y el descanso.</p>
     <p>A nivel celular, estos cambios no ocurren de forma aislada, sino como parte de una respuesta global del organismo que busca optimizar recursos durante los periodos de baja disponibilidad energética.</p>
     <Image src={relacion1Img} alt="Infografía: relación del ayuno intermitente con los sistemas hormonales y metabólicos" />
     <p>Por otro lado, también es importante entender que estos efectos dependen de múltiples factores como el tipo de ayuno, la calidad de la alimentación en las ventanas de ingesta, el nivel de estrés y el estilo de vida general.</p>
@@ -167,6 +182,15 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     ]}
   >
     <div class="cierre-soluciones">
+      <p class="quien">¿Quién no debería hacer ayuno intermitente?</p>
+      <p>El ayuno intermitente no es adecuado para todo el mundo. No se recomienda, o debe hacerse solo con supervisión profesional, en estos casos:</p>
+      <ul class="quien-lista">
+        <li>Embarazo y lactancia.</li>
+        <li>Antecedentes de trastornos de la conducta alimentaria o una relación difícil con la comida.</li>
+        <li>Diabetes u otras enfermedades que requieran medicación que afecte a la glucosa.</li>
+        <li>Bajo peso, ciclos menstruales ausentes o muy irregulares.</li>
+        <li>Adolescencia o etapas de mucha exigencia física sin una alimentación suficiente.</li>
+      </ul>
       <p>Con estas pautas puedes comenzar a integrar el ayuno intermitente de forma progresiva, consciente y adaptada a tu estilo de vida.</p>
       <p>La clave no está en la restricción, sino en la constancia y la sostenibilidad a largo plazo.</p>
     </div>
@@ -195,6 +219,17 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     letter-spacing: normal;
     text-align: left;
     margin-bottom: 1rem;
+  }
+  .texto-sintomas.cierre {
+    margin-top: 1.5rem;
+  }
+  .protocolos li,
+  .quien-lista li {
+    margin-bottom: 0.5rem;
+  }
+  .cierre-soluciones .quien {
+    font-weight: 500;
+    font-size: 22px;
   }
   .cierre-soluciones {
     margin-top: 2rem;

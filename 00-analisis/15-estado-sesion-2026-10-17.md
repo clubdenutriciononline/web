@@ -14,12 +14,12 @@ Resumen de lo hecho y de lo que queda pendiente, para retomar sin perder context
 
 1. **Rehacer las 6 hijas de Hormonas** con la plantilla de hijas (`SubpageTemplateB`). Nuestra versión de septiembre de Ciclo menstrual, Menopausia y Tiroides es un resumen (falta o cambia ~75 % del texto del original: sin píldoras, sin checklist, causas y síntomas con otros textos, relación muy corta). Se copian los textos íntegros del original; se amplía la relación y las soluciones pasan a tarjetas con texto. Perimenopausia, Cortisol e Inflamación hormonal (artículos en el original) se montan sobre la plantilla escribiendo lo que falta. Primero los textos (revisión página a página, en `00-analisis/Textos - Hormonas/`), luego el lote de ilustraciones de causas (~18) y luego el montaje.
 2. **Áreas clave relacionadas en la plantilla de hijas** (entre Soluciones y Artículos relacionados), **sin enlace** hasta que exista el artículo del blog de cada área; cada área es un tema de artículo para el blog. En el original solo las tenían Ciclo menstrual, Menopausia y Tiroides (se mantienen). Las **madres sí conservan los enlaces** a sus hijas. Fotos de áreas: lote aparte al final (~45-60).
-3. **Rutinas energéticas: reenfocar en las rutinas** (ver punto 2 de abajo) — recordatorio de la usuaria, 18 oct.
+3. ~~Rutinas energéticas: reenfocar en las rutinas~~ — **hecho el 18 oct** (textos aprobados en `Textos - Hormonas/08`, 6 ilustraciones nuevas).
 
 ## Para retomar — por este orden
 
 1. ~~Imágenes con la API de Gemini en lugar del MCP~~ — hecho el 18 oct (ver arriba).
-2. **Reenfocar Rutinas energéticas en las rutinas** (la usuaria nota que parece la página de Fatiga crónica). El texto es fiel al original de WordPress, que ya está centrado en la fatiga ("Causas de la Fatiga", "Síntomas de la Fatiga"; "fatiga" aparece 23 veces), y las 6 ilustraciones de causas son reutilizadas de Fatiga crónica (5) y Alimentos (1). Propuesta pendiente de validar con la usuaria:
+2. ~~**Reenfocar Rutinas energéticas en las rutinas**~~ — hecho el 18 oct. (la usuaria nota que parece la página de Fatiga crónica). El texto es fiel al original de WordPress, que ya está centrado en la fatiga ("Causas de la Fatiga", "Síntomas de la Fatiga"; "fatiga" aparece 23 veces), y las 6 ilustraciones de causas son reutilizadas de Fatiga crónica (5) y Alimentos (1). Propuesta pendiente de validar con la usuaria:
    - "Hábitos que te roban energía" en lugar de "Causas de la fatiga".
    - "Señales de que tu rutina no te está dando energía" en lugar de "Síntomas de la fatiga".
    - Añadir una rutina de ejemplo de mañana, tarde y noche.
