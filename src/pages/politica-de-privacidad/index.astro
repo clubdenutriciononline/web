@@ -1,64 +1,84 @@
 ---
-// Decisión de la usuaria (2026-09-12): clonar el texto actual TAL CUAL
-// (es el boilerplate genérico de WordPress) para mantener la migración 1:1.
-// La revisión/personalización legal es una tarea independiente posterior.
+// Política de privacidad — reescrita el 18 oct para la web nueva (antes era
+// el texto genérico de WordPress: comentarios, Gravatar, cuentas...). Recoge
+// los servicios reales: Mailrelay y MailerLite (suscripciones), Vercel
+// (alojamiento) y Google Analytics (solo con consentimiento).
+// PENDIENTE: datos identificativos del responsable (nombre o razón social,
+// NIF y domicilio), marcados abajo.
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Política de privacidad - Club de Nutrición" description="Política de privacidad de Club de Nutrición.">
+<BaseLayout title="Política de privacidad - Club de Nutrición" description="Política de privacidad de Club de Nutrición: qué datos tratamos, para qué, con quién los compartimos y cuáles son tus derechos.">
   <h1>Política de privacidad</h1>
 
-  <h2>Quiénes somos</h2>
+  <p>En Club de Nutrición nos tomamos en serio tu privacidad. En esta página te explicamos qué datos personales tratamos cuando visitas <a href="https://www.clubdenutricion.es">www.clubdenutricion.es</a>, para qué los usamos y qué derechos tienes, de acuerdo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).</p>
 
-  <p>La dirección de nuestra web es: https://www.clubdenutricion.es.</p>
+  <h2>Responsable del tratamiento</h2>
 
-  <h2>Qué datos personales recogemos y por qué los recogemos</h2>
+  <ul>
+    <li><strong>Titular:</strong> Club de Nutrición <!-- PENDIENTE: nombre completo o razón social --></li>
+    <!-- PENDIENTE: <li><strong>NIF:</strong> …</li> -->
+    <!-- PENDIENTE: <li><strong>Domicilio:</strong> …</li> -->
+    <li><strong>Correo electrónico:</strong> <a href="mailto:contacto@clubdenutricion.es">contacto@clubdenutricion.es</a></li>
+  </ul>
 
-  <h3>Comentarios</h3>
+  <h2>Qué datos tratamos y para qué</h2>
 
-  <p>Cuando los visitantes dejan comentarios en la web, recopilamos los datos que se muestran en el formulario de comentarios, así como la dirección IP del visitante y la cadena de agentes de usuario del navegador para ayudar a la detección de spam.</p>
+  <h3>Cuando te suscribes para recibir la guía o nuestros correos</h3>
+  <p>Si rellenas uno de nuestros formularios de suscripción (por ejemplo, para descargar la guía gratuita o apuntarte a la lista de la comunidad), tratamos tu dirección de correo electrónico y, si nos lo indicas, tu nombre.</p>
+  <ul>
+    <li><strong>Finalidad:</strong> enviarte la guía o el recurso que has pedido y, después, nuestros correos con contenidos, novedades y propuestas de Club de Nutrición.</li>
+    <li><strong>Base legal:</strong> tu consentimiento, que das al enviar el formulario y confirmar tu suscripción desde el correo que te enviamos. Puedes retirarlo cuando quieras con el enlace «darse de baja» que aparece en todos nuestros correos.</li>
+    <li><strong>Conservación:</strong> mientras sigas suscrita. Si te das de baja, dejamos de enviarte correos y eliminamos tus datos, salvo los mínimos necesarios para respetar tu baja y atender posibles responsabilidades legales.</li>
+  </ul>
 
-  <p>Una cadena anónima creada a partir de tu dirección de correo electrónico (también llamada hash) puede ser proporcionada al servicio de Gravatar para ver si la estás usando. La política de privacidad del servicio Gravatar está disponible aquí: https://automattic.com/privacy/. Después de la aprobación de tu comentario, la imagen de tu perfil es visible para el público en el contexto de tu comentario.</p>
+  <h3>Cuando nos escribes</h3>
+  <p>Si nos escribes a nuestro correo electrónico o por redes sociales, tratamos los datos que nos facilites (nombre, correo y el contenido de tu mensaje) para responderte. La base legal es tu consentimiento y los conservamos el tiempo necesario para atender tu consulta.</p>
 
-  <h3>Medios</h3>
+  <h3>Cuando navegas por la web</h3>
+  <ul>
+    <li><strong>Datos técnicos de la visita:</strong> como cualquier web, nuestro servidor recibe datos técnicos como tu dirección IP, el tipo de navegador y la página solicitada, necesarios para mostrarte la web y protegerla frente a abusos. La base legal es nuestro interés legítimo en que la web funcione de forma segura. Estos registros los gestiona nuestro proveedor de alojamiento y se conservan durante un periodo breve.</li>
+    <li><strong>Estadísticas (Google Analytics):</strong> solo si aceptas las cookies analíticas en el aviso de cookies, usamos Google Analytics para saber de forma agregada cuántas personas nos visitan y qué contenidos leen. La base legal es tu consentimiento, que puedes retirar en cualquier momento desde «Configurar cookies», al pie de cada página. Más detalles en nuestra <a href="/politica-de-cookies/">política de cookies</a>.</li>
+  </ul>
 
-  <p>Si subes imágenes a la web, deberías evitar subir imágenes con datos de ubicación (GPS EXIF) incluidos. Los visitantes de la web pueden descargar y extraer cualquier dato de ubicación de las imágenes de la web.</p>
-
-  <h3>Formularios de contacto</h3>
-
-  <h3>Cookies</h3>
-
-  <p>Si dejas un comentario en nuestro sitio puedes elegir guardar tu nombre, dirección de correo electrónico y web en cookies. Esto es para tu comodidad, para que no tengas que volver a rellenar tus datos cuando dejes otro comentario. Estas cookies tendrán una duración de un año.</p>
-
-  <p>Si tienes una cuenta y te conectas a este sitio, instalaremos una cookie temporal para determinar si tu navegador acepta cookies. Esta cookie no contiene datos personales y se elimina al cerrar el navegador.</p>
-
-  <p>Cuando accedas, también instalaremos varias cookies para guardar tu información de acceso y tus opciones de visualización de pantalla. Las cookies de acceso duran dos días, y las cookies de opciones de pantalla duran un año. Si seleccionas «Recuérdarme», tu acceso perdurará durante dos semanas. Si sales de tu cuenta, las cookies de acceso se eliminarán.</p>
-
-  <p>Si editas o publicas un artículo se guardará una cookie adicional en tu navegador. Esta cookie no incluye datos personales y simplemente indica el ID del artículo que acabas de editar. Caduca después de 1 día.</p>
-
-  <h3>Contenido incrustado de otros sitios web</h3>
-
-  <p>Los artículos de este sitio pueden incluir contenido incrustado (por ejemplo, vídeos, imágenes, artículos, etc.). El contenido incrustado de otras webs se comporta exactamente de la misma manera que si el visitante hubiera visitado la otra web.</p>
-
-  <p>Estas web pueden recopilar datos sobre ti, utilizar cookies, incrustar un seguimiento adicional de terceros, y supervisar tu interacción con ese contenido incrustado, incluido el seguimiento de tu interacción con el contenido incrustado si tienes una cuenta y estás conectado a esa web.</p>
-
-  <h3>Analítica</h3>
+  <p>No usamos tus datos para tomar decisiones automatizadas ni para elaborar perfiles con efectos sobre ti.</p>
 
   <h2>Con quién compartimos tus datos</h2>
 
-  <p>No compartimos tus datos con terceros.</p>
+  <p>No vendemos ni cedemos tus datos a terceros. Para que la web y los correos funcionen, trabajamos con estos proveedores, que tratan los datos en nuestro nombre y solo siguiendo nuestras instrucciones (encargados del tratamiento):</p>
 
-  <h2>Cuánto tiempo conservamos tus datos</h2>
+  <ul>
+    <li><strong>Mailrelay</strong> (CPC Servicios Informáticos Aplicados a Nuevas Tecnologías, S. L., España): envío de correos y gestión de suscripciones. Los datos se tratan dentro de la Unión Europea.</li>
+    <li><strong>MailerLite</strong> (UAB MailerLite, Lituania): gestión de la lista de la comunidad. Los datos se tratan dentro de la Unión Europea.</li>
+    <li><strong>Vercel</strong> (Vercel Inc., Estados Unidos): alojamiento de la web.</li>
+    <li><strong>Google Analytics</strong> (Google Ireland Limited): estadísticas de visitas, solo si las aceptas.</li>
+  </ul>
 
-  <p>Si dejas un comentario, el comentario y sus metadatos se conservan indefinidamente. Esto es para que podamos reconocer y aprobar comentarios sucesivos automáticamente, en lugar de mantenerlos en una cola de moderación.</p>
+  <p>Vercel y Google pueden tratar datos en Estados Unidos. Ambas empresas están adheridas al Marco de Privacidad de Datos UE-EE. UU. (Data Privacy Framework), que la Comisión Europea reconoce como garantía de un nivel de protección adecuado, y aplican además las cláusulas contractuales tipo aprobadas por la Comisión.</p>
 
-  <p>De los usuarios que se registran en nuestra web (si los hay), también almacenamos la información personal que proporcionan en su perfil de usuario. Todos los usuarios pueden ver, editar o eliminar su información personal en cualquier momento (excepto que no pueden cambiar su nombre de usuario). Los administradores de la web también pueden ver y editar esa información.</p>
+  <p>Solo comunicaremos tus datos a autoridades públicas cuando una ley nos obligue a ello.</p>
 
-  <h2>Qué derechos tienes sobre tus datos</h2>
+  <h2>Enlaces y redes sociales</h2>
 
-  <p>Si tienes una cuenta o has dejado comentarios en esta web, puedes solicitar recibir un archivo de exportación de los datos personales que tenemos sobre ti, incluyendo cualquier dato que nos hayas proporcionado. También puedes solicitar que eliminemos cualquier dato personal que tengamos sobre ti. Esto no incluye ningún dato que estemos obligados a conservar con fines administrativos, legales o de seguridad.</p>
+  <p>La web incluye enlaces a nuestras redes sociales (Facebook, Instagram, X, Pinterest) y botones para compartir contenidos. Son enlaces normales: no envían datos a esas redes mientras no los pulses. Si los pulsas, se aplicará la política de privacidad de la red social correspondiente.</p>
 
-  <h2>Dónde enviamos tus datos</h2>
+  <h2>Qué derechos tienes</h2>
 
-  <p>Los comentarios de los visitantes puede que los revise un servicio de detección automática de spam.</p>
+  <p>Puedes ejercer en cualquier momento tus derechos de <strong>acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad</strong> de tus datos, así como retirar el consentimiento que nos hayas dado, escribiendo a <a href="mailto:contacto@clubdenutricion.es">contacto@clubdenutricion.es</a> con el asunto «Protección de datos». Te responderemos en el plazo máximo de un mes.</p>
+
+  <p>Si consideras que no hemos tratado tus datos correctamente, puedes presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos</a>.</p>
+
+  <h2>Menores de edad</h2>
+
+  <p>Esta web está dirigida a personas mayores de edad. No recogemos de forma consciente datos de menores de 14 años; si eres menor, no nos facilites tus datos sin la autorización de tu madre, padre o tutor.</p>
+
+  <h2>Seguridad</h2>
+
+  <p>La web se sirve siempre por conexión cifrada (HTTPS) y solo trabajamos con proveedores que ofrecen garantías adecuadas de seguridad y protección de datos.</p>
+
+  <h2>Cambios en esta política</h2>
+
+  <p>Podemos actualizar esta política si incorporamos nuevos servicios o cambia la normativa. Publicaremos aquí la versión vigente, con su fecha de actualización.</p>
+
+  <p><em>Última actualización: 18 de octubre de 2026.</em></p>
 </BaseLayout>
