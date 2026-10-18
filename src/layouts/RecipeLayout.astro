@@ -10,6 +10,8 @@ import { Image } from 'astro:assets';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import RecipeNutritionTable from '../components/RecipeNutritionTable.astro';
 import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import SiguenosRedes from '../components/SiguenosRedes.astro';
 import { tipoDeReceta } from '../lib/recetas';
 import * as iconos from '../lib/iconos';
 import type { CollectionEntry } from 'astro:content';
@@ -83,14 +85,20 @@ const destacados = [
 <BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={receta.resultado.src}>
   <script type="application/ld+json" set:html={JSON.stringify(recipeJsonLd)} is:inline />
   <div class="hub receta">
-    <Breadcrumb
-      items={[
-        { label: 'Inicio', href: '/' },
-        { label: 'Recetas', href: '/recetas/' },
-        ...(tipo ? [{ label: tipo.label, href: tipo.href }] : []),
-        { label: title },
-      ]}
-    />
+    <div class="receta-meta">
+      <Breadcrumb
+        items={[
+          { label: 'Inicio', href: '/' },
+          { label: 'Recetas', href: '/recetas/' },
+          ...(tipo ? [{ label: tipo.label, href: tipo.href }] : []),
+          { label: title },
+        ]}
+      />
+      <div class="compartir">
+        <span>Compartir:</span>
+        <ShareButtons url={new URL(Astro.url.pathname, Astro.site).href} title={title} />
+      </div>
+    </div>
 
     <div class="full-bleed band-a">
       <section class="cabecera">
@@ -167,11 +175,32 @@ const destacados = [
       </div>
     )}
 
+    <SiguenosRedes texto="Más recetas e ideas para comer bien cada semana." />
+
     <ArticulosRelacionados heading={tipo ? `Más ${tipo.titulo.toLowerCase()}` : 'Más recetas'} articulos={relacionados} />
   </div>
 </BaseLayout>
 
 <style>
+  /* Miga de pan y compartir en la misma línea (como en los artículos). */
+  .receta-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .receta-meta :global(a) {
+    color: #6c2f50;
+  }
+  .compartir {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #666;
+  }
   .cabecera {
     padding-block: var(--space-section);
   }

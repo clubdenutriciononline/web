@@ -20,8 +20,7 @@ import TableOfContents from '../components/TableOfContents.astro';
 import RecipeNutritionTable from '../components/RecipeNutritionTable.astro';
 import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
 import ShareButtons from '../components/ShareButtons.astro';
-import SocialIcon from '../components/SocialIcon.astro';
-import { socialLinks } from '../data/navigation';
+import SiguenosRedes from '../components/SiguenosRedes.astro';
 import { MADRES, SUBS, MADRE_HREF } from '../lib/categorias';
 import { estructurarArticulo } from '../lib/articulo-html';
 import type { CollectionEntry } from 'astro:content';
@@ -99,17 +98,7 @@ const articleJsonLd = {
       {nutricion && <RecipeNutritionTable nutricion={nutricion} />}
     </article>
 
-    <section class="siguenos">
-      <h2>Síguenos en redes</h2>
-      <p>Más ideas sobre energía, hormonas y alimentación cada semana.</p>
-      <div class="siguenos-iconos">
-        {socialLinks.map((s) => (
-          <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
-            <SocialIcon name={s.icon} />
-          </a>
-        ))}
-      </div>
-    </section>
+    <SiguenosRedes />
 
     <ArticulosRelacionados articulos={relacionados} />
   </div>
@@ -307,43 +296,6 @@ const articleJsonLd = {
     align-items: center;
     gap: 0.6rem;
     color: #666;
-  }
-  .siguenos {
-    padding-block: var(--space-section) 0;
-    text-align: center;
-  }
-  .siguenos h2 {
-    color: #6c2f50;
-    text-align: center;
-  }
-  .siguenos p {
-    font-family: var(--font-body);
-    font-size: 22px;
-    margin-bottom: 1.25rem;
-  }
-  .siguenos-iconos {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  .siguenos-iconos a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 999px;
-    background: #6c2f50;
-    color: #fff;
-    transition: background 0.2s;
-  }
-  .siguenos-iconos a:hover {
-    background: #f964c0;
-  }
-  .siguenos-iconos :global(svg) {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
   }
 
   @media (max-width: 767px) {

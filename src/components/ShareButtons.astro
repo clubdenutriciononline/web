@@ -81,11 +81,15 @@ const links = [
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 999px;
-    background: var(--share-color, var(--color-accent, #c2185b));
-    transition: transform 0.15s ease;
+    /* Colores de la marca (decisión de la usuaria, 18 oct): rosa que pasa a
+       berenjena al pasar por encima, al revés que "Síguenos en redes". Los
+       colores de cada red (--share-color) ya no se usan. */
+    background: #f964c0;
+    transition: background 0.2s, transform 0.15s ease;
   }
   .share-buttons a:hover,
   .share-buttons a:focus-visible {
+    background: #6c2f50;
     transform: translateY(-2px);
   }
 </style>

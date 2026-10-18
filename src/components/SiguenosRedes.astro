@@ -1,0 +1,67 @@
+---
+// Bloque "Síguenos en redes" (decisión de la usuaria, 18 oct): al final de
+// los artículos del blog y de las recetas, porque no sabemos por qué página
+// entra cada visitante. Iconos de las redes del pie, en círculos berenjena
+// que pasan a rosa al pasar por encima (los de compartir hacen lo contrario).
+import SocialIcon from './SocialIcon.astro';
+import { socialLinks } from '../data/navigation';
+
+interface Props {
+  heading?: string;
+  texto?: string;
+}
+const { heading = 'Síguenos en redes', texto = 'Más ideas sobre energía, hormonas y alimentación cada semana.' } = Astro.props;
+---
+
+<section class="siguenos">
+  <h2>{heading}</h2>
+  {texto && <p>{texto}</p>}
+  <div class="siguenos-iconos">
+    {socialLinks.map((s) => (
+      <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
+        <SocialIcon name={s.icon} />
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .siguenos {
+    padding-block: var(--space-section) 0;
+    text-align: center;
+  }
+  .siguenos h2 {
+    color: #6c2f50;
+    text-align: center;
+  }
+  .siguenos p {
+    font-family: var(--font-body);
+    font-size: 22px;
+    margin-bottom: 1.25rem;
+  }
+  .siguenos-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .siguenos-iconos a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    background: #6c2f50;
+    color: #fff;
+    transition: background 0.2s;
+  }
+  .siguenos-iconos a:hover,
+  .siguenos-iconos a:focus-visible {
+    background: #f964c0;
+  }
+  .siguenos-iconos :global(svg) {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+</style>
