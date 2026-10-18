@@ -1,6 +1,6 @@
 # Estado — sesión 2026-10-18
 
-Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en GitHub (`master`) y desplegado en el preview de Vercel: https://temporary-prompt-coral-lgtc57c.vercel.app
+Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en GitHub (`master`) y desplegado en el preview de Vercel: https://clubdenutricion-preview.vercel.app (18 oct)
 
 **Resumen:** la web nueva está completa a nivel de contenido y plantillas. Todas las páginas madre, las 22 hijas, las entradas del blog, Radar de Salud, recetas y Quiénes somos siguen ya su plantilla. Revisión final del 18 oct: 146 páginas, 0 enlaces internos rotos, sin afiliados ni despedidas antiguas, y ninguna página se sale de la pantalla en móvil (390 px).
 
@@ -8,7 +8,7 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 
 1. [ ] **Embudos y email marketing:** recuperar Mailrelay (esperando al soporte) o elegir herramienta; migrar todo a Mailrelay (MailerLite no tiene suscriptores); replantear embudos; lead magnet de recetas fáciles; formulario y página de la lista de la comunidad; valorar API/MCP de Mailrelay.
 2. [ ] **Embudo de la guía:** mockup de la guía (libro sobre una mesa con té) en optin, gracias y descarga; las 7 categorías en "¿Y ahora qué?" (orden del menú, 4 + 3 o 3 + 4).
-3. [ ] **Preview de Vercel:** el temporal ha caducado. Decidir: nuevo preview temporal o crear ya el proyecto definitivo de Vercel conectado a GitHub (necesario para la migración).
+3. [x] **Preview de Vercel:** redesplegado el 18 oct en https://clubdenutricion-preview.vercel.app (proyecto `clubdenutricion-preview` de la cuenta machanga-factory, no caduca). **No se actualiza solo con GitHub:** para ver cambios hay que compilar (`npm run build`), copiar `dist/` + `vercel.json` a una carpeta con nombre sin espacios y lanzar `vercel deploy --prod`. Pendiente para la migración: proyecto definitivo conectado al repo.
 4. [ ] **Página 404** propia.
 5. [ ] **Aviso de cookies** (el WordPress tenía CookieYes; la nueva no tiene).
 6. [ ] **Páginas legales:** Privacidad y Cookies con las herramientas reales (Mailrelay, Vercel), sin WordPress ni WPForms.
