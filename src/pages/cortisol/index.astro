@@ -1,228 +1,180 @@
 ---
-// Página a medida (CortisolCustom) — misma familia que Perimenopausia:
-// bloque HTML/CSS a medida con índice de salto, listas numeradas y
-// bibliografía. Elemento único: diagrama de flujo del eje HPA
-// (Hipotálamo → Hipófisis → Suprarrenal) en CSS puro, con las etiquetas
-// reales del original (CRH, ACTH, cortisol).
-import { Image } from 'astro:assets';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import TableOfContents from '../../components/TableOfContents.astro';
-import Bibliografia from '../../components/Bibliografia.astro';
-import ArticulosRelacionados from '../../components/ArticulosRelacionados.astro';
-import Callout from '../../components/Callout.astro';
-import NumberedList from '../../components/NumberedList.astro';
+// Cortisol — página hija de Hormonas, rehecha el 18 oct sobre la plantilla de
+// hijas (ver 00-analisis/Plantilla - Páginas hijas.md). En el original es un
+// artículo; su contenido se reparte en las secciones de la plantilla con los
+// textos aprobados en 00-analisis/Textos - Hormonas/05 - Cortisol.md.
+// Ilustraciones de causas generadas con IA en lote (estilo Ciclo menstrual).
+// Áreas clave aprobadas, pendientes de sus fotos (lote de fotos). Sin
+// bibliografía (la plantilla de hijas no la lleva). Iconos ya extraídos de
+// las fuentes del original en otras páginas (el original no tiene aquí).
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
 import heroImg from './_images/hero.jpg';
-import queEsImg from './_images/que-es.jpg';
-import sintomasImg from './_images/sintomas.jpg';
-import solucionesImg from './_images/soluciones.jpg';
+import definicionImg from './_images/que-es.jpg';
+import relacion1Img from './_images/sintomas.jpg';
+import relacion2Img from './_images/soluciones.jpg';
+import causaEstres from './_images/causa-estres.jpg';
+import causaSueno from './_images/causa-sueno.jpg';
+import causaCafeina from './_images/causa-cafeina.jpg';
+import causaEjercicio from './_images/causa-ejercicio.jpg';
+import causaDietas from './_images/causa-dietas.jpg';
+import causaHormonal from './_images/causa-hormonal.jpg';
 
-const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('cortisol'));
-
-const tocItems = [
-  { label: '¿Qué es?', anchor: 'que-es' },
-  { label: 'Síntomas', anchor: 'sintomas' },
-  { label: 'Metabolismo', anchor: 'metabolismo' },
-  { label: 'Causas y soluciones', anchor: 'causas-y-soluciones' },
-];
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('cortisol'), 3, (p) => p.data.category.startsWith('hormonas'));
 ---
 
-<BaseLayout
-  title="Cortisol alto: síntomas, causas y cómo equilibrarlo de forma natural"
-  description="El impacto del cortisol elevado en la grasa abdominal, el sueño, la fatiga y el metabolismo."
+<SubpageTemplateB
+  seoTitle="Cortisol alto en mujeres: síntomas, causas y cómo bajarlo de forma natural"
+  seoDescription="Descubre qué es el cortisol, cómo afecta al estrés, al peso y a tu energía, y aprende a reducirlo de forma natural en mujeres."
+  heroTitle="Cortisol alto en mujeres: síntomas, causas y cómo bajarlo de forma natural"
+  heroSubtitle="Una guía completa para entender el cortisol y recuperar tu equilibrio hormonal"
+  heroImage={heroImg}
+  heroImageAlt="Cortisol alto en mujeres"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={articulos}
 >
-  <header class="hero-kicker">
-    <span class="kicker">Hormonas · Salud femenina</span>
-    <h1>Cortisol alto en mujeres: síntomas, causas y cómo bajarlo de forma natural</h1>
-    <p class="subtitulo">Una guía completa para entender el cortisol y recuperar tu equilibrio hormonal</p>
-    <Image src={heroImg} alt="Mujer pensativa frente a la ventana con café" width={800} height={500} />
-  </header>
-
-  <TableOfContents heading="Resumen clave" items={tocItems} />
-
-  <p>El cortisol es una hormona esencial para la vida, pero cuando se mantiene elevado de forma constante puede convertirse en uno de los principales factores detrás del cansancio crónico, el aumento de peso y los desequilibrios hormonales en mujeres. En esta guía entenderás qué es, cómo afecta a tu cuerpo y qué puedes hacer para regularlo.</p>
-
-  <hr />
-
-  <section id="que-es">
-    <span class="kicker">¿Qué es?</span>
-    <h2>¿Qué es el cortisol y por qué es importante?</h2>
-    <p>El cortisol es una hormona producida por las glándulas suprarrenales en respuesta al estrés. Su función principal es ayudarte a reaccionar ante situaciones que requieren energía inmediata.</p>
-    <Callout variant="rosa">
-      <p>En condiciones normales el cortisol sigue un ritmo diario: alto por la mañana para activarte, y bajo por la noche para facilitar el descanso. El problema aparece cuando este equilibrio se rompe.</p>
-    </Callout>
-    <Image src={queEsImg} alt="Diagrama del eje hipotálamo-pituitaria-adrenal" width={700} height={450} />
-
-    <!-- Diagrama de flujo del eje HPA (CSS puro) — réplica del original -->
-    <div class="hpa-diagram">
-      <div class="node">
-        <strong>Hipotálamo</strong>
-        <span>Detecta el estrés y libera CRH</span>
-      </div>
-      <div class="arrow">→</div>
-      <div class="node">
-        <strong>Hipófisis</strong>
-        <span>Recibe CRH y libera ACTH</span>
-      </div>
-      <div class="arrow">→</div>
-      <div class="node">
-        <strong>Suprarrenal</strong>
-        <span>Producen y liberan cortisol</span>
-      </div>
-    </div>
-    <p class="leyenda">Eje HPA</p>
+  <section class="intro">
+    <p>El cortisol es una hormona esencial para la vida, pero cuando se mantiene elevado de forma constante puede convertirse en uno de los principales factores detrás del cansancio crónico, el aumento de peso y los desequilibrios hormonales en mujeres.</p>
+    <p>El ritmo de vida actual, con poco descanso, mucha carga mental y comidas a deshoras, hace que muchas mujeres vivan con el cortisol alto sin saberlo.</p>
+    <p>En esta guía entenderás qué es, cómo afecta a tu cuerpo y qué puedes hacer para regularlo.</p>
   </section>
 
-  <hr />
-
-  <section id="sintomas">
-    <span class="kicker">Síntomas</span>
-    <h2>Síntomas de cortisol alto en mujeres</h2>
-    <Callout variant="rosa">
-      <p>Tu cuerpo muestra señales de cortisol elevado mucho antes de que aparezcan problemas más serios. No suelen llegar de golpe, sino de forma progresiva.</p>
-    </Callout>
-    <Image src={sintomasImg} alt="Mujer con fatiga sentada en el sofá por la noche" width={700} height={450} />
-    <ul>
-      <li>Fatiga constante, incluso tras dormir</li>
-      <li>Dificultad para dormir o despertarse a media noche</li>
-      <li>Aumento de grasa abdominal</li>
-      <li>Ansiedad, irritabilidad o sensación de alerta constante</li>
-      <li>Antojos de azúcar o alimentos calóricos</li>
-      <li>Dificultad para perder peso</li>
-    </ul>
-  </section>
-
-  <hr />
-
-  <section id="metabolismo">
-    <span class="kicker">Metabolismo</span>
-    <h2>Cómo afecta el cortisol al peso y al metabolismo</h2>
-    <p>El cortisol no solo está relacionado con el estrés, también tiene un impacto directo en el metabolismo. Cuando está elevado:</p>
-    <div class="metabolismo-grid">
-      <div class="metabolismo-item">
-        <h4>Glucosa en sangre</h4>
-        <p>Aumenta los niveles de glucosa y estimula la liberación de insulina</p>
-      </div>
-      <div class="metabolismo-item">
-        <h4>Grasa abdominal</h4>
-        <p>Favorece el almacenamiento de grasa, especialmente en el abdomen</p>
-      </div>
-      <div class="metabolismo-item">
-        <h4>Interferencia hormonal</h4>
-        <p>Altera otras hormonas clave dificultando la pérdida de peso</p>
-      </div>
-      <div class="metabolismo-item">
-        <h4>Resistencia metabólica</h4>
-        <p>El metabolismo se vuelve menos eficiente incluso con dieta adecuada</p>
-      </div>
-    </div>
-  </section>
-
-  <hr />
-
-  <section id="causas-y-soluciones">
-    <span class="kicker">Causas y soluciones</span>
-    <h2>Causas más comunes del cortisol alto</h2>
-    <Callout variant="rosa">
-      <p>El cortisol alto no siempre viene del estrés emocional, sino también de hábitos diarios que parecen inofensivos. No es un único factor, sino la suma de varios.</p>
-    </Callout>
-    <NumberedList
-      items={[
-        { title: 'Estrés crónico', text: 'trabajo, preocupaciones y carga mental sostenida' },
-        { title: 'Falta de sueño', text: 'o descanso de mala calidad' },
-        { title: 'Consumo excesivo de cafeína', text: 'café, bebidas energéticas, té negro' },
-        { title: 'Ejercicio muy intenso', text: 'sin suficiente recuperación' },
-        { title: 'Dietas demasiado restrictivas', text: 'que generan estrés metabólico' },
-      ]}
-    />
-
-    <h2>Cómo bajar el cortisol de forma natural</h2>
-    <Callout variant="rosa">
-      <p>El cortisol no se elimina, pero sí puede volver a su equilibrio natural. No se trata de cambios radicales, sino de recuperar el equilibrio poco a poco.</p>
-    </Callout>
-    <NumberedList
-      items={[
-        { text: 'Prioriza el descanso y mantén horarios regulares de sueño' },
-        { text: 'Exponte a la luz natural por la mañana para regular el ritmo circadiano' },
-        { text: 'Reduce el consumo de estimulantes, especialmente por la tarde' },
-        { text: 'Sigue una alimentación equilibrada — evita los extremos restrictivos' },
-        { text: 'Incorpora respiración consciente, caminar y momentos de desconexión diaria' },
-      ]}
-    />
-    <Image src={solucionesImg} alt="Mujer caminando en naturaleza al amanecer" width={700} height={450} />
-    <Callout variant="ambar" icon="⚠️">
-      <p>Si los síntomas son persistentes o severos, consulta con tu médico o endocrinólogo. Esta guía es orientativa y no reemplaza el consejo médico profesional.</p>
-    </Callout>
-  </section>
-
-  <Bibliografia
-    referencias={[
-      'Tsigos C, Chrousos GP. Hypothalamic–pituitary–adrenal axis, neuroendocrine factors and stress. Endocrine Reviews (2002)',
-      'McEwen BS. Protective and damaging effects of stress mediators. NEJM (1998)',
-      'Adam TC, Epel ES. Stress, eating and the reward system. Physiology & Behavior (2007)',
-      'Sapolsky RM. Why Zebras Don’t Get Ulcers',
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Fatiga constante', icon: iconos.caraCansada },
+      { title: 'Problemas de sueño', icon: iconos.luna },
+      { title: 'Grasa abdominal', icon: iconos.bascula },
+      { title: 'Ansiedad e irritabilidad', icon: iconos.cerebroIdeas },
+      { title: 'Antojos de azúcar', icon: iconos.galleta },
     ]}
   />
 
-  <ArticulosRelacionados articulos={articulos} />
+  <section class="intro lista">
+    <p class="sabias">¿Te sientes siempre en alerta, cansada y con dificultad para desconectar?</p>
+    <ChecklistCard
+      columns={1}
+      items={[
+        'Entenderás qué es el cortisol y por qué es esencial para tu cuerpo',
+        'Aprenderás a reconocer las señales de un cortisol elevado',
+        'Descubrirás cómo influye el cortisol en tu metabolismo y tu peso',
+        'Conocerás sus causas más habituales y qué puedes hacer para equilibrarlo',
+      ]}
+    />
+  </section>
 
-</BaseLayout>
+  <TextoConImagen heading="¿Qué es el cortisol y por qué es importante?" image={definicionImg} imageAlt="Qué es el cortisol">
+    <p>El cortisol es una hormona producida por las glándulas suprarrenales en respuesta al estrés. Su función principal es ayudarte a reaccionar ante situaciones que requieren energía inmediata.</p>
+    <p>En condiciones normales el cortisol sigue un ritmo diario: alto por la mañana para activarte, y bajo por la noche para facilitar el descanso. El problema aparece cuando este equilibrio se rompe.</p>
+    <p>Su producción la controla el llamado eje del estrés (eje HPA), que funciona en tres pasos:</p>
+    <ul class="eje">
+      <li><strong>Hipotálamo:</strong> detecta el estrés y libera CRH.</li>
+      <li><strong>Hipófisis:</strong> recibe CRH y libera ACTH.</li>
+      <li><strong>Glándulas suprarrenales:</strong> producen y liberan cortisol.</li>
+    </ul>
+    <p>Cuando el estrés es puntual, el cortisol sube y vuelve a bajar. Si el estrés se mantiene durante semanas o meses, el eje se queda "encendido" y el cortisol deja de seguir su ritmo natural.</p>
+  </TextoConImagen>
+
+  <CausasGrid
+    heading="Causas más comunes del cortisol alto"
+    subheading={[
+      'El cortisol alto no siempre viene del estrés emocional, sino también de hábitos diarios que parecen inofensivos.',
+      'No es un único factor, sino la suma de varios.',
+    ]}
+    causas={[
+      { icon: causaEstres, title: 'Estrés crónico', text: 'Trabajo, preocupaciones y carga mental sostenida. Cuando no hay momentos de pausa, el cuerpo interpreta que sigue en peligro y mantiene el cortisol elevado durante todo el día.' },
+      { icon: causaSueno, title: 'Falta de sueño', text: 'Falta de sueño o descanso de mala calidad. Dormir poco o despertarse a menudo altera el ritmo diario del cortisol, que deja de bajar por la noche y sube aún más al día siguiente.' },
+      { icon: causaCafeina, title: 'Exceso de cafeína', text: 'Consumo excesivo de cafeína: café, bebidas energéticas, té negro. La cafeína estimula la liberación de cortisol, sobre todo si se toma en ayunas, en grandes cantidades o por la tarde.' },
+      { icon: causaEjercicio, title: 'Ejercicio sin recuperación', text: 'Ejercicio muy intenso sin suficiente recuperación. El ejercicio es beneficioso, pero entrenar duro todos los días sin descanso suficiente se convierte en un estrés más para el cuerpo.' },
+      { icon: causaDietas, title: 'Dietas muy restrictivas', text: 'Dietas demasiado restrictivas que generan estrés metabólico. Comer muy poco o pasar muchas horas sin comer hace que el cuerpo libere cortisol para mantener la glucosa en sangre.' },
+      { icon: causaHormonal, title: 'Cambios hormonales', text: 'En la perimenopausia y la menopausia, la bajada de estrógenos y progesterona hace que el cuerpo sea más sensible al estrés y que el cortisol tenga más impacto en el sueño y el peso.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto centrado">Identificar qué factores se dan en tu día a día es el primer paso para que el cortisol vuelva a su ritmo natural.</p>
+
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Síntomas de cortisol alto en mujeres</h2>
+      <p class="subheading">Tu cuerpo muestra señales de cortisol elevado mucho antes de que aparezcan problemas más serios. No suelen llegar de golpe, sino de forma progresiva.</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Fatiga constante, incluso tras dormir', text: 'Cuando el cortisol no sigue su ritmo, por la mañana falta energía para arrancar y el cansancio se arrastra todo el día.' },
+          { title: 'Dificultad para dormir o despertarse a media noche', text: 'Un cortisol que no baja por la noche mantiene el cuerpo en alerta y dificulta un sueño profundo y continuado.' },
+          { title: 'Aumento de grasa abdominal', text: 'El cortisol favorece que la grasa se acumule en la zona del abdomen, incluso sin grandes cambios en la alimentación.' },
+          { title: 'Ansiedad, irritabilidad o sensación de alerta constante', text: 'El sistema nervioso se queda en "modo alarma" y cuesta relajarse, concentrarse o tener paciencia.' },
+          { title: 'Antojos de azúcar o alimentos calóricos', text: 'El cuerpo busca energía rápida para afrontar lo que percibe como una amenaza, y aparecen las ganas de dulce.' },
+          { title: 'Dificultad para perder peso', text: 'Aunque se cuide la alimentación, un cortisol elevado hace que el metabolismo sea menos eficiente y que cueste más ver resultados.' },
+        ]}
+      />
+    </section>
+  </div>
+
+  <RelacionImagenes heading="Relación con los Sistemas Hormonales y Metabólicos">
+    <p>Cómo afecta el cortisol al peso, al metabolismo y a otras hormonas</p>
+    <p>El cortisol no solo está relacionado con el estrés, también tiene un impacto directo en el metabolismo. Cuando está elevado:</p>
+    <Image src={relacion1Img} alt="Cómo afecta el cortisol al cuerpo" />
+    <ul class="efectos">
+      <li><strong>Glucosa en sangre:</strong> aumenta los niveles de glucosa y estimula la liberación de insulina.</li>
+      <li><strong>Grasa abdominal:</strong> favorece el almacenamiento de grasa, especialmente en el abdomen.</li>
+      <li><strong>Interferencia hormonal:</strong> altera otras hormonas clave dificultando la pérdida de peso.</li>
+      <li><strong>Resistencia metabólica:</strong> el metabolismo se vuelve menos eficiente incluso con dieta adecuada.</li>
+    </ul>
+    <p><strong>Tiroides.</strong> Un cortisol alto durante mucho tiempo puede frenar la conversión de la hormona tiroidea en su forma activa, lo que se nota en más cansancio y un metabolismo más lento.</p>
+    <p><strong>Hormonas sexuales.</strong> El cuerpo prioriza la respuesta al estrés frente a la reproducción, por eso el estrés mantenido puede alterar la ovulación, el ciclo menstrual y los niveles de progesterona.</p>
+    <p><strong>Sistema inmunitario y digestión.</strong> A largo plazo, el exceso de cortisol se relaciona con más inflamación, defensas más bajas y molestias digestivas.</p>
+    <Image src={relacion2Img} alt="Mujer recuperando el equilibrio del cortisol" />
+    <p>Por eso, equilibrar el cortisol no solo ayuda a sentirse menos estresada: también repercute en el peso, la energía, el ciclo y el bienestar general.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Cómo bajar el cortisol de forma natural"
+    subheading="El cortisol no se elimina, pero sí puede volver a su equilibrio natural. No se trata de cambios radicales, sino de recuperar el equilibrio poco a poco."
+    subheadingVariant="destacado"
+    subheadingAlign="center"
+    variant="card"
+    band="b"
+    soluciones={[
+      { title: 'Prioriza el descanso', icon: iconos.cama, body: 'Mantén horarios regulares de sueño. Acostarte y levantarte a la misma hora ayuda a que el cortisol vuelva a subir por la mañana y a bajar por la noche.' },
+      { title: 'Luz natural por la mañana', icon: iconos.sol, body: 'Exponte a la luz natural por la mañana para regular el ritmo circadiano. Unos minutos al aire libre al empezar el día ayudan a que el cuerpo sepa cuándo activarse y cuándo descansar.' },
+      { title: 'Menos estimulantes', icon: iconos.taza, body: 'Reduce el consumo de estimulantes, especialmente por la tarde. Limitar el café y las bebidas energéticas, y no tomarlos en ayunas, evita picos de cortisol innecesarios.' },
+      { title: 'Alimentación equilibrada', icon: iconos.cestaComida, body: 'Sigue una alimentación equilibrada y evita los extremos restrictivos. Comidas regulares con proteína, fibra y grasas saludables ayudan a mantener estable la glucosa y, con ella, el cortisol.' },
+      { title: 'Momentos de desconexión', icon: iconos.meditacion, body: 'Incorpora respiración consciente, caminar y momentos de desconexión diaria. Bastan unos minutos al día para que el sistema nervioso salga del modo alerta.' },
+    ]}
+  >
+    <p class="cierre-soluciones">Si los síntomas son persistentes o severos, consulta con tu médico o endocrinólogo. Esta guía es orientativa y no reemplaza el consejo médico profesional.</p>
+  </SolucionesList>
+</SubpageTemplateB>
 
 <style>
-  .kicker {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    color: var(--color-accent, #c2185b);
-  }
-  .subtitulo {
-    font-size: 1.1rem;
-    color: #555;
-  }
-  .hpa-diagram {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 1.5rem 0;
-  }
-  .hpa-diagram .node {
-    background: var(--color-surface-alt, #fdf2f7);
-    border-radius: 0.75rem;
-    padding: 1rem 1.5rem;
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
+  .intro .sabias {
+    margin-top: 39px;
+    margin-bottom: 1rem;
     text-align: center;
-    max-width: 200px;
   }
-  .hpa-diagram .node span {
-    font-weight: 400;
-    font-size: 0.8rem;
-    color: #666;
-  }
-  .leyenda {
+  .parrafo-suelto.centrado {
     text-align: center;
-    font-size: 0.85rem;
-    color: #666;
   }
-  .metabolismo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+  .eje li,
+  .efectos li {
+    margin-bottom: 0.5rem;
   }
-  .metabolismo-item {
-    background: var(--color-surface-alt);
-    border-radius: 0.75rem;
-    padding: 1.25rem;
-  }
-  .metabolismo-item h4 {
-    margin-top: 0;
-  }
-  .metabolismo-item p {
-    margin-bottom: 0;
+  .cierre-soluciones {
+    margin-top: 2rem;
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+    text-align: center;
   }
 </style>

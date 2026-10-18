@@ -1,131 +1,179 @@
 ---
-// URL pública /inflamacion-hormonal/ (el slug interno real de WP es
-// sintomas-inflamacion-hormonal, pero la URL pública no cambia).
-// Usa SubpageBlogPost — tercera variante propia: tabla de contenidos, sin
-// grid de causas, acordeón de FAQ, sección de conclusión, 5 tarjetas de
-// artículos relacionados (no 3).
+// Inflamación hormonal — página hija de Hormonas, rehecha el 18 oct sobre la
+// plantilla de hijas (ver 00-analisis/Plantilla - Páginas hijas.md). En el
+// original es un artículo (tabla de contenidos, preguntas frecuentes,
+// conclusión); su contenido se reparte en las secciones de la plantilla con
+// los textos aprobados en 00-analisis/Textos - Hormonas/06 - Inflamación
+// hormonal.md. Sin preguntas frecuentes (van en el artículo del blog).
+// Ilustraciones de causas generadas con IA en lote. Áreas clave y 2.ª
+// imagen de la relación, pendientes del lote de fotos. Iconos de soluciones
+// del original; píldoras con iconos ya extraídos de las fuentes del original.
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
-import SubpageBlogPost from '../../layouts/SubpageBlogPost.astro';
-import Callout from '../../components/Callout.astro';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import CausasGrid from '../../components/CausasGrid.astro';
+import RelacionImagenes from '../../components/RelacionImagenes.astro';
 import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
 import heroImg from './_images/hero.jpg';
-import comoAfectaImg from './_images/como-afecta.jpg';
-import infografiaImg from './_images/infografia.jpg';
+import definicionImg from './_images/infografia.jpg';
+import relacion1Img from './_images/como-afecta.jpg';
+import causaEstres from './_images/causa-estres.jpg';
+import causaAlimentacion from './_images/causa-alimentacion.jpg';
+import causaDescanso from './_images/causa-descanso.jpg';
+import causaSedentarismo from './_images/causa-sedentarismo.jpg';
+import causaGrasa from './_images/causa-grasa.jpg';
+import causaHormonal from './_images/causa-hormonal.jpg';
 
-// Las 6 tarjetas de "Soluciones" no llevan imagen real en el original: el
-// HTML fuente (elementor-widget-icon-box) usa fuentes de iconos vectoriales
-// -- Material Design Icons (mdi-food-apple, mdi-sleep), IcoFont
-// (icofont-pills, icofont-soft-drinks) y Font Awesome 5 (fa-flushed,
-// fa-walking) -- no <img> ni PNG/JPG descargable. Igual que con FontAwesome
-// en la home, se reproduce el SVG concreto de cada icono en vez de emoji o
-// de cargar tres librerías de iconos completas solo para 6 iconos.
-const iconoAlimentacion = { svg: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20,10C22,13 17,22 15,22C13,22 13,21 12,21C11,21 11,22 9,22C7,22 2,13 4,10C6,7 9,7 11,8V5C5.38,8.07 4.11,3.78 4.11,3.78C4.11,3.78 6.77,0.19 11,5V3H13V8C15,7 18,7 20,10Z" /></svg>' };
-const iconoSuplementos = { svg: '<svg viewBox="0 0 1000 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0,850) scale(1,-1)"><path d="M977 219c-22 38-46 75-68 113-69 113-137 226-206 339-35 58-88 87-155 89-44 2-81-15-116-38-82-54-107-159-58-244 38-64 77-127 115-190 53-87 105-174 158-261 40-64 99-92 175-86 38 3 70 20 100 41 77 53 101 156 55 237z m-170 203c-86-52-171-104-258-156-5-4-13-2-16 4-19 30-37 60-55 90-26 42-51 85-77 127-46 77-24 168 53 215 29 18 59 32 94 31 52-2 96-22 125-67 42-67 83-135 124-203 5-8 9-16 14-24 4-6 2-14-4-17z m-427-118c-62 73-186 101-283 35-100-67-116-191-79-266 3-6 11-8 16-4l343 219c6 3 8 11 3 16z m23-56c-114-74-229-147-344-220-5-4-7-11-2-16 61-72 180-101 278-39 100 63 123 185 84 270-3 6-10 8-16 5z" /></g></svg>' };
-const iconoEstres = { svg: '<svg viewBox="0 0 496 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm96-312c-44.2 0-80 35.8-80 80s35.8 80 80 80 80-35.8 80-80-35.8-80-80-80zm0 128c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm0-72c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm-112 24c0-44.2-35.8-80-80-80s-80 35.8-80 80 35.8 80 80 80 80-35.8 80-80zm-80 48c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm0-72c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm160 144H184c-13.2 0-24 10.8-24 24s10.8 24 24 24h128c13.2 0 24-10.8 24-24s-10.8-24-24-24z" /></svg>' };
-const iconoSueno = { svg: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23,12H17V10L20.39,6H17V4H23V6L19.62,10H23V12M15,16H9V14L12.39,10H9V8H15V10L11.62,14H15V16M7,20H1V18L4.39,14H1V12H7V14L3.62,18H7V20Z" /></svg>' };
-const iconoActividad = { svg: '<svg viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M208 96c26.5 0 48-21.5 48-48S234.5 0 208 0s-48 21.5-48 48 21.5 48 48 48zm94.5 149.1l-23.3-11.8-9.7-29.4c-14.7-44.6-55.7-75.8-102.2-75.9-36-.1-55.9 10.1-93.3 25.2-21.6 8.7-39.3 25.2-49.7 46.2L17.6 213c-7.8 15.8-1.5 35 14.2 42.9 15.6 7.9 34.6 1.5 42.5-14.3L81 228c3.5-7 9.3-12.5 16.5-15.4l26.8-10.8-15.2 60.7c-5.2 20.8.4 42.9 14.9 58.8l59.9 65.4c7.2 7.9 12.3 17.4 14.9 27.7l18.3 73.3c4.3 17.1 21.7 27.6 38.8 23.3 17.1-4.3 27.6-21.7 23.3-38.8l-22.2-89c-2.6-10.3-7.7-19.9-14.9-27.7l-45.5-49.7 17.2-68.7 5.5 16.5c5.3 16.1 16.7 29.4 31.7 37l23.3 11.8c15.6 7.9 34.6 1.5 42.5-14.3 7.7-15.7 1.4-35.1-14.3-43zM73.6 385.8c-3.2 8.1-8 15.4-14.2 21.5l-50 50.1c-12.5 12.5-12.5 32.8 0 45.3s32.7 12.5 45.2 0l59.4-59.4c6.1-6.1 10.9-13.4 14.2-21.5l13.5-33.8c-55.3-60.3-38.7-41.8-47.4-53.7l-20.7 51.5z" /></svg>' };
-const iconoHabitos = { svg: '<svg viewBox="0 0 1000 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0,850) scale(1,-1)"><path d="M693 585c-107-1-215-2-323-4l-23 207-34-4 23-203c-11 0-22 0-32 0-54-1-67-14-60-67 13-103 25-205 37-308 9-80 16-161 26-241 4-39 18-52 58-52 44-1 88 0 133 0v0c42 0 84 0 126 0 50-1 66 15 72 65 20 179 40 358 60 537 6 53-8 71-63 70z m-401-233c-7 60-13 117-20 175-2 22 7 28 27 28h40l22-203h-69z m208-418c-79 0-144 5-144 12 0 6 65 11 144 11 79 0 144-5 144-11s-65-12-144-12z m226 591c-8-56-13-113-19-173h-312l-22 203c109-1 217-1 326 0 21 0 31-5 27-30z" /></g></svg>' };
-
-// Esta página muestra 5 tarjetas de relacionados, no 3 (confirmado contra
-// el original en una revisión anterior) — único caso así en el sitio.
-const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('inflamacion-hormonal'), 5);
-
-const tocItems = [
-  { label: 'Introducción', anchor: 'introduccion' },
-  { label: 'Qué es la inflamación hormonal', anchor: 'que-es' },
-  { label: 'Cómo afecta al cuerpo', anchor: 'como-afecta' },
-  { label: 'Soluciones', anchor: 'soluciones' },
-  { label: 'Preguntas frecuentes', anchor: 'preguntas-frecuentes' },
-  { label: 'Conclusión', anchor: 'conclusion' },
-];
-
-const faqItems = [
-  { question: '¿Qué es la inflamación hormonal?', answer: 'La inflamación hormonal es un estado en el que los procesos inflamatorios del cuerpo interfieren con el equilibrio normal de las hormonas, afectando a funciones como la energía, el metabolismo o el estado de ánimo.' },
-  { question: '¿Qué causa la inflamación hormonal?', answer: 'Suele estar relacionada con factores como el estrés crónico, una alimentación poco equilibrada, el sedentarismo, la falta de descanso o alteraciones en el sistema hormonal.' },
-  { question: '¿Cuáles son los síntomas de la inflamación hormonal?', answer: 'Puede manifestarse de distintas formas, como fatiga persistente, cambios en el peso, molestias digestivas, problemas de piel y alteraciones en el estado de ánimo. La intensidad puede variar según cada persona.' },
-  { question: '¿Cómo puedo reducir la inflamación hormonal?', answer: 'Se puede mejorar mediante cambios en el estilo de vida, como una alimentación antiinflamatoria, la reducción del estrés, el ejercicio regular, un buen descanso y, en algunos casos, el apoyo de suplementos.' },
-  { question: '¿Es importante reducir la inflamación hormonal?', answer: 'Sí, ya que mantenerla en el tiempo puede influir en el equilibrio general del organismo. Abordarla de forma temprana ayuda a mejorar el bienestar y prevenir que los síntomas se cronifiquen.' },
-];
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('inflamacion-hormonal'), 3, (p) => p.data.category.startsWith('hormonas'));
 ---
 
-<SubpageBlogPost
-  seoTitle="Inflamación hormonal: síntomas y cómo afecta al cuerpo"
-  seoDescription="Cómo la inflamación hormonal afecta a la digestión, la energía y la sensibilidad a la insulina."
+<SubpageTemplateB
+  seoTitle="Inflamación hormonal: qué es y cómo afecta tu salud"
+  seoDescription="Descubre los síntomas de la inflamación hormonal, cómo identificarlos y qué señales pueden indicar un desequilibrio hormonal en tu cuerpo."
   heroTitle="Inflamación hormonal: qué es y cómo afecta tu salud"
   heroSubtitle="Causas, síntomas y estrategias naturales para reducir la inflamación hormonal y mejorar tu bienestar"
   heroImage={heroImg}
-  heroImageAlt="Inflamación hormonal: qué es y cómo afecta tu salud"
-  tocItems={tocItems}
-  faqItems={faqItems}
+  heroImageAlt="Inflamación hormonal"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
   articulosRelacionados={articulos}
 >
-  <section id="introduccion">
-    <h2>Introducción</h2>
+  <section class="intro">
     <p>La inflamación hormonal es un factor cada vez más relevante cuando hablamos de salud y bienestar. Aunque no siempre es evidente, puede estar detrás de síntomas como fatiga, cambios de peso, problemas digestivos o alteraciones del estado de ánimo.</p>
     <p>Cuando la inflamación se mantiene en el tiempo, puede afectar al equilibrio hormonal y aumentar el riesgo de desarrollar problemas de salud más complejos, como enfermedades cardiovasculares o metabólicas.</p>
-    <p>En este artículo entenderás qué es la inflamación hormonal, cuáles son sus causas más habituales, cómo identificar sus síntomas y qué puedes hacer para reducirla de forma efectiva.</p>
-
-    <h3>Qué vas a aprender</h3>
-    <Callout variant="lila">
-      <p>En este artículo descubrirás qué es la inflamación hormonal y por qué puede afectar a tu bienestar más de lo que parece.</p>
-      <p>Verás cuáles son sus causas más frecuentes, cómo identificar sus síntomas y de qué manera influye en la salud general.</p>
-      <p>Además, encontrarás estrategias prácticas y naturales para ayudarte a reducirla y recuperar el equilibrio hormonal.</p>
-    </Callout>
+    <p>En esta guía entenderás qué es la inflamación hormonal, cuáles son sus causas más habituales, cómo identificar sus síntomas y qué puedes hacer para reducirla de forma efectiva.</p>
   </section>
 
-  <section id="que-es">
-    <h2>¿Qué es la inflamación hormonal?</h2>
-    <p>La inflamación hormonal se refiere a un estado en el que los procesos inflamatorios del organismo interfieren con el equilibrio normal de las hormonas. Esta interacción puede alterar la forma en la que el cuerpo regula funciones clave como el metabolismo, la energía o el estado de ánimo.</p>
-    <p>Cuando este desequilibrio se mantiene en el tiempo, pueden aparecer síntomas como fatiga, hinchazón abdominal, problemas de piel o cambios en el peso, entre otros.</p>
-    <p>Factores como el estrés crónico, una alimentación poco equilibrada, la falta de descanso o el sedentarismo pueden favorecer este tipo de inflamación y contribuir a la desregulación hormonal.</p>
-  </section>
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Fatiga persistente', icon: iconos.caraCansada },
+      { title: 'Hinchazón abdominal', icon: iconos.viento },
+      { title: 'Problemas de piel', icon: iconos.perfilMujer },
+      { title: 'Cambios de peso', icon: iconos.bascula },
+      { title: 'Cambios de ánimo', icon: iconos.caraTriste },
+    ]}
+  />
 
-  <section id="como-afecta">
-    <h2>Cómo afecta al cuerpo</h2>
-
-    <h3>Síntomas de la inflamación hormonal</h3>
-    <p>Los síntomas de la inflamación hormonal pueden variar de una persona a otra, dependiendo del origen y del grado de desequilibrio.</p>
-    <p>Aun así, existen señales frecuentes que pueden ayudar a identificarla, como la fatiga persistente, el dolor o malestar abdominal, los problemas de piel (como acné o sensibilidad), y los cambios en el estado de ánimo, como irritabilidad o tristeza sin causa aparente.</p>
-    <p>Reconocer estos signos a tiempo es importante para comprender lo que está ocurriendo en el organismo y poder abordar la situación de forma adecuada, especialmente si los síntomas se mantienen en el tiempo o interfieren con la calidad de vida.</p>
-
-    <h3>Cómo afecta la inflamación hormonal el cuerpo</h3>
-    <p>Cuando la inflamación hormonal se mantiene en el tiempo, puede influir en múltiples sistemas del organismo, alterando su funcionamiento normal.</p>
-    <p>A nivel físico, puede contribuir a síntomas como fatiga persistente, molestias digestivas, cambios en la piel y alteraciones en el peso. Estos signos suelen afectar directamente a la energía y la calidad de vida diaria.</p>
-    <p>Además, cuando este estado inflamatorio se cronifica, puede aumentar el riesgo de desarrollar problemas metabólicos y cardiovasculares, entre otros desequilibrios más complejos.</p>
-    <p>Por ello, entender su impacto permite abordarlo de forma más consciente y prevenir que el problema avance.</p>
-
-    <img src={comoAfectaImg.src} alt="Cómo afecta la inflamación hormonal al cuerpo" width={comoAfectaImg.width} height={comoAfectaImg.height} />
-
-    <h3>Relación entre la inflamación hormonal y la salud</h3>
-    <img src={infografiaImg.src} alt="Relación entre la inflamación hormonal y la salud" width={infografiaImg.width} height={infografiaImg.height} />
-    <p>La inflamación hormonal no afecta solo a un síntoma concreto, sino que puede influir en el equilibrio global del organismo, alterando distintas funciones del cuerpo de forma progresiva.</p>
-    <p>Cuando este estado inflamatorio se mantiene en el tiempo, puede contribuir a la aparición de síntomas persistentes y aumentar la probabilidad de desarrollar distintos desequilibrios hormonales y metabólicos.</p>
-    <p>Además, se ha relacionado con condiciones como el síndrome de ovario poliquístico o la enfermedad de Hashimoto, entre otras alteraciones del sistema endocrino.</p>
-    <p>Por ello, es importante no centrarse únicamente en los síntomas, sino también en identificar y abordar las posibles causas subyacentes para favorecer una recuperación más estable del equilibrio hormonal.</p>
-  </section>
-
-  <section id="soluciones">
-    <h2>Soluciones</h2>
-    <p>Cómo reducir la inflamación hormonal de manera natural y efectiva</p>
-
-    <SolucionesList
-      heading=""
-      variant="card"
-      soluciones={[
-        { icon: iconoAlimentacion, title: 'Alimentación antiinflamatoria', body: 'La dieta juega un papel clave. Aumentar el consumo de alimentos frescos como frutas, verduras, grasas saludables y proteínas de calidad puede ayudar a reducir los procesos inflamatorios. Al mismo tiempo, es recomendable limitar los ultraprocesados, el azúcar añadido y las harinas refinadas.' },
-        { icon: iconoSuplementos, title: 'Apoyo con suplementos', body: 'En algunos casos, ciertos suplementos pueden ser un apoyo adicional, como los ácidos grasos omega-3, los probióticos o algunas vitaminas. Su uso debe adaptarse a las necesidades individuales.' },
-        { icon: iconoEstres, title: 'Gestión del estrés', body: 'El estrés crónico es uno de los principales factores que favorecen la inflamación hormonal. Técnicas como la meditación, la respiración consciente o el yoga pueden ayudar a regular la respuesta del sistema nervioso.' },
-        { icon: iconoSueno, title: 'Sueño reparador', body: 'Dormir entre 7 y 9 horas de calidad es esencial para la regulación hormonal. Mantener horarios regulares y una buena higiene del sueño favorece la recuperación del organismo.' },
-        { icon: iconoActividad, title: 'Actividad física regular', body: 'El ejercicio moderado contribuye a reducir la inflamación y mejorar la sensibilidad hormonal. Caminar, entrenar fuerza o practicar actividades aeróbicas suaves pueden ser opciones efectivas.' },
-        { icon: iconoHabitos, title: 'Evitar hábitos perjudiciales', body: 'Reducir o evitar el consumo de alcohol y tabaco también es clave, ya que ambos pueden aumentar los procesos inflamatorios y afectar el equilibrio hormonal.' },
+  <section class="intro lista">
+    <p class="sabias">¿Sientes que tu cuerpo está "inflamado" y no sabes por qué?</p>
+    <ChecklistCard
+      columns={1}
+      items={[
+        'Qué es la inflamación hormonal y por qué puede afectar a tu bienestar más de lo que parece',
+        'Cuáles son sus causas más frecuentes',
+        'Cómo identificar sus síntomas y de qué manera influye en la salud general',
+        'Estrategias prácticas y naturales para ayudarte a reducirla y recuperar el equilibrio hormonal',
       ]}
     />
   </section>
 
-  <p slot="conclusion">
-    La inflamación hormonal es un factor cada vez más relevante en la salud actual, ya que puede influir en múltiples procesos del organismo cuando el equilibrio hormonal se ve alterado.
-    A lo largo del artículo hemos visto qué es, cuáles son sus posibles causas, cómo se manifiesta y qué estrategias pueden ayudar a reducirla de forma natural.
-    Entender este proceso es el primer paso para poder tomar decisiones más conscientes sobre el estilo de vida y favorecer un mejor equilibrio hormonal a largo plazo.
-  </p>
-</SubpageBlogPost>
+  <TextoConImagen heading="¿Qué es la inflamación hormonal?" image={definicionImg} imageAlt="Qué es la inflamación hormonal">
+    <p>La inflamación hormonal se refiere a un estado en el que los procesos inflamatorios del organismo interfieren con el equilibrio normal de las hormonas. Esta interacción puede alterar la forma en la que el cuerpo regula funciones clave como el metabolismo, la energía o el estado de ánimo.</p>
+    <p>No es un diagnóstico médico como tal, sino una forma de describir la relación entre la inflamación crónica de bajo grado (una inflamación leve pero mantenida en el tiempo, que no da síntomas tan claros como una herida o una infección) y las hormonas: la inflamación altera las hormonas, y los desequilibrios hormonales a su vez favorecen la inflamación.</p>
+    <p>Cuando este desequilibrio se mantiene en el tiempo, pueden aparecer síntomas como fatiga, hinchazón abdominal, problemas de piel o cambios en el peso, entre otros.</p>
+    <p>Factores como el estrés crónico, una alimentación poco equilibrada, la falta de descanso o el sedentarismo pueden favorecer este tipo de inflamación y contribuir a la desregulación hormonal.</p>
+  </TextoConImagen>
+
+  <CausasGrid
+    heading="Causas de la inflamación hormonal"
+    subheading={[
+      '¿Qué puede estar favoreciendo la inflamación en tu cuerpo?',
+      'Suele estar relacionada con factores como el estrés crónico, una alimentación poco equilibrada, el sedentarismo, la falta de descanso o alteraciones en el sistema hormonal. Estos son los más habituales:',
+    ]}
+    causas={[
+      { icon: causaEstres, title: 'Estrés crónico', text: 'El cortisol elevado de forma mantenida pierde su efecto antiinflamatorio natural y el cuerpo se queda en un estado de alerta que favorece la inflamación.' },
+      { icon: causaAlimentacion, title: 'Alimentación proinflamatoria', text: 'Una dieta rica en ultraprocesados, azúcares añadidos y harinas refinadas, y pobre en verduras, fibra y grasas saludables, alimenta los procesos inflamatorios.' },
+      { icon: causaDescanso, title: 'Falta de descanso', text: 'Dormir poco o mal impide que el cuerpo complete sus procesos de reparación y eleva los marcadores de inflamación.' },
+      { icon: causaSedentarismo, title: 'Sedentarismo', text: 'La falta de movimiento reduce la masa muscular y empeora la sensibilidad a la insulina, dos factores muy ligados a la inflamación.' },
+      { icon: causaGrasa, title: 'Exceso de grasa abdominal', text: 'La grasa que se acumula alrededor de los órganos no es inerte: produce sustancias inflamatorias que afectan a todo el organismo.' },
+      { icon: causaHormonal, title: 'Alteraciones hormonales', text: 'Situaciones como el síndrome de ovario poliquístico, la enfermedad de Hashimoto o la bajada de estrógenos en la menopausia se asocian a más inflamación.' },
+    ]}
+  />
+
+  <p class="parrafo-suelto centrado">Casi todas estas causas tienen que ver con el estilo de vida, lo que significa que hay mucho margen para actuar.</p>
+
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Síntomas de la inflamación hormonal</h2>
+      <p class="subheading">Cómo reconocer los síntomas de la inflamación hormonal</p>
+      <p class="texto-sintomas">Los síntomas de la inflamación hormonal pueden variar de una persona a otra, dependiendo del origen y del grado de desequilibrio.</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Fatiga persistente', text: 'Cansancio que no mejora con el descanso, porque el cuerpo dedica energía a mantener el estado inflamatorio.' },
+          { title: 'Dolor o malestar abdominal', text: 'Hinchazón, gases o digestiones pesadas; el intestino es uno de los lugares donde más se nota la inflamación.' },
+          { title: 'Problemas de piel', text: 'Como acné o sensibilidad. La piel suele reflejar tanto la inflamación como los cambios hormonales.' },
+          { title: 'Cambios en el estado de ánimo', text: 'Como irritabilidad o tristeza sin causa aparente. La inflamación influye en los neurotransmisores que regulan el ánimo.' },
+          { title: 'Cambios en el peso', text: 'Más facilidad para acumular grasa, sobre todo abdominal, y más dificultad para perderla.' },
+          { title: 'Dolores musculares o articulares', text: 'Molestias difusas o rigidez que aparecen sin un esfuerzo que las justifique.' },
+        ]}
+      />
+      <p class="texto-sintomas cierre">Reconocer estos signos a tiempo es importante para comprender lo que está ocurriendo en el organismo y poder abordar la situación de forma adecuada, especialmente si los síntomas se mantienen en el tiempo o interfieren con la calidad de vida.</p>
+    </section>
+  </div>
+
+  <RelacionImagenes heading="Relación con los Sistemas Hormonales y Metabólicos">
+    <p>Cómo la inflamación hormonal afecta la salud en general</p>
+    <p>La inflamación hormonal no afecta solo a un síntoma concreto, sino que puede influir en el equilibrio global del organismo, alterando distintas funciones del cuerpo de forma progresiva.</p>
+    <Image src={relacion1Img} alt="Cómo afecta la inflamación hormonal al cuerpo" />
+    <p>Cuando la inflamación hormonal se mantiene en el tiempo, puede influir en múltiples sistemas del organismo, alterando su funcionamiento normal. Además, cuando este estado inflamatorio se cronifica, puede aumentar el riesgo de desarrollar problemas metabólicos y cardiovasculares, entre otros desequilibrios más complejos.</p>
+    <p><strong>Insulina.</strong> La inflamación empeora la sensibilidad a la insulina y la resistencia a la insulina, a su vez, aumenta la inflamación. Es uno de los círculos que más influyen en el peso y la energía.</p>
+    <p><strong>Cortisol.</strong> El estrés mantenido eleva el cortisol y, con el tiempo, el cuerpo responde peor a su efecto antiinflamatorio.</p>
+    <p><strong>Estrógenos y progesterona.</strong> Los estrógenos tienen un efecto protector frente a la inflamación; por eso en la perimenopausia y la menopausia muchas mujeres notan más hinchazón, dolores o cambios en la piel.</p>
+    <p><strong>Tiroides.</strong> Se ha relacionado con condiciones como el síndrome de ovario poliquístico o la enfermedad de Hashimoto, entre otras alteraciones del sistema endocrino. En el Hashimoto, la inflamación de la tiroides es precisamente lo que reduce su función.</p>
+    <p>Por ello, es importante no centrarse únicamente en los síntomas, sino también en identificar y abordar las posibles causas subyacentes para favorecer una recuperación más estable del equilibrio hormonal.</p>
+  </RelacionImagenes>
+
+  <SolucionesList
+    heading="Soluciones para reducir la inflamación hormonal"
+    subheading="Cómo reducir la inflamación hormonal de manera natural y efectiva"
+    subheadingVariant="destacado"
+    subheadingAlign="center"
+    variant="card"
+    layout6="3-3"
+    band="b"
+    soluciones={[
+      { title: 'Alimentación antiinflamatoria', icon: iconos.manzanaComida, body: 'La dieta juega un papel clave. Aumentar el consumo de alimentos frescos como frutas, verduras, grasas saludables y proteínas de calidad puede ayudar a reducir los procesos inflamatorios. Al mismo tiempo, es recomendable limitar los ultraprocesados, el azúcar añadido y las harinas refinadas.' },
+      { title: 'Apoyo con suplementos', icon: iconos.pastillasIcofont, body: 'En algunos casos, ciertos suplementos pueden ser un apoyo adicional, como los ácidos grasos omega-3, los probióticos o algunas vitaminas. Su uso debe adaptarse a las necesidades individuales y valorarse con un profesional.' },
+      { title: 'Gestión del estrés', icon: iconos.caraSonrojada, body: 'El estrés crónico es uno de los principales factores que favorecen la inflamación hormonal. Técnicas como la meditación, la respiración consciente o el yoga pueden ayudar a regular la respuesta del sistema nervioso.' },
+      { title: 'Sueño reparador', icon: iconos.sueno, body: 'Dormir entre 7 y 9 horas de calidad es esencial para la regulación hormonal. Mantener horarios regulares y una buena higiene del sueño favorece la recuperación del organismo.' },
+      { title: 'Actividad física regular', icon: iconos.caminar, body: 'El ejercicio moderado contribuye a reducir la inflamación y mejorar la sensibilidad hormonal. Caminar, entrenar fuerza o practicar actividades aeróbicas suaves pueden ser opciones efectivas.' },
+      { title: 'Evitar hábitos perjudiciales', icon: iconos.refrescos, body: 'Reducir o evitar el consumo de alcohol y tabaco también es clave, ya que ambos pueden aumentar los procesos inflamatorios y afectar el equilibrio hormonal.' },
+    ]}
+  >
+    <p class="cierre-soluciones">Entender este proceso es el primer paso para poder tomar decisiones más conscientes sobre el estilo de vida y favorecer un mejor equilibrio hormonal a largo plazo.</p>
+  </SolucionesList>
+</SubpageTemplateB>
+
+<style>
+  .intro .sabias {
+    margin-top: 39px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .parrafo-suelto.centrado {
+    text-align: center;
+  }
+  .texto-sintomas {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+    text-align: justify;
+  }
+  .texto-sintomas.cierre {
+    margin-top: 1.5rem;
+  }
+  .cierre-soluciones {
+    margin-top: 2rem;
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+  }
+</style>
