@@ -13,7 +13,7 @@ Hecho en esta parte de la sesión (todo en GitHub y en el preview):
 - Páginas legales actualizadas, salvo los datos del titular y el Aviso legal, aplazados hasta que la usuaria tenga dirección postal (punto 6).
 - Redirecciones 301 de todas las direcciones antiguas de WordPress, slug `/ayuno-intermitente/`, página `/buscar/?q=` para las etiquetas y buscador limpio de bloques repetidos (punto 8).
 
-**Siguiente sesión:** elegir entre el punto 2 (embudo de la guía: mockup y 7 categorías), el 9 (decisiones de contenido), el 10 (revocar el token de GitHub) o el 1 si Mailrelay ha contestado. Después, la migración (punto 11).
+**Siguiente sesión:** recordar a la usuaria el punto 12 (dirección, actividad económica y marca). Elegir entre el punto 2 (embudo de la guía: mockup y 7 categorías), el 9 (decisiones de contenido), el 10 (revocar el token de GitHub) o el 1 si Mailrelay ha contestado. Después, la migración (punto 11).
 
 **Para redesplegar el preview** tras cualquier cambio: `npm run build`, copiar `dist/` y `vercel.json` a una carpeta con nombre sin espacios (la usada fue `clubdenutricion-preview`, que conserva su `.vercel/`) y lanzar `npx vercel deploy --prod --yes` desde ella. La carpeta con espacio «nueva web» no sirve como nombre de proyecto.
 
@@ -30,6 +30,11 @@ Hecho en esta parte de la sesión (todo en GitHub y en el preview):
 9. [ ] **Decisiones de contenido** pendientes (sección "Pendiente — por decidir con la usuaria"): emojis heredados, entrada de coaching, portada de 6 en 6, etc.
 10. [ ] **Token de GitHub expuesto:** revocarlo.
 11. [ ] **Migración:** copia de seguridad del WordPress, dominio y DNS, SSL, Search Console y comprobaciones (`14-checklist-produccion.md`). No borrar el WordPress hasta pasado un periodo de seguridad.
+12. [ ] **Tareas de la usuaria: legal y administrativo** (apuntado el 18 oct a petición suya, para no despistarse; no hay que hacer nada en la web hasta tenerlo):
+    - **Dirección para la web sin usar la suya:** investigar la *domiciliación de empresa* u *oficina virtual* (centros de negocios o coworking, unos 10-40 €/mes; reciben y reenvían el correo y no cambia aunque se mude). Idea: buscar una **gestoría online de Canarias** (por la fiscalidad) que incluya este servicio. El apartado de correos es lo más barato, pero no es un domicilio físico. Preguntar: si sirve como domicilio legal en la web, si reenvían o escanean el correo y si hay permanencia.
+    - **Preguntar a la gestoría desde cuándo la web cuenta como actividad económica** (LSSI): ahora está en zona gris; la guía, la monetización o la comunidad la meterían de lleno. Mientras tanto, para el RGPD basta con identidad + un correo de contacto (no exige dirección física); la dirección hace falta para el Aviso legal.
+    - **Marca comercial:** no quiere poner su nombre completo, prefiere una marca. Investigar cómo registrarla (OEPM: marca o nombre comercial; también si conviene una sociedad). Ojo a preguntarlo a la gestoría: una marca registrada protege el nombre, pero por sí sola no evita identificar a la titular en la web; si la titular es una sociedad, aparece la sociedad en vez de su nombre personal.
+    - Con todo eso decidido: pasar nombre o razón social, NIF y dirección para completar Privacidad y crear el Aviso legal (punto 6).
 
 ## Antes de publicar — prioritario
 
