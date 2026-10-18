@@ -38,7 +38,7 @@ export const mainNav: NavItem[] = [
     children: [
       { label: 'Pérdida de Grasa Femenina', href: '/perdida-grasa-femenina/' },
       { label: 'Resistencia a la Insulina', href: '/resistencia-insulina/' },
-      { label: 'Ayuno Intermitente', href: '/ayuno-intermitente-2/' },
+      { label: 'Ayuno Intermitente', href: '/ayuno-intermitente/' },
     ],
   },
   {

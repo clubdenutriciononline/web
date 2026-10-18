@@ -25,6 +25,9 @@ const EXCLUDED_FROM_SITEMAP = ['/lm-5-pasos-optin/', '/lm-5-pasos-gracias/', '/l
 export default defineConfig({
   site: 'https://clubdenutricion.es',
   trailingSlash: 'always',
+  // Estas redirecciones generan una página intermedia (sirven en cualquier
+  // alojamiento). En Vercel las sirve antes vercel.json como 301 reales,
+  // junto con las categorías y la paginación antigua de WordPress.
   redirects: {
     // El slug "-2" es un artefacto histórico de WordPress (slug duplicado).
     // Se corrige a la URL definitiva /alimentacion/ sin perder la URL antigua indexada.
@@ -38,6 +41,14 @@ export default defineConfig({
     '/nutricion/': '/alimentacion/',
     '/nutricion/macronutrientes-y-micronutrientes/': '/macronutrientes-y-micronutrientes/',
     '/coach/contacto/': '/quienes-somos/',
+    // Decisiones de la usuaria (18 oct, 13-pendientes-decision.md): slug
+    // limpio de Ayuno y páginas antiguas de WordPress que no se rehacen.
+    '/ayuno-intermitente-2/': '/ayuno-intermitente/',
+    '/cuerpo/': '/relacion-cuerpo-mujeres/',
+    '/keto-lowcarb/': '/recetas-keto-low-carb/',
+    '/recetas-sanas-keto-y-low-carb/': '/recetas-keto-low-carb/',
+    '/servicios-del-club-de-nutricion/': '/quienes-somos/',
+    '/coaching-nutricional/': '/que-es-el-coaching-nutricional/',
   },
   integrations: [
     pagefind,

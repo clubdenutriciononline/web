@@ -9,6 +9,756 @@
       "source": "/alimentacion-2/",
       "destination": "/alimentacion/",
       "statusCode": 301
+    },
+    {
+      "source": "/ayuno-intermitente-2",
+      "destination": "/ayuno-intermitente/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ayuno-intermitente-2/",
+      "destination": "/ayuno-intermitente/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contacto",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contacto/",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/coach/contacto",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/coach/contacto/",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mente",
+      "destination": "/mentalidad/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mente/",
+      "destination": "/mentalidad/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nutricion",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nutricion/",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nutricion/macronutrientes-y-micronutrientes",
+      "destination": "/macronutrientes-y-micronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nutricion/macronutrientes-y-micronutrientes/",
+      "destination": "/macronutrientes-y-micronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuerpo",
+      "destination": "/relacion-cuerpo-mujeres/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuerpo/",
+      "destination": "/relacion-cuerpo-mujeres/",
+      "statusCode": 301
+    },
+    {
+      "source": "/keto-lowcarb",
+      "destination": "/recetas-keto-low-carb/",
+      "statusCode": 301
+    },
+    {
+      "source": "/keto-lowcarb/",
+      "destination": "/recetas-keto-low-carb/",
+      "statusCode": 301
+    },
+    {
+      "source": "/recetas-sanas-keto-y-low-carb",
+      "destination": "/recetas-keto-low-carb/",
+      "statusCode": 301
+    },
+    {
+      "source": "/recetas-sanas-keto-y-low-carb/",
+      "destination": "/recetas-keto-low-carb/",
+      "statusCode": 301
+    },
+    {
+      "source": "/servicios-del-club-de-nutricion",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/servicios-del-club-de-nutricion/",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/coaching-nutricional",
+      "destination": "/que-es-el-coaching-nutricional/",
+      "statusCode": 301
+    },
+    {
+      "source": "/coaching-nutricional/",
+      "destination": "/que-es-el-coaching-nutricional/",
+      "statusCode": 301
+    },
+    {
+      "source": "/alimentacion/:n(\\d+)",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/alimentacion/:n(\\d+)/",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/alimentacion/page/:n(\\d+)",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/alimentacion/page/:n(\\d+)/",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/alimentos",
+      "destination": "/alimentos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/alimentos/",
+      "destination": "/alimentos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/alimentos/page/:n(\\d+)",
+      "destination": "/alimentos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/alimentos/page/:n(\\d+)/",
+      "destination": "/alimentos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/macronutrientes",
+      "destination": "/macronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/macronutrientes/",
+      "destination": "/macronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/macronutrientes/page/:n(\\d+)",
+      "destination": "/macronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/macronutrientes/page/:n(\\d+)/",
+      "destination": "/macronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/micronutrientes",
+      "destination": "/micronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/micronutrientes/",
+      "destination": "/micronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/micronutrientes/page/:n(\\d+)",
+      "destination": "/micronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/micronutrientes/page/:n(\\d+)/",
+      "destination": "/micronutrientes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/patrones-alimentarios",
+      "destination": "/patrones-alimentarios/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/patrones-alimentarios/",
+      "destination": "/patrones-alimentarios/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/patrones-alimentarios/page/:n(\\d+)",
+      "destination": "/patrones-alimentarios/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/patrones-alimentarios/page/:n(\\d+)/",
+      "destination": "/patrones-alimentarios/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/page/:n(\\d+)",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/nutricion/page/:n(\\d+)/",
+      "destination": "/alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/ansiedad-por-la-comida",
+      "destination": "/ansiedad-comida/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/ansiedad-por-la-comida/",
+      "destination": "/ansiedad-comida/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/ansiedad-por-la-comida/page/:n(\\d+)",
+      "destination": "/ansiedad-comida/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/ansiedad-por-la-comida/page/:n(\\d+)/",
+      "destination": "/ansiedad-comida/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/estres-y-habitos",
+      "destination": "/estres-habitos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/estres-y-habitos/",
+      "destination": "/estres-habitos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/estres-y-habitos/page/:n(\\d+)",
+      "destination": "/estres-habitos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/estres-y-habitos/page/:n(\\d+)/",
+      "destination": "/estres-habitos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/relacion-con-el-cuerpo",
+      "destination": "/relacion-cuerpo-mujeres/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/relacion-con-el-cuerpo/",
+      "destination": "/relacion-cuerpo-mujeres/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/relacion-con-el-cuerpo/page/:n(\\d+)",
+      "destination": "/relacion-cuerpo-mujeres/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/relacion-con-el-cuerpo/page/:n(\\d+)/",
+      "destination": "/relacion-cuerpo-mujeres/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad",
+      "destination": "/mentalidad/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/",
+      "destination": "/mentalidad/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/page/:n(\\d+)",
+      "destination": "/mentalidad/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/mentalidad/page/:n(\\d+)/",
+      "destination": "/mentalidad/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/ayuno-intermitente",
+      "destination": "/ayuno-intermitente/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/ayuno-intermitente/",
+      "destination": "/ayuno-intermitente/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/ayuno-intermitente/page/:n(\\d+)",
+      "destination": "/ayuno-intermitente/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/ayuno-intermitente/page/:n(\\d+)/",
+      "destination": "/ayuno-intermitente/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/perdida-de-grasa-femenina",
+      "destination": "/perdida-grasa-femenina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/perdida-de-grasa-femenina/",
+      "destination": "/perdida-grasa-femenina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/perdida-de-grasa-femenina/page/:n(\\d+)",
+      "destination": "/perdida-grasa-femenina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/perdida-de-grasa-femenina/page/:n(\\d+)/",
+      "destination": "/perdida-grasa-femenina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/resistencia-a-la-insulina",
+      "destination": "/resistencia-insulina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/resistencia-a-la-insulina/",
+      "destination": "/resistencia-insulina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/resistencia-a-la-insulina/page/:n(\\d+)",
+      "destination": "/resistencia-insulina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/resistencia-a-la-insulina/page/:n(\\d+)/",
+      "destination": "/resistencia-insulina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo",
+      "destination": "/metabolismo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/",
+      "destination": "/metabolismo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/page/:n(\\d+)",
+      "destination": "/metabolismo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/metabolismo/page/:n(\\d+)/",
+      "destination": "/metabolismo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/ciclo-menstrual",
+      "destination": "/ciclo-menstrual/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/ciclo-menstrual/",
+      "destination": "/ciclo-menstrual/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/ciclo-menstrual/page/:n(\\d+)",
+      "destination": "/ciclo-menstrual/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/ciclo-menstrual/page/:n(\\d+)/",
+      "destination": "/ciclo-menstrual/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/cortisol",
+      "destination": "/cortisol/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/cortisol/",
+      "destination": "/cortisol/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/cortisol/page/:n(\\d+)",
+      "destination": "/cortisol/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/cortisol/page/:n(\\d+)/",
+      "destination": "/cortisol/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/inflamacion-hormonal",
+      "destination": "/inflamacion-hormonal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/inflamacion-hormonal/",
+      "destination": "/inflamacion-hormonal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/inflamacion-hormonal/page/:n(\\d+)",
+      "destination": "/inflamacion-hormonal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/inflamacion-hormonal/page/:n(\\d+)/",
+      "destination": "/inflamacion-hormonal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/menopausia",
+      "destination": "/menopausia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/menopausia/",
+      "destination": "/menopausia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/menopausia/page/:n(\\d+)",
+      "destination": "/menopausia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/menopausia/page/:n(\\d+)/",
+      "destination": "/menopausia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/perimenopausia",
+      "destination": "/perimenopausia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/perimenopausia/",
+      "destination": "/perimenopausia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/perimenopausia/page/:n(\\d+)",
+      "destination": "/perimenopausia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/perimenopausia/page/:n(\\d+)/",
+      "destination": "/perimenopausia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/tiroides",
+      "destination": "/tiroides/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/tiroides/",
+      "destination": "/tiroides/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/tiroides/page/:n(\\d+)",
+      "destination": "/tiroides/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/tiroides/page/:n(\\d+)/",
+      "destination": "/tiroides/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas",
+      "destination": "/hormonas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/",
+      "destination": "/hormonas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/page/:n(\\d+)",
+      "destination": "/hormonas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/hormonas/page/:n(\\d+)/",
+      "destination": "/hormonas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/digestion",
+      "destination": "/digestion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/digestion/",
+      "destination": "/digestion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/digestion/page/:n(\\d+)",
+      "destination": "/digestion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/digestion/page/:n(\\d+)/",
+      "destination": "/digestion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/inflamacion-intestinal",
+      "destination": "/inflamacion-intestinal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/inflamacion-intestinal/",
+      "destination": "/inflamacion-intestinal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/inflamacion-intestinal/page/:n(\\d+)",
+      "destination": "/inflamacion-intestinal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/inflamacion-intestinal/page/:n(\\d+)/",
+      "destination": "/inflamacion-intestinal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/probioticos-alimentacion",
+      "destination": "/probioticos-alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/probioticos-alimentacion/",
+      "destination": "/probioticos-alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/probioticos-alimentacion/page/:n(\\d+)",
+      "destination": "/probioticos-alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/probioticos-alimentacion/page/:n(\\d+)/",
+      "destination": "/probioticos-alimentacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota",
+      "destination": "/microbiota/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/",
+      "destination": "/microbiota/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/page/:n(\\d+)",
+      "destination": "/microbiota/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/microbiota/page/:n(\\d+)/",
+      "destination": "/microbiota/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/fatiga-cronica",
+      "destination": "/fatiga-cronica/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/fatiga-cronica/",
+      "destination": "/fatiga-cronica/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/fatiga-cronica/page/:n(\\d+)",
+      "destination": "/fatiga-cronica/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/fatiga-cronica/page/:n(\\d+)/",
+      "destination": "/fatiga-cronica/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/rutinas-energeticas",
+      "destination": "/rutinas-energeticas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/rutinas-energeticas/",
+      "destination": "/rutinas-energeticas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/rutinas-energeticas/page/:n(\\d+)",
+      "destination": "/rutinas-energeticas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/rutinas-energeticas/page/:n(\\d+)/",
+      "destination": "/rutinas-energeticas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/sueno",
+      "destination": "/sueno/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/sueno/",
+      "destination": "/sueno/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/sueno/page/:n(\\d+)",
+      "destination": "/sueno/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/sueno/page/:n(\\d+)/",
+      "destination": "/sueno/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia",
+      "destination": "/energia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/",
+      "destination": "/energia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/page/:n(\\d+)",
+      "destination": "/energia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/energia/page/:n(\\d+)/",
+      "destination": "/energia/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/recetas/keto-low-carb",
+      "destination": "/recetas-keto-low-carb/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/recetas/keto-low-carb/",
+      "destination": "/recetas-keto-low-carb/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/recetas/keto-low-carb/page/:n(\\d+)",
+      "destination": "/recetas-keto-low-carb/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/recetas/keto-low-carb/page/:n(\\d+)/",
+      "destination": "/recetas-keto-low-carb/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/recetas",
+      "destination": "/recetas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/recetas/",
+      "destination": "/recetas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/recetas/page/:n(\\d+)",
+      "destination": "/recetas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/recetas/page/:n(\\d+)/",
+      "destination": "/recetas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/radar-de-salud",
+      "destination": "/radar-de-salud/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/radar-de-salud/",
+      "destination": "/radar-de-salud/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/radar-de-salud/page/:n(\\d+)",
+      "destination": "/radar-de-salud/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/radar-de-salud/page/:n(\\d+)/",
+      "destination": "/radar-de-salud/",
+      "statusCode": 301
     }
   ]
 }

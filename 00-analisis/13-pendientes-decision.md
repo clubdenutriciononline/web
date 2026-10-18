@@ -10,7 +10,7 @@ Fecha: 2026-09-13. Estas son las únicas 4 cosas que quedan abiertas y que neces
 
 4. **URLs automáticas históricas de WordPress** (`/category/*/`, `/tag/*/`, `/author/*/`) — decidir si se recrean con redirect, se dejan morir (404), o se ignoran porque nunca estuvieron indexadas de forma relevante.
 
-Nada de esto se ha tocado. En cuanto decidas, retomamos.
+**Resuelto el 18 oct** (decisión de la usuaria): ver punto 8 de `16-estado-sesion-2026-10-18.md`. Redirecciones 301 en `vercel.json`.
 
 ## A futuro (después de arreglar los formatos)
 
