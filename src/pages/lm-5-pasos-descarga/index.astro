@@ -1,59 +1,106 @@
 ---
-import { Image } from 'astro:assets';
+// Embudo de la guía "5 pasos" — 3/3: descarga (18 oct, con el formato del
+// resto de la web). Textos y enlace de descarga (Google Drive) del original.
+// Es el enlace del correo de confirmación del proveedor. Fuera de buscadores.
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import SiguenosRedes from '../../components/SiguenosRedes.astro';
 import portadaImg from './_images/portada.jpg';
+
+const DESCARGA = 'https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fLZESyNe6rVJvgtZs6Rf';
 ---
 
-<BaseLayout title="Tu guía ya está lista — Club de Nutrición" description="Página de descarga de la guía gratuita.">
-  <h1>Ya puedes descargar tu guía 📘</h1>
+<BaseLayout
+  title="Ya puedes descargar tu guía - Club de Nutrición"
+  description="Descarga tu guía: 5 pasos para recuperar tu energía y equilibrar tus hormonas."
+  noindex
+>
+  <div class="hub">
+    <Hero
+      title="Ya puedes descargar tu guía"
+      subtitle="Esto no va de hacerlo perfecto. Va de empezar a entender tu cuerpo."
+      ctaIntro="Tu acceso está listo. Pulsa el botón para descargar «5 pasos para recuperar tu energía y equilibrar tus hormonas»:"
+      ctaLabel="Descargar la guía"
+      ctaHref={DESCARGA}
+      image={portadaImg}
+      imageAlt="Portada de la guía 5 pasos para recuperar tu energía y equilibrar tus hormonas"
+      layout="lateral"
+      titleSize="hija"
+    />
 
-  <p>Esto no va de hacerlo perfecto.<br />Va de empezar a entender tu cuerpo.</p>
+    <section class="recuerda">
+      <h2>Recuerda</h2>
+      <p>Empieza por un solo paso.</p>
+      <p>No necesitas hacerlo todo perfecto.</p>
+    </section>
 
-  <div class="descarga-columns">
-    <div class="descarga-texto">
-      <p>Tu acceso está listo.</p>
-      <p>Pulsa el botón de abajo para empezar a descargar tu guía:</p>
-      <p>👉 "5 pasos para recuperar tu energía y equilibrar tus hormonas"</p>
-
-      <a
-        class="descarga-boton"
-        href="https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fLZESyNe6rVJvgtZs6Rf"
-      >
-        DESCARGAR LA GUÍA
-      </a>
+    <div class="full-bleed band-b">
+      <section class="siguiente">
+        <h2>¿Y ahora qué?</h2>
+        <p>Mientras pones en marcha la guía, puedes seguir aprendiendo sobre tu cuerpo en nuestras secciones.</p>
+        <div class="enlaces">
+          <a href="/hormonas/">Hormonas</a>
+          <a href="/energia/">Energía</a>
+          <a href="/metabolismo/">Metabolismo</a>
+          <a href="/recetas/">Recetas</a>
+        </div>
+      </section>
     </div>
 
-    <Image src={portadaImg} alt="Portada de la guía 5 pasos" />
+    <SiguenosRedes />
   </div>
-
-  <p>
-    💡 <strong>RECUERDA:</strong><br />
-    Empieza por un solo paso.<br />
-    No necesitas hacerlo todo perfecto.
-  </p>
 </BaseLayout>
 
 <style>
-  .descarga-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin: 1.5rem 0;
+  /* La portada es vertical: se muestra entera en vez de recortada. */
+  .hub :global(.hero[data-layout='lateral'] .hero-image) {
+    object-fit: contain;
+    background: #fff;
   }
-  @media (max-width: 640px) {
-    .descarga-columns {
-      grid-template-columns: 1fr;
-    }
+  .recuerda,
+  .siguiente {
+    max-width: 760px;
+    margin-inline: auto;
+    padding-block: var(--space-section);
+    text-align: center;
   }
-  .descarga-boton {
-    display: inline-block;
+  .recuerda h2,
+  .siguiente h2 {
+    color: #6c2f50;
+    text-align: center;
+  }
+  .recuerda p {
+    font-family: var(--font-body);
+    font-size: 24px;
+    line-height: 39px;
+    letter-spacing: 1.3px;
+    margin: 0;
+  }
+  .siguiente p {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+  }
+  .enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
     margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
+  }
+  .enlaces a {
+    background: #fff;
+    color: #6c2f50;
     border-radius: 999px;
-    background: var(--color-accent, #c2185b);
-    color: #fff;
+    padding: 10px 22px;
+    font-family: var(--font-heading);
+    font-weight: 500;
     text-decoration: none;
-    font-weight: 600;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s, color 0.2s;
+  }
+  .enlaces a:hover {
+    background: #6c2f50;
+    color: #fff;
   }
 </style>

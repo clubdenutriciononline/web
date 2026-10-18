@@ -1,0 +1,60 @@
+---
+// Embudo de la guía "5 pasos" — 2/3: "revisa tu correo" (nueva, 18 oct; en el
+// original este aviso lo mostraba el propio formulario de Mailrelay). Es la
+// página de agradecimiento que hay que configurar en el proveedor del
+// formulario (ver src/data/formularios.ts). Fuera de buscadores.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import SiguenosRedes from '../../components/SiguenosRedes.astro';
+import portadaImg from '../lm-5-pasos-descarga/_images/portada.jpg';
+---
+
+<BaseLayout
+  title="Revisa tu correo - Club de Nutrición"
+  description="Te hemos enviado un correo para confirmar tu suscripción y recibir la guía."
+  noindex
+>
+  <div class="hub">
+    <Hero
+      title="¡Ya casi está! Revisa tu correo 💌"
+      subtitle="Te hemos enviado un correo para confirmar tu suscripción. En cuanto lo confirmes, podrás descargar tu guía."
+      image={portadaImg}
+      imageAlt="Portada de la guía 5 pasos para recuperar tu energía y equilibrar tus hormonas"
+      layout="lateral"
+      titleSize="hija"
+    />
+
+    <section class="pasos-gracias">
+      <h2>Qué hacer ahora</h2>
+      <ChecklistCard
+        columns={1}
+        items={[
+          'Abre el correo que te acabamos de enviar.',
+          'Pulsa el botón para confirmar tu suscripción.',
+          'Te llevaremos directamente a la descarga de tu guía.',
+          '¿No lo encuentras? Revisa las carpetas de spam o promociones, puede tardar unos minutos.',
+        ]}
+      />
+    </section>
+
+    <SiguenosRedes texto="Mientras tanto, te esperamos en redes." />
+  </div>
+</BaseLayout>
+
+<style>
+  /* La portada es vertical: se muestra entera en vez de recortada. */
+  .hub :global(.hero[data-layout='lateral'] .hero-image) {
+    object-fit: contain;
+    background: #fff;
+  }
+  .pasos-gracias {
+    max-width: 760px;
+    margin-inline: auto;
+    padding-top: var(--space-section);
+  }
+  .pasos-gracias h2 {
+    color: #6c2f50;
+    text-align: center;
+  }
+</style>

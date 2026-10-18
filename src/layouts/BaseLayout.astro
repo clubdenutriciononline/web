@@ -7,9 +7,11 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  // Páginas del embudo (optin, gracias, descarga…): fuera de buscadores.
+  noindex?: boolean;
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, noindex = false } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Imagen social por defecto (logo real del sitio) cuando la página no pasa
 // una imagen propia — para que og:image/twitter:image nunca queden vacíos.
@@ -42,7 +44,7 @@ const organizationJsonLd = {
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />

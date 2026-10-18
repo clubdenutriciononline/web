@@ -1,0 +1,41 @@
+---
+// Formulario de suscripción del embudo (ver src/data/formularios.ts). Se
+// inserta como iframe del proveedor (Mailrelay o MailerLite): el envío, el
+// correo de confirmación y la lista los gestiona el proveedor.
+import { formularios } from '../data/formularios';
+
+interface Props {
+  nombre: keyof typeof formularios;
+  titulo?: string;
+}
+const { nombre, titulo = 'Formulario de suscripción' } = Astro.props;
+const f = formularios[nombre];
+---
+
+<div class="form-suscripcion">
+  <iframe src={f.url} title={titulo} loading="lazy" style={`min-height:${f.alto ?? 420}px`} />
+  <p class="nota">Recibirás un correo para confirmar tu suscripción. Revisa también la carpeta de spam o promociones.</p>
+</div>
+{f.proveedor === 'mailrelay' && <script is:inline src="https://assets.ipzmarketing.com/assets/signup_form/iframe_v1.js" />}
+
+<style>
+  .form-suscripcion {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+  }
+  .nota {
+    margin: 10px 0 0;
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.5;
+    color: #777;
+    text-align: center;
+  }
+</style>

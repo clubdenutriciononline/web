@@ -1,13 +1,76 @@
 ---
-// PENDIENTE DE DECISIÓN (ver 00-analisis/03-huerfanas-e-indexacion.md,
-// página #8): es la única página huérfana con indexación confirmada y
-// podría seguir siendo destino activo de un formulario/funnel externo.
-// Se mantiene por ahora en la misma URL exacta sin redirect hasta que la
-// usuaria confirme si el funnel sigue activo.
+// Agradecimiento de la lista de espera de la comunidad (formulario alojado en
+// MailerLite; esta es su página de "gracias"). Rehecha el 18 oct con el
+// formato del resto de la web y el texto completo del original (la versión
+// anterior estaba recortada). Fuera de buscadores.
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import SiguenosRedes from '../../components/SiguenosRedes.astro';
+import comunidadImg from '../quienes-somos/_images/comunidad.jpg';
 ---
 
-<BaseLayout title="Suscripción Lista Comunidad - Club de Nutrición" description="Ya formas parte de la lista de espera de la comunidad.">
-  <h1>Ya formas parte de la lista 🩷</h1>
-  <p>Gracias por unirte. Te avisaremos cuando abramos la comunidad.</p>
+<BaseLayout
+  title="Ya formas parte de la lista - Club de Nutrición"
+  description="Gracias por unirte a la lista de la comunidad de Club de Nutrición."
+  noindex
+>
+  <div class="hub">
+    <Hero
+      title="Ya formas parte de la lista 🩷"
+      subtitle="Gracias por unirte. Te avisaré cuando abramos la comunidad donde vamos a aprender juntas a entender los cambios del cuerpo femenino."
+      image={comunidadImg}
+      imageAlt="Tres mujeres paseando juntas por un camino mediterráneo"
+      layout="lateral"
+      titleSize="hija"
+    />
+
+    <section class="texto">
+      <p>Este es un espacio donde hablamos de energía, hormonas, sueño y bienestar desde la experiencia real del cuerpo, sin juicios ni complicaciones.</p>
+      <p>En los próximos días te iré compartiendo información que te ayudará a entender mejor lo que te está pasando.</p>
+      <p class="firma">Me alegra que estés aquí.</p>
+    </section>
+
+    <div class="full-bleed band-b">
+      <section class="texto">
+        <h2>Mientras tanto</h2>
+        <p>Descarga gratis nuestra guía para empezar a recuperar tu energía y equilibrar tus hormonas.</p>
+        <p class="boton-wrap"><a class="boton" href="/lm-5-pasos-optin/">Descargar la guía</a></p>
+      </section>
+    </div>
+
+    <SiguenosRedes />
+  </div>
 </BaseLayout>
+
+<style>
+  .texto {
+    max-width: 760px;
+    margin-inline: auto;
+    padding-block: var(--space-section);
+    text-align: center;
+  }
+  .texto h2 {
+    color: #6c2f50;
+    text-align: center;
+  }
+  .texto p {
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 36px;
+  }
+  .firma {
+    font-weight: 500;
+    color: #6c2f50;
+  }
+  .boton {
+    display: inline-block;
+    background: #6c2f50;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+</style>

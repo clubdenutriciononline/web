@@ -6,7 +6,11 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 
 ## Antes de publicar — prioritario
 
-1. **El formulario de la guía no envía nada.** `/lm-5-pasos-optin/` (adonde llevan todos los botones "Descargar la guía ahora") tiene un formulario propio sin conexión: hay que conectarlo con la herramienta de correo (probablemente Mailrelay) y comprobar que llega la guía (`/lm-5-pasos-descarga/`). Es también la base de la monetización recomendada (lista de correo → productos propios).
+1. **Embudo de la guía y correo (revisado el 18 oct):**
+   - Páginas rehechas con el formato de la web y fuera de buscadores: `/lm-5-pasos-optin/` (registro), `/lm-5-pasos-gracias/` (nueva: "revisa tu correo"), `/lm-5-pasos-descarga/` (botón al PDF de Drive) y `/suscripcion-lista-comunidad/` (gracias de la lista de la comunidad, con el texto completo).
+   - El formulario de registro es de nuevo el de **Mailrelay** del original (`clubdenutricion.ipzmarketing.com/f/5gCYfuS_XVI`), que sigue funcionando. Se cambia en un único sitio: `src/data/formularios.ts`.
+   - **Problema:** la usuaria no puede entrar en Mailrelay (no le llega el correo de acceso ni el de recuperar contraseña). Cuenta: `clubdenutricion.ipzmarketing.com/admin`. Opciones: soporte de Mailrelay o **pasar la guía a MailerLite**, donde ya está la lista de la comunidad (pasos en `src/data/formularios.ts`).
+   - La lista de la comunidad usa un formulario alojado en **MailerLite** (no está en ninguna página del WordPress); su página de gracias es `/suscripcion-lista-comunidad/`.
 2. **Token de GitHub expuesto** (aviso de sesiones anteriores): revocarlo si no se ha hecho.
 3. **4 decisiones abiertas** de `13-pendientes-decision.md`: slug `/ayuno-intermitente-2/`, `/suscripcion-lista-comunidad/`, páginas huérfanas y URLs automáticas de WordPress.
 4. **Paginación antigua `/alimentacion/2/…`:** ya no existe; valorar redirigir a `/blog/`.
