@@ -1,0 +1,16 @@
+{
+  "rutinas-energeticas": {
+    "horarios": "a sleepy woman sitting on the edge of her bed with two different alarm clocks showing different times and a crescent moon and a sun on each side, representing irregular sleep schedules",
+    "comidas": "a rushed woman holding a half-eaten snack bar while looking at a clock, an empty plate on the table, representing skipping meals or eating at odd hours",
+    "sentada": "a woman sitting at a desk in front of a laptop with a clock showing many hours passing, stiff posture lines, representing sitting for hours",
+    "pantallas": "a woman in bed at night with her face lit by a phone screen, a crescent moon in the window and a small alarm clock, representing screens late at night",
+    "cafe-azucar": "a woman holding a large coffee cup in one hand and a doughnut in the other, with a small zigzag energy line going up and down, representing too much coffee and sugar",
+    "prisa": "a hurried woman walking fast with a bag, a phone and a coffee, small clocks and arrows around her, representing always rushing without breaks"
+  },
+  "sueno": {
+    "hormonal": "a woman in her forties awake in bed at night fanning herself, a wavy hormone line and a female symbol floating above, a crescent moon in the window, representing hormonal changes affecting sleep"
+  },
+  "relacion-cuerpo-mujeres": {
+    "dietas": "a woman surrounded by diet magazines, a tape measure and a scale with small crossed-out food icons, looking tired and frustrated, representing diet culture and repeated restrictive diets"
+  }
+}
