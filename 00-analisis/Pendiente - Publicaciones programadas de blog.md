@@ -49,3 +49,7 @@ Cada tarjeta de "Áreas clave relacionadas" de una página hija es un tema de ar
 - **Ciclo menstrual:** Salud hormonal · Nutrición · Actividad física · Salud mental.
 - **Menopausia** y **Tiroides:** las 4 áreas del original (se listan al revisar sus textos).
 - **Resto de hijas:** 3-4 áreas por página, por proponer.
+
+## Preguntas frecuentes en los artículos (decisión 18 oct 2026)
+
+Las preguntas frecuentes van en los **artículos del blog** (mejoran el SEO), no en las páginas fijas. Material ya disponible: las 5 preguntas con respuesta del original de Inflamación hormonal (en `Textos - Hormonas/06 - Inflamación hormonal.md`, sección 10 del original en WordPress) para su artículo.

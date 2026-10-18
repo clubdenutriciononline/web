@@ -49,3 +49,11 @@ Sustituye a la regla anterior del mismo día (nombre en negrita y mayúsculas de
 - **Meta descripción (`seoDescription`):** la del original.
 - **Tipografía (`titleSize="hija"`, por defecto en `SubpageTemplateB`):** la del hero de Menopausia en el original. Título Rubik 700 48px/67.2px #131313; frase Fredoka 500 22px/33px gris al 79%, 38.5px hasta la línea de la guía. Margen de 40px arriba y abajo. En móvil, 28px y 18px.
 - No se pasan tamaños por página.
+
+## Lo que NO llevan las hijas (18 oct 2026)
+
+Las páginas hijas se ciñen a las secciones de esta plantilla. **No llevan preguntas frecuentes ni bibliografía** aunque el original las tenga (Perimenopausia, Cortisol, Inflamación hormonal). Las preguntas frecuentes van en los **artículos del blog**, donde mejoran el SEO.
+
+## Áreas clave relacionadas (18 oct 2026)
+
+Entre Soluciones y Artículos relacionados (`areas` en `SubpageTemplateB`): 4 tarjetas con foto, título y texto, **sin enlace** hasta que exista el artículo del blog de cada área. Cada área es un tema de artículo.

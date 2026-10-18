@@ -145,14 +145,9 @@ Propuesta nueva (el original no tiene). Cada área sería un artículo del blog 
 
 Automático: primero los de "cortisol" y, si faltan, los de Hormonas (3 por página con paginación).
 
-## 12. Bibliografía (del original)
+## 12. ~~Bibliografía~~ — no se incluye
 
-Igual que en Perimenopausia: **¿la mantenemos al final?**
-
-- Tsigos C, Chrousos GP. Hypothalamic–pituitary–adrenal axis… Endocrine Reviews (2002)
-- McEwen BS. Protective and damaging effects of stress mediators. NEJM (1998)
-- Adam TC, Epel ES. Stress, eating and the reward system. Physiology & Behavior (2007)
-- Sapolsky RM. Why Zebras Don't Get Ulcers
+> **Decisión 18 oct:** las páginas hijas se ciñen a la plantilla: **sin preguntas frecuentes ni bibliografía**. Las preguntas frecuentes van en los artículos del blog (mejoran el SEO).
 
 ---
 

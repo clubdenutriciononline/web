@@ -130,15 +130,11 @@ Las 6 tarjetas del original, con su texto e iconos:
 5. **Actividad física regular** (persona caminando, fas fa-walking) — El ejercicio moderado contribuye a reducir la inflamación y mejorar la sensibilidad hormonal. Caminar, entrenar fuerza o practicar actividades aeróbicas suaves pueden ser opciones efectivas.
 6. **Evitar hábitos perjudiciales** (refrescos, icofont-soft-drinks) — Reducir o evitar el consumo de alcohol y tabaco también es clave, ya que ambos pueden aumentar los procesos inflamatorios y afectar el equilibrio hormonal.
 
-## 10. Preguntas frecuentes (del original) — ¿se mantienen?
+## 10. ~~Preguntas frecuentes~~ — no se incluyen
 
-**Propuesta:** mantenerlas, en formato desplegable, entre Soluciones y Áreas clave. Son buenas para SEO (Google puede mostrarlas como resultado enriquecido). La plantilla de hijas no las tiene; si te gustan, podrían añadirse a otras hijas más adelante.
+> **Decisión 18 oct:** las páginas hijas se ciñen a la plantilla: **sin preguntas frecuentes ni bibliografía**. Las preguntas frecuentes van en los artículos del blog (mejoran el SEO).
 
-- **¿Qué es la inflamación hormonal?** La inflamación hormonal es un estado en el que los procesos inflamatorios del cuerpo interfieren con el equilibrio normal de las hormonas, afectando a funciones como la energía, el metabolismo o el estado de ánimo.
-- **¿Qué causa la inflamación hormonal?** Suele estar relacionada con factores como el estrés crónico, una alimentación poco equilibrada, el sedentarismo, la falta de descanso o alteraciones en el sistema hormonal.
-- **¿Cuáles son los síntomas de la inflamación hormonal?** Puede manifestarse de distintas formas, como fatiga persistente, cambios en el peso, molestias digestivas, problemas de piel y alteraciones en el estado de ánimo. La intensidad puede variar según cada persona.
-- **¿Cómo puedo reducir la inflamación hormonal?** Se puede mejorar mediante cambios en el estilo de vida, como una alimentación antiinflamatoria, la reducción del estrés, el ejercicio regular, un buen descanso y, en algunos casos, el apoyo de suplementos ✏️ valorados con un profesional.
-- **¿Es importante reducir la inflamación hormonal?** Sí, ya que mantenerla en el tiempo puede influir en el equilibrio general del organismo. Abordarla de forma temprana ayuda a mejorar el bienestar y prevenir que los síntomas se cronifiquen.
+Las 5 preguntas del original con sus respuestas se guardan para el artículo del blog sobre inflamación hormonal (ver `Pendiente - Publicaciones programadas de blog.md`).
 
 **Conclusión del original:** se aprovecha como cierre de Soluciones:
 

@@ -152,15 +152,9 @@ Propuesta nueva (el original no tiene). Cada área sería un artículo del blog 
 
 Automático: primero los de "perimenopausia" y, si faltan, los de Hormonas (3 por página con paginación).
 
-## 12. Bibliografía (del original)
+## 12. ~~Bibliografía~~ — no se incluye
 
-El original cierra con 5 referencias. **¿La mantenemos al final de la página?** Da credibilidad y no es habitual en el resto de hijas, pero se podría añadir a todas en el futuro.
-
-- Santoro N. Perimenopause: From Research to Practice. Journal of Women's Health.
-- Freeman EW. Hormonal changes in the menopausal transition.
-- Burger HG et al. Hormonal changes in the menopause transition. Endocrine Reviews.
-- Davis SR et al. Global Consensus Position Statement on Menopause.
-- Lovejoy JC. The menopause and obesity.
+> **Decisión 18 oct:** las páginas hijas se ciñen a la plantilla: **sin preguntas frecuentes ni bibliografía**. Las preguntas frecuentes van en los artículos del blog (mejoran el SEO).
 
 ---
 
