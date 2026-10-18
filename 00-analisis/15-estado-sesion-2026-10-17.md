@@ -31,7 +31,11 @@ Resumen de lo hecho y de lo que queda pendiente, para retomar sin perder context
    - Método en cada una: medir el original (estructura + `getComputedStyle`), textos completos del original, iconos del original (si no están en npm, extraer el glifo de la fuente que carga el WordPress; ver `src/lib/iconos.ts`), causas con ilustración estilo Ciclo menstrual (sin emoji en el título), síntomas en viñetas, relacionados con respaldo de la madre, comprobación visual y de tipografía contra el original.
 4. **Revisar el formato de las entradas de blog** (plantilla de artículo `ArticleLayout`): tipografía, imágenes, tabla de contenidos, etc., igual que se ha hecho con madres, hijas y recetas.
 
-## Ideas pendientes de definir — tarjetas de entradas
+## Tarjetas de entradas — hecho el 18 oct
+
+Junto al logo pequeño, una **píldora con la categoría madre** (Hormonas, Energía, Recetas, Alimentación…) en morado #6C2F50; la etiqueta rosa de la imagen sigue mostrando la subcategoría, ahora con tildes. Si la entrada no tiene subcategoría, solo se muestra la píldora (para no repetir el nombre). Se descartó el icono de cubiertos para recetas: la píldora "Recetas" ya las distingue. Aplica en blog, portada, relacionados y recetas (`ArticulosRelacionados.astro`).
+
+## (Histórico) Ideas que se valoraron — tarjetas de entradas
 
 En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay una etiqueta rosa con la subcategoría. Ideas de la usuaria, **por definir cuál se aplica**:
 
