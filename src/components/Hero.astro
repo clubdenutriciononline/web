@@ -44,6 +44,11 @@ interface Props {
   // 'medida': la tipografía llega en `titleMedida` (cada hija del original
   // usa una distinta; evita crear un tamaño con nombre por página).
   titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia' | 'medida';
+  // Hijas (decisión 18 oct): el nombre de la página dentro de la frase del
+  // hero va en negrita y mayúsculas para que se vea de qué trata sin añadir
+  // otro título. Se resalta la primera aparición de cada texto (sin
+  // distinguir mayúsculas).
+  titleDestacado?: string | string[];
   titleMedida?: { font: 'heading' | 'body'; size: number; weight: number; lineHeight: number; marginBottom?: number };
 }
 
@@ -51,7 +56,20 @@ interface Props {
 // Metabolismo, Microbiota, Mentalidad); Hormonas es la única excepción
 // con el hero "side" — por eso es el valor por defecto aquí, y
 // HubTemplateA (solo Hormonas) pasa layout="side" explícitamente.
-const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'overlay', titleSize = 'display', titleMedida } = Astro.props;
+const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'overlay', titleSize = 'display', titleMedida, titleDestacado } = Astro.props;
+type Parte = { texto: string; destacado: boolean };
+let partes: Parte[] = [{ texto: title, destacado: false }];
+for (const termino of titleDestacado ? (Array.isArray(titleDestacado) ? titleDestacado : [titleDestacado]) : []) {
+  const i = partes.findIndex((p) => !p.destacado && p.texto.toLocaleLowerCase('es').includes(termino.toLocaleLowerCase('es')));
+  if (i === -1) continue;
+  const t = partes[i].texto;
+  const pos = t.toLocaleLowerCase('es').indexOf(termino.toLocaleLowerCase('es'));
+  partes.splice(i, 1,
+    { texto: t.slice(0, pos), destacado: false },
+    { texto: t.slice(pos, pos + termino.length), destacado: true },
+    { texto: t.slice(pos + termino.length), destacado: false });
+}
+partes = partes.filter((p) => p.texto);
 const titleVars = titleSize === 'medida' && titleMedida
   ? `--h-ff: var(--font-${titleMedida.font}); --h-fs: ${titleMedida.size}px; --h-fw: ${titleMedida.weight}; --h-lh: ${titleMedida.lineHeight}px; --h-mb: ${titleMedida.marginBottom ?? 45}px`
   : undefined;
@@ -64,7 +82,7 @@ const titleVars = titleSize === 'medida' && titleMedida
         <Image class="hero-image" src={image} alt={imageAlt ?? ''} />
         {layout === 'overlay' && (
           <div class="hero-copy">
-            <h1 data-size={titleSize} style={titleVars}>{title}</h1>
+            <h1 data-size={titleSize} style={titleVars}>{partes.map((p) => (p.destacado ? <strong class="destacado">{p.texto}</strong> : p.texto))}</h1>
             {subtitle && <p class="hero-subtitle">{subtitle}</p>}
             {ctaIntro && <p class="hero-cta-intro">{ctaIntro}</p>}
             {ctaLabel && ctaHref && <a class="hero-cta" href={ctaHref}>{ctaLabel}</a>}
@@ -74,7 +92,7 @@ const titleVars = titleSize === 'medida' && titleMedida
     )}
     {!(layout === 'overlay' && image) && (
     <div class="hero-copy">
-      <h1 data-size={titleSize} style={titleVars}>{title}</h1>
+      <h1 data-size={titleSize} style={titleVars}>{partes.map((p) => (p.destacado ? <strong class="destacado">{p.texto}</strong> : p.texto))}</h1>
       {subtitle && <p class="hero-subtitle">{subtitle}</p>}
       {ctaIntro && <p class="hero-cta-intro">{ctaIntro}</p>}
       {ctaLabel && ctaHref && (
@@ -239,6 +257,10 @@ const titleVars = titleSize === 'medida' && titleMedida
     letter-spacing: normal;
     color: rgba(33, 33, 33, 0.79);
     margin-bottom: 45px;
+  }
+  h1 .destacado {
+    font-weight: 700;
+    text-transform: uppercase;
   }
   h1[data-size='medida'] {
     font-family: var(--h-ff);

@@ -10,6 +10,12 @@ Resumen de lo hecho y de lo que queda pendiente, para retomar sin perder context
 - **Diferencias con el original, corregidas (revisar si se quieren mantener):** Ayuno intermitente tenía en la intro un fragmento pegado de otra página ("…ulan prácticamente todo en el cuerpo femenino…") y "niciar" en lugar de "Iniciar"; Relación con el cuerpo repetía la tarjeta "Estrés y presión emocional" (aquí sale una vez, 8 causas).
 - **Falta:** las hijas de Hormonas (`SubpageTemplateA`), y lo de abajo.
 
+### Plan acordado el 18 oct (Hormonas + áreas clave)
+
+1. **Rehacer las 6 hijas de Hormonas** con la plantilla de hijas (`SubpageTemplateB`). Nuestra versión de septiembre de Ciclo menstrual, Menopausia y Tiroides es un resumen (falta o cambia ~75 % del texto del original: sin píldoras, sin checklist, causas y síntomas con otros textos, relación muy corta). Se copian los textos íntegros del original; se amplía la relación y las soluciones pasan a tarjetas con texto. Perimenopausia, Cortisol e Inflamación hormonal (artículos en el original) se montan sobre la plantilla escribiendo lo que falta. Primero los textos (revisión página a página, en `00-analisis/Textos - Hormonas/`), luego el lote de ilustraciones de causas (~18) y luego el montaje.
+2. **Áreas clave relacionadas en la plantilla de hijas** (entre Soluciones y Artículos relacionados), **sin enlace** hasta que exista el artículo del blog de cada área; cada área es un tema de artículo para el blog. En el original solo las tenían Ciclo menstrual, Menopausia y Tiroides (se mantienen). Las **madres sí conservan los enlaces** a sus hijas. Fotos de áreas: lote aparte al final (~45-60).
+3. **Rutinas energéticas: reenfocar en las rutinas** (ver punto 2 de abajo) — recordatorio de la usuaria, 18 oct.
+
 ## Para retomar — por este orden
 
 1. ~~Imágenes con la API de Gemini en lugar del MCP~~ — hecho el 18 oct (ver arriba).
@@ -49,7 +55,7 @@ En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay 
 - **Iconos:** siempre los del original (Font Awesome, MDI, IcoFont, Ionicons, IcoMoon, Open Iconic, Themify…), nunca emojis. Todos en `src/lib/iconos.ts`.
 - **Cambiar solo lo que se pide:** si hay otra diferencia con el original, comentarla, no cambiarla.
 - **Entradas del blog:** siempre de 3 en 3 y, si hay más, paginación "« Anterior · Página X de Y · Siguiente »".
-- **Fotos IA:** la misma mujer en todas las páginas, pero con ropa distinta en cada foto. Generar a `imageSize: "1K"` sin bajar la calidad. Si sale un error de saldo (402) o de límite (429), parar y avisar.
+- **Fotos IA:** no hace falta que sea siempre la misma mujer (decisión 18 oct): mujer de unos 35-50 años en una escena que cuadre con la página. Generar a `imageSize: "1K"` sin bajar la calidad. Si sale un error de saldo (402) o de límite (429), parar y avisar.
 - **Textos nuevos:** registro neutro de la marca, sin consejo médico concreto; suplementos y dietas restrictivas siempre "con un profesional".
 
 ## Hecho en esta sesión

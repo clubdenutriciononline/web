@@ -41,3 +41,11 @@ Repetir con todas las subpáginas: así sale un calendario de temas coherente co
 - Unas dos horas de trabajo.
 - Solo toca el repositorio y el proyecto de Vercel conectado a GitHub. No toca producción ni WordPress.
 - Reversible: se quita el Action y el filtro.
+
+## Áreas clave de las páginas hijas → artículos (decisión 18 oct 2026)
+
+Cada tarjeta de "Áreas clave relacionadas" de una página hija es un tema de artículo. Las tarjetas van **sin enlace** hasta que el artículo exista; al publicarlo, se añade el enlace en la tarjeta (el componente admite enlace opcional). Las madres sí mantienen sus enlaces a las hijas.
+
+- **Ciclo menstrual:** Salud hormonal · Nutrición · Actividad física · Salud mental.
+- **Menopausia** y **Tiroides:** las 4 áreas del original (se listan al revisar sus textos).
+- **Resto de hijas:** 3-4 áreas por página, por proponer.

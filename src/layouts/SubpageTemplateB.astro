@@ -18,6 +18,8 @@ interface Props {
   heroSubtitle?: string;
   heroTitleSize?: 'display' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia' | 'medida';
   // Con heroTitleSize="medida": tipografía medida en el original.
+  // Nombre de la página dentro de la frase del hero (negrita y mayúsculas).
+  heroTitleDestacado?: string | string[];
   heroTitleMedida?: { font: 'heading' | 'body'; size: number; weight: number; lineHeight: number; marginBottom?: number };
   heroCtaIntro?: string;
   heroImage?: ImageMetadata;
@@ -34,6 +36,7 @@ const {
   heroSubtitle,
   heroTitleSize,
   heroTitleMedida,
+  heroTitleDestacado,
   heroCtaIntro = 'Descubre cómo estabilizar tu energía, descarga la guía ahora:',
   heroImage,
   heroImageAlt,
@@ -55,6 +58,7 @@ const {
     layout="lateral"
     titleSize={heroTitleSize}
     titleMedida={heroTitleMedida}
+    titleDestacado={heroTitleDestacado}
     ctaIntro={heroCtaIntro}
   />
 

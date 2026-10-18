@@ -39,3 +39,7 @@ La banda final "¿Sientes que tu energía sube y baja?" se elimina por decisión
 - 8 causas → 2 + 3 + 3; 7 soluciones → 2 + 3 + 2; píldoras `layout5="2-3"`.
 - Iconos raros del original (Open Iconic, Themify, Iconic, IcoMoon Brands…): se extraen los glifos de las fuentes que carga el WordPress (ver `src/lib/iconos.ts`).
 - Las tarjetas de causas no llevan emoji en el título: lo sustituye la ilustración.
+
+## Nombre de la página destacado en el hero (18 oct 2026)
+
+Las hijas no tienen un título visible aparte: la frase del hero es el `<h1>`. Para que se vea a primera vista de qué trata la página, **el nombre de la página dentro de esa frase va en negrita y mayúsculas** (`heroTitleDestacado` en `SubpageTemplateB`; admite un texto o una lista, p. ej. `['estrés', 'hábitos']`). Se resalta la primera aparición. La frase del hero de cada hija **tiene que contener el nombre de la página**; si el original no lo incluye, se reescribe.
