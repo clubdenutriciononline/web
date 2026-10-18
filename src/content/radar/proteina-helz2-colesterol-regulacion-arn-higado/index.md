@@ -2,6 +2,7 @@
 title: "Nueva proteína hepática podría regular el colesterol en sangre desde el ARN"
 slug: "proteina-helz2-colesterol-regulacion-arn-higado"
 date: 2026-05-26T17:36:39Z
+fechaNoticia: 2026-06-25
 updated: 2026-05-29T17:12:10Z
 image: "./cover.webp"
 imageAlt: "Ilustración sobre la proteína HELZ2 y la regulación del colesterol"

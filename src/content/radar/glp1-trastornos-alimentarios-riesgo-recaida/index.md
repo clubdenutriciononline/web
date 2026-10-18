@@ -2,6 +2,7 @@
 title: "Fármacos GLP-1 y riesgo de recaída en trastornos alimentarios"
 slug: "glp1-trastornos-alimentarios-riesgo-recaida"
 date: 2026-05-28T16:19:18Z
+fechaNoticia: 2026-05-28
 updated: 2026-05-29T17:11:42Z
 image: "./cover.jpg"
 imageAlt: "Ilustración sobre fármacos GLP-1 y trastornos alimentarios"

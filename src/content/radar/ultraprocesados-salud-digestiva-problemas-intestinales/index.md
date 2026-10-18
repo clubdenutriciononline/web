@@ -2,6 +2,8 @@
 title: "Ultraprocesados y salud digestiva: nueva alerta"
 slug: "ultraprocesados-salud-digestiva-problemas-intestinales"
 date: 2026-06-22T09:23:58Z
+titular: "Aumentan las enfermedades digestivas y los expertos señalan a los ultraprocesados"
+fechaNoticia: 2026-06-21
 image: "./cover.jpg"
 imageAlt: "Ilustración sobre ultraprocesados y salud digestiva"
 description: "Los expertos alertan de un aumento de los problemas digestivos. Posible relación entre ultraprocesados, microbiota y salud digestiva."

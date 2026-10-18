@@ -2,6 +2,7 @@
 title: "El ayuno intermitente y el cerebro: la hipótesis que investiga la ciencia"
 slug: "ayuno-intermitente-cerebro-efectos-ciencia"
 date: 2026-06-04T14:49:00Z
+titular: "El ayuno intermitente podría cambiar cómo el cerebro obtiene energía"
 image: "./cover.jpg"
 imageAlt: "Ilustración sobre el ayuno intermitente y el cerebro"
 description: "La ciencia estudia cómo el ayuno intermitente podría afectar al cerebro, la autofagia y la energía neuronal. Analizamos qué se sabe realmente y qué sigue siendo una hipótesis."

@@ -45,7 +45,9 @@ const relacionados =
         // Si faltan, se completa con la misma categoría madre (como en las hijas).
         (p) => (p.data as any).category.split('/')[0] === (entry.data as any).category.split('/')[0],
       )
-    : siblings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 5);
+    : // Radar: el resto de publicaciones, más recientes primero, hasta 9 (3
+      // páginas de 3 con paginación, como en el resto de la web).
+      siblings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 9);
 
 ---
 

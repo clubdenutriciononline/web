@@ -1,12 +1,21 @@
 ---
-// Plantilla de publicación de Radar de Salud — distinta del Blog: sin
-// breadcrumb, sin imagen en el cuerpo, secciones fijas con emoji, nivel de
-// evidencia, fuente en texto plano, y botones de compartir (ausentes en el
-// Blog normal). Radar de Salud es un tipo de contenido independiente del
-// Blog, con su propia collection (`radar`) y su propia plantilla.
+// Plantilla de publicación de Radar de Salud — distinta del Blog. Rehecha el
+// 18 oct con el formato real del original (medido en "Aumentan las
+// enfermedades digestivas y los expertos señalan a los ultraprocesados"):
+// - columna estrecha (920px), píldora "RADAR DE SALUD" a la izquierda y el
+//   icono del radar (mdi-radar del original) a la derecha;
+// - título centrado en Rubik ciruela (en negrita, a petición de la usuaria):
+//   el titular del original (`titular`) o, si no hay, `title`;
+// - cada apartado en su caja redondeada, alternando lila y malva (las monta
+//   src/lib/radar-html.ts), y el nivel de evidencia como una caja más;
+// - "Fuente" a la izquierda y "Fecha" a la derecha, en gris claro de 14px
+//   (aquí sí va la fecha: son noticias fechadas);
+// - botones de compartir centrados y relacionados con paginación.
 import BaseLayout from './BaseLayout.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import { cajasRadar, NIVELES_EVIDENCIA } from '../lib/radar-html';
+import { radar } from '../lib/iconos';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -15,8 +24,11 @@ interface Props {
 }
 
 const { entry, relacionados } = Astro.props;
-const { title, description, seo, date, updated, nivelEvidencia, fuente } = entry.data;
-const url = Astro.url.href;
+const { title, titular, description, seo, date, fechaNoticia, updated, nivelEvidencia, fuente } = entry.data;
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const cuerpo = cajasRadar(await Astro.slots.render('default'));
+const nivel = NIVELES_EVIDENCIA[nivelEvidencia as string];
+const fecha = (fechaNoticia ?? date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Madrid' });
 
 // NewsArticle: el Radar de Salud es un boletín de noticias/novedades de
 // investigación (no un artículo evergreen de blog), encaja mejor con este
@@ -38,52 +50,169 @@ const newsArticleJsonLd = {
 <BaseLayout title={seo?.title ?? title} description={seo?.description ?? description}>
   <script type="application/ld+json" set:html={JSON.stringify(newsArticleJsonLd)} is:inline />
   <article class="radar-post">
-    <span class="etiqueta">Radar de Salud</span>
-    <h1>{title}</h1>
+    <div class="radar-cabecera">
+      <span class="etiqueta">RADAR DE SALUD</span>
+      <span class="icono-radar" aria-hidden="true" set:html={radar.svg} />
+    </div>
+    <h1>{titular ?? title}</h1>
 
     <div class="cuerpo">
-      <!-- El cuerpo markdown contiene las secciones fijas:
-           🔬 Qué ha pasado / 🧠 Por qué importa / 🩺 Interpretación clínica /
-           ⚡ Conclusión rápida — se replican tal cual, en ese orden. -->
-      <slot />
+      <Fragment set:html={cuerpo} />
+      <section class="radar-caja evidencia">
+        <h3>🔎 Nivel de evidencia: {nivel ? `${nivel.emoji} ${nivelEvidencia}` : nivelEvidencia}</h3>
+      </section>
     </div>
 
-    <p class="nivel-evidencia">🔎 Nivel de evidencia: {nivelEvidencia}</p>
-    <p class="fuente">Fuente: {fuente}</p>
-    <p class="fecha">Fecha: {date.toLocaleDateString('es-ES')}</p>
+    <div class="fuente-fecha">
+      <p>{fuente ? `Fuente: ${fuente}` : ''}</p>
+      <p class="fecha">Fecha: {fecha}</p>
+    </div>
 
-    <ShareButtons url={url} title={title} />
+    <div class="compartir">
+      <ShareButtons url={url} title={title} />
+    </div>
   </article>
 
-  <ArticulosRelacionados articulos={relacionados} />
+  <!-- Dentro de .hub para que "Artículos relacionados" tenga el formato de
+       las demás páginas (Fredoka, a la izquierda, sin mayúsculas). -->
+  <div class="hub">
+    <ArticulosRelacionados articulos={relacionados} />
+  </div>
 </BaseLayout>
 
 <style>
+  .radar-post {
+    max-width: 920px;
+    margin-inline: auto;
+    padding-top: 40px;
+  }
+  .radar-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  /* Píldora del original: fondo lila rgb(232,158,255), radio 10px, Fredoka
+     20px #212121. */
   .etiqueta {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    color: var(--color-accent, #c2185b);
-    margin-bottom: 0.5rem;
-    background: var(--color-accent-soft);
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
+    background: rgb(232, 158, 255);
+    border-radius: 10px;
+    padding: 0 6px;
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+    color: #212121;
   }
-  /* Aproximación al patrón real (cada sección — Qué ha pasado / Por qué
-     importa / Interpretación clínica / Conclusión rápida — va en su propia
-     caja lila redondeada en el original). El cuerpo viene de Markdown sin
-     wrappers por sección, así que de momento se trata como un único panel
-     continuo en vez de 4 cajas separadas — pendiente de un remark/rehype
-     plugin para la réplica exacta. */
-  .cuerpo {
-    background: var(--color-surface-alt);
-    border-radius: 1rem;
-    padding: 1.5rem 2rem;
+  .icono-radar {
+    display: inline-flex;
+    color: #f964c0;
   }
+  .icono-radar :global(svg) {
+    width: 50px;
+    height: 50px;
+  }
+  /* Título: Rubik 32px ciruela centrado (500 en el original; en negrita
+     a petición de la usuaria). */
+  h1 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 41.6px;
+    color: #6c2f50;
+    text-align: center;
+    margin: 0 0 30px;
+  }
+  /* Cajas: radio 20px, fondo lila rgb(232,158,255) al 23% y malva
+     rgb(172,110,193) al 15%, alternando; 40px entre cajas. */
+  .cuerpo :global(.radar-caja) {
+    border-radius: 20px;
+    padding: 10px 10px 25px;
+    margin-bottom: 40px;
+    background: rgba(232, 158, 255, 0.23);
+  }
+  .cuerpo :global(.radar-caja:nth-of-type(even)) {
+    background: rgba(172, 110, 193, 0.15);
+  }
+  .cuerpo :global(.radar-caja.evidencia) {
+    padding-bottom: 10px;
+    margin-bottom: 0;
+  }
+  /* Apartados: Rubik 26px ciruela a la izquierda (en negrita). */
   .cuerpo :global(h3) {
-    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 33.8px;
+    color: #6c2f50;
+    text-align: left;
+    margin: 0 0 20px;
   }
-  .cuerpo :global(h3:not(:first-child)) {
-    margin-top: 2rem;
+  .cuerpo :global(.radar-caja.evidencia h3) {
+    margin: 0;
+  }
+  /* Texto: Fredoka 20px/33px #212121 justificado. */
+  .cuerpo :global(p),
+  .cuerpo :global(li) {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+    color: #212121;
+    text-align: justify;
+  }
+  .cuerpo :global(p) {
+    margin: 0 0 1.75em;
+  }
+  .cuerpo :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  .cuerpo :global(a) {
+    color: #6c2f50;
+  }
+  /* Fuente y fecha: Fredoka 14px gris claro rgb(170,167,167), en la misma
+     línea; la fecha a la derecha. */
+  .fuente-fecha {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+  .fuente-fecha p {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 33px;
+    color: rgb(170, 167, 167);
+  }
+  .fuente-fecha .fecha {
+    text-align: right;
+    white-space: nowrap;
+  }
+  .compartir {
+    display: flex;
+    justify-content: center;
+    padding-block: 40px;
+  }
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 24px;
+      line-height: 1.3;
+    }
+    .cuerpo :global(h3) {
+      font-size: 21px;
+    }
+    .cuerpo :global(p),
+    .cuerpo :global(li) {
+      font-size: 18px;
+      line-height: 1.65;
+      text-align: left;
+    }
+    .fuente-fecha {
+      flex-direction: column;
+      gap: 0;
+    }
+    .fuente-fecha .fecha {
+      text-align: left;
+    }
   }
 </style>

@@ -2,6 +2,7 @@
 title: "El kéfir podría aportar muchas más bacterias beneficiosas que el yogur"
 slug: "kefir-microbiota-bacterias-yogur-salud-intestinal"
 date: 2026-05-29T17:20:53Z
+fechaNoticia: 2026-05-28
 image: "./cover.jpg"
 imageAlt: "Ilustración sobre el kéfir y la microbiota intestinal"
 description: "El kéfir destaca por su alto contenido en bacterias beneficiosas frente al yogur. Analizamos qué dice la ciencia sobre microbiota, fermentados y salud intestinal."

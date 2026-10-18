@@ -2,6 +2,7 @@
 title: "Colesterol alto: por qué el LDL aislado podría no contar toda la historia clínica"
 slug: "colesterol-ldl-riesgo-cardiovascular-perfil-lipidico"
 date: 2026-06-13T14:51:16Z
+fechaNoticia: 2026-06-13
 image: "./cover.jpg"
 imageAlt: "Ilustración sobre el colesterol LDL y el riesgo cardiovascular"
 description: "El colesterol LDL aislado puede no reflejar el riesgo cardiovascular completo. Hay que tener en cuenta otros factores."

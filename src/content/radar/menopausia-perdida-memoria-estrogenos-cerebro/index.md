@@ -2,6 +2,8 @@
 title: "Menopausia y memoria: el nuevo hallazgo que cambia cómo entendemos el cerebro femenino"
 slug: "menopausia-perdida-memoria-estrogenos-cerebro"
 date: 2026-06-02T16:51:39Z
+titular: "La menopausia podría alterar la memoria por cambios hormonales en el cerebro"
+fechaNoticia: 2026-05-31
 updated: 2026-06-04T15:19:48Z
 image: "./cover.jpg"
 imageAlt: "Ilustración sobre la menopausia y la pérdida de memoria"

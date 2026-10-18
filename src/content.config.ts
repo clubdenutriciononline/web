@@ -101,6 +101,11 @@ const radar = defineCollection({
       // "Emergente" es una 4ª categoría real usada en el original (confirmada
       // en 3 publicaciones reales, no un error de una sola vez) además de
       // Alto/Medio/Bajo — se añadió tras detectarla durante la migración.
+      // Titular visible del original cuando no coincide con `title` (que es
+      // el de las tarjetas y el SEO), y fecha que muestra la noticia en el
+      // original (puede ser distinta de la de publicación).
+      titular: z.string().optional(),
+      fechaNoticia: z.coerce.date().optional(),
       nivelEvidencia: z.enum(['Alto', 'Medio', 'Bajo', 'Emergente']),
       fuente: z.string(),
       draft: z.boolean().default(false),

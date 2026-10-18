@@ -2,6 +2,8 @@
 title: "Dieta cetogénica y salud cerebral: qué dice la ciencia sobre Alzheimer y Parkinson"
 slug: "dieta-cetogenica-posibles-beneficios-neurologicos"
 date: 2026-06-16T15:21:15Z
+titular: "La dieta cetogénica gana interés como posible aliada frente al deterioro cerebral"
+fechaNoticia: 2026-06-16
 image: "./cover.jpg"
 imageAlt: "Ilustración sobre la dieta cetogénica y la neurodegeneración"
 description: "Una revisión científica analiza cómo la dieta cetogénica podría influir en Alzheimer, Parkinson y otras enfermedades neurodegenerativas."

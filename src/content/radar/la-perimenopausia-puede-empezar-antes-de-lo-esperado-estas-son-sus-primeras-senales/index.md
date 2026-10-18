@@ -2,6 +2,7 @@
 title: "La perimenopausia puede empezar antes de lo esperado: estas son sus primeras señales"
 slug: "la-perimenopausia-puede-empezar-antes-de-lo-esperado-estas-son-sus-primeras-senales"
 date: 2026-08-06T09:43:52Z
+fechaNoticia: 2026-08-06
 image: "./cover.jpg"
 imageAlt: "Mujer de unos 40 años anota sus síntomas en una libreta junto a la ventana, con ondas que representan las fluctuaciones hormonales de la perimenopausia"
 description: "La noticia repasa qué ocurre durante la perimenopausia, la etapa de transición previa a la menopausia, caracterizada por fluctuaciones hormonales que pueden provocar cambios en el ciclo menstrual, el sueño, el estado de ánimo y otros síntomas antes de que desaparezca la menstruación."
