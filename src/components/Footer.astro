@@ -14,6 +14,13 @@ const year = new Date().getFullYear();
     class="footer-banner"
   />
 
+  <!-- Aviso fijo en todas las páginas (decisión de la usuaria, 18 oct), entre
+       el banner y la banda negra. Texto resumido del apartado "Asesoramiento
+       profesional" del Descargo de responsabilidad de la propia web. -->
+  <p class="footer-aviso">
+    El contenido de Club de Nutrición es solo para fines informativos y educativos y no sustituye el asesoramiento, diagnóstico o tratamiento médico profesional. Consulta siempre a tu médico u otro profesional sanitario cualificado ante cualquier duda sobre tu salud, y nunca ignores ni retrases su consejo por algo que hayas leído en esta web. <a href="/descargo-de-responsabilidad/">Descargo de responsabilidad</a>
+  </p>
+
   <div class="footer-black">
     <div class="footer-inner">
       <div class="footer-social">
@@ -98,6 +105,19 @@ const year = new Date().getFullYear();
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     margin: 0;
+  }
+  .footer-aviso {
+    max-width: 860px;
+    margin: 1rem auto 1.5rem;
+    padding-inline: var(--container-padding);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(33, 33, 33, 0.7);
+  }
+  .footer-aviso a {
+    color: inherit;
+    text-decoration: underline;
   }
   .footer-banner {
     /* Tamaño real del original (confirmado por captura): la imagen se
