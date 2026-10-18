@@ -76,10 +76,8 @@ const articleJsonLd = {
 
     <div class="art-meta">
       <Breadcrumb items={migas} />
-      <p class="fecha">
-        Por {author} · <time datetime={date.toISOString()}>{date.toLocaleDateString('es-ES')}</time>
-        {updated && <> · Actualizado {updated.toLocaleDateString('es-ES')}</>}
-      </p>
+      <!-- Sin fecha visible (decisión de la usuaria, 18 oct). Las fechas
+           siguen en los datos estructurados (JSON-LD) para buscadores. -->
     </div>
 
     {indice.length > 1 && (
@@ -113,10 +111,6 @@ const articleJsonLd = {
     padding-top: 1.25rem;
     font-size: 14px;
     line-height: 1.5;
-  }
-  .art-meta .fecha {
-    margin: 0;
-    color: #666;
   }
   .art-indice {
     padding-block: 40px 57px;
@@ -194,6 +188,60 @@ const articleJsonLd = {
     color: #6c2f50;
   }
 
+  /* Soluciones en tarjetas con icono: mismo estilo que las tarjetas de
+     soluciones de las hijas (SolucionesList variant="card"). 3 por fila y
+     la última fila centrada; con 4, 2 + 2. */
+  .cuerpo :global(.art-tarjetas) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 30px;
+  }
+  .cuerpo :global(.art-tarjeta) {
+    flex: 0 1 calc((100% - 3rem) / 3);
+    background: linear-gradient(150deg, #fdf2f7 0%, #f3e8f0 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: border-radius 0.3s, box-shadow 0.3s;
+  }
+  .cuerpo :global(.art-tarjetas[data-count='4'] .art-tarjeta),
+  .cuerpo :global(.art-tarjetas[data-count='2'] .art-tarjeta) {
+    flex-basis: calc((100% - 1.5rem) / 2);
+  }
+  /* Como en las hijas: 5 = 3 + 2 anchas; 7 = 2 anchas + 3 + 2 anchas. */
+  .cuerpo :global(.art-tarjetas[data-count='5'] .art-tarjeta:nth-child(n + 4)),
+  .cuerpo :global(.art-tarjetas[data-count='7'] .art-tarjeta:nth-child(-n + 2)),
+  .cuerpo :global(.art-tarjetas[data-count='7'] .art-tarjeta:nth-child(n + 6)) {
+    flex-basis: calc((100% - 1.5rem) / 2);
+  }
+  .cuerpo :global(.art-tarjeta:hover) {
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+  .cuerpo :global(.art-icono) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent, #c2185b);
+  }
+  .cuerpo :global(.art-icono svg) {
+    width: 50px;
+    height: 50px;
+  }
+  .cuerpo :global(.art-tarjeta h3) {
+    margin: 0 0 20px;
+  }
+  .cuerpo :global(.art-tarjeta p) {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .cuerpo :global(.art-tarjeta p:last-child) {
+    margin-bottom: 0;
+  }
+
   /* "Qué vas a aprender": recuadro blanco como el de la checklist. */
   .cuerpo :global(.art-caja) {
     background: #fff;
@@ -264,6 +312,9 @@ const articleJsonLd = {
     }
     .cuerpo :global(.art-caja) {
       padding: 20px 20px 1px;
+    }
+    .cuerpo :global(.art-tarjeta) {
+      flex-basis: 100% !important;
     }
     .cuerpo :global(.art-img-flotante) {
       float: none;

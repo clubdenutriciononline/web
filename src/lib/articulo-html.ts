@@ -9,10 +9,14 @@
 // - marca como subtítulo el párrafo corto que sigue al <h2>;
 // - mete "Qué vas a aprender" en un recuadro (art-caja);
 // - convierte "Preguntas frecuentes" en desplegables <details>;
+// - en las secciones de soluciones, cada apartado <h3> pasa a ser una
+//   tarjeta con icono;
 // - pone en mayúscula la primera letra de los <h2> ("conclusión");
 // - la primera imagen vertical de cada sección sube junto al título y
 //   flota a la derecha con el texto alrededor (como en el original y en el
 //   "¿Qué es…?" de las hijas); las horizontales siguen a todo el ancho.
+
+import * as iconos from './iconos';
 
 const sinEtiquetas = (s: string) => s.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
 const PARRAFO = /^\s*<p(?:\s[^>]*)?>([\s\S]*?)<\/p>/;
@@ -37,6 +41,47 @@ function sacarImagenVertical(cuerpo: string): { cuerpo: string; img?: string } {
   const h = Number(m[1].match(/\bheight="(\d+)"/)?.[1] ?? 0);
   if (!w || !h || h <= w) return { cuerpo };
   return { cuerpo: cuerpo.replace(m[0], ''), img: m[1] };
+}
+
+// Secciones de soluciones con apartados H3 → tarjetas con icono, como en el
+// original y en las hijas (decisión de la usuaria, 18 oct). El icono se
+// elige por palabras del título del apartado, siempre entre los iconos
+// extraídos de las fuentes del original (src/lib/iconos.ts).
+const SECCION_TARJETAS = /soluci|consejo|estrategia|recomendaci|c[oó]mo (mejorar|reducir|bajar|aumentar|recuperar|prevenir|gestionar|cuidar|combatir|equilibrar)/;
+const ICONOS_POR_TEMA: [RegExp, { svg: string }][] = [
+  [/pantalla|m[oó]vil|tecnolog/, iconos.movil],
+  [/cafe[ií]na|caf[eé]|alcohol|estimulante/, iconos.taza],
+  [/entorno|dormitorio|habitaci[oó]n|cama/, iconos.cama],
+  [/sue[nñ]o|dorm|descans/, iconos.caraSomnolienta],
+  [/estr[eé]s|relaj|ansiedad|calma|emocion/, iconos.caraSonrojada],
+  [/actividad|ejercicio|mover|deporte|entren|fuerza|caminar/, iconos.ejercicio],
+  [/apoyo|social|acompa|grupo/, iconos.personasAmigas],
+  [/hidrat|agua/, iconos.vasoAgua],
+  [/suplement|vitamina|mineral/, iconos.pastillas],
+  [/aliment|dieta|comida|comer|nutri|fibra|prote/, iconos.cestaComida],
+  [/m[eé]dic|profesional|consult|doctor|diagn[oó]stico|tratamiento/, iconos.doctora],
+  [/luz|sol\b|ritmo/, iconos.sol],
+  [/h[aá]bito|rutina|horario/, iconos.calendario],
+];
+function iconoPara(titulo: string) {
+  const t = titulo.toLowerCase();
+  return (ICONOS_POR_TEMA.find(([re]) => re.test(t))?.[1] ?? iconos.hoja).svg;
+}
+
+function tarjetas(cuerpo: string) {
+  const bloques = cuerpo.match(BLOQUE) ?? [];
+  const iPrimero = bloques.findIndex((b) => b.startsWith('<h3'));
+  if (iPrimero === -1 || bloques.filter((b) => b.startsWith('<h3')).length < 2) return cuerpo;
+  const intro = bloques.slice(0, iPrimero);
+  const grupos: { h3: string; resto: string[] }[] = [];
+  for (const b of bloques.slice(iPrimero)) {
+    if (b.startsWith('<h3')) grupos.push({ h3: b, resto: [] });
+    else grupos[grupos.length - 1].resto.push(b);
+  }
+  const html = grupos
+    .map((g) => `<div class="art-tarjeta"><span class="art-icono" aria-hidden="true">${iconoPara(sinEtiquetas(g.h3))}</span>${g.h3}${g.resto.join('')}</div>`)
+    .join('');
+  return intro.join('') + `<div class="art-tarjetas" data-count="${grupos.length}">${html}</div>`;
 }
 
 function preguntas(cuerpo: string) {
@@ -86,6 +131,7 @@ export function estructurarArticulo(html: string): { html: string; lead?: string
       }
       if (/preguntas frecuentes/.test(titulo)) cuerpo = preguntas(cuerpo);
       else if (/qu[eé] vas a aprender/.test(titulo)) cuerpo = `<div class="art-caja">${cuerpo}</div>`;
+      else if (SECCION_TARJETAS.test(titulo)) cuerpo = tarjetas(cuerpo);
       return `<section class="art-sec"><div class="art-sec-inner">${cabecera}${cuerpo}</div></section>`;
     });
 

@@ -5,7 +5,7 @@ Decidida el 18 oct 2026 sobre la entrada de Fatiga crónica (`/fatiga-cronica-si
 ## Estructura
 
 1. **Hero de las hijas** (fondo degradado): título de la entrada, frase debajo (el primer párrafo del Markdown), línea y botón de la guía, e imagen de portada a la derecha.
-2. **Miga de pan y fecha** en una línea discreta (Inicio › categoría madre › subcategoría · autor y fecha).
+2. **Miga de pan** en una línea discreta (Inicio › categoría madre › subcategoría). **Sin fecha visible** (decisión del 18 oct); las fechas siguen en los datos estructurados (JSON-LD) para buscadores.
 3. **Tabla de contenidos** (fondo blanco), con todos los H2. Se mantiene por SEO.
 4. **Una sección por cada H2**, alternando fondo **degradado** (impares, empezando por la Introducción) y **blanco** (pares).
 5. **Artículos relacionados** con las tarjetas de las hijas: primero la misma subcategoría y, si faltan, la misma categoría madre.
@@ -23,6 +23,7 @@ Decidida el 18 oct 2026 sobre la entrada de Fatiga crónica (`/fatiga-cronica-si
 
 - **"Qué vas a aprender":** el texto va dentro de un recuadro blanco con sombra.
 - **"Preguntas frecuentes":** cada párrafo que acaba en "?" pasa a ser un desplegable (`<details>`) con su respuesta. Las preguntas frecuentes van en los artículos, no en las páginas fijas.
+- **Soluciones en tarjetas con icono:** en las secciones cuyo título habla de soluciones, consejos, estrategias o "cómo mejorar / reducir / recuperar…", cada apartado `### ` pasa a ser una tarjeta (mismo estilo que las tarjetas de soluciones de las hijas). Reparto: 3 por fila; 4 = 2 + 2; 5 = 3 + 2; 7 = 2 + 3 + 2. El icono se elige por palabras del título del apartado (sueño, estrés, ejercicio, apoyo, alimentación, médico, hidratación, pantallas, cafeína…), siempre entre los iconos extraídos del original; si no encaja ninguno, una hoja.
 - **Imágenes verticales:** la primera de cada sección sube junto al título y flota a la derecha, con el texto alrededor. Las horizontales van a todo el ancho.
 - La primera letra de cada H2 se pone en mayúscula ("conclusión" → "Conclusión").
 
