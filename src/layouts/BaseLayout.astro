@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AvisoCookies from '../components/AvisoCookies.astro';
 import { socialLinks } from '../data/navigation.ts';
 
 interface Props {
@@ -62,18 +63,27 @@ const organizationJsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} is:inline />
 
     <!--
-      Tipografías reales del original (confirmadas por los <link> a Google
-      Fonts cargados por Elementor en clubdenutricion.es: fredoka.css,
-      rubik.css, entre otras) — Rubik para titulares, Fredoka para cuerpo.
-      Hay que cargar Fredoka 400 y Rubik 600: sin ellos el navegador
-      sustituye 400→500 y 600→700 y todo el texto se ve más grueso.
+      Tipografías reales del original — Rubik para titulares, Fredoka para
+      cuerpo (pesos 400-700). Alojadas en la propia web desde el 18 oct
+      (public/fonts/), en vez de Google Fonts, para no enviar la IP de las
+      visitantes a Google.
     -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="/fonts/rubik-latin-f673d8.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/fredoka-latin-11adc6.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+
+    <!-- Modo de consentimiento de Google: todo denegado hasta que la
+         visitante acepte en el aviso de cookies (AvisoCookies.astro). -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -82,6 +92,7 @@ const organizationJsonLd = {
       <slot />
     </main>
     <Footer />
+    <AvisoCookies />
     <!-- Enlaces externos siempre en pestaña nueva (decisión de la usuaria,
          18 oct), en cualquier página. -->
     <script is:inline>

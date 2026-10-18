@@ -10,9 +10,9 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 2. [ ] **Embudo de la guía:** mockup de la guía (libro sobre una mesa con té) en optin, gracias y descarga; las 7 categorías en "¿Y ahora qué?" (orden del menú, 4 + 3 o 3 + 4).
 3. [x] **Preview de Vercel:** redesplegado el 18 oct en https://clubdenutricion-preview.vercel.app (proyecto `clubdenutricion-preview` de la cuenta machanga-factory, no caduca). **No se actualiza solo con GitHub:** para ver cambios hay que compilar (`npm run build`), copiar `dist/` + `vercel.json` a una carpeta con nombre sin espacios y lanzar `vercel deploy --prod`. Pendiente para la migración: proyecto definitivo conectado al repo.
 4. [x] **Página 404** propia (`src/pages/404.astro`, 18 oct): hero lateral con «Volver al inicio», botón que abre el buscador y las 7 categorías del menú (4 + 3). Vercel la sirve con código 404. Si en el hosting definitivo no es Vercel, configurar `404.html` como página de error.
-5. [ ] **Aviso de cookies** (el WordPress tenía CookieYes; la nueva no tiene).
-6. [ ] **Páginas legales:** Privacidad y Cookies con las herramientas reales (Mailrelay, Vercel), sin WordPress ni WPForms.
-7. [ ] **Analítica:** decidir si se añade (p. ej. Vercel Analytics o Plausible, sin cookies).
+5. [x] **Aviso de cookies** (18 oct, `src/components/AvisoCookies.astro`): Aceptar / Rechazar al mismo nivel y Configurar por categorías (técnicas y analíticas), según la guía de la AEPD. Consent Mode v2 denegado por defecto; Google Analytics solo se carga tras aceptar; la elección dura 12 meses; enlace «Configurar cookies» en el pie para cambiarla (al retirar, borra las cookies `_ga`). Política de cookies reescrita. Fuentes Rubik y Fredoka alojadas en la web (`public/fonts/`), ya no se cargan de Google.
+6. [ ] **Páginas legales:** Cookies ya hecha. Falta Privacidad: quitar Comentarios / Medios / WPForms de WordPress, añadir Mailrelay, Vercel (alojamiento) y Google Analytics, y un correo de contacto (hoy no hay ninguno en las páginas legales).
+7. [ ] **Analítica:** decidido Google Analytics 4 (18 oct). Todo preparado: falta crear la propiedad y pegar el ID `G-…` en `src/data/analitica.ts` (mientras esté vacío no se carga nada de Google). Mientras tanto, el aviso de cookies se muestra igual.
 8. [ ] **4 decisiones abiertas** de `13-pendientes-decision.md` y redirección de `/alimentacion/2/…`.
 9. [ ] **Decisiones de contenido** pendientes (sección "Pendiente — por decidir con la usuaria"): emojis heredados, entrada de coaching, portada de 6 en 6, etc.
 10. [ ] **Token de GitHub expuesto:** revocarlo.
@@ -43,9 +43,9 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 - **Buscador:** en Vercel no se generaba el índice (solo corría `astro build`). Corregido: Pagefind se ejecuta dentro de `astro build` (`astro.config.mjs`). En local con `npm run dev` el buscador **no funciona nunca** (mensaje "solo disponible en la versión publicada"): es normal.
 - **El preview de Vercel ya no existe** (`DEPLOYMENT_NOT_FOUND`): eran despliegues temporales anónimos que caducan, **no se despliega solo desde GitHub**. Para ver la web: desplegar de nuevo un preview, o crear ya el proyecto definitivo de Vercel conectado al repo (checklist §2).
 - **Página 404 propia:** hecha (ver lista, punto 4).
-- **Aviso de cookies:** el WordPress tenía el plugin CookieYes (cookie-law-info); la web nueva no tiene aviso. Sin analítica no es obligatorio, pero el formulario de Mailrelay (iframe) y cualquier analítica futura sí pueden requerirlo. Revisar con la Política de cookies.
+- **Aviso de cookies:** hecho (ver lista, punto 5). Comprobado el 18 oct: sin aceptar, la web no instala ninguna cookie ni hace peticiones a Google (tampoco el formulario de Mailrelay).
 - **Páginas legales:** revisar que Privacidad y Cookies reflejen las herramientas reales (Mailrelay, Vercel; sin WordPress ni WPForms).
-- **Analítica:** el original no tenía Google Analytics ni Meta Pixel. Decidir si se añade algo (p. ej. Vercel Analytics o Plausible, sin cookies).
+- **Analítica:** Google Analytics 4 con consentimiento (ver lista, punto 7).
 - Resto de la checklist: `14-checklist-produccion.md`.
 
 ## Después: publicar la web nueva

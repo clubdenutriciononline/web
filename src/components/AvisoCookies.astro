@@ -1,0 +1,293 @@
+---
+// Aviso de cookies (18 oct), según la guía de cookies de la AEPD: Aceptar y
+// Rechazar al mismo nivel y en la primera capa, Configurar por categorías,
+// nada analítico antes de aceptar y un enlace fijo en el pie ("Configurar
+// cookies") para cambiar la elección en cualquier momento.
+// Google Analytics se carga aquí solo con consentimiento (ver
+// src/data/analitica.ts).
+import { GA_ID, CONSENTIMIENTO_CLAVE, CONSENTIMIENTO_MESES } from '../data/analitica';
+
+const config = { ga: GA_ID, clave: CONSENTIMIENTO_CLAVE, meses: CONSENTIMIENTO_MESES };
+---
+
+<div id="aviso-cookies" class="aviso-cookies" role="dialog" aria-modal="false" aria-labelledby="aviso-cookies-titulo" hidden>
+  <div class="aviso-inner">
+    <div class="aviso-capa" data-capa="1">
+      <p id="aviso-cookies-titulo" class="aviso-titulo">Tu privacidad nos importa</p>
+      <p class="aviso-texto">
+        Usamos cookies analíticas de Google Analytics para saber qué contenidos te resultan más útiles y mejorar la web. Solo se activan si las aceptas. Puedes cambiar tu elección cuando quieras desde «Configurar cookies», al pie de la página. <a href="/politica-de-cookies/">Más información</a>
+      </p>
+      <div class="aviso-botones">
+        <button type="button" class="aviso-boton" data-accion="rechazar">Rechazar</button>
+        <button type="button" class="aviso-boton" data-accion="aceptar">Aceptar</button>
+        <button type="button" class="aviso-enlace" data-accion="configurar">Configurar</button>
+      </div>
+    </div>
+
+    <div class="aviso-capa" data-capa="2" hidden>
+      <p class="aviso-titulo">Configurar cookies</p>
+      <div class="aviso-categoria">
+        <div>
+          <p class="aviso-cat-nombre">Técnicas</p>
+          <p class="aviso-cat-texto">Necesarias para que la web funcione y para recordar tu elección sobre las cookies. No se pueden desactivar.</p>
+        </div>
+        <span class="aviso-siempre">Siempre activas</span>
+      </div>
+      <div class="aviso-categoria">
+        <div>
+          <p class="aviso-cat-nombre"><label for="aviso-analiticas">Analíticas</label></p>
+          <p class="aviso-cat-texto">Google Analytics: nos dice, de forma agregada, cuántas personas visitan la web y qué páginas leen.</p>
+        </div>
+        <input type="checkbox" id="aviso-analiticas" class="aviso-interruptor" />
+      </div>
+      <div class="aviso-botones">
+        <button type="button" class="aviso-boton" data-accion="rechazar">Rechazar todas</button>
+        <button type="button" class="aviso-boton" data-accion="guardar">Guardar mi elección</button>
+        <button type="button" class="aviso-boton" data-accion="aceptar">Aceptar todas</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ config }}>
+  (function () {
+    var aviso = document.getElementById('aviso-cookies');
+    var capa1 = aviso.querySelector('[data-capa="1"]');
+    var capa2 = aviso.querySelector('[data-capa="2"]');
+    var casilla = document.getElementById('aviso-analiticas');
+
+    function leer() {
+      try {
+        var g = JSON.parse(localStorage.getItem(config.clave));
+        if (!g || typeof g.analiticas !== 'boolean') return null;
+        var caduca = new Date(g.fecha);
+        caduca.setMonth(caduca.getMonth() + config.meses);
+        return caduca > new Date() ? g : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function cargarAnalytics() {
+      if (!config.ga || window.__cdnGa) return;
+      window.__cdnGa = true;
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + config.ga;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', config.ga);
+    }
+
+    // Borra las cookies de Analytics si la visitante retira el consentimiento.
+    function borrarCookiesGa() {
+      document.cookie.split(';').forEach(function (c) {
+        var nombre = c.split('=')[0].trim();
+        if (/^_ga/.test(nombre)) {
+          var dominio = location.hostname.replace(/^www\./, '');
+          ['', '; domain=' + dominio, '; domain=.' + dominio].forEach(function (d) {
+            document.cookie = nombre + '=; Max-Age=0; path=/' + d;
+          });
+        }
+      });
+    }
+
+    function guardar(analiticas) {
+      var antes = leer();
+      try {
+        localStorage.setItem(config.clave, JSON.stringify({ analiticas: analiticas, fecha: new Date().toISOString() }));
+      } catch (e) {}
+      cerrar();
+      if (analiticas) {
+        cargarAnalytics();
+      } else if (antes && antes.analiticas) {
+        gtag('consent', 'update', { analytics_storage: 'denied' });
+        borrarCookiesGa();
+        location.reload();
+      }
+    }
+
+    function abrir(capa) {
+      var g = leer();
+      casilla.checked = !!(g && g.analiticas);
+      capa1.hidden = capa !== 1;
+      capa2.hidden = capa !== 2;
+      aviso.hidden = false;
+    }
+
+    function cerrar() {
+      aviso.hidden = true;
+    }
+
+    aviso.addEventListener('click', function (e) {
+      var accion = e.target.closest('[data-accion]');
+      if (!accion) return;
+      var a = accion.dataset.accion;
+      if (a === 'aceptar') guardar(true);
+      else if (a === 'rechazar') guardar(false);
+      else if (a === 'guardar') guardar(casilla.checked);
+      else if (a === 'configurar') abrir(2);
+    });
+
+    document.querySelectorAll('[data-configurar-cookies]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        abrir(2);
+      });
+    });
+
+    var guardado = leer();
+    if (!guardado) abrir(1);
+    else if (guardado.analiticas) cargarAnalytics();
+  })();
+</script>
+
+<style>
+  .aviso-cookies {
+    position: fixed;
+    inset: auto 16px 16px 16px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .aviso-cookies[hidden] {
+    display: none;
+  }
+  .aviso-inner {
+    pointer-events: auto;
+    width: 100%;
+    max-width: 760px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+    border-top: 4px solid #f964c0;
+    padding: 24px 28px;
+  }
+  .aviso-titulo {
+    margin: 0 0 8px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 20px;
+    color: #6c2f50;
+  }
+  .aviso-texto,
+  .aviso-cat-texto {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 25px;
+    color: #212121;
+  }
+  .aviso-texto a {
+    color: #6c2f50;
+    font-weight: 500;
+  }
+  .aviso-botones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+  }
+  /* Aceptar y Rechazar con el mismo aspecto (AEPD: rechazar no puede ser
+     más difícil ni menos visible que aceptar). */
+  .aviso-boton {
+    flex: 1 1 0;
+    min-width: 140px;
+    background: #6c2f50;
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    padding: 11px 20px;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .aviso-boton:hover,
+  .aviso-boton:focus-visible {
+    background: #f964c0;
+  }
+  .aviso-enlace {
+    background: none;
+    border: 0;
+    padding: 11px 8px;
+    color: #6c2f50;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .aviso-categoria {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .aviso-cat-nombre {
+    margin: 0 0 4px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 17px;
+    color: #6c2f50;
+  }
+  .aviso-siempre {
+    flex: none;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: #8a8a8a;
+  }
+  /* Interruptor */
+  .aviso-interruptor {
+    flex: none;
+    appearance: none;
+    width: 46px;
+    height: 26px;
+    border-radius: 999px;
+    background: #ccc;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin: 0;
+  }
+  .aviso-interruptor::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform 0.2s;
+  }
+  .aviso-interruptor:checked {
+    background: #6c2f50;
+  }
+  .aviso-interruptor:checked::after {
+    transform: translateX(20px);
+  }
+  .aviso-interruptor:focus-visible {
+    outline: 2px solid #f964c0;
+    outline-offset: 2px;
+  }
+  @media (max-width: 767px) {
+    .aviso-inner {
+      padding: 20px;
+    }
+    .aviso-boton {
+      flex-basis: 100%;
+    }
+    .aviso-enlace {
+      width: 100%;
+    }
+  }
+</style>
