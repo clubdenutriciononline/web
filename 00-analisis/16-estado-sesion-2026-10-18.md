@@ -4,6 +4,19 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 
 **Resumen:** la web nueva está completa a nivel de contenido y plantillas. Todas las páginas madre, las 22 hijas, las entradas del blog, Radar de Salud, recetas y Quiénes somos siguen ya su plantilla. Revisión final del 18 oct: 146 páginas, 0 enlaces internos rotos, sin afiliados ni despedidas antiguas, y ninguna página se sale de la pantalla en móvil (390 px).
 
+## Cierre de sesión (18 oct, tarde) — leer primero
+
+Hecho en esta parte de la sesión (todo en GitHub y en el preview):
+- Nuevo preview de Vercel permanente: https://clubdenutricion-preview.vercel.app (punto 3).
+- Página 404 propia (punto 4).
+- Aviso de cookies con Consent Mode v2, Google Analytics `G-T6KPWKGF7F` activo solo con consentimiento y fuentes alojadas en la web (puntos 5 y 7).
+- Páginas legales actualizadas, salvo los datos del titular y el Aviso legal, aplazados hasta que la usuaria tenga dirección postal (punto 6).
+- Redirecciones 301 de todas las direcciones antiguas de WordPress, slug `/ayuno-intermitente/`, página `/buscar/?q=` para las etiquetas y buscador limpio de bloques repetidos (punto 8).
+
+**Siguiente sesión:** elegir entre el punto 2 (embudo de la guía: mockup y 7 categorías), el 9 (decisiones de contenido), el 10 (revocar el token de GitHub) o el 1 si Mailrelay ha contestado. Después, la migración (punto 11).
+
+**Para redesplegar el preview** tras cualquier cambio: `npm run build`, copiar `dist/` y `vercel.json` a una carpeta con nombre sin espacios (la usada fue `clubdenutricion-preview`, que conserva su `.vercel/`) y lanzar `npx vercel deploy --prod --yes` desde ella. La carpeta con espacio «nueva web» no sirve como nombre de proyecto.
+
 ## Lista de lo que falta antes de migrar (resumen, 18 oct)
 
 1. [ ] **Embudos y email marketing:** recuperar Mailrelay (esperando al soporte) o elegir herramienta; migrar todo a Mailrelay (MailerLite no tiene suscriptores); replantear embudos; lead magnet de recetas fáciles; formulario y página de la lista de la comunidad; valorar API/MCP de Mailrelay.
