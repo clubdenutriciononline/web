@@ -28,6 +28,10 @@ import causaUltraprocesados from './_images/causa-ultraprocesados.jpg';
 import causaEstres from './_images/causa-estres.jpg';
 import causaSueno from './_images/causa-sueno.jpg';
 import causaGenetica from './_images/causa-genetica.jpg';
+import area1IndiceGlucemico from './_images/area-1-indice-glucemico.jpg';
+import area2CaminarDespuesDeComer from './_images/area-2-caminar-despues-de-comer.jpg';
+import area3SopYResistenciaALaInsul from './_images/area-3-sop-y-resistencia-a-la-insul.jpg';
+import area4OrdenDeLosAlimentos from './_images/area-4-orden-de-los-alimentos.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('resistencia-insulina'), 3, (p) => p.data.category.startsWith('metabolismo'));
 ---
@@ -41,6 +45,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Resistencia a la insulina"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1IndiceGlucemico, title: 'Índice glucémico', text: 'Qué alimentos elevan más la glucosa y cómo combinarlos.' },
+    { icon: area2CaminarDespuesDeComer, title: 'Caminar después de comer', text: 'El efecto de un paseo corto sobre la glucosa tras las comidas.' },
+    { icon: area3SopYResistenciaALaInsul, title: 'SOP y resistencia a la insulina', text: 'La relación entre la insulina y el síndrome de ovario poliquístico.' },
+    { icon: area4OrdenDeLosAlimentos, title: 'Orden de los alimentos', text: 'Por qué empezar por la verdura y la proteína ayuda a evitar picos.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

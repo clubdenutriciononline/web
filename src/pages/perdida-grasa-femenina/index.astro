@@ -27,6 +27,10 @@ import causaSueno from './_images/causa-sueno.jpg';
 import causaEstres from './_images/causa-estres.jpg';
 import causaAlimentacion from './_images/causa-alimentacion.jpg';
 import causaSedentarismo from './_images/causa-sedentarismo.jpg';
+import area1EntrenamientoDeFuerza from './_images/area-1-entrenamiento-de-fuerza.jpg';
+import area2ProteinaEnCadaComida from './_images/area-2-proteina-en-cada-comida.jpg';
+import area3CicloMenstrualYPerdidaDe from './_images/area-3-ciclo-menstrual-y-perdida-de.jpg';
+import area4EfectoRebote from './_images/area-4-efecto-rebote.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('perdida-grasa-femenina'), 3, (p) => p.data.category.startsWith('metabolismo'));
 ---
@@ -40,6 +44,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Pérdida de grasa femenina"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1EntrenamientoDeFuerza, title: 'Entrenamiento de fuerza', text: 'Por qué la fuerza es clave para perder grasa y conservar músculo.' },
+    { icon: area2ProteinaEnCadaComida, title: 'Proteína en cada comida', text: 'Cuánta proteína necesitas y cómo repartirla a lo largo del día.' },
+    { icon: area3CicloMenstrualYPerdidaDe, title: 'Ciclo menstrual y pérdida de grasa', text: 'Cómo adaptar alimentación y entrenamiento a cada fase.' },
+    { icon: area4EfectoRebote, title: 'Efecto rebote', text: 'Por qué las dietas muy restrictivas hacen recuperar el peso perdido.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

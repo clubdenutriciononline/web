@@ -30,6 +30,10 @@ import causaAutofagia from './_images/causa-autofagia.jpg';
 import causaOxidativo from './_images/causa-oxidativo.jpg';
 import causaMitocondrial from './_images/causa-mitocondrial.jpg';
 import causaHormonal from './_images/causa-hormonal.jpg';
+import area1AyunoYCicloMenstrual from './_images/area-1-ayuno-y-ciclo-menstrual.jpg';
+import area2QueComerAlRomperElAyuno from './_images/area-2-que-comer-al-romper-el-ayuno.jpg';
+import area3AyunoYEjercicio from './_images/area-3-ayuno-y-ejercicio.jpg';
+import area4CuandoNoConvieneAyunar from './_images/area-4-cuando-no-conviene-ayunar.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('ayuno-intermitente'), 3, (p) => p.data.category.startsWith('metabolismo'));
 ---
@@ -43,6 +47,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Ayuno intermitente"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1AyunoYCicloMenstrual, title: 'Ayuno y ciclo menstrual', text: 'Por qué las mujeres pueden necesitar adaptar el ayuno a su ciclo.' },
+    { icon: area2QueComerAlRomperElAyuno, title: 'Qué comer al romper el ayuno', text: 'Cómo hacer la primera comida para mantener la energía.' },
+    { icon: area3AyunoYEjercicio, title: 'Ayuno y ejercicio', text: 'Cómo combinar los entrenamientos con las horas de ayuno.' },
+    { icon: area4CuandoNoConvieneAyunar, title: 'Cuándo no conviene ayunar', text: 'Situaciones en las que el ayuno no es una buena opción.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

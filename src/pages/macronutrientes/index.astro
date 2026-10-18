@@ -26,6 +26,10 @@ import causaGrasas from './_images/causa-grasas.jpg';
 import causaEliminar from './_images/causa-eliminar.jpg';
 import causaDesayuno from './_images/causa-desayuno.jpg';
 import causaEtapa from './_images/causa-etapa.jpg';
+import area1ProteinaParaMujeres from './_images/area-1-proteina-para-mujeres.jpg';
+import area2HidratosDeCarbonoBuenos from './_images/area-2-hidratos-de-carbono-buenos.jpg';
+import area3GrasasSaludables from './_images/area-3-grasas-saludables.jpg';
+import area4ElPlatoEquilibrado from './_images/area-4-el-plato-equilibrado.jpg';
 
 // En el blog migrado estos artículos conservan la categoría "nutricion"; en
 // el WordPress son los de NUTRICIÓN > Macronutrientes, así que se enlazan por
@@ -48,6 +52,12 @@ const articulos = pickRelacionados(
   heroImageAlt="Mujer a punto de comer un plato equilibrado con salmón, huevo, quinoa, boniato y aguacate"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1ProteinaParaMujeres, title: 'Proteína para mujeres', text: 'Cuánta necesitas según tu edad y tu actividad.' },
+    { icon: area2HidratosDeCarbonoBuenos, title: 'Hidratos de carbono buenos', text: 'Qué hidratos priorizar para mantener la energía estable.' },
+    { icon: area3GrasasSaludables, title: 'Grasas saludables', text: 'Aceite de oliva, aguacate y pescado azul: por qué no hay que temerlas.' },
+    { icon: area4ElPlatoEquilibrado, title: 'El plato equilibrado', text: 'Cómo repartir los macronutrientes en cada comida sin contar calorías.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

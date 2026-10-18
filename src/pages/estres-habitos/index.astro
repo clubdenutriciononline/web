@@ -27,6 +27,10 @@ import causaEstiloVida from './_images/causa-estilo-vida.jpg';
 import causaEconomico from './_images/causa-economico.jpg';
 import causaEntorno from './_images/causa-entorno.jpg';
 import causaSalud from './_images/causa-salud.jpg';
+import area1RespiracionParaElEstres from './_images/area-1-respiracion-para-el-estres.jpg';
+import area2OrganizacionYCargaMental from './_images/area-2-organizacion-y-carga-mental.jpg';
+import area3EstresYAlimentacion from './_images/area-3-estres-y-alimentacion.jpg';
+import area4DesconexionDigital from './_images/area-4-desconexion-digital.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('estres'), 3, (p) => p.data.category.startsWith('mentalidad'));
 ---
@@ -40,6 +44,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Estrés y hábitos"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1RespiracionParaElEstres, title: 'Respiración para el estrés', text: 'Técnicas sencillas para calmar el sistema nervioso en minutos.' },
+    { icon: area2OrganizacionYCargaMental, title: 'Organización y carga mental', text: 'Cómo repartir tareas y reducir la sensación de sobrecarga.' },
+    { icon: area3EstresYAlimentacion, title: 'Estrés y alimentación', text: 'Cómo cambia lo que comemos cuando estamos estresadas.' },
+    { icon: area4DesconexionDigital, title: 'Desconexión digital', text: 'El impacto de las notificaciones constantes en el estrés.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

@@ -6,7 +6,7 @@
 // los textos aprobados en 00-analisis/Textos - Hormonas/06 - Inflamación
 // hormonal.md. Sin preguntas frecuentes (van en el artículo del blog).
 // Ilustraciones de causas generadas con IA en lote. Áreas clave y 2.ª
-// imagen de la relación, pendientes del lote de fotos. Iconos de soluciones
+// imagen de la relación del lote de fotos del 18 oct. Iconos de soluciones
 // del original; píldoras con iconos ya extraídos de las fuentes del original.
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
@@ -21,12 +21,17 @@ import * as iconos from '../../lib/iconos';
 import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/infografia.jpg';
 import relacion1Img from './_images/como-afecta.jpg';
+import relacion2Img from './_images/relacion-2.jpg';
 import causaEstres from './_images/causa-estres.jpg';
 import causaAlimentacion from './_images/causa-alimentacion.jpg';
 import causaDescanso from './_images/causa-descanso.jpg';
 import causaSedentarismo from './_images/causa-sedentarismo.jpg';
 import causaGrasa from './_images/causa-grasa.jpg';
 import causaHormonal from './_images/causa-hormonal.jpg';
+import area1AlimentacionAntiinflamatori from './_images/area-1-alimentacion-antiinflamatori.jpg';
+import area2InflamacionYDigestion from './_images/area-2-inflamacion-y-digestion.jpg';
+import area3SopEInflamacion from './_images/area-3-sop-e-inflamacion.jpg';
+import area4EstresEInflamacion from './_images/area-4-estres-e-inflamacion.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('inflamacion-hormonal'), 3, (p) => p.data.category.startsWith('hormonas'));
 ---
@@ -40,6 +45,13 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Inflamación hormonal"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areasHeading="Áreas clave relacionadas con la Inflamación hormonal"
+  areas={[
+    { icon: area1AlimentacionAntiinflamatori, title: 'Alimentación antiinflamatoria', text: 'Qué alimentos priorizar y cuáles limitar para reducir la inflamación en el día a día.' },
+    { icon: area2InflamacionYDigestion, title: 'Inflamación y digestión', text: 'Cómo se relacionan la microbiota, el intestino y la inflamación general del cuerpo.' },
+    { icon: area3SopEInflamacion, title: 'SOP e inflamación', text: 'El papel de la inflamación y la insulina en el síndrome de ovario poliquístico.' },
+    { icon: area4EstresEInflamacion, title: 'Estrés e inflamación', text: 'Por qué el estrés crónico mantiene el cuerpo inflamado y cómo romper el círculo.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">
@@ -127,6 +139,7 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     <p><strong>Cortisol.</strong> El estrés mantenido eleva el cortisol y, con el tiempo, el cuerpo responde peor a su efecto antiinflamatorio.</p>
     <p><strong>Estrógenos y progesterona.</strong> Los estrógenos tienen un efecto protector frente a la inflamación; por eso en la perimenopausia y la menopausia muchas mujeres notan más hinchazón, dolores o cambios en la piel.</p>
     <p><strong>Tiroides.</strong> Se ha relacionado con condiciones como el síndrome de ovario poliquístico o la enfermedad de Hashimoto, entre otras alteraciones del sistema endocrino. En el Hashimoto, la inflamación de la tiroides es precisamente lo que reduce su función.</p>
+    <Image src={relacion2Img} alt="Mujer preparando una infusión antiinflamatoria" />
     <p>Por ello, es importante no centrarse únicamente en los síntomas, sino también en identificar y abordar las posibles causas subyacentes para favorecer una recuperación más estable del equilibrio hormonal.</p>
   </RelacionImagenes>
 

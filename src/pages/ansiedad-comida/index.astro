@@ -28,6 +28,10 @@ import causaEmocional from './_images/causa-emocional.jpg';
 import causaConocimiento from './_images/causa-conocimiento.jpg';
 import causaEstres from './_images/causa-estres.jpg';
 import causaGeneticos from './_images/causa-geneticos.jpg';
+import area1HambreRealOHambreEmocion from './_images/area-1-hambre-real-o-hambre-emocion.jpg';
+import area2MindfulEating from './_images/area-2-mindful-eating.jpg';
+import area3AntojosDeDulce from './_images/area-3-antojos-de-dulce.jpg';
+import area4DietasYAnsiedad from './_images/area-4-dietas-y-ansiedad.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('ansiedad-comida'), 3, (p) => p.data.category.startsWith('mentalidad'));
 ---
@@ -41,6 +45,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Ansiedad por la comida"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1HambreRealOHambreEmocion, title: 'Hambre real o hambre emocional', text: 'Cómo distinguirlas y qué hacer en cada caso.' },
+    { icon: area2MindfulEating, title: 'Mindful eating', text: 'Comer con atención plena para disfrutar más y comer mejor.' },
+    { icon: area3AntojosDeDulce, title: 'Antojos de dulce', text: 'Por qué aparecen y cómo gestionarlos sin culpa.' },
+    { icon: area4DietasYAnsiedad, title: 'Dietas y ansiedad', text: 'Cómo las restricciones alimentan el ciclo de ansiedad y atracón.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

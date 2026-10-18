@@ -27,6 +27,10 @@ import causaVariedad from './_images/causa-variedad.jpg';
 import causaModas from './_images/causa-modas.jpg';
 import causaComerFuera from './_images/causa-comer-fuera.jpg';
 import causaEtiquetas from './_images/causa-etiquetas.jpg';
+import area1AlimentosDeTemporada from './_images/area-1-alimentos-de-temporada.jpg';
+import area2LeerEtiquetas from './_images/area-2-leer-etiquetas.jpg';
+import area3Legumbres from './_images/area-3-legumbres.jpg';
+import area4FrutosSecosYSemillas from './_images/area-4-frutos-secos-y-semillas.jpg';
 
 const articulos = pickRelacionados(
   await getCollection('blog'),
@@ -45,6 +49,12 @@ const articulos = pickRelacionados(
   heroImageAlt="Mujer colocando alimentos frescos en la encimera de la cocina"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1AlimentosDeTemporada, title: 'Alimentos de temporada', text: 'Por qué conviene comer según la temporada y cómo elegirlos.' },
+    { icon: area2LeerEtiquetas, title: 'Leer etiquetas', text: 'Cómo interpretar la lista de ingredientes y la información nutricional.' },
+    { icon: area3Legumbres, title: 'Legumbres', text: 'Cómo incluirlas más a menudo y evitar las molestias digestivas.' },
+    { icon: area4FrutosSecosYSemillas, title: 'Frutos secos y semillas', text: 'Su papel en la energía, las hormonas y la saciedad.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

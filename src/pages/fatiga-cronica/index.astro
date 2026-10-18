@@ -27,6 +27,10 @@ import causaEstres from './_images/causa-estres.jpg';
 import causaSueno from './_images/causa-sueno.jpg';
 import causaMedicamentos from './_images/causa-medicamentos.jpg';
 import causaOtros from './_images/causa-otros.jpg';
+import area1DeficitDeHierro from './_images/area-1-deficit-de-hierro.jpg';
+import area2VitaminaDYEnergia from './_images/area-2-vitamina-d-y-energia.jpg';
+import area3FatigaYEstadoDeAnimo from './_images/area-3-fatiga-y-estado-de-animo.jpg';
+import area4RecuperacionTrasElEjercic from './_images/area-4-recuperacion-tras-el-ejercic.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('fatiga-cronica'), 3, (p) => p.data.category.startsWith('energia'));
 ---
@@ -40,6 +44,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Mujer cansada sentada en el sofá con la mano en la frente"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1DeficitDeHierro, title: 'Déficit de hierro', text: 'Por qué la falta de hierro es una de las causas más frecuentes de cansancio en mujeres.' },
+    { icon: area2VitaminaDYEnergia, title: 'Vitamina D y energía', text: 'Cómo influye la vitamina D en el cansancio, el ánimo y las defensas.' },
+    { icon: area3FatigaYEstadoDeAnimo, title: 'Fatiga y estado de ánimo', text: 'La relación entre el cansancio persistente, la ansiedad y la tristeza.' },
+    { icon: area4RecuperacionTrasElEjercic, title: 'Recuperación tras el ejercicio', text: 'Cómo moverse sin agotarse cuando la energía está baja.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

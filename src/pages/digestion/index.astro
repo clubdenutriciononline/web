@@ -27,6 +27,10 @@ import causaEnfermedades from './_images/causa-enfermedades.jpg';
 import causaMedicamentos from './_images/causa-medicamentos.jpg';
 import causaHidratacion from './_images/causa-hidratacion.jpg';
 import causaSueno from './_images/causa-sueno.jpg';
+import area1HinchazonAbdominal from './_images/area-1-hinchazon-abdominal.jpg';
+import area2ComerDespacio from './_images/area-2-comer-despacio.jpg';
+import area3FibraYTransito from './_images/area-3-fibra-y-transito.jpg';
+import area4DigestionYEstres from './_images/area-4-digestion-y-estres.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('digestion'), 3, (p) => p.data.category.startsWith('microbiota'));
 ---
@@ -40,6 +44,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Digestión"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1HinchazonAbdominal, title: 'Hinchazón abdominal', text: 'Por qué aparece y qué hábitos ayudan a reducirla.' },
+    { icon: area2ComerDespacio, title: 'Comer despacio', text: 'El papel de la masticación y del ritmo al comer en la digestión.' },
+    { icon: area3FibraYTransito, title: 'Fibra y tránsito', text: 'Cuánta fibra necesitas y cómo aumentarla sin molestias.' },
+    { icon: area4DigestionYEstres, title: 'Digestión y estrés', text: 'Cómo afecta el eje intestino-cerebro a las digestiones.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

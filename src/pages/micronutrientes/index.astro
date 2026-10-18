@@ -27,6 +27,10 @@ import causaSol from './_images/causa-sol.jpg';
 import causaAbsorcion from './_images/causa-absorcion.jpg';
 import causaDietas from './_images/causa-dietas.jpg';
 import causaEtapas from './_images/causa-etapas.jpg';
+import area1Hierro from './_images/area-1-hierro.jpg';
+import area2Magnesio from './_images/area-2-magnesio.jpg';
+import area3CalcioYVitaminaD from './_images/area-3-calcio-y-vitamina-d.jpg';
+import area4VitaminaB12 from './_images/area-4-vitamina-b12.jpg';
 
 // En el blog migrado estos artículos conservan la categoría "nutricion"; en
 // el WordPress son los de NUTRICIÓN > Micronutrientes, así que se enlazan por
@@ -49,6 +53,12 @@ const articulos = pickRelacionados(
   heroImageAlt="Mujer sentada a la mesa con una ensalada de espinacas, naranja y semillas y una tostada de sardinas"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1Hierro, title: 'Hierro', text: 'Las necesidades de hierro de las mujeres y cómo mejorar su absorción.' },
+    { icon: area2Magnesio, title: 'Magnesio', text: 'Su papel en el descanso, el estrés y los calambres.' },
+    { icon: area3CalcioYVitaminaD, title: 'Calcio y vitamina D', text: 'Cómo cuidar los huesos en cada etapa de la vida.' },
+    { icon: area4VitaminaB12, title: 'Vitamina B12', text: 'Quién necesita prestarle más atención y por qué.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

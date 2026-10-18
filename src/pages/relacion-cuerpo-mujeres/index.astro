@@ -32,6 +32,10 @@ import causaDialogo from './_images/causa-dialogo.jpg';
 import causaEstres from './_images/causa-estres.jpg';
 import causaAutocuidado from './_images/causa-autocuidado.jpg';
 import causaRedes from './_images/causa-redes.jpg';
+import area1Autocompasion from './_images/area-1-autocompasion.jpg';
+import area2RedesSocialesEImagenCorp from './_images/area-2-redes-sociales-e-imagen-corp.jpg';
+import area3MoversePorPlacer from './_images/area-3-moverse-por-placer.jpg';
+import area4CuerpoYCambiosHormonales from './_images/area-4-cuerpo-y-cambios-hormonales.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('relacion'), 3, (p) => p.data.category.startsWith('mentalidad'));
 ---
@@ -45,6 +49,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Relación con el cuerpo"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1Autocompasion, title: 'Autocompasión', text: 'Cómo hablarte con más amabilidad y menos exigencia.' },
+    { icon: area2RedesSocialesEImagenCorp, title: 'Redes sociales e imagen corporal', text: 'Cómo afecta la comparación constante y cómo protegerte.' },
+    { icon: area3MoversePorPlacer, title: 'Moverse por placer', text: 'Recuperar el ejercicio como disfrute, no como castigo.' },
+    { icon: area4CuerpoYCambiosHormonales, title: 'Cuerpo y cambios hormonales', text: 'Aceptar cómo cambia el cuerpo con la edad y las etapas hormonales.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

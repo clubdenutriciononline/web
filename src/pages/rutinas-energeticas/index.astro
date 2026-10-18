@@ -26,6 +26,10 @@ import causaSalud from './_images/causa-salud.jpg';
 import causaSedentarismo from './_images/causa-sedentarismo.jpg';
 import causaEstres from './_images/causa-estres.jpg';
 import causaMedicacion from './_images/causa-medicacion.jpg';
+import area1RutinaDeManana from './_images/area-1-rutina-de-manana.jpg';
+import area2PausasActivas from './_images/area-2-pausas-activas.jpg';
+import area3DesayunosQueDanEnergia from './_images/area-3-desayunos-que-dan-energia.jpg';
+import area4RitmoCircadiano from './_images/area-4-ritmo-circadiano.jpg';
 
 const articulos = pickRelacionados(
   await getCollection('blog'),
@@ -44,6 +48,12 @@ const articulos = pickRelacionados(
   heroImageAlt="Mujer activa y con energía por la mañana"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1RutinaDeManana, title: 'Rutina de mañana', text: 'Los primeros hábitos del día que marcan la energía de las horas siguientes.' },
+    { icon: area2PausasActivas, title: 'Pausas activas', text: 'Pequeños movimientos para cortar el sedentarismo en la jornada.' },
+    { icon: area3DesayunosQueDanEnergia, title: 'Desayunos que dan energía', text: 'Cómo construir un desayuno que mantenga la energía estable.' },
+    { icon: area4RitmoCircadiano, title: 'Ritmo circadiano', text: 'Cómo alinear horarios de comida, luz y sueño con el reloj interno.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

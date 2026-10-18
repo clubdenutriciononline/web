@@ -28,6 +28,10 @@ import causaEstres from './_images/causa-estres.jpg';
 import causaMedicamentos from './_images/causa-medicamentos.jpg';
 import causaCronicas from './_images/causa-cronicas.jpg';
 import causaEstiloVida from './_images/causa-estilo-vida.jpg';
+import area1PermeabilidadIntestinal from './_images/area-1-permeabilidad-intestinal.jpg';
+import area2AlimentosAntiinflamatorios from './_images/area-2-alimentos-antiinflamatorios.jpg';
+import area3IntoleranciasAlimentarias from './_images/area-3-intolerancias-alimentarias.jpg';
+import area4IntestinoYPiel from './_images/area-4-intestino-y-piel.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('inflamacion-intestinal'), 3, (p) => p.data.category.startsWith('microbiota'));
 ---
@@ -41,6 +45,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Inflamación intestinal"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1PermeabilidadIntestinal, title: 'Permeabilidad intestinal', text: 'Qué es la barrera intestinal y por qué importa.' },
+    { icon: area2AlimentosAntiinflamatorios, title: 'Alimentos antiinflamatorios', text: 'Qué alimentos ayudan a calmar el intestino.' },
+    { icon: area3IntoleranciasAlimentarias, title: 'Intolerancias alimentarias', text: 'Cómo identificarlas sin caer en dietas restrictivas.' },
+    { icon: area4IntestinoYPiel, title: 'Intestino y piel', text: 'La relación entre la salud intestinal y los problemas de piel.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

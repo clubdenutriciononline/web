@@ -28,6 +28,10 @@ import causaEstres from './_images/causa-estres.jpg';
 import causaSueno from './_images/causa-sueno.jpg';
 import causaCronicas from './_images/causa-cronicas.jpg';
 import causaEstiloVida from './_images/causa-estilo-vida.jpg';
+import area1AlimentosFermentados from './_images/area-1-alimentos-fermentados.jpg';
+import area2Prebioticos from './_images/area-2-prebioticos.jpg';
+import area3MicrobiotaYHormonas from './_images/area-3-microbiota-y-hormonas.jpg';
+import area4ProbioticosTrasLosAntibio from './_images/area-4-probioticos-tras-los-antibio.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('probioticos'), 3, (p) => p.data.category.startsWith('microbiota'));
 ---
@@ -41,6 +45,12 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Probióticos y alimentación"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1AlimentosFermentados, title: 'Alimentos fermentados', text: 'Kéfir, yogur, chucrut y kimchi: cómo incluirlos en el día a día.' },
+    { icon: area2Prebioticos, title: 'Prebióticos', text: 'Los alimentos que sirven de alimento a las bacterias beneficiosas.' },
+    { icon: area3MicrobiotaYHormonas, title: 'Microbiota y hormonas', text: 'Cómo influye la microbiota en los estrógenos y el ciclo.' },
+    { icon: area4ProbioticosTrasLosAntibio, title: 'Probióticos tras los antibióticos', text: 'Cómo cuidar la microbiota después de un tratamiento.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

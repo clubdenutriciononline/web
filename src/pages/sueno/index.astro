@@ -28,6 +28,10 @@ import causaMental from './_images/causa-mental.jpg';
 import causaRutina from './_images/causa-rutina.jpg';
 import causaPantallas from './_images/causa-pantallas.jpg';
 import causaAlimentacion from './_images/causa-alimentacion.jpg';
+import area1SuenoYHormonas from './_images/area-1-sueno-y-hormonas.jpg';
+import area2CenasQueAyudanADormir from './_images/area-2-cenas-que-ayudan-a-dormir.jpg';
+import area3PantallasYLuzAzul from './_images/area-3-pantallas-y-luz-azul.jpg';
+import area4SiestasYDescansoDiurno from './_images/area-4-siestas-y-descanso-diurno.jpg';
 
 const articulos = pickRelacionados(
   await getCollection('blog'),
@@ -46,6 +50,12 @@ const articulos = pickRelacionados(
   heroImageAlt="Mujer descansando plácidamente en la cama"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1SuenoYHormonas, title: 'Sueño y hormonas', text: 'Cómo influyen el ciclo, la perimenopausia y la menopausia en el descanso.' },
+    { icon: area2CenasQueAyudanADormir, title: 'Cenas que ayudan a dormir', text: 'Qué cenar y a qué hora para favorecer un sueño reparador.' },
+    { icon: area3PantallasYLuzAzul, title: 'Pantallas y luz azul', text: 'El efecto del móvil antes de dormir y cómo crear una rutina de desconexión.' },
+    { icon: area4SiestasYDescansoDiurno, title: 'Siestas y descanso diurno', text: 'Cuándo ayudan y cuándo empeoran el sueño nocturno.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

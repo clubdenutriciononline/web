@@ -4,7 +4,7 @@
 // artículo; su contenido se reparte en las secciones de la plantilla con los
 // textos aprobados en 00-analisis/Textos - Hormonas/05 - Cortisol.md.
 // Ilustraciones de causas generadas con IA en lote (estilo Ciclo menstrual).
-// Áreas clave aprobadas, pendientes de sus fotos (lote de fotos). Sin
+// Áreas clave con fotos del lote de fotos del 18 oct. Sin
 // bibliografía (la plantilla de hijas no la lleva). Iconos ya extraídos de
 // las fuentes del original en otras páginas (el original no tiene aquí).
 import { getCollection } from 'astro:content';
@@ -27,6 +27,10 @@ import causaCafeina from './_images/causa-cafeina.jpg';
 import causaEjercicio from './_images/causa-ejercicio.jpg';
 import causaDietas from './_images/causa-dietas.jpg';
 import causaHormonal from './_images/causa-hormonal.jpg';
+import area1EstresYSueno from './_images/area-1-estres-y-sueno.jpg';
+import area2CortisolYPeso from './_images/area-2-cortisol-y-peso.jpg';
+import area3CortisolYCicloMenstrual from './_images/area-3-cortisol-y-ciclo-menstrual.jpg';
+import area4CafeYEstimulantes from './_images/area-4-cafe-y-estimulantes.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('cortisol'), 3, (p) => p.data.category.startsWith('hormonas'));
 ---
@@ -40,6 +44,13 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Cortisol alto en mujeres"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areasHeading="Áreas clave relacionadas con el Cortisol"
+  areas={[
+    { icon: area1EstresYSueno, title: 'Estrés y sueño', text: 'Cómo el cortisol altera el descanso y qué rutinas ayudan a dormir mejor.' },
+    { icon: area2CortisolYPeso, title: 'Cortisol y peso', text: 'Por qué el estrés dificulta perder grasa abdominal y cómo abordarlo.' },
+    { icon: area3CortisolYCicloMenstrual, title: 'Cortisol y ciclo menstrual', text: 'La relación entre el estrés, la ovulación y los cambios del ciclo.' },
+    { icon: area4CafeYEstimulantes, title: 'Café y estimulantes', text: 'Cuánto, cuándo y cómo tomarlos sin disparar el cortisol.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

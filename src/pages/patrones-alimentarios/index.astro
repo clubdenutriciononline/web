@@ -26,6 +26,10 @@ import causaRestriccion from './_images/causa-restriccion.jpg';
 import causaYoyo from './_images/causa-yoyo.jpg';
 import causaEtapa from './_images/causa-etapa.jpg';
 import causaAyuno from './_images/causa-ayuno.jpg';
+import area1DietaMediterranea from './_images/area-1-dieta-mediterranea.jpg';
+import area2AlimentacionFlexitariana from './_images/area-2-alimentacion-flexitariana.jpg';
+import area3BatchCooking from './_images/area-3-batch-cooking.jpg';
+import area4ComerFueraDeCasa from './_images/area-4-comer-fuera-de-casa.jpg';
 
 const articulos = pickRelacionados(
   await getCollection('blog'),
@@ -44,6 +48,12 @@ const articulos = pickRelacionados(
   heroImageAlt="Mujer sentada a la mesa con una comida de estilo mediterráneo: pescado a la plancha, ensalada, garbanzos, pan integral y aceitunas"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areas={[
+    { icon: area1DietaMediterranea, title: 'Dieta mediterránea', text: 'Por qué sigue siendo uno de los patrones más saludables.' },
+    { icon: area2AlimentacionFlexitariana, title: 'Alimentación flexitariana', text: 'Cómo reducir la carne sin renunciar a nada.' },
+    { icon: area3BatchCooking, title: 'Batch cooking', text: 'Organizar la semana para comer bien con poco tiempo.' },
+    { icon: area4ComerFueraDeCasa, title: 'Comer fuera de casa', text: 'Cómo mantener tus hábitos en restaurantes y viajes.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">

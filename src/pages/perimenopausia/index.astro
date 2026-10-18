@@ -5,7 +5,7 @@
 // plantilla con los textos aprobados en
 // 00-analisis/Textos - Hormonas/04 - Perimenopausia.md. Ilustraciones de
 // "factores" generadas con IA en lote (estilo Ciclo menstrual). Áreas clave
-// aprobadas, pendientes de sus fotos (lote de fotos). Sin bibliografía (la
+// con fotos del lote de fotos del 18 oct. Sin bibliografía (la
 // plantilla de hijas no la lleva). Iconos ya extraídos de las fuentes del
 // original en otras páginas (el original no tiene iconos aquí).
 import { getCollection } from 'astro:content';
@@ -20,7 +20,7 @@ import { Image } from 'astro:assets';
 import * as iconos from '../../lib/iconos';
 import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
-import relacion1Img from './_images/relacion-1.jpg'; // provisional: recorte de sintomas.jpg (importancia.jpg es una mujer de ~25 años); foto nueva en el lote
+import relacion1Img from './_images/relacion-1.jpg'; // foto del lote del 18 oct (importancia.jpg, mujer de ~25 años, no se usa)
 import relacion2Img from './_images/solucion.jpg';
 import causaEdad from './_images/causa-edad.jpg';
 import causaGenetica from './_images/causa-genetica.jpg';
@@ -28,6 +28,10 @@ import causaTabaco from './_images/causa-tabaco.jpg';
 import causaEstres from './_images/causa-estres.jpg';
 import causaPeso from './_images/causa-peso.jpg';
 import causaTratamientos from './_images/causa-tratamientos.jpg';
+import area1SuenoYDescanso from './_images/area-1-sueno-y-descanso.jpg';
+import area2PesoYMetabolismo from './_images/area-2-peso-y-metabolismo.jpg';
+import area3SaludEmocional from './_images/area-3-salud-emocional.jpg';
+import area4HuesosYFuerza from './_images/area-4-huesos-y-fuerza.jpg';
 
 const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('perimenopausia'), 3, (p) => p.data.category.startsWith('hormonas'));
 ---
@@ -41,6 +45,13 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   heroImageAlt="Perimenopausia"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
+  areasHeading="Áreas clave relacionadas con la Perimenopausia"
+  areas={[
+    { icon: area1SuenoYDescanso, title: 'Sueño y descanso', text: 'Por qué cuesta más dormir en esta etapa y qué ayuda a recuperar un descanso reparador.' },
+    { icon: area2PesoYMetabolismo, title: 'Peso y metabolismo', text: 'Cómo cambian el músculo, la grasa y la energía, y cómo adaptar la alimentación y el ejercicio.' },
+    { icon: area3SaludEmocional, title: 'Salud emocional', text: 'La relación entre las fluctuaciones hormonales, el ánimo y la ansiedad.' },
+    { icon: area4HuesosYFuerza, title: 'Huesos y fuerza', text: 'Por qué es el momento de cuidar los huesos y la masa muscular antes de la menopausia.' },
+  ]}
   articulosRelacionados={articulos}
 >
   <section class="intro">
