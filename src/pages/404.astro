@@ -1,0 +1,129 @@
+---
+// Página 404 propia (18 oct). Vercel la sirve sola para cualquier URL que no
+// exista (dist/404.html). Formato de las hijas: hero lateral y banda con las
+// 7 categorías del menú, en su orden (4 + 3). El botón "Buscar" abre el
+// buscador de la cabecera. Fuera de buscadores.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SiguenosRedes from '../components/SiguenosRedes.astro';
+import { mainNav } from '../data/navigation';
+import mujerImg from './_images/mujer-optin.jpg';
+
+const categorias = mainNav.filter((item) => item.children?.length);
+---
+
+<BaseLayout
+  title="Página no encontrada - Club de Nutrición"
+  description="La página que buscas no existe o ha cambiado de dirección."
+  noindex
+>
+  <div class="hub">
+    <Hero
+      title="Vaya, esta página no existe"
+      subtitle="Puede que haya cambiado de dirección o que el enlace no sea correcto. Tranquila: todo lo demás sigue aquí."
+      ctaLabel="Volver al inicio"
+      ctaHref="/"
+      image={mujerImg}
+      imageAlt="Mujer sonriente sentada en un sillón con una taza de té"
+      layout="lateral"
+      titleSize="hija"
+    />
+
+    <section class="buscar-404">
+      <h2>¿Buscabas algo en concreto?</h2>
+      <p>Prueba con el buscador: escribe un tema, como «menopausia» o «cansancio».</p>
+      <button type="button" class="boton" id="abrir-buscador">Buscar en la web</button>
+    </section>
+
+    <div class="full-bleed band-b">
+      <section class="categorias-404">
+        <h2>O explora nuestras secciones</h2>
+        <div class="enlaces">
+          {categorias.map((c) => <a href={c.href}>{c.label}</a>)}
+        </div>
+        <p class="mas">También puedes leer el <a href="/blog/">Blog</a> o el <a href="/radar-de-salud/">Radar de Salud</a>.</p>
+      </section>
+    </div>
+
+    <SiguenosRedes />
+  </div>
+</BaseLayout>
+
+<script>
+  document.getElementById('abrir-buscador')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('search-toggle')?.click();
+  });
+</script>
+
+<style>
+  .buscar-404,
+  .categorias-404 {
+    max-width: 760px;
+    margin-inline: auto;
+    padding-block: var(--space-section);
+    text-align: center;
+  }
+  .buscar-404 h2,
+  .categorias-404 h2 {
+    color: #6c2f50;
+    text-align: center;
+  }
+  .buscar-404 p,
+  .categorias-404 p {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+  }
+  .boton {
+    display: inline-block;
+    background: #6c2f50;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    padding: 12px 28px;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s;
+  }
+  .boton:hover {
+    background: #f964c0;
+  }
+  /* 7 categorías: 4 arriba y 3 abajo. */
+  .enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 700px;
+    margin: 1rem auto 1.5rem;
+  }
+  .enlaces a {
+    flex: 0 0 calc((100% - 36px) / 4);
+    box-sizing: border-box;
+    background: #fff;
+    color: #6c2f50;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s, color 0.2s;
+  }
+  .enlaces a:hover {
+    background: #6c2f50;
+    color: #fff;
+  }
+  .mas a {
+    color: #6c2f50;
+    font-weight: 500;
+  }
+  @media (max-width: 767px) {
+    .enlaces a {
+      flex-basis: calc((100% - 12px) / 2);
+    }
+  }
+</style>
