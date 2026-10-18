@@ -38,6 +38,8 @@ interface Props {
   // Solo con 7 píldoras: '4-3' (por defecto, Metabolismo) o '3-4'
   // (Inflamación intestinal).
   layout7?: '4-3' | '3-4';
+  // Solo con 8 tarjetas: '3-2-3' (Estrés y hábitos).
+  layout8?: '3-2-3';
   // 'texto': Fredoka 22px/33px (síntomas). 'destacado': 24px/39px con
   // 1.3px de espaciado (bloque de soluciones de Energía y Metabolismo).
   subheadingVariant?: 'texto' | 'destacado';
@@ -51,7 +53,7 @@ interface Props {
   // cada página decide si esta fila concreta cae dentro de una banda o no.
   band?: 'a' | 'b' | false;
 }
-const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, variant = 'chip', band = false, layout5 = '3-2', layout6, layout7 = '4-3', subheadingVariant = 'texto', subheadingAlign = 'justify', cardAlign = 'center' } = Astro.props;
+const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, variant = 'chip', band = false, layout5 = '3-2', layout6, layout7 = '4-3', layout8, subheadingVariant = 'texto', subheadingAlign = 'justify', cardAlign = 'center' } = Astro.props;
 ---
 
 <section data-variant={variant} data-sub={subheadingVariant} data-align={subheadingAlign} data-card-align={cardAlign} class:list={['soluciones', band && 'full-bleed', band === 'a' && 'band-a', band === 'b' && 'band-b']}>
@@ -61,7 +63,7 @@ const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, varian
     {subtitulo && <h3 class="subtitulo">{subtitulo}</h3>}
     {(subheading ? (Array.isArray(subheading) ? subheading : [subheading]) : []).map((t) => <p class="subheading">{t}</p>)}
     {subtituloLista && <h3 class="subtitulo">{subtituloLista}</h3>}
-    <div class="grid" data-count={soluciones.length} data-layout5={layout5} data-layout6={layout6} data-layout7={layout7}>
+    <div class="grid" data-count={soluciones.length} data-layout5={layout5} data-layout6={layout6} data-layout7={layout7} data-layout8={layout8}>
       {soluciones.map((s) => (
         <div class="solucion-item">
           {s.icon && (
@@ -257,6 +259,25 @@ const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, varian
       grid-template-columns: 1fr;
     }
     section[data-variant='card'] .grid[data-layout6='2-3-1'] .solucion-item {
+      grid-column: auto !important;
+    }
+  }
+  /* 8 soluciones en 3 + 2 anchas + 3 (Estrés y hábitos). */
+  section[data-variant='card'] .grid[data-count='8'][data-layout8='3-2-3'] {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  section[data-variant='card'] .grid[data-layout8='3-2-3'] .solucion-item {
+    grid-column: span 2;
+  }
+  section[data-variant='card'] .grid[data-layout8='3-2-3'] .solucion-item:nth-child(4),
+  section[data-variant='card'] .grid[data-layout8='3-2-3'] .solucion-item:nth-child(5) {
+    grid-column: span 3;
+  }
+  @media (max-width: 767px) {
+    section[data-variant='card'] .grid[data-count='8'][data-layout8='3-2-3'] {
+      grid-template-columns: 1fr;
+    }
+    section[data-variant='card'] .grid[data-layout8='3-2-3'] .solucion-item {
       grid-column: auto !important;
     }
   }

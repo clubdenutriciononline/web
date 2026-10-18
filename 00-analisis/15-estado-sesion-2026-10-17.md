@@ -2,9 +2,17 @@
 
 Resumen de lo hecho y de lo que queda pendiente, para retomar sin perder contexto. Todo lo de abajo está subido a GitHub (`master`, último commit de la sesión) y desplegado en el preview de Vercel: https://temporary-prompt-coral-lgtc57c.vercel.app
 
+## Actualización 18 oct
+
+- **Imágenes por lotes con la API de Gemini (hecho):** script `scripts/gemini_lote.py` (enviar / estado / recoger). Modelo Nano Banana 2 Lite (`gemini-3.1-flash-lite-image`), 1:1 a 1K, Batch API (mitad de precio, unos 0,017 $ por imagen) y las 2 ilustraciones de Ciclo menstrual como referencia de estilo. La clave se lee de `C:\Users\Proyectos\.claude.json` (perfil Proyecto), nunca va en el script. Primer lote: 56 ilustraciones de causas para las 9 hijas, 56 de 56 correctas, en unos 20 minutos (escenas en `scripts/lote_causas_2026-10-18.json`). Se guardan a 700×700 JPG en `src/pages/<slug>/_images/causa-*.jpg`.
+- **Hijas adaptadas a la plantilla:** Metabolismo (Pérdida de grasa femenina, Resistencia a la insulina, Ayuno intermitente), Microbiota (Digestión, Inflamación intestinal, Probióticos y alimentación) y Mentalidad (Ansiedad por la comida, Estrés y hábitos, Relación con el cuerpo). Textos, iconos (31 nuevos extraídos de las fuentes del original) y tipografía medidos en el original.
+- **Componentes:** Hero admite `titleSize="medida"` con `titleMedida` (cada hija del original usa una tipografía distinta en el hero). SolucionesList: 8 píldoras 4+4, 6 en 2+3+1 o 3+3, 7 píldoras en 3+4 y 8 tarjetas en 3+2+3.
+- **Diferencias con el original, corregidas (revisar si se quieren mantener):** Ayuno intermitente tenía en la intro un fragmento pegado de otra página ("…ulan prácticamente todo en el cuerpo femenino…") y "niciar" en lugar de "Iniciar"; Relación con el cuerpo repetía la tarjeta "Estrés y presión emocional" (aquí sale una vez, 8 causas).
+- **Falta:** las hijas de Hormonas (`SubpageTemplateA`), y lo de abajo.
+
 ## Para retomar — por este orden
 
-1. **Imágenes con la API de Gemini en lugar del MCP** (pedido de la usuaria, revisar el 18 oct). Comparar coste por imagen y modelo elegible (p. ej. uno más barato o sin "mejora de prompt"), control del tamaño de salida y límites de gasto. Valorar un script propio (como `CDN auto/scripts/drive_upload.py`) con la clave del perfil Proyecto que genere en lote, guarde directamente en `src/pages/*/_images` ya redimensionadas y lleve la cuenta de imágenes y gasto por tanda. Contexto: el MCP usa `gemini-nano-banana-2.1` a 1K; el 17 oct se agotó primero el saldo de prepago (error 402) y después saltó el límite de gasto mensual (error 429, "monthly spending cap"); la usuaria recargó y subió el límite.
+1. ~~Imágenes con la API de Gemini en lugar del MCP~~ — hecho el 18 oct (ver arriba).
 2. **Reenfocar Rutinas energéticas en las rutinas** (la usuaria nota que parece la página de Fatiga crónica). El texto es fiel al original de WordPress, que ya está centrado en la fatiga ("Causas de la Fatiga", "Síntomas de la Fatiga"; "fatiga" aparece 23 veces), y las 6 ilustraciones de causas son reutilizadas de Fatiga crónica (5) y Alimentos (1). Propuesta pendiente de validar con la usuaria:
    - "Hábitos que te roban energía" en lugar de "Causas de la fatiga".
    - "Señales de que tu rutina no te está dando energía" en lugar de "Síntomas de la fatiga".
@@ -13,7 +21,7 @@ Resumen de lo hecho y de lo que queda pendiente, para retomar sin perder context
    - 6 ilustraciones nuevas propias de rutinas (mañana, pausas activas, horarios, movimiento…), estilo Ciclo menstrual, a 1K.
 3. **Adaptar el resto de páginas hijas** a la plantilla validada en Fatiga crónica (`Plantilla - Páginas hijas.md`).
    - Hechas: Fatiga crónica, Sueño, Rutinas energéticas (Energía completa) y las 4 de Alimentación (nuevas).
-   - Faltan: **Metabolismo** (Pérdida de grasa femenina, Resistencia a la insulina, Ayuno intermitente), **Microbiota** (Digestión, Inflamación intestinal, Probióticos y alimentación), **Mentalidad** (Ansiedad por la comida, Estrés y hábitos, Relación con el cuerpo) y **Hormonas** (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol, Inflamación hormonal; usan `SubpageTemplateA` y tienen variantes: título en el hero, listas en 2 columnas, soluciones en píldoras, "Explora cada área").
+   - Hechas el 18 oct: Metabolismo, Microbiota y Mentalidad (las 9). Falta **Hormonas** (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol, Inflamación hormonal; usan `SubpageTemplateA` y tienen variantes: título en el hero, listas en 2 columnas, soluciones en píldoras, "Explora cada área").
    - Método en cada una: medir el original (estructura + `getComputedStyle`), textos completos del original, iconos del original (si no están en npm, extraer el glifo de la fuente que carga el WordPress; ver `src/lib/iconos.ts`), causas con ilustración estilo Ciclo menstrual (sin emoji en el título), síntomas en viñetas, relacionados con respaldo de la madre, comprobación visual y de tipografía contra el original.
 4. **Revisar el formato de las entradas de blog** (plantilla de artículo `ArticleLayout`): tipografía, imágenes, tabla de contenidos, etc., igual que se ha hecho con madres, hijas y recetas.
 

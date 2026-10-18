@@ -1,36 +1,78 @@
 ---
+// Estrés y hábitos — página hija de Mentalidad, adaptada a la plantilla de
+// hijas (Fatiga crónica; ver 00-analisis/Plantilla - Páginas hijas.md).
+// Medida con getComputedStyle sobre https://clubdenutricion.es/estres-habitos/:
+// hero con la frase en Fredoka 500 22px/33px, intro, 5 píldoras, texto +
+// checklist, "¿Qué es…?", causas con ilustración (estilo Ciclo menstrual,
+// generadas con IA en lote, sin el emoji del original), síntomas en viñetas,
+// relación con imágenes intercaladas y soluciones 3 + 2 + 3.
+// Iconos reales del original desde src/lib/iconos.ts.
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
 import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
-import ListaSintomas from '../../components/ListaSintomas.astro';
 import RelacionImagenes from '../../components/RelacionImagenes.astro';
 import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
 import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
 import relacion1Img from './_images/relacion-1.jpg';
 import relacion2Img from './_images/relacion-2.jpg';
+import causaLaboral from './_images/causa-laboral.jpg';
+import causaRelaciones from './_images/causa-relaciones.jpg';
+import causaEstiloVida from './_images/causa-estilo-vida.jpg';
+import causaEconomico from './_images/causa-economico.jpg';
+import causaEntorno from './_images/causa-entorno.jpg';
+import causaSalud from './_images/causa-salud.jpg';
 
-const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('estres-habitos'));
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('estres'), 3, (p) => p.data.category.startsWith('mentalidad'));
 ---
 
 <SubpageTemplateB
   seoTitle="Estrés y hábitos: cómo reducir el estrés mejorando tu rutina"
-  seoDescription="Cómo el estrés crónico afecta a los hábitos diarios y qué estrategias ayudan a gestionarlo."
-  heroTitle="Estrés y hábitos: cómo reducir el estrés mejorando tu rutina diaria"
-  heroSubtitle="El estrés puede afectar nuestros hábitos diarios, el descanso, la alimentación y la salud emocional. Comprender cómo se relacionan el estrés y los hábitos saludables es clave para mejorar el bienestar físico y mental, recuperar el equilibrio y cuidar la salud a largo plazo."
+  seoDescription="Cómo afecta el estrés crónico a los hábitos, el descanso y la salud, y qué estrategias ayudan a gestionarlo."
+  heroTitle="El estrés puede afectar nuestros hábitos diarios, el descanso, la alimentación y la salud emocional. Comprender cómo se relacionan el estrés y los hábitos saludables es clave para mejorar el bienestar físico y mental, recuperar el equilibrio y cuidar la salud a largo plazo."
+  heroTitleSize="frase-media"
   heroImage={heroImg}
   heroImageAlt="Estrés y hábitos"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
   articulosRelacionados={articulos}
 >
-  <p>El estrés es una respuesta natural del organismo ante situaciones de presión o desafío. Sin embargo, cuando el estrés se vuelve constante o crónico, puede afectar de forma negativa a la salud física, mental y emocional. Además de influir en el estado de ánimo, el estrés también puede alterar los hábitos diarios, el descanso, la alimentación, la concentración y el bienestar general.</p>
-  <p>Con el tiempo, mantener niveles elevados de estrés puede favorecer la aparición de síntomas como fatiga, problemas digestivos, dolores de cabeza, alteraciones del sueño o ansiedad. Por eso, comprender la relación entre estrés y hábitos saludables es fundamental para mejorar la calidad de vida, recuperar el equilibrio emocional y cuidar la salud a largo plazo.</p>
-  <p>En esta guía descubrirás cómo afecta el estrés al cuerpo y a la mente, cuáles son sus síntomas más frecuentes y qué hábitos pueden ayudarte a reducir sus efectos de forma natural.</p>
+  <section class="intro">
+    <p>El estrés es una respuesta natural del organismo ante situaciones de presión o desafío. Sin embargo, cuando el estrés se vuelve constante o crónico, puede afectar de forma negativa a la salud física, mental y emocional. Además de influir en el estado de ánimo, el estrés también puede alterar los hábitos diarios, el descanso, la alimentación, la concentración y el bienestar general.</p>
+    <p>Con el tiempo, mantener niveles elevados de estrés puede favorecer la aparición de síntomas como fatiga, problemas digestivos, dolores de cabeza, alteraciones del sueño o ansiedad. Por eso, comprender la relación entre estrés y hábitos saludables es fundamental para mejorar la calidad de vida, recuperar el equilibrio emocional y cuidar la salud a largo plazo.</p>
+    <p>En esta guía descubrirás cómo afecta el estrés al cuerpo y a la mente, cuáles son sus síntomas más frecuentes y qué hábitos pueden ayudarte a reducir sus efectos de forma natural.</p>
+  </section>
 
-  <TextoConImagen heading="¿Qué es el Estrés y cómo nos afecta?" image={definicionImg} imageAlt="Qué es el estrés">
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Fatiga y cansancio', icon: iconos.bateriaApagada },
+      { title: 'Problemas de sueño', icon: iconos.despertador },
+      { title: 'Dolor de cabeza y migrañas', icon: iconos.cerebroIdeas },
+      { title: 'Problemas de digestión', icon: iconos.estomago },
+      { title: 'Ansiedad y depresión', icon: iconos.latido },
+    ]}
+  />
+
+  <section class="intro lista">
+    <p class="primera">¿Sabías que el estrés crónico puede afectar la salud física y mental de forma silenciosa? Aunque muchas veces pasa desapercibido, mantener niveles elevados de estrés durante largos periodos puede alterar el descanso, la alimentación, el estado de ánimo y numerosos hábitos diarios que influyen directamente en el bienestar y la calidad de vida.</p>
+    <ChecklistCard
+      columns={1}
+      items={[
+        'Cómo el estrés crónico puede afectar los hábitos diarios, el comportamiento y la salud emocional.',
+        'Cuáles son las principales causas y síntomas del estrés crónico y cómo identificarlos a tiempo.',
+        'De qué manera el estrés prolongado puede relacionarse con problemas de salud como la ansiedad, la depresión o el agotamiento mental.',
+        'Qué estrategias y hábitos saludables pueden ayudarte a gestionar el estrés, mejorar el bienestar y recuperar el equilibrio físico y emocional.',
+      ]}
+    />
+  </section>
+
+  <TextoConImagen heading="¿Qué es el Estrés y cómo nos afecta?" image={definicionImg} imageAlt="Qué es el estrés y cómo nos afecta">
     <p>El estrés es una respuesta biológica y psicológica natural del organismo ante situaciones que percibe como demandantes, amenazantes o desafiantes.</p>
     <p>Esta reacción forma parte de un mecanismo de supervivencia que activa el sistema nervioso para ayudarnos a reaccionar rápidamente, mejorar la concentración y prepararnos para afrontar una situación concreta.</p>
     <p>En el corto plazo, el estrés puede ser incluso útil. Sin embargo, cuando esta activación se mantiene en el tiempo —lo que conocemos como estrés crónico— el cuerpo permanece en un estado constante de alerta.</p>
@@ -46,63 +88,80 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     <p>Por eso, comprender cómo funciona el estrés y cómo influye en nuestro organismo es el primer paso para aprender a regularlo y recuperar el equilibrio físico y emocional.</p>
   </TextoConImagen>
 
-  <p>Entendiendo las causas del estrés crónico para poder gestionarlo mejor y prevenir sus efectos en la salud física, mental y emocional</p>
-  <p>El estrés crónico no aparece por una única razón, sino que suele ser el resultado de la combinación de varios factores que se mantienen en el tiempo. Identificar el origen del estrés es clave para poder gestionarlo de forma eficaz y reducir su impacto en los hábitos, el bienestar y la calidad de vida.</p>
-  <p>A continuación, exploramos las causas más comunes del estrés crónico.</p>
   <CausasGrid
     heading="Causas del Estrés Crónico"
+    subheading={[
+      'Entendiendo las causas del estrés crónico para poder gestionarlo mejor y prevenir sus efectos en la salud física, mental y emocional',
+      'El estrés crónico no aparece por una única razón, sino que suele ser el resultado de la combinación de varios factores que se mantienen en el tiempo. Identificar el origen del estrés es clave para poder gestionarlo de forma eficaz y reducir su impacto en los hábitos, el bienestar y la calidad de vida.',
+      'A continuación, exploramos las causas más comunes del estrés crónico.',
+    ]}
     causas={[
-      { icon: '💼', title: 'Estrés laboral y profesional', text: 'El entorno laboral es una de las fuentes más frecuentes de estrés crónico. La sobrecarga de tareas, los plazos ajustados, la presión por cumplir objetivos o la falta de control sobre el trabajo pueden generar una tensión constante. Cuando este tipo de presión se mantiene durante largos periodos, puede afectar al descanso, la concentración y la motivación, además de influir en los hábitos diarios fuera del trabajo.' },
-      { icon: '👨‍👩‍👧', title: 'Estrés en las relaciones y la familia', text: 'Las relaciones personales también pueden ser una fuente importante de estrés. Conflictos familiares, dificultades de pareja, responsabilidades de cuidado o expectativas emocionales pueden generar una carga mental continua. Este tipo de estrés suele ser especialmente intenso porque afecta directamente al entorno emocional más cercano, lo que puede dificultar la desconexión y el descanso mental.' },
-      { icon: '⚖️', title: 'Estilo de vida y hábitos diarios', text: 'Más allá de los factores externos, ciertos hábitos pueden contribuir significativamente al estrés crónico. La falta de sueño, una alimentación poco equilibrada, el sedentarismo o el exceso de trabajo sin descanso adecuado pueden aumentar la vulnerabilidad al estrés. Estos factores crean un círculo en el que el propio estilo de vida alimenta el estrés, dificultando su regulación.' },
-      { icon: '💰', title: 'Estrés económico y financiero', text: 'Las preocupaciones relacionadas con el dinero, las deudas o la estabilidad económica son una causa habitual de estrés prolongado. La incertidumbre financiera puede generar ansiedad constante y sensación de falta de control. Este tipo de estrés suele afectar no solo a nivel mental, sino también a la toma de decisiones y a los hábitos de vida.' },
-      { icon: '🌍', title: 'Entorno social y medio ambiente', text: 'El entorno en el que vivimos también influye en nuestros niveles de estrés. Factores como el ruido, la contaminación, el ritmo acelerado de la sociedad o la exposición constante a información negativa pueden aumentar la tensión diaria. Aunque a menudo no se percibe de forma directa, este tipo de estrés ambiental puede acumularse con el tiempo.' },
-      { icon: '🏥', title: 'Salud física y bienestar', text: 'Los problemas de salud, tanto propios como de personas cercanas, pueden generar un estado constante de preocupación. El dolor crónico, las enfermedades o la incertidumbre médica pueden mantener al organismo en alerta. Esto puede influir directamente en el estado emocional, el sueño y la capacidad de mantener hábitos saludables.' },
-    ]}
-  />
-  <p>Ahora que hemos explorado las causas del estrés crónico, es fundamental comprender cómo este influye directamente en nuestros hábitos diarios y en nuestros comportamientos. Entender esta relación nos permite tomar mayor conciencia de nuestros patrones de vida y dar el primer paso hacia una mejor gestión del estrés y un mayor bienestar físico y mental.</p>
-
-  <p>Identificando los síntomas del estrés crónico para poder reconocerlo a tiempo, comprender su impacto en el organismo y tomar medidas para gestionarlo de forma efectiva.</p>
-  <p>El estrés crónico puede manifestarse de muchas formas diferentes, tanto a nivel físico como emocional y conductual. A menudo, estos síntomas aparecen de manera progresiva, lo que hace que puedan pasar desapercibidos hasta que comienzan a afectar significativamente la calidad de vida.</p>
-  <ListaSintomas
-    heading="Síntomas del Estrés Crónico"
-    items={[
-      'Fatiga y cansancio constante: la fatiga persistente es uno de los síntomas más frecuentes del estrés crónico. Puede presentarse como sensación de agotamiento físico y mental, falta de energía, dificultad para concentrarse o sensación de no haber descansado adecuadamente, incluso después de dormir.',
-      'Dolor de cabeza y migrañas: el estrés prolongado puede generar tensión muscular y sobrecarga mental, lo que a menudo se traduce en dolores de cabeza recurrentes o episodios de migraña. Esta tensión suele acumularse en zonas como el cuello, los hombros y la mandíbula.',
-      'Problemas de sueño: el estrés crónico puede alterar los ciclos del sueño, dificultando conciliar el descanso o provocando despertares frecuentes durante la noche. Esto genera un círculo vicioso, ya que la falta de sueño aumenta aún más los niveles de estrés.',
-      'Problemas de digestión: el sistema digestivo es especialmente sensible al estrés. Pueden aparecer síntomas como digestiones pesadas, hinchazón abdominal, molestias intestinales, acidez o cambios en el ritmo intestinal.',
-      'Ansiedad y estado de ánimo bajo: el estrés mantenido en el tiempo puede afectar directamente al equilibrio emocional, provocando ansiedad, irritabilidad, sensación de sobrecarga mental o incluso síntomas depresivos. Estos cambios pueden influir en la motivación y en la calidad de vida diaria.',
-      'Pérdida de interés en actividades: otra señal frecuente del estrés crónico es la disminución del interés por actividades que antes resultaban agradables. Puede aparecer apatía, desmotivación o sensación de desconexión con la rutina diaria, lo que afecta al bienestar general.',
+      { icon: causaLaboral, title: 'Estrés laboral y profesional', text: 'El entorno laboral es una de las fuentes más frecuentes de estrés crónico. La sobrecarga de tareas, los plazos ajustados, la presión por cumplir objetivos o la falta de control sobre el trabajo pueden generar una tensión constante. Cuando este tipo de presión se mantiene durante largos periodos, puede afectar al descanso, la concentración y la motivación, además de influir en los hábitos diarios fuera del trabajo.' },
+      { icon: causaRelaciones, title: 'Estrés en las relaciones y la familia', text: 'Las relaciones personales también pueden ser una fuente importante de estrés. Conflictos familiares, dificultades de pareja, responsabilidades de cuidado o expectativas emocionales pueden generar una carga mental continua. Este tipo de estrés suele ser especialmente intenso porque afecta directamente al entorno emocional más cercano, lo que puede dificultar la desconexión y el descanso mental.' },
+      { icon: causaEstiloVida, title: 'Estilo de vida y hábitos diarios', text: 'Más allá de los factores externos, ciertos hábitos pueden contribuir significativamente al estrés crónico. La falta de sueño, una alimentación poco equilibrada, el sedentarismo o el exceso de trabajo sin descanso adecuado pueden aumentar la vulnerabilidad al estrés. Estos factores crean un círculo en el que el propio estilo de vida alimenta el estrés, dificultando su regulación.' },
+      { icon: causaEconomico, title: 'Estrés económico y financiero', text: 'Las preocupaciones relacionadas con el dinero, las deudas o la estabilidad económica son una causa habitual de estrés prolongado. La incertidumbre financiera puede generar ansiedad constante y sensación de falta de control. Este tipo de estrés suele afectar no solo a nivel mental, sino también a la toma de decisiones y a los hábitos de vida.' },
+      { icon: causaEntorno, title: 'Entorno social y medio ambiente', text: 'El entorno en el que vivimos también influye en nuestros niveles de estrés. Factores como el ruido, la contaminación, el ritmo acelerado de la sociedad o la exposición constante a información negativa pueden aumentar la tensión diaria. Aunque a menudo no se percibe de forma directa, este tipo de estrés ambiental puede acumularse con el tiempo.' },
+      { icon: causaSalud, title: 'Salud física y bienestar', text: 'Los problemas de salud, tanto propios como de personas cercanas, pueden generar un estado constante de preocupación. El dolor crónico, las enfermedades o la incertidumbre médica pueden mantener al organismo en alerta. Esto puede influir directamente en el estado emocional, el sueño y la capacidad de mantener hábitos saludables.' },
     ]}
   />
 
-  <p>Entendiendo cómo el estrés crónico impacta en el organismo para poder identificar sus efectos y tomar medidas que protejan la salud física, mental y emocional.</p>
-  <RelacionImagenes
-    heading="Relación entre el Estrés Crónico y la Salud"
-    images={[
-      { src: relacion1Img, alt: 'Infografía relación entre estrés crónico y salud' },
-      { src: relacion2Img, alt: 'Estrés y hábitos y equilibrio emocional' },
-    ]}
-  >
+  <p class="parrafo-suelto">Ahora que hemos explorado las causas del estrés crónico, es fundamental comprender cómo este influye directamente en nuestros hábitos diarios y en nuestros comportamientos. Entender esta relación nos permite tomar mayor conciencia de nuestros patrones de vida y dar el primer paso hacia una mejor gestión del estrés y un mayor bienestar físico y mental.</p>
+
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Síntomas del Estrés Crónico</h2>
+      <p class="subheading">Identificando los síntomas del estrés crónico para poder reconocerlo a tiempo, comprender su impacto en el organismo y tomar medidas para gestionarlo de forma efectiva.</p>
+      <p class="subheading">El estrés crónico puede manifestarse de muchas formas diferentes, tanto a nivel físico como emocional y conductual. A menudo, estos síntomas aparecen de manera progresiva, lo que hace que puedan pasar desapercibidos hasta que comienzan a afectar significativamente la calidad de vida.</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Fatiga y cansancio constante', text: 'La fatiga persistente es uno de los síntomas más frecuentes del estrés crónico. Puede presentarse como sensación de agotamiento físico y mental, falta de energía, dificultad para concentrarse o sensación de no haber descansado adecuadamente, incluso después de dormir.' },
+          { title: 'Dolor de cabeza y migrañas', text: 'El estrés prolongado puede generar tensión muscular y sobrecarga mental, lo que a menudo se traduce en dolores de cabeza recurrentes o episodios de migraña. Esta tensión suele acumularse en zonas como el cuello, los hombros y la mandíbula.' },
+          { title: 'Problemas de sueño', text: 'El estrés crónico puede alterar los ciclos del sueño, dificultando conciliar el descanso o provocando despertares frecuentes durante la noche. Esto genera un círculo vicioso, ya que la falta de sueño aumenta aún más los niveles de estrés.' },
+          { title: 'Problemas de digestión', text: 'El sistema digestivo es especialmente sensible al estrés. Pueden aparecer síntomas como digestiones pesadas, hinchazón abdominal, molestias intestinales, acidez o cambios en el ritmo intestinal.' },
+          { title: 'Ansiedad y estado de ánimo bajo', text: 'El estrés mantenido en el tiempo puede afectar directamente al equilibrio emocional, provocando ansiedad, irritabilidad, sensación de sobrecarga mental o incluso síntomas depresivos. Estos cambios pueden influir en la motivación y en la calidad de vida diaria.' },
+          { title: 'Pérdida de interés en actividades', text: 'Otra señal frecuente del estrés crónico es la disminución del interés por actividades que antes resultaban agradables. Puede aparecer apatía, desmotivación o sensación de desconexión con la rutina diaria, lo que afecta al bienestar general.' },
+        ]}
+      />
+    </section>
+  </div>
+
+  <RelacionImagenes heading="Relación entre el Estrés Crónico y la Salud">
+    <p>Entendiendo cómo el estrés crónico impacta en el organismo para poder identificar sus efectos y tomar medidas que protejan la salud física, mental y emocional.</p>
     <p>El estrés crónico no solo afecta al estado de ánimo o a los hábitos diarios, sino que también tiene un impacto directo sobre diferentes sistemas del cuerpo. Cuando el organismo permanece durante largos periodos en estado de alerta, se produce una activación constante de hormonas como el cortisol y la adrenalina, lo que puede alterar el equilibrio natural del cuerpo.</p>
     <p>A nivel físico, este estado prolongado puede debilitar el sistema inmunológico, haciendo que el cuerpo sea más vulnerable a infecciones y enfermedades. También puede influir en el sistema cardiovascular, aumentando el riesgo de hipertensión arterial y otros problemas relacionados con el corazón.</p>
     <p>Además, el estrés mantenido en el tiempo puede afectar al metabolismo y a la regulación de la glucosa, lo que en algunos casos se asocia con un mayor riesgo de desarrollar alteraciones como la diabetes. A nivel cerebral, puede influir en la concentración, la memoria y el estado emocional, favoreciendo la aparición de ansiedad, irritabilidad o síntomas depresivos.</p>
+    <Image src={relacion1Img} alt="Infografía: relación entre el estrés crónico y la salud" />
     <p>Por otro lado, la relación entre el estrés y la salud es bidireccional: cuando la salud se ve afectada, esto también puede aumentar los niveles de estrés, generando un círculo difícil de romper si no se aborda adecuadamente.</p>
+    <Image src={relacion2Img} alt="Mujer gestionando el estrés" />
     <p>Comprender esta conexión es fundamental para tomar conciencia de la importancia de gestionar el estrés de forma activa. A partir de aquí, el siguiente paso es aprender estrategias prácticas que ayuden a reducir su impacto y mejorar el bienestar general.</p>
   </RelacionImagenes>
 
-  <p>Estrategias prácticas y basadas en evidencia para reducir el estrés crónico, regular la respuesta del sistema nervioso y mejorar la salud física, mental y emocional. La clave no está en eliminar por completo el estrés, sino en aprender a gestionarlo de forma efectiva y sostenida en el tiempo.</p>
   <SolucionesList
     heading="Soluciones para Gestionar el Estrés Crónico"
+    subheading="Estrategias prácticas y basadas en evidencia para reducir el estrés crónico, regular la respuesta del sistema nervioso y mejorar la salud física, mental y emocional. La clave no está en eliminar por completo el estrés, sino en aprender a gestionarlo de forma efectiva y sostenida en el tiempo."
+    subheadingVariant="destacado"
+    variant="card"
+    layout8="3-2-3"
+    band="b"
     soluciones={[
-      { title: 'Ejercicio regular', body: 'La actividad física es una de las herramientas más eficaces para reducir el estrés. El ejercicio ayuda a regular las hormonas del estrés, mejora el estado de ánimo gracias a la liberación de endorfinas y favorece un mejor descanso. No es necesario realizar entrenamientos intensos: caminar, nadar, montar en bicicleta o practicar ejercicio moderado de forma constante ya puede generar mejoras significativas en el bienestar general.' },
-      { title: 'Terapia cognitivo-conductual', body: 'La terapia cognitivo-conductual (TCC) es una de las intervenciones psicológicas más eficaces para el manejo del estrés. Se centra en identificar patrones de pensamiento negativos y reemplazarlos por formas más realistas y funcionales de interpretar las situaciones. Este enfoque ayuda a mejorar la gestión emocional, reducir la ansiedad y desarrollar estrategias más saludables para afrontar el estrés diario.' },
-      { title: 'Cambios en la dieta y estilo de vida', body: 'Una alimentación equilibrada y unos hábitos de vida saludables pueden influir directamente en los niveles de estrés. Reducir el consumo de ultraprocesados, cafeína en exceso y azúcares refinados puede ayudar a estabilizar la energía y el estado de ánimo. Dormir bien, mantener rutinas regulares y cuidar los tiempos de descanso también es fundamental para reducir la carga fisiológica del estrés.' },
-      { title: 'Meditación y yoga', body: 'La meditación y el yoga ayudan a calmar el sistema nervioso, reducir la activación mental y mejorar la conexión entre cuerpo y mente. Estas prácticas favorecen la respiración consciente, la relajación muscular y la reducción de pensamientos repetitivos. Con la práctica regular, pueden mejorar la concentración, la calidad del sueño y la capacidad de respuesta ante situaciones estresantes.' },
-      { title: 'Apoyo social y conexión con otros', body: 'El apoyo social es un factor clave en la regulación del estrés. Hablar con amigos, familiares o personas de confianza ayuda a reducir la sensación de aislamiento y mejora la gestión emocional. Sentirse acompañado y comprendido puede disminuir significativamente la carga mental y favorecer una mejor adaptación a situaciones difíciles.' },
-      { title: 'Gestión del tiempo y organización diaria', body: 'Una mala gestión del tiempo puede aumentar la sensación de sobrecarga. Aprender a priorizar tareas, establecer objetivos realistas y evitar la multitarea reduce significativamente el estrés diario. Organizar la rutina también ayuda a recuperar sensación de control.' },
-      { title: 'Higiene del sueño', body: 'Dormir mal aumenta la sensibilidad al estrés y reduce la capacidad de regulación emocional. Mantener horarios regulares, evitar pantallas antes de dormir y crear rutinas de descanso ayuda a mejorar la calidad del sueño.' },
-      { title: 'Reducción de estimulantes y hábitos nocivos', body: 'El exceso de cafeína, alcohol o el uso constante de pantallas puede aumentar la activación del sistema nervioso y empeorar los síntomas del estrés. Reducir estos estímulos ayuda a estabilizar el estado emocional y mejorar el descanso.' },
+      { title: 'Ejercicio regular', icon: iconos.yoga, body: 'La actividad física es una de las herramientas más eficaces para reducir el estrés. El ejercicio ayuda a regular las hormonas del estrés, mejora el estado de ánimo gracias a la liberación de endorfinas y favorece un mejor descanso. No es necesario realizar entrenamientos intensos: caminar, nadar, montar en bicicleta o practicar ejercicio moderado de forma constante ya puede generar mejoras significativas en el bienestar general.' },
+      { title: 'Terapia cognitivo-conductual', icon: iconos.cerebroMdi, body: 'La terapia cognitivo-conductual (TCC) es una de las intervenciones psicológicas más eficaces para el manejo del estrés. Se centra en identificar patrones de pensamiento negativos y reemplazarlos por formas más realistas y funcionales de interpretar las situaciones. Este enfoque ayuda a mejorar la gestión emocional, reducir la ansiedad y desarrollar estrategias más saludables para afrontar el estrés diario.' },
+      { title: 'Cambios en la dieta y estilo de vida', icon: iconos.cestaComida, body: 'Una alimentación equilibrada y unos hábitos de vida saludables pueden influir directamente en los niveles de estrés. Reducir el consumo de ultraprocesados, cafeína en exceso y azúcares refinados puede ayudar a estabilizar la energía y el estado de ánimo. Dormir bien, mantener rutinas regulares y cuidar los tiempos de descanso también es fundamental para reducir la carga fisiológica del estrés.' },
+      { title: 'Meditación y yoga', icon: iconos.meditacion, body: 'La meditación y el yoga ayudan a calmar el sistema nervioso, reducir la activación mental y mejorar la conexión entre cuerpo y mente. Estas prácticas favorecen la respiración consciente, la relajación muscular y la reducción de pensamientos repetitivos. Con la práctica regular, pueden mejorar la concentración, la calidad del sueño y la capacidad de respuesta ante situaciones estresantes.' },
+      { title: 'Apoyo social y conexión con otros', icon: iconos.corazon, body: 'El apoyo social es un factor clave en la regulación del estrés. Hablar con amigos, familiares o personas de confianza ayuda a reducir la sensación de aislamiento y mejora la gestión emocional. Sentirse acompañado y comprendido puede disminuir significativamente la carga mental y favorecer una mejor adaptación a situaciones difíciles.' },
+      { title: 'Gestión del tiempo y organización diaria', icon: iconos.calendario, body: 'Una mala gestión del tiempo puede aumentar la sensación de sobrecarga. Aprender a priorizar tareas, establecer objetivos realistas y evitar la multitarea reduce significativamente el estrés diario. Organizar la rutina también ayuda a recuperar sensación de control.' },
+      { title: 'Higiene del sueño', icon: iconos.cama, body: 'Dormir mal aumenta la sensibilidad al estrés y reduce la capacidad de regulación emocional. Mantener horarios regulares, evitar pantallas antes de dormir y crear rutinas de descanso ayuda a mejorar la calidad del sueño.' },
+      { title: 'Reducción de estimulantes y hábitos nocivos', icon: iconos.pastillas, body: 'El exceso de cafeína, alcohol o el uso constante de pantallas puede aumentar la activación del sistema nervioso y empeorar los síntomas del estrés. Reducir estos estímulos ayuda a estabilizar el estado emocional y mejorar el descanso.' },
     ]}
   />
 </SubpageTemplateB>
+
+<style>
+  /* Medido en el original: texto junto a la checklist Fredoka 22px
+     justificado. */
+  .intro .primera {
+    margin-top: 39px;
+  }
+</style>

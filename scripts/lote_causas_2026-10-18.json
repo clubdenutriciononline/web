@@ -1,0 +1,76 @@
+{
+  "perdida-grasa-femenina": {
+    "desbalances": "a woman looking at her belly in front of a mirror with a wavy hormone line and a female symbol floating around her, representing hormonal imbalances",
+    "metabolismo": "a tired woman next to a big snail and a slow, dim flame, representing a slow metabolism",
+    "sueno": "a woman lying awake in bed at night with tired eyes, an alarm clock and a crescent moon, representing lack of sleep",
+    "estres": "a stressed woman holding her belly with both hands, a lightning/stress symbol and an upward arrow above her, a clock and a cup of coffee nearby, representing chronic stress and cortisol",
+    "alimentacion": "a woman surrounded by fast food, sweets, a soda and packaged snacks, representing an inadequate diet",
+    "sedentarismo": "a woman slumped on a sofa with a remote control, unused sneakers on the floor, representing a sedentary lifestyle"
+  },
+  "resistencia-insulina": {
+    "obesidad": "a worried woman holding a tape measure around her waist, representing abdominal obesity",
+    "actividad": "a woman sitting at a desk all day with a computer, a clock and unused dumbbells in the corner, representing lack of physical activity",
+    "ultraprocesados": "a woman surrounded by packaged ultra-processed foods, a soda can, biscuits and a doughnut, representing a diet rich in ultra-processed foods",
+    "estres": "an overwhelmed woman with her head in her hands, tangled scribble lines above her head and a lightning symbol, representing chronic stress",
+    "sueno": "a woman awake in bed at night looking at an alarm clock, a crescent moon in the window, representing lack of sleep",
+    "genetica": "a mother and an adult daughter standing together with a DNA double helix between them, representing genetics and family predisposition"
+  },
+  "ayuno-intermitente-2": {
+    "inflamacion": "a calm, smiling woman with a soft glowing shield around her and small sparkles, representing reduced inflammation",
+    "insulina": "a happy woman next to a balanced scale and a small glucose drop symbol, representing improved insulin sensitivity",
+    "autofagia": "a serene woman with a large simple cell drawing beside her, with small circular recycling arrows inside the cell, representing cellular autophagy",
+    "oxidativo": "a woman relaxing with a cup of tea, small protective sparkles and a shield around her, representing reduced oxidative stress",
+    "mitocondrial": "an energetic woman next to a simple drawing of a mitochondrion and a full battery, representing improved mitochondrial function",
+    "hormonal": "a balanced, smiling woman with a gentle wavy hormone line and a female symbol, representing optimised hormone production"
+  },
+  "digestion": {
+    "dieta": "a woman holding her bloated stomach next to a plate of fried food and a burger, representing a poor diet",
+    "estres": "a stressed woman holding her stomach with tangled scribble lines above her head, representing stress affecting digestion",
+    "enfermedades": "a woman holding her stomach with a simple drawing of the intestine and a stethoscope nearby, representing digestive diseases",
+    "medicamentos": "a woman with an upset stomach holding a pill blister pack, capsules floating around her, representing medication side effects",
+    "hidratacion": "a woman looking at an empty glass and an empty water bottle, a small sun and dry cracks around, representing lack of hydration",
+    "sueno": "a woman awake in bed at night holding her stomach, a crescent moon and an alarm clock, representing lack of sleep affecting digestion"
+  },
+  "inflamacion-intestinal": {
+    "infecciones": "a woman holding her stomach with small cartoon germs and bacteria floating around her, representing intestinal infections",
+    "intolerancias": "a woman refusing a glass of milk and a slice of bread with a small crossed-out symbol, representing food sensitivities and intolerances",
+    "estres": "a sad, stressed woman holding her stomach with a small storm cloud above her head, representing chronic stress and emotional factors",
+    "medicamentos": "a woman holding a pill bottle while touching her stomach, capsules around her, representing medication use",
+    "cronicas": "a woman holding her lower abdomen with a simple intestine drawing and a calendar, representing chronic intestinal diseases",
+    "estilo-vida": "a woman in a busy city with a cigarette smoke cloud, a takeaway coffee and car exhaust lines around, representing lifestyle and environmental factors"
+  },
+  "probioticos-alimentacion": {
+    "fibra": "a woman looking at a plate of white bread and pasta while vegetables and legumes float far away with dotted lines, representing a low-fibre diet",
+    "antibioticos": "a woman holding an antibiotics pill bottle with small friendly bacteria disappearing around her stomach, representing excessive antibiotic use",
+    "estres": "a stressed woman holding her stomach with tangled scribble lines above her head and a small intestine drawing, representing chronic stress",
+    "sueno": "a tired woman awake in bed at night, a crescent moon and an alarm clock, representing lack of sleep",
+    "cronicas": "a woman sitting with a medical folder, a stethoscope and a pill box nearby, representing chronic diseases",
+    "estilo-vida": "a woman with a glass of wine, a cigarette and a sofa nearby, representing lifestyle and other factors affecting the gut"
+  },
+  "ansiedad-comida": {
+    "presion": "a woman surrounded by small speech bubbles with symbols (a tape measure, a scale, a question mark) and other people pointing, representing social pressure",
+    "salud": "a woman holding her stomach with a stethoscope and a wavy hormone line nearby, representing health problems",
+    "emocional": "a sad woman hugging a large tub of ice cream with a small heart and a storm cloud above her, representing an emotional relationship with food",
+    "conocimiento": "a confused woman looking at food packages with a big question mark above her head, representing lack of nutritional knowledge",
+    "estres": "a rushed, stressed woman eating a snack while looking at a clock and a phone, representing lifestyle and stress",
+    "geneticos": "a woman with a DNA double helix and a simple brain drawing beside her, representing genetic and biological factors"
+  },
+  "estres-habitos": {
+    "laboral": "an overwhelmed woman at a desk with a laptop, piles of papers and a ringing phone, representing work stress",
+    "relaciones": "a woman in the middle of two arguing people with small lightning symbols between them, representing stress in relationships and family",
+    "estilo-vida": "a woman juggling a coffee cup, a phone, a shopping bag and a clock, representing daily lifestyle and habits",
+    "economico": "a worried woman looking at a stack of bills and an empty wallet, a calculator nearby, representing financial stress",
+    "entorno": "a woman covering her ears in a noisy, crowded city street with cars and buildings, representing social and environmental factors",
+    "salud": "a tired woman holding her head with a thermometer and a pill box nearby, representing physical health problems"
+  },
+  "relacion-cuerpo-mujeres": {
+    "sociedad": "a woman looking at a large billboard with an idealised figure, small magazine shapes around her, representing society and culture",
+    "biologicos": "a woman hugging herself with a small DNA helix and a sensitive heart symbol, representing biological factors and emotional sensitivity",
+    "familia": "a little girl and her mother at a mirror, with the mother frowning at her own reflection, representing family influences and early education",
+    "traumaticas": "a woman sitting curled up hugging her knees with a small dark cloud above her, representing traumatic experiences",
+    "dialogo": "a woman looking in a mirror while her reflection frowns, with critical scribble lines in a thought bubble, representing a critical inner dialogue and limiting beliefs",
+    "estres": "a woman under pressure with heavy weights on her shoulders and lightning symbols around, representing stress and emotional pressure",
+    "autocuidado": "a tired woman ignoring a small plant, a glass of water and a yoga mat around her, representing lack of self-care",
+    "redes": "a woman scrolling a phone that shows many perfect profile pictures and hearts, looking insecure, representing social media and constant comparison"
+  }
+}
