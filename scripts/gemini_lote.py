@@ -8,6 +8,11 @@ Uso:
 - Sube las imágenes de referencia una sola vez (Files API) y las cita en
   cada petición.
 - Modelo: Nano Banana 2 Lite, 1:1, 1K.
+- Fotos (18 oct): si el JSON lleva "_tipo": "foto", no se usan las imágenes
+  de referencia y se usa el prompt fotográfico BASE_FOTO. Cada escena puede
+  ser un texto o {"scene": ..., "aspect": "16:9"}.
+- Nombre de archivo: "causa-<nombre>.jpg", salvo que el nombre empiece por
+  "area-" o "relacion-" (se guarda tal cual).
 """
 import base64, json, sys, time, urllib.request, urllib.error, os
 
@@ -20,6 +25,10 @@ REFS = [
 BASE = ("Line-art illustration in exactly the same style as the reference images: thin magenta-pink (#C8407A) "
         "outline strokes, no fill, pure white background, friendly woman figure, small decorative doodles around. "
         "Scene: {scene}. Square, centred, no text, no letters, no numbers.")
+
+BASE_FOTO = ("Photorealistic editorial lifestyle photograph, natural warm daylight, soft shallow depth of field, "
+             "calm Mediterranean setting with plants and natural materials, muted earthy tones. Scene: {scene}. "
+             "The woman is Spanish, between 35 and 50 years old, natural look. No text, no logos, no watermark.")
 
 
 def key():
@@ -71,14 +80,17 @@ def upload(path):
 
 def enviar(escenas_path, estado_path):
     escenas = json.load(open(escenas_path, encoding='utf-8'))
-    uris = [upload(p) for p in REFS]
-    refs = [{'file_data': {'mime_type': 'image/jpeg', 'file_uri': u}} for u in uris]
+    foto = escenas.pop('_tipo', None) == 'foto'
+    refs = [] if foto else [{'file_data': {'mime_type': 'image/jpeg', 'file_uri': upload(p)}} for p in REFS]
     reqs = []
     for page, items in escenas.items():
         for k, scene in items.items():
-            reqs.append({'request': {'contents': [{'parts': [{'text': BASE.format(scene=scene)}] + refs}],
+            aspect = scene.get('aspect', '1:1') if isinstance(scene, dict) else '1:1'
+            scene = scene['scene'] if isinstance(scene, dict) else scene
+            prompt = (BASE_FOTO if foto else BASE).format(scene=scene)
+            reqs.append({'request': {'contents': [{'parts': [{'text': prompt}] + refs}],
                                      'generation_config': {'response_modalities': ['IMAGE'],
-                                                           'image_config': {'aspect_ratio': '1:1', 'image_size': '1K'}}},
+                                                           'image_config': {'aspect_ratio': aspect, 'image_size': '1K'}}},
                          'metadata': {'key': f'{page}|{k}'}})
     body = {'batch': {'display_name': f'causas-{time.strftime("%Y%m%d-%H%M")}', 'input_config': {'requests': {'requests': reqs}}}}
     d, _ = call(f'{API}/v1beta/models/{MODEL}:batchGenerateContent', body)
@@ -111,7 +123,8 @@ def recoger(estado_path, out):
             fail += 1; print('FALLO', k, json.dumps(it.get('error') or r)[:200]); continue
         page, name = k.split('|')
         os.makedirs(f'{out}/{page}', exist_ok=True)
-        open(f'{out}/{page}/causa-{name}.jpg', 'wb').write(base64.b64decode(img['data']))
+        fn = name if name.startswith(('area-', 'relacion-')) else f'causa-{name}'
+        open(f'{out}/{page}/{fn}.jpg', 'wb').write(base64.b64decode(img['data']))
         ok += 1
     print(f'recogidas {ok}, fallidas {fail}, tokens de salida {tokens}')
 

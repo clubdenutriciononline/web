@@ -1,0 +1,125 @@
+{
+ "_tipo": "foto",
+ "fatiga-cronica": {
+  "area-1-deficit-de-hierro": "Mujer revisando un análisis de sangre en la cocina, con lentejas y espinacas en la encimera.",
+  "area-2-vitamina-d-y-energia": "Mujer tomando el sol de la mañana en un balcón con una taza en la mano.",
+  "area-3-fatiga-y-estado-de-animo": "Mujer sentada junto a una ventana, pensativa, con una manta.",
+  "area-4-recuperacion-tras-el-ejercic": "Mujer estirando suavemente sobre una esterilla en casa."
+ },
+ "sueno": {
+  "area-1-sueno-y-hormonas": "Mujer despierta en la cama de madrugada, mirando al techo con calma.",
+  "area-2-cenas-que-ayudan-a-dormir": "Mujer preparando una cena ligera de verduras y pescado.",
+  "area-3-pantallas-y-luz-azul": "Mujer dejando el móvil en la mesilla y cogiendo un libro.",
+  "area-4-siestas-y-descanso-diurno": "Mujer descansando en un sofá a media tarde con luz suave."
+ },
+ "rutinas-energeticas": {
+  "area-1-rutina-de-manana": "Mujer abriendo las cortinas por la mañana con un vaso de agua.",
+  "area-2-pausas-activas": "Mujer estirándose de pie junto a su escritorio.",
+  "area-3-desayunos-que-dan-energia": "Mujer desayunando un bol de yogur, fruta y frutos secos.",
+  "area-4-ritmo-circadiano": "Mujer caminando al aire libre a primera hora de la mañana."
+ },
+ "perdida-grasa-femenina": {
+  "area-1-entrenamiento-de-fuerza": "Mujer entrenando con mancuernas en casa.",
+  "area-2-proteina-en-cada-comida": "Mujer preparando un plato con huevos, legumbres y verduras.",
+  "area-3-ciclo-menstrual-y-perdida-de": "Mujer anotando en una agenda junto a una botella de agua y unas zapatillas.",
+  "area-4-efecto-rebote": "Mujer mirando la nevera abierta con expresión pensativa."
+ },
+ "resistencia-insulina": {
+  "area-1-indice-glucemico": "Mujer comparando un pan blanco y un pan integral en la cocina.",
+  "area-2-caminar-despues-de-comer": "Mujer paseando por un parque después de comer.",
+  "area-3-sop-y-resistencia-a-la-insul": "Mujer hablando con una profesional en una consulta luminosa.",
+  "area-4-orden-de-los-alimentos": "Mujer sirviendo primero ensalada en un plato."
+ },
+ "ayuno-intermitente-2": {
+  "area-1-ayuno-y-ciclo-menstrual": "Mujer con una taza de infusión mirando un calendario.",
+  "area-2-que-comer-al-romper-el-ayuno": "Mujer sentada ante un plato completo y colorido.",
+  "area-3-ayuno-y-ejercicio": "Mujer bebiendo agua tras una sesión de ejercicio suave.",
+  "area-4-cuando-no-conviene-ayunar": "Mujer leyendo información en una tableta con una expresión atenta."
+ },
+ "digestion": {
+  "area-1-hinchazon-abdominal": "Mujer con la mano sobre el abdomen, tranquila, en el salón.",
+  "area-2-comer-despacio": "Mujer comiendo sin prisa en una mesa con luz natural.",
+  "area-3-fibra-y-transito": "Mujer preparando un bol de avena, fruta y semillas.",
+  "area-4-digestion-y-estres": "Mujer respirando con los ojos cerrados antes de comer."
+ },
+ "inflamacion-intestinal": {
+  "area-1-permeabilidad-intestinal": "Mujer leyendo un libro de salud en el sofá.",
+  "area-2-alimentos-antiinflamatorios": "Mujer cocinando una crema de verduras con cúrcuma.",
+  "area-3-intolerancias-alimentarias": "Mujer anotando en un diario de comidas junto a un plato.",
+  "area-4-intestino-y-piel": "Mujer mirándose al espejo con la piel al natural."
+ },
+ "probioticos-alimentacion": {
+  "area-1-alimentos-fermentados": "Mujer sirviendo kéfir en un vaso con tarros de fermentados en la encimera.",
+  "area-2-prebioticos": "Mujer cortando ajo, cebolla y espárragos.",
+  "area-3-microbiota-y-hormonas": "Mujer paseando por un mercado con una bolsa de verduras.",
+  "area-4-probioticos-tras-los-antibio": "Mujer en casa con un vaso de agua y un yogur."
+ },
+ "ansiedad-comida": {
+  "area-1-hambre-real-o-hambre-emocion": "Mujer delante de la despensa abierta, parándose a pensar.",
+  "area-2-mindful-eating": "Mujer comiendo una fruta despacio, con los ojos en el plato.",
+  "area-3-antojos-de-dulce": "Mujer partiendo una onza de chocolate con una taza de té.",
+  "area-4-dietas-y-ansiedad": "Mujer apartando una revista de dietas sobre la mesa."
+ },
+ "estres-habitos": {
+  "area-1-respiracion-para-el-estres": "Mujer sentada en el suelo respirando con una mano en el pecho.",
+  "area-2-organizacion-y-carga-mental": "Mujer escribiendo una lista en una libreta en la mesa de la cocina.",
+  "area-3-estres-y-alimentacion": "Mujer comiendo de pie, con prisa, junto a la encimera.",
+  "area-4-desconexion-digital": "Mujer dejando el móvil boca abajo y mirando por la ventana."
+ },
+ "relacion-cuerpo-mujeres": {
+  "area-1-autocompasion": "Mujer sonriendo ante el espejo con una mano en el pecho.",
+  "area-2-redes-sociales-e-imagen-corp": "Mujer mirando el móvil en el sofá con gesto reflexivo.",
+  "area-3-moverse-por-placer": "Mujer bailando en el salón de su casa.",
+  "area-4-cuerpo-y-cambios-hormonales": "Mujer de unos 48 años paseando tranquila por la playa."
+ },
+ "alimentos": {
+  "area-1-alimentos-de-temporada": "Mujer comprando fruta y verdura en un mercado.",
+  "area-2-leer-etiquetas": "Mujer leyendo la etiqueta de un producto en el supermercado.",
+  "area-3-legumbres": "Mujer cocinando un guiso de garbanzos.",
+  "area-4-frutos-secos-y-semillas": "Mujer sirviendo un puñado de nueces y almendras en un cuenco."
+ },
+ "macronutrientes": {
+  "area-1-proteina-para-mujeres": "Mujer preparando un plato con salmón y quinoa.",
+  "area-2-hidratos-de-carbono-buenos": "Mujer cortando boniato y arroz integral en la cocina.",
+  "area-3-grasas-saludables": "Mujer aliñando una ensalada con aceite de oliva.",
+  "area-4-el-plato-equilibrado": "Mujer emplatando una comida completa y colorida."
+ },
+ "micronutrientes": {
+  "area-1-hierro": "Mujer preparando un plato de lentejas con pimiento.",
+  "area-2-magnesio": "Mujer con una taza de infusión y un cuenco de semillas de calabaza.",
+  "area-3-calcio-y-vitamina-d": "Mujer tomando un yogur al sol de la mañana.",
+  "area-4-vitamina-b12": "Mujer leyendo un análisis con una taza de café."
+ },
+ "patrones-alimentarios": {
+  "area-1-dieta-mediterranea": "Mujer en una terraza con un plato de verduras, pescado y aceite de oliva.",
+  "area-2-alimentacion-flexitariana": "Mujer cocinando un salteado de verduras y tofu.",
+  "area-3-batch-cooking": "Mujer guardando tápers con comida preparada en la nevera.",
+  "area-4-comer-fuera-de-casa": "Mujer eligiendo de la carta en un restaurante luminoso."
+ },
+ "perimenopausia": {
+  "area-1-sueno-y-descanso": "Mujer de unos 45 años leyendo en la cama con luz cálida de lámpara, relajada antes de dormir.",
+  "area-2-peso-y-metabolismo": "Mujer de unos 45 años entrenando con una mancuerna ligera en el salón.",
+  "area-3-salud-emocional": "Mujer de unos 45 años sentada junto a una ventana con una taza, mirada serena.",
+  "area-4-huesos-y-fuerza": "Mujer de unos 45 años caminando a paso ligero por un sendero al aire libre.",
+  "relacion-1": {
+   "scene": "Mujer de unos 45 años sentada en el sofá de un salón luminoso, pensativa, con una taza de té en las manos, plano medio horizontal",
+   "aspect": "16:9"
+  }
+ },
+ "cortisol": {
+  "area-1-estres-y-sueno": "Mujer apagando la luz de la mesilla con un libro cerrado, dormitorio en penumbra cálida.",
+  "area-2-cortisol-y-peso": "Mujer preparando con calma un plato equilibrado en la cocina.",
+  "area-3-cortisol-y-ciclo-menstrual": "Mujer con una infusión mirando un calendario en la pared de casa.",
+  "area-4-cafe-y-estimulantes": "Mujer sosteniendo una taza de café por la mañana junto a la ventana."
+ },
+ "inflamacion-hormonal": {
+  "area-1-alimentacion-antiinflamatori": "Mujer cocinando un salteado de verduras de colores con cúrcuma y aceite de oliva.",
+  "area-2-inflamacion-y-digestion": "Mujer tomando un bol de yogur con fruta y semillas en una mesa luminosa.",
+  "area-3-sop-e-inflamacion": "Mujer conversando con una profesional sanitaria en una consulta luminosa.",
+  "area-4-estres-e-inflamacion": "Mujer practicando respiración consciente sentada en una esterilla junto a plantas.",
+  "relacion-2": {
+   "scene": "Mujer de unos 42 años preparando una infusión de jengibre y cúrcuma en una cocina luminosa, plano medio horizontal",
+   "aspect": "16:9"
+  }
+ }
+}

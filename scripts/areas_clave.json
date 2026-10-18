@@ -1,0 +1,496 @@
+{
+ "fatiga-cronica": [
+  {
+   "title": "Déficit de hierro",
+   "text": "Por qué la falta de hierro es una de las causas más frecuentes de cansancio en mujeres.",
+   "scene": "Mujer revisando un análisis de sangre en la cocina, con lentejas y espinacas en la encimera.",
+   "file": "area-1-deficit-de-hierro"
+  },
+  {
+   "title": "Vitamina D y energía",
+   "text": "Cómo influye la vitamina D en el cansancio, el ánimo y las defensas.",
+   "scene": "Mujer tomando el sol de la mañana en un balcón con una taza en la mano.",
+   "file": "area-2-vitamina-d-y-energia"
+  },
+  {
+   "title": "Fatiga y estado de ánimo",
+   "text": "La relación entre el cansancio persistente, la ansiedad y la tristeza.",
+   "scene": "Mujer sentada junto a una ventana, pensativa, con una manta.",
+   "file": "area-3-fatiga-y-estado-de-animo"
+  },
+  {
+   "title": "Recuperación tras el ejercicio",
+   "text": "Cómo moverse sin agotarse cuando la energía está baja.",
+   "scene": "Mujer estirando suavemente sobre una esterilla en casa.",
+   "file": "area-4-recuperacion-tras-el-ejercic"
+  }
+ ],
+ "sueno": [
+  {
+   "title": "Sueño y hormonas",
+   "text": "Cómo influyen el ciclo, la perimenopausia y la menopausia en el descanso.",
+   "scene": "Mujer despierta en la cama de madrugada, mirando al techo con calma.",
+   "file": "area-1-sueno-y-hormonas"
+  },
+  {
+   "title": "Cenas que ayudan a dormir",
+   "text": "Qué cenar y a qué hora para favorecer un sueño reparador.",
+   "scene": "Mujer preparando una cena ligera de verduras y pescado.",
+   "file": "area-2-cenas-que-ayudan-a-dormir"
+  },
+  {
+   "title": "Pantallas y luz azul",
+   "text": "El efecto del móvil antes de dormir y cómo crear una rutina de desconexión.",
+   "scene": "Mujer dejando el móvil en la mesilla y cogiendo un libro.",
+   "file": "area-3-pantallas-y-luz-azul"
+  },
+  {
+   "title": "Siestas y descanso diurno",
+   "text": "Cuándo ayudan y cuándo empeoran el sueño nocturno.",
+   "scene": "Mujer descansando en un sofá a media tarde con luz suave.",
+   "file": "area-4-siestas-y-descanso-diurno"
+  }
+ ],
+ "rutinas-energeticas": [
+  {
+   "title": "Rutina de mañana",
+   "text": "Los primeros hábitos del día que marcan la energía de las horas siguientes.",
+   "scene": "Mujer abriendo las cortinas por la mañana con un vaso de agua.",
+   "file": "area-1-rutina-de-manana"
+  },
+  {
+   "title": "Pausas activas",
+   "text": "Pequeños movimientos para cortar el sedentarismo en la jornada.",
+   "scene": "Mujer estirándose de pie junto a su escritorio.",
+   "file": "area-2-pausas-activas"
+  },
+  {
+   "title": "Desayunos que dan energía",
+   "text": "Cómo construir un desayuno que mantenga la energía estable.",
+   "scene": "Mujer desayunando un bol de yogur, fruta y frutos secos.",
+   "file": "area-3-desayunos-que-dan-energia"
+  },
+  {
+   "title": "Ritmo circadiano",
+   "text": "Cómo alinear horarios de comida, luz y sueño con el reloj interno.",
+   "scene": "Mujer caminando al aire libre a primera hora de la mañana.",
+   "file": "area-4-ritmo-circadiano"
+  }
+ ],
+ "perdida-grasa-femenina": [
+  {
+   "title": "Entrenamiento de fuerza",
+   "text": "Por qué la fuerza es clave para perder grasa y conservar músculo.",
+   "scene": "Mujer entrenando con mancuernas en casa.",
+   "file": "area-1-entrenamiento-de-fuerza"
+  },
+  {
+   "title": "Proteína en cada comida",
+   "text": "Cuánta proteína necesitas y cómo repartirla a lo largo del día.",
+   "scene": "Mujer preparando un plato con huevos, legumbres y verduras.",
+   "file": "area-2-proteina-en-cada-comida"
+  },
+  {
+   "title": "Ciclo menstrual y pérdida de grasa",
+   "text": "Cómo adaptar alimentación y entrenamiento a cada fase.",
+   "scene": "Mujer anotando en una agenda junto a una botella de agua y unas zapatillas.",
+   "file": "area-3-ciclo-menstrual-y-perdida-de"
+  },
+  {
+   "title": "Efecto rebote",
+   "text": "Por qué las dietas muy restrictivas hacen recuperar el peso perdido.",
+   "scene": "Mujer mirando la nevera abierta con expresión pensativa.",
+   "file": "area-4-efecto-rebote"
+  }
+ ],
+ "resistencia-insulina": [
+  {
+   "title": "Índice glucémico",
+   "text": "Qué alimentos elevan más la glucosa y cómo combinarlos.",
+   "scene": "Mujer comparando un pan blanco y un pan integral en la cocina.",
+   "file": "area-1-indice-glucemico"
+  },
+  {
+   "title": "Caminar después de comer",
+   "text": "El efecto de un paseo corto sobre la glucosa tras las comidas.",
+   "scene": "Mujer paseando por un parque después de comer.",
+   "file": "area-2-caminar-despues-de-comer"
+  },
+  {
+   "title": "SOP y resistencia a la insulina",
+   "text": "La relación entre la insulina y el síndrome de ovario poliquístico.",
+   "scene": "Mujer hablando con una profesional en una consulta luminosa.",
+   "file": "area-3-sop-y-resistencia-a-la-insul"
+  },
+  {
+   "title": "Orden de los alimentos",
+   "text": "Por qué empezar por la verdura y la proteína ayuda a evitar picos.",
+   "scene": "Mujer sirviendo primero ensalada en un plato.",
+   "file": "area-4-orden-de-los-alimentos"
+  }
+ ],
+ "ayuno-intermitente-2": [
+  {
+   "title": "Ayuno y ciclo menstrual",
+   "text": "Por qué las mujeres pueden necesitar adaptar el ayuno a su ciclo.",
+   "scene": "Mujer con una taza de infusión mirando un calendario.",
+   "file": "area-1-ayuno-y-ciclo-menstrual"
+  },
+  {
+   "title": "Qué comer al romper el ayuno",
+   "text": "Cómo hacer la primera comida para mantener la energía.",
+   "scene": "Mujer sentada ante un plato completo y colorido.",
+   "file": "area-2-que-comer-al-romper-el-ayuno"
+  },
+  {
+   "title": "Ayuno y ejercicio",
+   "text": "Cómo combinar los entrenamientos con las horas de ayuno.",
+   "scene": "Mujer bebiendo agua tras una sesión de ejercicio suave.",
+   "file": "area-3-ayuno-y-ejercicio"
+  },
+  {
+   "title": "Cuándo no conviene ayunar",
+   "text": "Situaciones en las que el ayuno no es una buena opción.",
+   "scene": "Mujer leyendo información en una tableta con una expresión atenta.",
+   "file": "area-4-cuando-no-conviene-ayunar"
+  }
+ ],
+ "digestion": [
+  {
+   "title": "Hinchazón abdominal",
+   "text": "Por qué aparece y qué hábitos ayudan a reducirla.",
+   "scene": "Mujer con la mano sobre el abdomen, tranquila, en el salón.",
+   "file": "area-1-hinchazon-abdominal"
+  },
+  {
+   "title": "Comer despacio",
+   "text": "El papel de la masticación y del ritmo al comer en la digestión.",
+   "scene": "Mujer comiendo sin prisa en una mesa con luz natural.",
+   "file": "area-2-comer-despacio"
+  },
+  {
+   "title": "Fibra y tránsito",
+   "text": "Cuánta fibra necesitas y cómo aumentarla sin molestias.",
+   "scene": "Mujer preparando un bol de avena, fruta y semillas.",
+   "file": "area-3-fibra-y-transito"
+  },
+  {
+   "title": "Digestión y estrés",
+   "text": "Cómo afecta el eje intestino-cerebro a las digestiones.",
+   "scene": "Mujer respirando con los ojos cerrados antes de comer.",
+   "file": "area-4-digestion-y-estres"
+  }
+ ],
+ "inflamacion-intestinal": [
+  {
+   "title": "Permeabilidad intestinal",
+   "text": "Qué es la barrera intestinal y por qué importa.",
+   "scene": "Mujer leyendo un libro de salud en el sofá.",
+   "file": "area-1-permeabilidad-intestinal"
+  },
+  {
+   "title": "Alimentos antiinflamatorios",
+   "text": "Qué alimentos ayudan a calmar el intestino.",
+   "scene": "Mujer cocinando una crema de verduras con cúrcuma.",
+   "file": "area-2-alimentos-antiinflamatorios"
+  },
+  {
+   "title": "Intolerancias alimentarias",
+   "text": "Cómo identificarlas sin caer en dietas restrictivas.",
+   "scene": "Mujer anotando en un diario de comidas junto a un plato.",
+   "file": "area-3-intolerancias-alimentarias"
+  },
+  {
+   "title": "Intestino y piel",
+   "text": "La relación entre la salud intestinal y los problemas de piel.",
+   "scene": "Mujer mirándose al espejo con la piel al natural.",
+   "file": "area-4-intestino-y-piel"
+  }
+ ],
+ "probioticos-alimentacion": [
+  {
+   "title": "Alimentos fermentados",
+   "text": "Kéfir, yogur, chucrut y kimchi: cómo incluirlos en el día a día.",
+   "scene": "Mujer sirviendo kéfir en un vaso con tarros de fermentados en la encimera.",
+   "file": "area-1-alimentos-fermentados"
+  },
+  {
+   "title": "Prebióticos",
+   "text": "Los alimentos que sirven de alimento a las bacterias beneficiosas.",
+   "scene": "Mujer cortando ajo, cebolla y espárragos.",
+   "file": "area-2-prebioticos"
+  },
+  {
+   "title": "Microbiota y hormonas",
+   "text": "Cómo influye la microbiota en los estrógenos y el ciclo.",
+   "scene": "Mujer paseando por un mercado con una bolsa de verduras.",
+   "file": "area-3-microbiota-y-hormonas"
+  },
+  {
+   "title": "Probióticos tras los antibióticos",
+   "text": "Cómo cuidar la microbiota después de un tratamiento.",
+   "scene": "Mujer en casa con un vaso de agua y un yogur.",
+   "file": "area-4-probioticos-tras-los-antibio"
+  }
+ ],
+ "ansiedad-comida": [
+  {
+   "title": "Hambre real o hambre emocional",
+   "text": "Cómo distinguirlas y qué hacer en cada caso.",
+   "scene": "Mujer delante de la despensa abierta, parándose a pensar.",
+   "file": "area-1-hambre-real-o-hambre-emocion"
+  },
+  {
+   "title": "Mindful eating",
+   "text": "Comer con atención plena para disfrutar más y comer mejor.",
+   "scene": "Mujer comiendo una fruta despacio, con los ojos en el plato.",
+   "file": "area-2-mindful-eating"
+  },
+  {
+   "title": "Antojos de dulce",
+   "text": "Por qué aparecen y cómo gestionarlos sin culpa.",
+   "scene": "Mujer partiendo una onza de chocolate con una taza de té.",
+   "file": "area-3-antojos-de-dulce"
+  },
+  {
+   "title": "Dietas y ansiedad",
+   "text": "Cómo las restricciones alimentan el ciclo de ansiedad y atracón.",
+   "scene": "Mujer apartando una revista de dietas sobre la mesa.",
+   "file": "area-4-dietas-y-ansiedad"
+  }
+ ],
+ "estres-habitos": [
+  {
+   "title": "Respiración para el estrés",
+   "text": "Técnicas sencillas para calmar el sistema nervioso en minutos.",
+   "scene": "Mujer sentada en el suelo respirando con una mano en el pecho.",
+   "file": "area-1-respiracion-para-el-estres"
+  },
+  {
+   "title": "Organización y carga mental",
+   "text": "Cómo repartir tareas y reducir la sensación de sobrecarga.",
+   "scene": "Mujer escribiendo una lista en una libreta en la mesa de la cocina.",
+   "file": "area-2-organizacion-y-carga-mental"
+  },
+  {
+   "title": "Estrés y alimentación",
+   "text": "Cómo cambia lo que comemos cuando estamos estresadas.",
+   "scene": "Mujer comiendo de pie, con prisa, junto a la encimera.",
+   "file": "area-3-estres-y-alimentacion"
+  },
+  {
+   "title": "Desconexión digital",
+   "text": "El impacto de las notificaciones constantes en el estrés.",
+   "scene": "Mujer dejando el móvil boca abajo y mirando por la ventana.",
+   "file": "area-4-desconexion-digital"
+  }
+ ],
+ "relacion-cuerpo-mujeres": [
+  {
+   "title": "Autocompasión",
+   "text": "Cómo hablarte con más amabilidad y menos exigencia.",
+   "scene": "Mujer sonriendo ante el espejo con una mano en el pecho.",
+   "file": "area-1-autocompasion"
+  },
+  {
+   "title": "Redes sociales e imagen corporal",
+   "text": "Cómo afecta la comparación constante y cómo protegerte.",
+   "scene": "Mujer mirando el móvil en el sofá con gesto reflexivo.",
+   "file": "area-2-redes-sociales-e-imagen-corp"
+  },
+  {
+   "title": "Moverse por placer",
+   "text": "Recuperar el ejercicio como disfrute, no como castigo.",
+   "scene": "Mujer bailando en el salón de su casa.",
+   "file": "area-3-moverse-por-placer"
+  },
+  {
+   "title": "Cuerpo y cambios hormonales",
+   "text": "Aceptar cómo cambia el cuerpo con la edad y las etapas hormonales.",
+   "scene": "Mujer de unos 48 años paseando tranquila por la playa.",
+   "file": "area-4-cuerpo-y-cambios-hormonales"
+  }
+ ],
+ "alimentos": [
+  {
+   "title": "Alimentos de temporada",
+   "text": "Por qué conviene comer según la temporada y cómo elegirlos.",
+   "scene": "Mujer comprando fruta y verdura en un mercado.",
+   "file": "area-1-alimentos-de-temporada"
+  },
+  {
+   "title": "Leer etiquetas",
+   "text": "Cómo interpretar la lista de ingredientes y la información nutricional.",
+   "scene": "Mujer leyendo la etiqueta de un producto en el supermercado.",
+   "file": "area-2-leer-etiquetas"
+  },
+  {
+   "title": "Legumbres",
+   "text": "Cómo incluirlas más a menudo y evitar las molestias digestivas.",
+   "scene": "Mujer cocinando un guiso de garbanzos.",
+   "file": "area-3-legumbres"
+  },
+  {
+   "title": "Frutos secos y semillas",
+   "text": "Su papel en la energía, las hormonas y la saciedad.",
+   "scene": "Mujer sirviendo un puñado de nueces y almendras en un cuenco.",
+   "file": "area-4-frutos-secos-y-semillas"
+  }
+ ],
+ "macronutrientes": [
+  {
+   "title": "Proteína para mujeres",
+   "text": "Cuánta necesitas según tu edad y tu actividad.",
+   "scene": "Mujer preparando un plato con salmón y quinoa.",
+   "file": "area-1-proteina-para-mujeres"
+  },
+  {
+   "title": "Hidratos de carbono buenos",
+   "text": "Qué hidratos priorizar para mantener la energía estable.",
+   "scene": "Mujer cortando boniato y arroz integral en la cocina.",
+   "file": "area-2-hidratos-de-carbono-buenos"
+  },
+  {
+   "title": "Grasas saludables",
+   "text": "Aceite de oliva, aguacate y pescado azul: por qué no hay que temerlas.",
+   "scene": "Mujer aliñando una ensalada con aceite de oliva.",
+   "file": "area-3-grasas-saludables"
+  },
+  {
+   "title": "El plato equilibrado",
+   "text": "Cómo repartir los macronutrientes en cada comida sin contar calorías.",
+   "scene": "Mujer emplatando una comida completa y colorida.",
+   "file": "area-4-el-plato-equilibrado"
+  }
+ ],
+ "micronutrientes": [
+  {
+   "title": "Hierro",
+   "text": "Las necesidades de hierro de las mujeres y cómo mejorar su absorción.",
+   "scene": "Mujer preparando un plato de lentejas con pimiento.",
+   "file": "area-1-hierro"
+  },
+  {
+   "title": "Magnesio",
+   "text": "Su papel en el descanso, el estrés y los calambres.",
+   "scene": "Mujer con una taza de infusión y un cuenco de semillas de calabaza.",
+   "file": "area-2-magnesio"
+  },
+  {
+   "title": "Calcio y vitamina D",
+   "text": "Cómo cuidar los huesos en cada etapa de la vida.",
+   "scene": "Mujer tomando un yogur al sol de la mañana.",
+   "file": "area-3-calcio-y-vitamina-d"
+  },
+  {
+   "title": "Vitamina B12",
+   "text": "Quién necesita prestarle más atención y por qué.",
+   "scene": "Mujer leyendo un análisis con una taza de café.",
+   "file": "area-4-vitamina-b12"
+  }
+ ],
+ "patrones-alimentarios": [
+  {
+   "title": "Dieta mediterránea",
+   "text": "Por qué sigue siendo uno de los patrones más saludables.",
+   "scene": "Mujer en una terraza con un plato de verduras, pescado y aceite de oliva.",
+   "file": "area-1-dieta-mediterranea"
+  },
+  {
+   "title": "Alimentación flexitariana",
+   "text": "Cómo reducir la carne sin renunciar a nada.",
+   "scene": "Mujer cocinando un salteado de verduras y tofu.",
+   "file": "area-2-alimentacion-flexitariana"
+  },
+  {
+   "title": "Batch cooking",
+   "text": "Organizar la semana para comer bien con poco tiempo.",
+   "scene": "Mujer guardando tápers con comida preparada en la nevera.",
+   "file": "area-3-batch-cooking"
+  },
+  {
+   "title": "Comer fuera de casa",
+   "text": "Cómo mantener tus hábitos en restaurantes y viajes.",
+   "scene": "Mujer eligiendo de la carta en un restaurante luminoso.",
+   "file": "area-4-comer-fuera-de-casa"
+  }
+ ],
+ "perimenopausia": [
+  {
+   "title": "Sueño y descanso",
+   "text": "Por qué cuesta más dormir en esta etapa y qué ayuda a recuperar un descanso reparador.",
+   "scene": "Mujer de unos 45 años leyendo en la cama con luz cálida de lámpara, relajada antes de dormir.",
+   "file": "area-1-sueno-y-descanso"
+  },
+  {
+   "title": "Peso y metabolismo",
+   "text": "Cómo cambian el músculo, la grasa y la energía, y cómo adaptar la alimentación y el ejercicio.",
+   "scene": "Mujer de unos 45 años entrenando con una mancuerna ligera en el salón.",
+   "file": "area-2-peso-y-metabolismo"
+  },
+  {
+   "title": "Salud emocional",
+   "text": "La relación entre las fluctuaciones hormonales, el ánimo y la ansiedad.",
+   "scene": "Mujer de unos 45 años sentada junto a una ventana con una taza, mirada serena.",
+   "file": "area-3-salud-emocional"
+  },
+  {
+   "title": "Huesos y fuerza",
+   "text": "Por qué es el momento de cuidar los huesos y la masa muscular antes de la menopausia.",
+   "scene": "Mujer de unos 45 años caminando a paso ligero por un sendero al aire libre.",
+   "file": "area-4-huesos-y-fuerza"
+  }
+ ],
+ "cortisol": [
+  {
+   "title": "Estrés y sueño",
+   "text": "Cómo el cortisol altera el descanso y qué rutinas ayudan a dormir mejor.",
+   "scene": "Mujer apagando la luz de la mesilla con un libro cerrado, dormitorio en penumbra cálida.",
+   "file": "area-1-estres-y-sueno"
+  },
+  {
+   "title": "Cortisol y peso",
+   "text": "Por qué el estrés dificulta perder grasa abdominal y cómo abordarlo.",
+   "scene": "Mujer preparando con calma un plato equilibrado en la cocina.",
+   "file": "area-2-cortisol-y-peso"
+  },
+  {
+   "title": "Cortisol y ciclo menstrual",
+   "text": "La relación entre el estrés, la ovulación y los cambios del ciclo.",
+   "scene": "Mujer con una infusión mirando un calendario en la pared de casa.",
+   "file": "area-3-cortisol-y-ciclo-menstrual"
+  },
+  {
+   "title": "Café y estimulantes",
+   "text": "Cuánto, cuándo y cómo tomarlos sin disparar el cortisol.",
+   "scene": "Mujer sosteniendo una taza de café por la mañana junto a la ventana.",
+   "file": "area-4-cafe-y-estimulantes"
+  }
+ ],
+ "inflamacion-hormonal": [
+  {
+   "title": "Alimentación antiinflamatoria",
+   "text": "Qué alimentos priorizar y cuáles limitar para reducir la inflamación en el día a día.",
+   "scene": "Mujer cocinando un salteado de verduras de colores con cúrcuma y aceite de oliva.",
+   "file": "area-1-alimentacion-antiinflamatori"
+  },
+  {
+   "title": "Inflamación y digestión",
+   "text": "Cómo se relacionan la microbiota, el intestino y la inflamación general del cuerpo.",
+   "scene": "Mujer tomando un bol de yogur con fruta y semillas en una mesa luminosa.",
+   "file": "area-2-inflamacion-y-digestion"
+  },
+  {
+   "title": "SOP e inflamación",
+   "text": "El papel de la inflamación y la insulina en el síndrome de ovario poliquístico.",
+   "scene": "Mujer conversando con una profesional sanitaria en una consulta luminosa.",
+   "file": "area-3-sop-e-inflamacion"
+  },
+  {
+   "title": "Estrés e inflamación",
+   "text": "Por qué el estrés crónico mantiene el cuerpo inflamado y cómo romper el círculo.",
+   "scene": "Mujer practicando respiración consciente sentada en una esterilla junto a plantas.",
+   "file": "area-4-estres-e-inflamacion"
+  }
+ ]
+}
