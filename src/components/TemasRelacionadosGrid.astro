@@ -7,6 +7,9 @@
 // 2026-09-12, ver 00-analisis/02-mapa-migracion.md sección 9): ahora SÍ
 // llevan <a href> real hacia la página correspondiente, que ya existe en
 // la arquitectura actual (no se crean páginas nuevas).
+// Revisión 18 oct (usuaria): en las páginas madre se mantienen los enlaces a
+// sus hijas; en las hijas ("Áreas clave relacionadas") van SIN enlace hasta
+// que exista el artículo del blog de cada área, por eso `href` es opcional.
 //
 // Dos patrones reales confirmados en el CSS compilado del original, según
 // el número de tarjetas (varía por página, no todas tienen las mismas):
@@ -24,7 +27,7 @@ interface Tema {
   icon: string | ImageMetadata; // emoji (string) o imagen real importada vía astro:assets
   title: string;
   text: string;
-  href: string; // URL ya existente en la arquitectura (hub o subpágina)
+  href?: string; // URL existente (madres) o, en hijas, el artículo cuando exista
 }
 interface Props {
   heading: string;
@@ -37,13 +40,25 @@ const { heading, temas } = Astro.props;
   <h2>{heading}</h2>
   <div class="grid" data-count={temas.length}>
     {temas.map((t) => (
-      <a class="tema-card" href={t.href}>
-        {typeof t.icon === 'string'
-          ? <span class="icon" aria-hidden="true">{t.icon}</span>
-          : <Image class="icon-img" src={t.icon} alt="" width={600} />}
-        <h3>{t.title}</h3>
-        <p>{t.text}</p>
-      </a>
+      <Fragment>
+        {t.href ? (
+          <a class="tema-card" href={t.href}>
+            {typeof t.icon === 'string'
+              ? <span class="icon" aria-hidden="true">{t.icon}</span>
+              : <Image class="icon-img" src={t.icon} alt="" width={600} />}
+            <h3>{t.title}</h3>
+            <p>{t.text}</p>
+          </a>
+        ) : (
+          <div class="tema-card sin-enlace">
+            {typeof t.icon === 'string'
+              ? <span class="icon" aria-hidden="true">{t.icon}</span>
+              : <Image class="icon-img" src={t.icon} alt="" width={600} />}
+            <h3>{t.title}</h3>
+            <p>{t.text}</p>
+          </div>
+        )}
+      </Fragment>
     ))}
   </div>
 </section>
@@ -104,12 +119,12 @@ const { heading, temas } = Astro.props;
   .grid[data-count='4'] .tema-card {
     padding: 20px 5px;
   }
-  .tema-card:hover,
-  .tema-card:focus-visible {
+  a.tema-card:hover,
+  a.tema-card:focus-visible {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   }
-  .tema-card:hover h3,
-  .tema-card:focus-visible h3 {
+  a.tema-card:hover h3,
+  a.tema-card:focus-visible h3 {
     color: #ac6ec1;
   }
   .icon {
@@ -124,7 +139,7 @@ const { heading, temas } = Astro.props;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
   }
-  .tema-card:hover .icon-img {
+  a.tema-card:hover .icon-img {
     transform: scale(1.1);
   }
   /* Original (image-box): título Rubik 600 26px, texto Fredoka 20px/33px;

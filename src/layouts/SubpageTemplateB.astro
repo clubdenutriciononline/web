@@ -8,6 +8,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import TemasRelacionadosGrid from '../components/TemasRelacionadosGrid.astro';
 import type { ImageMetadata } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 
@@ -27,6 +28,10 @@ interface Props {
   ctaLabel: string;
   ctaHref: string;
   articulosRelacionados: CollectionEntry<'blog' | 'radar'>[];
+  // "Áreas clave relacionadas" (18 oct): entre Soluciones y Artículos
+  // relacionados, sin enlace hasta que exista el artículo de cada área.
+  areasHeading?: string;
+  areas?: { icon: string | ImageMetadata; title: string; text: string; href?: string }[];
 }
 
 const {
@@ -43,6 +48,8 @@ const {
   ctaLabel,
   ctaHref,
   articulosRelacionados,
+  areasHeading = 'Áreas clave relacionadas',
+  areas,
 } = Astro.props;
 ---
 
@@ -70,7 +77,20 @@ const {
     /resistencia-insulina/), ArticulosRelacionados no renderiza nada — nunca
     se muestra un bloque vacío.
   -->
+  {areas && areas.length > 0 && (
+    <div class="areas-clave">
+      <TemasRelacionadosGrid heading={areasHeading} temas={areas} />
+    </div>
+  )}
+
   <ArticulosRelacionados articulos={articulosRelacionados} />
 
 </div>
 </BaseLayout>
+
+<style>
+  /* Separación tras la banda de Soluciones (igual que antes de las causas). */
+  .areas-clave {
+    padding-top: 57px;
+  }
+</style>

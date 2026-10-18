@@ -1,106 +1,183 @@
 ---
+// Ciclo menstrual — página hija de Hormonas, rehecha el 18 oct sobre la
+// plantilla de hijas (Fatiga crónica; ver 00-analisis/Plantilla - Páginas
+// hijas.md). Textos aprobados por la usuaria en
+// 00-analisis/Textos - Hormonas/01 - Ciclo menstrual.md: los del original de
+// WordPress más lo nuevo (frase del hero en "tú" con el nombre de la página,
+// fases del ciclo, segunda frase en causas y síntomas, relación ampliada,
+// texto de las soluciones). Ilustraciones de causas y fotos de áreas clave
+// del original; áreas clave sin enlace hasta que exista su artículo.
+// Iconos reales del original desde src/lib/iconos.ts.
 import { getCollection } from 'astro:content';
 import { pickRelacionados } from '../../lib/relacionados';
-import SubpageTemplateA from '../../layouts/SubpageTemplateA.astro';
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
 import TextoConImagen from '../../components/TextoConImagen.astro';
 import CausasGrid from '../../components/CausasGrid.astro';
-import ListaSintomas from '../../components/ListaSintomas.astro';
 import RelacionImagenes from '../../components/RelacionImagenes.astro';
 import SolucionesList from '../../components/SolucionesList.astro';
+import ChecklistCard from '../../components/ChecklistCard.astro';
+import { Image } from 'astro:assets';
+import * as iconos from '../../lib/iconos';
 import heroImg from './_images/hero.jpg';
 import definicionImg from './_images/definicion.jpg';
 import relacion1Img from './_images/relacion-1.jpg';
 import relacion2Img from './_images/relacion-2.jpg';
-import iconoDesordenesHormonales from './_images/icono-desordenes-hormonales.jpg';
-import iconoEstresAnsiedad from './_images/icono-estres-ansiedad.jpg';
-import iconoPesoYDieta from './_images/icono-peso-y-dieta.jpg';
-import iconoMedicamentosTratamientos from './_images/icono-medicamentos-tratamientos.jpg';
-import iconoEnfermedadesCronicas from './_images/icono-enfermedades-cronicas.jpg';
-import iconoEdadYCambios from './_images/icono-edad-y-cambios.jpg';
-import iconoSaludHormonal from './_images/icono-salud-hormonal.jpg';
-import iconoNutricion from './_images/icono-nutricion.jpg';
-import iconoActividadFisica from './_images/icono-actividad-fisica.jpg';
-import iconoSaludMental from './_images/icono-salud-mental.jpg';
+import causaDesordenes from './_images/icono-desordenes-hormonales.jpg';
+import causaEstres from './_images/icono-estres-ansiedad.jpg';
+import causaPesoDieta from './_images/icono-peso-y-dieta.jpg';
+import causaMedicamentos from './_images/icono-medicamentos-tratamientos.jpg';
+import causaEnfermedades from './_images/icono-enfermedades-cronicas.jpg';
+import causaEdad from './_images/icono-edad-y-cambios.jpg';
+import areaSaludHormonal from './_images/icono-salud-hormonal.jpg';
+import areaNutricion from './_images/icono-nutricion.jpg';
+import areaActividad from './_images/icono-actividad-fisica.jpg';
+import areaSaludMental from './_images/icono-salud-mental.jpg';
 
-const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('ciclo-menstrual'));
+const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.category.includes('ciclo-menstrual'), 3, (p) => p.data.category.startsWith('hormonas'));
 ---
 
-<SubpageTemplateA
-  seoTitle="Ciclo menstrual: fases y equilibrio hormonal"
-  seoDescription="Comprende las fases del ciclo menstrual y cómo influyen en tu energía, ánimo y metabolismo."
-  heroTitle="Ciclo menstrual: fases y cambios hormonales"
-  heroSubtitle="Entienda su cuerpo y aproveche al máximo su salud hormonal."
+<SubpageTemplateB
+  seoTitle="Ciclo menstrual: fases y cambios hormonales"
+  seoDescription="Comprende las fases del ciclo menstrual, qué puede alterarlo y cómo influye en tu energía, tu ánimo y tu metabolismo."
+  heroTitle="Entiende tu ciclo menstrual, cómo cambian tus hormonas cada mes y aprovecha al máximo tu salud hormonal."
+  heroTitleDestacado="ciclo menstrual"
+  heroTitleSize="frase"
   heroImage={heroImg}
   heroImageAlt="Ciclo menstrual"
   ctaLabel="Descargar la guía ahora"
   ctaHref="/lm-5-pasos-optin/"
   areasHeading="Explora cada área clave del Ciclo Menstrual"
   areas={[
-    { icon: iconoSaludHormonal, title: 'Salud Hormonal', href: '/hormonas/', text: 'Cómo se relaciona el ciclo con tu equilibrio hormonal general.' },
-    { icon: iconoNutricion, title: 'Nutrición', href: '/alimentacion/', text: 'Alimentación adaptada a cada fase del ciclo.' },
-    { icon: iconoActividadFisica, title: 'Actividad Física', href: '/metabolismo/', text: 'Cómo adaptar el ejercicio a cada fase hormonal.' },
-    { icon: iconoSaludMental, title: 'Salud Mental', href: '/mentalidad/', text: 'Cambios de ánimo asociados al ciclo menstrual.' },
+    { icon: areaSaludHormonal, title: 'Salud Hormonal', text: 'Entiende cómo las hormonas afectan tu cuerpo y ciclo menstrual.' },
+    { icon: areaNutricion, title: 'Nutrición', text: 'Aprende sobre los alimentos que pueden ayudar o perjudicar tu salud menstrual.' },
+    { icon: areaActividad, title: 'Actividad Física', text: 'Descubre cómo el ejercicio puede influir en tu ciclo menstrual y salud general.' },
+    { icon: areaSaludMental, title: 'Salud Mental', text: 'Explora la relación entre la salud mental y el ciclo menstrual.' },
   ]}
   articulosRelacionados={articulos}
 >
-  <p>El ciclo menstrual es un proceso natural que ocurre en el cuerpo de las mujeres, pero muchos mitos y dudas rodean este tema.</p>
-  <p>En esta guía, exploraremos las causas, síntomas y soluciones para un ciclo menstrual saludable.</p>
+  <section class="intro">
+    <p>El ciclo menstrual es un proceso natural que ocurre en el cuerpo de las mujeres, pero muchos mitos y dudas rodean este tema.</p>
+    <p>Cada mes, las hormonas suben y bajan siguiendo un ritmo que influye no solo en la menstruación, sino también en la energía, el apetito, el descanso y el estado de ánimo.</p>
+    <p>Conocer ese ritmo ayuda a entender por qué el cuerpo no se siente igual todas las semanas y a detectar cuándo algo no va bien.</p>
+    <p>En esta guía, exploraremos las causas, síntomas y soluciones para un ciclo menstrual saludable.</p>
+  </section>
 
-  <TextoConImagen heading="¿Qué es el Ciclo Menstrual?" image={definicionImg} imageAlt="Fases del ciclo menstrual">
+  <SolucionesList
+    variant="pill"
+    soluciones={[
+      { title: 'Dolor Abdominal', icon: iconos.caraTriste },
+      { title: 'Fatiga', icon: iconos.caraCansada },
+      { title: 'Mareos', icon: iconos.cabezaVirus },
+      { title: 'Cambios de Humor', icon: iconos.cabezaEscaner },
+      { title: 'Sangrado Menstrual', icon: iconos.gotaSangre },
+    ]}
+  />
+
+  <section class="intro lista">
+    <p class="sabias">¿Quieres dominar tu ciclo menstrual y sentirte más segura y saludable?</p>
+    <ChecklistCard
+      columns={1}
+      items={[
+        'Comprenderás las fases del ciclo menstrual y cómo afectan tu cuerpo',
+        'Aprenderás a reconocer los síntomas del ciclo menstrual y cómo manejarlos',
+        'Descubrirás las causas detrás de los trastornos del ciclo menstrual y cómo prevenirlos',
+        'Conocerás las mejores prácticas para cuidar tu salud hormonal y menstrual',
+      ]}
+    />
+  </section>
+
+  <TextoConImagen heading="¿Qué es el Ciclo Menstrual?" image={definicionImg} imageAlt="Qué es el ciclo menstrual">
     <p>El ciclo menstrual es el proceso natural por el cual el cuerpo de una mujer se prepara para un posible embarazo cada mes.</p>
     <p>Se compone de varias fases, incluyendo la menstruación, la ovulación y la fase lútea.</p>
+    <p>Suele durar entre 21 y 35 días y, de forma simplificada, se divide en cuatro fases:</p>
+    <ul class="fases">
+      <li><strong>Fase menstrual:</strong> el útero desprende su revestimiento y comienza el sangrado. Los niveles de estrógenos y progesterona están en su punto más bajo.</li>
+      <li><strong>Fase folicular:</strong> los estrógenos aumentan poco a poco para preparar la ovulación. Muchas mujeres notan más energía y mejor ánimo.</li>
+      <li><strong>Ovulación:</strong> el ovario libera un óvulo, hacia la mitad del ciclo. Es el momento de mayor fertilidad.</li>
+      <li><strong>Fase lútea:</strong> sube la progesterona. Si no hay embarazo, ambas hormonas descienden al final de esta fase y aparece la menstruación.</li>
+    </ul>
     <p>Este proceso está regulado por una compleja interacción de hormonas como los estrógenos y la progesterona, que no solo controlan la función reproductiva, sino que también influyen en la energía, el estado de ánimo, el metabolismo y la salud general.</p>
     <p>Por eso, entender el ciclo menstrual permite comprender mejor los cambios físicos y emocionales que pueden experimentarse a lo largo del mes.</p>
   </TextoConImagen>
 
-  <p>¿Qué puede estar afectando tu ciclo menstrual?</p>
   <CausasGrid
     heading="Causas del Ciclo Menstrual Irregular"
+    subheading={[
+      '¿Qué puede estar afectando tu ciclo menstrual?',
+      'Un ciclo irregular, muy doloroso o con cambios bruscos de un mes a otro suele ser una señal de que algo está alterando el equilibrio hormonal. Estas son las causas más frecuentes:',
+    ]}
     causas={[
-      { icon: iconoDesordenesHormonales, title: 'Desórdenes Hormonales', text: 'Los desórdenes hormonales, como el síndrome de ovario poliquístico, pueden afectar el ciclo menstrual.' },
-      { icon: iconoEstresAnsiedad, title: 'Estrés y Ansiedad', text: 'El estrés y la ansiedad pueden influir en el ciclo menstrual, causando irregularidades.' },
-      { icon: iconoPesoYDieta, title: 'Peso y Dieta', text: 'Un peso bajo o un exceso de peso, así como una dieta deficiente, pueden afectar el ciclo menstrual.' },
-      { icon: iconoMedicamentosTratamientos, title: 'Medicamentos y Tratamientos', text: 'Algunos medicamentos y tratamientos pueden afectar el ciclo menstrual.' },
-      { icon: iconoEnfermedadesCronicas, title: 'Enfermedades Crónicas', text: 'Enfermedades como la diabetes o la hipertensión pueden influir en el ciclo menstrual.' },
-      { icon: iconoEdadYCambios, title: 'Edad y Cambios en el Cuerpo', text: 'Los cambios naturales del cuerpo con la edad pueden influir en el ciclo menstrual.' },
-    ]}
-  />
-  <p>Ahora que conoces las causas, es tiempo de explorar los síntomas del ciclo menstrual.</p>
-
-  <p>¿Qué debes esperar durante tu ciclo menstrual?</p>
-  <ListaSintomas
-    heading="Síntomas del Ciclo Menstrual"
-    items={[
-      'El dolor abdominal puede variar desde una ligera molestia hasta un dolor intenso.',
-      'La fatiga es común debido a la pérdida de sangre y los cambios hormonales.',
-      'Los mareos pueden ocurrir debido a la disminución de la presión arterial.',
-      'Los cambios de humor pueden ir desde la irritabilidad hasta la depresión.',
-      'El sangrado menstrual es la pérdida normal de sangre durante la menstruación.',
-      'La hinchazón puede ocurrir debido a la retención de líquidos.',
+      { icon: causaDesordenes, title: 'Desórdenes Hormonales', text: 'Los desórdenes hormonales, como el síndrome de ovario poliquístico, pueden afectar el ciclo menstrual. También las alteraciones de la tiroides o de la prolactina pueden retrasar la ovulación o hacer que los ciclos sean más largos o más cortos de lo habitual.' },
+      { icon: causaEstres, title: 'Estrés y Ansiedad', text: 'El estrés y la ansiedad pueden influir en el ciclo menstrual, causando irregularidades. El cortisol elevado de forma mantenida interfiere con las señales que el cerebro envía a los ovarios, y puede adelantar, retrasar o incluso interrumpir la menstruación.' },
+      { icon: causaPesoDieta, title: 'Peso y Dieta', text: 'Un peso bajo o un exceso de peso, así como una dieta deficiente, pueden afectar el ciclo menstrual. Las dietas muy restrictivas, la falta de energía disponible o el déficit de nutrientes como el hierro pueden alterar la producción hormonal.' },
+      { icon: causaMedicamentos, title: 'Medicamentos y Tratamientos', text: 'Algunos medicamentos y tratamientos pueden afectar el ciclo menstrual. Es el caso de los anticonceptivos hormonales, algunos antidepresivos o los tratamientos oncológicos; ante cualquier cambio, conviene comentarlo con un profesional.' },
+      { icon: causaEnfermedades, title: 'Enfermedades Crónicas', text: 'Enfermedades como la diabetes o la hipertensión pueden influir en el ciclo menstrual. La resistencia a la insulina, la celiaquía o algunas enfermedades autoinmunes también pueden alterar la regularidad del ciclo.' },
+      { icon: causaEdad, title: 'Edad y Cambios en el Cuerpo', text: 'Los cambios naturales del cuerpo con la edad pueden influir en el ciclo menstrual. En los primeros años tras la primera regla y en la perimenopausia es habitual que los ciclos sean menos predecibles.' },
     ]}
   />
 
-  <p>¿Cómo se relaciona el ciclo menstrual con tu salud en general?</p>
-  <RelacionImagenes
-    heading="Relación con los Sistemas Hormonales y Metabólicos"
-    images={[
-      { src: relacion1Img, alt: 'Relación con sistema hormonal' },
-      { src: relacion2Img, alt: 'Infografía ciclo menstrual hormonal' },
-    ]}
-  >
+  <p class="parrafo-suelto centrado">Ahora que conoces las causas, es tiempo de explorar los síntomas del ciclo menstrual.</p>
+
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Síntomas del Ciclo Menstrual</h2>
+      <p class="subheading">¿Qué debes esperar durante tu ciclo menstrual?</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Dolor abdominal', text: 'El dolor abdominal puede variar desde una ligera molestia hasta un dolor intenso. Si el dolor impide hacer vida normal, no es algo que haya que aguantar: conviene consultarlo.' },
+          { title: 'Fatiga', text: 'La fatiga es común debido a la pérdida de sangre y los cambios hormonales. Suele notarse más en los días de sangrado y al final de la fase lútea.' },
+          { title: 'Mareos', text: 'Los mareos pueden ocurrir debido a la disminución de la presión arterial. Una hidratación adecuada y no saltarse comidas puede ayudar a reducirlos.' },
+          { title: 'Cambios de humor', text: 'Los cambios de humor pueden ir desde la irritabilidad hasta la depresión. Están ligados a la bajada de estrógenos y progesterona en los días previos a la menstruación.' },
+          { title: 'Sangrado menstrual', text: 'El sangrado menstrual es la pérdida normal de sangre durante la menstruación. Un sangrado muy abundante o que dura más de 7 días merece una valoración profesional.' },
+          { title: 'Hinchazón', text: 'La hinchazón puede ocurrir debido a la retención de líquidos. Es más frecuente en la fase lútea y suele desaparecer cuando empieza la regla.' },
+        ]}
+      />
+    </section>
+  </div>
+
+  <RelacionImagenes heading="Relación con los Sistemas Hormonales y Metabólicos">
+    <p>¿Cómo se relaciona el ciclo menstrual con tu salud en general?</p>
     <p>El ciclo menstrual está íntimamente relacionado con los sistemas hormonales y metabólicos del cuerpo. Los cambios hormonales durante el ciclo menstrual pueden afectar el metabolismo, la salud ósea y la función cardiovascular.</p>
+    <Image src={relacion1Img} alt="Relación del ciclo menstrual con los sistemas hormonales y metabólicos" />
+    <p><strong>Metabolismo y apetito.</strong> Los estrógenos favorecen una mejor sensibilidad a la insulina, mientras que en la fase lútea el gasto energético aumenta ligeramente y es habitual tener más hambre o más antojos. Entender este cambio ayuda a no vivirlo como una falta de fuerza de voluntad.</p>
+    <p><strong>Huesos y corazón.</strong> Los estrógenos protegen la densidad ósea y la salud de los vasos sanguíneos. Por eso, los ciclos que desaparecen durante meses (por estrés, dietas muy restrictivas o ejercicio excesivo) no solo afectan a la fertilidad, también a los huesos a largo plazo.</p>
+    <p><strong>Tiroides y cortisol.</strong> El ciclo no funciona de forma aislada: la tiroides regula el metabolismo y el cortisol responde al estrés, y ambos influyen en la ovulación. Un desequilibrio en uno de estos sistemas suele reflejarse en el ciclo.</p>
+    <p><strong>Energía y descanso.</strong> La progesterona tiene un efecto calmante y favorece el sueño, mientras que su bajada antes de la regla puede alterar el descanso y la energía de los días siguientes.</p>
+    <Image src={relacion2Img} alt="Mujer cuidando su salud hormonal" />
     <p>Conocer estas relaciones te permite tomar decisiones informadas para tu salud.</p>
   </RelacionImagenes>
 
-  <p>¿Qué puedes hacer para mejorar tu salud menstrual?</p>
   <SolucionesList
     heading="Soluciones para un Ciclo Menstrual Saludable"
+    subheading="¿Qué puedes hacer para mejorar tu salud menstrual?"
+    subheadingVariant="destacado"
+    subheadingAlign="center"
+    variant="card"
+    band="b"
     soluciones={[
-      { title: 'Mantener un peso saludable' },
-      { title: 'Ejercitarse regularmente' },
-      { title: 'Seguir una dieta equilibrada' },
-      { title: 'Reducir el estrés' },
-      { title: 'Consultar a un profesional de la salud' },
+      { title: 'Mantener un peso saludable', icon: iconos.peso, body: 'Tanto un peso muy bajo como el exceso de grasa corporal pueden alterar la producción de hormonas. Buscar un peso estable, sin cambios bruscos ni dietas extremas, favorece ciclos más regulares.' },
+      { title: 'Ejercitarse regularmente', icon: iconos.ejercicio, body: 'El movimiento habitual mejora la circulación, reduce el dolor menstrual y ayuda a gestionar el estrés. Adaptar la intensidad a cómo te sientes en cada fase del ciclo hace que sea más fácil mantenerlo.' },
+      { title: 'Seguir una dieta equilibrada', icon: iconos.comidaVariante, body: 'Una alimentación variada, con suficiente proteína, grasas saludables, fibra y alimentos ricos en hierro, aporta lo que el cuerpo necesita para producir hormonas y reponer lo que se pierde con el sangrado.' },
+      { title: 'Reducir el estrés', icon: iconos.caraFelizIcomoon, body: 'El estrés mantenido es una de las causas más frecuentes de ciclos irregulares. Dormir lo suficiente, reservar momentos de descanso y practicar técnicas de relajación ayuda a recuperar el equilibrio.' },
+      { title: 'Consultar a un profesional de la salud', icon: iconos.doctora, body: 'Si tu ciclo cambia de forma notable, el dolor es intenso o el sangrado es muy abundante, un profesional puede valorar la causa y orientarte sobre el tratamiento más adecuado.' },
     ]}
   />
-</SubpageTemplateA>
+</SubpageTemplateB>
+
+<style>
+  /* Medido en el original: pregunta Fredoka 22px centrada; frase tras las
+     causas 26px centrada. */
+  .intro .sabias {
+    margin-top: 39px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .parrafo-suelto.centrado {
+    text-align: center;
+  }
+  .fases li {
+    margin-bottom: 0.5rem;
+  }
+</style>
