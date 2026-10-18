@@ -759,6 +759,46 @@
       "source": "/category/radar-de-salud/page/:n(\\d+)/",
       "destination": "/radar-de-salud/",
       "statusCode": 301
+    },
+    {
+      "source": "/author/:slug",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/:slug/",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/:slug/page/:n(\\d+)",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/:slug/page/:n(\\d+)/",
+      "destination": "/quienes-somos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug/page/:n(\\d+)",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug/page/:n(\\d+)/",
+      "destination": "/blog/",
+      "statusCode": 301
     }
   ]
 }
