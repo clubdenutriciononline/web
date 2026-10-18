@@ -84,7 +84,3 @@ Para aquellos interesados en incorporar el amaranto en su dieta, aquí te dejamo
 - **Barritas de Amaranto**: Una opción práctica para un snack saludable.
 
 A continuación un breve [vídeo](https://www.youtube.com/watch?v=HaBUfnIG--I) sobre las propiedades de este magnífico alimento.
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

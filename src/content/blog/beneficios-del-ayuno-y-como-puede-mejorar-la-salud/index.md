@@ -27,8 +27,6 @@ El ayuno es la abstinencia voluntaria de alimentos y bebidas por un período det
 - **Ayuno Prolongado**: Extiende el período de ayuno más allá de 24 horas.
 - **Ayuno Lunar:** El ayuno lunar es una práctica que se basa en los ciclos de la luna, una costumbre ancestral que muchas culturas han adoptado por sus múltiples beneficios para la salud.
 
-[![beneficios del ayuno y cómo puede mejorar la salud](./imagen-1.jpg)](https://amzn.to/46rbAeq)
-
 ## Beneficios del Ayuno
 
 ### Pérdida de Peso y Mejora del Metabolismo
@@ -80,7 +78,3 @@ El ayuno puede ser un desafío al principio. Es importante escuchar a tu cuerpo 
 Para apoyar tu viaje de ayuno, aquí hay algunas recomendaciones de productos:
 
 Puedes ver el [vídeo](https://youtu.be/kvzFaXOl27k) aquí:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

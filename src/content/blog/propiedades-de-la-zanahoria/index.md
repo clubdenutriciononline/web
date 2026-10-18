@@ -23,14 +23,6 @@ Son muy versátiles a la hora de cocinar, por lo que podemos hacer gran cantidad
 
 Las zanahorias se pueden tomar tanto crudas como cocinadas. Guisadas, al vapor, en forma de bastón, al wok, ralladas en ensalada… de cualquier forma son una buena elección.
 
-[![](./imagen-1.jpg)](https://amzn.to/3RHhUZg)
-
-### [Recomendamos: Rallador multiusos](https://amzn.to/3RHhUZg)
-
-Descubre el rallador multiusos que hace que preparar tus zanahorias sea rápido y sencillo. Ideal para ensaladas, guarniciones y más. ¡Haz de tu cocina un lugar más práctico y eficiente! 🍽️✨
-
-[Comprar](https://amzn.to/3RHhUZg)
-
 ## Propiedades que tiene la zanahoria:
 
 1. Fuente de calcio, potasio y hierro, para mantener un organismo sano.
@@ -50,7 +42,3 @@ En definitiva; un alimento que no puede faltar en nuestra [alimentación](/nutri
 ![](./imagen-2.png)
 
 Puedes ver el vídeo haciendo clic:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

@@ -86,7 +86,3 @@ En conclusión, incorporar el ayuno intermitente a tu estilo de vida puede tener
 Puedes ver el [vídeo](https://youtu.be/YZusYScwtac) a continuación:
 
 [▶ Los distintos tipos de ayuno intermitente para mejorar la salud 🕐🍽️](https://www.youtube.com/watch?v=YZusYScwtac)
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

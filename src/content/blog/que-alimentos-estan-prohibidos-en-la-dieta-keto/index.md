@@ -50,6 +50,4 @@ Además de los alimentos mencionados anteriormente, hay otros que están prohibi
 
 En resumen, la dieta keto requiere una planificación cuidadosa para evitar los alimentos ricos en carbohidratos y grasas no saludables. Algunos de los alimentos más comunes que están prohibidos en la dieta keto incluyen panes y productos de panadería, cereales y granos, tubérculos, legumbres, frutas y verduras altas en carbohidratos, azúcares y alimentos procesados, y otros alimentos grasos no saludables.
 
-![](./imagen-1.png)Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).
+![](./imagen-1.png)

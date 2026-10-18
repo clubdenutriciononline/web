@@ -79,7 +79,3 @@ Debido a su bajo contenido calórico y alto contenido de fibra y agua, la lechug
 ¿Todavía te estás pensando si tomar lechuga como acompañamiento a tus comidas?
 
 Puedes ver el [vídeo](https://www.youtube.com/watch?v=LF_pF7r7pO8) a continuación:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

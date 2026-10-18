@@ -73,8 +73,6 @@ Para saber si tienes hambre física o emocional, puedes hacerte estas preguntas:
    - Si te sientes emocional (triste, aburrido, estresado), podría ser hambre emocional.
    - Si te sientes físicamente débil o con poca energía, es más probable que sea hambre física.
 
-#### Recomendamos Diario de Alimentación Consciente
-
 A  continuación te dejo una infografía visual de la diferencia entre hambre física o emocional:
 
 [![](./imagen-2.png)](/mente/)
@@ -100,7 +98,3 @@ Diferenciar entre el hambre física o emocional es importante para mantener una 
 Recuerda, está bien disfrutar de tus comidas favoritas, pero también es importante cuidar de tu cuerpo y tus emociones de manera saludable. ¡Escucha a tu cuerpo y dale lo que realmente necesita!
 
 Veamos a continuación un [vídeo](https://youtu.be/-c_mF0GeiH8) sobre el hambre emocional y el hambre física:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

@@ -71,10 +71,6 @@ La dieta keto puede parecer restrictiva al principio, pero hay una variedad de a
 
 ![](./imagen-6.png)
 
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).
-
 **Aviso importante:**
 
 La información proporcionada en esta página tiene únicamente fines informativos y educativos. No está destinada a sustituir el consejo, diagnóstico o tratamiento médico profesional. Siempre consulta con un médico u otro profesional de la salud cualificado cualquier duda que tengas sobre una condición médica o tratamiento.

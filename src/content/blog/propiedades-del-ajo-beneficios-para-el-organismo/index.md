@@ -86,7 +86,3 @@ Las propiedades del ajo lo convierten en un superalimento que no puede faltar en
 Así que, la próxima vez que veas una receta con ajo, ¡no dudes en añadirlo y disfrutar de todos sus beneficios! ¡Tu cuerpo te lo agradecerá!
 
 Ver [vídeo](https://youtu.be/dhO4Zv1Lsyg) de las propiedades del ajo:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

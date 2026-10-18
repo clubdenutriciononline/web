@@ -85,7 +85,3 @@ Bebe Agua
 En lugar de bebidas azucaradas, opta por agua, café o infusiones sin azúcar. ¡Es una manera fácil de reducir tu ingesta de azúcar!
 
 Puedes ver el [Vídeo explicativo](https://www.youtube.com/watch?v=rWos7zMjjdA) a continuación:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

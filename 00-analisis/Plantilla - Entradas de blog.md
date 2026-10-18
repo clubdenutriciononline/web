@@ -5,11 +5,11 @@ Decidida el 18 oct 2026 sobre la entrada de Fatiga crónica (`/fatiga-cronica-si
 ## Estructura
 
 1. **Hero de las hijas** (fondo degradado): título de la entrada, frase debajo (el primer párrafo del Markdown), línea y botón de la guía, e imagen de portada a la derecha.
-2. **Miga de pan** en una línea discreta (Inicio › categoría madre › subcategoría). **Sin fecha visible** (decisión del 18 oct); las fechas siguen en los datos estructurados (JSON-LD) para buscadores.
+2. **Miga de pan y botones de compartir** (Facebook, Pinterest, LinkedIn, X, WhatsApp, email) en una línea discreta (Inicio › categoría madre › subcategoría). **Sin fecha visible** (decisión del 18 oct); las fechas siguen en los datos estructurados (JSON-LD) para buscadores.
 3. **Tabla de contenidos** (fondo blanco), con todos los H2. Se mantiene por SEO.
 4. **Una sección por cada H2**, alternando fondo **degradado** (impares, empezando por la Introducción) y **blanco** (pares).
-5. **Artículos relacionados** con las tarjetas de las hijas: primero la misma subcategoría y, si faltan, la misma categoría madre.
-6. Navegación « anterior · siguiente ».
+5. **Síguenos en redes**: título, una frase e iconos de las redes (los del pie), al final del artículo.
+6. **Artículos relacionados** con las tarjetas de las hijas: hasta 9 (primero la misma subcategoría y, si faltan, la misma categoría madre), de 3 en 3 con paginación "« Anterior · Página X de Y · Siguiente »". Sin navegación anterior/siguiente entre entradas.
 
 ## Tipografía (la de las hijas)
 
@@ -32,3 +32,9 @@ Decidida el 18 oct 2026 sobre la entrada de Fatiga crónica (`/fatiga-cronica-si
 - Primer párrafo: la frase del hero.
 - Cada sección empieza con `## Título` y, en la línea siguiente, un subtítulo corto sin punto final.
 - Preguntas frecuentes: `## Preguntas frecuentes` y, debajo, cada pregunta en su propio párrafo terminada en "?" seguida de la respuesta.
+
+## Reglas de contenido (18 oct 2026)
+
+- **Enlaces externos siempre en pestaña nueva** (en toda la web: los artículos se marcan al generar la página y el resto con un script en `BaseLayout`).
+- **Sin afiliados:** se quitaron todos los bloques de Amazon ("Recomendamos", "TIP", fotos de producto y botones "Comprar") de 10 entradas.
+- **Sin despedidas antiguas:** se quitaron "Nos vemos en el camino 🙂" y "Si quieres saber más… suscríbete a mi canal…" de 37 entradas; su función la cumple ahora el bloque "Síguenos en redes".

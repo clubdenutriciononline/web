@@ -71,7 +71,3 @@ Para obtener los beneficios del sol sin riesgos, es recomendable exponerse al so
 Exposición Gradual
 
 Si no estás acostumbrado a la exposición al sol, es mejor comenzar de manera gradual para evitar quemaduras solares.
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

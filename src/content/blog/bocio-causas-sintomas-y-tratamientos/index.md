@@ -143,7 +143,3 @@ Para maximizar los beneficios del yodo, es importante:
 - **Consulta con un profesional:** Si tienes dudas sobre tu ingesta de yodo, consulta con un nutricionista o médico.
 
 Integrar estos alimentos en tu dieta diaria puede hacer una gran diferencia en la salud de tu tiroides y ayudarte a prevenir el bocio de manera efectiva.
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

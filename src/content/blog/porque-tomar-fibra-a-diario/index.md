@@ -70,7 +70,3 @@ Productos recomendados
 ¡Así que no olvides llenar tu plato con frutas, verduras, granos enteros y legumbres, y disfruta de los beneficios de una dieta rica en fibra!
 
 Puedes ver el [vídeo explicativo](https://www.youtube.com/watch?v=s81c6mlBgno) a continuación:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

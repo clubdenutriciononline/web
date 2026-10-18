@@ -40,18 +40,6 @@ Los micronutrientes son nutrientes que tu cuerpo necesita en pequeñas cantidade
 
 Aunque son pequeñitos, los micronutrientes son esenciales para que tu cuerpo funcione correctamente.
 
-[![](./imagen-3.jpg)](https://amzn.to/45Fw0Qm)
-
-### [Recomendamos: Gominolas Multivitamínicas](https://amzn.to/45Fw0Qm)
-
-¡Cuida tu salud de una manera deliciosa! Estas pequeñas delicias no solo son una forma divertida y sabrosa de asegurarte de que estás obteniendo las vitaminas y minerales esenciales que tu cuerpo necesita, sino que también son ideales para toda la familia.
-
-[Comprar](https://amzn.to/45Fw0Qm)
-
 Puedes ver el vídeo a continuación:
 
 YouTube
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

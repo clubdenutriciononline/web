@@ -62,6 +62,4 @@ A continuación, te presentamos algunos ejemplos de cómo cambiar las creencias 
 
 Cambiar las creencias negativas sobre la alimentación saludable requiere tiempo y esfuerzo. Sin embargo, con la información y las estrategias adecuadas, puedes cambiar tus creencias negativas y adquirir una mentalidad más positiva hacia la alimentación saludable. Recuerda que la alimentación saludable es un camino hacia una vida más saludable y feliz.
 
-![](./imagen-1.png)Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).
+![](./imagen-1.png)

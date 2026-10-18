@@ -69,7 +69,3 @@ Por último, tenemos el hambre del tacto. Este hambre es el que se activa cuando
 ¿Estás preparad@ para tomar consciencia y elegir la forma en que te alimentas?
 
 Como puedes observar, tenemos gran cantidad de señales. Éstas nos llevan a comer compulsivamente, sin siquiera tener un hambre real. Por eso te invito a que hagas un ejercicio práctico; cuando tengas hambre, sé consciente y averigua de dónde viene ese hambre, si viene de algún sentido corporal, y de cuál. Relaciónalo con los estímulos que estés recibiendo. Y lo más importante: elije si ese estímulo va a controlarte o si vas a ser tú quien controle tus acciones.
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

@@ -135,5 +135,9 @@ export function estructurarArticulo(html: string): { html: string; lead?: string
       return `<section class="art-sec"><div class="art-sec-inner">${cabecera}${cuerpo}</div></section>`;
     });
 
-  return { html: antes + secciones.join(''), lead };
+  // Enlaces externos en pestaña nueva (decisión de la usuaria, 18 oct).
+  const conEnlaces = (antes + secciones.join('')).replace(/<a\s+href="(https?:\/\/[^"]+)"([^>]*)>/g, (m, href, resto) =>
+    /^https?:\/\/(www\.)?clubdenutricion\.es/.test(href) || /target=/.test(resto) ? m : `<a href="${href}"${resto} target="_blank" rel="noopener noreferrer">`,
+  );
+  return { html: conEnlaces, lead };
 }

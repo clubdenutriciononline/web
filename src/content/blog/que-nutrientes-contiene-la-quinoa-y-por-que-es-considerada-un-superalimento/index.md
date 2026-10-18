@@ -49,6 +49,4 @@ La quinoa es un alimento versátil que puede ser incorporado en una variedad de 
 
 **En resumen, la quinoa es un superalimento que ofrece una variedad de beneficios para la salud. Es rica en proteínas, fibra, minerales y vitaminas, lo que la convierte en una excelente opción para aquellos que desean mejorar su salud y bienestar. Incorpórala en tu dieta y disfruta de sus beneficios.**
 
-**![](./imagen-1.png)Nos vemos en el camino 🙂**
-
-**Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).**
+![](./imagen-1.png)

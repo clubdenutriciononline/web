@@ -84,7 +84,3 @@ Fantástico alimento para **EMBARAZADAS** ya que posee ácido fólico.
 - **Deshidratadas:** Puedes deshidratar las frutas para tomarlas como un snack. Te dejamos abajo varios electrodomésticos indicados para deshidratar cualquier tipo de alimento.
 
 Puedes ver el [vídeo](https://www.youtube.com/watch?v=vpdfHXTtosE) relacionado a continuación:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

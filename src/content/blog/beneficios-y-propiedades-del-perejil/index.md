@@ -86,7 +86,3 @@ Los beneficios y propiedades del perejil lo convierten en un superhéroe de las 
 Te dejo el [vídeo](https://www.youtube.com/watch?v=U5kaekAFd-g) a continuación:
 
 YouTube
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

@@ -9,7 +9,9 @@
 //   src/lib/articulo-html.ts sobre el HTML de la entrada), con la tipografía
 //   de las hijas;
 // - preguntas frecuentes en desplegable y relacionados con las tarjetas de
-//   las hijas.
+//   las hijas, con paginación (Página X de Y) en vez de anterior/siguiente;
+// - botones de compartir arriba y "Síguenos en redes" al final.
+// Los enlaces externos se abren en pestaña nueva (articulo-html y BaseLayout).
 // Radar de Salud usa RadarLayout.astro y las recetas RecipeLayout.astro.
 import BaseLayout from './BaseLayout.astro';
 import Hero from '../components/Hero.astro';
@@ -17,6 +19,9 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import RecipeNutritionTable from '../components/RecipeNutritionTable.astro';
 import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import SocialIcon from '../components/SocialIcon.astro';
+import { socialLinks } from '../data/navigation';
 import { MADRES, SUBS, MADRE_HREF } from '../lib/categorias';
 import { estructurarArticulo } from '../lib/articulo-html';
 import type { CollectionEntry } from 'astro:content';
@@ -27,11 +32,10 @@ interface Props {
   categoria: string;
   headings: MarkdownHeading[];
   relacionados: CollectionEntry<'blog' | 'radar'>[];
-  anterior?: { title: string; href: string };
-  siguiente?: { title: string; href: string };
 }
 
-const { entry, categoria, headings, relacionados, anterior, siguiente } = Astro.props;
+const { entry, categoria, headings, relacionados } = Astro.props;
+const urlPagina = new URL(Astro.url.pathname, Astro.site).href;
 const { title, description, seo, image, imageAlt, date, updated, author, nutricion } = entry.data;
 
 const { html: cuerpoHtml, lead } = estructurarArticulo(await Astro.slots.render('default'));
@@ -78,6 +82,10 @@ const articleJsonLd = {
       <Breadcrumb items={migas} />
       <!-- Sin fecha visible (decisión de la usuaria, 18 oct). Las fechas
            siguen en los datos estructurados (JSON-LD) para buscadores. -->
+      <div class="compartir">
+        <span>Compartir:</span>
+        <ShareButtons url={urlPagina} title={title} />
+      </div>
     </div>
 
     {indice.length > 1 && (
@@ -91,12 +99,19 @@ const articleJsonLd = {
       {nutricion && <RecipeNutritionTable nutricion={nutricion} />}
     </article>
 
-    <ArticulosRelacionados articulos={relacionados} />
+    <section class="siguenos">
+      <h2>Síguenos en redes</h2>
+      <p>Más ideas sobre energía, hormonas y alimentación cada semana.</p>
+      <div class="siguenos-iconos">
+        {socialLinks.map((s) => (
+          <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
+            <SocialIcon name={s.icon} />
+          </a>
+        ))}
+      </div>
+    </section>
 
-    <nav class="prev-next" aria-label="Navegación entre entradas">
-      {anterior && <a href={anterior.href}>« {anterior.title}</a>}
-      {siguiente && <a href={siguiente.href}>{siguiente.title} »</a>}
-    </nav>
+    <ArticulosRelacionados articulos={relacionados} />
   </div>
 </BaseLayout>
 
@@ -287,15 +302,48 @@ const articleJsonLd = {
     margin-bottom: 1em;
   }
 
-  .prev-next {
+  .compartir {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.5rem 0;
-    font-size: 16px;
+    align-items: center;
+    gap: 0.6rem;
+    color: #666;
   }
-  .prev-next a {
+  .siguenos {
+    padding-block: var(--space-section) 0;
+    text-align: center;
+  }
+  .siguenos h2 {
     color: #6c2f50;
+    text-align: center;
+  }
+  .siguenos p {
+    font-family: var(--font-body);
+    font-size: 22px;
+    margin-bottom: 1.25rem;
+  }
+  .siguenos-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .siguenos-iconos a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    background: #6c2f50;
+    color: #fff;
+    transition: background 0.2s;
+  }
+  .siguenos-iconos a:hover {
+    background: #f964c0;
+  }
+  .siguenos-iconos :global(svg) {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
   }
 
   @media (max-width: 767px) {

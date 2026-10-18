@@ -63,7 +63,3 @@ Durante el ayuno lunar, se recomienda consumir solo líquidos claros como agua, 
 #### Post Ayuno
 
 Después del ayuno, es crucial reintroducir los alimentos lentamente. Comienza con comidas ligeras como sopas y ensaladas, y gradualmente reintroduce alimentos sólidos para evitar sobrecargar el sistema digestivo.
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

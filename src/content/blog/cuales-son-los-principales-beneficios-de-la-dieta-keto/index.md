@@ -47,6 +47,4 @@ La dieta keto no solo tiene beneficios físicos, sino que también puede tener b
 
 La dieta keto es una dieta efectiva para perder peso y mejorar la salud en general. Los beneficios de la dieta keto incluyen la reducción del apetito, el aumento de la quema de grasa, la mejora del metabolismo, la reducción del riesgo de enfermedades cardiovasculares, la mejora del control del azúcar en sangre y el aumento de la energía. Además, la dieta keto puede tener beneficios para la salud mental, como la reducción del estrés y la ansiedad y la mejora del estado de ánimo.
 
-![](./imagen-1.png)Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).
+![](./imagen-1.png)

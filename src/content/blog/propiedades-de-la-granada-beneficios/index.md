@@ -65,7 +65,3 @@ Incorporar la granada en tu dieta diaria es fácil y delicioso. Aquí te dejamos
 - **Batidos**: Combina granada con otras frutas para un desayuno saludable.
 
 Puedes ver el [vídeo](https://www.youtube.com/watch?v=sD1au4c8urw) aquí:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

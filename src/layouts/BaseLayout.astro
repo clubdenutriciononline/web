@@ -80,6 +80,16 @@ const organizationJsonLd = {
       <slot />
     </main>
     <Footer />
+    <!-- Enlaces externos siempre en pestaña nueva (decisión de la usuaria,
+         18 oct), en cualquier página. -->
+    <script is:inline>
+      document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+        if (a.hostname !== location.hostname && !/(^|\.)clubdenutricion\.es$/.test(a.hostname)) {
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+        }
+      });
+    </script>
   </body>
 </html>
 

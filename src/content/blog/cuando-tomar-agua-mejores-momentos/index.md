@@ -44,7 +44,3 @@ En total son 9 vasos de agua. Siguiendo estos pasos, y contando con que cada vas
 Ver [vídeo](https://www.youtube.com/watch?v=DYOqe1UJfw0):
 
 También nos recomiendan beber agua con limón, si quieres descubrir su beneficios entra [AQUÍ](/10-beneficios-de-beber-agua-con-limon/).
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

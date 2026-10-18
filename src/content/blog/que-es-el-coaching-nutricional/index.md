@@ -34,7 +34,3 @@ Para comenzar un proceso de este tipo, es importante que estés dispuest@ a asum
 Si quieres cambiar tu vida y deshacerte de esas emociones que te cohartan el camino hacia tus metas, no lo dudes y ponte en [contacto](/contacto/) conmigo [aquí.](/coach/contacto/) Estaré encantada de aclarar tus dudas y acompañarte en tu proceso.
 
 [Vídeo de motivación](https://www.youtube.com/watch?v=doWeSKKa0_w)
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

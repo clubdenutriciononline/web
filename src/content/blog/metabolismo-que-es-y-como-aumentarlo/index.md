@@ -41,14 +41,6 @@ Comer proteínas (como carne, pescado, huevos, granos, y nueces) en cada comida 
 
 El agua fría puede aumentar tu metabolismo porque tu cuerpo gasta energía (calorías) para calentar el agua hasta tu temperatura corporal. Además, mantenerse hidratado ayuda a tu cuerpo a funcionar de manera óptima.
 
-[![](./imagen-2.jpg)](https://amzn.to/3VKCytP)
-
-##### [TIP: Botella de agua termo](https://amzn.to/3VKCytP)
-
-¡Hazte con tu botella termo y lleva tu agua fría siempre contigo, para mantener un metabolismo activo.
-
-[Comprar](https://amzn.to/3VKCytP)
-
 #### 4\. Bebe café o té verde
 
 Tanto el té verde como el café contienen cafeína, que puede aumentar temporalmente tu metabolismo. El té verde también tiene antioxidantes llamados catequinas, que pueden trabajar junto con la cafeína para mejorar el efecto quema-grasas.
@@ -73,18 +65,6 @@ El estrés puede hacer que tu cuerpo libere una hormona llamada cortisol, que pu
 
 No dormir lo suficiente puede ralentizar tu metabolismo y hacerte sentir más hambriento, lo que podría llevar a comer en exceso. Dormir bien mantiene tu cuerpo y tu metabolismo en equilibrio.
 
-[![](./imagen-3.jpg)](https://amzn.to/45oRelD)
-
-##### [TIP: Máquina de ruido blanco](https://amzn.to/45oRelD)
-
-¿Sabías que existen unos aparatos que simulan el ruido blanco? El ruido blanco ayuda a mejorar el sueño y la concentración al enmascarar sonidos molestos del entorno. ¡Mejora tu sueño ahora!
-
-[Comprar](https://amzn.to/45oRelD)
-
 Y tú, ¿tienes algún truco para estimular el _metabolismo_? Compártelo con nosotras.
 
 Puedes ver el vídeo haciendo clic [aquí](https://www.youtube.com/watch?v=Zm4jz4uR12c):
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

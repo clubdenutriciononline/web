@@ -21,14 +21,6 @@ Hoy te traemos un vídeo en el que veremos las propiedades del pepino. Esta hort
 
 El pepino es una hortaliza compuesta por un 97% de agua que se utiliza principalmente para la elaboración de ensaladas, sopas y encurtidos. También utilizado en cosmética por sus propiedades beneficiosas para la piel.
 
-[![propiedades del pepino](./imagen-1.jpg)](https://amzn.to/3KOlUD8)
-
-#### [¿Hacemos un huerto urbano?](https://amzn.to/3KOlUD8)
-
-¡Cultiva tu salud y tu felicidad plantando tus propios pepinos! 🌱🥒 Es fácil, divertido y una excelente manera de conectar con la naturaleza. ¡Anímate a comenzar tu propio huerto hoy mismo! 🌿🌞
-
-[Comprar](https://amzn.to/3KOlUD8)
-
 ### PROPIEDADES DEL PEPINO:
 
 1. Es bueno para el corazón, ya que previene enfermedades![propiedades del pepino](./imagen-2.jpg) cardíacas.
@@ -50,7 +42,3 @@ El pepino es una hortaliza compuesta por un 97% de agua que se utiliza principal
 ![propiedades del pepino](./imagen-3.png)
 
 #### [Para ver el vídeo haz clic en la imagen:](https://youtu.be/qV8-9BzO57M)
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

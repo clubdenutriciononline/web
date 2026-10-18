@@ -40,27 +40,13 @@ const relacionados =
     ? pickRelacionados(
         siblings as any,
         (p) => (p.data as any).category === (entry.data as any).category,
-        3,
+        // Hasta 9 (3 páginas de 3, con paginación como en el resto de la web).
+        9,
         // Si faltan, se completa con la misma categoría madre (como en las hijas).
         (p) => (p.data as any).category.split('/')[0] === (entry.data as any).category.split('/')[0],
       )
     : siblings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 5);
 
-// Anterior/siguiente por fecha dentro de la misma collection — equivalente
-// a previous_post_link/next_post_link de WordPress (orden cronológico).
-let anterior: { title: string; href: string } | undefined;
-let siguiente: { title: string; href: string } | undefined;
-
-if (kind === 'blog') {
-  const ordered = (await getCollection('blog'))
-    .filter((p) => !p.data.draft)
-    .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
-  const idx = ordered.findIndex((p) => p.id === entry.id);
-  const prev = idx > 0 ? ordered[idx - 1] : undefined;
-  const next = idx >= 0 && idx < ordered.length - 1 ? ordered[idx + 1] : undefined;
-  anterior = prev ? { title: prev.data.title, href: `/${prev.data.slug ?? prev.id}/` } : undefined;
-  siguiente = next ? { title: next.data.title, href: `/${next.data.slug ?? next.id}/` } : undefined;
-}
 ---
 
 {kind === 'blog' && (entry.data as any).receta ? (
@@ -73,8 +59,6 @@ if (kind === 'blog') {
     categoria={(entry.data as any).category}
     headings={headings}
     relacionados={relacionados}
-    anterior={anterior}
-    siguiente={siguiente}
   >
     <Content />
   </ArticleLayout>

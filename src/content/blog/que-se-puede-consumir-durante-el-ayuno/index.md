@@ -60,6 +60,4 @@ A continuación, te presentamos algunas recomendaciones para el ayuno:
 
 En conclusión, el ayuno puede ser una práctica saludable si se hace de manera segura y responsable. Es importante elegir alimentos permitidos y mantenerse hidratado para asegurarte de que estás obteniendo todos los nutrientes necesarios. Recuerda consultar con un profesional de la salud antes de iniciar cualquier ayuno.
 
-![](./imagen-1.png)Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).
+![](./imagen-1.png)

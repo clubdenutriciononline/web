@@ -52,10 +52,6 @@ Varios factores pueden influir en los niveles de leptina en nuestro cuerpo. Uno 
 
 Además de la grasa corporal, otros factores que pueden afectar los niveles de leptina incluyen el sueño, el estrés, la dieta y el ejercicio. El sueño insuficiente y el estrés crónico se han asociado con niveles elevados de leptina, mientras que una alimentación saludable y el ejercicio regular pueden ayudar a regular los niveles de leptina en el cuerpo.
 
-## Recomendamos CLA
-
-[![](./imagen-2.png)](https://amzn.to/4eKosQF)
-
 ## Conclusiones
 
 En conclusión, la leptina es una hormona crucial en nuestro organismo que desempeña un papel fundamental en el control del apetito, el metabolismo y la regulación del peso corporal. Su producción y función están estrechamente vinculadas a la cantidad de grasa almacenada en nuestro cuerpo. Comprender cómo funciona la leptina nos ayuda a comprender mejor los mecanismos que regulan nuestro apetito, nuestro metabolismo energético y nuestra salud en general.
@@ -67,7 +63,3 @@ En resumen, la leptina: Descubriendo su Funcionamiento y Significado para la Sal
 Puedes ver el vídeo de la Leptina aquí:
 
 [▶ La Leptina: El Hormona Clave para Controlar el Apetito y el Peso 🧬🍽️](https://www.youtube.com/watch?v=P7cfxRWR_LE)
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

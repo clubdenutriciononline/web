@@ -84,14 +84,8 @@ Agrega bayas de goji a tus ensaladas para darles un toque dulce y un aumento de 
 
 Las bayas de goji se pueden encontrar en tiendas de alimentos saludables, supermercados y en línea. Busca bayas de goji secas en la sección de frutas secas o en el área de productos naturales.
 
-[![](./imagen-1.png)](https://amzn.to/4cR1hT3)
-
 El superalimento bayas de goji es una adición maravillosa a tu dieta. Estas pequeñas frutas rojas están llenas de nutrientes, ayudan a mejorar la visión, refuerzan el sistema inmunológico, mantienen la piel sana y aumentan la energía. ¡Incorpora las bayas de goji en tus comidas y disfruta de sus increíbles beneficios para la salud!
 
 Recuerda, una dieta equilibrada y variada es clave para una vida saludable. ¡Así que no dudes en probar este superalimento y ver cómo mejora tu bienestar!
 
 Puedes ver el [vídeo haciendo clic](https://www.youtube.com/watch?v=GFwJ2ZZ5vRs) a continuación:
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).

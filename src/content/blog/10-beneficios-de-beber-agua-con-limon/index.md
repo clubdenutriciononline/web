@@ -39,15 +39,8 @@ A continuación los 10 beneficios de beber agua con limón, si es en ayunas, mej
 
 10. **Reducción de la inflamación**: Beber agua con limón puede ayudar a reducir la inflamación en tu cuerpo, lo que es beneficioso para tus articulaciones y músculos.
 
-
 Estos beneficios hacen que el agua con limón sea una opción saludable y refrescante para incluir en tu rutina diaria.
-
-[![](./imagen-1.png)](https://amzn.to/3RtO75Y)
 
 Hasta aquí los 10 beneficios que prometimos que te contaríamos. ¿Ya empezaste a tomar agua con limón en ayunas? ¿cuándo piensas empezar a hacerlo?
 
 [Ver vídeo ahora:](https://www.youtube.com/watch?v=ltO-jl1WcAs)
-
-Nos vemos en el camino 🙂
-
-Si quieres saber más sobre nutrición y vida sana, [suscríbete a mi canal](https://www.youtube.com/user/nutriclubweb) y sigue mi página de [Facebook](https://www.facebook.com/clubdenutricion.es/). Visita la sección de blog [aquí](/blog/).
