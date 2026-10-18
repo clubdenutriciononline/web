@@ -6,7 +6,7 @@
 // Analytics solo se carga si la visitante acepta las cookies analíticas en
 // el aviso (src/components/AvisoCookies.astro), con el modo de
 // consentimiento de Google (Consent Mode v2) denegado por defecto.
-export const GA_ID = '';
+export const GA_ID = 'G-T6KPWKGF7F';
 
 // Clave donde se guarda la elección de la visitante (localStorage; es
 // técnica, no necesita consentimiento) y meses que vale antes de volver a
