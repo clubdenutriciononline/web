@@ -25,7 +25,7 @@ export async function getStaticPaths() {
 }
 
 const { entry, kind } = Astro.props;
-const { Content } = await render(entry as any);
+const { Content, headings } = await render(entry as any);
 
 // Relacionados: misma collection, misma categoría (blog) o cualquier otra
 // publicación de Radar (radar), excluyendo la propia entrada, más recientes
@@ -37,7 +37,13 @@ const siblings = (kind === 'blog' ? await getCollection('blog') : await getColle
 
 const relacionados =
   kind === 'blog'
-    ? pickRelacionados(siblings as any, (p) => (p.data as any).category === (entry.data as any).category, 3)
+    ? pickRelacionados(
+        siblings as any,
+        (p) => (p.data as any).category === (entry.data as any).category,
+        3,
+        // Si faltan, se completa con la misma categoría madre (como en las hijas).
+        (p) => (p.data as any).category.split('/')[0] === (entry.data as any).category.split('/')[0],
+      )
     : siblings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 5);
 
 // Anterior/siguiente por fecha dentro de la misma collection — equivalente
@@ -64,8 +70,8 @@ if (kind === 'blog') {
 ) : kind === 'blog' ? (
   <ArticleLayout
     entry={entry as any}
-    categoriaLabel={(entry.data as any).category}
-    categoriaHref="/blog/"
+    categoria={(entry.data as any).category}
+    headings={headings}
     relacionados={relacionados}
     anterior={anterior}
     siguiente={siguiente}

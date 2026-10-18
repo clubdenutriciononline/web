@@ -1,27 +1,48 @@
 ---
-// Plantilla de artículo de Blog "normal" (post type default de Astra en el
-// original): breadcrumb + imagen destacada embebida + cuerpo + tabla
-// nutricional opcional (recetas) + relacionados + navegación anterior/siguiente.
-// Radar de Salud usa RadarLayout.astro, una plantilla distinta (sin
-// breadcrumb, con share buttons, secciones fijas con emoji).
+// Plantilla de artículo del blog. Rehecha el 18 oct con el formato de las
+// páginas hijas (decisión de la usuaria, sobre la entrada de Fatiga crónica):
+// - hero lateral de las hijas: título, frase (`lead`, el primer párrafo del
+//   artículo), botón de la guía e imagen a la derecha;
+// - miga de pan y fecha en una línea discreta, y tabla de contenidos (SEO)
+//   sobre fondo blanco;
+// - una sección por cada H2, alternando fondo degradado y blanco (las monta
+//   src/lib/articulo-html.ts sobre el HTML de la entrada), con la tipografía
+//   de las hijas;
+// - preguntas frecuentes en desplegable y relacionados con las tarjetas de
+//   las hijas.
+// Radar de Salud usa RadarLayout.astro y las recetas RecipeLayout.astro.
 import BaseLayout from './BaseLayout.astro';
-import { Image } from 'astro:assets';
+import Hero from '../components/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 import RecipeNutritionTable from '../components/RecipeNutritionTable.astro';
 import ArticulosRelacionados from '../components/ArticulosRelacionados.astro';
+import { MADRES, SUBS, MADRE_HREF } from '../lib/categorias';
+import { estructurarArticulo } from '../lib/articulo-html';
 import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
 
 interface Props {
   entry: CollectionEntry<'blog'>;
-  categoriaLabel: string;
-  categoriaHref: string;
+  categoria: string;
+  headings: MarkdownHeading[];
   relacionados: CollectionEntry<'blog' | 'radar'>[];
   anterior?: { title: string; href: string };
   siguiente?: { title: string; href: string };
 }
 
-const { entry, categoriaLabel, categoriaHref, relacionados, anterior, siguiente } = Astro.props;
+const { entry, categoria, headings, relacionados, anterior, siguiente } = Astro.props;
 const { title, description, seo, image, imageAlt, date, updated, author, nutricion } = entry.data;
+
+const { html: cuerpoHtml, lead } = estructurarArticulo(await Astro.slots.render('default'));
+
+const [madreSlug, subSlug] = categoria.split('/');
+const migas = [
+  { label: 'Inicio', href: '/' },
+  ...(MADRES[madreSlug] ? [{ label: MADRES[madreSlug], href: MADRE_HREF[madreSlug] }] : [{ label: 'Blog', href: '/blog/' }]),
+  ...(subSlug && SUBS[subSlug] ? [{ label: SUBS[subSlug] }] : []),
+];
+const indice = headings.filter((h) => h.depth === 2).map((h) => ({ label: h.text.charAt(0).toLocaleUpperCase('es') + h.text.slice(1), anchor: h.slug }));
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -40,46 +61,214 @@ const articleJsonLd = {
 
 <BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={image.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} is:inline />
-  <article>
-    <Breadcrumb
-      items={[
-        { label: 'Inicio', href: '/' },
-        { label: categoriaLabel, href: categoriaHref },
-        { label: title },
-      ]}
+  <div class="hub articulo">
+    <Hero
+      title={title}
+      subtitle={lead ?? description}
+      ctaIntro="Descubre cómo estabilizar tu energía, descarga la guía ahora:"
+      ctaLabel="Descargar la guía ahora"
+      ctaHref="/lm-5-pasos-optin/"
+      image={image}
+      imageAlt={imageAlt}
+      layout="lateral"
+      titleSize="hija"
     />
 
-    <h1>{title}</h1>
-    <p class="meta">
-      Por {author} · <time datetime={date.toISOString()}>{date.toLocaleDateString('es-ES')}</time>
-      {updated && <> · Actualizado {updated.toLocaleDateString('es-ES')}</>}
-    </p>
-
-    <Image src={image} alt={imageAlt} width={800} height={500} />
-
-    <div class="cuerpo">
-      <slot />
+    <div class="art-meta">
+      <Breadcrumb items={migas} />
+      <p class="fecha">
+        Por {author} · <time datetime={date.toISOString()}>{date.toLocaleDateString('es-ES')}</time>
+        {updated && <> · Actualizado {updated.toLocaleDateString('es-ES')}</>}
+      </p>
     </div>
 
-    {nutricion && <RecipeNutritionTable nutricion={nutricion} />}
-  </article>
+    {indice.length > 1 && (
+      <div class="art-indice">
+        <TableOfContents heading="Tabla de contenidos" items={indice} />
+      </div>
+    )}
 
-  <ArticulosRelacionados articulos={relacionados} />
+    <article class="cuerpo">
+      <Fragment set:html={cuerpoHtml} />
+      {nutricion && <RecipeNutritionTable nutricion={nutricion} />}
+    </article>
 
-  <nav class="prev-next" aria-label="Navegación entre entradas">
-    {anterior && <a href={anterior.href}>« {anterior.title}</a>}
-    {siguiente && <a href={siguiente.href}>{siguiente.title} »</a>}
-  </nav>
+    <ArticulosRelacionados articulos={relacionados} />
+
+    <nav class="prev-next" aria-label="Navegación entre entradas">
+      {anterior && <a href={anterior.href}>« {anterior.title}</a>}
+      {siguiente && <a href={siguiente.href}>{siguiente.title} »</a>}
+    </nav>
+  </div>
 </BaseLayout>
 
 <style>
+  /* Miga de pan y fecha: una línea discreta bajo el hero. */
+  .art-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    padding-top: 1.25rem;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .art-meta .fecha {
+    margin: 0;
+    color: #666;
+  }
+  .art-indice {
+    padding-block: 40px 57px;
+  }
+
+  /* Secciones por H2 (articulo-html): alternan degradado (band-b de las
+     hijas) y blanco, empezando por degradado en la primera. */
+  .cuerpo :global(.art-sec) {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+  }
+  .cuerpo :global(.art-sec:nth-of-type(odd)) {
+    background: linear-gradient(180deg, #e89eff08 0%, #ecdbf1 100%);
+  }
+  .cuerpo :global(.art-sec-inner) {
+    display: flow-root;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding: var(--space-section) var(--container-padding);
+  }
+
+  /* Tipografía de las hijas: H2 Rubik 600 32px ciruela centrado, subtítulo
+     "destacado" Fredoka 24px/39px con 1.3px, texto Fredoka 20px/33px
+     justificado, H3 Rubik 500 24px ciruela. */
+  .cuerpo :global(h2) {
+    color: #6c2f50;
+    text-align: center;
+  }
+  .cuerpo :global(.art-subtitulo) {
+    font-family: var(--font-body);
+    font-size: 24px;
+    line-height: 39px;
+    letter-spacing: 1.3px;
+    text-align: center;
+    margin: 0 0 30px;
+  }
+  .cuerpo :global(p),
+  .cuerpo :global(li) {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+    text-align: justify;
+  }
+  .cuerpo :global(h3) {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #6c2f50;
+    margin: 1.75rem 0 0.75rem;
+  }
+  .cuerpo :global(img) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Imagen vertical flotando a la derecha, con el texto alrededor. */
+  .cuerpo :global(.art-img-flotante) {
+    float: right;
+    width: calc(45% - 1rem);
+    margin: 0 0 1.5rem 2rem;
+  }
+  .cuerpo :global(.art-img-flotante img) {
+    margin: 0;
+    width: 100%;
+  }
+  .art-meta :global(a),
+  .cuerpo :global(a) {
+    color: #6c2f50;
+  }
+
+  /* "Qué vas a aprender": recuadro blanco como el de la checklist. */
+  .cuerpo :global(.art-caja) {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 30px 40px 5px;
+  }
+
+  /* Preguntas frecuentes: desplegables, como en el original. */
+  .cuerpo :global(.art-faq) {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 12px;
+    padding: 0 24px;
+  }
+  .cuerpo :global(.art-faq summary) {
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding: 16px 32px 16px 0;
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 500;
+    color: #6c2f50;
+  }
+  .cuerpo :global(.art-faq summary::-webkit-details-marker) {
+    display: none;
+  }
+  .cuerpo :global(.art-faq summary::after) {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-weight: 400;
+  }
+  .cuerpo :global(.art-faq[open] summary::after) {
+    content: '–';
+  }
+  .cuerpo :global(.art-faq > p) {
+    margin-bottom: 1em;
+  }
+
   .prev-next {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 1rem;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    font-size: 16px;
   }
-  .meta {
-    color: #666;
-    font-size: 0.9rem;
+  .prev-next a {
+    color: #6c2f50;
+  }
+
+  @media (max-width: 767px) {
+    .cuerpo :global(.art-subtitulo) {
+      font-size: 19px;
+      line-height: 1.6;
+      letter-spacing: 0.4px;
+    }
+    .cuerpo :global(p),
+    .cuerpo :global(li) {
+      font-size: 18px;
+      line-height: 1.65;
+      text-align: left;
+    }
+    .cuerpo :global(.art-caja) {
+      padding: 20px 20px 1px;
+    }
+    .cuerpo :global(.art-img-flotante) {
+      float: none;
+      width: 100%;
+      margin: 0 0 1.5rem;
+    }
   }
 </style>
