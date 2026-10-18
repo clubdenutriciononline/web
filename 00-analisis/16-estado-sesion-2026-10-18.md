@@ -17,9 +17,19 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
    - **Cambios pedidos en las páginas del embudo (pendientes):**
      - **Imagen de la guía en optin, gracias y descarga:** queda rara dentro del cuadro (espacios blancos a los lados). Generar un **mockup**: la guía como un libro sobre una mesa, con una taza de té y algún detalle que encaje, que llene el cuadro.
      - **"¿Y ahora qué?" de la descarga:** poner las **7 categorías** en el orden del menú (Hormonas, Energía, Metabolismo, Microbiota, Mentalidad, Alimentación, Recetas), en 2 filas de 4 + 3 o 3 + 4, con un ancho parecido.
+   - **MailerLite no tiene ningún suscriptor** (confirmado por la usuaria): se puede migrar todo a Mailrelay sin perder nada, si se recupera el acceso.
+   - **Replantear los embudos y el email marketing en conjunto** antes de montar nada más: qué lead magnets hay, qué formulario y página lleva cada uno, qué automatizaciones y qué herramienta.
+   - **Lead magnet pendiente: guía de recetas fáciles.** Definir su embudo (formulario, gracias, descarga) dentro de ese replanteamiento.
 2. **Token de GitHub expuesto** (aviso de sesiones anteriores): revocarlo si no se ha hecho.
 3. **4 decisiones abiertas** de `13-pendientes-decision.md`: slug `/ayuno-intermitente-2/`, `/suscripcion-lista-comunidad/`, páginas huérfanas y URLs automáticas de WordPress.
 4. **Paginación antigua `/alimentacion/2/…`:** ya no existe; valorar redirigir a `/blog/`.
+
+## Después: publicar la web nueva
+
+Cuando estén resueltos el embudo y el email marketing, **siguiente paso: retirar el WordPress actual y subir la web nueva al hosting real** (dominio clubdenutricion.es). Antes de hacerlo:
+- copia de seguridad completa del WordPress (archivos y base de datos);
+- revisar `14-checklist-produccion.md`;
+- comprobar redirecciones de las URLs antiguas, sitemap y Search Console tras el cambio.
 
 ## Pendiente — por decidir con la usuaria
 
