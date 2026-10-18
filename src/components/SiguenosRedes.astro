@@ -13,7 +13,7 @@ interface Props {
 const { heading = 'Síguenos en redes', texto = 'Más ideas sobre energía, hormonas y alimentación cada semana.' } = Astro.props;
 ---
 
-<section class="siguenos">
+<section class="siguenos" data-pagefind-ignore="all">
   <h2>{heading}</h2>
   {texto && <p>{texto}</p>}
   <div class="siguenos-iconos">

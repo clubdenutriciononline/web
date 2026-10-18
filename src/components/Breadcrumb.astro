@@ -26,7 +26,7 @@ const breadcrumbJsonLd = {
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} is:inline />
-<nav class="breadcrumb" aria-label="Miga de pan">
+<nav class="breadcrumb" aria-label="Miga de pan" data-pagefind-ignore="all">
   <ol>
     {items.map((item, i) => (
       <li>

@@ -10,9 +10,11 @@ interface Props {
   image?: string;
   // Páginas del embudo (optin, gracias, descarga…): fuera de buscadores.
   noindex?: boolean;
+  // false: la página no entra en el índice del buscador (p. ej. /buscar/).
+  buscable?: boolean;
 }
 
-const { title, description, image, noindex = false } = Astro.props;
+const { title, description, image, noindex = false, buscable = true } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Imagen social por defecto (logo real del sitio) cuando la página no pasa
 // una imagen propia — para que og:image/twitter:image nunca queden vacíos.
@@ -85,7 +87,7 @@ const organizationJsonLd = {
       });
     </script>
   </head>
-  <body>
+  <body data-pagefind-ignore={buscable ? undefined : 'all'}>
     <a class="skip-link" href="#main">Saltar al contenido</a>
     <Header />
     <main id="main">

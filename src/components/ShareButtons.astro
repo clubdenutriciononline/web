@@ -60,7 +60,7 @@ const links = [
 ];
 ---
 
-<div class="share-buttons">
+<div class="share-buttons" data-pagefind-ignore="all">
   {links.map((l) => (
     <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`Compartir en ${l.label}`} style={`--share-color:${l.color}`}>
       <svg viewBox={l.viewBox} width="18" height="18" fill="#fff" aria-hidden="true"><path d={l.path} /></svg>

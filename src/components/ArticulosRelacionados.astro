@@ -36,7 +36,7 @@ const totalPaginas = pageSize ? Math.max(1, Math.ceil(articulos.length / pageSiz
 ---
 
 {articulos.length > 0 && (
-  <section class="articulos-relacionados" data-paginated={pageSize ? 'true' : undefined} data-page-size={pageSize}>
+  <section class="articulos-relacionados" data-pagefind-ignore="all" data-paginated={pageSize ? 'true' : undefined} data-page-size={pageSize}>
     {heading !== false && <h2>{heading}</h2>}
     <div class="grid">
       {articulos.map((post, i) => {

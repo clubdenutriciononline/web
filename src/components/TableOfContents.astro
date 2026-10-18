@@ -13,7 +13,7 @@ interface Props {
 const { heading = 'Resumen clave', items } = Astro.props;
 ---
 
-<nav class="toc" aria-label={heading}>
+<nav class="toc" aria-label={heading} data-pagefind-ignore="all">
   <h2>{heading}</h2>
   <ul>
     {items.map((item) => (

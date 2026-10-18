@@ -781,23 +781,43 @@
       "statusCode": 301
     },
     {
-      "source": "/tag/:slug",
+      "source": "/tag/wegovi",
+      "destination": "/buscar/?q=wegovy",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/wegovi/",
+      "destination": "/buscar/?q=wegovy",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/legacy",
       "destination": "/blog/",
       "statusCode": 301
     },
     {
-      "source": "/tag/:slug/",
+      "source": "/tag/legacy/",
       "destination": "/blog/",
       "statusCode": 301
     },
     {
       "source": "/tag/:slug/page/:n(\\d+)",
-      "destination": "/blog/",
+      "destination": "/buscar/?q=:slug",
       "statusCode": 301
     },
     {
       "source": "/tag/:slug/page/:n(\\d+)/",
-      "destination": "/blog/",
+      "destination": "/buscar/?q=:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug",
+      "destination": "/buscar/?q=:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug/",
+      "destination": "/buscar/?q=:slug",
       "statusCode": 301
     }
   ]

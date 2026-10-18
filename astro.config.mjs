@@ -19,7 +19,7 @@ const pagefind = {
 // captación) que no deben aparecer en el sitemap: no son contenido de
 // búsqueda, y en el caso de /lm-5-pasos-descarga/ además exponen el paso
 // final de un funnel que no interesa indexar.
-const EXCLUDED_FROM_SITEMAP = ['/lm-5-pasos-optin/', '/lm-5-pasos-gracias/', '/lm-5-pasos-descarga/', '/suscripcion-lista-comunidad/'];
+const EXCLUDED_FROM_SITEMAP = ['/lm-5-pasos-optin/', '/lm-5-pasos-gracias/', '/lm-5-pasos-descarga/', '/suscripcion-lista-comunidad/', '/buscar/'];
 
 // https://astro.build/config
 export default defineConfig({
