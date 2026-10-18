@@ -1,6 +1,19 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { execSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+// Índice del buscador (Pagefind) dentro de la propia compilación de Astro
+// (18 oct): en Vercel solo se ejecutaba `astro build` y el buscador daba 404.
+const pagefind = {
+  name: 'pagefind',
+  hooks: {
+    'astro:build:done': ({ dir }) => {
+      execSync(`npx pagefind --site "${fileURLToPath(dir)}"`, { stdio: 'inherit' });
+    },
+  },
+};
 
 // Páginas sin valor SEO propio (agradecimiento/descarga de un funnel de
 // captación) que no deben aparecer en el sitemap: no son contenido de
@@ -27,6 +40,7 @@ export default defineConfig({
     '/coach/contacto/': '/quienes-somos/',
   },
   integrations: [
+    pagefind,
     sitemap({
       filter: (page) => {
         const url = new URL(page);
