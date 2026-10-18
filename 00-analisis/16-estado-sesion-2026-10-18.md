@@ -4,6 +4,20 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 
 **Resumen:** la web nueva está completa a nivel de contenido y plantillas. Todas las páginas madre, las 22 hijas, las entradas del blog, Radar de Salud, recetas y Quiénes somos siguen ya su plantilla. Revisión final del 18 oct: 146 páginas, 0 enlaces internos rotos, sin afiliados ni despedidas antiguas, y ninguna página se sale de la pantalla en móvil (390 px).
 
+## Lista de lo que falta antes de migrar (resumen, 18 oct)
+
+1. [ ] **Embudos y email marketing:** recuperar Mailrelay (esperando al soporte) o elegir herramienta; migrar todo a Mailrelay (MailerLite no tiene suscriptores); replantear embudos; lead magnet de recetas fáciles; formulario y página de la lista de la comunidad; valorar API/MCP de Mailrelay.
+2. [ ] **Embudo de la guía:** mockup de la guía (libro sobre una mesa con té) en optin, gracias y descarga; las 7 categorías en "¿Y ahora qué?" (orden del menú, 4 + 3 o 3 + 4).
+3. [ ] **Preview de Vercel:** el temporal ha caducado. Decidir: nuevo preview temporal o crear ya el proyecto definitivo de Vercel conectado a GitHub (necesario para la migración).
+4. [ ] **Página 404** propia.
+5. [ ] **Aviso de cookies** (el WordPress tenía CookieYes; la nueva no tiene).
+6. [ ] **Páginas legales:** Privacidad y Cookies con las herramientas reales (Mailrelay, Vercel), sin WordPress ni WPForms.
+7. [ ] **Analítica:** decidir si se añade (p. ej. Vercel Analytics o Plausible, sin cookies).
+8. [ ] **4 decisiones abiertas** de `13-pendientes-decision.md` y redirección de `/alimentacion/2/…`.
+9. [ ] **Decisiones de contenido** pendientes (sección "Pendiente — por decidir con la usuaria"): emojis heredados, entrada de coaching, portada de 6 en 6, etc.
+10. [ ] **Token de GitHub expuesto:** revocarlo.
+11. [ ] **Migración:** copia de seguridad del WordPress, dominio y DNS, SSL, Search Console y comprobaciones (`14-checklist-produccion.md`). No borrar el WordPress hasta pasado un periodo de seguridad.
+
 ## Antes de publicar — prioritario
 
 1. **Embudo de la guía y correo (revisado el 18 oct):**
