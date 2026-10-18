@@ -30,3 +30,4 @@ desktop.ini
 .idea/
 
 .vercel
+__pycache__/
