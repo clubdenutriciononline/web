@@ -16,6 +16,9 @@ export default defineConfig({
     // El slug "-2" es un artefacto histórico de WordPress (slug duplicado).
     // Se corrige a la URL definitiva /alimentacion/ sin perder la URL antigua indexada.
     '/alimentacion-2/': '/alimentacion/',
+    // Contacto pasa a ser Quiénes somos (18 oct): el formulario se retira hasta
+    // conectarlo; se mantiene la URL antigua.
+    '/contacto/': '/quienes-somos/',
   },
   integrations: [
     sitemap({

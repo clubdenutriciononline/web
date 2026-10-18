@@ -80,7 +80,7 @@ export const mainNav: NavItem[] = [
   },
   { label: 'Blog', href: '/blog/' },
   { label: 'Radar de Salud', href: '/radar-de-salud/' },
-  { label: 'Contacto', href: '/contacto/' },
+  { label: 'Quiénes somos', href: '/quienes-somos/' },
 ];
 
 // En el original los iconos sociales son SVG inline del tema Astra (no

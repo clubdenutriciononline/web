@@ -44,6 +44,8 @@ En las tarjetas de entradas (blog, relacionados, recetas, portada) hoy solo hay 
 
 ## Otros pendientes
 
+- **Formulario de contacto:** retirado el 18 oct al crear Quiénes somos (no enviaba nada). Si se quiere recuperar, conectar el envío (Mailrelay u otra herramienta) o poner el email contacto@clubdenutricion.es. `/contacto/` redirige a `/quienes-somos/`. Ojo: la entrada antigua `que-es-el-coaching-nutricional` ofrece contactar "conmigo" para coaching; revisar si se mantiene.
+
 - **Responsive (móvil y tablet):** blog a 9 entradas por página, tarjetas compactas en móvil, menú hamburguesa y cabecera fija en móvil (ver `Pendiente - Responsive (móvil y tablet).md`).
 - **Publicaciones programadas del blog** y la idea de convertir cada tarjeta de soluciones en un artículo enlazado (ver `Pendiente - Publicaciones programadas de blog.md`).
 - **Más recetas** de los 3 tipos con el calendario de publicaciones (cómo crearlas: `Pendiente - Recetas.md`).

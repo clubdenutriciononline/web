@@ -15,7 +15,7 @@
 // derecha, terminando en el mismo borde que el menú.
 import { mainNav } from '../data/navigation';
 
-const secundarias = ['/blog/', '/radar-de-salud/', '/contacto/'];
+const secundarias = ['/blog/', '/radar-de-salud/', '/quienes-somos/'];
 const menu = mainNav.filter((item) => !secundarias.includes(item.href));
 const menuSecundario = mainNav.filter((item) => secundarias.includes(item.href));
 ---

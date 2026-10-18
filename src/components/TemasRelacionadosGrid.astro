@@ -30,14 +30,14 @@ interface Tema {
   href?: string; // URL existente (madres) o, en hijas, el artículo cuando exista
 }
 interface Props {
-  heading: string;
+  heading?: string; // opcional: la página puede poner su propio título e intro
   temas: Tema[];
 }
 const { heading, temas } = Astro.props;
 ---
 
 <section class="temas-relacionados">
-  <h2>{heading}</h2>
+  {heading && <h2>{heading}</h2>}
   <div class="grid" data-count={temas.length}>
     {temas.map((t) => (
       <Fragment>

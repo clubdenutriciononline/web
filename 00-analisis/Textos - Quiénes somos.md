@@ -1,4 +1,6 @@
-# Quiénes somos — propuesta de página y textos
+# Quiénes somos — textos (aprobados y montados el 18 oct 2026)
+
+> **Decisión:** sin formulario ni sección de contacto de momento (se retira hasta conectar el envío). Textos en plural y sin datos personales. La sección 7 queda fuera.
 
 Sustituye a la página de Contacto actual (solo un título y un formulario, que además aún no envía: está pendiente de conectar, probablemente con Mailrelay). El contacto pasa al final de esta página.
 

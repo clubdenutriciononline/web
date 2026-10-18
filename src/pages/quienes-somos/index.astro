@@ -1,0 +1,171 @@
+---
+// Quiénes somos — sustituye a Contacto (decisión de la usuaria, 18 oct).
+// Textos aprobados en 00-analisis/Textos - Quiénes somos.md (en plural y sin
+// datos personales). Sin formulario de momento: se retira hasta conectar el
+// envío; /contacto/ redirige aquí (astro.config.mjs). Diseño de las hijas:
+// hero lateral y bandas alternas, misma tipografía.
+import SubpageTemplateB from '../../layouts/SubpageTemplateB.astro';
+import TemasRelacionadosGrid from '../../components/TemasRelacionadosGrid.astro';
+import SolucionesList from '../../components/SolucionesList.astro';
+import TextoConImagen from '../../components/TextoConImagen.astro';
+import SocialIcon from '../../components/SocialIcon.astro';
+import { socialLinks } from '../../data/navigation';
+import * as iconos from '../../lib/iconos';
+import heroImg from './_images/hero.jpg';
+import comunidadImg from './_images/comunidad.jpg';
+import hormonasImg from '../hormonas/_images/Hero.jpg';
+import energiaImg from '../energia/_images/energia-hero-e1778319727162.jpg';
+import metabolismoImg from '../metabolismo/_images/Metabolismo-hero-e1778605108391.jpg';
+import microbiotaImg from '../microbiota/_images/microbiota-herro.jpg';
+import mentalidadImg from '../mentalidad/_images/Mentalidad-hero.jpg';
+import alimentacionImg from '../alimentacion/_images/alimentacion-hero.jpg';
+---
+
+<SubpageTemplateB
+  seoTitle="Quiénes somos | Club de Nutrición"
+  seoDescription="Somos mujeres que queremos entender nuestro cuerpo, cuidarnos con conocimiento y acompañarnos en cada etapa de la vida. Conoce Club de Nutrición."
+  heroTitle="Quiénes somos"
+  heroSubtitle="Mujeres que queremos entender nuestro cuerpo, cuidarnos con conocimiento y acompañarnos en cada etapa de la vida."
+  heroImage={heroImg}
+  heroImageAlt="Grupo de mujeres conversando alrededor de una mesa con té y comida sana"
+  ctaLabel="Descargar la guía ahora"
+  ctaHref="/lm-5-pasos-optin/"
+  articulosRelacionados={[]}
+>
+  <section class="qs-seccion">
+    <h2>Somos mujeres como tú</h2>
+    <p>Club de Nutrición nace de algo muy sencillo: somos mujeres que, al llegar a cierta edad, empezamos a notar que nuestro cuerpo cambiaba y que las respuestas que encontrábamos no siempre encajaban con lo que estábamos viviendo.</p>
+    <p>Cansancio que no se iba con el descanso, cambios de peso sin una razón clara, un ciclo que ya no era el de antes, noches de peor sueño… Y, sobre todo, muchas preguntas.</p>
+    <p>Nos apasiona entender por qué ocurren las cosas: cómo influyen las hormonas, la alimentación, el descanso o el estrés en cómo nos sentimos cada día. Y nos dimos cuenta de que no éramos las únicas buscando esas respuestas.</p>
+    <p>Por eso creamos este espacio: para compartir lo que aprendemos, con un lenguaje claro y basado en la evidencia, y para que ninguna mujer tenga que recorrer este camino sola.</p>
+  </section>
+
+  <div class="full-bleed band-b">
+    <section class="qs-seccion">
+      <h2>Qué hacemos</h2>
+      <p class="destacado">Información clara, rigurosa y pensada para mujeres</p>
+      <p>Reunimos y explicamos lo que dice la ciencia sobre la salud femenina, siempre desde un enfoque práctico y sin alarmismos. No damos consejos médicos ni sustituimos a ningún profesional: queremos ayudarte a entender tu cuerpo para que puedas tomar mejores decisiones y hablar con más seguridad con tu médico o tu nutricionista.</p>
+      <TemasRelacionadosGrid
+        temas={[
+          { icon: hormonasImg, title: 'Hormonas', text: 'El ciclo menstrual, la perimenopausia, la menopausia, la tiroides o el cortisol, explicados paso a paso.', href: '/hormonas/' },
+          { icon: energiaImg, title: 'Energía', text: 'Por qué aparece el cansancio y qué hábitos ayudan a recuperar la vitalidad.', href: '/energia/' },
+          { icon: metabolismoImg, title: 'Metabolismo', text: 'Cómo cambian el peso y el metabolismo en cada etapa, y qué puedes hacer.', href: '/metabolismo/' },
+          { icon: microbiotaImg, title: 'Microbiota', text: 'La salud digestiva y su relación con todo el cuerpo.', href: '/microbiota/' },
+          { icon: mentalidadImg, title: 'Mentalidad', text: 'La relación con la comida, el estrés y el propio cuerpo.', href: '/mentalidad/' },
+          { icon: alimentacionImg, title: 'Alimentación y recetas', text: 'Comer bien de forma sencilla, sin dietas extremas.', href: '/alimentacion/' },
+        ]}
+      />
+    </section>
+  </div>
+
+  <SolucionesList
+    heading="Lo que nos mueve"
+    variant="card"
+    soluciones={[
+      { title: 'Rigor', icon: iconos.cerebroMdi, body: 'Contrastamos la información y te decimos de dónde viene. En el Radar de Salud, además, indicamos el nivel de evidencia de cada noticia.' },
+      { title: 'Cercanía', icon: iconos.corazon, body: 'Hablamos como hablaríamos con una amiga: sin tecnicismos innecesarios y sin juzgar.' },
+      { title: 'Equilibrio', icon: iconos.spa, body: 'Nada de soluciones milagro ni de restricciones extremas: pequeños cambios sostenibles que encajen en tu vida real.' },
+    ]}
+  />
+
+  <TextoConImagen heading="Hacia dónde vamos" image={comunidadImg} imageAlt="Tres mujeres paseando juntas por un camino mediterráneo">
+    <p class="destacado-izq">Una comunidad de mujeres que se acompañan</p>
+    <p>Nuestro sueño es que Club de Nutrición sea mucho más que una web: una comunidad de mujeres que se acompañan en las distintas etapas de la vida, desde los primeros cambios del ciclo hasta la menopausia y más allá.</p>
+    <p>Un lugar donde compartir dudas y experiencias, donde entendernos sin necesidad de dar explicaciones y donde apoyarnos unas a otras. Porque cuando sabes que a otras mujeres les pasa lo mismo, todo se vive de otra manera.</p>
+    <p>Poco a poco iremos sumando más contenidos, guías y espacios de encuentro. Y nos encantaría que formaras parte de ello desde el principio.</p>
+  </TextoConImagen>
+
+  <section class="qs-seccion unete">
+    <h2>Únete</h2>
+    <p class="destacado">Empieza por aquí</p>
+    <a class="boton" href="/lm-5-pasos-optin/">Descargar la guía ahora</a>
+    <p class="redes-titulo">Síguenos en redes</p>
+    <div class="redes">
+      {socialLinks.map((s) => (
+        <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
+          <SocialIcon name={s.icon} />
+        </a>
+      ))}
+    </div>
+  </section>
+</SubpageTemplateB>
+
+<style>
+  .qs-seccion {
+    padding-block: var(--space-section);
+  }
+  .qs-seccion h2 {
+    color: #6c2f50;
+    text-align: center;
+  }
+  .qs-seccion p {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 33px;
+    text-align: justify;
+  }
+  /* Subtítulo "destacado" de las hijas: Fredoka 24px/39px con 1.3px. */
+  .destacado {
+    font-size: 24px !important;
+    line-height: 39px !important;
+    letter-spacing: 1.3px;
+    text-align: center !important;
+  }
+  /* Las fotos de las madres tienen formatos distintos: mismo recorte para
+     que las 6 tarjetas queden iguales. */
+  .qs-seccion :global(.tema-card .icon-img) {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .destacado-izq {
+    text-align: left !important;
+    font-size: 24px;
+    line-height: 39px;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+  }
+  .unete {
+    text-align: center;
+  }
+  .boton {
+    display: inline-block;
+    background: #6c2f50;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+  .redes-titulo {
+    margin: 2.5rem 0 1rem !important;
+    text-align: center !important;
+    font-weight: 500;
+  }
+  .redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .redes a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    background: #6c2f50;
+    color: #fff;
+    transition: background 0.2s;
+  }
+  .redes a:hover {
+    background: #f964c0;
+  }
+  .redes :global(svg) {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+</style>
