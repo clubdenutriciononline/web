@@ -40,6 +40,12 @@ La banda final "¿Sientes que tu energía sube y baja?" se elimina por decisión
 - Iconos raros del original (Open Iconic, Themify, Iconic, IcoMoon Brands…): se extraen los glifos de las fuentes que carga el WordPress (ver `src/lib/iconos.ts`).
 - Las tarjetas de causas no llevan emoji en el título: lo sustituye la ilustración.
 
-## Nombre de la página destacado en el hero (18 oct 2026)
+## Hero de las hijas: título + frase, estilo único (18 oct 2026)
 
-Las hijas no tienen un título visible aparte: la frase del hero es el `<h1>`. Para que se vea a primera vista de qué trata la página, **el nombre de la página dentro de esa frase va en negrita y mayúsculas** (`heroTitleDestacado` en `SubpageTemplateB`; admite un texto o una lista, p. ej. `['estrés', 'hábitos']`). Se resalta la primera aparición. La frase del hero de cada hija **tiene que contener el nombre de la página**; si el original no lo incluye, se reescribe.
+Sustituye a la regla anterior del mismo día (nombre en negrita y mayúsculas dentro de la frase) y a los tamaños por página (`frase`, `frase-rubik`, `medida`…), que hacían que cada hija tuviera una tipografía distinta.
+
+- **Título (`heroTitle`, el `<h1>`):** el **título SEO del original** de cada página (que ya empieza por el nombre de la página). Si está mal redactado, se corrige (p. ej. Resistencia a la insulina, Pérdida de grasa femenina, Probióticos). Se usa también como `seoTitle`.
+- **Frase (`heroSubtitle`):** la frase explicativa del hero del original (en *tú*).
+- **Meta descripción (`seoDescription`):** la del original.
+- **Tipografía (`titleSize="hija"`, por defecto en `SubpageTemplateB`):** la del hero de Menopausia en el original. Título Rubik 700 48px/67.2px #131313; frase Fredoka 500 22px/33px gris al 79%, 38.5px hasta la línea de la guía. Margen de 40px arriba y abajo. En móvil, 28px y 18px.
+- No se pasan tamaños por página.

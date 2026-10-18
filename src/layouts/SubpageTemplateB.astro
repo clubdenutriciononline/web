@@ -17,7 +17,7 @@ interface Props {
   seoDescription: string;
   heroTitle: string;
   heroSubtitle?: string;
-  heroTitleSize?: 'display' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia' | 'medida';
+  heroTitleSize?: 'display' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia' | 'medida' | 'hija';
   // Con heroTitleSize="medida": tipografía medida en el original.
   // Nombre de la página dentro de la frase del hero (negrita y mayúsculas).
   heroTitleDestacado?: string | string[];
@@ -39,7 +39,8 @@ const {
   seoDescription,
   heroTitle,
   heroSubtitle,
-  heroTitleSize,
+  // Todas las hijas: título real + frase debajo (estilo único, 18 oct).
+  heroTitleSize = 'hija',
   heroTitleMedida,
   heroTitleDestacado,
   heroCtaIntro = 'Descubre cómo estabilizar tu energía, descarga la guía ahora:',

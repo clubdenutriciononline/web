@@ -43,7 +43,7 @@ interface Props {
   // 'frase-amplia': Fredoka 500 30px/56px (Ayuno intermitente).
   // 'medida': la tipografía llega en `titleMedida` (cada hija del original
   // usa una distinta; evita crear un tamaño con nombre por página).
-  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia' | 'medida';
+  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia' | 'medida' | 'hija';
   // Hijas (decisión 18 oct): el nombre de la página dentro de la frase del
   // hero va en negrita y mayúsculas para que se vea de qué trata sin añadir
   // otro título. Se resalta la primera aparición de cada texto (sin
@@ -258,6 +258,30 @@ const titleVars = titleSize === 'medida' && titleMedida
     color: rgba(33, 33, 33, 0.79);
     margin-bottom: 45px;
   }
+  /* 'hija' (18 oct, unifica todas las páginas hijas): título real con el
+     estilo del hero de Menopausia en el original — Rubik 700 48px/67.2px
+     #131313 — y debajo la frase explicativa en Fredoka 500 22px/33px gris
+     al 79% con 38.5px hasta la línea de la guía. */
+  h1[data-size='hija'] {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 67.2px;
+    letter-spacing: normal;
+    color: #131313;
+    margin: 0 0 20px;
+  }
+  .hero[data-title-size='hija'] .hero-cta-intro {
+    margin-bottom: 20px;
+  }
+  .hero[data-title-size='hija'] .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 33px;
+    color: rgba(33, 33, 33, 0.79);
+    margin: 0 0 38.5px;
+  }
   h1 .destacado {
     font-weight: 700;
     text-transform: uppercase;
@@ -293,6 +317,11 @@ const titleVars = titleSize === 'medida' && titleMedida
     align-items: center;
     gap: 20px;
     padding-block: 12px;
+  }
+  /* Con título + frase el texto suele ser más alto que la imagen: margen
+     arriba y abajo para que ni el título ni el botón toquen la banda. */
+  .hero[data-layout='lateral'][data-title-size='hija'] {
+    padding-block: 40px;
   }
   .hero[data-layout='lateral'] .hero-copy {
     order: 1;
@@ -350,6 +379,15 @@ const titleVars = titleSize === 'medida' && titleMedida
     }
     h1[data-size='lead'] {
       font-size: 1.25rem;
+    }
+    h1[data-size='hija'] {
+      font-size: 1.75rem;
+      line-height: 1.3;
+    }
+    .hero[data-title-size='hija'] .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
     .hero[data-layout='lateral'] {
       display: block;

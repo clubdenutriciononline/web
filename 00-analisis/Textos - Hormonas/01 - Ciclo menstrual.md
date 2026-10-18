@@ -10,14 +10,10 @@ Página: `/ciclo-menstrual/` (hija de Hormonas). Orden de secciones = plantilla 
 
 ## 1. Hero (lateral)
 
-✏️ Frase del hero (en el original va en *usted* y no nombra la página; el resto de la web va de *tú* y la frase tiene que incluir el nombre, que se muestra en negrita y mayúsculas):
-> Entiende tu **CICLO MENSTRUAL**, cómo cambian tus hormonas cada mes y aprovecha al máximo tu salud hormonal.
-
-*Original:* "Entienda su cuerpo y aproveche al máximo su salud hormonal."
-
-Encima de la frase, el original muestra el título **"Ciclo menstrual: fases y cambios hormonales"**. En la plantilla de hijas el hero lleva solo la frase, así que el título pasa al título SEO de la página.
-
-Línea + botón (igual que el resto): "Descubre cómo estabilizar tu energía, descarga la guía ahora:" · **Descargar la guía ahora**
+- **Título:** Ciclo menstrual: fases y cambios hormonales *(título SEO del original)*
+- ✏️ **Frase:** Entiende tu cuerpo y aprovecha al máximo tu salud hormonal. *(original en usted: "Entienda su cuerpo…")*
+- **Meta descripción:** la del original.
+- Línea + botón (igual que el resto): "Descubre cómo estabilizar tu energía, descarga la guía ahora:" · **Descargar la guía ahora**
 
 ## 2. Introducción
 
