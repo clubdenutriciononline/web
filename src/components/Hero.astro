@@ -41,14 +41,20 @@ interface Props {
   // 'frase-rubik-ligera': Rubik 400 28px/50px gris 79% (Pérdida de grasa femenina).
   // 'frase-grande': Fredoka 500 31px/62px (Resistencia a la insulina);
   // 'frase-amplia': Fredoka 500 30px/56px (Ayuno intermitente).
-  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia';
+  // 'medida': la tipografía llega en `titleMedida` (cada hija del original
+  // usa una distinta; evita crear un tamaño con nombre por página).
+  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia' | 'medida';
+  titleMedida?: { font: 'heading' | 'body'; size: number; weight: number; lineHeight: number; marginBottom?: number };
 }
 
 // 'overlay' es el patrón real en 4 de las 5 páginas madre (Energía,
 // Metabolismo, Microbiota, Mentalidad); Hormonas es la única excepción
 // con el hero "side" — por eso es el valor por defecto aquí, y
 // HubTemplateA (solo Hormonas) pasa layout="side" explícitamente.
-const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'overlay', titleSize = 'display' } = Astro.props;
+const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 'overlay', titleSize = 'display', titleMedida } = Astro.props;
+const titleVars = titleSize === 'medida' && titleMedida
+  ? `--h-ff: var(--font-${titleMedida.font}); --h-fs: ${titleMedida.size}px; --h-fw: ${titleMedida.weight}; --h-lh: ${titleMedida.lineHeight}px; --h-mb: ${titleMedida.marginBottom ?? 45}px`
+  : undefined;
 ---
 
 <div class="full-bleed band-a">
@@ -58,7 +64,7 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
         <Image class="hero-image" src={image} alt={imageAlt ?? ''} />
         {layout === 'overlay' && (
           <div class="hero-copy">
-            <h1 data-size={titleSize}>{title}</h1>
+            <h1 data-size={titleSize} style={titleVars}>{title}</h1>
             {subtitle && <p class="hero-subtitle">{subtitle}</p>}
             {ctaIntro && <p class="hero-cta-intro">{ctaIntro}</p>}
             {ctaLabel && ctaHref && <a class="hero-cta" href={ctaHref}>{ctaLabel}</a>}
@@ -68,7 +74,7 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     )}
     {!(layout === 'overlay' && image) && (
     <div class="hero-copy">
-      <h1 data-size={titleSize}>{title}</h1>
+      <h1 data-size={titleSize} style={titleVars}>{title}</h1>
       {subtitle && <p class="hero-subtitle">{subtitle}</p>}
       {ctaIntro && <p class="hero-cta-intro">{ctaIntro}</p>}
       {ctaLabel && ctaHref && (
@@ -234,6 +240,15 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     color: rgba(33, 33, 33, 0.79);
     margin-bottom: 45px;
   }
+  h1[data-size='medida'] {
+    font-family: var(--h-ff);
+    font-size: var(--h-fs);
+    font-weight: var(--h-fw);
+    line-height: var(--h-lh);
+    letter-spacing: normal;
+    color: rgba(33, 33, 33, 0.79);
+    margin-bottom: var(--h-mb);
+  }
   h1[data-size='frase-grande'],
   h1[data-size='frase-amplia'] {
     font-family: var(--font-body);
@@ -326,6 +341,7 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     h1[data-size='frase-rubik-ligera'],
     h1[data-size='frase-grande'],
     h1[data-size='frase-amplia'],
+    h1[data-size='medida'],
     h1[data-size='frase-media'],
     h1[data-size='frase'] {
       font-size: 1.25rem;
