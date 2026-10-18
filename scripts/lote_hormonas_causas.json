@@ -6,5 +6,21 @@
     "estres": "a woman in her forties holding her head with tangled scribble lines and a small lightning symbol above her, a clock nearby, representing chronic stress",
     "peso": "a woman in her forties holding a tape measure around her waist next to a plate of fresh food and a small packaged snack, representing weight and diet",
     "tratamientos": "a woman sitting with a medical folder, a simple uterus outline and a stethoscope nearby, representing medical treatments and surgeries"
+  },
+  "cortisol": {
+    "estres": "an overwhelmed woman in her forties at a desk with a laptop, papers and a ringing phone, tangled scribble lines above her head, representing chronic stress",
+    "sueno": "a tired woman awake in bed at night looking at an alarm clock, a crescent moon in the window, representing lack of sleep",
+    "cafeina": "a woman holding a large cup of coffee with several empty cups and an energy drink can around her, small zigzag lines of agitation, representing excessive caffeine",
+    "ejercicio": "an exhausted woman sitting on the floor after training, holding a towel, with dumbbells and a stopwatch nearby, representing intense exercise without recovery",
+    "dietas": "a woman looking at a nearly empty plate with a single lettuce leaf, a tape measure and a clock nearby, representing overly restrictive diets",
+    "hormonal": "a woman in her late forties fanning herself with a wavy hormone line and a female symbol floating beside her, representing hormonal changes of perimenopause and menopause"
+  },
+  "inflamacion-hormonal": {
+    "estres": "a stressed woman in her forties holding her head with tangled scribble lines and a small flame symbol above her, representing chronic stress feeding inflammation",
+    "alimentacion": "a woman surrounded by ultra-processed foods, a doughnut, a soda can and white bread, with a small flame symbol, representing a pro-inflammatory diet",
+    "descanso": "a tired woman awake in bed at night with an alarm clock and a crescent moon, representing lack of rest",
+    "sedentarismo": "a woman slumped on a sofa with a laptop and a remote control, unused sneakers on the floor, representing a sedentary lifestyle",
+    "grasa": "a woman gently holding her abdomen with a tape measure around her waist and small flame symbols nearby, representing excess abdominal fat",
+    "hormonal": "a woman in her forties with a wavy hormone line, a female symbol and a small butterfly-shaped thyroid outline floating beside her, representing hormonal disorders"
   }
 }
