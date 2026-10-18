@@ -33,7 +33,7 @@ Las zanahorias se pueden tomar tanto crudas como cocinadas. Guisadas, al vapor, 
 6. Mejora el cabello, tomarla a diario mejora el estado y crecimiento del mismo.
 7. Fuente de fibra, vitaminas, minerales, antioxidantes naturales y baja en grasas.
 
-En definitiva; un alimento que no puede faltar en nuestra [alimentación](/nutricion/).
+En definitiva; un alimento que no puede faltar en nuestra [alimentación](/alimentacion/).
 
 ![](./cover.png)
 

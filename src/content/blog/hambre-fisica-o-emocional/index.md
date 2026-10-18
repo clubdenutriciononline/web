@@ -75,7 +75,7 @@ Para saber si tienes hambre física o emocional, puedes hacerte estas preguntas:
 
 A  continuación te dejo una infografía visual de la diferencia entre hambre física o emocional:
 
-[![](./imagen-2.png)](/mente/)
+[![](./imagen-2.png)](/mentalidad/)
 
 ## Estrategias para Manejar el Hambre Emocional
 

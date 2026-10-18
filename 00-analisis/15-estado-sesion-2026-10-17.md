@@ -1,5 +1,7 @@
 # Estado — sesión 2026-10-17 (cerrada)
 
+> **Sustituido por `16-estado-sesion-2026-10-18.md`**, que recoge lo hecho el 18 oct y los pendientes actualizados. Este archivo se conserva como histórico.
+
 Resumen de lo hecho y de lo que queda pendiente, para retomar sin perder contexto. Todo lo de abajo está subido a GitHub (`master`, último commit de la sesión) y desplegado en el preview de Vercel: https://temporary-prompt-coral-lgtc57c.vercel.app
 
 ## Actualización 18 oct

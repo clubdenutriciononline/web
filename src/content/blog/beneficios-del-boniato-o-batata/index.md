@@ -38,9 +38,9 @@ Otras vitaminas presentes en menor cantidad, son las vitaminas B1 (tiamina), B2 
 
 Te recomendamos ver la diferencia entre micronutrientes y macronutrientes
 
-[![](./imagen-4.jpg)](/nutricion/macronutrientes-y-micronutrientes/)
+[![](./imagen-4.jpg)](/macronutrientes-y-micronutrientes/)
 
-[Ver la información](/nutricion/macronutrientes-y-micronutrientes/)
+[Ver la información](/macronutrientes-y-micronutrientes/)
 
 ## Composición nutricional del boniato
 

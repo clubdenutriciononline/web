@@ -19,6 +19,12 @@ export default defineConfig({
     // Contacto pasa a ser Quiénes somos (18 oct): el formulario se retira hasta
     // conectarlo; se mantiene la URL antigua.
     '/contacto/': '/quienes-somos/',
+    // URLs antiguas de WordPress que aún enlazan entradas antiguas o webs
+    // externas (revisión del 18 oct).
+    '/mente/': '/mentalidad/',
+    '/nutricion/': '/alimentacion/',
+    '/nutricion/macronutrientes-y-micronutrientes/': '/macronutrientes-y-micronutrientes/',
+    '/coach/contacto/': '/quienes-somos/',
   },
   integrations: [
     sitemap({
