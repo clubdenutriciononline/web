@@ -38,7 +38,10 @@ interface Props {
   // en Fredoka 500 26px/50px, gris al 79%. Sigue siendo el <h1>.
   // 'frase-rubik': Rubik 500 32px/48px gris 79% (Sueño).
   // 'frase-media': Fredoka 500 22px/33px gris 79% (Rutinas energéticas).
-  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase' | 'frase-rubik' | 'frase-media';
+  // 'frase-rubik-ligera': Rubik 400 28px/50px gris 79% (Pérdida de grasa femenina).
+  // 'frase-grande': Fredoka 500 31px/62px (Resistencia a la insulina);
+  // 'frase-amplia': Fredoka 500 30px/56px (Ayuno intermitente).
+  titleSize?: 'display' | 'lead' | 'medio' | 'seccion' | 'frase' | 'frase-rubik' | 'frase-media' | 'frase-rubik-ligera' | 'frase-grande' | 'frase-amplia';
 }
 
 // 'overlay' es el patrón real en 4 de las 5 páginas madre (Energía,
@@ -222,6 +225,30 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
     color: rgba(33, 33, 33, 0.79);
     margin-bottom: 38px;
   }
+  h1[data-size='frase-rubik-ligera'] {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: normal;
+    color: rgba(33, 33, 33, 0.79);
+    margin-bottom: 45px;
+  }
+  h1[data-size='frase-grande'],
+  h1[data-size='frase-amplia'] {
+    font-family: var(--font-body);
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 62px;
+    letter-spacing: normal;
+    color: rgba(33, 33, 33, 0.79);
+    margin-bottom: 54px;
+  }
+  h1[data-size='frase-amplia'] {
+    font-size: 30px;
+    line-height: 56px;
+    margin-bottom: 52px;
+  }
   .hero[data-layout='lateral'] {
     display: grid;
     grid-template-columns: minmax(0, 662px) 418px;
@@ -296,6 +323,9 @@ const { title, subtitle, ctaIntro, ctaLabel, ctaHref, image, imageAlt, layout = 
       aspect-ratio: 1;
     }
     h1[data-size='frase-rubik'],
+    h1[data-size='frase-rubik-ligera'],
+    h1[data-size='frase-grande'],
+    h1[data-size='frase-amplia'],
     h1[data-size='frase-media'],
     h1[data-size='frase'] {
       font-size: 1.25rem;

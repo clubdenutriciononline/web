@@ -30,6 +30,9 @@ interface Props {
   // Solo con 5 items en variant="card": '3-2' (por defecto, Energía) o
   // '2-3' (2 arriba más anchas y 3 abajo, Metabolismo).
   layout5?: '3-2' | '2-3';
+  // Solo con 6 items en variant="card": '2-3-1' (2 anchas, 3 y 1 a todo el
+  // ancho, Resistencia a la insulina). Sin él, rejilla automática.
+  layout6?: '2-3-1';
   // 'texto': Fredoka 22px/33px (síntomas). 'destacado': 24px/39px con
   // 1.3px de espaciado (bloque de soluciones de Energía y Metabolismo).
   subheadingVariant?: 'texto' | 'destacado';
@@ -43,7 +46,7 @@ interface Props {
   // cada página decide si esta fila concreta cae dentro de una banda o no.
   band?: 'a' | 'b' | false;
 }
-const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, variant = 'chip', band = false, layout5 = '3-2', subheadingVariant = 'texto', subheadingAlign = 'justify', cardAlign = 'center' } = Astro.props;
+const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, variant = 'chip', band = false, layout5 = '3-2', layout6, subheadingVariant = 'texto', subheadingAlign = 'justify', cardAlign = 'center' } = Astro.props;
 ---
 
 <section data-variant={variant} data-sub={subheadingVariant} data-align={subheadingAlign} data-card-align={cardAlign} class:list={['soluciones', band && 'full-bleed', band === 'a' && 'band-a', band === 'b' && 'band-b']}>
@@ -53,7 +56,7 @@ const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, varian
     {subtitulo && <h3 class="subtitulo">{subtitulo}</h3>}
     {(subheading ? (Array.isArray(subheading) ? subheading : [subheading]) : []).map((t) => <p class="subheading">{t}</p>)}
     {subtituloLista && <h3 class="subtitulo">{subtituloLista}</h3>}
-    <div class="grid" data-count={soluciones.length} data-layout5={layout5}>
+    <div class="grid" data-count={soluciones.length} data-layout5={layout5} data-layout6={layout6}>
       {soluciones.map((s) => (
         <div class="solucion-item">
           {s.icon && (
@@ -230,6 +233,28 @@ const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, varian
     text-align: left;
     margin: 1.5rem 0 1rem;
   }
+  /* 6 soluciones en 2 + 3 + 1 (col-50 x2, col-33 x3 y col-100 en el
+     original de Resistencia a la insulina). */
+  section[data-variant='card'] .grid[data-count='6'][data-layout6='2-3-1'] {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  section[data-variant='card'] .grid[data-layout6='2-3-1'] .solucion-item {
+    grid-column: span 2;
+  }
+  section[data-variant='card'] .grid[data-layout6='2-3-1'] .solucion-item:nth-child(-n + 2) {
+    grid-column: span 3;
+  }
+  section[data-variant='card'] .grid[data-layout6='2-3-1'] .solucion-item:nth-child(6) {
+    grid-column: span 6;
+  }
+  @media (max-width: 767px) {
+    section[data-variant='card'] .grid[data-count='6'][data-layout6='2-3-1'] {
+      grid-template-columns: 1fr;
+    }
+    section[data-variant='card'] .grid[data-layout6='2-3-1'] .solucion-item {
+      grid-column: auto !important;
+    }
+  }
   /* 7 soluciones (Sueño): 2 anchas + 3 + 2 anchas. */
   section[data-variant='card'] .grid[data-count='7'] {
     grid-template-columns: repeat(6, 1fr);
@@ -314,6 +339,21 @@ const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, varian
     section[data-variant='pill'] .grid[data-count='7'] .solucion-item,
     section[data-variant='pill'] .grid[data-count='7'] .solucion-item:nth-child(n + 5) {
       grid-column: auto;
+    }
+  }
+  /* 8 píldoras: 4 + 4 (col-25 x8, Resistencia a la insulina). */
+  section[data-variant='pill'] .grid[data-count='8'] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  section[data-variant='pill'] .grid[data-count='8'] .solucion-item {
+    max-width: none;
+  }
+  @media (max-width: 767px) {
+    section[data-variant='pill'] .grid[data-count='8'] {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
   }
   section[data-variant='pill'] .solucion-item:hover {
