@@ -4,7 +4,25 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 
 **Resumen:** la web nueva está completa a nivel de contenido y plantillas. Todas las páginas madre, las 22 hijas, las entradas del blog, Radar de Salud, recetas y Quiénes somos siguen ya su plantilla. Revisión final del 18 oct: 146 páginas, 0 enlaces internos rotos, sin afiliados ni despedidas antiguas, y ninguna página se sale de la pantalla en móvil (390 px).
 
-## Cierre de sesión (18 oct, tarde) — leer primero
+## Cierre de sesión (20 oct) — leer primero
+
+**Hecho del 19 al 20 oct** (todo en GitHub y en el preview https://clubdenutricion-preview.vercel.app):
+- **Correo del dominio arreglado** (no llegaba ningún correo: `mail` iba por el proxy de Cloudflare) y reenvío de la cuenta corporativa a Gmail (punto 11).
+- **Mailrelay:** acceso recuperado, API conectada (`.env` + `scripts/mailrelay.py`), flujo de la guía comprobado de punta a punta, correo de bienvenida en plural y solo como entrega, formulario con nombre obligatorio y enlace a la política de privacidad, suscriptoras de prueba borradas (punto 1).
+- **Página de descarga** con la cabecera del original y las 7 categorías; **página de registro** con las dos tarjetas iguales y el formulario centrado sin barra de desplazamiento (punto 2).
+- **Aviso de cookies** alineado a la izquierda.
+- **Decisiones de contenido:** emojis de las tarjetas de Energía y Mentalidad como imagen (igual que WordPress), coaching sin contacto, portada con 6, ilustración «descanso» sin negro (punto 9). Token de GitHub: ya no era válido (punto 10).
+- **Adaptación a móvil en todas las páginas** (`src/styles/movil.css`, todo dentro de `@media (max-width: 767px)`: el escritorio no cambia): menú hamburguesa con apartados plegables y cabecera fija; títulos 20px, subtítulos 18px, párrafos y listas 16px en las 154 páginas; texto a la izquierda; causas con icono arriba; tarjetas de temas y áreas clave con la foto grande arriba; solo los artículos relacionados compactos. Quiénes somos: foto de Hormonas recortada por abajo.
+
+**Siguiente sesión, por este orden:**
+1. **Revisión final a fondo en el móvil** (pedido de la usuaria, 20 oct): recorrer en un móvil real todos los tipos de página (portada, 6 madres, 22 hijas, blog y entradas, Radar y noticias, recetas, Quiénes somos, embudo de la guía, legales, 404, buscador) y también tablet (768-1024px): heros, rejillas de píldoras y soluciones, tablas de recetas, menú entre 768 y 1200px.
+2. **Migración** (punto 11, `14-checklist-produccion.md`): copia del WordPress, proyecto definitivo de Vercel conectado al repo, cambio de DNS **solo** de `clubdenutricion.es` y `www` (no tocar `mail`, MX, SPF, DKIM ni DMARC), SSL, Search Console y comprobaciones; no dar de baja el hosting (el correo vive ahí). Ese día, en Mailrelay, «Tras suscribirse» → redirigir a `/lm-5-pasos-gracias/` (comprobar cómo se ve dentro del iframe).
+
+**Después de migrar:** embudos y email marketing (punto 1: lista de la comunidad en Mailrelay, replantear embudos, serie de correos, nuevo lead magnet; la guía de recetas se descarta, las recetas van al blog), artículos de las áreas clave, más recetas, monetización y limpieza técnica opcional.
+
+**Va para largo (solo recordarlo cuando la usuaria pregunte qué falta):** punto 12 (dirección postal, actividad económica, marca) y, con eso, los datos de la titular en Privacidad y el Aviso legal (punto 6).
+
+## Cierre de sesión (18 oct, tarde)
 
 Hecho en esta parte de la sesión (todo en GitHub y en el preview):
 - Nuevo preview de Vercel permanente: https://clubdenutricion-preview.vercel.app (punto 3).
