@@ -31,3 +31,6 @@ desktop.ini
 
 .vercel
 __pycache__/
+
+# Clave de la API de Mailrelay (nunca a GitHub)
+.mailrelay-key
