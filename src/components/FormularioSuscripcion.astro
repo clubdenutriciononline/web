@@ -25,14 +25,13 @@ const f = formularios[nombre];
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
   }
-  /* El formulario de Mailrelay trae unos 25px de margen blanco interno
-     arriba y abajo (no se puede tocar desde aquí): se compensa con márgenes
-     negativos para que no quede tanto hueco sobre «Nombre» ni bajo el botón. */
+  /* El formulario de Mailrelay trae ~25px de margen blanco interno arriba:
+     se compensa para que no quede tanto hueco sobre «Nombre». */
   iframe {
     display: block;
     width: 100%;
     border: 0;
-    margin: -20px 0 -32px;
+    margin: -20px 0 0;
   }
   .nota {
     margin: 10px 0 0;
