@@ -13,7 +13,7 @@ const f = formularios[nombre];
 ---
 
 <div class="form-suscripcion">
-  <iframe src={f.url} title={titulo} loading="lazy" style={`min-height:${f.alto ?? 420}px`} />
+  <iframe src={f.url} title={titulo} loading="lazy" scrolling="no" style={`min-height:${f.alto ?? 420}px`} />
   <p class="nota">Recibirás un correo para confirmar tu suscripción. Revisa también la carpeta de spam o promociones.</p>
 </div>
 {f.proveedor === 'mailrelay' && <script is:inline src="https://assets.ipzmarketing.com/assets/signup_form/iframe_v1.js" />}
@@ -25,10 +25,14 @@ const f = formularios[nombre];
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
   }
+  /* El formulario de Mailrelay trae unos 25px de margen blanco interno
+     arriba y abajo (no se puede tocar desde aquí): se compensa con márgenes
+     negativos para que no quede tanto hueco sobre «Nombre» ni bajo el botón. */
   iframe {
     display: block;
     width: 100%;
     border: 0;
+    margin: -20px 0 -32px;
   }
   .nota {
     margin: 10px 0 0;

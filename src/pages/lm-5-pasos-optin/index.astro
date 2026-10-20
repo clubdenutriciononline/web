@@ -60,9 +60,15 @@ import mockupImg from './_images/mockup.jpg';
     align-items: stretch;
     padding-block: var(--space-section);
   }
+  /* Títulos centrados sobre su tarjeta (20 oct). */
   .optin h2 {
     color: #6c2f50;
-    text-align: left;
+    text-align: center;
+  }
+  /* Mismo margen a la derecha que a la izquierda (2rem + 30px de la lista):
+     el texto baja un par de líneas y las dos tarjetas quedan parecidas. */
+  .optin-lista :global(.checklist-card) {
+    padding-right: calc(2rem + 30px);
   }
   .optin-form {
     scroll-margin-top: 140px;
@@ -86,6 +92,9 @@ import mockupImg from './_images/mockup.jpg';
   @media (max-width: 767px) {
     .optin {
       grid-template-columns: 1fr;
+    }
+    .optin-lista :global(.checklist-card) {
+      padding-right: 2rem;
     }
   }
 </style>
