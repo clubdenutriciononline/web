@@ -79,7 +79,6 @@ Cuando estén resueltos el embudo y el email marketing, **siguiente paso: retira
 - **Emojis heredados del original** (la regla es no usar emojis, pero vienen del original y no se han tocado):
   - Tarjetas de las madres Energía ("⚡ Fatiga crónica", "😴 Sueño", "🔋 Rutinas energéticas") y Mentalidad ("😰 Ansiedad por comer", "🪞 Relación con el cuerpo", "🧠 Estrés y hábitos").
   - Títulos de 2 entradas del blog: "⚠️ Errores comunes al hacer ayuno intermitente" y "🔹 Soluciones naturales para la resistencia a la insulina".
-  - "Ya puedes descargar tu guía 📘" en `/lm-5-pasos-descarga/`.
   - En Radar de Salud los emojis de los apartados **sí son intencionados** (forman parte de su formato).
 - **Entrada `que-es-el-coaching-nutricional`:** ofrece contactar "conmigo" para coaching personal; el enlace ahora lleva a Quiénes somos. Adaptar o quitar el párrafo.
 - **Entradas antiguas del blog (2016…):** se ven con la plantilla nueva, pero su contenido es corto y anticuado; actualizarlas sería una tarea aparte.
