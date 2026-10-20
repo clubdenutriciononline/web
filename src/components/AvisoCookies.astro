@@ -149,7 +149,8 @@ const config = { ga: GA_ID, clave: CONSENTIMIENTO_CLAVE, meses: CONSENTIMIENTO_M
     inset: auto 16px 16px 16px;
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    /* Pegado a la izquierda (petición de la usuaria, 20 oct). */
+    justify-content: flex-start;
     pointer-events: none;
   }
   .aviso-cookies[hidden] {
