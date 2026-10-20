@@ -5,9 +5,8 @@
  *   - subtítulos (h3, h4): 18px
  *   - párrafos y listas: 16px
  * y tarjetas compactas (imagen pequeña a un lado) para que las páginas no
- * sean eternas. Se aplica a las páginas con la clase `movil-v2` en <body>
- * (BaseLayout): de momento solo la página piloto, hasta que la usuaria dé
- * el visto bueno.
+ * sean eternas. Se aplica a todas las páginas (clase `movil-v2` en <body>,
+ * BaseLayout); piloto en Menopausia aprobado por la usuaria el 20 oct.
  *
  * Los `!important` son a propósito: cada componente fija sus tamaños con
  * estilos de ámbito (más específicos) y aquí se trata de igualarlos todos.
@@ -40,6 +39,17 @@
     line-height: 1.6 !important;
     letter-spacing: 0 !important;
   }
+  /* Páginas que fijan algún tamaño propio con !important (Digestión,
+     Quiénes somos): se igualan también. */
+  body.movil-v2 main .soluciones .subtitulo {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+  }
+  body.movil-v2 main p.destacado,
+  body.movil-v2 main p.destacado-izq {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
   /* El texto justificado deja huecos enormes entre palabras en pantallas
      estrechas: en móvil, alineado a la izquierda. */
   body.movil-v2 main p,
@@ -71,35 +81,28 @@
     text-align: center !important;
   }
 
-  /* Tarjetas de causas: imagen pequeña a la izquierda y texto al lado. */
+  /* Tarjetas de causas: como las de soluciones, icono arriba (más pequeño
+     que en escritorio pero grande para que se vea el detalle), título y
+     texto debajo (pedido de la usuaria, 20 oct). */
   body.movil-v2 .causas-grid .grid {
     grid-template-columns: 1fr !important;
-    gap: 12px !important;
+    gap: 14px !important;
   }
   body.movil-v2 .causa-card {
-    display: grid !important;
-    grid-template-columns: 64px 1fr;
-    grid-template-rows: auto 1fr;
-    column-gap: 12px;
-    align-items: start;
-    padding: 12px !important;
-    text-align: left !important;
+    padding: 18px 16px !important;
   }
-  body.movil-v2 .causa-card .icon-img,
-  body.movil-v2 .causa-card .icon {
-    grid-row: 1 / 3;
-    width: 64px !important;
-    height: 64px !important;
-    margin: 0 !important;
-    border-radius: 12px;
-    object-fit: cover;
+  body.movil-v2 .causa-card .icon-img {
+    width: 130px !important;
+    height: 130px !important;
+    margin: 0 auto 8px !important;
+    object-fit: contain;
   }
   body.movil-v2 .causa-card h3 {
-    margin: 0 0 4px !important;
-    text-align: left !important;
+    margin: 0 0 6px !important;
   }
   body.movil-v2 .causa-card p {
     margin: 0 !important;
+    text-align: center !important;
   }
 
   /* Tarjetas de soluciones: menos relleno e icono más pequeño. */

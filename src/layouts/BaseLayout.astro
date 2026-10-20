@@ -17,10 +17,9 @@ interface Props {
 
 const { title, description, image, noindex = false, buscable = true } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-// Adaptación a móvil (src/styles/movil.css): de momento solo la página
-// piloto, hasta que la usuaria dé el visto bueno (20 oct).
-const PAGINAS_MOVIL_V2 = ['/menopausia/'];
-const movilV2 = PAGINAS_MOVIL_V2.includes(Astro.url.pathname);
+// Adaptación a móvil (src/styles/movil.css) en todas las páginas: piloto
+// en Menopausia aprobado por la usuaria el 20 oct.
+const movilV2 = true;
 // Imagen social por defecto (logo real del sitio) cuando la página no pasa
 // una imagen propia — para que og:image/twitter:image nunca queden vacíos.
 const socialImageURL = new URL(image ?? '/images/site/logo.png', Astro.site);
