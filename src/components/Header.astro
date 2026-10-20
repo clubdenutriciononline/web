@@ -7,8 +7,10 @@
 // visible al bajar (comprobado en /metabolismo/). Distribución pedida por
 // la usuaria: logo a la izquierda y, a su derecha, menú en una línea con
 // el buscador (más pequeño) debajo, pegado a la derecha y a la altura de
-// la base del logo. En móvil no se fija: sin menú hamburguesa, el
-// menú ocupa varias líneas y taparía media pantalla.
+// la base del logo. 
+// Móvil (20 oct): menú hamburguesa con los desplegables de cada sección
+// (botón con flecha para abrirlos sin perder el enlace a la sección),
+// buscador dentro del menú y cabecera fija también en móvil.
 // Dos filas (2026-10-17, pedido de la usuaria): arriba solo las páginas de
 // tema (Inicio … Alimentación, y Recetas cuando exista); abajo el buscador a
 // la izquierda, justo bajo "Inicio", y Blog · Radar de Salud · Contacto a la
@@ -27,7 +29,11 @@ const menuSecundario = mainNav.filter((item) => secundarias.includes(item.href))
         <img src="/images/site/logo.png" width="166" height="69" alt="Club de Nutrición" />
       </a>
 
-      <div class="header-menus">
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="header-menus">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="header-menus" id="header-menus">
       <nav class="main-nav" aria-label="Menú principal">
         <ul>
           {menu.map((item) => (
@@ -38,6 +44,11 @@ const menuSecundario = mainNav.filter((item) => secundarias.includes(item.href))
                   <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
                 )}
               </a>
+              {item.children && (
+                <button class="submenu-toggle" type="button" aria-expanded="false" aria-label={`Ver apartados de ${item.label}`}>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </button>
+              )}
               {item.children && (
                 <ul class="dropdown">
                   {item.children.map((child) => (
@@ -299,9 +310,175 @@ const menuSecundario = mainNav.filter((item) => secundarias.includes(item.href))
       flex-wrap: nowrap;
     }
   }
+  .menu-toggle,
+  .submenu-toggle {
+    display: none;
+  }
+
+  /* Móvil (20 oct): cabecera fija, logo + hamburguesa; el menú se abre
+     debajo con las secciones en lista y sus apartados plegables. */
+  @media (max-width: 767px) {
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+    .site-header-inner {
+      padding-block: 0.5rem;
+      gap: 0;
+    }
+    .header-top {
+      flex-wrap: wrap;
+      row-gap: 0;
+    }
+    .header-top .logo img {
+      display: block;
+      width: 120px;
+      height: auto;
+    }
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--color-nav-text);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .site-header.menu-abierto .menu-toggle span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .site-header.menu-abierto .menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+    .site-header.menu-abierto .menu-toggle span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .header-menus {
+      display: none;
+    }
+    .site-header.menu-abierto .header-menus {
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+      padding: 0.5rem 0 1rem;
+    }
+    .header-search-inline {
+      order: -1;
+      margin-bottom: 0.5rem;
+    }
+    .search-input {
+      flex: 1;
+      width: auto;
+      font-size: 16px;
+      padding: 0.5rem 0.7rem;
+    }
+    .search-toggle {
+      font-size: 16px;
+      padding: 0.5rem 1rem;
+    }
+    .main-nav ul,
+    .nav-secundario ul {
+      flex-direction: column;
+      gap: 0;
+    }
+    .main-nav > ul > li,
+    .nav-secundario li {
+      border-bottom: 1px solid #eaeaea;
+    }
+    .nav-item.has-children {
+      display: grid;
+      grid-template-columns: 1fr 44px;
+      align-items: center;
+    }
+    .main-nav > ul > li > a,
+    .nav-secundario a {
+      display: block;
+      padding: 12px 4px;
+      font-size: 16px;
+    }
+    .main-nav .chevron {
+      display: none;
+    }
+    .submenu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      color: var(--color-nav-text);
+      cursor: pointer;
+    }
+    .submenu-toggle svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s;
+    }
+    .nav-item.abierto .submenu-toggle svg {
+      transform: rotate(180deg);
+    }
+    /* Los apartados no se abren al pasar el dedo: solo con la flecha. */
+    .nav-item.has-children:hover .dropdown,
+    .nav-item.has-children:focus-within .dropdown {
+      display: none;
+    }
+    .nav-item .dropdown,
+    .nav-item.abierto:hover .dropdown,
+    .nav-item.abierto:focus-within .dropdown {
+      position: static;
+      grid-column: 1 / 3;
+      width: auto;
+      border-top: 0;
+      box-shadow: none;
+      background: transparent;
+      padding: 0 0 6px 14px;
+    }
+    .nav-item.has-children.abierto .dropdown,
+    .nav-item.has-children.abierto:hover .dropdown,
+    .nav-item.has-children.abierto:focus-within .dropdown {
+      display: block;
+    }
+    .nav-item .dropdown a {
+      padding: 10px 4px;
+      font-size: 16px;
+      border-bottom: 0;
+    }
+  }
 </style>
 
 <script>
+  // Menú móvil: hamburguesa y apartados plegables.
+  const cabecera = document.querySelector('.site-header');
+  const botonMenu = document.querySelector('.menu-toggle');
+  botonMenu?.addEventListener('click', () => {
+    const abierto = cabecera?.classList.toggle('menu-abierto') ?? false;
+    botonMenu.setAttribute('aria-expanded', String(abierto));
+    botonMenu.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+  });
+  document.querySelectorAll('.submenu-toggle').forEach((b) => {
+    b.addEventListener('click', () => {
+      const abierto = b.parentElement?.classList.toggle('abierto') ?? false;
+      b.setAttribute('aria-expanded', String(abierto));
+    });
+  });
+
   const toggle = document.getElementById('search-toggle');
   const searchInput = document.querySelector('.search-input');
   const panel = document.getElementById('header-search');
@@ -313,6 +490,10 @@ const menuSecundario = mainNav.filter((item) => secundarias.includes(item.href))
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!expanded));
     if (panel) panel.hidden = expanded;
+    if (!expanded && cabecera?.classList.contains('menu-abierto')) {
+      cabecera.classList.remove('menu-abierto');
+      botonMenu?.setAttribute('aria-expanded', 'false');
+    }
 
     if (!expanded && !pagefindMounted) {
       pagefindMounted = true;
