@@ -15,8 +15,6 @@ const f = formularios[nombre];
 <div class="form-suscripcion">
   <iframe src={f.url} title={titulo} loading="lazy" style={`min-height:${f.alto ?? 420}px`} />
   <p class="nota">Recibirás un correo para confirmar tu suscripción. Revisa también la carpeta de spam o promociones.</p>
-  <!-- Información básica de protección de datos junto al formulario (RGPD; 20 oct). -->
-  <p class="nota nota-privacidad">Al suscribirte aceptas nuestra <a href="/politica-de-privacidad/">política de privacidad</a>. Usaremos tu email solo para enviarte la guía y nuestros correos; puedes darte de baja cuando quieras.</p>
 </div>
 {f.proveedor === 'mailrelay' && <script is:inline src="https://assets.ipzmarketing.com/assets/signup_form/iframe_v1.js" />}
 
@@ -39,9 +37,5 @@ const f = formularios[nombre];
     line-height: 1.5;
     color: #777;
     text-align: center;
-  }
-  .nota-privacidad a {
-    color: #6c2f50;
-    font-weight: 500;
   }
 </style>
