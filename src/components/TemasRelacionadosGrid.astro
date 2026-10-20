@@ -34,6 +34,7 @@ interface Props {
   temas: Tema[];
 }
 const { heading, temas } = Astro.props;
+import { emojiComoImagen } from '../lib/emoji';
 ---
 
 <section class="temas-relacionados">
@@ -46,7 +47,7 @@ const { heading, temas } = Astro.props;
             {typeof t.icon === 'string'
               ? <span class="icon" aria-hidden="true">{t.icon}</span>
               : <Image class="icon-img" src={t.icon} alt="" width={600} />}
-            <h3>{t.title}</h3>
+            <h3 set:html={emojiComoImagen(t.title)} />
             <p>{t.text}</p>
           </a>
         ) : (
@@ -54,7 +55,7 @@ const { heading, temas } = Astro.props;
             {typeof t.icon === 'string'
               ? <span class="icon" aria-hidden="true">{t.icon}</span>
               : <Image class="icon-img" src={t.icon} alt="" width={600} />}
-            <h3>{t.title}</h3>
+            <h3 set:html={emojiComoImagen(t.title)} />
             <p>{t.text}</p>
           </div>
         )}
@@ -147,6 +148,14 @@ const { heading, temas } = Astro.props;
   .temas-relacionados h2 {
     text-transform: uppercase;
     text-align: center;
+  }
+  /* Emojis del original como imagen (src/lib/emoji.ts), del tamaño del texto. */
+  .tema-card h3 :global(img.emoji) {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0 0.15em 0 0;
+    vertical-align: -0.12em;
   }
   .tema-card h3 {
     margin: 10px 0;

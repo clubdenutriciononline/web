@@ -31,6 +31,4 @@ El **coaching nutricional** se realiza mediante sesiones individuales. En dichas
 
 Para comenzar un proceso de este tipo, es importante que estés dispuest@ a asumir la responsabilidad de tu vida. Además debes tener en cuenta que de esta forma, puedes conseguir cualquier cosa que te propongas. Es importante que entiendas que el principal beneficio del coaching nutricional, consiste en un cambio de estilo de vida a largo plazo.
 
-Si quieres cambiar tu vida y deshacerte de esas emociones que te cohartan el camino hacia tus metas, no lo dudes y ponte en [contacto](/contacto/) conmigo [aquí.](/coach/contacto/) Estaré encantada de aclarar tus dudas y acompañarte en tu proceso.
-
 [Vídeo de motivación](https://www.youtube.com/watch?v=doWeSKKa0_w)
