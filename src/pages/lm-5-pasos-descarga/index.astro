@@ -1,13 +1,20 @@
 ---
-// Embudo de la guía "5 pasos" — 3/3: descarga (18 oct, con el formato del
-// resto de la web). Textos y enlace de descarga (Google Drive) del original.
-// Es el enlace del correo de confirmación del proveedor. Fuera de buscadores.
+// Embudo de la guía "5 pasos" — 3/3: descarga. Es el enlace del correo de
+// activación de Mailrelay. Fuera de buscadores.
+// Parte superior como la del original (petición de la usuaria, 20 oct; no
+// usa el hero de las hijas): título centrado en Neucha 55px ciruela en
+// mayúsculas, frase en Fredoka 35px, y debajo texto + botón grande (Pathway
+// Extreme 30px) a la izquierda y la portada a la derecha. Sin los emojis del
+// original. Debajo, «Recuerda», «¿Y ahora qué?» con las 7 categorías del
+// menú (4 + 3) y Síguenos, con el formato de la web.
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/Hero.astro';
 import SiguenosRedes from '../../components/SiguenosRedes.astro';
+import { Image } from 'astro:assets';
+import { mainNav } from '../../data/navigation';
 import portadaImg from './_images/portada.jpg';
 
 const DESCARGA = 'https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fLZESyNe6rVJvgtZs6Rf';
+const categorias = mainNav.filter((item) => item.children?.length);
 ---
 
 <BaseLayout
@@ -16,17 +23,22 @@ const DESCARGA = 'https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fL
   noindex
 >
   <div class="hub">
-    <Hero
-      title="Ya puedes descargar tu guía"
-      subtitle="Esto no va de hacerlo perfecto. Va de empezar a entender tu cuerpo."
-      ctaIntro="Tu acceso está listo. Pulsa el botón para descargar «5 pasos para recuperar tu energía y equilibrar tus hormonas»:"
-      ctaLabel="Descargar la guía"
-      ctaHref={DESCARGA}
-      image={portadaImg}
-      imageAlt="Portada de la guía 5 pasos para recuperar tu energía y equilibrar tus hormonas"
-      layout="lateral"
-      titleSize="hija"
-    />
+    <section class="descarga-cabecera">
+      <h1>Ya puedes descargar tu guía</h1>
+      <p class="frase">Esto no va de hacerlo perfecto.<br />Va de empezar a entender tu cuerpo.</p>
+    </section>
+
+    <section class="descarga-cuerpo">
+      <div class="descarga-texto">
+        <p>Tu acceso está listo.</p>
+        <p>Pulsa el botón de abajo para empezar a descargar tu guía:</p>
+        <p class="titulo-guia">«5 pasos para recuperar tu energía y equilibrar tus hormonas»</p>
+        <p class="boton-wrap"><a class="boton-descarga" href={DESCARGA}>Descargar la guía</a></p>
+      </div>
+      <div class="descarga-portada">
+        <Image src={portadaImg} alt="Portada de la guía 5 pasos para recuperar tu energía y equilibrar tus hormonas" width={353} />
+      </div>
+    </section>
 
     <section class="recuerda">
       <h2>Recuerda</h2>
@@ -39,10 +51,7 @@ const DESCARGA = 'https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fL
         <h2>¿Y ahora qué?</h2>
         <p>Mientras pones en marcha la guía, puedes seguir aprendiendo sobre tu cuerpo en nuestras secciones.</p>
         <div class="enlaces">
-          <a href="/hormonas/">Hormonas</a>
-          <a href="/energia/">Energía</a>
-          <a href="/metabolismo/">Metabolismo</a>
-          <a href="/recetas/">Recetas</a>
+          {categorias.map((c) => <a href={c.href}>{c.label}</a>)}
         </div>
       </section>
     </div>
@@ -52,10 +61,76 @@ const DESCARGA = 'https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fL
 </BaseLayout>
 
 <style>
-  /* La portada es vertical: se muestra entera en vez de recortada. */
-  .hub :global(.hero[data-layout='lateral'] .hero-image) {
-    object-fit: contain;
-    background: #fff;
+  /* Cabecera medida en el original (getComputedStyle, 20 oct). */
+  .descarga-cabecera {
+    padding-top: 80px;
+    text-align: center;
+  }
+  .descarga-cabecera h1 {
+    font-family: 'Neucha', var(--font-heading);
+    font-size: 55px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #6c2f50;
+    text-align: center;
+    margin: 0 0 20px;
+  }
+  .frase {
+    font-family: var(--font-body);
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 45px;
+    color: #212121;
+    margin: 0;
+  }
+  .descarga-cuerpo {
+    display: grid;
+    grid-template-columns: 1fr 353px;
+    gap: 60px;
+    align-items: start;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-top: 110px;
+  }
+  .descarga-texto p {
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 33px;
+    color: #212121;
+    margin: 0 0 1.4em;
+  }
+  .titulo-guia {
+    font-weight: 500;
+    color: #6c2f50 !important;
+  }
+  .boton-wrap {
+    padding-top: 70px;
+    padding-left: 100px;
+  }
+  .boton-descarga {
+    display: inline-block;
+    background: #6c2f50;
+    color: #fff;
+    font-family: 'Pathway Extreme', var(--font-heading);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 17px 17px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    transition: background 0.2s;
+  }
+  .boton-descarga:hover {
+    background: #f964c0;
+  }
+  .descarga-portada img {
+    display: block;
+    width: 353px;
+    height: auto;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   }
   .recuerda,
   .siguiente {
@@ -81,18 +156,22 @@ const DESCARGA = 'https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fL
     font-size: 20px;
     line-height: 33px;
   }
+  /* 7 categorías del menú: 4 arriba y 3 abajo (como en la 404). */
   .enlaces {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    margin-top: 1rem;
+    max-width: 700px;
+    margin: 1rem auto 0;
   }
   .enlaces a {
+    flex: 0 0 calc((100% - 36px) / 4);
+    box-sizing: border-box;
     background: #fff;
     color: #6c2f50;
     border-radius: 999px;
-    padding: 10px 22px;
+    padding: 10px 16px;
     font-family: var(--font-heading);
     font-weight: 500;
     text-decoration: none;
@@ -102,5 +181,41 @@ const DESCARGA = 'https://drive.google.com/uc?export=download&id=1KzsTKNKU5CZ-fL
   .enlaces a:hover {
     background: #6c2f50;
     color: #fff;
+  }
+  @media (max-width: 767px) {
+    .descarga-cabecera {
+      padding-top: 40px;
+    }
+    .descarga-cabecera h1 {
+      font-size: 34px;
+    }
+    .frase {
+      font-size: 24px;
+      line-height: 34px;
+    }
+    .descarga-cuerpo {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding-top: 50px;
+    }
+    .descarga-texto p {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    .boton-wrap {
+      padding: 20px 0 0;
+      text-align: center;
+    }
+    .boton-descarga {
+      font-size: 24px;
+    }
+    .descarga-portada img {
+      width: 100%;
+      max-width: 353px;
+      margin-inline: auto;
+    }
+    .enlaces a {
+      flex-basis: calc((100% - 12px) / 2);
+    }
   }
 </style>
