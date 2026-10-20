@@ -2,7 +2,7 @@
 // cambiar de proveedor: la página solo muestra el formulario que haya aquí.
 //
 // Guía "5 pasos" — formulario de Mailrelay del original (desde el 20 oct pide
-// nombre y email; alto 320 para que no se corte), que sigue
+// nombre y email; alto 280: justo su contenido), que sigue
 // funcionando (los registros entran en la lista aunque la usuaria no tenga
 // acceso a la cuenta). Flujo: formulario → correo de confirmación de Mailrelay
 // → /lm-5-pasos-descarga/.
@@ -13,5 +13,5 @@
 export type Formulario = { proveedor: 'mailrelay' | 'mailerlite'; url: string; alto?: number };
 
 export const formularios: Record<'guia', Formulario> = {
-  guia: { proveedor: 'mailrelay', url: 'https://clubdenutricion.ipzmarketing.com/f/5gCYfuS_XVI', alto: 320 },
+  guia: { proveedor: 'mailrelay', url: 'https://clubdenutricion.ipzmarketing.com/f/5gCYfuS_XVI', alto: 280 },
 };
