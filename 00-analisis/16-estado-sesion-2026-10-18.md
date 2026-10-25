@@ -4,7 +4,19 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 
 **Resumen:** la web nueva está completa a nivel de contenido y plantillas. Todas las páginas madre, las 22 hijas, las entradas del blog, Radar de Salud, recetas y Quiénes somos siguen ya su plantilla. Revisión final del 18 oct: 146 páginas, 0 enlaces internos rotos, sin afiliados ni despedidas antiguas, y ninguna página se sale de la pantalla en móvil (390 px).
 
-## Cierre de sesión (20 oct) — leer primero
+## Cierre de sesión (25 oct, tarde) — leer primero
+
+**Hecho:**
+- **Tanda 2 del blog** (Nº 27-34, 9-21 nov: 6 artículos y 2 recetas) aprobada por la usuaria, subida a GitHub (se publica sola L-X-V-S a las 06:00) y filas 27-34 de Notion completas (Texto, Final link, Imágenes, icono). Borradores en `00-analisis/Tanda 2 - borradores/`.
+- **Normas nuevas en la plantilla** (`Plantilla - Entradas de blog.md`): 4 (iconos de dormir alternan «Z» y cama, nunca la cara dormida), 9 (recetas de horno con opción en freidora de aire, campo `freidora`) y 10 (preguntas frecuentes, entre 5 y 8, sacadas del autocompletado de Google con `scripts/preguntas_google.py`). Corregido un fallo de iconos (la regla del «té» ponía la taza en «muévete con», «durante el»…; afectaba a 11 tarjetas, 3 de la tanda 1). Enlaces de las recetas en ciruela.
+- **Notion:** «Calendario Editorial 2» con las mismas 6 vistas que el original (By type, Calendario publicados, Por estado, Owner view, By audience). Página privada **«Calendario general»** (https://app.notion.com/p/4047f2bc06c781dc8701d5494acbfc07) con el calendario del blog y el del original, uno debajo del otro.
+- **Pendiente de la usuaria en Notion:** agrupar «Por estado» y «Owner view» por Status a mano (el conector no agrupa por fórmula); poner el icono de calendario morado al «Calendario Editorial 2» (el conector no cambia iconos de bases de datos); confirmar si se borra la fila sobrante «Notion - Calendario Editorial 2 (importar)».
+
+**Siguiente sesión, por este orden (pedido de la usuaria, 25 oct):**
+1. **Programar todo lo que queda pendiente en el «Calendario Editorial» original** (redes sociales en Metricool). Ver `CDN auto/status.md`, sección «Fase 6», y las memorias de Metricool (copy y hora por red).
+2. **Después, crear contenido del calendario editorial:** la tanda 3 del blog (Nº 35-42, desde el 23 nov) con todas las normas de la plantilla.
+
+## Cierre de sesión (20 oct)
 
 **Hecho del 19 al 20 oct** (todo en GitHub y en el preview https://clubdenutricion-preview.vercel.app):
 - **Correo del dominio arreglado** (no llegaba ningún correo: `mail` iba por el proxy de Cloudflare) y reenvío de la cuenta corporativa a Gmail (punto 11).
