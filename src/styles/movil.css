@@ -242,3 +242,42 @@
     margin: 30px auto 32px !important;
   }
 }
+
+/* Tablets (560-1023px): tarjetas de soluciones y áreas clave de 2 en 2 y
+   centradas (pedido de la usuaria, 25 oct: en Ciclo menstrual salían de una
+   en una y las áreas clave quedaban desplazadas a la derecha). Si queda una
+   suelta al final, va centrada. */
+@media (min-width: 560px) and (max-width: 1023px) {
+  .temas-relacionados .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    justify-content: center !important;
+  }
+  .temas-relacionados .grid > * {
+    grid-column: auto !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+  }
+  .temas-relacionados .grid > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center;
+    width: calc(50% - 10px) !important;
+  }
+}
+@media (min-width: 560px) and (max-width: 767px) {
+  body.movil-v2 .soluciones[data-variant='card'] .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+  body.movil-v2 .soluciones[data-variant='card'] .grid > .solucion-item {
+    grid-column: auto !important;
+  }
+  body.movil-v2 .soluciones[data-variant='card'] .grid > .solucion-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center;
+    width: calc(50% - 8px);
+  }
+}
