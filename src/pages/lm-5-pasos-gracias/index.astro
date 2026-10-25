@@ -43,10 +43,22 @@ import portadaImg from '../lm-5-pasos-descarga/_images/portada.jpg';
 </BaseLayout>
 
 <style>
-  /* La portada es vertical: se muestra entera en vez de recortada. */
+  /* La portada es vertical (724 x 1024): el cuadro toma su forma, sin
+     márgenes blancos a los lados (pedido de la usuaria, 25 oct). */
   .hub :global(.hero[data-layout='lateral'] .hero-image) {
-    object-fit: contain;
-    background: #fff;
+    width: 296px;
+    height: 418px;
+    max-height: none;
+    aspect-ratio: 724 / 1024;
+    object-fit: cover;
+    margin-inline: auto;
+  }
+  @media (max-width: 767px) {
+    .hub :global(.hero[data-layout='lateral'] .hero-image) {
+      width: 70%;
+      max-width: 296px;
+      height: auto;
+    }
   }
   .pasos-gracias {
     max-width: 760px;

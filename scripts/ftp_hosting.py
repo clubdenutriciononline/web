@@ -3,13 +3,16 @@
 Uso: python scripts/ftp_hosting.py listar [carpeta]
      python scripts/ftp_hosting.py subir <ruta local> [<ruta local> ...]
        (rutas relativas a dist/; se suben a la misma ruta en el hosting y se
-       saltan los archivos que ya están con el mismo tamaño)
+       saltan los que ya se subieron con el mismo contenido)
 """
 import ftplib
+import hashlib
+import json
 import sys
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding='utf-8')
+REGISTRO = Path(__file__).resolve().parent.parent / '.ftp-subidos.json'  # lo ya subido (no va a git)
 
 
 def leer_env():
@@ -31,8 +34,9 @@ def conectar():
 
 
 def tamanos_remotos(ftp, carpeta):
+    """{nombre: (tamaño, fecha de modificación AAAAMMDDhhmmss en UTC)}"""
     try:
-        return {n: int(d.get('size', -1)) for n, d in ftp.mlsd(carpeta) if d.get('type') == 'file'}
+        return {n: (int(d.get('size', -1)), d.get('modify', '')[:14]) for n, d in ftp.mlsd(carpeta) if d.get('type') == 'file'}
     except ftplib.error_perm:
         return None
 
@@ -52,6 +56,7 @@ def subir(ftp, dist, rutas):
     """Devuelve la conexión (puede ser nueva si hubo que reconectar)."""
     subidos = saltados = 0
     cache = {}
+    registro = json.loads(REGISTRO.read_text(encoding='utf-8')) if REGISTRO.exists() else {}
     archivos = []
     for r in rutas:
         local = dist / r
@@ -65,7 +70,12 @@ def subir(ftp, dist, rutas):
                 asegurar_carpeta(ftp, carpeta)
                 remotos = {}
             cache[carpeta] = remotos
-        if cache[carpeta].get(f.name) == f.stat().st_size:
+        # Se salta si ya se subió con este mismo contenido (huella guardada en
+        # .ftp-subidos.json) y sigue en el hosting con su tamaño. Con solo el
+        # tamaño, un cambio de igual peso no se subía.
+        huella = hashlib.md5(f.read_bytes()).hexdigest()
+        remoto = cache[carpeta].get(f.name)
+        if remoto and remoto[0] == f.stat().st_size and registro.get(rel) == huella:
             saltados += 1
             continue
         for intento in range(4):
@@ -83,9 +93,13 @@ def subir(ftp, dist, rutas):
                 ftp = conectar()
         else:
             raise RuntimeError(f'No se pudo subir {rel}')
+        registro[rel] = huella
         subidos += 1
+        if subidos % 50 == 0:
+            REGISTRO.write_text(json.dumps(registro), encoding='utf-8')
         if subidos % 100 == 0:
             print('  subidos', subidos, flush=True)
+    REGISTRO.write_text(json.dumps(registro), encoding='utf-8')
     print(f'Subidos {subidos}, ya estaban {saltados}')
     return ftp
 

@@ -34,3 +34,6 @@ __pycache__/
 
 # Clave de la API de Mailrelay (nunca a GitHub)
 .mailrelay-key
+
+# Registro local de lo subido al hosting
+.ftp-subidos.json
