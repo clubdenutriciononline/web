@@ -90,7 +90,7 @@ for p in paginas:
     familias.setdefault(p['madre'], []).append(p['pagina'])
 RONDA = ['Hormonas', 'Energía', 'Metabolismo', 'Microbiota', 'Hormonas', 'Mentalidad', 'Alimentación']
 RECETAS = ['Receta antiinflamatoria', 'Receta de energía hormonal', 'Receta keto / low carb']
-INICIO = date(2026, 11, 2)  # primer lunes de publicación
+INICIO = date(2026, 10, 26)  # primer lunes de publicación (adelantado por la usuaria el 25 oct)
 # Reglas de la usuaria (25 oct):
 #  - el tipo se alterna en todo el calendario (causa, síntoma, solución...),
 #    sea de la sección que sea;
