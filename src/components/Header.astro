@@ -231,7 +231,7 @@ const menuSecundario = mainNav.filter((item) => secundarias.includes(item.href))
   }
 
   /* Al final para que pise a las reglas base de .header-top/.main-nav. */
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     .site-header {
       position: sticky;
       top: 0;
@@ -315,9 +315,10 @@ const menuSecundario = mainNav.filter((item) => secundarias.includes(item.href))
     display: none;
   }
 
-  /* Móvil (20 oct): cabecera fija, logo + hamburguesa; el menú se abre
+  /* Móvil y tablet (hasta 1199px, donde el menú ya no cabe en una línea;
+     20 y 25 oct): cabecera fija, logo + hamburguesa; el menú se abre
      debajo con las secciones en lista y sus apartados plegables. */
-  @media (max-width: 767px) {
+  @media (max-width: 1199px) {
     .site-header {
       position: sticky;
       top: 0;

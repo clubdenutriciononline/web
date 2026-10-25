@@ -243,7 +243,7 @@ const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, varian
   /* 6 soluciones en 2 + 3 + 1 (col-50 x2, col-33 x3 y col-100 en el
      original de Resistencia a la insulina). */
   section[data-variant='card'] .grid[data-count='6'][data-layout6='2-3-1'] {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
   section[data-variant='card'] .grid[data-layout6='2-3-1'] .solucion-item {
     grid-column: span 2;
@@ -349,7 +349,7 @@ const { heading, lead, subheading, subtitulo, subtituloLista, soluciones, varian
      el original, Metabolismo). */
   section[data-variant='pill'] .grid[data-count='7'] {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
   section[data-variant='pill'] .grid[data-count='7'] .solucion-item {
     grid-column: span 3;

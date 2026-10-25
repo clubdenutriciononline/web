@@ -122,6 +122,16 @@
     text-align: center !important;
   }
 
+  /* «Anterior / Siguiente»: zona de toque de 44px para el dedo. */
+  body.movil-v2 .paginacion a,
+  body.movil-v2 .paginacion .pag-disabled,
+  body.movil-v2 .paginacion-cliente button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 12px;
+  }
+
   /* Artículos relacionados: título a la izquierda y foto pequeña a la
      derecha (pedido de la usuaria, 17 oct). */
   body.movil-v2 .articulos-relacionados .grid {
@@ -155,5 +165,52 @@
   body.movil-v2 .post-card .leer-mas {
     grid-column: 1;
     margin: 0 0 4px !important;
+  }
+}
+
+/*
+ * Tablet (768-1023px, revisión del 25 oct). El diseño es el de escritorio,
+ * con los ajustes justos para que nada se corte ni quede desequilibrado.
+ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Hero con el texto sobre la foto (madres): a este ancho el cuadro de texto
+     no cabe sobre la foto y el título se cortaba; va debajo, como en móvil. */
+  .hero[data-layout='overlay'] .hero-image-wrap {
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+  .hero[data-layout='overlay'] .hero-image {
+    border-radius: 20px !important;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5) !important;
+  }
+  .hero[data-layout='overlay'] .hero-copy {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 1rem;
+    background: #fff !important;
+  }
+  .hero[data-layout='overlay'] h1 {
+    font-size: 36px !important;
+    line-height: 1.25 !important;
+  }
+  /* Hero de las hijas: título más pequeño para que no ocupe seis líneas. */
+  .hero h1[data-size='hija'] {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+  }
+  /* Portada: las 4 tarjetas de «Un enfoque diferente» en 2 + 2. */
+  .enfoque .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Palabras largas en píldoras estrechas: que partan en vez de desbordar. */
+  .soluciones .solucion-item h3 {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  /* El justificado deja huecos grandes junto a las imágenes. */
+  main p,
+  main li {
+    text-align: left !important;
   }
 }
