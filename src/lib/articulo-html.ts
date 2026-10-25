@@ -50,12 +50,22 @@ function sacarImagenVertical(cuerpo: string): { cuerpo: string; img?: string } {
 const SECCION_TARJETAS = /soluci|consejo|estrategia|recomendaci|c[oó]mo (mejorar|reducir|bajar|aumentar|recuperar|prevenir|gestionar|cuidar|combatir|equilibrar)/;
 // Revisado el 25 oct (pedido de la usuaria): más temas y nunca el mismo
 // icono dos veces en un artículo; si un apartado no encaja con ningún tema,
-// se usa el primer icono libre de RESERVA.
+// se usa el primer icono libre de RESERVA. Ampliado con la tanda 2 (compra,
+// desayuno, ciclo, cocina, tiempo, progresión, historia de salud...); el
+// té solo cuenta como palabra suelta (antes «muévete con» daba la taza).
 const ICONOS_POR_TEMA: [RegExp, { svg: string }][] = [
   [/pantalla|m[oó]vil|tecnolog|digital/, iconos.movil],
-  [/cafe[ií]na|caf[eé]|alcohol|estimulante|t[eé] /, iconos.taza],
+  [/cafe[ií]na|caf[eé]|alcohol|estimulante|(^|\s)t[eé](\s|$)/, iconos.taza],
   [/entorno|dormitorio|habitaci[oó]n|cama/, iconos.cama],
-  [/sue[nñ]o|dorm|descans|noche/, iconos.caraSomnolienta],
+  [/sue[nñ]o|dorm|duerm|descans|noche/, iconos.caraSomnolienta],
+  [/ciclo|menstrua/, iconos.calendarioCheck],
+  [/compra|supermercado|etiqueta/, iconos.etiqueta],
+  [/desayuno/, iconos.manzana],
+  [/mastica|despacio/, iconos.cubiertosLinea],
+  [/cocina|horno|vapor|plancha|en lote/, iconos.olla],
+  [/historia|antecedente/, iconos.estetoscopio],
+  [/alternativ|pregunta|duda/, iconos.cerebroIdeas],
+  [/\d+ horas|espera/, iconos.despertador],
   [/pausa|desconect|respira|medita|mindful|relaj|yoga/, iconos.meditacion],
   [/estr[eé]s|ansiedad|calma|emocion|tensi[oó]n/, iconos.caraSonrojada],
   [/fuerza|m[uú]sculo|pesas/, iconos.mancuerna],
@@ -63,7 +73,7 @@ const ICONOS_POR_TEMA: [RegExp, { svg: string }][] = [
   [/relaci[oó]n|relaciones|apoyo|social|acompa|grupo|pareja|amig|entorno|otras personas/, iconos.personasAmigas],
   [/hidrat|agua|beber/, iconos.vasoAgua],
   [/suplement|vitamina|mineral|magnesio|hierro/, iconos.pastillas],
-  [/plato|verdura|vegetal|fruta/, iconos.zanahoria],
+  [/plato|verdura|vegetal|fruta|tentempi/, iconos.zanahoria],
   [/integral|cereal|hidrato|avena/, iconos.espiga],
   [/grasa|aceite|pescado|omega/, iconos.pescado],
   [/fibra|legumbre/, iconos.hojaVerde],
@@ -72,12 +82,14 @@ const ICONOS_POR_TEMA: [RegExp, { svg: string }][] = [
   [/m[eé]dic|profesional|consult|doctor|ginec|diagn[oó]stico|tratamiento|ayuda/, iconos.doctora],
   [/calor|caliente/, iconos.fuego],
   [/luz|sol|ritmo/, iconos.sol],
-  [/gratitud|diario|escrib|carta|cuaderno/, iconos.biblioteca],
+  [/gratitud|diario|escrib|carta|cuaderno|apunta|anota|registr/, iconos.biblioteca],
   [/detalle|f[ií]jate|atenci[oó]n/, iconos.ojo],
   [/meta|objetiv|constan/, iconos.diana],
   [/voz alta|agradece|gracias/, iconos.corazon],
-  [/h[aá]bito|rutina|horario|regular|momento fijo|cada d[ií]a/, iconos.calendario],
-  [/carga|delega|tiempo/, iconos.reloj],
+  [/h[aá]bito|rutina|horario|regular|momento fijo|cada d[ií]a|plan |d[ií]as malos/, iconos.calendario],
+  [/carga|delega|tiempo|corta|minuto/, iconos.reloj],
+  [/80\/20/, iconos.check],
+  [/metabolismo|muy poco|progres|gradual/, iconos.velocimetro],
 ];
 const RESERVA = [iconos.hoja, iconos.spa, iconos.corazon, iconos.check, iconos.diana, iconos.sol, iconos.lunaIon, iconos.calendarioCheck];
 function iconoPara(titulo: string, usados: Set<{ svg: string }>) {

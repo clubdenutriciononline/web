@@ -1,0 +1,131 @@
+{
+ "_tipo": "foto",
+ "ultraprocesados-desequilibran-alimentacion": {
+  "blog-cover": {
+   "aspect": "16:9",
+   "prompt": "Photorealistic editorial lifestyle photograph, natural warm daylight, soft shallow depth of field, bright Spanish neighbourhood supermarket with fresh produce, muted earthy tones. A Spanish woman around 40 years old wearing a mustard-yellow knitted cardigan reads the ingredient label on the back of a packet of biscuits with a thoughtful expression, her shopping basket full of fresh vegetables and fruit. Natural look. No readable text, no brand names, no logos, no watermark."
+  },
+  "blog-imagen-1": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial nutrition infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Qué hacen los ultraprocesados'. In the centre a realistic illustration of packaged biscuits, a soft drink can and crisps without brand names. Four rounded white label boxes with small icons connected by thin lines, with this exact Spanish text: 'Sacian poco', 'Disparan el azúcar', 'Nutren poco', 'Dañan la microbiota'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  },
+  "blog-imagen-2": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial nutrition infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Lee la etiqueta'. A realistic hand holding a plain food package seen from the back, with a magnifying glass over a list of tiny illegible grey lines (no readable words, no English text on the package). Three rounded white boxes with simple icons stacked vertically, with this exact Spanish text: 'Pocos ingredientes', 'Sin azúcar al principio', 'Nombres que reconoces'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  }
+ },
+ "ciclos-irregulares-primera-senal-perimenopausia": {
+  "blog-cover": {
+   "aspect": "16:9",
+   "prompt": "Photorealistic editorial lifestyle photograph, natural warm morning light, soft shallow depth of field, calm Mediterranean living room with plants and natural materials, muted earthy tones. A Spanish woman around 45 years old wearing a navy-blue linen shirt sits by the window looking at a calendar app on her phone with a calm, thoughtful expression, a paper wall calendar softly out of focus behind her. Natural look. No readable text, no logos, no watermark."
+  },
+  "blog-imagen-1": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Por qué cambia tu regla'. In the centre a realistic woman figure around 45 with the ovaries and uterus softly highlighted. Four rounded white label boxes with small icons connected by thin lines, with this exact Spanish text: 'Menos folículos', 'Ciclos sin ovulación', 'Estrógenos que fluctúan', 'Menos progesterona'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  },
+  "blog-imagen-2": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Cuándo consultar'. A friendly female gynaecologist with a tablet at the bottom. Four rounded white boxes with warning icons, with this exact Spanish text: 'Regla muy abundante', 'Más de 7 días', 'Sangrado entre reglas', 'Ciclos de menos de 21 días'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  }
+ },
+ "ejercicio-fatiga-cronica-empezar-sin-recaer": {
+  "blog-cover": {
+   "aspect": "16:9",
+   "prompt": "Photorealistic editorial lifestyle photograph, natural soft morning light, soft shallow depth of field, calm Mediterranean living room with plants and natural materials, muted earthy tones. A Spanish woman around 45 years old wearing a soft lilac long-sleeve top and grey leggings does a gentle seated stretch on a yoga mat, relaxed and focused expression, a glass of water beside her. Natural look. No text, no logos, no watermark."
+  },
+  "blog-imagen-1": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Malestar posesfuerzo'. In the centre a realistic tired woman resting on a sofa. Three rounded white label boxes with small icons connected by thin lines, with this exact Spanish text: 'Llega con retraso', 'Es desproporcionado', 'Dura días'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  },
+  "blog-imagen-2": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Muévete sin recaer'. Five rounded white boxes with simple icons stacked vertically, with this exact Spanish text: 'Sesiones cortas', 'Espera 48 horas', 'Sube muy poco', 'Descansa antes', 'Plan para días malos'. A calm woman around 45 walking slowly at the bottom. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  }
+ },
+ "receta-pan-keto-semillas": {
+  "blog-ingredientes": {
+   "aspect": "4:3",
+   "prompt": "Delicate watercolour and fine ink illustration painted directly on a pure white background that fills the whole image edge to edge, no paper sheet, no frame, no border, no shadow, soft natural colours, ingredients arranged neatly and spaced apart across the whole image: a bowl of almond flour, a small bowl of psyllium husk powder, a small bowl of ground flaxseed, small bowls of sunflower seeds, pumpkin seeds and sesame seeds, three eggs, a bottle of olive oil, a small bottle of apple cider vinegar and a little dish of salt. Cookbook style. No text, no labels, no watermark."
+  },
+  "blog-paso-1": {
+   "aspect": "4:3",
+   "prompt": "Photorealistic overhead cooking photograph, natural daylight, rustic Mediterranean kitchen: a large ceramic bowl with almond flour, psyllium, ground flaxseed, sunflower seeds, pumpkin seeds and sesame seeds being mixed with a wooden spoon, a loaf tin lined with baking paper beside it. No text, no logos, no watermark."
+  },
+  "blog-paso-2": {
+   "aspect": "4:3",
+   "prompt": "Photorealistic cooking photograph, natural daylight, rustic Mediterranean kitchen: a thick, sticky seed dough being mixed with a spatula in a ceramic bowl, a small jug of warm water and beaten eggs in a bowl next to it. No text, no logos, no watermark."
+  },
+  "blog-paso-3": {
+   "aspect": "4:3",
+   "prompt": "Photorealistic cooking photograph, natural daylight, rustic Mediterranean kitchen: a loaf-shaped seed dough in a rectangular tin lined with baking paper, sprinkled with sesame seeds and with a shallow lengthwise cut on top, ready to bake. No text, no logos, no watermark."
+  },
+  "blog-resultado": {
+   "aspect": "16:9",
+   "prompt": "Photorealistic food photograph, natural window light, rustic wooden table: a golden low-carb seed loaf on a wooden board, partly sliced, showing a moist crumb full of sunflower, pumpkin and sesame seeds, one slice topped with avocado and a soft-boiled egg, a cup of coffee beside it. No text, no logos, no watermark."
+  }
+ },
+ "desequilibrios-hormonales-dificultan-perder-grasa": {
+  "blog-cover": {
+   "aspect": "16:9",
+   "prompt": "Photorealistic editorial lifestyle photograph, natural warm daylight, soft shallow depth of field, bright Mediterranean kitchen with plants and natural materials, muted earthy tones. A Spanish woman around 45 years old wearing a terracotta sports top and a light grey zip jacket drinks a glass of water at the kitchen counter after a workout, a small dumbbell and a bowl of fruit on the counter, calm confident expression. Natural look. No text, no logos, no watermark."
+  },
+  "blog-imagen-1": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Hormonas que frenan la pérdida de grasa'. In the centre a realistic woman figure around 45 with a softly highlighted abdomen. Five rounded white label boxes with small icons connected by thin lines, with this exact Spanish text: 'Insulina alta', 'Cortisol elevado', 'Tiroides lenta', 'Menos estrógenos', 'Más hambre'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  },
+  "blog-imagen-2": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Señales para tu cuerpo'. Five rounded white boxes with simple icons stacked vertically, with this exact Spanish text: 'Proteína en cada comida', 'Entrena la fuerza', 'Duerme 7 horas', 'Menos estrés', 'Sin dietas extremas'. A woman around 45 lifting a light dumbbell at the bottom. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  }
+ },
+ "dolor-abdominal-despues-de-comer-causas": {
+  "blog-cover": {
+   "aspect": "16:9",
+   "prompt": "Photorealistic editorial lifestyle photograph, natural warm daylight, soft shallow depth of field, calm Mediterranean dining room with plants and natural materials, muted earthy tones. A Spanish woman around 40 years old wearing a dusty-pink cotton blouse sits at the table after lunch with one hand on her abdomen and a slightly uncomfortable expression, an empty plate and a glass of water in front of her. Natural look. No text, no logos, no watermark."
+  },
+  "blog-imagen-1": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Por qué duele después de comer'. In the centre a realistic woman figure with the stomach and intestine softly highlighted. Five rounded white label boxes with small icons connected by thin lines, with this exact Spanish text: 'Comer deprisa', 'Gases', 'Intolerancias', 'Reflujo', 'Colon irritable'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  },
+  "blog-imagen-2": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Señales de alarma'. A friendly female doctor with a stethoscope at the bottom. Four rounded white boxes with warning icons, with this exact Spanish text: 'Dolor muy intenso', 'Fiebre o vómitos', 'Sangre en las heces', 'Pérdida de peso'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  }
+ },
+ "terapia-hormonal-menopausia-beneficios-riesgos": {
+  "blog-cover": {
+   "aspect": "16:9",
+   "prompt": "Photorealistic editorial lifestyle photograph, natural daylight, soft shallow depth of field, bright and warm gynaecology consultation room with a plant and wooden furniture, muted earthy tones. A Spanish woman around 50 years old with short grey-streaked hair, wearing a teal-green blouse, talks attentively with a friendly female doctor across the desk, both relaxed. Natural look. No readable text, no logos, no watermark."
+  },
+  "blog-imagen-1": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'Beneficios de la terapia hormonal'. In the centre a realistic serene woman around 50. Five rounded white label boxes with small icons connected by thin lines, with this exact Spanish text: 'Menos sofocos', 'Mejor sueño', 'Salud vaginal', 'Huesos más fuertes', 'Mejor ánimo'. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  },
+  "blog-imagen-2": {
+   "aspect": "9:16",
+   "prompt": "Vertical editorial health infographic in Spanish, soft beige background, clean modern design. Title at the top: 'De qué dependen los riesgos'. Four rounded white boxes with simple icons stacked vertically, with this exact Spanish text: 'Tu edad', 'Años desde la menopausia', 'Pastilla o parche', 'Tu salud'. A woman around 50 holding a small hormone patch box at the bottom. Correct Spanish spelling with accents. No other text, no logos, no watermark."
+  }
+ },
+ "receta-salmon-horno-costra-curcuma-pistachos": {
+  "blog-ingredientes": {
+   "aspect": "4:3",
+   "prompt": "Delicate watercolour and fine ink illustration painted directly on a pure white background that fills the whole image edge to edge, no paper sheet, no frame, no border, no shadow, soft natural colours, ingredients arranged neatly and spaced apart across the whole image: four raw salmon fillets, a small bowl of shelled green pistachios, a small bowl of ground turmeric, a pepper grinder, a garlic clove, a lemon, a bunch of fresh parsley, a small jar of Dijon mustard, a bottle of olive oil, a courgette and a few cherry tomatoes on the vine. Cookbook style. No text, no labels, no watermark."
+  },
+  "blog-paso-1": {
+   "aspect": "4:3",
+   "prompt": "Photorealistic overhead cooking photograph, natural daylight, rustic Mediterranean kitchen: a baking tray with sliced courgette half-moons and cherry tomatoes drizzled with olive oil and sprinkled with salt and black pepper, ready to go into the oven. No text, no logos, no watermark."
+  },
+  "blog-paso-2": {
+   "aspect": "4:3",
+   "prompt": "Photorealistic overhead cooking photograph, natural daylight, rustic Mediterranean kitchen: a small ceramic bowl with roughly chopped green pistachios mixed with golden turmeric, chopped parsley and lemon zest, a knife and a grated lemon on a wooden board beside it. No text, no logos, no watermark."
+  },
+  "blog-paso-3": {
+   "aspect": "4:3",
+   "prompt": "Photorealistic cooking photograph, natural daylight, rustic Mediterranean kitchen: a woman's hands pressing a crust of chopped pistachios and turmeric onto raw salmon fillets brushed with mustard, on a sheet of baking paper. No text, no logos, no watermark."
+  },
+  "blog-resultado": {
+   "aspect": "16:9",
+   "prompt": "Photorealistic food photograph, natural window light, rustic wooden table: a baked salmon fillet with a golden crunchy pistachio and turmeric crust on a ceramic plate, with roasted courgette and blistered cherry tomatoes, a lemon wedge and parsley. No text, no logos, no watermark."
+  }
+ }
+}
