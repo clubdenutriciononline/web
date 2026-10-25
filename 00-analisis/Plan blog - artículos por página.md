@@ -563,6 +563,172 @@ Generado el 25 oct con `scripts/calendario_blog.py` a partir de las causas, sín
 - **Causa:** Ayunar sin planificación: errores comunes
 - **Síntoma:** Sensación de sacrificio permanente: señal de que tu dieta no es sostenible
 
+## Recetas de los sábados
+
+### Receta antiinflamatoria (52)
+
+- Crema de brócoli con jengibre y semillas de calabaza
+- Salmón al horno con costra de cúrcuma y pistachos
+- Ensalada templada de lentejas, espinacas y nueces
+- Sopa de miso con verduras y tofu
+- Curry de garbanzos con espinacas y leche de coco
+- Bol de avena con frutos rojos, canela y nueces
+- Caballa a la plancha con ensalada de hinojo y naranja
+- Crema de zanahoria, jengibre y naranja
+- Quinoa con verduras asadas y tahini
+- Pescado blanco en papillote con limón y hierbas
+- Hummus de remolacha con crudités
+- Ensalada de kale masajeada con aguacate y granada
+- Golden milk: leche dorada de cúrcuma
+- Sopa de lentejas rojas con cúrcuma y comino
+- Salteado de verduras con tempeh y sésamo
+- Pudin de chía con mango y cúrcuma
+- Merluza con salsa verde y espárragos
+- Ensalada de garbanzos, pepino, tomate y menta
+- Crema de coliflor asada con cúrcuma
+- Boniato asado relleno de espinacas y garbanzos
+- Batido verde de espinacas, piña y jengibre
+- Arroz integral con setas y espinacas
+- Trucha al horno con ajo y perejil
+- Gazpacho de remolacha
+- Berenjenas asadas con yogur y granada
+- Sopa de pollo con jengibre y verduras
+- Ensalada de quinoa, aguacate y edamame
+- Muffins de avena y arándanos sin azúcar
+- Lubina al horno con verduras mediterráneas
+- Crema de espárragos verdes
+- Garbanzos especiados al horno (snack)
+- Wok de gambas con brócoli y jengibre
+- Ensalada de espinacas, fresas y nueces
+- Crema de guisantes con menta
+- Sardinas marinadas con limón y eneldo
+- Porridge salado de avena con huevo y espinacas
+- Pimientos rellenos de quinoa y verduras
+- Té verde helado con limón y jengibre
+- Pollo al limón con romero y verduras asadas
+- Ensalada de lentejas beluga con remolacha
+- Crema de puerro y patata con aceite de oliva
+- Tostas de centeno con caballa y aguacate
+- Bol de arroz integral con salmón y algas
+- Pisto de verduras con huevo
+- Compota de manzana y canela sin azúcar
+- Calabacín relleno de atún y tomate
+- Ensalada de col lombarda, manzana y nueces
+- Sopa de calabaza y lentejas
+- Bacalao confitado con pimientos
+- Mousse de chocolate negro y aguacate
+- Alcachofas al horno con ajo y limón
+- Ensalada de pasta integral con verduras y pesto
+
+### Receta de energía hormonal (52)
+
+- Bol de yogur griego con semillas de lino, kiwi y avena
+- Tortilla de verduras con pan integral
+- Ensalada de pollo, quinoa y aguacate
+- Batido de proteínas con plátano y mantequilla de cacahuete
+- Lentejas estofadas con verduras
+- Huevos revueltos con espinacas y salmón ahumado
+- Bol de arroz con ternera, brócoli y sésamo
+- Tostada de centeno con hummus y huevo duro
+- Garbanzos con espinacas y huevo
+- Pavo al curry con arroz basmati
+- Overnight oats de cacao y frutos rojos
+- Ensalada de atún, judías blancas y tomate
+- Wrap integral de pollo y verduras
+- Salmón con boniato asado y judías verdes
+- Energy balls de dátiles, avena y cacao
+- Revuelto de setas con tostada integral
+- Tofu salteado con verduras y fideos de arroz
+- Crema de lentejas con yogur y comino
+- Pollo al horno con patata y pimientos
+- Bol de requesón con nueces, miel y pera
+- Pasta integral con atún, tomate y alcaparras
+- Frittata de calabacín y queso feta
+- Ensalada de garbanzos con pollo y pimientos asados
+- Porridge de avena con proteína y frutos secos
+- Hamburguesas caseras de pavo con ensalada
+- Arroz integral con huevo y verduras salteadas
+- Tostada de aguacate, salmón y semillas
+- Bol de quinoa con huevo, espinacas y garbanzos
+- Crema de cacahuete casera
+- Merluza con patatas al vapor y ajada
+- Smoothie de frutos rojos, avena y yogur
+- Albóndigas de pollo en salsa de tomate
+- Ensalada de pasta con pollo y verduras
+- Huevos al plato con tomate y pimiento
+- Tortitas de avena y plátano
+- Bol de lentejas con arroz y verduras (mujadara)
+- Pechuga de pavo rellena de espinacas
+- Yogur con granola casera sin azúcar
+- Salteado de ternera con pimientos y cebolla
+- Sopa de fideos integrales con pollo
+- Hummus clásico con palitos de zanahoria
+- Pescado blanco con quinoa y espárragos
+- Muffins de huevo con verduras
+- Ensalada de judías verdes, patata y huevo
+- Pizza casera de base integral con verduras
+- Batido verde con proteína y aguacate
+- Garbanzos al curry con arroz integral
+- Bocadillo integral de pollo, aguacate y tomate
+- Crema de calabaza con garbanzos tostados
+- Pollo teriyaki casero con verduras
+- Galletas de avena y manzana sin azúcar
+- Bol de desayuno con huevo, aguacate y boniato
+
+### Receta keto / low carb (51)
+
+- Pan keto de semillas
+- Pizza keto con base de coliflor
+- Espaguetis de calabacín con pesto y pollo
+- Huevos rellenos de aguacate
+- Salmón con mantequilla de ajo y espárragos
+- Lasaña keto de berenjena
+- Ensalada César keto
+- Tortitas keto de harina de almendra
+- Pollo al curry con leche de coco y arroz de coliflor
+- Muffins keto de huevo y bacon
+- Hamburguesa sin pan con champiñones portobello
+- Crema de brócoli con queso
+- Chips de kale al horno
+- Brownie keto de chocolate negro
+- Wok de ternera y verduras sin arroz
+- Puré de coliflor cremoso
+- Pimientos rellenos de carne y queso
+- Ensalada de aguacate, gambas y tomate
+- Galletas keto de almendra
+- Pollo asado con verduras de hoja
+- Tortilla de calabacín y queso de cabra
+- Fat bombs de cacao y coco
+- Wraps de lechuga con pollo y salsa de yogur
+- Bacalao con pisto low carb
+- Champiñones rellenos de espinacas y queso
+- Cheesecake keto sin azúcar
+- Arroz de coliflor con gambas
+- Ensalada de pollo y aguacate con mayonesa casera
+- Pan nube (cloud bread)
+- Calabacines rellenos de carne picada
+- Sopa de pollo low carb
+- Mug cake keto en 2 minutos
+- Salmón con salsa de eneldo y pepino
+- Brochetas de pollo y verduras
+- Crema de calabacín y queso
+- Pudin de chía con coco (low carb)
+- Pechugas de pollo rellenas de queso y espinacas
+- Ensalada de huevo y aguacate
+- Albóndigas keto en salsa de tomate
+- Crackers de semillas y queso
+- Berenjenas a la parmesana low carb
+- Gambas al ajillo con calabacín
+- Bizcocho keto de limón
+- Revuelto de setas con jamón
+- Ensalada de salmón ahumado y aguacate
+- Pollo a la crema de champiñones
+- Chips de queso parmesano al horno
+- Tacos keto con tortilla de queso
+- Crema de coliflor con bacon crujiente
+- Helado keto de fresa
+- Ensalada de atún, huevo y aceitunas
+
 ## Temas descartados por repetidos
 
 - Menopausia (Síntoma): Cambios de humor (ya en Perimenopausia y Hormonas)

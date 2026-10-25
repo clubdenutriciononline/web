@@ -20,6 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from titulos_blog import TITULOS  # noqa: E402
+from recetas_blog import RECETAS as LISTA_RECETAS  # noqa: E402
 
 sys.stdout.reconfigure(encoding='utf-8')
 raiz = Path(__file__).resolve().parent.parent
@@ -75,39 +76,45 @@ for p in paginas:
     colas[p['pagina']] = cola
     por_pagina[p['pagina']] = list(cola)  # copia: las colas se vacían al montar el calendario
 
-# 4) Calendario por rondas
-familias = []
+# 4) Calendario (decisión de la usuaria, 25 oct): artículos lunes, miércoles
+#    y viernes, por rondas Hormonas, Energía, Metabolismo, Microbiota,
+#    Hormonas, Mentalidad, Alimentación (Hormonas dos veces: tiene el doble de
+#    temas); en cada turno se avanza a la siguiente página de la sección. Los
+#    sábados, una receta fija rotando antiinflamatoria, energía hormonal y
+#    keto/low carb.
+from datetime import date, timedelta  # noqa: E402
+
+familias = {}
 for p in paginas:
-    if p['nivel'] == 'madre':
-        familias.append([p['pagina']])
-    else:
-        familias[-1].append(p['pagina'])
+    familias.setdefault(p['madre'], []).append(p['pagina'])
+RONDA = ['Hormonas', 'Energía', 'Metabolismo', 'Microbiota', 'Hormonas', 'Mentalidad', 'Alimentación']
 RECETAS = ['Receta antiinflamatoria', 'Receta de energía hormonal', 'Receta keto / low carb']
-turno = [0] * len(familias)
-calendario, nreceta = [], 0
-def receta():
-    global nreceta
-    calendario.append({'pagina': 'Recetas', 'madre': 'Recetas', 'href': '/recetas/',
-                       'tipo': RECETAS[nreceta % 3], 'titulo': f'{RECETAS[nreceta % 3]} (por definir)', 'solape': ''})
-    nreceta += 1
-
-
-# Una receta cada 6 artículos (no una por ronda): al final, cuando solo quedan
-# temas de Hormonas, las recetas no pasan a ser la mitad de las entradas.
-desde_receta = 0
-while any(colas[x] for fam in familias for x in fam):
-    for i, fam in enumerate(familias):
-        # siguiente página de la familia que aún tenga artículos
+INICIO = date(2026, 11, 2)  # primer lunes de publicación
+turno = {m: 0 for m in familias}
+articulos = []
+while any(colas[x] for fam in familias.values() for x in fam):
+    for madre in RONDA:
+        fam = familias[madre]
         for _ in range(len(fam)):
-            pag = fam[turno[i] % len(fam)]
-            turno[i] += 1
+            pag = fam[turno[madre] % len(fam)]
+            turno[madre] += 1
             if colas[pag]:
-                calendario.append(colas[pag].pop(0))
-                desde_receta += 1
-                if desde_receta == 6:
-                    receta()
-                    desde_receta = 0
+                articulos.append(colas[pag].pop(0))
                 break
+
+calendario, nreceta = [], 0
+semanas = -(-len(articulos) // 3)
+for sem in range(semanas):
+    lunes = INICIO + timedelta(weeks=sem)
+    for k, dia in enumerate((0, 2, 4)):
+        n = sem * 3 + k
+        if n < len(articulos):
+            calendario.append({**articulos[n], 'fecha': lunes + timedelta(days=dia)})
+    calendario.append({'pagina': 'Recetas', 'madre': 'Recetas', 'href': '/recetas/', 'tipo': RECETAS[nreceta % 3],
+                       'titulo': LISTA_RECETAS[RECETAS[nreceta % 3]][nreceta // 3], 'solape': '',
+                       'fecha': lunes + timedelta(days=5)})
+    nreceta += 1
+DIAS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
 
 # 5) Documentos
 out = raiz / '00-analisis'
@@ -124,24 +131,33 @@ for p in paginas:
     for a in por_pagina[p['pagina']]:
         L.append(f"- **{a['tipo']}:** {a['titulo']}" + (f" — *revisar: ya existe «{a['solape']}»*" if a['solape'] else ''))
     L.append('')
+L += ['## Recetas de los sábados', '']
+for tipo, lista in LISTA_RECETAS.items():
+    L += [f'### {tipo} ({len(lista)})', ''] + [f'- {r}' for r in lista] + ['']
 L += ['## Temas descartados por repetidos', '']
 L += [f'- {pag} ({tipo}): {t}' for pag, tipo, t in repetidos]
 (out / 'Plan blog - artículos por página.md').write_text('\n'.join(L) + '\n', encoding='utf-8')
 
 C = ['# Plan del blog — calendario de publicación', '',
-     'Orden por rondas: Hormonas → Energía → Metabolismo → Microbiota → Mentalidad → Alimentación → receta; en cada ronda se avanza a la siguiente subpágina de cada sección. Hay una receta cada 6 artículos; hacia el final, cuando las demás secciones ya no tienen temas, quedan solo los de Hormonas. Las recetas rotan entre antiinflamatoria, energía hormonal y keto/low carb. Las fechas se ponen cuando se decida la frecuencia de publicación.', '',
-     f'**{len(calendario)} publicaciones** ({len(calendario) - nreceta} artículos y {nreceta} recetas).', '',
-     '| Nº | Sección | Página | Tipo | Título | Nota |', '|---|---|---|---|---|---|']
+     'Artículos los lunes, miércoles y viernes, por rondas: Hormonas → Energía → Metabolismo → Microbiota → Hormonas → Mentalidad → Alimentación (en cada turno, la siguiente subpágina de la sección). Los sábados, receta fija rotando antiinflamatoria → energía hormonal → keto/low carb. Hormonas va dos veces por ronda porque tiene el doble de temas.', '',
+     f'**{len(calendario)} publicaciones en {semanas} semanas** ({len(calendario) - nreceta} artículos y {nreceta} recetas), del {calendario[0]["fecha"]:%d/%m/%Y} al {calendario[-1]["fecha"]:%d/%m/%Y}.', '',
+     '| Nº | Fecha | Sección | Página | Tipo | Título | Nota |', '|---|---|---|---|---|---|---|']
 for n, a in enumerate(calendario, 1):
     nota = f"Revisar: ya existe «{a['solape']}»" if a['solape'] else ''
-    C.append(f"| {n} | {a['madre']} | {a['pagina']} | {a['tipo']} | {a['titulo']} | {nota} |")
+    C.append(f"| {n} | {DIAS[a['fecha'].weekday()]} {a['fecha']:%d/%m/%Y} | {a['madre']} | {a['pagina']} | {a['tipo']} | {a['titulo']} | {nota} |")
 (out / 'Plan blog - calendario.md').write_text('\n'.join(C) + '\n', encoding='utf-8')
 with open(out / 'Plan blog - calendario.csv', 'w', newline='', encoding='utf-8-sig') as f:
     w = csv.writer(f, delimiter=';')
     w.writerow(['Nº', 'Fecha', 'Sección', 'Página', 'Tipo', 'Título', 'Nota', 'Estado'])
     for n, a in enumerate(calendario, 1):
-        w.writerow([n, '', a['madre'], a['pagina'], a['tipo'], a['titulo'],
+        w.writerow([n, f"{a['fecha']:%d/%m/%Y}", a['madre'], a['pagina'], a['tipo'], a['titulo'],
                     f"Revisar: ya existe «{a['solape']}»" if a['solape'] else '', 'Pendiente'])
 
-print('artículos', total, '| repetidos descartados', len(repetidos), '| publicaciones', len(calendario), '| recetas', nreceta)
+print('artículos', total, '| repetidos descartados', len(repetidos), '| publicaciones', len(calendario), '| recetas', nreceta, '| semanas', semanas, '| hasta', calendario[-1]['fecha'])
+import collections  # noqa: E402
+ultima = {}
+for a in calendario:
+    ultima[a['madre']] = a['fecha']
+print('última publicación de cada sección:', {k: f'{v:%d/%m/%Y}' for k, v in ultima.items()})
+print('recetas por tipo:', collections.Counter(a['tipo'] for a in calendario if a['madre'] == 'Recetas'))
 print('posibles solapes con entradas existentes:', sum(1 for v in por_pagina.values() for a in v if a['solape']))
