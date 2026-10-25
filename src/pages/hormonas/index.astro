@@ -128,17 +128,20 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     <section class="sintomas">
       <h2>Síntomas de Desequilibrio Hormonal</h2>
       <p class="subheading">Los síntomas más comunes en mujeres incluyen:</p>
+      <!-- Mismo formato que el resto de páginas (Metabolismo): una columna,
+           título y explicación; frases aprobadas por la usuaria el 25 oct. -->
       <ChecklistCard
+        columns={1}
         icon="check-circle"
         items={[
-          'Fatiga persistente',
-          'Ansiedad',
-          'Cambios de humor',
-          'Insomnio',
-          'Dificultad para perder grasa',
-          'Hinchazón',
-          'Antojos constantes',
-          'Reglas irregulares',
+          { title: 'Fatiga persistente', text: 'Cansancio que no mejora con el descanso y que puede estar relacionado con el cortisol, la tiroides o los cambios hormonales.' },
+          { title: 'Ansiedad', text: 'Sensación de nerviosismo o inquietud que puede aumentar cuando las hormonas del estrés y las sexuales se desequilibran.' },
+          { title: 'Cambios de humor', text: 'Irritabilidad o altibajos emocionales ligados a las fluctuaciones de estrógenos y progesterona.' },
+          { title: 'Insomnio', text: 'Dificultad para dormir o despertares nocturnos, frecuentes cuando bajan la progesterona o sube el cortisol.' },
+          { title: 'Dificultad para perder grasa', text: 'Sobre todo en la zona abdominal, a menudo relacionada con la insulina y el cortisol.' },
+          { title: 'Hinchazón', text: 'Retención de líquidos o distensión abdominal que puede variar a lo largo del ciclo.' },
+          { title: 'Antojos constantes', text: 'Ganas de dulce o de picar entre horas por cambios en la insulina, la leptina o el cortisol.' },
+          { title: 'Reglas irregulares', text: 'Ciclos más cortos, más largos o más abundantes, una de las señales más claras de desequilibrio hormonal.' },
         ]}
       />
     </section>
