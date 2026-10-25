@@ -1,0 +1,838 @@
+[
+ {
+  "pagina": "Hormonas",
+  "href": "/hormonas/",
+  "madre": "Hormonas",
+  "nivel": "madre",
+  "causa": [
+   "Estrés crónico",
+   "Mala alimentación",
+   "Falta de descanso",
+   "Inflamación intestinal",
+   "Resistencia a la insulina",
+   "Sedentarismo o exceso de ejercicio"
+  ],
+  "sintoma": [
+   "Fatiga persistente",
+   "Ansiedad",
+   "Cambios de humor",
+   "Insomnio",
+   "Dificultad para perder grasa",
+   "Hinchazón",
+   "Antojos constantes",
+   "Reglas irregulares"
+  ],
+  "solucion": [
+   "Alimentación equilibrada",
+   "Control del estrés",
+   "Descanso de calidad",
+   "Movimiento adaptado",
+   "Salud intestinal"
+  ]
+ },
+ {
+  "pagina": "Ciclo Menstrual",
+  "href": "/ciclo-menstrual/",
+  "madre": "Hormonas",
+  "nivel": "hija",
+  "causa": [
+   "Desórdenes Hormonales",
+   "Estrés y Ansiedad",
+   "Peso y Dieta",
+   "Medicamentos y Tratamientos",
+   "Enfermedades Crónicas",
+   "Edad y Cambios en el Cuerpo"
+  ],
+  "sintoma": [
+   "Dolor abdominal",
+   "Fatiga",
+   "Mareos",
+   "Cambios de humor",
+   "Sangrado menstrual",
+   "Hinchazón"
+  ],
+  "solucion": [
+   "Mantener un peso saludable",
+   "Ejercitarse regularmente",
+   "Seguir una dieta equilibrada",
+   "Reducir el estrés",
+   "Consultar a un profesional de la salud"
+  ]
+ },
+ {
+  "pagina": "Perimenopausia",
+  "href": "/perimenopausia/",
+  "madre": "Hormonas",
+  "nivel": "hija",
+  "causa": [
+   "Edad y reserva ovárica",
+   "Genética y antecedentes familiares",
+   "Tabaco",
+   "Estrés crónico",
+   "Peso y alimentación",
+   "Tratamientos y cirugías"
+  ],
+  "sintoma": [
+   "Ciclos menstruales irregulares",
+   "Sofocos y sensación de calor",
+   "Problemas de sueño",
+   "Fatiga constante",
+   "Cambios de humor e irritabilidad",
+   "Dificultad para concentrarse",
+   "Aumento de peso abdominal"
+  ],
+  "solucion": [
+   "Entrenamiento de fuerza",
+   "Alimentación rica en proteínas",
+   "Control del estrés",
+   "Mejor descanso",
+   "Luz natural"
+  ]
+ },
+ {
+  "pagina": "Menopausia",
+  "href": "/menopausia/",
+  "madre": "Hormonas",
+  "nivel": "hija",
+  "causa": [
+   "Envejecimiento Ovariano",
+   "Cirugía de Extirpación de los Ovarios",
+   "Tratamiento contra el Cáncer",
+   "Insuficiencia Ovárica Prematura",
+   "Enfermedades Autoinmunes",
+   "Factor Genético"
+  ],
+  "sintoma": [
+   "Sofocos",
+   "Sudores nocturnos",
+   "Cambios de humor",
+   "Sequedad vaginal",
+   "Pérdida de la libido",
+   "Pérdida de densidad ósea"
+  ],
+  "solucion": [
+   "Terapia Hormonal de Reemplazo (THS)",
+   "Ejercicio Regular",
+   "Terapias Alternativas como Acupuntura y Meditación",
+   "Dieta Equilibrada",
+   "Apoyo Psicológico y Grupos de Apoyo"
+  ]
+ },
+ {
+  "pagina": "Tiroides",
+  "href": "/tiroides/",
+  "madre": "Hormonas",
+  "nivel": "hija",
+  "causa": [
+   "Hipotiroidismo",
+   "Hipertiroidismo",
+   "Enfermedades autoinmunes",
+   "Deficiencia de yodo",
+   "Lesiones en la tiroides",
+   "Medicamentos"
+  ],
+  "sintoma": [
+   "Fatiga y letargo",
+   "Cambios de peso",
+   "Cambios en el apetito",
+   "Dolor de cabeza y migrañas",
+   "Depresión y ansiedad",
+   "Problemas de piel y cabello"
+  ],
+  "solucion": [
+   "Cuidar la dieta y el estilo de vida",
+   "Yodo y otros nutrientes, con supervisión",
+   "Tratamiento del hipertiroidismo",
+   "Medicamentos para reemplazar las hormonas tiroideas",
+   "Cirugía para remover parte o toda la glándula tiroides"
+  ]
+ },
+ {
+  "pagina": "Cortisol",
+  "href": "/cortisol/",
+  "madre": "Hormonas",
+  "nivel": "hija",
+  "causa": [
+   "Estrés crónico",
+   "Falta de sueño",
+   "Exceso de cafeína",
+   "Ejercicio sin recuperación",
+   "Dietas muy restrictivas",
+   "Cambios hormonales"
+  ],
+  "sintoma": [
+   "Fatiga constante, incluso tras dormir",
+   "Dificultad para dormir o despertarse a media noche",
+   "Aumento de grasa abdominal",
+   "Ansiedad, irritabilidad o sensación de alerta constante",
+   "Antojos de azúcar o alimentos calóricos",
+   "Dificultad para perder peso"
+  ],
+  "solucion": [
+   "Prioriza el descanso",
+   "Luz natural por la mañana",
+   "Menos estimulantes",
+   "Alimentación equilibrada",
+   "Momentos de desconexión"
+  ]
+ },
+ {
+  "pagina": "Inflamación hormonal",
+  "href": "/inflamacion-hormonal/",
+  "madre": "Hormonas",
+  "nivel": "hija",
+  "causa": [
+   "Estrés crónico",
+   "Alimentación proinflamatoria",
+   "Falta de descanso",
+   "Sedentarismo",
+   "Exceso de grasa abdominal",
+   "Alteraciones hormonales"
+  ],
+  "sintoma": [
+   "Fatiga persistente",
+   "Dolor o malestar abdominal",
+   "Problemas de piel",
+   "Cambios en el estado de ánimo",
+   "Cambios en el peso",
+   "Dolores musculares o articulares"
+  ],
+  "solucion": [
+   "Alimentación antiinflamatoria",
+   "Apoyo con suplementos",
+   "Gestión del estrés",
+   "Sueño reparador",
+   "Actividad física regular",
+   "Evitar hábitos perjudiciales"
+  ]
+ },
+ {
+  "pagina": "Energía",
+  "href": "/energia/",
+  "madre": "Energía",
+  "nivel": "madre",
+  "causa": [
+   "Falta de sueño",
+   "Alimentación desequilibrada",
+   "Estrés y Ansiedad",
+   "Desequilibrios hormonales",
+   "Sedentarismo",
+   "Medicamentos y Sustancias"
+  ],
+  "sintoma": [
+   "Cansancio persistente",
+   "Dificultad de concentración",
+   "Dolores musculares",
+   "Problemas de sueño",
+   "Cambios de humor",
+   "Dificultad en actividades diarias"
+  ],
+  "solucion": [
+   "Sueño regular",
+   "Alimentación equilibrada",
+   "Actividad física",
+   "Gestión del estrés",
+   "Hidratación y hábitos"
+  ]
+ },
+ {
+  "pagina": "Fatiga Crónica",
+  "href": "/fatiga-cronica/",
+  "madre": "Energía",
+  "nivel": "hija",
+  "causa": [
+   "Problemas de Salud",
+   "Estilo de Vida",
+   "Estrés y Ansiedad",
+   "Falta de Sueño",
+   "Medicamentos",
+   "Otros Factores"
+  ],
+  "sintoma": [
+   "El cansancio persistente puede dificultar las actividades diarias y reducir la energía física y mental.",
+   "El dolor muscular y articular puede aparecer junto a la fatiga, especialmente cuando existe estrés o falta de actividad física.",
+   "Los problemas de concentración y memoria pueden afectar el rendimiento, la productividad y la capacidad de mantener la atención.",
+   "La irritabilidad y los cambios de humor son frecuentes cuando el cuerpo y la mente permanecen en un estado constante de agotamiento.",
+   "Las alteraciones del apetito, tanto aumento como pérdida, pueden estar relacionadas con desequilibrios hormonales y fatiga prolongada.",
+   "La dificultad para dormir o el insomnio pueden empeorar el cansancio y afectar la recuperación del organismo."
+  ],
+  "solucion": [
+   "Realizar ejercicio regularmente",
+   "Mantener un estilo de vida saludable",
+   "Dormir lo suficiente",
+   "Reducir el estrés y la ansiedad",
+   "Buscar apoyo médico si es necesario"
+  ]
+ },
+ {
+  "pagina": "Sueño",
+  "href": "/sueno/",
+  "madre": "Energía",
+  "nivel": "hija",
+  "causa": [
+   "Estrés y ansiedad",
+   "Falta de actividad física",
+   "Problemas de salud",
+   "Entorno inadecuado",
+   "Sobrecarga mental",
+   "Falta de rutina de sueño",
+   "Uso excesivo de pantallas",
+   "Alimentación inadecuada",
+   "Cambios hormonales"
+  ],
+  "sintoma": [
+   "Dificultad para conciliar el sueño",
+   "Despertares nocturnos frecuentes",
+   "Cansancio y dolor de cabeza al despertar",
+   "Problemas de concentración y memoria",
+   "Irritabilidad y ansiedad",
+   "Tensión y molestias musculares"
+  ],
+  "solucion": [
+   "Establecer una rutina de sueño regular",
+   "Crear un entorno adecuado para dormir",
+   "Practicar técnicas de relajación",
+   "Cuidar la alimentación y el horario de las cenas",
+   "Reducir estimulantes como cafeína o alcohol",
+   "Reducir el uso de pantallas antes de dormir",
+   "Realizar actividad física de forma regular"
+  ]
+ },
+ {
+  "pagina": "Rutinas Energéticas",
+  "href": "/rutinas-energeticas/",
+  "madre": "Energía",
+  "nivel": "hija",
+  "causa": [
+   "Horarios de sueño irregulares",
+   "Saltarte comidas o comer a deshoras",
+   "Pasar horas sentada",
+   "Pantallas hasta tarde",
+   "Abusar del café y del azúcar",
+   "Ir siempre con prisa, sin pausas"
+  ],
+  "sintoma": [
+   "Te cuesta arrancar por la mañana",
+   "Bajón de energía a media tarde",
+   "Necesitas café o algo dulce para seguir",
+   "Llegas agotada a la noche, pero duermes mal",
+   "Te cuesta concentrarte",
+   "No recuperas en el fin de semana"
+  ],
+  "solucion": [
+   "Luz natural y pausas activas",
+   "Moverte cada día",
+   "Comer a horas regulares",
+   "Establecer un Horario de Sueño Regular",
+   "Practicar Técnicas de Relajación"
+  ]
+ },
+ {
+  "pagina": "Metabolismo",
+  "href": "/metabolismo/",
+  "madre": "Metabolismo",
+  "nivel": "madre",
+  "causa": [
+   "Genética",
+   "Alimentación",
+   "Falta de ejercicio",
+   "Estrés crónico",
+   "Falta de sueño",
+   "Cambios hormonales y enfermedades"
+  ],
+  "sintoma": [
+   "Aumento de peso",
+   "Fatiga constante",
+   "Problemas de sueño",
+   "Digestiones pesadas",
+   "Dolores de cabeza",
+   "Falta de concentración"
+  ],
+  "solucion": [
+   "Alimentación equilibrada",
+   "Ejercicio regular",
+   "Descanso de calidad",
+   "Gestión del estrés",
+   "Nutrientes esenciales"
+  ]
+ },
+ {
+  "pagina": "Pérdida de Grasa Femenina",
+  "href": "/perdida-grasa-femenina/",
+  "madre": "Metabolismo",
+  "nivel": "hija",
+  "causa": [
+   "Desbalances Hormonales",
+   "Metabolismo Lento",
+   "Falta de Sueño",
+   "Estrés Crónico",
+   "Alimentación inadecuada",
+   "Sedentarismo"
+  ],
+  "sintoma": [
+   "Reducción progresiva de grasa corporal",
+   "Mejora de la salud cardiovascular",
+   "Mejora de la composición corporal",
+   "Aumento de la energía diaria",
+   "Mejora del estado de ánimo y la autoestima",
+   "Reducción del estrés percibido"
+  ],
+  "solucion": [
+   "Establecer Metas Realistas",
+   "Incorporar Actividad Física Regular",
+   "Buscar Apoyo y Motivación",
+   "Desarrollar un Plan de Alimentación Saludable",
+   "Gestionar el Estrés y Mejorar la Calidad del Sueño"
+  ]
+ },
+ {
+  "pagina": "Resistencia a la Insulina",
+  "href": "/resistencia-insulina/",
+  "madre": "Metabolismo",
+  "nivel": "hija",
+  "causa": [
+   "Obesidad abdominal",
+   "Falta de actividad física",
+   "Alimentación rica en ultraprocesados",
+   "Estrés crónico",
+   "Falta de sueño",
+   "Genética y predisposición familiar"
+  ],
+  "sintoma": [
+   "Aumento de peso y grasa abdominal",
+   "Fatiga constante",
+   "Dolores de cabeza frecuentes",
+   "Dificultad de concentración y “niebla mental”",
+   "Hinchazón y retención de líquidos",
+   "Azúcar en sangre elevada"
+  ],
+  "solucion": [
+   "Dieta equilibrada y baja en picos de glucosa",
+   "Control de picos de glucosa",
+   "Ejercicio físico regular",
+   "Reducción del estrés crónico",
+   "Suplementación nutricional",
+   "Mejora de la calidad del sueño"
+  ]
+ },
+ {
+  "pagina": "Ayuno Intermitente",
+  "href": "/ayuno-intermitente/",
+  "madre": "Metabolismo",
+  "nivel": "hija",
+  "causa": [
+   "Reduce la inflamación",
+   "Mejora la sensibilidad a la insulina",
+   "Activa la autofagia celular",
+   "Reduce el estrés oxidativo",
+   "Mejora la función mitocondrial",
+   "Optimiza la producción hormonal"
+  ],
+  "sintoma": [
+   "Fatiga o sensación de menor energía",
+   "Dolor de cabeza",
+   "Náuseas o mareos leves",
+   "Aumento del apetito o “cravings”",
+   "Irritabilidad o cambios de humor",
+   "Dificultad para dormir"
+  ],
+  "solucion": [
+   "Empezar con 12 horas y aumentar progresivamente",
+   "Mantener una hidratación adecuada durante el ayuno",
+   "Adaptar el ayuno a tus necesidades personales",
+   "Priorizar una alimentación nutritiva en la ventana de comida",
+   "Consultar con un profesional de la salud"
+  ]
+ },
+ {
+  "pagina": "Microbiota",
+  "href": "/microbiota/",
+  "madre": "Microbiota",
+  "nivel": "madre",
+  "causa": [
+   "Dieta Pobre en Fibra",
+   "Estrés Crónico",
+   "Uso Excesivo de Antibióticos",
+   "Falta de Sueño",
+   "Contaminación Ambiental",
+   "Enfermedades Crónicas"
+  ],
+  "sintoma": [
+   "Problemas digestivos (diarrea o estreñimiento)",
+   "Fatiga y cansancio persistente",
+   "Problemas de piel (acné o psoriasis)",
+   "Cambios en el estado de ánimo (ansiedad o depresión)",
+   "Sistema inmunológico debilitado",
+   "Dolor crónico o inflamación persistente"
+  ],
+  "solucion": [
+   "Consumir una Dieta Rica en Fibra",
+   "Limitar el Uso de Antibióticos",
+   "Practicar Técnicas de Reducción del Estrés",
+   "Mantener un Sueño Saludable",
+   "Reducir la Exposición a Toxinas"
+  ]
+ },
+ {
+  "pagina": "Digestión",
+  "href": "/digestion/",
+  "madre": "Microbiota",
+  "nivel": "hija",
+  "causa": [
+   "Dieta pobre",
+   "Estrés",
+   "Enfermedades digestivas",
+   "Medicamentos",
+   "Falta de hidratación",
+   "Falta de sueño"
+  ],
+  "sintoma": [
+   "Dolor abdominal",
+   "Náuseas y vómitos",
+   "Diarrea o estreñimiento",
+   "Fatiga y cansancio",
+   "Pérdida de apetito",
+   "Dolor de cabeza"
+  ],
+  "solucion": [
+   "Alimentación Saludable",
+   "Gestión del Estrés",
+   "Ejercicio regular",
+   "Hidratación adecuada",
+   "Sueño adecuado",
+   "Masticación consciente",
+   "Reducción de ultraprocesados"
+  ]
+ },
+ {
+  "pagina": "Inflamación intestinal",
+  "href": "/inflamacion-intestinal/",
+  "madre": "Microbiota",
+  "nivel": "hija",
+  "causa": [
+   "Infecciones intestinales",
+   "Sensibilidades e intolerancias alimentarias",
+   "Estrés crónico y factores emocionales",
+   "Uso de medicamentos",
+   "Enfermedades intestinales crónicas",
+   "Estilo de vida y factores ambientales"
+  ],
+  "sintoma": [
+   "Dolor abdominal",
+   "Diarrea o estreñimiento",
+   "Náuseas y vómitos",
+   "Pérdida de apetito",
+   "Fatiga crónica",
+   "Sangre en las heces"
+  ],
+  "solucion": [
+   "Cambios en la alimentación",
+   "Apoyo a la microbiota intestinal",
+   "Mantenimiento de un peso saludable",
+   "Gestión del estrés",
+   "Reducción de alcohol y tabaco",
+   "Hidratación y estilo de vida"
+  ]
+ },
+ {
+  "pagina": "Probióticos y Alimentación",
+  "href": "/probioticos-alimentacion/",
+  "madre": "Microbiota",
+  "nivel": "hija",
+  "causa": [
+   "Dieta baja en fibra",
+   "Uso excesivo de antibióticos",
+   "Estrés crónico",
+   "Falta de sueño",
+   "Enfermedades crónicas",
+   "Estilo de vida y otros factores"
+  ],
+  "sintoma": [
+   "Dolor abdominal",
+   "Diarrea o estreñimiento",
+   "Gases e hinchazón abdominal",
+   "Náuseas y malestar digestivo",
+   "Fatiga y cansancio persistente",
+   "Problemas de piel",
+   "Cambios en el estado de ánimo",
+   "Defensas bajas o infecciones frecuentes"
+  ],
+  "solucion": [
+   "Incorporar probióticos en la alimentación",
+   "Aumentar el consumo de fibra",
+   "Reducir el estrés crónico",
+   "Mejorar la calidad del sueño",
+   "Tratar las enfermedades subyacentes"
+  ]
+ },
+ {
+  "pagina": "Mentalidad",
+  "href": "/mentalidad/",
+  "madre": "Mentalidad",
+  "nivel": "madre",
+  "causa": [
+   "Trauma o Experiencias Adversas",
+   "Influencias Ambientales",
+   "Pensamientos y Creencias Limitantes",
+   "Falta de Autoestima",
+   "Estrés y Ansiedad",
+   "Falta de Propósito y Dirección"
+  ],
+  "sintoma": [
+   "Pensamientos negativos",
+   "Actitud pesimista",
+   "Falta de motivación",
+   "Dificultad para tomar decisiones",
+   "Sentimientos de culpa o vergüenza",
+   "Aislamiento social"
+  ],
+  "solucion": [
+   "Practicar la Gratitud",
+   "Practicar la Mindfulness",
+   "Establecer Metas y Objetivos",
+   "Desarrollar una Mentalidad de Crecimiento",
+   "Cultivar Relaciones Positivas"
+  ]
+ },
+ {
+  "pagina": "Ansiedad por la Comida",
+  "href": "/ansiedad-comida/",
+  "madre": "Mentalidad",
+  "nivel": "hija",
+  "causa": [
+   "Presión Social",
+   "Problemas de Salud",
+   "Relación Emocional con la Comida",
+   "Escaso Conocimiento Nutricional",
+   "Estilo de Vida y Estrés",
+   "Factores Genéticos y Biológicos"
+  ],
+  "sintoma": [
+   "Preocupación Constante por la Comida",
+   "Evitación de Ciertos Alimentos",
+   "Comida Compulsiva",
+   "Sentimientos de Culpa o Vergüenza",
+   "Dificultad para Controlar el Apetito",
+   "Problemas Digestivos"
+  ],
+  "solucion": [
+   "Buscar ayuda profesional",
+   "Practicar la mindful eating",
+   "Conectar con la comida de manera emocional",
+   "Aprender a escuchar al cuerpo",
+   "Desarrollar un estilo de vida saludable"
+  ]
+ },
+ {
+  "pagina": "Estrés y Hábitos",
+  "href": "/estres-habitos/",
+  "madre": "Mentalidad",
+  "nivel": "hija",
+  "causa": [
+   "Estrés laboral y profesional",
+   "Estrés en las relaciones y la familia",
+   "Estilo de vida y hábitos diarios",
+   "Estrés económico y financiero",
+   "Entorno social y medio ambiente",
+   "Salud física y bienestar"
+  ],
+  "sintoma": [
+   "Fatiga y cansancio constante",
+   "Dolor de cabeza y migrañas",
+   "Problemas de sueño",
+   "Problemas de digestión",
+   "Ansiedad y estado de ánimo bajo",
+   "Pérdida de interés en actividades"
+  ],
+  "solucion": [
+   "Ejercicio regular",
+   "Terapia cognitivo-conductual",
+   "Cambios en la dieta y estilo de vida",
+   "Meditación y yoga",
+   "Apoyo social y conexión con otros",
+   "Gestión del tiempo y organización diaria",
+   "Higiene del sueño",
+   "Reducción de estimulantes y hábitos nocivos"
+  ]
+ },
+ {
+  "pagina": "Relación con el cuerpo",
+  "href": "/relacion-cuerpo-mujeres/",
+  "madre": "Mentalidad",
+  "nivel": "hija",
+  "causa": [
+   "Sociedad y cultura",
+   "Factores biológicos y sensibilidad emocional",
+   "Influencias familiares y educación temprana",
+   "Experiencias traumáticas",
+   "Diálogo interno crítico y creencias limitantes",
+   "Estrés y presión emocional",
+   "Falta de autocuidado",
+   "Redes sociales y comparación constante",
+   "Dietas y cultura de la dieta"
+  ],
+  "sintoma": [
+   "Baja autoestima",
+   "Ansiedad y malestar emocional",
+   "Dificultad para aceptar el cuerpo",
+   "Comportamientos de evitación",
+   "Dificultad para establecer límites saludables",
+   "Síntomas físicos relacionados con el estrés",
+   "Comparación constante con otras personas",
+   "Desconexión de las señales del cuerpo",
+   "Relación basada en la culpa o el castigo corporal"
+  ],
+  "solucion": [
+   "Practica la autocompasión",
+   "Establece límites saludables y escucha tus necesidades",
+   "Cuida tu cuerpo desde el respeto, no desde la exigencia",
+   "Desarrolla una imagen corporal realista y positiva",
+   "Busca apoyo y conexión con otros"
+  ]
+ },
+ {
+  "pagina": "Alimentación",
+  "href": "/alimentacion/",
+  "madre": "Alimentación",
+  "nivel": "madre",
+  "causa": [
+   "Exceso de Ultraprocesados",
+   "Comer con Prisas y sin Horarios",
+   "Dietas muy Restrictivas",
+   "Poca Proteína y Fibra",
+   "Estrés y Hambre Emocional",
+   "Exceso de Azúcar y Alcohol"
+  ],
+  "sintoma": [
+   "Cansancio y bajones de energía",
+   "Antojos frecuentes",
+   "Molestias digestivas",
+   "Cambios de peso",
+   "Cambios en el estado de ánimo",
+   "Uñas, piel y cabello debilitados"
+  ],
+  "solucion": [
+   "Base de alimentos frescos",
+   "Proteína en cada comida",
+   "Más fibra cada día",
+   "Horarios regulares",
+   "Hidratación y bebidas"
+  ]
+ },
+ {
+  "pagina": "Alimentos",
+  "href": "/alimentos/",
+  "madre": "Alimentación",
+  "nivel": "hija",
+  "causa": [
+   "Ultraprocesados \"Saludables\"",
+   "Falta de Tiempo",
+   "Poca Variedad",
+   "Publicidad y Modas",
+   "Comer Fuera con Frecuencia",
+   "No Leer las Etiquetas"
+  ],
+  "sintoma": [
+   "Hambre poco después de comer",
+   "Antojos frecuentes de dulce",
+   "Bajones de energía",
+   "Molestias digestivas",
+   "Piel, uñas y cabello apagados",
+   "Dificultad para mantener el peso"
+  ],
+  "solucion": [
+   "Prioriza alimentos frescos",
+   "Aprende a leer etiquetas",
+   "Varía los colores del plato",
+   "Incluye proteína de calidad",
+   "Cocina más en casa"
+  ]
+ },
+ {
+  "pagina": "Macronutrientes",
+  "href": "/macronutrientes/",
+  "madre": "Alimentación",
+  "nivel": "hija",
+  "causa": [
+   "Poca Proteína",
+   "Exceso de Hidratos Refinados",
+   "Miedo a las Grasas",
+   "Eliminar Grupos Enteros",
+   "Desayunos Solo de Hidratos",
+   "No Adaptarse a cada Etapa"
+  ],
+  "sintoma": [
+   "Hambre poco después de comer",
+   "Bajones de energía tras las comidas",
+   "Antojos de azúcar",
+   "Pérdida de fuerza o de masa muscular",
+   "Piel seca y cabello apagado",
+   "Digestiones pesadas"
+  ],
+  "solucion": [
+   "Proteína en cada comida",
+   "Hidratos integrales",
+   "Grasas saludables",
+   "El método del plato",
+   "Adapta a tu etapa"
+  ]
+ },
+ {
+  "pagina": "Micronutrientes",
+  "href": "/micronutrientes/",
+  "madre": "Alimentación",
+  "nivel": "hija",
+  "causa": [
+   "Alimentación Poco Variada",
+   "Menstruaciones Abundantes",
+   "Poca Exposición al Sol",
+   "Problemas de Absorción",
+   "Dietas muy Restrictivas",
+   "Etapas de Mayor Necesidad"
+  ],
+  "sintoma": [
+   "Cansancio y debilidad",
+   "Uñas frágiles y caída del cabello",
+   "Calambres y tensión muscular",
+   "Defensas bajas",
+   "Dificultad para concentrarse",
+   "Hormigueos o piel pálida"
+  ],
+  "solucion": [
+   "Come de todos los colores",
+   "Hierro con vitamina C",
+   "Calcio cada día",
+   "Sol con moderación",
+   "Revisa tus niveles"
+  ]
+ },
+ {
+  "pagina": "Patrones alimentarios",
+  "href": "/patrones-alimentarios/",
+  "madre": "Alimentación",
+  "nivel": "hija",
+  "causa": [
+   "Seguir Modas sin Evidencia",
+   "Copiar la Dieta de Otra Persona",
+   "Restricción Extrema",
+   "Cambiar de Dieta Constantemente",
+   "No Tener en Cuenta la Etapa",
+   "Ayunar sin Planificación"
+  ],
+  "sintoma": [
+   "Hambre y ansiedad constantes",
+   "Cansancio y falta de energía",
+   "Efecto rebote",
+   "Alteraciones del ciclo o del descanso",
+   "Molestias digestivas",
+   "Sensación de sacrificio permanente"
+  ],
+  "solucion": [
+   "Base mediterránea",
+   "Horarios regulares",
+   "Escucha a tu cuerpo",
+   "Flexibilidad, no perfección",
+   "Asesoramiento profesional"
+  ]
+ }
+]
