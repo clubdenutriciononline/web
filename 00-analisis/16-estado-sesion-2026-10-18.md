@@ -14,7 +14,7 @@ Sustituye a `15-estado-sesion-2026-10-17.md` como estado vigente. Todo está en 
 
 **Siguiente sesión, por este orden (pedido de la usuaria, 25 oct):**
 1. **Programar todo lo que queda pendiente en el «Calendario Editorial» original** (redes sociales en Metricool). Ver `CDN auto/status.md`, sección «Fase 6», y las memorias de Metricool (copy y hora por red).
-2. **Después, crear contenido del calendario editorial:** la tanda 3 del blog (Nº 35-42, desde el 23 nov) con todas las normas de la plantilla.
+2. **Después, crear las piezas de redes sociales de cada entrada del blog ya programada** (Nº 19-34 del «Calendario Editorial 2»), con el sistema de `CDN auto` (ver su `status.md`). Aclarado por la usuaria el 25 oct: no es escribir la tanda 3. La tanda 3 del blog (Nº 35-42, desde el 23 nov) queda para después.
 
 ## Cierre de sesión (20 oct)
 
