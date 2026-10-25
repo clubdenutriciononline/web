@@ -109,21 +109,26 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
   <p class="parrafo-suelto">Ahora que hemos revisado las causas más comunes de la fatiga y el bajo rendimiento energético, es importante comprender cómo estos factores influyen en el equilibrio hormonal y el metabolismo.</p>
   <p class="parrafo-suelto">Estos sistemas regulan gran parte de nuestra energía diaria, por lo que cualquier alteración puede reflejarse en síntomas como cansancio persistente, falta de concentración o disminución del rendimiento físico y mental.</p>
 
-  <SolucionesList
-    heading="Síntomas de la Fatiga y Bajo Rendimiento Energético"
-    subheading="Es importante reconocer los síntomas para poder tomar medidas adecuadas. A continuación, se presentan algunos de los síntomas más comunes:"
-    variant="card"
-    cardAlign="left"
-    band="b"
-    soluciones={[
-      { title: 'Cansancio persistente', body: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },
-      { title: 'Dificultad de concentración', body: 'Problemas para enfocarse o mantener la atención, que pueden afectar al rendimiento diario y estar relacionados con el estrés, la falta de sueño o la ansiedad.' },
-      { title: 'Dolores musculares', body: 'Molestias o rigidez muscular frecuentes que pueden aparecer por sedentarismo, sobrecarga física o ciertas condiciones como la fibromialgia.' },
-      { title: 'Problemas de sueño', body: 'Dificultad para conciliar el sueño o descanso de mala calidad, como insomnio o apnea del sueño, que afectan directamente a la energía diaria.' },
-      { title: 'Cambios de humor', body: 'Variaciones emocionales como irritabilidad, apatía o tristeza, que pueden estar asociadas a desequilibrios emocionales o de salud mental.' },
-      { title: 'Dificultad en actividades diarias', body: 'Sensación de falta de energía para realizar tareas cotidianas, que puede indicar fatiga crónica u otros problemas de salud subyacentes.' },
-    ]}
-  />
+  <!-- Síntomas con el mismo formato que en el resto de páginas (lista con
+       check, como Metabolismo), no tarjetas (pedido de la usuaria, 25 oct). -->
+  <div class="full-bleed band-b">
+    <section class="sintomas">
+      <h2>Síntomas de la Fatiga y Bajo Rendimiento Energético</h2>
+      <p class="subheading">Es importante reconocer los síntomas para poder tomar medidas adecuadas. A continuación, se presentan algunos de los síntomas más comunes:</p>
+      <ChecklistCard
+        columns={1}
+        icon="check-circle"
+        items={[
+          { title: 'Cansancio persistente', text: 'Sensación continua de agotamiento que no mejora con el descanso y puede estar relacionada con desequilibrios como anemia, problemas tiroideos o alteraciones metabólicas.' },
+          { title: 'Dificultad de concentración', text: 'Problemas para enfocarse o mantener la atención, que pueden afectar al rendimiento diario y estar relacionados con el estrés, la falta de sueño o la ansiedad.' },
+          { title: 'Dolores musculares', text: 'Molestias o rigidez muscular frecuentes que pueden aparecer por sedentarismo, sobrecarga física o ciertas condiciones como la fibromialgia.' },
+          { title: 'Problemas de sueño', text: 'Dificultad para conciliar el sueño o descanso de mala calidad, como insomnio o apnea del sueño, que afectan directamente a la energía diaria.' },
+          { title: 'Cambios de humor', text: 'Variaciones emocionales como irritabilidad, apatía o tristeza, que pueden estar asociadas a desequilibrios emocionales o de salud mental.' },
+          { title: 'Dificultad en actividades diarias', text: 'Sensación de falta de energía para realizar tareas cotidianas, que puede indicar fatiga crónica u otros problemas de salud subyacentes.' },
+        ]}
+      />
+    </section>
+  </div>
 
   <RelacionImagenes heading="Relación con Sistemas Hormonales y Metabólicos">
     <p>Nuestra energía está directamente influida por el equilibrio entre el sistema hormonal y el metabolismo, dos sistemas que regulan funciones clave del organismo como el uso de la energía, el estado de ánimo y la respuesta al estrés.</p>
@@ -168,5 +173,14 @@ const articulos = pickRelacionados(await getCollection('blog'), (p) => p.data.ca
     font-size: 26px;
     line-height: 33px;
     text-align: justify;
+  }
+  .sintomas {
+    padding-block: var(--space-section);
+  }
+  .sintomas .subheading {
+    text-align: justify;
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 33px;
   }
 </style>
