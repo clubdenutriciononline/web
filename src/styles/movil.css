@@ -224,3 +224,21 @@
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+/* Tablets pequeñas (560-767px, p. ej. iPad mini): causas en 2 columnas con
+   el icono más grande, acorde con la tarjeta (pedido de la usuaria, 25 oct). */
+@media (min-width: 560px) and (max-width: 767px) {
+  body.movil-v2 .causas-grid .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  /* Muchas ilustraciones traen margen blanco: algo de zoom (sin recortar,
+     que en otras el dibujo ocupa toda la imagen) para que se vean acordes
+     con la tarjeta. */
+  body.movil-v2 .causa-card .icon-img {
+    width: 210px !important;
+    height: 210px !important;
+    object-fit: contain !important;
+    transform: scale(1.25);
+    margin: 30px auto 32px !important;
+  }
+}
