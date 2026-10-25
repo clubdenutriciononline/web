@@ -49,3 +49,9 @@ Decidida el 18 oct 2026 sobre la entrada de Fatiga crónica (`/fatiga-cronica-si
 5. **Borradores:** en `00-analisis/Tanda N - borradores/`, cada carpeta empieza por el Nº de Notion (p. ej. «19 - estres-cronico-desregula-hormonas»). La usuaria los revisa en la vista previa de Vercel.
 6. **Imágenes por lote** (`scripts/gemini_lote.py`, ejemplo en `scripts/lote_blog_tanda1.json`): por artículo, portada horizontal 1400 px (mujer de 35-50 años en la escena del tema) e infografías verticales 572 px con textos cortos en español; por receta, ilustración de ingredientes en acuarela 900 px **ocupando toda la imagen sobre fondo blanco, sin hoja de papel ni marco** (modelo: la de la crema de calabaza), 3 fotos de pasos 900 px y foto final 1200 px. Revisar siempre las imágenes (textos con tildes, sin hojas dentro) antes de colocarlas.
 7. **Antes de programar:** la usuaria revisa la tanda en la vista previa de Vercel (versión con las fechas adelantadas); después se suben las entradas con su fecha real y la tarea automática las publica L-X-V-S a las 06:00.
+8. **Actualizar Notion cuando la usuaria aprueba la tanda** («Calendario Editorial 2»), solo en las filas de esa tanda (no en el resto de la base de datos):
+   - **Texto:** el texto completo de la entrada (`python scripts/texto_notion.py "00-analisis/Tanda N - borradores"` deja un .txt por Nº en la carpeta `notion`; títulos en negrita, sin imágenes, enlaces con la dirección completa; en las recetas añade ingredientes, preparación y consejo).
+   - **Final link:** `https://clubdenutricion.es/<slug>/` (se sabe de antemano).
+   - **Imágenes:** marcada.
+   - **Icono de la página** = el de su categoría: Hormonas 🧬, Energía 🪫, Metabolismo 🎚️, Microbiota 🦠, Mentalidad 🧠, Nutrición 🥙, Recetas 🥘.
+   - **Status** es una fórmula y cambia sola: Pendiente (rojo, sin Final link) → Borrador (ámbar, con Final link y fecha futura) → Publicado (verde, cuando la fecha ya ha pasado).
