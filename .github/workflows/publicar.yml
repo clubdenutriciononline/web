@@ -1,0 +1,38 @@
+# Publicación programada del blog (25 oct). Los lunes, miércoles, viernes y
+# sábados por la mañana compila la web (las entradas cuya fecha ya ha
+# llegado entran solas, ver src/content.config.ts) y la sube al hosting por
+# FTP. También se puede lanzar a mano desde GitHub → Actions → «Publicar web».
+# Los datos del FTP están guardados como secretos del repositorio
+# (FTP_SERVIDOR, FTP_USUARIO, FTP_CONTRASENA).
+name: Publicar web
+
+on:
+  schedule:
+    # 05:00 UTC = 06:00 en la península en invierno (07:00 en verano)
+    - cron: '0 5 * * 1,3,5,6'
+  workflow_dispatch:
+
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Subir al hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVIDOR }}
+          username: ${{ secrets.FTP_USUARIO }}
+          password: ${{ secrets.FTP_CONTRASENA }}
+          protocol: ftps
+          local-dir: ./dist/
+          server-dir: ./

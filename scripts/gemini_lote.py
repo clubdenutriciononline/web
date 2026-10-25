@@ -12,7 +12,9 @@ Uso:
   de referencia y se usa el prompt fotográfico BASE_FOTO. Cada escena puede
   ser un texto o {"scene": ..., "aspect": "16:9"}.
 - Nombre de archivo: "causa-<nombre>.jpg", salvo que el nombre empiece por
-  "area-" o "relacion-" (se guarda tal cual).
+  "area-", "relacion-" o "blog-" (se guarda tal cual).
+- Blog (25 oct): una escena {"prompt": ..., "aspect": ...} usa ese texto
+  completo como descripción, sin las bases.
 """
 import base64, json, sys, time, urllib.request, urllib.error, os
 
@@ -86,8 +88,13 @@ def enviar(escenas_path, estado_path):
     for page, items in escenas.items():
         for k, scene in items.items():
             aspect = scene.get('aspect', '1:1') if isinstance(scene, dict) else '1:1'
-            scene = scene['scene'] if isinstance(scene, dict) else scene
-            prompt = (BASE_FOTO if foto else BASE).format(scene=scene)
+            # Blog (25 oct): {"prompt": ...} lleva la descripción completa de la
+            # imagen (foto, infografía o acuarela) y no usa las bases.
+            if isinstance(scene, dict) and 'prompt' in scene:
+                prompt = scene['prompt']
+            else:
+                scene = scene['scene'] if isinstance(scene, dict) else scene
+                prompt = (BASE_FOTO if foto else BASE).format(scene=scene)
             reqs.append({'request': {'contents': [{'parts': [{'text': prompt}] + refs}],
                                      'generation_config': {'response_modalities': ['IMAGE'],
                                                            'image_config': {'aspect_ratio': aspect, 'image_size': '1K'}}},
@@ -123,7 +130,7 @@ def recoger(estado_path, out):
             fail += 1; print('FALLO', k, json.dumps(it.get('error') or r)[:200]); continue
         page, name = k.split('|')
         os.makedirs(f'{out}/{page}', exist_ok=True)
-        fn = name if name.startswith(('area-', 'relacion-')) else f'causa-{name}'
+        fn = name if name.startswith(('area-', 'relacion-', 'blog-')) else f'causa-{name}'
         open(f'{out}/{page}/{fn}.jpg', 'wb').write(base64.b64decode(img['data']))
         ok += 1
     print(f'recogidas {ok}, fallidas {fail}, tokens de salida {tokens}')
