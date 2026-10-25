@@ -64,6 +64,8 @@ El aceite de oliva virgen extra, el aguacate, los frutos secos y el pescado azul
 
 Los hidratos no son el enemigo. Elegir versiones integrales y acompañarlos de proteína y verdura ayuda a que la energía se libere de forma más estable.
 
+Una buena forma de comprobarlo es fijarte en cómo te sientes dos o tres horas después de comer: si tienes hambre intensa o sueño, probablemente faltaba proteína o fibra en el plato.
+
 ![](imagen-1.jpg)
 
 ## Errores que frenan tu metabolismo
@@ -86,6 +88,14 @@ Por qué a partir de los 35 se nota más
 Con los años, y especialmente en la [perimenopausia](/perimenopausia/) y la menopausia, la bajada de estrógenos favorece la pérdida de masa muscular y la acumulación de grasa en la zona abdominal. También puede empeorar la sensibilidad a la insulina.
 
 Por eso, en esta etapa es todavía más importante priorizar la proteína, la fibra y el ejercicio de fuerza, y evitar las dietas muy restrictivas que aceleran la pérdida de músculo. Si quieres profundizar en esta relación, te recomendamos nuestro artículo sobre [pérdida de grasa femenina, hormonas y metabolismo](/perdida-grasa-femenina-hormonas-metabolismo/).
+
+Así cambian las necesidades según la etapa:
+
+- **De los 30 a los 40:** es el momento de construir y mantener músculo. Una alimentación con proteína suficiente y ejercicio de fuerza son la mejor inversión para el metabolismo de los años siguientes.
+- **En la perimenopausia:** los altibajos hormonales pueden aumentar el hambre, los antojos y la grasa abdominal. Repartir bien la proteína, priorizar la fibra y cuidar el descanso ayuda a amortiguarlos.
+- **Tras la menopausia:** el músculo y el hueso necesitan más atención. Además de proteína, cobran importancia el calcio, la vitamina D y la vitamina B12, que se absorbe peor con la edad.
+
+En todas las etapas, el ejercicio de fuerza es el complemento perfecto de la alimentación: el músculo que ganas o mantienes sigue consumiendo energía incluso cuando descansas.
 
 ![](imagen-2.jpg)
 

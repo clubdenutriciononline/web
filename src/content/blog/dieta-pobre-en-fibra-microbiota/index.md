@@ -64,6 +64,8 @@ Con menos fermentación de fibra se producen menos compuestos protectores, como 
 
 La fibra ralentiza la digestión y la absorción de la glucosa. Sin ella, los picos de azúcar son más bruscos, la saciedad dura menos y aparecen antes los antojos.
 
+Con el tiempo, todo esto puede reflejarse más allá del intestino: más cansancio, defensas más bajas e incluso cambios en el estado de ánimo, porque la microbiota también se comunica con el cerebro a través del llamado eje intestino-cerebro.
+
 ![](imagen-1.jpg)
 
 ## Señales de que te falta fibra
@@ -95,6 +97,15 @@ Las recomendaciones para adultos se sitúan en torno a **25-30 gramos de fibra a
 - **Tubérculos cocidos y enfriados:** patata o boniato, que aportan almidón resistente
 
 Si quieres saber más, te recomendamos nuestro artículo sobre [por qué tomar fibra a diario](/porque-tomar-fibra-a-diario/).
+
+Para hacerte una idea de cómo llegar a esa cantidad, un día con unos 30 gramos de fibra podría ser así:
+
+- **Desayuno:** avena con fruta y una cucharada de semillas de lino o chía (unos 8 g)
+- **Comida:** un plato de legumbres con verduras y una pieza de fruta (unos 12 g)
+- **Merienda:** un puñado de frutos secos (unos 3 g)
+- **Cena:** verduras asadas con pan integral (unos 7 g)
+
+No hace falta contar los gramos cada día: basta con que en cada comida haya algún alimento vegetal rico en fibra.
 
 ![](imagen-2.jpg)
 

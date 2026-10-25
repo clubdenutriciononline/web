@@ -58,6 +58,12 @@ Cuando practicas la gratitud con regularidad, entrenas al cerebro para buscar lo
 
 Fijarte en lo que va bien no elimina las emociones difíciles, pero ayuda a que no lo ocupen todo. Esto facilita una respuesta más tranquila ante las preocupaciones y los contratiempos.
 
+### Refuerza la memoria de lo bueno
+
+Las experiencias positivas suelen pasar rápido por la memoria, mientras que las negativas se quedan grabadas. Detenerse a recordar y nombrar lo bueno ayuda a que esos momentos se fijen y estén más disponibles cuando los necesitas, por ejemplo en un día difícil.
+
+En definitiva, la gratitud no cambia lo que ocurre a tu alrededor, pero sí cambia el lugar en el que pones la mirada, y eso influye en cómo te sientes.
+
 ![](imagen-1.jpg)
 
 ## Gratitud, estrés y bienestar
@@ -79,6 +85,17 @@ Si estás pasando una época de cansancio, estrés o tristeza, puede parecer dif
 La clave es empezar por cosas pequeñas y concretas, como un café caliente, un mensaje de alguien que quieres o un rato de sol, y no exigirte sentir una gran emoción. La práctica, más que la intensidad, es lo que genera el cambio.
 
 Y es importante recordar que la gratitud no sustituye a la ayuda profesional: si te sientes triste o sin energía durante mucho tiempo, merece la pena pedir apoyo.
+
+Algunas ideas que facilitan los primeros días:
+
+- Empieza por una sola cosa al día en lugar de tres
+- Ten el cuaderno a la vista, por ejemplo en la mesilla
+- Incluye cosas sobre ti misma: algo que hiciste bien o un momento en que te cuidaste
+- Si un día no te sale nada, escribe simplemente algo que te haya resultado agradable, aunque sea pequeño
+
+Con el tiempo, notarás que durante el día empiezas a fijarte en esos momentos para luego anotarlos. Esa es la señal de que tu atención está cambiando.
+
+Y si algún día lo dejas, no pasa nada: retomarlo sin culpa forma parte del propio hábito.
 
 ![](imagen-2.jpg)
 

@@ -48,24 +48,46 @@ function sacarImagenVertical(cuerpo: string): { cuerpo: string; img?: string } {
 // elige por palabras del título del apartado, siempre entre los iconos
 // extraídos de las fuentes del original (src/lib/iconos.ts).
 const SECCION_TARJETAS = /soluci|consejo|estrategia|recomendaci|c[oó]mo (mejorar|reducir|bajar|aumentar|recuperar|prevenir|gestionar|cuidar|combatir|equilibrar)/;
+// Revisado el 25 oct (pedido de la usuaria): más temas y nunca el mismo
+// icono dos veces en un artículo; si un apartado no encaja con ningún tema,
+// se usa el primer icono libre de RESERVA.
 const ICONOS_POR_TEMA: [RegExp, { svg: string }][] = [
-  [/pantalla|m[oó]vil|tecnolog/, iconos.movil],
-  [/cafe[ií]na|caf[eé]|alcohol|estimulante/, iconos.taza],
+  [/pantalla|m[oó]vil|tecnolog|digital/, iconos.movil],
+  [/cafe[ií]na|caf[eé]|alcohol|estimulante|t[eé] /, iconos.taza],
   [/entorno|dormitorio|habitaci[oó]n|cama/, iconos.cama],
-  [/sue[nñ]o|dorm|descans/, iconos.caraSomnolienta],
-  [/estr[eé]s|relaj|ansiedad|calma|emocion/, iconos.caraSonrojada],
-  [/actividad|ejercicio|mover|deporte|entren|fuerza|caminar/, iconos.ejercicio],
-  [/apoyo|social|acompa|grupo/, iconos.personasAmigas],
-  [/hidrat|agua/, iconos.vasoAgua],
-  [/suplement|vitamina|mineral/, iconos.pastillas],
-  [/aliment|dieta|comida|comer|nutri|fibra|prote/, iconos.cestaComida],
-  [/m[eé]dic|profesional|consult|doctor|diagn[oó]stico|tratamiento/, iconos.doctora],
-  [/luz|sol\b|ritmo/, iconos.sol],
-  [/h[aá]bito|rutina|horario/, iconos.calendario],
+  [/sue[nñ]o|dorm|descans|noche/, iconos.caraSomnolienta],
+  [/pausa|desconect|respira|medita|mindful|relaj|yoga/, iconos.meditacion],
+  [/estr[eé]s|ansiedad|calma|emocion|tensi[oó]n/, iconos.caraSonrojada],
+  [/fuerza|m[uú]sculo|pesas/, iconos.mancuerna],
+  [/actividad|ejercicio|mov[ei]|mu[eé]vete|deporte|entren|caminar|paseo/, iconos.ejercicio],
+  [/relaci[oó]n|relaciones|apoyo|social|acompa|grupo|pareja|amig|entorno|otras personas/, iconos.personasAmigas],
+  [/hidrat|agua|beber/, iconos.vasoAgua],
+  [/suplement|vitamina|mineral|magnesio|hierro/, iconos.pastillas],
+  [/plato|verdura|vegetal|fruta/, iconos.zanahoria],
+  [/integral|cereal|hidrato|avena/, iconos.espiga],
+  [/grasa|aceite|pescado|omega/, iconos.pescado],
+  [/fibra|legumbre/, iconos.hojaVerde],
+  [/prote[ií]na/, iconos.cubiertos],
+  [/aliment|dieta|comida|comer|come|nutri|cocina|receta|antiinflamatori/, iconos.cestaComida],
+  [/m[eé]dic|profesional|consult|doctor|ginec|diagn[oó]stico|tratamiento|ayuda/, iconos.doctora],
+  [/calor|caliente/, iconos.fuego],
+  [/luz|sol|ritmo/, iconos.sol],
+  [/gratitud|diario|escrib|carta|cuaderno/, iconos.biblioteca],
+  [/detalle|f[ií]jate|atenci[oó]n/, iconos.ojo],
+  [/meta|objetiv|constan/, iconos.diana],
+  [/voz alta|agradece|gracias/, iconos.corazon],
+  [/h[aá]bito|rutina|horario|regular|momento fijo|cada d[ií]a/, iconos.calendario],
+  [/carga|delega|tiempo/, iconos.reloj],
 ];
-function iconoPara(titulo: string) {
+const RESERVA = [iconos.hoja, iconos.spa, iconos.corazon, iconos.check, iconos.diana, iconos.sol, iconos.lunaIon, iconos.calendarioCheck];
+function iconoPara(titulo: string, usados: Set<{ svg: string }>) {
   const t = titulo.toLowerCase();
-  return (ICONOS_POR_TEMA.find(([re]) => re.test(t))?.[1] ?? iconos.hoja).svg;
+  const icono =
+    ICONOS_POR_TEMA.find(([re, ic]) => re.test(t) && !usados.has(ic))?.[1] ??
+    RESERVA.find((ic) => !usados.has(ic)) ??
+    iconos.hoja;
+  usados.add(icono);
+  return icono.svg;
 }
 
 function tarjetas(cuerpo: string) {
@@ -78,8 +100,9 @@ function tarjetas(cuerpo: string) {
     if (b.startsWith('<h3')) grupos.push({ h3: b, resto: [] });
     else grupos[grupos.length - 1].resto.push(b);
   }
+  const usados = new Set<{ svg: string }>();
   const html = grupos
-    .map((g) => `<div class="art-tarjeta"><span class="art-icono" aria-hidden="true">${iconoPara(sinEtiquetas(g.h3))}</span>${g.h3}${g.resto.join('')}</div>`)
+    .map((g) => `<div class="art-tarjeta"><span class="art-icono" aria-hidden="true">${iconoPara(sinEtiquetas(g.h3), usados)}</span>${g.h3}${g.resto.join('')}</div>`)
     .join('');
   return intro.join('') + `<div class="art-tarjetas" data-count="${grupos.length}">${html}</div>`;
 }

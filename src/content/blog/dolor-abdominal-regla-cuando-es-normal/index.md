@@ -56,6 +56,12 @@ Es el más frecuente. Aparece en los primeros años tras la primera regla, no se
 
 Se debe a un problema en el útero o en la pelvis. Suele aparecer más tarde, empeora con los años o cambia respecto a como era antes. Puede durar más días que la propia regla y responder peor a los analgésicos.
 
+Saber qué tipo de dolor tienes es importante porque el tratamiento es distinto. El dolor primario suele responder bien al calor, al ejercicio suave, a los antiinflamatorios y a algunos tratamientos hormonales. El secundario, en cambio, necesita encontrar y tratar su causa, y para eso suele hacer falta una exploración y una ecografía.
+
+Una pista útil es observar cómo ha evolucionado tu dolor. Si siempre ha sido parecido desde la adolescencia y mejora con medidas sencillas, lo más probable es que sea primario. Si ha ido empeorando, ha cambiado de forma o ha aparecido después de años sin dolor, conviene descartar un dolor secundario.
+
+Llevar un registro de tus reglas durante dos o tres ciclos, con la intensidad del dolor, los días que dura y la cantidad de sangrado, ayudará mucho a tu ginecóloga a orientar el diagnóstico.
+
 ![](imagen-1.jpg)
 
 ## Señales de que el dolor no es normal
@@ -98,6 +104,8 @@ Una infección de los órganos pélvicos puede causar dolor, fiebre y flujo anor
 ### Cambios hormonales
 
 En la [perimenopausia](/perimenopausia/), los cambios en los estrógenos y la progesterona pueden hacer que las reglas sean más abundantes y dolorosas de lo habitual.
+
+En todos estos casos el dolor tiene tratamiento, por eso merece la pena consultar en lugar de acostumbrarse a él.
 
 ![](imagen-2.jpg)
 

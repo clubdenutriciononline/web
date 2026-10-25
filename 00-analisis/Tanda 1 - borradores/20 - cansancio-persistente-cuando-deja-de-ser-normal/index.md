@@ -104,6 +104,12 @@ El cansancio persistente no solo te quita energía física. Afecta a la **concen
 
 Además, se crea un círculo difícil de romper: cuando estás cansada te mueves menos, comes peor y recurres más al café o al azúcar, lo que a su vez empeora el descanso y la energía. Entender qué está pasando es el primer paso para salir de él.
 
+También puede afectar a tus relaciones y a tu trabajo. Cuando no tienes energía, es fácil cancelar planes, aislarte o sentir que no llegas a todo, y eso suma culpa y más cansancio. Muchas mujeres, además, siguen cumpliendo con todo aunque estén agotadas, de modo que el cansancio pasa desapercibido para los demás y a veces también para ellas mismas.
+
+Por eso es útil observarte durante unas semanas: a qué hora te sientes peor, si mejora el fin de semana, si cambia a lo largo del ciclo menstrual, cómo duermes y qué comes. Anotarlo en una libreta o en el móvil te ayudará a detectar patrones y será de gran ayuda en la consulta.
+
+Recuerda que pedir ayuda no es exagerar. El cansancio persistente tiene casi siempre una causa, y encontrarla es lo que permite tratarlo.
+
 ![](imagen-2.jpg)
 
 ## Soluciones para recuperar tu energía

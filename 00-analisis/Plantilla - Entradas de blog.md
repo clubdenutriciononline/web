@@ -38,3 +38,12 @@ Decidida el 18 oct 2026 sobre la entrada de Fatiga crónica (`/fatiga-cronica-si
 - **Enlaces externos siempre en pestaña nueva** (en toda la web: los artículos se marcan al generar la página y el resto con un script en `BaseLayout`).
 - **Sin afiliados:** se quitaron todos los bloques de Amazon ("Recomendamos", "TIP", fotos de producto y botones "Comprar") de 10 entradas.
 - **Sin despedidas antiguas:** se quitaron "Nos vemos en el camino 🙂" y "Si quieres saber más… suscríbete a mi canal…" de 37 entradas; su función la cumple ahora el bloque "Síguenos en redes".
+
+
+## Normas de redacción (pedidas por la usuaria, 25 oct)
+
+1. **Texto al lado de una imagen vertical:** el apartado tiene que ocupar como mínimo el mismo alto que la imagen. Si la imagen baja más, se amplía el texto con contenido útil (más detalle, ejemplos, una lista práctica), nunca con relleno. Se comprueba midiendo en la vista previa (`medir.py`): el texto debe terminar por debajo de la imagen.
+2. **Enlaces internos:** cada vez que se nombra un tema que tiene página propia (Ciclo menstrual, Perimenopausia, Menopausia, Tiroides, Cortisol...) se enlaza.
+3. **Listas por etapas o tipos:** si se nombran varias etapas o casos (ciclo, embarazo, posparto, perimenopausia, menopausia), se explica qué pasa en cada uno, no solo en uno.
+4. **Iconos de las tarjetas de soluciones:** relacionados con el título (comida, ejercicio, dos personas para relaciones...) y nunca repetidos dentro de un mismo artículo. Lo hace `src/lib/articulo-html.ts` (ICONOS_POR_TEMA y RESERVA); si un título nuevo no encaja, añadir su tema allí.
+5. **Borradores:** en `00-analisis/Tanda N - borradores/`, cada carpeta empieza por el Nº de Notion (p. ej. «19 - estres-cronico-desregula-hormonas»). La usuaria los revisa en la vista previa de Vercel.

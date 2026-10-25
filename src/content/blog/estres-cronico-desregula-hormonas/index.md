@@ -88,9 +88,15 @@ Ninguna de estas señales por sí sola confirma un desequilibrio, pero si se acu
 
 Cambios hormonales que suman
 
-A lo largo de la vida, las hormonas femeninas cambian de forma importante: el ciclo menstrual, el embarazo, el posparto, la [perimenopausia](/perimenopausia/) y la [menopausia](/menopausia/). En cada una de estas etapas, el sistema hormonal es más sensible, y el estrés añade una carga extra.
+A lo largo de la vida, las hormonas femeninas cambian de forma importante. En cada etapa el sistema hormonal es más sensible, y el estrés añade una carga extra que se nota de forma distinta:
 
-En la perimenopausia, por ejemplo, la progesterona empieza a bajar antes que los estrógenos. Al perder parte de ese efecto calmante, muchas mujeres notan que toleran peor el estrés, duermen peor y se sienten más irritables, aunque su vida no haya cambiado.
+- **[Ciclo menstrual](/ciclo-menstrual/):** en la segunda mitad del ciclo sube la progesterona, que tiene un efecto calmante. El estrés intenso puede retrasar la ovulación y reducir esa progesterona, por eso en épocas de tensión aumentan el síndrome premenstrual, la irritabilidad y los cambios en la regla.
+- **Embarazo:** el cuerpo produce mucho más cortisol de lo habitual para sostener la gestación. Es un aumento natural, pero el estrés añadido puede empeorar el cansancio, el sueño y la ansiedad.
+- **Posparto:** las hormonas del embarazo caen de golpe en pocos días. Si a esa caída se suman la falta de sueño y la carga de cuidar a un bebé, el estrés puede alargar el agotamiento, afectar a la tiroides y favorecer la tristeza o la ansiedad.
+- **[Perimenopausia](/perimenopausia/):** la progesterona empieza a bajar antes que los estrógenos. Al perder parte de su efecto calmante, muchas mujeres toleran peor el estrés, duermen peor y se sienten más irritables, aunque su vida no haya cambiado.
+- **[Menopausia](/menopausia/):** con los estrógenos bajos, el cortisol alto se nota más en la grasa abdominal, en los huesos, en el sueño y en los sofocos, que pueden empeorar en épocas de mucha tensión.
+
+Por eso, cuidar el estrés no es solo una cuestión de bienestar emocional: en cada etapa de la vida es una forma de proteger el equilibrio hormonal.
 
 ![](imagen-2.jpg)
 
