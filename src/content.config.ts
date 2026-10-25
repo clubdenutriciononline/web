@@ -31,8 +31,24 @@ const seoSchema = z
   })
   .optional();
 
+// Publicación programada (25 oct): las entradas cuya fecha (`date`) aún no
+// ha llegado no entran en la web al compilar. Una tarea de GitHub
+// (.github/workflows/publicar.yml) vuelve a compilar y subir la web los días
+// de publicación, y así cada entrada aparece sola en su fecha.
+const globBlog = glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' });
+const blogPublicado = {
+  name: 'blog-publicado',
+  load: async (context: Parameters<typeof globBlog.load>[0]) => {
+    await globBlog.load(context);
+    const ahora = new Date();
+    for (const [id, entrada] of context.store.entries()) {
+      if (new Date(entrada.data.date as string | Date) > ahora) context.store.delete(id);
+    }
+  },
+};
+
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
+  loader: blogPublicado,
   schema: ({ image }) =>
     z.object({
       title: z.string(),

@@ -5,15 +5,13 @@ date: "2026-06-15T16:05:31+00:00"
 updated: "2026-06-15T16:07:13+00:00"
 image: "./cover.jpg"
 imageAlt: "Mujer durmiendo profundamente durante la fase de sueño profundo"
-category: "energia/sueno"
-tags: []
 description: "El sueño profundo activa la hormona del crecimiento, clave para reparar músculo, regular el metabolismo y favorecer la función cerebral. Descubre qué dice la ciencia reciente."
 seo:
   title: "Sueño profundo y hormona del crecimiento: cómo afecta al cuerpo"
   description: "La ciencia confirma que el sueño profundo no solo sirve para descansar. Durante la noche, el cuerpo activa procesos hormonales clave para reparar tejidos, regular el apetito, mantener masa muscular y mejorar la función cerebral. Dormir poco o de forma irregular podría afectar mucho más de lo que pensamos."
-sources:
-  - "Universidad de California en Berkeley (https://www.berkeley.edu/)"
-  - "Revista Cell"
+fechaNoticia: 2026-06-14
+nivelEvidencia: "Alto"
+fuente: "Universidad de California en Berkeley y revista Cell"
 draft: false
 ---
 
@@ -42,9 +40,3 @@ También refuerza la idea de que algunas estrategias centradas únicamente en di
 Dormir bien no solo influye en el cansancio del día siguiente: también condiciona cómo el cuerpo repara tejidos, regula el apetito y gestiona la energía.
 
 El sueño profundo parece actuar como una señal biológica clave para activar procesos de recuperación y equilibrio hormonal.
-
-### 🔎 Nivel de evidencia: 🔬 Alto
-
-Fuente: [Universidad de California en Berkeley](https://www.berkeley.edu/) y Cell
-
-Fecha: 14 de junio de 2026
