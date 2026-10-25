@@ -7,6 +7,7 @@
            Alimentos) y otra receta; y así sucesivamente.
 Cada página va soltando sus artículos alternando causa, síntoma y solución.
 Las recetas rotan: antiinflamatoria, energía hormonal, keto/low carb.
+(Ver en el punto 4 las reglas de alternar tipo y separar temas.)
 
 Salida: 00-analisis/Plan blog - artículos por página.md,
         00-analisis/Plan blog - calendario.md y .csv
@@ -90,17 +91,75 @@ for p in paginas:
 RONDA = ['Hormonas', 'Energía', 'Metabolismo', 'Microbiota', 'Hormonas', 'Mentalidad', 'Alimentación']
 RECETAS = ['Receta antiinflamatoria', 'Receta de energía hormonal', 'Receta keto / low carb']
 INICIO = date(2026, 11, 2)  # primer lunes de publicación
+# Reglas de la usuaria (25 oct):
+#  - el tipo se alterna en todo el calendario (causa, síntoma, solución...),
+#    sea de la sección que sea;
+#  - un mismo tema (estrés, sueño, peso...) no se repite en las 6
+#    publicaciones siguientes (unas dos semanas): si toca, se adelanta otro
+#    artículo de esa página.
+TEMAS = {  # solo temas que saltan entre secciones (no «alimentación» o «energía», que son la propia sección)
+    'estrés': r'estr[eé]s|cortisol|nervios',
+    'ansiedad': r'ansiedad',
+    'sueño': r'sue[nñ]o|dormir|descans|insomnio|despert',
+    'peso': r'peso|grasa|adelgaz|engorda|b[aá]scula',
+    'inflamación': r'inflam',
+    'azúcar': r'az[uú]car|dulce|antojo|glucosa|insulina',
+    'ejercicio': r'ejercicio|entrena|actividad f[ií]sica|sedentari|moverte',
+    'ánimo': r'humor|[aá]nimo|irritab|autoestima',
+    'cafeína': r'caf[eé]|cafe[ií]na|estimulante',
+    'piel': r'piel|cabello|u[nñ]as',
+    'fibra': r'fibra',
+    'proteína': r'prote[ií]na',
+    'hierro': r'hierro|anemia',
+}
+def temas_de(titulo):
+    t = titulo.lower()
+    return {k for k, r in TEMAS.items() if re.search(r, t)}
+
+VENTANA = 6
+TIPOS_CICLO = ['Causa', 'Síntoma', 'Solución']
+
+
+def elegir(cola, tipo, recientes):
+    """Índice del artículo a publicar: primero el del tipo que toca y sin
+    temas recientes; si no, sin temas recientes; si no, el del tipo; si no,
+    el primero."""
+    ocupados = set().union(*recientes) if recientes else set()
+    for cond in (lambda a: a['tipo'] == tipo and not (temas_de(a['titulo']) & ocupados),
+                 lambda a: not (temas_de(a['titulo']) & ocupados),
+                 lambda a: a['tipo'] == tipo,
+                 lambda a: True):
+        for i, a in enumerate(cola):
+            if cond(a):
+                return i
+
+
 turno = {m: 0 for m in familias}
 articulos = []
 while any(colas[x] for fam in familias.values() for x in fam):
     for madre in RONDA:
         fam = familias[madre]
-        for _ in range(len(fam)):
-            pag = fam[turno[madre] % len(fam)]
-            turno[madre] += 1
-            if colas[pag]:
-                articulos.append(colas[pag].pop(0))
-                break
+        tipo = TIPOS_CICLO[len(articulos) % 3]
+        recientes = [temas_de(x['titulo']) for x in articulos[-VENTANA:]]
+        ocupados = set().union(set(), *recientes)
+        # Páginas de la sección en el orden de turno; se usa la primera que
+        # tenga un artículo del tipo que toca y sin temas recientes; si
+        # ninguna, la primera con artículos (con la mejor opción posible).
+        orden = [fam[(turno[madre] + k) % len(fam)] for k in range(len(fam))]
+        con_cola = [x for x in orden if colas[x]]
+        if not con_cola:
+            continue
+        def ideal(x):
+            return any(a['tipo'] == tipo and not (temas_de(a['titulo']) & ocupados) for a in colas[x])
+        pag = next((x for x in con_cola if ideal(x)), con_cola[0])
+        turno[madre] = (orden.index(pag) + turno[madre] + 1) % len(fam)
+        articulos.append(colas[pag].pop(elegir(colas[pag], tipo, recientes)))
+
+# Comprobación: cuántas veces se repite un tema dentro de la ventana.
+repes = sum(1 for n, a in enumerate(articulos)
+            if temas_de(a['titulo']) & set().union(set(), *[temas_de(x['titulo']) for x in articulos[max(0, n - VENTANA):n]]))
+tipos_seguidos = sum(1 for n in range(1, len(articulos)) if articulos[n]['tipo'] == articulos[n - 1]['tipo'])
+print(f'temas repetidos a menos de {VENTANA} publicaciones: {repes} | mismo tipo seguido: {tipos_seguidos}')
 
 calendario, nreceta = [], 0
 semanas = -(-len(articulos) // 3)
