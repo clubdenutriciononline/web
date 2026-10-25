@@ -58,6 +58,7 @@ receta:
     - texto: "Hornea 50-55 minutos, hasta que esté dorado y suene hueco al golpear la base. Desmóldalo y déjalo enfriar por completo sobre una rejilla antes de cortarlo, al menos una hora."
   resultado: ./resultado.jpg
   resultadoAlt: "Pan keto de semillas cortado en rebanadas sobre una tabla de madera"
+  freidora: "Usa un molde que quepa en la cesta (uno redondo de 15-18 cm o dos moldes pequeños) y no hace falta precalentar. Hornea a 160 °C unos 35-40 minutos, tapando la superficie con papel de aluminio a partir del minuto 15 para que las semillas de arriba no se quemen. Está listo cuando un palillo sale limpio y la base suena hueca. Como cada freidora calienta distinto, comprueba el punto unos minutos antes."
   consejo: "No lo cortes en caliente: el psyllium termina de asentar la miga al enfriarse y, si lo cortas antes, quedará gomoso. Se conserva 4-5 días en la nevera envuelto en un paño y se puede congelar ya en rebanadas para tostarlas directamente. Si notas que la miga toma un tono violáceo, es normal con algunas marcas de psyllium."
 sources: []
 draft: false

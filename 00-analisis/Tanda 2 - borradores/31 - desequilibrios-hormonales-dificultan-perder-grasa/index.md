@@ -157,13 +157,21 @@ No lo impiden por completo, pero pueden hacerlo mucho más difícil. Un desequil
 
 Con la bajada de los estrógenos en la perimenopausia y la menopausia, la grasa tiende a almacenarse en el abdomen. Si se suman el estrés, el mal descanso y la pérdida de músculo, la grasa abdominal aumenta más.
 
+¿Por qué tengo grasa abdominal si soy delgada?
+
+Se puede tener poco peso y, aun así, acumular grasa en el abdomen, sobre todo la que rodea los órganos. Suele relacionarse con el cortisol alto, la resistencia a la insulina, el sedentarismo y la pérdida de músculo. Por eso el perímetro de cintura da más información que la báscula.
+
+¿Existen hormonas o pastillas para perder grasa?
+
+No hay ninguna hormona que se deba tomar para adelgazar. Lo que sí se hace es tratar un desequilibrio diagnosticado, como el hipotiroidismo o la resistencia a la insulina, y en algunos casos hay medicamentos que debe valorar el médico. Desconfía de los suplementos que prometen «equilibrar tus hormonas» para perder peso.
+
 ¿Qué análisis me pueden ayudar?
 
 Los más habituales son glucosa e insulina en ayunas, hemoglobina glicosilada, perfil tiroideo (TSH y T4 libre) y, según los síntomas, hormonas sexuales. Es tu médico quien debe valorar cuáles necesitas.
 
-¿Hacer mucho cardio ayuda a equilibrar las hormonas?
+¿Qué ejercicio ayuda más con la grasa abdominal?
 
-El ejercicio aeróbico moderado es beneficioso, pero hacer mucho y muy intenso sin descansar puede elevar el cortisol. La combinación más eficaz suele ser fuerza, actividad diaria como caminar y un buen descanso.
+No se puede quemar grasa solo de una zona, pero la combinación más eficaz suele ser el entrenamiento de fuerza, la actividad diaria como caminar y un buen descanso. El ejercicio aeróbico moderado ayuda, mientras que hacer mucho y muy intenso sin recuperarte puede elevar el cortisol.
 
 ## Conclusión
 

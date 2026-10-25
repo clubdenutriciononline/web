@@ -91,6 +91,9 @@ const blog = defineCollection({
           resultado: image(),
           resultadoAlt: z.string(),
           consejo: z.string().optional(),
+          // Recetas de horno (25 oct, pedido de la usuaria): alternativa en
+          // freidora de aire con temperatura y tiempo orientativos.
+          freidora: z.string().optional(),
         })
         .optional(),
       // Fuentes/referencias, cuando corresponda (no todos los artículos lo tienen).

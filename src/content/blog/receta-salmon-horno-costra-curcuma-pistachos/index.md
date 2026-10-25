@@ -59,6 +59,7 @@ receta:
     - texto: "Saca la bandeja, aparta las verduras a los lados y coloca el salmón en el centro, con la piel hacia abajo. Hornea 10-12 minutos, hasta que el salmón esté jugoso por dentro y la costra dorada. Sirve con un chorrito de zumo de limón."
   resultado: ./resultado.jpg
   resultadoAlt: "Lomo de salmón con costra de pistachos y cúrcuma servido con calabacín y tomates cherry asados"
+  freidora: "Cocina primero las verduras a 190 °C unos 8 minutos, removiendo la cesta a mitad. Sácalas, coloca los lomos de salmón con la costra hacia arriba (sobre papel de horno perforado, sin amontonarlos) y cocínalos a 180 °C unos 8-10 minutos. A una temperatura más alta, la costra de pistachos se tuesta demasiado antes de que el salmón esté hecho. Si tu freidora es pequeña, hazlo en dos tandas y vuelve a meter las verduras el último minuto para calentarlas."
   consejo: "La pimienta negra no es solo para dar sabor: su piperina multiplica la absorción de la curcumina, el compuesto antiinflamatorio de la cúrcuma, y la grasa del salmón y del aceite también la favorece. No pases el salmón de horno: en cuanto la carne se separe en láminas al presionarla con un tenedor, ya está listo."
 sources: []
 draft: false

@@ -142,9 +142,21 @@ Si el 80 % de lo que comes son alimentos frescos y cocinados en casa, el 20 % re
 
 ## Preguntas frecuentes
 
-¿Todos los alimentos procesados son malos?
+¿Qué alimentos ultraprocesados conviene evitar?
 
-No. Las legumbres cocidas en bote, las verduras congeladas, el atún en conserva, el yogur natural o el aceite de oliva son procesados y forman parte de una dieta saludable. El problema son los ultraprocesados, que se basan en ingredientes refinados y aditivos.
+Los que más se consumen y más desplazan a la comida real: refrescos y zumos envasados, bollería y galletas, cereales de desayuno azucarados, embutidos procesados y salchichas, snacks salados, pizzas y platos precocinados, y lácteos de sabores con azúcar. No hace falta eliminarlos del todo, pero sí que dejen de ser la base del día a día.
+
+¿Por qué los ultraprocesados enganchan tanto?
+
+Están diseñados para combinar azúcar, grasa y sal en proporciones que el cerebro encuentra muy gratificantes, con texturas blandas que se comen deprisa. Por eso tienen un sabor más intenso que la comida casera y cuesta parar. No es falta de voluntad: es parte de cómo están hechos.
+
+¿Hay ultraprocesados saludables?
+
+Algunos son mejores opciones que otros, como un pan integral envasado con pocos ingredientes o una bebida vegetal sin azúcar. Pero conviene no confundirlos con los procesados sencillos, que sí forman parte de una dieta saludable: legumbres cocidas en bote, verduras congeladas, atún en conserva, yogur natural o aceite de oliva.
+
+¿Los ultraprocesados causan cáncer?
+
+Los estudios observacionales relacionan un consumo alto de ultraprocesados con más riesgo de algunos tipos de cáncer, sobre todo colorrectal, y en el caso de las carnes procesadas la evidencia es sólida. No significa que un producto concreto cause cáncer, sino que una dieta basada en ellos aumenta el riesgo a largo plazo.
 
 ¿Los productos «light» o «sin azúcar» son una buena alternativa?
 
@@ -154,9 +166,9 @@ No necesariamente. Muchos siguen siendo ultraprocesados: se quita el azúcar o l
 
 Depende de la marca. Las que llevan solo agua, el ingrediente principal (avena, almendra, soja) y quizá algo de sal o calcio son una opción razonable. Las que añaden azúcares, aceites y varios aditivos se acercan más a un ultraprocesado.
 
-¿Cuánto tarda en notarse el cambio?
+¿Cómo dejar los ultraprocesados y cuánto tarda en notarse?
 
-Muchas mujeres notan menos hambre entre horas y una energía más estable en una o dos semanas. Los cambios en la digestión, el peso o los análisis suelen tardar algo más, entre uno y tres meses de constancia.
+Mejor sustituirlos poco a poco que eliminarlos de golpe: empieza por el desayuno y los refrescos, ten tentempiés reales a mano y cocina en lote. Muchas mujeres notan menos hambre entre horas y una energía más estable en una o dos semanas; los cambios en la digestión, el peso o los análisis suelen tardar entre uno y tres meses.
 
 ## Conclusión
 

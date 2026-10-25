@@ -53,11 +53,15 @@ const SECCION_TARJETAS = /soluci|consejo|estrategia|recomendaci|c[oó]mo (mejora
 // se usa el primer icono libre de RESERVA. Ampliado con la tanda 2 (compra,
 // desayuno, ciclo, cocina, tiempo, progresión, historia de salud...); el
 // té solo cuenta como palabra suelta (antes «muévete con» daba la taza).
-const ICONOS_POR_TEMA: [RegExp, { svg: string }][] = [
+// Un tema puede tener varios iconos para alternar (pedido de la usuaria,
+// 25 oct: el sueño alterna las «Z» y la cama, no siempre la cara dormida);
+// se elige según el título, así cada apartado conserva siempre el suyo.
+type Icono = { svg: string };
+const ICONOS_POR_TEMA: [RegExp, Icono | Icono[]][] = [
   [/pantalla|m[oó]vil|tecnolog|digital/, iconos.movil],
   [/cafe[ií]na|caf[eé]|alcohol|estimulante|(^|\s)t[eé](\s|$)/, iconos.taza],
   [/entorno|dormitorio|habitaci[oó]n|cama/, iconos.cama],
-  [/sue[nñ]o|dorm|duerm|descans|noche/, iconos.caraSomnolienta],
+  [/sue[nñ]o|dorm|duerm|descans|noche/, [iconos.sueno, iconos.cama]],
   [/ciclo|menstrua/, iconos.calendarioCheck],
   [/compra|supermercado|etiqueta/, iconos.etiqueta],
   [/desayuno/, iconos.manzana],
@@ -92,12 +96,21 @@ const ICONOS_POR_TEMA: [RegExp, { svg: string }][] = [
   [/metabolismo|muy poco|progres|gradual/, iconos.velocimetro],
 ];
 const RESERVA = [iconos.hoja, iconos.spa, iconos.corazon, iconos.check, iconos.diana, iconos.sol, iconos.lunaIon, iconos.calendarioCheck];
-function iconoPara(titulo: string, usados: Set<{ svg: string }>) {
+function iconoPara(titulo: string, usados: Set<Icono>) {
   const t = titulo.toLowerCase();
-  const icono =
-    ICONOS_POR_TEMA.find(([re, ic]) => re.test(t) && !usados.has(ic))?.[1] ??
-    RESERVA.find((ic) => !usados.has(ic)) ??
-    iconos.hoja;
+  // Hash del título; se descartan los 2 bits bajos porque, con un
+  // multiplicador impar, el último bit solo depende de la suma de letras y
+  // casi todos los apartados acababan con el mismo icono.
+  const giro = [...t].reduce((n, c) => (Math.imul(n, 31) + c.charCodeAt(0)) >>> 0, 0) >>> 2;
+  const candidatos = (ic: Icono | Icono[]) =>
+    Array.isArray(ic) ? ic.map((_, i) => ic[(i + giro) % ic.length]) : [ic];
+  let icono: Icono | undefined;
+  for (const [re, ic] of ICONOS_POR_TEMA) {
+    if (!re.test(t)) continue;
+    icono = candidatos(ic).find((c) => !usados.has(c));
+    if (icono) break;
+  }
+  icono ??= RESERVA.find((ic) => !usados.has(ic)) ?? iconos.hoja;
   usados.add(icono);
   return icono.svg;
 }

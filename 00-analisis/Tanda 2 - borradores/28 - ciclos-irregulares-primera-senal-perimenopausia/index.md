@@ -153,21 +153,37 @@ Aunque te encuentres bien, la perimenopausia es un buen momento para hacer una r
 
 ## Preguntas frecuentes
 
+¿Cómo son los ciclos irregulares de la perimenopausia?
+
+Al principio, lo más habitual es que la regla se adelante y los ciclos se acorten, con cambios de más de siete días de un mes a otro. Más adelante aparecen saltos de 60 días o más sin regla, seguidos a veces de reglas abundantes. La cantidad y la duración también varían de un mes a otro.
+
+¿A qué edad empieza la perimenopausia? ¿Puede empezar a los 35?
+
+Suele empezar entre los 40 y los 45 años. Algunas mujeres notan los primeros cambios a finales de los 30, pero si los ciclos se alteran antes de los 40 conviene consultar para descartar otras causas o una insuficiencia ovárica prematura.
+
+¿Cuánto se puede retrasar la regla en la perimenopausia?
+
+En la fase temprana, unos días o una semana. En la fase tardía, es normal pasar dos meses o más sin regla. Si hay posibilidad de embarazo, haz una prueba antes de atribuir el retraso a la perimenopausia.
+
+¿Es normal sangrar entre reglas en la perimenopausia?
+
+Un manchado ocasional antes de la regla puede deberse a la bajada de progesterona, pero el sangrado entre reglas o después de las relaciones sexuales siempre hay que consultarlo, porque puede deberse a pólipos, miomas u otros problemas del útero.
+
 ¿Puedo quedarme embarazada si tengo ciclos irregulares?
 
 Sí. Aunque ovules con menos frecuencia, algunos meses sigues haciéndolo. Si no buscas un embarazo, mantén un método anticonceptivo hasta que tu ginecóloga te confirme que ya no es necesario.
 
-¿Un análisis de sangre confirma que estoy en la perimenopausia?
+¿Cómo se diagnostica la perimenopausia? ¿Basta con un análisis?
 
-No siempre. Las hormonas cambian mucho de un mes a otro, así que un solo análisis puede salir normal. El diagnóstico se basa sobre todo en la edad, los cambios del ciclo y los síntomas.
+No siempre. Las hormonas cambian mucho de un mes a otro, así que un solo análisis puede salir normal. El diagnóstico se basa sobre todo en la edad, los cambios del ciclo y los síntomas, y la analítica sirve para descartar otras causas como la tiroides o la anemia.
 
 ¿Es normal que la regla sea mucho más abundante?
 
 Es frecuente por los picos de estrógenos y los ciclos sin ovulación, pero no hay que normalizarla. Si es muy abundante o te deja cansada, consulta: hay tratamientos eficaces y conviene descartar miomas, pólipos o anemia.
 
-¿Cuánto duran los ciclos irregulares?
+¿Cuánto dura la perimenopausia?
 
-Depende de cada mujer. La perimenopausia dura de media entre cuatro y ocho años, y los cambios en la regla suelen acompañar toda la transición hasta la menopausia.
+De media, entre cuatro y ocho años, aunque varía mucho de una mujer a otra. Los cambios en la regla suelen acompañar toda la transición hasta la menopausia, que se confirma tras doce meses seguidos sin regla.
 
 ## Conclusión
 

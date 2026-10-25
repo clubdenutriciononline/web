@@ -145,17 +145,25 @@ Algunas señales te avisan durante la sesión de que conviene parar: el corazón
 
 El movimiento bien dosificado puede ayudar a mantener la movilidad, la fuerza y el estado de ánimo. Lo que no conviene es forzar el cuerpo por encima de su límite, porque puede empeorar los síntomas. Lo ideal es que te acompañe un profesional sanitario.
 
+¿Es mejor hacer reposo absoluto?
+
+Tampoco. El reposo prolongado hace que se pierda masa muscular y forma física, y eso hace que cualquier actividad cueste todavía más. El objetivo es encontrar un punto intermedio: descansar lo suficiente y mantener el movimiento que tu cuerpo tolera.
+
 ¿Cómo sé si me he pasado?
 
 Si en las 12-48 horas siguientes notas más cansancio, dolor, sensación de gripe, niebla mental o peor sueño de lo habitual, probablemente has superado tu límite. La próxima vez, reduce la dosis.
 
-¿Cuánto tiempo tardaré en notar mejoría?
+¿Qué diferencia hay entre fatiga crónica y fibromialgia?
 
-Depende mucho de cada persona y de la causa de la fatiga. Lo importante es avanzar de forma estable, aunque sea despacio. Muchas mujeres notan primero que tienen menos bajones, y después, que pueden hacer algo más.
+En la fibromialgia predomina el dolor generalizado; en el síndrome de fatiga crónica, el agotamiento y el malestar posesfuerzo. Pueden darse a la vez. En la fibromialgia, el ejercicio progresivo suele recomendarse como parte del tratamiento; en la fatiga crónica con malestar posesfuerzo, hay que ser mucho más prudente y avanzar según la tolerancia.
 
 ¿Puedo hacer entrenamiento de fuerza?
 
 Sí, en versiones muy ligeras y adaptadas: pocas repeticiones, poco peso y descansos largos. La fuerza ayuda a mantener el músculo, pero empieza siempre por debajo de lo que crees que puedes hacer.
+
+¿Cuánto tiempo tardaré en notar mejoría?
+
+Depende mucho de cada persona y de la causa de la fatiga. Lo importante es avanzar de forma estable, aunque sea despacio. Muchas mujeres notan primero que tienen menos bajones, y después, que pueden hacer algo más.
 
 ## Conclusión
 

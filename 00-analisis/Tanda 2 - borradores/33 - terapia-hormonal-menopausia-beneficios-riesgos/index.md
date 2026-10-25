@@ -158,21 +158,37 @@ La terapia hormonal no tiene una fecha de caducidad fija, pero sí debe revisars
 
 ## Preguntas frecuentes
 
+¿Cuándo es mejor empezar la terapia hormonal?
+
+Cuando los síntomas empiezan a afectar a tu calidad de vida, idealmente antes de los 60 años o en los 10 primeros años tras la menopausia. También puede empezarse en la perimenopausia si los síntomas lo justifican. Empezar más tarde no está prohibido, pero los riesgos aumentan y hay que valorarlo con más cuidado.
+
 ¿La terapia hormonal produce cáncer de mama?
 
 La terapia combinada se asocia a un pequeño aumento del riesgo, que depende sobre todo de los años de uso y disminuye al dejarla. Con estrógenos solos, el aumento es menor o inexistente. Tu ginecóloga puede valorar tu riesgo personal.
+
+¿Qué efectos secundarios tiene?
+
+En los primeros meses son frecuentes la tensión en el pecho, la hinchazón, el dolor de cabeza leve y algún sangrado irregular. Suelen mejorar solos o ajustando la dosis o la vía. Si persisten, coméntalo en la consulta.
+
+¿La terapia hormonal engorda?
+
+No. Los estudios no muestran que aumente el peso. El aumento que muchas mujeres notan en la menopausia se debe a los cambios hormonales y de estilo de vida de esta etapa, y la terapia puede incluso ayudar a reducir la grasa abdominal.
 
 ¿Cuánto tiempo se puede tomar?
 
 No hay un límite fijo. Se usa durante el tiempo que se necesite para controlar los síntomas, a la dosis más baja eficaz, y se revisa cada año. Al dejarla, conviene hacerlo de forma gradual para evitar el regreso brusco de los sofocos.
 
-¿Las hormonas bioidénticas son más seguras?
+¿Existe una terapia hormonal natural?
 
-Las hormonas idénticas a las humanas, como el estradiol y la progesterona micronizada, están aprobadas y se usan con frecuencia. En cambio, los preparados elaborados a medida sin control de calidad no han demostrado ser más seguros y no se recomiendan.
+Las hormonas idénticas a las humanas, como el estradiol y la progesterona micronizada, están aprobadas y se usan con frecuencia. Los fitoestrógenos de la soja o el trébol rojo pueden aliviar algo los sofocos leves, pero no tienen el mismo efecto. Los preparados hormonales elaborados a medida sin control de calidad no han demostrado ser más seguros y no se recomiendan.
 
-¿La terapia hormonal engorda?
+¿Se pueden comprar los parches de estrógenos sin receta?
 
-No. Los estudios no muestran que aumente el peso. El aumento que muchas mujeres notan en la menopausia se debe a los cambios hormonales y de estilo de vida de esta etapa, y la terapia puede incluso ayudar a reducir la grasa abdominal.
+No. Los parches, el gel, las pastillas y los tratamientos vaginales con hormonas necesitan receta, porque antes hay que valorar tu historia de salud y elegir la dosis y la vía adecuadas.
+
+¿La cubre la Seguridad Social?
+
+La terapia hormonal se receta en la sanidad pública, y muchos de los tratamientos habituales están financiados. Lo que pagues depende del medicamento concreto y de tu aportación en la farmacia. Tu médico de familia o tu ginecóloga pueden indicarte qué opción encaja contigo.
 
 ## Conclusión
 

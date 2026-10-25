@@ -33,6 +33,8 @@ def receta(datos):
     partes = ['**Ingredientes**', '\n'.join(f'- {i}' for i in r['ingredientes'])]
     partes.append('**Preparación**')
     partes.append('\n'.join(f'{n}. {p["texto"]}' for n, p in enumerate(r['pasos'], 1)))
+    if r.get('freidora'):
+        partes += ['**Sin horno, en freidora de aire**', r['freidora']]
     if r.get('consejo'):
         partes += ['**Consejo**', r['consejo']]
     return '\n\n'.join(partes)

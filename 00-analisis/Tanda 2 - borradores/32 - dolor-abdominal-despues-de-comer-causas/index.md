@@ -172,13 +172,29 @@ El intestino y el cerebro están muy conectados. Comer con prisa, nerviosa o del
 
 Una molestia leve tras una comida muy abundante es normal. Pero si el dolor aparece casi siempre o te impide hacer vida normal, no lo es, y conviene buscar la causa con tu médico.
 
+¿Por qué me duele después de comer grasas?
+
+Las comidas grasas hacen que la vesícula se contraiga para liberar bilis. Si hay cálculos, puede aparecer un dolor intenso en la parte alta derecha del abdomen. También vacían el estómago más despacio, lo que da pesadez y reflujo. Si el dolor tras las grasas se repite, consulta.
+
+¿Y si además del dolor tengo diarrea?
+
+Es frecuente en las intolerancias (lactosa, fructosa), en el intestino irritable y tras una gastroenteritis. Si la diarrea dura más de unos días, te despierta por la noche, lleva sangre o se acompaña de fiebre o pérdida de peso, hay que consultar.
+
+¿Por qué me sienta mal el pan?
+
+Puede deberse a los fructanos del trigo, que fermentan en el intestino y dan gases, a la celiaquía o a la sensibilidad al gluten. No retires el gluten por tu cuenta: si se sospecha celiaquía, las pruebas deben hacerse mientras sigues tomándolo, o pueden salir falsamente normales.
+
 ¿Puede ser una intolerancia aunque antes no me sentara mal ese alimento?
 
 Sí. La intolerancia a la lactosa, por ejemplo, puede aparecer en la edad adulta porque disminuye la enzima que la digiere. También el estrés, una gastroenteritis o algunos medicamentos pueden volver el intestino más sensible.
 
-¿Debo quitar el gluten si me duele la tripa?
+¿Qué puedo tomar para el dolor de tripa después de comer?
 
-No lo hagas por tu cuenta. Si se sospecha celiaquía, las pruebas deben hacerse mientras sigues tomando gluten; si lo retiras antes, pueden salir falsamente normales.
+Para molestias leves ayudan el calor local, un paseo suave y una infusión de manzanilla o de hinojo (la menta, mejor no si tienes reflujo). Evita los antiinflamatorios como el ibuprofeno, que irritan el estómago, y no te automediques de forma continuada: si necesitas tomar algo a menudo, consulta para encontrar la causa.
+
+¿Es normal en el embarazo?
+
+Las digestiones lentas, el ardor y los gases son muy frecuentes en el embarazo por la progesterona y la presión del útero. Pero un dolor intenso, con sangrado, fiebre o que no cede debe valorarse siempre de inmediato.
 
 ¿Los probióticos ayudan con el dolor después de comer?
 
