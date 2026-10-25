@@ -146,6 +146,11 @@
     align-items: start;
     padding: 12px !important;
   }
+  /* Las tarjetas de otras páginas de la paginación siguen ocultas (el
+     display: grid de arriba anulaba el atributo hidden: salían todas). */
+  body.movil-v2 .post-card[hidden] {
+    display: none !important;
+  }
   body.movil-v2 .post-card .post-image {
     grid-column: 2;
     grid-row: 1 / 4;
@@ -199,10 +204,6 @@
     font-size: 32px !important;
     line-height: 1.25 !important;
   }
-  /* Portada: las 4 tarjetas de «Un enfoque diferente» en 2 + 2. */
-  .enfoque .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
   /* Palabras largas en píldoras estrechas: que partan en vez de desbordar. */
   .soluciones .solucion-item h3 {
     overflow-wrap: anywhere;
@@ -212,5 +213,14 @@
   main p,
   main li {
     text-align: left !important;
+  }
+}
+
+/* Portada: las 4 tarjetas de «Un enfoque diferente» en 2 + 2 en cualquier
+   ancho entre móvil y ordenador (en tablets como el iPad mini, 744px,
+   quedaban 3 + 1). */
+@media (min-width: 560px) and (max-width: 1199px) {
+  .enfoque .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
