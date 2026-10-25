@@ -1,0 +1,120 @@
+# Configuración del hosting para la web nueva (Astro, estática).
+# GENERADO por scripts/generar_htaccess.py a partir de vercel.json: no
+# editar las redirecciones aquí, sino en vercel.json, y volver a generar.
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Siempre HTTPS y sin «www» (la dirección principal es clubdenutricion.es).
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://clubdenutricion.es/$1 [R=301,L,NE]
+
+# Direcciones antiguas del WordPress (82 reglas).
+RewriteRule ^alimentacion-2/?$ /alimentacion/ [R=301,L,NE]
+RewriteRule ^ayuno-intermitente-2/?$ /ayuno-intermitente/ [R=301,L,NE]
+RewriteRule ^contacto/?$ /quienes-somos/ [R=301,L,NE]
+RewriteRule ^coach/contacto/?$ /quienes-somos/ [R=301,L,NE]
+RewriteRule ^mente/?$ /mentalidad/ [R=301,L,NE]
+RewriteRule ^nutricion/?$ /alimentacion/ [R=301,L,NE]
+RewriteRule ^nutricion/macronutrientes-y-micronutrientes/?$ /macronutrientes-y-micronutrientes/ [R=301,L,NE]
+RewriteRule ^cuerpo/?$ /relacion-cuerpo-mujeres/ [R=301,L,NE]
+RewriteRule ^keto-lowcarb/?$ /recetas-keto-low-carb/ [R=301,L,NE]
+RewriteRule ^recetas-sanas-keto-y-low-carb/?$ /recetas-keto-low-carb/ [R=301,L,NE]
+RewriteRule ^servicios-del-club-de-nutricion/?$ /quienes-somos/ [R=301,L,NE]
+RewriteRule ^coaching-nutricional/?$ /que-es-el-coaching-nutricional/ [R=301,L,NE]
+RewriteRule ^alimentacion/\d+/?$ /alimentacion/ [R=301,L,NE]
+RewriteRule ^alimentacion/page/\d+/?$ /alimentacion/ [R=301,L,NE]
+RewriteRule ^category/nutricion/alimentos/?$ /alimentos/ [R=301,L,NE]
+RewriteRule ^category/nutricion/alimentos/page/\d+/?$ /alimentos/ [R=301,L,NE]
+RewriteRule ^category/nutricion/macronutrientes/?$ /macronutrientes/ [R=301,L,NE]
+RewriteRule ^category/nutricion/macronutrientes/page/\d+/?$ /macronutrientes/ [R=301,L,NE]
+RewriteRule ^category/nutricion/micronutrientes/?$ /micronutrientes/ [R=301,L,NE]
+RewriteRule ^category/nutricion/micronutrientes/page/\d+/?$ /micronutrientes/ [R=301,L,NE]
+RewriteRule ^category/nutricion/patrones-alimentarios/?$ /patrones-alimentarios/ [R=301,L,NE]
+RewriteRule ^category/nutricion/patrones-alimentarios/page/\d+/?$ /patrones-alimentarios/ [R=301,L,NE]
+RewriteRule ^category/nutricion/?$ /alimentacion/ [R=301,L,NE]
+RewriteRule ^category/nutricion/page/\d+/?$ /alimentacion/ [R=301,L,NE]
+RewriteRule ^category/mentalidad/ansiedad-por-la-comida/?$ /ansiedad-comida/ [R=301,L,NE]
+RewriteRule ^category/mentalidad/ansiedad-por-la-comida/page/\d+/?$ /ansiedad-comida/ [R=301,L,NE]
+RewriteRule ^category/mentalidad/estres-y-habitos/?$ /estres-habitos/ [R=301,L,NE]
+RewriteRule ^category/mentalidad/estres-y-habitos/page/\d+/?$ /estres-habitos/ [R=301,L,NE]
+RewriteRule ^category/mentalidad/relacion-con-el-cuerpo/?$ /relacion-cuerpo-mujeres/ [R=301,L,NE]
+RewriteRule ^category/mentalidad/relacion-con-el-cuerpo/page/\d+/?$ /relacion-cuerpo-mujeres/ [R=301,L,NE]
+RewriteRule ^category/mentalidad/?$ /mentalidad/ [R=301,L,NE]
+RewriteRule ^category/mentalidad/page/\d+/?$ /mentalidad/ [R=301,L,NE]
+RewriteRule ^category/metabolismo/ayuno-intermitente/?$ /ayuno-intermitente/ [R=301,L,NE]
+RewriteRule ^category/metabolismo/ayuno-intermitente/page/\d+/?$ /ayuno-intermitente/ [R=301,L,NE]
+RewriteRule ^category/metabolismo/perdida-de-grasa-femenina/?$ /perdida-grasa-femenina/ [R=301,L,NE]
+RewriteRule ^category/metabolismo/perdida-de-grasa-femenina/page/\d+/?$ /perdida-grasa-femenina/ [R=301,L,NE]
+RewriteRule ^category/metabolismo/resistencia-a-la-insulina/?$ /resistencia-insulina/ [R=301,L,NE]
+RewriteRule ^category/metabolismo/resistencia-a-la-insulina/page/\d+/?$ /resistencia-insulina/ [R=301,L,NE]
+RewriteRule ^category/metabolismo/?$ /metabolismo/ [R=301,L,NE]
+RewriteRule ^category/metabolismo/page/\d+/?$ /metabolismo/ [R=301,L,NE]
+RewriteRule ^category/hormonas/ciclo-menstrual/?$ /ciclo-menstrual/ [R=301,L,NE]
+RewriteRule ^category/hormonas/ciclo-menstrual/page/\d+/?$ /ciclo-menstrual/ [R=301,L,NE]
+RewriteRule ^category/hormonas/cortisol/?$ /cortisol/ [R=301,L,NE]
+RewriteRule ^category/hormonas/cortisol/page/\d+/?$ /cortisol/ [R=301,L,NE]
+RewriteRule ^category/hormonas/inflamacion-hormonal/?$ /inflamacion-hormonal/ [R=301,L,NE]
+RewriteRule ^category/hormonas/inflamacion-hormonal/page/\d+/?$ /inflamacion-hormonal/ [R=301,L,NE]
+RewriteRule ^category/hormonas/menopausia/?$ /menopausia/ [R=301,L,NE]
+RewriteRule ^category/hormonas/menopausia/page/\d+/?$ /menopausia/ [R=301,L,NE]
+RewriteRule ^category/hormonas/perimenopausia/?$ /perimenopausia/ [R=301,L,NE]
+RewriteRule ^category/hormonas/perimenopausia/page/\d+/?$ /perimenopausia/ [R=301,L,NE]
+RewriteRule ^category/hormonas/tiroides/?$ /tiroides/ [R=301,L,NE]
+RewriteRule ^category/hormonas/tiroides/page/\d+/?$ /tiroides/ [R=301,L,NE]
+RewriteRule ^category/hormonas/?$ /hormonas/ [R=301,L,NE]
+RewriteRule ^category/hormonas/page/\d+/?$ /hormonas/ [R=301,L,NE]
+RewriteRule ^category/microbiota/digestion/?$ /digestion/ [R=301,L,NE]
+RewriteRule ^category/microbiota/digestion/page/\d+/?$ /digestion/ [R=301,L,NE]
+RewriteRule ^category/microbiota/inflamacion-intestinal/?$ /inflamacion-intestinal/ [R=301,L,NE]
+RewriteRule ^category/microbiota/inflamacion-intestinal/page/\d+/?$ /inflamacion-intestinal/ [R=301,L,NE]
+RewriteRule ^category/microbiota/probioticos-alimentacion/?$ /probioticos-alimentacion/ [R=301,L,NE]
+RewriteRule ^category/microbiota/probioticos-alimentacion/page/\d+/?$ /probioticos-alimentacion/ [R=301,L,NE]
+RewriteRule ^category/microbiota/?$ /microbiota/ [R=301,L,NE]
+RewriteRule ^category/microbiota/page/\d+/?$ /microbiota/ [R=301,L,NE]
+RewriteRule ^category/energia/fatiga-cronica/?$ /fatiga-cronica/ [R=301,L,NE]
+RewriteRule ^category/energia/fatiga-cronica/page/\d+/?$ /fatiga-cronica/ [R=301,L,NE]
+RewriteRule ^category/energia/rutinas-energeticas/?$ /rutinas-energeticas/ [R=301,L,NE]
+RewriteRule ^category/energia/rutinas-energeticas/page/\d+/?$ /rutinas-energeticas/ [R=301,L,NE]
+RewriteRule ^category/energia/sueno/?$ /sueno/ [R=301,L,NE]
+RewriteRule ^category/energia/sueno/page/\d+/?$ /sueno/ [R=301,L,NE]
+RewriteRule ^category/energia/?$ /energia/ [R=301,L,NE]
+RewriteRule ^category/energia/page/\d+/?$ /energia/ [R=301,L,NE]
+RewriteRule ^category/recetas/keto-low-carb/?$ /recetas-keto-low-carb/ [R=301,L,NE]
+RewriteRule ^category/recetas/keto-low-carb/page/\d+/?$ /recetas-keto-low-carb/ [R=301,L,NE]
+RewriteRule ^category/recetas/?$ /recetas/ [R=301,L,NE]
+RewriteRule ^category/recetas/page/\d+/?$ /recetas/ [R=301,L,NE]
+RewriteRule ^category/radar-de-salud/?$ /radar-de-salud/ [R=301,L,NE]
+RewriteRule ^category/radar-de-salud/page/\d+/?$ /radar-de-salud/ [R=301,L,NE]
+RewriteRule ^author/([^/]+)/?$ /quienes-somos/ [R=301,L,NE]
+RewriteRule ^author/([^/]+)/page/\d+/?$ /quienes-somos/ [R=301,L,NE]
+RewriteRule ^tag/wegovi/?$ /buscar/?q=wegovy [R=301,L,NE]
+RewriteRule ^tag/legacy/?$ /blog/ [R=301,L,NE]
+RewriteRule ^tag/([^/]+)/page/\d+/?$ /buscar/?q=$1 [R=301,L,NE]
+RewriteRule ^tag/([^/]+)/?$ /buscar/?q=$1 [R=301,L,NE]
+</IfModule>
+
+# Caché del navegador: los archivos de _astro llevan huella en el nombre y
+# no cambian nunca; las páginas se revalidan siempre.
+<IfModule mod_headers.c>
+<FilesMatch "\.(webp|avif|jpe?g|png|gif|svg|woff2?|css|js)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(html|xml|txt)$">
+Header set Cache-Control "public, max-age=0, must-revalidate"
+</FilesMatch>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
